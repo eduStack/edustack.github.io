@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scratch on eduStack.org</title>
+    <link>http://edustack.github.io/categories/scratch/</link>
+    <description>Recent content in Scratch on eduStack.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 31 Jul 2018 15:36:33 +0000</lastBuildDate><atom:link href="http://edustack.github.io/categories/scratch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSTA K-12计算机科学标准2017版（CSTA K-12 Computer Science Standards）</title>
+      <link>http://edustack.github.io/2018/07/31/csta-k-12-computer-science-standards/</link>
+      <pubDate>Tue, 31 Jul 2018 15:36:33 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/07/31/csta-k-12-computer-science-standards/</guid>
+      <description>标准连接 https://www.csteachers.org/general/custom.asp?page=standards 可打印版本 https://www.csteachers.org/general/custom.asp?page=standards 计算机科学教师协会（CSTA）是一个支持和促进计算机科学教学的会员制组织。 CSTA为K-12教师及其学生提供了更好地理</description>
+    </item>
+    
+    <item>
+      <title>Scratch Conference 2018主题摘要</title>
+      <link>http://edustack.github.io/2018/07/29/scratch-conference-2018/</link>
+      <pubDate>Sun, 29 Jul 2018 15:04:08 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/07/29/scratch-conference-2018/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://scratch.mit.edu/conference&#34;&gt;https://scratch.mit.edu/conference&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Scratch2018年会在7月26日-28日举行，举行地点当然就在Scratch的出生地-MIT媒体实验室。目前还没有提供在线视频的回放，不过从官网我们可以看到一些有趣的话题。&lt;/p&gt;
+&lt;p&gt;特别感谢@HFL的协助整理。&lt;/p&gt;
+&lt;h3 id=&#34;7月26日&#34;&gt;7月26日&lt;/h3&gt;
+&lt;h4 id=&#34;the-next-generation&#34;&gt;The Next Generation&lt;/h4&gt;
+&lt;p&gt;Join us for an inside look at the next generation of Scratch — and a discussion of how Scratch is opening new opportunities for the next generation of children around the world.&lt;/p&gt;
+&lt;h4 id=&#34;flat-scratch-jam-computational-tinkering-with-handmade-scratch-sprites&#34;&gt;Flat Scratch Jam: Computational Tinkering with Handmade Scratch Sprites&lt;/h4&gt;
+&lt;p&gt;Computational Tinkering infuses digital environments with real-world materials. In this workshop, inspired by Dreamfeel’s flatgame jams, we’ll spend time drawing, crafting, and collaging scenes and characters. We’ll then photograph and import these handmade sprites and backdrops into Scratch and experiment with adding them to approachable and open ended projects. At the end of the session, we’ll share our work and reflect together about how combining tangible materials with programming can affect learning outcomes.&lt;/p&gt;
+&lt;h4 id=&#34;physical-computing-with-scratch-on-the-raspberry-pi&#34;&gt;Physical Computing with Scratch on the Raspberry Pi&lt;/h4&gt;
+&lt;p&gt;Break out of the screen and control the outside world with Scratch and the Raspberry Pi! In this hands-on workshop, you’ll learn how to use Scratch on the Raspberry Pi to connect LEDs, motors, and other output devices, and how to respond to physical inputs such as buttons and infrared sensors.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

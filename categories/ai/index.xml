@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI on eduStack.org</title>
+    <link>http://edustack.github.io/categories/ai/</link>
+    <description>Recent content in AI on eduStack.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 16 Jun 2019 15:02:07 +0000</lastBuildDate><atom:link href="http://edustack.github.io/categories/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>人工智能教育资源</title>
+      <link>http://edustack.github.io/2019/06/16/aied/</link>
+      <pubDate>Sun, 16 Jun 2019 15:02:07 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/06/16/aied/</guid>
+      <description>研究机构 欧洲学习和智能系统研究机构（European Laboratory for Learning and Intelligent Systems，ELLIS）https://ellis.eu/ http://ai-4-all.org/ https://ai100.stanford.edu/ https://hai.stanford.edu AI4K12.org http://cognimates.me/ 教程 https://vas3k.com/blog/machine_learning/</description>
+    </item>
+    
+  </channel>
+</rss>

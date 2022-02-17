@@ -1,0 +1,1404 @@
+<?xml-stylesheet type="text/xsl" href="http://edustack.github.io/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://edustack.github.io/about/</loc>
+    <lastmod>2017-08-28T21:41:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/categories/</loc>
+    <lastmod>2020-06-02T01:30:43+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/</loc>
+    <lastmod>2020-06-02T01:30:43+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/post/</loc>
+    <lastmod>2020-06-02T01:30:43+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2020/06/02/tao%EF%BC%88testassistepar-ordinateur%EF%BC%89/</loc>
+    <lastmod>2020-06-02T01:30:43+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/categories/uncategorized/</loc>
+    <lastmod>2020-06-02T01:30:43+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2020/02/12/%E4%B8%80%E4%BA%9B%E6%95%99%E8%82%B2%E7%9B%B8%E5%85%B3%E6%9C%BA%E6%9E%84/</loc>
+    <lastmod>2020-02-12T08:19:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/11/21/wise2019hightechhigh/</loc>
+    <lastmod>2019-11-21T02:57:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/07/28/jupyter-notebook-%E8%B5%84%E6%BA%90%E7%B4%A2%E5%BC%95/</loc>
+    <lastmod>2019-07-28T12:11:35+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/categories/ai/</loc>
+    <lastmod>2019-06-16T15:02:07+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/06/16/aied/</loc>
+    <lastmod>2019-06-16T15:02:07+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/05/11/webanno-instroduce/</loc>
+    <lastmod>2019-05-11T12:58:18+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/27/learning-tool-online-riff/</loc>
+    <lastmod>2019-04-27T05:20:01+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/22/what-works-clearinghouse%E7%9A%84%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2019-04-22T14:18:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/22/%E7%BE%8E%E5%9B%BDai%E6%95%99%E8%82%B2%E6%94%BF%E7%AD%96/</loc>
+    <lastmod>2019-04-22T04:04:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/20/emoocs2019%E5%B0%86%E4%BA%8E5%E6%9C%8820%E6%97%A5%E5%9C%A8%E9%82%A3%E4%B8%8D%E5%8B%92%E6%96%AF%E4%B8%BE%E5%8A%9E/</loc>
+    <lastmod>2019-04-19T22:31:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/20/%E5%9F%BA%E4%BA%8Emooc%E7%9A%84%E5%AD%A6%E4%BD%8D%E8%AF%BE%E7%A8%8B%EF%BC%9A2018%E5%B9%B4mooc%E7%BB%9F%E8%AE%A1%E5%92%8C%E8%B6%8B%E5%8A%BF%E7%9A%84%E5%9B%9E%E9%A1%BE/</loc>
+    <lastmod>2019-04-19T22:22:34+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/19/2012%E5%B9%B45%E6%9C%882%E6%97%A5edx%E6%88%90%E7%AB%8B%E7%9A%84%E6%8A%A5%E9%81%93/</loc>
+    <lastmod>2019-04-19T11:17:40+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/19/penn-center-for-learning-analytics/</loc>
+    <lastmod>2019-04-18T23:51:15+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/18/open-edx%E4%B8%AD%E7%9A%84ai%E5%BA%94%E7%94%A8/</loc>
+    <lastmod>2019-04-18T12:44:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/18/sreeadvancing-education-research/</loc>
+    <lastmod>2019-04-17T23:30:33+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/13/%E4%BD%BF%E7%94%A8zabbixgrafanaicingasmokeping%E6%9D%A5%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E7%9B%91%E6%8E%A7/</loc>
+    <lastmod>2019-04-13T11:30:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/13/folio/</loc>
+    <lastmod>2019-04-13T10:50:48+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/13/contribute-to-openedx/</loc>
+    <lastmod>2019-04-13T09:55:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/13/lti-advantage/</loc>
+    <lastmod>2019-04-13T09:55:05+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/13/best-practices-for-writing-effective-problem-based-learning-cases/</loc>
+    <lastmod>2019-04-13T09:36:33+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/categories/open-edx/</loc>
+    <lastmod>2019-04-11T12:58:35+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/11/openfu-marsha/</loc>
+    <lastmod>2019-04-11T12:58:35+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/10/theverge%E6%AC%A7%E7%9B%9F%E8%AE%A4%E4%B8%BA%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%B3%BB%E7%BB%9F%E5%BA%94%E8%AF%A5%E8%A2%AB%E5%AE%A1%E8%AE%A1%EF%BC%8C%E8%A7%A3%E9%87%8A%EF%BC%8C%E6%97%A0%E5%81%8F/</loc>
+    <lastmod>2019-04-09T23:27:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/09/20-20-20rules/</loc>
+    <lastmod>2019-04-09T09:15:21+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/09/32learningtheories/</loc>
+    <lastmod>2019-04-09T09:13:28+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/04/09/open-edx-2019-presentations/</loc>
+    <lastmod>2019-04-08T22:09:40+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/03/24/using-linked-data-for-discovery-and-preservation/</loc>
+    <lastmod>2019-03-24T13:12:05+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/03/24/summary-in-edx-docs/</loc>
+    <lastmod>2019-03-24T12:02:31+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/03/19/%E9%AB%98%E7%AD%89%E6%95%99%E8%82%B22019%E5%B9%B4%E8%B6%8B%E5%8A%BF%E8%A7%82%E5%AF%9F%E5%92%8C%E5%8D%81%E5%A4%A7%E6%88%98%E7%95%A5%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2019-03-19T02:52:17+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/03/17/%E5%AD%A6%E4%B9%A0%E5%BD%B1%E5%93%8D%E5%8A%9B%E5%A5%96%EF%BC%9Aedtech%E7%9A%84%E6%9C%AA%E6%9D%A5/</loc>
+    <lastmod>2019-03-17T07:29:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/03/17/3914/</loc>
+    <lastmod>2019-03-17T07:26:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/03/13/educause%EF%BC%9A%E9%AB%98%E7%AD%89%E6%95%99%E8%82%B2%E7%9A%84%E6%95%B0%E5%AD%97%E5%8C%96%E8%BD%AC%E5%9E%8B/</loc>
+    <lastmod>2019-03-13T14:29:31+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/02/28/teaching-and-learning-with-jupyter/</loc>
+    <lastmod>2019-02-27T23:52:58+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/02/16/the-mooc-pivot/</loc>
+    <lastmod>2019-02-16T07:19:05+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/02/05/44-mooc-degrees/</loc>
+    <lastmod>2019-02-05T03:04:56+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2019/01/31/top-10-it-issues/</loc>
+    <lastmod>2019-01-31T13:29:43+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/categories/edtech-info/</loc>
+    <lastmod>2019-01-31T13:29:43+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/12/29/open-edx-wordcount/</loc>
+    <lastmod>2018-12-29T14:42:23+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/12/02/why-isnt-open-source-hot-among-computer-science-students/</loc>
+    <lastmod>2018-12-02T05:38:14+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/11/04/2018-nmc-horizon-report/</loc>
+    <lastmod>2018-11-04T04:12:38+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/11/01/aliyun-open-edx-h2-abtest/</loc>
+    <lastmod>2018-11-01T04:12:29+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/10/25/adaptive-learning-resources/</loc>
+    <lastmod>2018-10-25T15:03:41+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/10/08/open-edx-service/</loc>
+    <lastmod>2018-10-08T01:54:56+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/10/07/open-edx-ecommerce-alipay/</loc>
+    <lastmod>2018-10-07T04:03:09+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/09/30/runningaremotemeetup/</loc>
+    <lastmod>2018-09-30T05:02:21+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/categories/openet/</loc>
+    <lastmod>2018-09-30T03:05:11+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/09/30/nginx-rtmp-hls-vod/</loc>
+    <lastmod>2018-09-30T03:05:11+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/09/25/cas5-0-x-install-and-config/</loc>
+    <lastmod>2018-09-25T07:59:49+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/09/25/cas-delegate-authentication/</loc>
+    <lastmod>2018-09-25T07:19:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/08/12/open-edx-hawthorn-1/</loc>
+    <lastmod>2018-08-11T16:58:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/08/08/using-oss-in-se-courses/</loc>
+    <lastmod>2018-08-08T15:39:44+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/08/05/opensource-codegame-codecombat/</loc>
+    <lastmod>2018-08-05T15:17:26+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/08/01/mastodon/</loc>
+    <lastmod>2018-08-01T00:46:29+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/07/31/csta-k-12-computer-science-standards/</loc>
+    <lastmod>2018-07-31T15:36:33+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/categories/scratch/</loc>
+    <lastmod>2018-07-31T15:36:33+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/tags/jupyter/</loc>
+    <lastmod>2018-07-31T15:32:34+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/07/31/jupyter%E4%B8%8Eopen-edx%E4%B8%8E%E6%8A%80%E6%9C%AF%E6%95%99%E8%82%B2/</loc>
+    <lastmod>2018-07-31T15:32:34+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/tags/</loc>
+    <lastmod>2018-07-31T15:32:34+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/07/30/beijing-open-edx-meetup-20181/</loc>
+    <lastmod>2018-07-30T14:44:03+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/07/29/open-edx-con2018%E6%91%98%E8%A6%81%EF%BC%9Alearner-engagement-mix-it-up/</loc>
+    <lastmod>2018-07-29T15:14:33+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/07/29/scratch-conference-2018/</loc>
+    <lastmod>2018-07-29T15:04:08+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/07/22/open-edx-con-2018-list/</loc>
+    <lastmod>2018-07-22T13:05:36+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/07/22/bigbluebutton%E8%BF%91%E6%9C%9F%E7%9A%84%E8%BF%9B%E5%B1%95/</loc>
+    <lastmod>2018-07-22T03:49:05+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/07/17/open-edx-migration-f2g/</loc>
+    <lastmod>2018-07-17T07:31:05+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/07/13/open-edx-con2018-getting-started-with-open-edx-development/</loc>
+    <lastmod>2018-07-13T08:33:58+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/03/10/openet-1-cas/</loc>
+    <lastmod>2018-03-10T12:27:26+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2018/01/22/open-edx-light-weight-anylytic-system/</loc>
+    <lastmod>2018-01-22T06:41:20+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2017/11/11/open-edx-community-china/</loc>
+    <lastmod>2017-11-11T15:05:15+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2017/11/06/china-open-edx-saas-e-ducation/</loc>
+    <lastmod>2017-11-06T13:14:06+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2017/09/10/2017-ossummit%E5%B0%86%E4%BA%8E9%E6%9C%8811%E6%97%A5%E5%9C%A8%E6%B4%9B%E6%9D%89%E7%9F%B6%E5%8F%AC%E5%BC%80/</loc>
+    <lastmod>2017-09-10T04:42:59+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2017/08/16/ibl%E7%9A%84%E8%AF%BE%E7%A8%8B%E5%88%B6%E4%BD%9C%E7%90%86%E5%BF%B5%E4%B8%8Elight-board/</loc>
+    <lastmod>2017-08-16T02:20:40+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2017/07/06/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AD%A6%E6%A0%A1%E5%BA%94%E8%AF%A5%E5%8F%AA%E4%BD%BF%E7%94%A8%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6/</loc>
+    <lastmod>2017-07-06T05:02:29+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2017/07/04/2017%E5%9C%B0%E5%B9%B3%E7%BA%BF%E6%8A%A5%E5%91%8A/</loc>
+    <lastmod>2017-07-04T14:56:27+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2017/06/07/open-edx2017-review/</loc>
+    <lastmod>2017-06-07T07:51:44+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2017/05/01/open-edx-ficus-3-download/</loc>
+    <lastmod>2017-05-01T03:24:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2017/04/11/%E5%93%88%E4%BD%9B%E5%A4%A7%E5%AD%A6%E7%9A%84cs50vr/</loc>
+    <lastmod>2017-04-11T13:45:05+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2017/03/09/open-edx%E4%B8%8Escrom/</loc>
+    <lastmod>2017-03-09T02:30:02+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/categories/scorm/</loc>
+    <lastmod>2017-03-09T02:30:02+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2017/03/07/open-edx-ficus%E7%89%88%E5%8F%91%E5%B8%83/</loc>
+    <lastmod>2017-03-07T00:54:48+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2017/02/09/%E6%95%99%E8%82%B2%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2017-02-09T13:30:35+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2017/02/06/2017open-edx-con/</loc>
+    <lastmod>2017-02-06T14:30:29+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2017/01/04/educause%E5%8F%91%E5%B8%832016%E5%AD%A6%E7%94%9F%E5%92%8C%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/</loc>
+    <lastmod>2017-01-04T14:46:55+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/11/24/open-edx-eucalyptus-eduation-edition/</loc>
+    <lastmod>2016-11-24T04:40:03+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/11/20/openet/</loc>
+    <lastmod>2016-11-20T05:20:02+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/11/13/open-edx-eucalyptus-download/</loc>
+    <lastmod>2016-11-13T14:50:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/10/30/top-100-tools-for-education-2016/</loc>
+    <lastmod>2016-10-30T15:58:20+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/10/25/open-edx%E4%B8%BB%E9%A2%98%E7%BD%91%E7%AB%99/</loc>
+    <lastmod>2016-10-25T00:55:15+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/10/13/2016%E5%B9%B4%E4%B8%AD%E5%9B%BD%E6%85%95%E8%AF%BE%E8%A1%8C%E4%B8%9A%E7%A0%94%E7%A9%B6%E7%99%BD%E7%9A%AE%E4%B9%A6/</loc>
+    <lastmod>2016-10-13T01:41:35+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/09/06/open-edx-eucalyptus-release/</loc>
+    <lastmod>2016-09-06T03:24:03+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/08/06/%E8%AF%BE%E7%A8%8B%E6%90%9C%E7%B4%A2%E7%BD%91%E7%AB%99coursetalk/</loc>
+    <lastmod>2016-08-06T04:47:01+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/08/03/2016-us-lms-stat/</loc>
+    <lastmod>2016-08-03T02:47:28+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/08/02/open-edx2016%E5%B9%B48%E6%9C%88%E6%9B%B4%E6%96%B0/</loc>
+    <lastmod>2016-08-02T16:08:40+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/07/29/%E6%96%AF%E9%9A%86%E8%81%94%E7%9B%9Folc2016%E5%B9%B4%E9%AB%98%E7%AD%89%E6%95%99%E8%82%B2%E5%9C%A8%E7%BA%BF%E5%AD%A6%E4%B9%A0%E5%9B%BE%E8%A1%A8/</loc>
+    <lastmod>2016-07-29T02:11:46+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/07/26/%E8%81%94%E5%90%88%E5%9B%BD%E6%95%99%E7%A7%91%E6%96%87%E7%BB%84%E7%BB%87%E5%90%91%E5%8F%91%E5%B1%95%E4%B8%AD%E5%9B%BD%E5%AE%B6%E6%8E%A8%E5%87%BA%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%BC%80%E6%94%BE%E5%9C%A8/</loc>
+    <lastmod>2016-07-26T05:48:21+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/07/20/2016%E6%95%99%E8%82%B2%E6%8A%80%E6%9C%AF%E5%85%83%E7%B4%A0%E5%91%A8%E6%9C%9F%E8%A1%A8/</loc>
+    <lastmod>2016-07-20T12:36:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/07/18/first-beijingopen-edx-meetup-done/</loc>
+    <lastmod>2016-07-18T01:20:38+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/07/16/apache-geode/</loc>
+    <lastmod>2016-07-16T04:21:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/07/12/vr-panorama-open-edx/</loc>
+    <lastmod>2016-07-12T10:47:45+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/07/09/the-next-generation-digital-learning-environment%EF%BC%8D%E4%B8%8B%E4%B8%80%E4%BB%A3%E6%95%B0%E5%AD%97%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83/</loc>
+    <lastmod>2016-07-09T23:25:22+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/07/08/%E5%BC%80%E6%94%BE%E6%95%99%E8%82%B2%E8%B5%84%E6%BA%90%E6%9D%A5%E8%87%AA%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91/</loc>
+    <lastmod>2016-07-08T01:29:02+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/07/05/%E7%94%A8%E4%BA%8E%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%95%99%E5%AD%A6%E7%9A%84%E5%8A%A8%E6%80%81%E6%95%B0%E5%AD%A6%E8%BD%AF%E4%BB%B6geogebra/</loc>
+    <lastmod>2016-07-05T23:33:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/07/05/2016-winners-of-oe-awards/</loc>
+    <lastmod>2016-07-05T00:07:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/06/18/2016open-edx-con-stanford-review/</loc>
+    <lastmod>2016-06-18T23:26:14+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/06/15/2016-open-edx-con-video/</loc>
+    <lastmod>2016-06-15T21:50:37+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/06/04/web%E5%86%85%E5%AE%B9%E6%97%A0%E9%9A%9C%E7%A2%8D%E6%8C%87%E5%8D%97-wcag-2-0/</loc>
+    <lastmod>2016-06-04T09:43:31+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/06/04/open-edx2016%E5%B9%B46%E6%9C%88%E6%9B%B4%E6%96%B0/</loc>
+    <lastmod>2016-06-04T07:00:44+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/06/03/%E6%96%B0%E5%AA%92%E4%BD%93%E8%81%94%E7%9B%9F2016%E5%9C%B0%E5%B9%B3%E7%BA%BF%E6%8A%A5%E5%91%8A/</loc>
+    <lastmod>2016-06-03T05:58:05+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/05/23/beijing-open-edx-user-group-meetup/</loc>
+    <lastmod>2016-05-23T04:10:11+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/05/22/%E5%BC%80%E6%94%BE%E6%95%99%E8%82%B2%E5%92%8C%E5%BC%80%E6%94%BE%E6%95%99%E8%82%B2%E8%81%94%E7%9B%9Foeconsortium/</loc>
+    <lastmod>2016-05-22T03:20:37+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/05/08/open-edx-2016-5-update/</loc>
+    <lastmod>2016-05-08T16:14:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/04/27/edx%E6%88%90%E7%AB%8B%E5%9B%9B%E5%91%A8%E5%B9%B4%E5%8F%8A%E6%8D%90%E6%AC%BE/</loc>
+    <lastmod>2016-04-27T16:24:54+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/04/03/friends-of-open-edx-2016-edustack%E8%B5%9E%E5%8A%A92016%E5%B9%B4%E6%96%AF%E5%9D%A6%E7%A6%8F%E5%B9%B4%E4%BC%9A/</loc>
+    <lastmod>2016-04-03T06:11:41+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/03/28/open-edx-dogwood-educationedition/</loc>
+    <lastmod>2016-03-28T12:10:58+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/categories/xblock/</loc>
+    <lastmod>2016-03-20T00:44:54+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/03/20/uniplay-and-videojs-pro/</loc>
+    <lastmod>2016-03-20T00:44:54+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/03/14/google-opensource-edutool-oppia/</loc>
+    <lastmod>2016-03-14T04:31:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/03/13/openedx-insights-intro/</loc>
+    <lastmod>2016-03-13T05:16:51+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/03/08/%E6%9D%A5%E8%87%AAeducause%E7%9A%842016%E5%B9%B410%E5%A4%A7it%E9%97%AE%E9%A2%98%EF%BC%9A%E5%89%A5%E7%A6%BB%E3%80%81%E5%86%8D%E6%8A%95%E8%B5%84%E3%80%81%E5%8C%BA%E5%88%86/</loc>
+    <lastmod>2016-03-08T15:44:12+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/03/08/2016-%E5%B9%B4%E4%B8%89%E6%9C%88-open-edx-%E4%BA%A7%E5%93%81%E6%9B%B4%E6%96%B0/</loc>
+    <lastmod>2016-03-08T00:17:55+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/03/05/open-edx%E7%9A%84https%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
+    <lastmod>2016-03-05T05:10:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/03/01/%E4%BD%BF%E7%94%A8%E5%A4%96%E9%83%A8%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2016-03-01T04:07:05+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/02/13/%E5%9C%A8%E7%BA%BF%E6%95%99%E8%82%B2%E3%80%81mooc%E5%92%8C%E8%81%94%E9%80%9A%E4%B8%BB%E4%B9%89/</loc>
+    <lastmod>2016-02-13T05:09:40+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/02/12/%E6%9C%80%E6%96%B0open-edx%E5%8F%91%E8%A1%8C%E7%89%88dogwood%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83/</loc>
+    <lastmod>2016-02-12T01:56:45+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/01/31/edm2016%E7%AC%AC%E4%B9%9D%E5%B1%8A%E6%95%99%E8%82%B2%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/</loc>
+    <lastmod>2016-01-31T03:06:55+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/01/29/caliper-analytics/</loc>
+    <lastmod>2016-01-29T07:25:14+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/01/29/xapi/</loc>
+    <lastmod>2016-01-29T07:24:38+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/01/21/2016%E5%B9%B4open-edx%E5%B9%B4%E4%BC%9A%EF%BC%9A%E5%85%B1%E4%BA%AB%E7%9A%84%E6%95%99%E8%82%B2/</loc>
+    <lastmod>2016-01-21T15:39:07+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/01/21/%E5%B9%B4%E5%BA%A6%E5%9B%9E%E9%A1%BE-2015%E5%B9%B4%E4%B8%BB%E8%A6%81%E7%9A%84lms%E5%8F%91%E5%B1%95/</loc>
+    <lastmod>2016-01-21T15:22:54+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/01/13/open-edx-on-docker/</loc>
+    <lastmod>2016-01-13T15:14:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/01/12/xblocks%E6%A6%82%E5%BF%B5%E5%8F%8A%E7%9B%AE%E5%BD%95/</loc>
+    <lastmod>2016-01-12T11:16:10+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2016/01/03/open-edx-dogwood%E7%89%88%E6%9C%AC%E7%89%B9%E6%80%A7/</loc>
+    <lastmod>2016-01-03T14:17:55+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/12/14/open-edx%E6%B6%89%E5%8F%8A%E7%9A%84%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80%E3%80%81%E6%A1%86%E6%9E%B6%E5%92%8C%E5%BC%80%E6%BA%90%E7%BB%84%E4%BB%B6/</loc>
+    <lastmod>2015-12-14T11:43:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/12/14/open-edx%E4%B8%AD%E5%9B%BD%E7%A4%BE%E5%8C%BA%E7%89%88%E5%88%86%E7%B1%BB%E5%8A%9F%E8%83%BD%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3/</loc>
+    <lastmod>2015-12-14T02:41:27+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/categories/lti/</loc>
+    <lastmod>2015-12-12T03:50:13+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/12/12/learning-tool-interoperability-part-elearning-application/</loc>
+    <lastmod>2015-12-12T03:50:13+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/12/12/edx%E6%95%99%E5%AD%A6%E7%A0%94%E7%A9%B6/</loc>
+    <lastmod>2015-12-12T03:37:37+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/12/11/open-edx%E5%AE%89%E5%85%A8%E8%AD%A6%E5%91%8A-xss-vulnerability-in-teams-feature/</loc>
+    <lastmod>2015-12-11T07:33:20+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/12/05/%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91%E7%9A%84scormsharable-content-object-reference-model%E4%BB%8B%E7%BB%8D/</loc>
+    <lastmod>2015-12-05T01:23:02+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/12/05/%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91%E7%9A%84ltilearning-tools-interoperability%E4%BB%8B%E7%BB%8D/</loc>
+    <lastmod>2015-12-05T01:15:40+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/11/27/%E5%8F%88%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90lms%EF%BC%9Ainstructure-canvas/</loc>
+    <lastmod>2015-11-27T10:08:26+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/11/01/mooc%E5%88%B6%E4%BD%9C%E5%92%8C%E8%BF%90%E8%90%A5%E8%B5%84%E6%BA%90/</loc>
+    <lastmod>2015-11-01T10:08:27+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/10/31/c4lpt-co-uk-top-100-tools-for-learning-2015/</loc>
+    <lastmod>2015-10-31T23:54:14+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/10/29/open-edx%E6%B6%89%E5%8F%8A%E5%88%B0%E7%9A%84license/</loc>
+    <lastmod>2015-10-29T01:59:26+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/10/26/open-edx-cypress%E5%AE%8C%E6%95%B4%E6%B1%89%E5%8C%96%E8%AF%AD%E8%A8%80%E5%8C%85/</loc>
+    <lastmod>2015-10-26T08:30:10+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/10/21/%E8%85%BE%E8%AE%AF%E6%99%BA%E6%85%A7%E6%A0%A1%E5%9B%AD%E5%92%8C%E8%85%BE%E8%AE%AF%E5%BE%AE%E6%A0%A1/</loc>
+    <lastmod>2015-10-21T09:11:04+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/10/17/%E5%9C%A8%E5%86%85%E9%83%A8%E7%BD%91%E7%BB%9C%E4%B8%BAedx%E9%85%8D%E7%BD%AE%E8%A7%86%E9%A2%91%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2015-10-17T06:21:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/10/16/open-edx%E7%9A%84%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E6%80%A7%E8%83%BD%E5%92%8C%E6%9E%B6%E6%9E%84/</loc>
+    <lastmod>2015-10-16T08:27:09+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/10/16/%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E5%B7%A5%E5%85%B7etlpentaho-kettle/</loc>
+    <lastmod>2015-10-16T02:52:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/10/05/%E5%BE%AE%E8%BD%AF%E5%8F%91%E5%B8%83%E6%96%B0%E7%9A%84insert-embed-file-xblock/</loc>
+    <lastmod>2015-10-05T11:39:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/10/04/2015%E5%B9%B4open-edx%E4%BC%9A%E8%AE%AE%E5%86%85%E5%AE%B9%E4%BB%8B%E7%BB%8D/</loc>
+    <lastmod>2015-10-04T01:08:07+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/10/03/google-course-builder%E4%B8%8Exblock/</loc>
+    <lastmod>2015-10-03T01:18:33+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/09/18/%E5%85%8D%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8open-edx%E7%9A%84%E5%87%A0%E4%B8%AA%E6%96%B9%E5%BC%8F/</loc>
+    <lastmod>2015-09-18T08:28:16+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/09/02/edustack%E6%88%90%E4%B8%BA2015%E5%B9%B4open-edx%E4%BC%9A%E8%AE%AE%E8%B5%9E%E5%8A%A9%E5%95%86/</loc>
+    <lastmod>2015-09-02T03:13:42+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/08/15/open-edx-cypress%E8%99%9A%E6%8B%9F%E9%95%9C%E5%83%8F%E5%BC%80%E5%A7%8B%E6%8F%90%E4%BE%9B%E4%B8%8B%E8%BD%BD/</loc>
+    <lastmod>2015-08-15T03:40:35+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/08/14/edx%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%ACcypress%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83/</loc>
+    <lastmod>2015-08-14T00:34:40+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/07/22/open-edx%E7%AC%AC4%E4%B8%AA%E5%A4%A7%E7%89%88%E6%9C%ACdogwood/</loc>
+    <lastmod>2015-07-22T23:46:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/07/18/open-edx%E5%8D%B3%E5%B0%86%E5%8F%91%E5%B8%83%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%A4%A7%E7%89%88%E6%9C%ACcypress%EF%BC%88%E6%9F%8F%E6%A0%91%EF%BC%89/</loc>
+    <lastmod>2015-07-18T04:10:57+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/07/17/edx%E8%AF%AD%E8%A8%80%E5%8C%85%E6%A0%BC%E5%BC%8F%E9%94%99%E8%AF%AF%E5%BC%95%E8%B5%B7%E7%BB%84%E4%BB%B6%E5%B4%A9%E6%BA%83/</loc>
+    <lastmod>2015-07-17T00:46:24+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/07/16/open-edx%E4%BB%A3%E7%A0%81%E4%BB%B7%E5%80%BC%E5%A4%9A%E5%B0%91%E9%92%B1%EF%BC%9F/</loc>
+    <lastmod>2015-07-16T04:38:03+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/07/12/%E9%85%8D%E7%BD%AEopen-edx%E7%9A%84sysadmin%E7%89%B9%E6%80%A7/</loc>
+    <lastmod>2015-07-12T05:42:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/07/01/edx%E5%AD%A6%E7%94%9F%E6%8C%87%E5%8D%97%E4%B8%AD%E6%96%87%E7%89%88/</loc>
+    <lastmod>2015-07-01T11:54:06+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/06/21/bitnami%E6%8E%A8%E5%87%BA%E5%85%A8%E7%B3%BB%E5%88%97open-edx%E5%AE%89%E8%A3%85%E5%8C%85/</loc>
+    <lastmod>2015-06-21T00:11:55+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/05/27/edxova-release-0518%E4%B8%8B%E8%BD%BD/</loc>
+    <lastmod>2015-05-27T08:29:51+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/05/26/%E4%BD%BF%E7%94%A8edx%E4%BB%93%E5%BA%93%E6%9B%B4%E6%96%B0%E7%89%88%E6%9C%AC/</loc>
+    <lastmod>2015-05-26T15:34:13+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/05/22/%E5%85%B3%E9%97%ADelasticsearch%E8%BF%9C%E7%A8%8B%E4%BB%BB%E6%84%8F%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/</loc>
+    <lastmod>2015-05-22T03:07:45+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/05/10/%E6%95%99%E8%82%B2%E9%83%A8%E5%87%BA%E5%8F%B0%E6%96%87%E4%BB%B6%E5%8A%A0%E5%BC%BA%E9%AB%98%E7%AD%89%E5%AD%A6%E6%A0%A1%E5%9C%A8%E7%BA%BF%E5%BC%80%E6%94%BE%E8%AF%BE%E7%A8%8B%E5%BB%BA%E8%AE%BE%E5%BA%94/</loc>
+    <lastmod>2015-05-10T11:59:16+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/05/03/%E5%9C%B0%E5%B9%B3%E7%BA%BF%E6%8A%A5%E5%91%8A2015%E9%AB%98%E7%AD%89%E6%95%99%E8%82%B2%E7%89%88/</loc>
+    <lastmod>2015-05-03T15:53:35+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/04/03/educause%E5%8F%91%E5%B8%832015%E5%B9%B4%E7%BE%8E%E5%9B%BD%E9%AB%98%E7%AD%89%E6%95%99%E8%82%B210%E5%A4%A7it%E9%97%AE%E9%A2%98%E6%8A%A5%E5%91%8A/</loc>
+    <lastmod>2015-04-03T11:40:05+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/01/14/edx%E8%AF%BE%E7%A8%8B%E8%AE%A8%E8%AE%BA%E7%9A%84%E9%9D%A9%E5%91%BD/</loc>
+    <lastmod>2015-01-14T14:25:15+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2015/01/12/10%E4%B8%AA%E5%85%8D%E8%B4%B9%E6%85%95%E8%AF%BE%E8%B5%84%E6%BA%90%E6%95%99%E8%82%B2%E7%BD%91%E7%AB%99/</loc>
+    <lastmod>2015-01-12T09:40:04+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/12/27/open-edx-%E4%BC%9A%E8%AE%AE%E6%BC%94%E8%AE%B2%E8%B5%84%E6%96%99/</loc>
+    <lastmod>2014-12-27T01:02:44+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/12/09/%E5%B0%86office-mix%E6%95%B4%E5%90%88%E5%88%B0edx/</loc>
+    <lastmod>2014-12-09T11:47:15+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/12/03/%E6%96%AF%E9%9A%86%E8%81%94%E7%9B%9Fsloan-consortium/</loc>
+    <lastmod>2014-12-03T06:32:38+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/11/29/open-edx-conference%E4%B8%8Eedx-global-forum/</loc>
+    <lastmod>2014-11-29T09:28:55+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/11/20/open-edx-%E9%85%8D%E7%BD%AE-cas-%E7%99%BB%E9%99%86/</loc>
+    <lastmod>2014-11-20T03:30:58+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/11/20/edx%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92/</loc>
+    <lastmod>2014-11-20T02:13:17+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/11/12/%E7%AC%AC%E5%8D%81%E5%9B%9B%E5%B1%8A%E4%B8%AD%E5%9B%BD%E6%95%99%E8%82%B2%E4%BF%A1%E6%81%AF%E5%8C%96%E5%88%9B%E6%96%B0%E4%B8%8E%E5%8F%91%E5%B1%95%E8%AE%BA%E5%9D%9B%E8%A7%86%E9%A2%91%E9%9B%86/</loc>
+    <lastmod>2014-11-12T23:38:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/11/10/open-edx-%E7%94%A8%E6%88%B7%E6%B3%A8%E6%84%8F%E9%98%B2%E8%8C%83elasticsearch%E8%BF%9C%E7%A8%8B%E4%BB%BB%E6%84%8F%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/</loc>
+    <lastmod>2014-11-10T00:40:40+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/10/28/vismooc/</loc>
+    <lastmod>2014-10-28T01:28:13+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/10/25/2014%E5%B9%B4%E6%95%99%E8%82%B2%E4%BF%A1%E6%81%AF%E5%8C%96%E5%88%9B%E6%96%B0%E5%92%8C%E5%8F%91%E5%B1%95%E8%AE%BA%E5%9D%9B%E4%BC%9A%E5%90%8E%E6%84%9F/</loc>
+    <lastmod>2014-10-25T12:45:53+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/10/23/%E6%AC%A7%E6%B4%B2%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%88%86%E6%9E%90%E7%A4%BE%E5%8C%BAlace-project/</loc>
+    <lastmod>2014-10-23T13:33:19+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/10/19/the-value-of-a-common-foundation-2-0-an-apereo-values-document-june-2014/</loc>
+    <lastmod>2014-10-19T09:50:51+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/10/19/jasig%E3%80%81sakai%E5%92%8Capero/</loc>
+    <lastmod>2014-10-19T09:33:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/tags/lti/</loc>
+    <lastmod>2014-10-17T15:23:44+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/10/17/lti%E4%B8%8Eedu-apps-org/</loc>
+    <lastmod>2014-10-17T15:23:44+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/10/09/edx%E4%B8%8Espoc/</loc>
+    <lastmod>2014-10-09T03:37:07+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/09/20/open-edx-ebook%E4%B8%AD%E6%96%87%E7%89%88/</loc>
+    <lastmod>2014-09-20T01:08:35+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/04/19/mooc%E6%95%99%E8%82%B2%E7%9A%84%E4%B8%80%E5%B9%B4%EF%BC%9A17%E9%97%A8mooc%E8%AF%BE%E7%A8%8B%E7%9A%84%E7%BB%9F%E8%AE%A1%E7%BB%93%E6%9E%9C%E5%8F%91%E5%B8%83/</loc>
+    <lastmod>2014-04-19T12:54:36+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/03/12/infoworld-bossies-2013-the-best-of-open-source-software-awards/</loc>
+    <lastmod>2014-03-12T00:53:29+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/02/10/%E7%89%9B%E6%B4%A5%E5%A4%A7%E5%AD%A6%E6%95%99%E8%82%B2%E7%B1%BB%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/</loc>
+    <lastmod>2014-02-10T15:27:17+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/02/10/%E8%87%AA%E7%94%B1%E6%95%99%E8%82%B2%E6%97%A5%EF%BC%88education-freedom-day%EF%BC%8C%E7%BC%A9%E5%86%99%E4%B8%BAefd%EF%BC%89/</loc>
+    <lastmod>2014-02-10T15:17:03+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/02/10/%E8%99%9A%E6%8B%9F%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA/</loc>
+    <lastmod>2014-02-10T04:41:44+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/02/10/%E4%BB%80%E4%B9%88%E6%98%AF%E8%99%9A%E6%8B%9F%E5%BA%94%E7%94%A8virtual-appliance/</loc>
+    <lastmod>2014-02-10T03:49:45+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://edustack.github.io/2014/02/07/edustack-%E5%8F%91%E5%B8%83/</loc>
+    <lastmod>2014-02-07T16:31:29+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+</urlset>

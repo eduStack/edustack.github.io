@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EdTech Info on eduStack.org</title>
+    <link>http://edustack.github.io/categories/edtech-info/</link>
+    <description>Recent content in EdTech Info on eduStack.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 31 Jan 2019 13:29:43 +0000</lastBuildDate><atom:link href="http://edustack.github.io/categories/edtech-info/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2019年十大IT问题：学生基因组项目</title>
+      <link>http://edustack.github.io/2019/01/31/top-10-it-issues/</link>
+      <pubDate>Thu, 31 Jan 2019 13:29:43 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/01/31/top-10-it-issues/</guid>
+      <description>来源： https://www.educause.edu/research-and-publications/research/top-10-it-issues-technologies-and-trends/2019 educause近期发布了四个报告，包括： 2019 Top 10 IT Issues 2019 Key Issues in Teaching and Learning Higher Education’s Top 10 Strategic Technologies and Trends for 2019（March 2019</description>
+    </item>
+    
+    <item>
+      <title>2018地平线报告</title>
+      <link>http://edustack.github.io/2018/11/04/2018-nmc-horizon-report/</link>
+      <pubDate>Sun, 04 Nov 2018 04:12:38 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/11/04/2018-nmc-horizon-report/</guid>
+      <description>新媒体联盟去年宣告破产，公众担心地平线报告成为绝唱。不过今年2月，NMC被EDUCAUSE收购，EDUCAUSE由此接下了地平线报告的大旗。</description>
+    </item>
+    
+    <item>
+      <title>哈佛大学的CS50VR</title>
+      <link>http://edustack.github.io/2017/04/11/%E5%93%88%E4%BD%9B%E5%A4%A7%E5%AD%A6%E7%9A%84cs50vr/</link>
+      <pubDate>Tue, 11 Apr 2017 13:45:05 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2017/04/11/%E5%93%88%E4%BD%9B%E5%A4%A7%E5%AD%A6%E7%9A%84cs50vr/</guid>
+      <description>https://www.class-central.com/report/harvard-cs50-virtual-reality/ https://www.class-central.com/report/harvard-cs50-vr/ 哈佛大学的著名在线课程CS50是class-central选出的Top 50 MOOCs of All TIme，超过100万人在edX上选修了这门课程。在Vir</description>
+    </item>
+    
+  </channel>
+</rss>

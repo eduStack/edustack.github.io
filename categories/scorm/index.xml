@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SCORM on eduStack.org</title>
+    <link>http://edustack.github.io/categories/scorm/</link>
+    <description>Recent content in SCORM on eduStack.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 09 Mar 2017 02:30:02 +0000</lastBuildDate><atom:link href="http://edustack.github.io/categories/scorm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Open edX与SCROM</title>
+      <link>http://edustack.github.io/2017/03/09/open-edx%E4%B8%8Escrom/</link>
+      <pubDate>Thu, 09 Mar 2017 02:30:02 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2017/03/09/open-edx%E4%B8%8Escrom/</guid>
+      <description>SCORM (Shareable Content Object Reference Model)，译做共享内容对象参考模型或共享组件引用模式，是目前最为人所熟悉及最被广泛采用的一套线上数字学习(Web-Base e-</description>
+    </item>
+    
+    <item>
+      <title>维基百科的SCORM(Sharable Content Object Reference Model)介绍</title>
+      <link>http://edustack.github.io/2015/12/05/%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91%E7%9A%84scormsharable-content-object-reference-model%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Sat, 05 Dec 2015 01:23:02 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2015/12/05/%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91%E7%9A%84scormsharable-content-object-reference-model%E4%BB%8B%E7%BB%8D/</guid>
+      <description>原文链接： https://en.wikipedia.org/wiki/Sharable_Content_Object_Reference_Model Sharable Content Object Reference Model (SCORM) 是一项基于web的电子教育技术(也称为e-learning)的标准和规范。它定义了客户端之间的通信内容和主机系统。它</description>
+    </item>
+    
+  </channel>
+</rss>

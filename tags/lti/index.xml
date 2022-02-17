@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LTI on eduStack.org</title>
+    <link>http://edustack.github.io/tags/lti/</link>
+    <description>Recent content in LTI on eduStack.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 17 Oct 2014 15:23:44 +0000</lastBuildDate><atom:link href="http://edustack.github.io/tags/lti/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LTI与edu-apps.org</title>
+      <link>http://edustack.github.io/2014/10/17/lti%E4%B8%8Eedu-apps-org/</link>
+      <pubDate>Fri, 17 Oct 2014 15:23:44 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2014/10/17/lti%E4%B8%8Eedu-apps-org/</guid>
+      <description>LTI全文是Learning Tools Interoperability®。 IMS开发了LTI标准来让远程的工具和内容被嵌入LMS学习管理系统中。基本</description>
+    </item>
+    
+  </channel>
+</rss>

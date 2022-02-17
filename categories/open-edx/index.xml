@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open edX on eduStack.org</title>
+    <link>http://edustack.github.io/categories/open-edx/</link>
+    <description>Recent content in Open edX on eduStack.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 11 Apr 2019 12:58:35 +0000</lastBuildDate><atom:link href="http://edustack.github.io/categories/open-edx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>openfun自托管的开源视频提供商Marsha</title>
+      <link>http://edustack.github.io/2019/04/11/openfu-marsha/</link>
+      <pubDate>Thu, 11 Apr 2019 12:58:35 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/04/11/openfu-marsha/</guid>
+      <description>https://github.com/openfun/marsha Marsha是一个自托管的开源视频提供，Marsha是一个视频管理和回放服务。它旨在独立运作：就像拥有自己的YouTube一样。 教师和组织</description>
+    </item>
+    
+    <item>
+      <title>Open edX语言词频统计</title>
+      <link>http://edustack.github.io/2018/12/29/open-edx-wordcount/</link>
+      <pubDate>Sat, 29 Dec 2018 14:42:23 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/12/29/open-edx-wordcount/</guid>
+      <description>在翻译Open edX语言时，经常遇到翻译不一致的问题。由于transifex是众包翻译，不同的人对同一词语的理解存在差异。例如“Learne</description>
+    </item>
+    
+    <item>
+      <title>阿里云Open edX H2压力测试</title>
+      <link>http://edustack.github.io/2018/11/01/aliyun-open-edx-h2-abtest/</link>
+      <pubDate>Thu, 01 Nov 2018 04:12:29 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/11/01/aliyun-open-edx-h2-abtest/</guid>
+      <description>配置 100并发，总请求个数1000个，测试的目标URL是课程courseware页面： 低配测试结果2C8G Courseware DashBoard 高配测试结果8C32G Courseware DashBoard</description>
+    </item>
+    
+    <item>
+      <title>Open edX周边解决方案</title>
+      <link>http://edustack.github.io/2018/10/08/open-edx-service/</link>
+      <pubDate>Mon, 08 Oct 2018 01:54:56 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/10/08/open-edx-service/</guid>
+      <description>前端 https://www.edunext.co/articles/openedx-cms-integration/ https://github.com/openfun/richie 存储 https://www.minio.io/ 视频 https://github.com/ossrs/srs</description>
+    </item>
+    
+    <item>
+      <title>Tao 开源的Open edX的Ecommerce配置及本地支付接口</title>
+      <link>http://edustack.github.io/2018/10/07/open-edx-ecommerce-alipay/</link>
+      <pubDate>Sun, 07 Oct 2018 04:03:09 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/10/07/open-edx-ecommerce-alipay/</guid>
+      <description>&lt;p&gt;本文内容由@淘 老师开发及开源，请移步&lt;a href=&#34;http://www.heyuantao.cn&#34;&gt;http://www.heyuantao.cn&lt;/a&gt;看全部内容。&lt;/p&gt;
+&lt;p&gt;以下内容为转载&lt;/p&gt;
+&lt;h1 id=&#34;关于openedx的ecommerce的配置&#34;&gt;关于OpenEdx的Ecommerce的配置&lt;/h1&gt;
+&lt;p&gt;OpenEdx项目中的ecommerce和edx-platform是两个独立的组件，两个组建部署后通过Web API接口相互调用和访问数据。ecommerce的目的是为了取代edx-platform中自带的购物车，这样使得课程购买和课程播放管理相互独立，程序更容易维护。&lt;/p&gt;
+&lt;p&gt;OpenEdx的官网有如何安装ecommerce组件的介绍，单这个仅仅适用于开发版本。在安装OpenEdx的时候ecommerce一般会直接安装上，但仍需要配置。所涉及到的配置文件有edx-platform的lms.env.json、lms.auth.json和ecommerce的ecommerce.yml（/edx/etc/ecommerce.yml）文件的配置。主体过就是配置两个组件的oauth2功能。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Open edX Hawthorn.1 发布</title>
+      <link>http://edustack.github.io/2018/08/12/open-edx-hawthorn-1/</link>
+      <pubDate>Sat, 11 Aug 2018 16:58:52 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/08/12/open-edx-hawthorn-1/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://open.edx.org/blog/all-about-hawthorn&#34;&gt;https://open.edx.org/blog/all-about-hawthorn&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hawthorn中文为山楂树，是Open edX的第8个版本。Edx于8月4日发布了第一个H版本。可以通过 &lt;a href=&#34;https://github.com/edx/edx-platform/tree/open-release/hawthorn.1&#34;&gt;https://github.com/edx/edx-platform/tree/open-release/hawthorn.1&lt;/a&gt;访问这个版本。其他组件也有这个版本号。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
+    <item>
+      <title>Jupyter与Open edX与技术教育</title>
+      <link>http://edustack.github.io/2018/07/31/jupyter%E4%B8%8Eopen-edx%E4%B8%8E%E6%8A%80%E6%9C%AF%E6%95%99%E8%82%B2/</link>
+      <pubDate>Tue, 31 Jul 2018 15:32:34 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/07/31/jupyter%E4%B8%8Eopen-edx%E4%B8%8E%E6%8A%80%E6%9C%AF%E6%95%99%E8%82%B2/</guid>
+      <description>https://jupyter.org/ https://openedx2018.sched.com/event/EUAl/jupyter-based-courses-in-open-edx-authoring-and-grading-with-notebooks https://openedx.atlassian.net/wiki/spaces/COMM/pages/756384075/Open+edX+2018+Presentations https://data.berkeley.edu/news/coursefuture 对外经济贸易大学金融学院使用Jupyter来进行金融方面的数据研究。他们认为： Jupyter作为一类开源的集成编程环境的系统，特别适</description>
+    </item>
+    
+    <item>
+      <title>Beijing Open edX Meetup 2018#1</title>
+      <link>http://edustack.github.io/2018/07/30/beijing-open-edx-meetup-20181/</link>
+      <pubDate>Mon, 30 Jul 2018 14:44:03 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/07/30/beijing-open-edx-meetup-20181/</guid>
+      <description>欢迎参加 Beijing Open edX 2018 第一次活动。本活动适合Open edX的开发者、使用者、研究者，以及对在线教育技术感兴趣的朋友们。 Welcome to the first event of Beijing Open edX 2018. This event is suitable</description>
+    </item>
+    
+    <item>
+      <title>Open edX Con2018摘要：Learner Engagement: Mix it up!</title>
+      <link>http://edustack.github.io/2018/07/29/open-edx-con2018%E6%91%98%E8%A6%81%EF%BC%9Alearner-engagement-mix-it-up/</link>
+      <pubDate>Sun, 29 Jul 2018 15:14:33 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/07/29/open-edx-con2018%E6%91%98%E8%A6%81%EF%BC%9Alearner-engagement-mix-it-up/</guid>
+      <description>https://openedx2018.sched.com/event/DxVS/learner-engagement-mix-it-up 这个报告讲了如何通过积极学习和同伴学习机会来提高学习者在MOOC中的参与度，从而提高学习质量。</description>
+    </item>
+    
+    <item>
+      <title>Open edX 2018年会摘要索引</title>
+      <link>http://edustack.github.io/2018/07/22/open-edx-con-2018-list/</link>
+      <pubDate>Sun, 22 Jul 2018 13:05:36 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/07/22/open-edx-con-2018-list/</guid>
+      <description>来自@种瓜 企业服务解读 https://blog.just4fun.site/edx-enterprise.html Docker化发展 https://blog.just4fun.site/open-edx-docker-2018.html https://www.edustack.org/2018/07/13/open-edx-con2018-getting-started-with-open-edx-development/</description>
+    </item>
+    
+    <item>
+      <title>Open edX版本升级中的数据迁移</title>
+      <link>http://edustack.github.io/2018/07/17/open-edx-migration-f2g/</link>
+      <pubDate>Tue, 17 Jul 2018 07:31:05 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/07/17/open-edx-migration-f2g/</guid>
+      <description>Open edX每年发布两个大版本，版本之间的直接升级困难，几乎等于重装。因此如果要把原有的实例升级到新版本，可行的方式是： 1.在新的服务器上安装新</description>
+    </item>
+    
+    <item>
+      <title>Open edX Con2018摘要：Getting Started with Open edX Development</title>
+      <link>http://edustack.github.io/2018/07/13/open-edx-con2018-getting-started-with-open-edx-development/</link>
+      <pubDate>Fri, 13 Jul 2018 08:33:58 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/07/13/open-edx-con2018-getting-started-with-open-edx-development/</guid>
+      <description>首先广告一下@种瓜 写的企业服务解读 https://blog.just4fun.site/edx-enterprise.html 本文将简单介绍这个演讲 https://openedx2018.sched.com/event/EUAV/</description>
+    </item>
+    
+    <item>
+      <title>轻量级Open edX数据分析系统的设想</title>
+      <link>http://edustack.github.io/2018/01/22/open-edx-light-weight-anylytic-system/</link>
+      <pubDate>Mon, 22 Jan 2018 06:41:20 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/01/22/open-edx-light-weight-anylytic-system/</guid>
+      <description>Open edX包含一个数据分析系统Insights。它包含三个组件： Pipeline，用于将LMS的log文件归集到Hadoop进行计算，并把计算</description>
+    </item>
+    
+    <item>
+      <title>IBL的课程制作理念与Light Board</title>
+      <link>http://edustack.github.io/2017/08/16/ibl%E7%9A%84%E8%AF%BE%E7%A8%8B%E5%88%B6%E4%BD%9C%E7%90%86%E5%BF%B5%E4%B8%8Elight-board/</link>
+      <pubDate>Wed, 16 Aug 2017 02:20:40 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2017/08/16/ibl%E7%9A%84%E8%AF%BE%E7%A8%8B%E5%88%B6%E4%BD%9C%E7%90%86%E5%BF%B5%E4%B8%8Elight-board/</guid>
+      <description>来自纽约的公司IBL在今年Open edX年会上介绍了他们如何制作课程视频，中间提到了几个很有用的理念： 后期制作是非常费时费力的，所以IBL的</description>
+    </item>
+    
+    <item>
+      <title>Open edX2017马德里年会回顾摘要</title>
+      <link>http://edustack.github.io/2017/06/07/open-edx2017-review/</link>
+      <pubDate>Wed, 07 Jun 2017 07:51:44 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2017/06/07/open-edx2017-review/</guid>
+      <description>Open edX 2017年会于2017年5月24日-25日在西班牙马德里卡洛斯三世大学举办，来自27个国家的240多位社区用户参加了会议。 Anant Agarwa</description>
+    </item>
+    
+    <item>
+      <title>Open edX与SCROM</title>
+      <link>http://edustack.github.io/2017/03/09/open-edx%E4%B8%8Escrom/</link>
+      <pubDate>Thu, 09 Mar 2017 02:30:02 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2017/03/09/open-edx%E4%B8%8Escrom/</guid>
+      <description>SCORM (Shareable Content Object Reference Model)，译做共享内容对象参考模型或共享组件引用模式，是目前最为人所熟悉及最被广泛采用的一套线上数字学习(Web-Base e-</description>
+    </item>
+    
+    <item>
+      <title>Open edX Ficus版发布</title>
+      <link>http://edustack.github.io/2017/03/07/open-edx-ficus%E7%89%88%E5%8F%91%E5%B8%83/</link>
+      <pubDate>Tue, 07 Mar 2017 00:54:48 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2017/03/07/open-edx-ficus%E7%89%88%E5%8F%91%E5%B8%83/</guid>
+      <description>https://open.edx.org/blog/ficus-winter-20162017-release-open-edx-here 第6个Open edX版本Ficus(榕树)刚刚发布，感谢为这个版本作出贡献的人-特别是来自 EDUlib的Pierre Mailhot，他持续</description>
+    </item>
+    
+    <item>
+      <title>2017年Open edX年会开始注册</title>
+      <link>http://edustack.github.io/2017/02/06/2017open-edx-con/</link>
+      <pubDate>Mon, 06 Feb 2017 14:30:29 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2017/02/06/2017open-edx-con/</guid>
+      <description>https://open.edx.org/blog/announcing-2017-open-edx-conference-registration-and-cfp-are-open 今年年会将于2017.5.24-25举办，地点在西班牙马德里Universidad Carlos III Madrid。 卡三–马德里卡洛斯三世大学是一所年轻的</description>
+    </item>
+    
+    <item>
+      <title>Open edX Eucalyptus教育定制版</title>
+      <link>http://edustack.github.io/2016/11/24/open-edx-eucalyptus-eduation-edition/</link>
+      <pubDate>Thu, 24 Nov 2016 04:40:03 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2016/11/24/open-edx-eucalyptus-eduation-edition/</guid>
+      <description>教育版是我们为了方便教育机构研究和测试推出的版本，在原生edX基础上进行了配置和开发。本版本基于2016年9月发布的Open edX发行版Eu</description>
+    </item>
+    
+    <item>
+      <title>Open edX Eucalyptus镜像、公有云及教育版开始提供下载</title>
+      <link>http://edustack.github.io/2016/11/13/open-edx-eucalyptus-download/</link>
+      <pubDate>Sun, 13 Nov 2016 14:50:50 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2016/11/13/open-edx-eucalyptus-download/</guid>
+      <description>版本为Eucalyptus.2 OVA镜像 http://edustack.org/manual/edx/ova-download/ 公有云申请 http://edustack.org/manual/edx/cloudstack/ 教育版申请 http://edustack.org/edx-for-edu/</description>
+    </item>
+    
+  </channel>
+</rss>

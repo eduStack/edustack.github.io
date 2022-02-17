@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xblock on eduStack.org</title>
+    <link>http://edustack.github.io/categories/xblock/</link>
+    <description>Recent content in Xblock on eduStack.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 20 Mar 2016 00:44:54 +0000</lastBuildDate><atom:link href="http://edustack.github.io/categories/xblock/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>开源Xblock视频播放器：Uniplay和VideoJS-Pro</title>
+      <link>http://edustack.github.io/2016/03/20/uniplay-and-videojs-pro/</link>
+      <pubDate>Sun, 20 Mar 2016 00:44:54 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2016/03/20/uniplay-and-videojs-pro/</guid>
+      <description>背景 什么是Xblock在线教育，如何选择一个合适的视频云平台？视频播放器是扩展Open edX中的一个常见需求。原生播放器也提供了不错的功能，</description>
+    </item>
+    
+  </channel>
+</rss>

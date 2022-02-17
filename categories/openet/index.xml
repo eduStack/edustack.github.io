@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenET on eduStack.org</title>
+    <link>http://edustack.github.io/categories/openet/</link>
+    <description>Recent content in OpenET on eduStack.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 30 Sep 2018 03:05:11 +0000</lastBuildDate><atom:link href="http://edustack.github.io/categories/openet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>基于Nginx实现RTMP/HLS视频服务器</title>
+      <link>http://edustack.github.io/2018/09/30/nginx-rtmp-hls-vod/</link>
+      <pubDate>Sun, 30 Sep 2018 03:05:11 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/09/30/nginx-rtmp-hls-vod/</guid>
+      <description>首先名词解释 RTMP 实时消息协议（英语：Real-Time Messaging Protocol，缩写RTMP）也称实时消息传输协议，是最初由Macromedia为通</description>
+    </item>
+    
+    <item>
+      <title>单点登录系统CAS5.0.x配置与部署</title>
+      <link>http://edustack.github.io/2018/09/25/cas5-0-x-install-and-config/</link>
+      <pubDate>Tue, 25 Sep 2018 07:59:49 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/09/25/cas5-0-x-install-and-config/</guid>
+      <description>&lt;p&gt;本文由@iflab-FZ贡献&lt;/p&gt;
+&lt;p&gt;cas5.0版本采用gradle-over-lay的形式部署。外加界面的简单定制，验证码，cas-management的配置。&lt;/p&gt;
+&lt;p&gt;由于是凭着之前配置的印象来写文章，难免会有疏漏，欢迎指正。&lt;/p&gt;
+&lt;p&gt;首先简介CAS。cas是耶鲁大学研发的一套单点登录系统，为多个应用进行统一的用户认证提供了很好地解决方案。它在https协议下，以安全的方式对用户的合法性进行认证，同时与需要用户认证的各应用进行交互，使多个应用共用一套程序进行统一认证。&lt;/p&gt;
+&lt;p&gt;以下是部署cas可能会用到的网站：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://apereo.github.io/cas/5.1.x/index.html&#34;&gt;https://apereo.github.io/cas/5.1.x/index.html&lt;/a&gt;&lt;br&gt;
+Github：https://github.com/apereo&lt;br&gt;
+Maillist：https://www.mail-archive.com/cas-user@apereo.org/&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>单点登录系统CAS的委托(Delegation)认证配置</title>
+      <link>http://edustack.github.io/2018/09/25/cas-delegate-authentication/</link>
+      <pubDate>Tue, 25 Sep 2018 07:19:47 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/09/25/cas-delegate-authentication/</guid>
+      <description>&lt;p&gt;本文由@iflab-FZ贡献&lt;/p&gt;
+&lt;p&gt;关于如何在一台服务器上部署中央认证系统(CAS)的方法在&lt;a href=&#34;https://www.edustack.org/2018/09/25/cas5-0-x-install-and-config/&#34;&gt;之前的文章&lt;/a&gt;中已经介绍过了&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;*以下方法与配置依旧基于CAS5.0.x，不同版本可能配置方式与属性稍有差异&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;由于&lt;strong&gt;之前&lt;/strong&gt;学校的新生数据同步较慢，需要一个学期左右的时间才能同步到CAS的数据库，所以这就造成了新生无法在入学之后及时使用部分服务和应用，例如使用edx进行在线学习等等。&lt;/p&gt;
+&lt;p&gt;因为之前部署的CAS使用的是gradle-overlay方式，所有的配置都是通过修改配置文件来完成的，为了避免直接修改线上稳定运行的CAS的配置文件，想到还有另一台服务器安装了新的测试版的CAS，所以决定让测试版的服务器连接自己建立的数据库，作为现行CAS的委托认证服务器对新生的账号进行认证。&lt;/p&gt;
+&lt;p&gt;具体参考了这篇 &lt;a href=&#34;https://apereo.github.io/cas/5.0.x/integration/Delegate-Authentication.html&#34;&gt;说明文档&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenET系列之一：CAS安装与配置</title>
+      <link>http://edustack.github.io/2018/03/10/openet-1-cas/</link>
+      <pubDate>Sat, 10 Mar 2018 12:27:26 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2018/03/10/openet-1-cas/</guid>
+      <description>一、准备工作 CAS的Github：https://github.com/apereo CAS官方网站：https://apereo.githu</description>
+    </item>
+    
+  </channel>
+</rss>

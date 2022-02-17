@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>eduStack.org</title>
+    <link>http://edustack.github.io/</link>
+    <description>Recent content on eduStack.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 02 Jun 2020 01:30:43 +0000</lastBuildDate>
+    
+        <atom:link href="http://edustack.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>http://edustack.github.io/about/</link>
+      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
+      
+      <guid>http://edustack.github.io/about/</guid>
+      
+        <description>&lt;p&gt;Hugo is a static site engine written in Go.&lt;/p&gt;
+&lt;p&gt;It makes use of a variety of open source projects including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cobra&#34;&gt;Cobra&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/viper&#34;&gt;Viper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/jWalterWeatherman&#34;&gt;J Walter Weatherman&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cast&#34;&gt;Cast&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>TAO（TestAssistépar Ordinateur）</title>
+      <link>http://edustack.github.io/2020/06/02/tao%EF%BC%88testassistepar-ordinateur%EF%BC%89/</link>
+      <pubDate>Tue, 02 Jun 2020 01:30:43 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2020/06/02/tao%EF%BC%88testassistepar-ordinateur%EF%BC%89/</guid>
+      
+        <description>&lt;p&gt;&lt;strong&gt;TAO（TestAssistépar Ordinateur）&lt;/strong&gt; （&lt;a href=&#34;https://www.taotesting.com/&#34;&gt;https://www.taotesting.com/&lt;/a&gt;）是Henri Tudor研究中心（现称为卢森堡科学技术学院（LIST）和卢森堡大学）之间的联合项目，于2002年底启动。 &lt;/p&gt;
+&lt;p&gt;该团队开发了高度灵活且可自定义的基于计算机的评估（CBA）平台，该平台将100％基于网络，并且可以免费提供给全球教育界。最终结果是TAO平台，该平台的首个原型于2004年发布。&lt;/p&gt;
+&lt;p&gt;2013年，在国际上广泛采用TAO平台之后，LIST与Cito International合作建立了&lt;strong&gt;开放评估技术（OAT）&lt;/strong&gt;。在OAT开源哲学的支持下，并致力于教育的共同利益，TAO已发展成 为领先的教育和就业开源评估解决方案，其用户来自194个国家和30种语言。迄今为止，TAO已在全球交付了超过3000万个测试。&lt;/p&gt;
+&lt;p&gt;TAO是一个开放源代码电子测试平台，可让您以任何语言或主题在线构建，交付和共享创新且引人入胜的评估。&lt;/p&gt;
+&lt;p&gt;TAO（法语为“基于计算机的测试”或Ordinateur的TestAssistépar Ordinateur）由卢森堡大学创建，现在主要由开放评估技术（OAT）进行维护。&lt;/p&gt;
+&lt;p&gt;TAO是市场上第一个商业级的开源评估开发软件。它是基于QTI和LTI标准的，并且在防审计透明性下运行。开发人员可以出于自己的测试创建或管理目的访问源代码，从而使用户可以进行广泛的潜在自定义。拥有测试设计的完整所有权从未如此简单。不受专有测试的限制和高昂费用的影响，所有评估都可以轻松显示出教育机构的签名详细信息。此外，TAO与几乎所有您喜欢的商业附件完全兼容。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>一些教育相关机构</title>
+      <link>http://edustack.github.io/2020/02/12/%E4%B8%80%E4%BA%9B%E6%95%99%E8%82%B2%E7%9B%B8%E5%85%B3%E6%9C%BA%E6%9E%84/</link>
+      <pubDate>Wed, 12 Feb 2020 08:19:19 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2020/02/12/%E4%B8%80%E4%BA%9B%E6%95%99%E8%82%B2%E7%9B%B8%E5%85%B3%E6%9C%BA%E6%9E%84/</guid>
+      
+        <description>&lt;p&gt;Course Hero&lt;br&gt;
+Espark Learning&lt;br&gt;
+Metaverse&lt;br&gt;
+Zspace&lt;br&gt;
+Peergrade&lt;br&gt;
+OpenStax&lt;br&gt;
+UNC School of Education&lt;br&gt;
+Kiddom&lt;br&gt;
+Practice Labs&lt;br&gt;
+Salesforce&lt;br&gt;
+Massmutual Foundation&lt;br&gt;
+Dadaabc&lt;br&gt;
+the McGraw Hill Prize in Education&lt;br&gt;
+Screencast-o-matic&lt;br&gt;
+Newsela,&lt;br&gt;
+Learnlaunch,&lt;br&gt;
+D2L,&lt;br&gt;
+Empatico,&lt;br&gt;
+Classlink,&lt;br&gt;
+Classcraft,&lt;br&gt;
+Digital Promise,&lt;br&gt;
+First,&lt;br&gt;
+Covitality,&lt;br&gt;
+Intuit Education,&lt;br&gt;
+Magicears,&lt;br&gt;
+Rethink Ed,&lt;br&gt;
+Really Good Stuff,&lt;br&gt;
+Woot Math,&lt;br&gt;
+Edmentum,&lt;br&gt;
+Knowledgeworks,&lt;br&gt;
+the Chan Zuckerberg Initiative,&lt;br&gt;
+Reading Plus,&lt;br&gt;
+Amazon Web Services,&lt;br&gt;
+IMS Global Learning Consortium,&lt;br&gt;
+Oneder,&lt;br&gt;
+Microsoft,&lt;br&gt;
+Vivi,&lt;br&gt;
+Plagiarismcheck,&lt;br&gt;
+Google,&lt;br&gt;
+Gutenberg Technology,&lt;br&gt;
+Advanced and Measured Progress,&lt;br&gt;
+Achieve3000 Inc,&lt;br&gt;
+Kami,&lt;br&gt;
+Digitaled,&lt;br&gt;
+Discovery Education.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Wise2019&amp;HighTechHigh&amp;MicroBit</title>
+      <link>http://edustack.github.io/2019/11/21/wise2019hightechhigh/</link>
+      <pubDate>Thu, 21 Nov 2019 02:57:52 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/11/21/wise2019hightechhigh/</guid>
+      
+        <description>&lt;p&gt;11月20日，世界教育创新峰会（The World Innovation Summit for Education，简称WISE）在卡塔尔首都多哈举办。峰会宣布将其2019年度教育奖授予拉里·罗森斯托克（Larry Rosenstock），美国圣地亚哥公立特许学校网络——高科技高中（High Tech High，简称HTH）的创始校长兼首席执行官拉里·罗森斯托克先生。他所提出的创新学习模式，使得来自各种社会经济背景的学生有机会走向成功，对素质教育做出了极大贡献。&lt;br&gt;
+2019年WISE教育奖获奖项目为：家庭经济教育支持计划、联合世界学校—实现教育普及、Micro:bit教育基金会、快乐儿童项目、Arpan儿童人身安全教育项目和Akilah学院。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.wise-qatar.org/project/akilah-institute-foundation-rwanda/&#34;&gt;Akilah Institute&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.wise-qatar.org/project/micro-bit-educational-foundation-uk/&#34;&gt;Micro:bit Educational Foundation&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.wise-qatar.org/project/united-world-schools-teaching-unreached-uk/&#34;&gt;United World Schools: Teaching the Unreached&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.wise-qatar.org/project/personal-safety-educational-programme-arpan-india/&#34;&gt;Arpan’s Personal Safety Education Programme&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.wise-qatar.org/project/happy-child-program-ministry-citizenship-brazil/&#34;&gt;Programa Criança Feliz&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.wise-qatar.org/project/the-family-business-education-project-street-child-uk/&#34;&gt;Family Business for Education&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;入围项目&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wise-qatar.org/project/mymachine-global-foundation-belgium/&#34;&gt;MyMachine&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wise-qatar.org/project/stawisha-leadership-institute-dignitas-africa/&#34;&gt;Stawisha Leadership Institute&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wise-qatar.org/project/openclassrooms-france/&#34;&gt;OpenClassrooms&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wise-qatar.org/project/rebootkamp-jordan/&#34;&gt;ReBootKamp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wise-qatar.org/project/dost-education-delhi-san-francisco/&#34;&gt;Dost Education&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wise-qatar.org/project/peer-coaching-plan-adream-foundation-china/&#34;&gt;Peer Coaching Plan&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wise-qatar.org/project/moringa-school-africa/&#34;&gt;Moringa School&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wise-qatar.org/project/institut-de-lengagement-france/&#34;&gt;Institut de l’Engagement&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wise-qatar.org/project/careeraware-antarang-foundation-india/&#34;&gt;CareerAware&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Jupyter Notebook 资源索引</title>
+      <link>http://edustack.github.io/2019/07/28/jupyter-notebook-%E8%B5%84%E6%BA%90%E7%B4%A2%E5%BC%95/</link>
+      <pubDate>Sun, 28 Jul 2019 12:11:35 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/07/28/jupyter-notebook-%E8%B5%84%E6%BA%90%E7%B4%A2%E5%BC%95/</guid>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;https://awesomeopensource.com/project/markusschanta/awesome-jupyter&#34;&gt;https://awesomeopensource.com/project/markusschanta/awesome-jupyter&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://project-awesome.org/markusschanta/awesome-jupyter&#34;&gt;https://project-awesome.org/markusschanta/awesome-jupyter&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://asmcn.icopy.site/awesome/awesome-jupyter/&#34;&gt;https://asmcn.icopy.site/awesome/awesome-jupyter/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://gitlab.com/gen-r/jupyter-and-learning/&#34;&gt;https://gitlab.com/gen-r/jupyter-and-learning/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.codecademy.com/articles/how-to-use-jupyter-notebooks&#34;&gt;https://www.codecademy.com/articles/how-to-use-jupyter-notebooks&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://lorenabarba.com/news/jupyter-based-courses-in-open-edx-authoring-and-grading-with-notebooks/&#34;&gt;https://lorenabarba.com/news/jupyter-based-courses-in-open-edx-authoring-and-grading-with-notebooks/&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>人工智能教育资源</title>
+      <link>http://edustack.github.io/2019/06/16/aied/</link>
+      <pubDate>Sun, 16 Jun 2019 15:02:07 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/06/16/aied/</guid>
+      
+        <description>&lt;p&gt;研究机构&lt;br&gt;
+欧洲学习和智能系统研究机构（European Laboratory for Learning and Intelligent Systems，ELLIS）&lt;a href=&#34;https://ellis.eu/&#34;&gt;https://ellis.eu/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://ai-4-all.org/&#34;&gt;http://ai-4-all.org/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://ai100.stanford.edu/&#34;&gt;https://ai100.stanford.edu/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://hai.stanford.edu/&#34;&gt;https://hai.stanford.edu&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://ai4k12.org/&#34;&gt;AI4K12.org&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://cognimates.me/home/&#34;&gt;http://cognimates.me/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;教程&lt;br&gt;
+&lt;a href=&#34;https://vas3k.com/blog/machine_learning/&#34;&gt;https://vas3k.com/blog/machine_learning/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://ahistoryofai.com/&#34;&gt;https://ahistoryofai.com/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://github.com/microsoft/ai-edu/&#34;&gt;https://github.com/microsoft/ai-edu/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://developers.google.com/machine-learning/&#34;&gt;https://developers.google.com/machine-learning/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;课程&lt;br&gt;
+&lt;a href=&#34;https://www.pyimagesearch.com/2019/04/08/openvino-opencv-and-movidius-ncs-on-the-raspberry-pi/&#34;&gt;https://www.pyimagesearch.com/2019/04/08/openvino-opencv-and-movidius-ncs-on-the-raspberry-pi/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.pyimagesearch.com/2019/04/08/openvino-opencv-and-movidius-ncs-on-the-raspberry-pi/&#34;&gt;https://www.pyimagesearch.com/2019/04/08/openvino-opencv-and-movidius-ncs-on-the-raspberry-pi/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.pyimagesearch.com/2019/04/05/table-of-contents-raspberry-pi-for-computer-vision/&#34;&gt;https://www.pyimagesearch.com/2019/04/05/table-of-contents-raspberry-pi-for-computer-vision/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://learn.adafruit.com/&#34;&gt;https://learn.adafruit.com/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://projects.raspberrypi.org/en/&#34;&gt;https://projects.raspberrypi.org/en/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://playground.tensorflow.org/&#34;&gt;http://playground.tensorflow.org&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.readyai.org/quick-access/6-ai-applications/&#34;&gt;https://www.readyai.org/quick-access/6-ai-applications/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://developers.google.com/machine-learning/crash-course/&#34;&gt;https://developers.google.com/machine-learning/crash-course/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://projects.raspberrypi.org/zh-CN/projects&#34;&gt;https://projects.raspberrypi.org/zh-CN/projects&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>WebAnno 一个基于web的分布式注释系统</title>
+      <link>http://edustack.github.io/2019/05/11/webanno-instroduce/</link>
+      <pubDate>Sat, 11 May 2019 12:58:18 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/05/11/webanno-instroduce/</guid>
+      
+        <description>&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;
+&lt;p&gt;WebAnno 是什么？&lt;/p&gt;
+&lt;p&gt;WebAnno是一个基于Web的通用注释工具，适用于各种语言注释，包括各种形态，句法和语义注释。另外，可以通过定义自定义注释层，使得WebAnno适用于非语言注释任务。&lt;/p&gt;
+&lt;h2 id=&#34;webanno-的特点&#34;&gt;WebAnno 的特点&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;WebAnno是一个完全基于Web的工具，其入口门槛低于其他注释工具。注释器和创建注释项目的管理者不需要下载任何软件，只需要电脑安装一个浏览器就足够了。当WebAnno在Web服务器上安装后，便可以通过浏览器访问所有设置。&lt;/p&gt;
+&lt;h2 id=&#34;webanno-的生态&#34;&gt;WebAnno 的生态&lt;/h2&gt;
+&lt;p&gt;目前 WebAnno在Apache License v2.0下作为开源提供。 其最新的发布版本为 3.5.5（2019-03-13） 。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;WebAnno 1 的开发得到了 &lt;a href=&#34;http://de.clarin.eu/index.php/de/fachspezifische-arbeitsgruppen/f-ag-7-computerlinguistik&#34;&gt;CLARIN F-AG7 KP1&lt;/a&gt;的支持。&lt;/li&gt;
+&lt;li&gt;在WebAnno 2中支持自定义图层，新的WebAnno文件格式以及对自动化的支持。此外，我们集成了允许CLARIN将WebAnno作为基础结构服务运行的功能。&lt;/li&gt;
+&lt;li&gt;在WebAnno 3中，则专注于改进对语义注释的支持，特别是语义角色标注。 该版本的开发得到了 &lt;a href=&#34;http://de.clarin.eu/index.php/de/fachspezifische-arbeitsgruppen/f-ag-7-computerlinguistik&#34;&gt;CLARIN F-AG7 KP3&lt;/a&gt; 的支持。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;其他资源：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;WebAnno的应用案例&lt;a href=&#34;https://webanno.github.io/webanno/use-case-gallery/&#34;&gt;https://webanno.github.io/webanno/use-case-gallery/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;WebAnno 的文档：&lt;br&gt;
+&lt;a href=&#34;https://webanno.github.io/webanno/documentation/&#34;&gt;https://webanno.github.io/webanno/documentation/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;WebAnno 的github地址：&lt;br&gt;
+&lt;a href=&#34;https://github.com/webanno/webanno&#34;&gt;https://github.com/webanno/webanno&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>在线学习工具（Riff）简介</title>
+      <link>http://edustack.github.io/2019/04/27/learning-tool-online-riff/</link>
+      <pubDate>Sat, 27 Apr 2019 05:20:01 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/04/27/learning-tool-online-riff/</guid>
+      
+        <description>&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;为什么选择riff&#34;&gt;为什么选择Riff？&lt;/h2&gt;
+&lt;p&gt;Riff Learning是一个基于云的视频客户端和数据洞察Web应用程序，具有各种集成选项。该平台会衡量会话动态，并在你使用视频互动期间和之后提供反馈。每位参与者都会收到客观数据，以帮助他们了解他们的人际关系有效性以及他们与他人合作的能力。Riff的测量可以预测共享任务的参与度，满意度和绩效。&lt;/p&gt;
+&lt;h2 id=&#34;平台的主要功能&#34;&gt;平台的主要功能&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;仪表化视频聊天&lt;/strong&gt; – 平台有专有的WebRTC视频聊天应用程序来测量你的谈话方式，而不是您所说的内容。该平台&lt;strong&gt;从不记录对话的内容&lt;/strong&gt;，而是使用参与者的声乐活动和面部 – 手势模式来确定人们何时在说话，他们是否同意，以及他们的参与程度如何（便于进行数据分析和建模）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实时反馈&lt;/strong&gt; – 在视频聊天过程中，你将会看到一个名为“会议中介”的可视化。该调解员会在整个会议期间为您提供有关会话优势的反馈。它使用我们的AI驱动的对话模型来跟踪轮流，这是会议中发生的协作程度的关键指标。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;历史和分析&lt;/strong&gt; – 会议结束后，您将看到有关您如何与他人互动的更多见解，并可以访问所有视频聊天的完整历史记录。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Riff 学习方式与传统方式的比较&lt;/p&gt;
+&lt;p&gt;典型的学习方式可能是以以下几种形式来开展的：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;长时间的讲座&lt;/li&gt;
+&lt;li&gt;消极的听讲（单方向）&lt;/li&gt;
+&lt;li&gt;只是教师传授知识学生接受知识&lt;/li&gt;
+&lt;li&gt;长时间的看视频和进行阅读&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这样的方式对于学生的学习来说，都不会有很好的效果。而 &lt;code&gt;Riff&lt;/code&gt;所提供和倡导的学习方式则不同。Riff 提出学习者可以通过视频在线上进行协作学习，并且在学习的过程中能够给予实时的反馈，这样双向的学习方法被证明有很多优点的，自然也就胜过了很多传统方法。&lt;/p&gt;
+&lt;h3 id=&#34;与open-edx集成&#34;&gt;与open edX集成&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;由于现在open edX的LTI客户端的XBlock时可扩展的，所以可以直接进行fork和安装。&lt;/li&gt;
+&lt;li&gt;Xblock现在允许您编写“参数处理器”，这样就可以通过修改Xblock本身来传递额外的LTI参数。&lt;/li&gt;
+&lt;li&gt;github地址：&lt;a href=&#34;https://github.com/appsembler/tahoe-lti&#34;&gt;https://github.com/appsembler/tahoe-lti&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Riff官网：&lt;a href=&#34;https://www.rifflearning.com/&#34;&gt;https://www.rifflearning.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;open edX峰会PPT：&lt;a href=&#34;https://static.sched.com/hosted_files/openedx2019/41/High%20Performance%20Online%20Learning%20March%202019.pdf&#34;&gt;https://static.sched.com/hosted_files/openedx2019/41/High%20Performance%20Online%20Learning%20March%202019.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>What Works Clearinghouse的实践指南</title>
+      <link>http://edustack.github.io/2019/04/22/what-works-clearinghouse%E7%9A%84%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Mon, 22 Apr 2019 14:18:00 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/04/22/what-works-clearinghouse%E7%9A%84%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97/</guid>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;https://ies.ed.gov/ncee/wwc/&#34;&gt;https://ies.ed.gov/ncee/wwc/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;教育科学研究所（IES）是美国教育部的统计，研究和评估部门。 IES是独立的，无党派的。 IES的使命是为教育实践和政策提供科学依据，并以教育者，家长，政策制定者，研究人员和公众有用和易于获取的格式分享这些信息。&lt;/p&gt;
+&lt;p&gt;What Works Clearinghouse（WWC）回顾了有关教育中不同计划，产品，实践和政策的现有研究。 WWC的目标是为教育工作者提供他们做出基于证据的决策所需的信息。WWC专注于高质量研究的结果，回答“什么在教育中起作用？”这个问题。&lt;/p&gt;
+&lt;p&gt;WWC发布了一系列的&lt;a href=&#34;https://ies.ed.gov/ncee/wwc/PracticeGuides&#34;&gt;实践指南&lt;/a&gt;。实践指南是一本出版物，为教育工作者提出建议，以应对课堂和学校的挑战。 它们基于对研究的评论，从业者的经验以及国家认可专家小组的专家意见。这些指南覆盖的范围很广，有对应大学和中学，也有对应学科学习和管理，还有针对女生学习的鼓励。&lt;/p&gt;
+&lt;p&gt;提高4至8年级的数学问题解决能力发行日期：2018年10月*修订  &lt;/p&gt;
+&lt;p&gt;防止中学辍学发行日期：2017年9月  &lt;/p&gt;
+&lt;p&gt;高等院校发展教育的策略 – 大学管理者，顾问和教师的实践指南发行日期：2016年11月 &lt;/p&gt;
+&lt;p&gt;中学生有效写作教学发行日期：2016年11月  &lt;/p&gt;
+&lt;p&gt;从幼儿园到三年级，支持阅读理解的基础技能发行日期：2016年7月*修订  &lt;/p&gt;
+&lt;p&gt;提高中学生代数知识的教学策略发行日期：2019年1月*修订 &lt;/p&gt;
+&lt;p&gt;为中小学英语学习者教授学术内容和文化素养发行日期：2014年4月  &lt;/p&gt;
+&lt;p&gt;为幼儿教授数学发行日期：2013年11月  &lt;/p&gt;
+&lt;p&gt;教小学生成为有效的作家发行日期：2018年10月*修订 &lt;/p&gt;
+&lt;p&gt;从幼儿园到八年级开展有效的分数教学发行日期：2010年9月  &lt;/p&gt;
+&lt;p&gt;提高幼儿园三年级阅读理解能力发行日期：2010年9月  &lt;/p&gt;
+&lt;p&gt;利用学生成绩数据支持教学决策发布日期：2009年9月 &lt;/p&gt;
+&lt;p&gt;帮助学生走上大学之路：高中可以做些什么发布日期：2009年9月  &lt;/p&gt;
+&lt;p&gt;构建校外时间以提高学业成绩发行日期：2009年7月  &lt;/p&gt;
+&lt;p&gt;协助学生挣扎于数学：对中小学干预（RtI）的回应发行日期：2009年4月 &lt;/p&gt;
+&lt;p&gt;协助学生挣扎阅读：对干预（RtI）和小学一年级多层干预的回应发行日期：2009年2月  &lt;/p&gt;
+&lt;p&gt;减少小学课堂中的行为问题发行日期：2008年9月  &lt;/p&gt;
+&lt;p&gt;提高青少年素养：有效的课堂和干预措施发行日期：2008年8月 &lt;/p&gt;
+&lt;p&gt;辍学预防发行日期：2008年8月  &lt;/p&gt;
+&lt;p&gt;扭转长期表现不佳的学校发行日期：2008年5月  &lt;/p&gt;
+&lt;p&gt;小学英语学习者的有效识字与英语语言教学发行日期：2007年12月 &lt;/p&gt;
+&lt;p&gt;组织指导和学习，提高学生学习能力发行日期：2007年9月  &lt;/p&gt;
+&lt;p&gt;鼓励数学和科学女孩发行日期：2007年9月&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>美国AI教育政策</title>
+      <link>http://edustack.github.io/2019/04/22/%E7%BE%8E%E5%9B%BDai%E6%95%99%E8%82%B2%E6%94%BF%E7%AD%96/</link>
+      <pubDate>Mon, 22 Apr 2019 04:04:50 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/04/22/%E7%BE%8E%E5%9B%BDai%E6%95%99%E8%82%B2%E6%94%BF%E7%AD%96/</guid>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;http://www.ptech.org/&#34;&gt;http://www.ptech.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;P-TECH 9-14 School Model is a pioneering education reform initiative created by IBM, to prepare young people with the academic, technical and professional skills required for 21st Century Jobs and ongoing education. P-TECH represents the best of what public-private partnerships can look like, with students taking high school and college coursework simultaneously and engaging in industry-guided workforce development.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://innovation.ed.gov/files/2016/09/AIR-STEM2026_Report_2016.pdf&#34;&gt;https://innovation.ed.gov/files/2016/09/AIR-STEM2026_Report_2016.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2016年9月，正值美国STEM教育实施30周年之际，教育部（Department of Education in US）发布了《STEM 2026：STEM 教育中的创新愿景》（STEM 2026：A vision for innovation in STEM Education），把开展早期STEM教育作为实现未来10年愿景的八大挑战之一，要求各州政府、教育部门、社会机构等加大早期STEM教育的财政拨款和研究资助，倡导各相关机构能够提供更多如电视节目、APP等关于学习STEM的资源，促进早期STEM的发展。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://ecstem.uchicago.edu/&#34;&gt;http://ecstem.uchicago.edu/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2017年1月，美国早期儿童STEM工作组（the Early Childhood STEM Working Group）发布《早期STEM教育不容小觑：为所有幼儿提供高质量STEM学习经验》（Early STEM Matters:Providing High-Quality Experiencesfor All Young Learners）研究报告，阐述了开展早期STEM教育的4个指导原则，厘清了早期STEM教育应规避的认识误区，指明了早期STEM教育开展的方向。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.whitehouse.gov/wp-content/uploads/2018/12/STEM-Education-Strategic-Plan-2018.pdf&#34;&gt;https://www.whitehouse.gov/wp-content/uploads/2018/12/STEM-Education-Strategic-Plan-2018.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2018年12月3日，美国白宫发布了STEM教育下一个五年战略计划——《制定成功之路：美国STEM教育战略》。《制定成功之路：美国STEM教育战略》由美国国家科学技术委员会STEM教育委员会制定。美国国家科学技术委员会（The National Scienceand Technology Council，NSTC）是行政部门协调联邦政府研究与开发科学技术政策的主要机构，它的主要目标是确保科学技术政策决策和方案与总统所述的目标一致。&lt;/p&gt;
+&lt;p&gt;白宫的AI政策资源 &lt;a href=&#34;https://www.whitehouse.gov/ai/resources/&#34;&gt;https://www.whitehouse.gov/ai/resources/&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>EMOOCS2019将于5月20日在那不勒斯举办</title>
+      <link>http://edustack.github.io/2019/04/20/emoocs2019%E5%B0%86%E4%BA%8E5%E6%9C%8820%E6%97%A5%E5%9C%A8%E9%82%A3%E4%B8%8D%E5%8B%92%E6%96%AF%E4%B8%BE%E5%8A%9E/</link>
+      <pubDate>Fri, 19 Apr 2019 22:31:32 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/04/20/emoocs2019%E5%B0%86%E4%BA%8E5%E6%9C%8820%E6%97%A5%E5%9C%A8%E9%82%A3%E4%B8%8D%E5%8B%92%E6%96%AF%E4%B8%BE%E5%8A%9E/</guid>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;https://emoocs2019.eu/&#34;&gt;https://emoocs2019.eu/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在MOOC十字路口，三者汇合，我们问自己大学学位是否仍然是就业市场的主要货币，或者是否可能出现更广泛的资格和微观证书组合。这对教育实践有何影响？需要做出哪些政策决定？由于在线访问消除了学习的地理障碍，但不断增长的MOOC市场越来越受到美国大平台的支配，欧洲高等教育机构希望在品牌，语言和文化方面采取什么样的战略政策？&lt;/p&gt;
+&lt;p&gt;高等教育的格局正在发生变化。随着信息经济的发展，对高素质，不同的合格劳动力和公民的需求也在增加，高等教育机构面临着终身培训，重新培养和提高技能的挑战，而不是提供一次性的深度教育。企业和非政府组织部门本身正在探索更合格的在线培训方法的好处，并与高等教育机构合作进入教育市场，同时也自主或通过新的认证机构进入教育市场。在这个快速变化的情景中，技术是另一个重要的参与者。它允许采用新的，数据驱动的方式来衡量学习成果，新形式的课程定义和编制，以及通过人员分析的替代形式的招聘策略。&lt;/p&gt;
+&lt;p&gt;EMOOCs 2019年MOOC利益相关者峰会包括研究和经验，政策和业务轨道的综合格式，以及互动研讨会。并将在每个赛道上发表主题演讲，圆桌会议和小组会议以及个人演讲。目标是让决策者和从业者探索在线教育交付的创新和新兴趋势，以及支持他们的战略政策。在MOOCs之间分享知识和推进辩论的原始贡献是非常受欢迎的。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>基于MOOC的学位课程：2018年MOOC统计和趋势的回顾</title>
+      <link>http://edustack.github.io/2019/04/20/%E5%9F%BA%E4%BA%8Emooc%E7%9A%84%E5%AD%A6%E4%BD%8D%E8%AF%BE%E7%A8%8B%EF%BC%9A2018%E5%B9%B4mooc%E7%BB%9F%E8%AE%A1%E5%92%8C%E8%B6%8B%E5%8A%BF%E7%9A%84%E5%9B%9E%E9%A1%BE/</link>
+      <pubDate>Fri, 19 Apr 2019 22:22:34 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/04/20/%E5%9F%BA%E4%BA%8Emooc%E7%9A%84%E5%AD%A6%E4%BD%8D%E8%AF%BE%E7%A8%8B%EF%BC%9A2018%E5%B9%B4mooc%E7%BB%9F%E8%AE%A1%E5%92%8C%E8%B6%8B%E5%8A%BF%E7%9A%84%E5%9B%9E%E9%A1%BE/</guid>
+      
+        <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;现代MOOC运动到了第七年，在2018年超过1亿学习者，达到1.01亿。今年MOOC领域的两大趋势占主导地位。首先，尽管新用户的增长持续放缓，但MOOC平台的付费用户（和收入）却有所增加。其次，通过MOOC平台提供越来越多的学位，指向最终可能成为持久收入模式的方向。基于MOOC的学位具有一些与早期在线学位不同的独特功能，包括更低的费用，更灵活的课程安排以及更轻松的入学程序。&lt;/p&gt;
+&lt;p&gt;MOOC统计2018年&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.classcentral.com/report/wp-content/uploads/2018/12/stats.png&#34; alt=&#34;MOOC Stats 2018&#34;&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;2018年，有2000万新学员注册了至少一个MOOC，低于前一年的2300万。尽管增长放缓，但付费用户的数量可能会增加。考虑到Coursera等提供商创造了创纪录的收入（2018年为Coursera提供了1.4亿美元），MOOC提供商不断调整模型似乎取得了成效。&lt;/p&gt;
+&lt;p&gt;以下是注册用户排名前五位的MOOC提供商列表：&lt;/p&gt;
+&lt;p&gt;Coursera – 3700万&lt;br&gt;
+edX – 1800万&lt;br&gt;
+学堂 – 1400万&lt;br&gt;
+Udacity – 1000万&lt;br&gt;
+FutureLearn – 870万&lt;/p&gt;
+&lt;p&gt;截至2018年底，全球已有900多所大学宣布或推出了11.4万个MOOC，今年新增了约2,000个新课程（2017年为2,500个课程）。由于调度策略的变化，过去几年可用的MOOC数量急剧增长，但由于用户增长没有跟上，每个课程的用户数量都在减少。&lt;/p&gt;
+&lt;p&gt;2018年，MOOC提供商专注于大件物品（或Class Central中六层MOOC货币化的前两层）：企业培训和在线学位。这意味着在2018年，消费者产品从用户体验和货币化角度保持相对不变。 edX是一个例外，它在2018年底宣布了分级任务的付费专区。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.classcentral.com/report/wp-content/uploads/2018/12/growth.png&#34; alt=&#34;&#34;&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;过去几年一直在上升的微学位不再是新的热点;虽然今年推出了120多个新的微学位项目，但重点已转移到在线学位。大约有630种微学位，包括10种不同类型。其中大部分来自两种凭证类型：Coursera的专业化和edX的专业证书。&lt;/p&gt;
+&lt;p&gt;今年早些时候，我将基于MOOC的学位称为MOOC炒作的第二波。从那时起，已经宣布了15个在线学位。这使得基于MOOC的在线学位总数超过45，高于去年的15。&lt;/p&gt;
+&lt;p&gt;Coursera，Udacity和edX的第一个在线学位表现良好，根据当前注册学生的数量，总收入超过8000万美元。目前有10,000多名学生注册了MOOC学位课程。但是，大部分入学学生来自两所大学和三个在线学位：在线硕士学位计算机科学（乔治亚理工学院与Udacity），在线分析科学硕士（佐治亚理工学院与edX）和iMBA（大学）伊利诺伊州Urbana Champaign与Coursera）。&lt;/p&gt;
+&lt;p&gt;这些学位的最初成功促使提供者 – 包括Coursera，edX和FutureLearn – 推出更多的在线学位。已宣布的许多学位尚未上线或甚至不接受申请。以下是&lt;a href=&#34;https://www.classcentral.com/pricing-charts/mooc-based-degrees&#34;&gt;基于MOOC的学位的完整列表&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;在这些趋势之间 – 付费用户的增加，新的在线学位的推出以及对企业培训的关注 – 我们看到了对付费用户的关注的稳定转变。 EdX的新付费墙进一步证明了这一趋势。我仍然希望这些新的商业模式能够作为免费内容的保障，确保无论支付能力如何，都能为需要的人提供持续的可用性。然而，有一点非常清楚：免费用户不再是焦点。&lt;/p&gt;
+&lt;p&gt;这篇文章只是我们2018年MOOC综述系列中的一篇。在这里找到&lt;a href=&#34;https://www.classcentral.com/report/tag/mooc-roundup-2018/&#34;&gt;整个系列的文章&lt;/a&gt;。您将在2018年发现有关MOOC的所有内容 – 从最受欢迎的课程，到MOOC平台开发的概述，再到MOOC未来。&lt;/p&gt;
+&lt;p&gt;之前的回顾&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.classcentral.com/report/moocs-stats-and-trends-2017/&#34;&gt;A Product at Every Price: A Review of MOOC Stats and Trends in 2017&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.classcentral.com/report/moocs-stats-and-trends-2016/&#34;&gt;Monetization over Massiveness: A Review of MOOC Stats and Trends in 2016&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.classcentral.com/report/moocs-stats-and-trends-2015/&#34;&gt;Less Experimentation, More Iteration: A Review of MOOC Stats and Trends in 2015&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>2012年5月2日edX成立的报道</title>
+      <link>http://edustack.github.io/2019/04/19/2012%E5%B9%B45%E6%9C%882%E6%97%A5edx%E6%88%90%E7%AB%8B%E7%9A%84%E6%8A%A5%E9%81%93/</link>
+      <pubDate>Fri, 19 Apr 2019 11:17:40 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/04/19/2012%E5%B9%B45%E6%9C%882%E6%97%A5edx%E6%88%90%E7%AB%8B%E7%9A%84%E6%8A%A5%E9%81%93/</guid>
+      
+        <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;哈佛大学和麻省理工学院（MIT）今天宣布推出edX，这是一个在线教育的转型合作伙伴关系。通过edX，这两个机构将合作加强校园教学和学习，并建立一个全球在线学习者社区。&lt;/p&gt;
+&lt;p&gt;EdX将以两所大学提供在线教学内容的经验为基础。最近由MITx建立的技术平台将作为新学习系统的基础，旨在提供MIT课程的在线版本，包括视频课程，嵌入式测验，即时反馈，学生排名问答，在线实验室，和学生节奏学习。对于那些有动力且能够展示他们对课程材料的了解的人，可以获得掌握证书。&lt;/p&gt;
+&lt;p&gt;麻省理工学院和哈佛大学期望随着时间的推移，其他大学将加入他们提供edX平台的课程。将多所大学的教育内容聚集在一个网站上，将使全世界的学习者能够从一个网站访问任何参与大学的课程内容，并使用所有参与大学共享的一套在线教育工具。&lt;/p&gt;
+&lt;p&gt;EdX将作为开源软件发布其学习平台，以便其他希望自己托管平台的大学和组织可以使用它。由于学习技术将作为开源软件提供，其他大学和个人将能够帮助edX改进和添加技术功能。&lt;/p&gt;
+&lt;p&gt;麻省理工学院和哈佛大学将使用联合运营的edX平台来研究学生如何学习以及技术如何支持校内和在线的有效教学。 edX平台将允许研究哪些教学方法和工具最成功。这项研究的结果将用于告知教师如何在他们的教学中使用技术，这将增强校园学生和数百万人希望利用这些新的在线产品的经验。&lt;/p&gt;
+&lt;p&gt;麻省理工学院院长苏珊霍克菲尔德说：“EdX代表了一个通过在线学习改善我们自己校园教育的独特机会，同时为全球数百万学习者创造了一条大胆的新教育途径。”&lt;/p&gt;
+&lt;p&gt;哈佛大学校长Drew Faust说：“EdX为哈佛大学和麻省理工学院提供了前所未有的机会，通过开展有效教育的开创性研究和扩大在线获得优质高等教育的机会，大幅扩展我们的集体范围。”&lt;/p&gt;
+&lt;p&gt;“哈佛大学和麻省理工学院将利用这些新技术和他们所做的研究，以一种有益于我们的学生，我们的同龄人以及全国和全球人民的方式引领在线学习的方向，”Faust继续说道。&lt;/p&gt;
+&lt;p&gt;共同拥有的非营利结构&lt;br&gt;
+该计划将由位于马萨诸塞州剑桥市的非营利组织监督，由两所大学平等拥有和管理。麻省理工学院和哈佛大学共同承诺提供6,000万美元（每个3000万美元）的机构支持，资助和慈善事业，以启动合作。&lt;/p&gt;
+&lt;p&gt;麻省理工学院的计算机科学与人工智能实验室主任Anant Agarwal将在MIT Provost L. Rafael Reif的领导下领导MITx平台的开发，他将担任edX的第一任总裁。&lt;/p&gt;
+&lt;p&gt;在哈佛大学，教务长艾伦·加伯将指导哈佛大学的努力，而艺术与科学学院院长迈克尔·D·史密斯将在与教师合作开发和提供课程方面发挥主导作用。&lt;/p&gt;
+&lt;p&gt;预计来自哈佛大学和麻省理工学院的近期课程将包括在edX平台上。&lt;/p&gt;
+&lt;p&gt;提高住宅模型的研究&lt;br&gt;
+EdX将通过支持哈佛大学和麻省理工学院教师可以使用的无限数量的实验性在线教学方法来增强两校区传统的本科教育住宿模式，这将使剑桥和波士顿的学生受益。它还可以提供全球访问已经在剑桥和波士顿发生的一些世界级教学，但这只是哈佛和麻省理工学院全面体验的一个方面。&lt;/p&gt;
+&lt;p&gt;“校园环境提供了无法在线复制的机会和体验，”霍克菲尔德说。 “EdX旨在改善而非取代校园体验。”&lt;/p&gt;
+&lt;p&gt;EdX将与两所机构的持续远程学习计划分开，包括麻省理工学院开放式课程以及哈佛大学学院提供的课程，如哈佛大学扩展学院，哈佛商学院和哈佛医学院。&lt;/p&gt;
+&lt;p&gt;这个秋天的第一个课程&lt;br&gt;
+这些大学将努力进一步开发MITx已经开始的在线学习平台，并在edX网站上填写麻省理工学院和哈佛大学的课程。 在努力的早期阶段，两所大学将合作提供尽可能广泛的初级课程。 第一套课程计划在初夏宣布，并在秋季开始。&lt;/p&gt;
+&lt;p&gt;“我们已经快速向前发展，”Agarwal说。 “空中有很多能量，哈佛和麻省理工学院的团队迫不及待地想要合作。”&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Penn Center for Learning Analytics</title>
+      <link>http://edustack.github.io/2019/04/19/penn-center-for-learning-analytics/</link>
+      <pubDate>Thu, 18 Apr 2019 23:51:15 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/04/19/penn-center-for-learning-analytics/</guid>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;http://www.upenn.edu/learninganalytics/&#34;&gt;http://www.upenn.edu/learninganalytics/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;任务&lt;br&gt;
+宾夕法尼亚大学学习分析中心使用大规模和小规模研究方法，从分析和数据挖掘到人种学和野外观察方法，以及学习和参与。我们对最先进的在线学习环境和传统课堂教学进行研究，研究哪些方法和方法可以最好地提高学生的长期成果。&lt;/p&gt;
+&lt;p&gt;改变学习环境&lt;br&gt;
+传统教室和在线课程之间的二分法越来越模糊，越来越多的学生在混合学习环境中工作。这些学生可能正在使用智能辅导系统（ITS），模拟，游戏或微观世界。即使在大规模在线开放课程（MOOC）等完全在线体验中，学生之间的互动也与他们与课程材料的互动一样重要。在PCLA，我们的目标是通过研究新的学习环境如何为全方位的学生提供服务来增强所有学习者的教育体验。我们研究环境和使用它们的学习者，与学术界和工业界的团体合作。在PCLA，我们不会创造新的学习环境;我们研究如何让它们变得更好。&lt;/p&gt;
+&lt;p&gt;创新&lt;br&gt;
+PCLA的研究人员开发了许多工具和模型，以便更好地理解大规模学习，通常是在在线学习系统的背景下。其中包括用于分析系统日志文件的新技术和用于现场观察的新协议。&lt;/p&gt;
+&lt;p&gt;我们开创了新的方法，用于在线模拟学生参与，推断复杂的学习和探究技能，学习逐步发生的学习，以及将学习者现在的经历与他们的职业和生活结果联系起来。 。我们还开创了将技术与人类判断相结合的新方法，以充分利用每种方法的优势。例如，BROMP方法是为了研究学生与教育软件的互动而开发的，它允许我们在没有侵入式传感器或视频设备的情况下研究学生的情感和行为体验。同样，我们使用文本回放（一种从教育软件中分析日志文件的方法）有助于提高我们对学生在游戏系统时所做工作的理解，而不是参与教育材料。&lt;/p&gt;
+&lt;p&gt;使（在线）学习系统更加人性化&lt;br&gt;
+与具有较大学生/教师比例的传统教室相比，在线学习系统可提供优势。通过自动检测错误和误解，这些系统可以提供及时的支持，以防止学生完成任务或不得不忘记了解不足的材料。无论学生是在一个充满同龄人的教室中，还是通过基于网络的应用程序独立工作，他们都应该享有教育经验，并将其视为个人。&lt;/p&gt;
+&lt;p&gt;我们的目标是通过让教师专注于他们最擅长教学的方式，使用这些方法为学生提供更好的教育体验。在拥有大量学生的班级中，自动化脚手架允许学生按照自己的进度工作。它还允许教师在更加个性化的层面上关注学生 – 帮助那些有更深层次误解而不是轻微表面错误的学生，或者与遇到与学习材料无关的问题的学生建立有意义的联系。&lt;/p&gt;
+&lt;p&gt;我们相信软件可以做的不仅仅是提供提示和自动更正，我们正在努力向人们展示如何。通过将学生的情绪和行为的课堂观察与学生日志文件相匹配，我们可以训练软件识别学生何时感到厌倦或困惑或沮丧。反过来，这可以用来使学生的学习体验更具吸引力和积极性 – 要么通过改变难度，要么提醒教育者注意可能会错过的挣扎。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Open edX中的AI应用</title>
+      <link>http://edustack.github.io/2019/04/18/open-edx%E4%B8%AD%E7%9A%84ai%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Thu, 18 Apr 2019 12:44:00 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/04/18/open-edx%E4%B8%AD%E7%9A%84ai%E5%BA%94%E7%94%A8/</guid>
+      
+        <description>&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Harvard University and Microsoft.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.alosilabs.org/&#34;&gt;ALOSI&lt;/a&gt; (Adaptive Learning Open Source Initiative) is based on creating an open source adaptive engine powering individualized learning and assessment pathways.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://schd.ws/hosted_files/openedx2018/15/edx18_collaborative_personalization.pdf&#34;&gt;Collaborative-based Personalization &lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Zachary A. Pardos, Assistant Professor UC Berkeley&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Data-Driven Syllabus Adaptation&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Data &amp;amp; AI as a translation between expert/novice learner models&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;RNNs langue models adapted to course navigation sequences. Intended to pick up on patterns among successful learners.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Course Recommendation Systems with Open edX Data&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Chinmay Nivargi, Stanford University &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Content-based Recommenders&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How similar is Course A to Course B?&lt;br&gt;
+Represent each course’s bag-of-words as a vector&lt;br&gt;
+TF-IDF (Term Frequency – Inverse Document Frequency) was used as the weighting for every word&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Courses previously completed by user, Courses rated by user (if available), Any other course – user relationship data (e.g. topics, region, etc.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;AI Grading&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://edx-ora-2.readthedocs.io/en/latest/architecture/ai_grading.html&#34;&gt;https://edx-ora-2.readthedocs.io/en/latest/architecture/ai_grading.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Training a classifier using a supervised machine learning algorithm.&lt;br&gt;
+Grading student essays using a trained classifier.&lt;br&gt;
+Both training and grading require more time than is acceptable within the request-response cycle of a web application. Therefore, both training and grading must occur asynchronously.&lt;/p&gt;
+&lt;p&gt;The architecture should not constrain the ML algorithm (or algorithms) used by a particular implementation. It should be possible to replace the ML algorithm with any supervised learning algorithm that produces a text classifier.&lt;/p&gt;
+&lt;p&gt;We also avoid constraining the particular task queue implementation. In principle, any task queue that provides basic reliability guarantees and a retry mechanism will work (see Entities).&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>SREE:Advancing Education Research</title>
+      <link>http://edustack.github.io/2019/04/18/sreeadvancing-education-research/</link>
+      <pubDate>Wed, 17 Apr 2019 23:30:33 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/04/18/sreeadvancing-education-research/</guid>
+      
+        <description>&lt;p&gt;&lt;a href=&#34;https://www.sree.org/&#34;&gt;https://www.sree.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;SREE致力于推动与实践相关的研究，从幼儿期到过渡到高等教育和继续教育。 该协会致力于在新的环境和跨领域中产生知识并促进应用。 SREE组织会议和专业发展课程，汇集了不同的受众。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>使用Zabbix,Grafana,Icinga,SmokePing来进行网络管理监控</title>
+      <link>http://edustack.github.io/2019/04/13/%E4%BD%BF%E7%94%A8zabbixgrafanaicingasmokeping%E6%9D%A5%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E7%9B%91%E6%8E%A7/</link>
+      <pubDate>Sat, 13 Apr 2019 11:30:47 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/04/13/%E4%BD%BF%E7%94%A8zabbixgrafanaicingasmokeping%E6%9D%A5%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E7%9B%91%E6%8E%A7/</guid>
+      
+        <description>&lt;p&gt;这几个软件是网络监控中常用的开源软件。haishanzheng老师发布了一个项目&lt;a href=&#34;https://github.com/haishanzheng/CampusMonitor&#34;&gt;https://github.com/haishanzheng/CampusMonitor&lt;/a&gt;，可以简化部署。这里仅介绍这几个软件。&lt;/p&gt;
+&lt;h2 id=&#34;zabbix&#34;&gt;Zabbix&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.zabbix.com/&#34;&gt;https://www.zabbix.com/ &lt;/a&gt; Zabbix是最终的企业级软件，专为实时监控从数万台服务器，虚拟机和网络设备收集的数百万个指标而设计。&lt;/p&gt;
+&lt;h2 id=&#34;grafana&#34;&gt;Grafana&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://grafana.com/&#34;&gt;https://grafana.com/ &lt;/a&gt;Grafana允许您查询，可视化，提醒和理解您的指标，无论它们存储在何处。 与您的团队一起创建，探索和共享仪表板，并培养数据驱动的文化。&lt;/p&gt;
+&lt;h2 id=&#34;icinga&#34;&gt;Icinga&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://icinga.com/&#34;&gt;https://icinga.com/&lt;/a&gt;  Icinga可监控可用性和性能，使您可以轻松访问相关数据并发出警报以使您保持循环。&lt;/p&gt;
+&lt;h2 id=&#34;smokeping&#34;&gt;SmokePing&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://oss.oetiker.ch/smokeping/&#34;&gt;https://oss.oetiker.ch/smokeping/ &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;SmokePing会跟踪您的网络延迟：&lt;br&gt;
+最佳的延迟可视化。&lt;br&gt;
+交互式图形浏览器。&lt;br&gt;
+广泛的延迟测量插件。&lt;br&gt;
+用于分布式测量的主/从系统。&lt;br&gt;
+高度可配置的警报系统。&lt;br&gt;
+实时延迟图表包含最“有趣”的图表。&lt;br&gt;
+由Perl编写的免费和OpenSource软件，由MRTG和RRDtool的创建者Tobi Oetiker编写&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>开源图书馆平台FOLIO</title>
+      <link>http://edustack.github.io/2019/04/13/folio/</link>
+      <pubDate>Sat, 13 Apr 2019 10:50:48 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/04/13/folio/</guid>
+      
+        <description>&lt;p&gt;FOLIO（&lt;a href=&#34;https://www.folio.org/&#34;&gt;https://www.folio.org/&lt;/a&gt;）是The Future of Libraries is Open的缩写。&lt;/p&gt;
+&lt;p&gt;FOLIO由开放式图书馆基金会（Open Library Foundation）主办，该基金会是一个独立的非营利组织，旨在确保图书馆和图书馆的开源和开放获取项目的可用性，可访问性和可持续性。&lt;/p&gt;
+&lt;p&gt;图书馆和服务提供商共同重塑图书馆的未来并开发新技术。新计划  &lt;!-- raw HTML omitted --&gt;FOLIO&lt;!-- raw HTML omitted --&gt;为图书馆，服务提供商和其他组织提供了一个平台，通过开源项目重新定义图书馆自动化。目标是培养兴趣小组，形成合作伙伴关系并引发对话，从而为图书馆创造新​​的服务和技术。&lt;/p&gt;
+&lt;p&gt;开放式图书馆环境（&lt;!-- raw HTML omitted --&gt;OLE&lt;!-- raw HTML omitted --&gt;）合作伙伴关系是学术和研究图书馆的合作，旨在为图书馆管理服务构建和运营创新的开源软件。会员图书馆包括康奈尔大学图书馆，杜克大学图书馆，GBV-公共图书馆网络，Hbz-Hochschulbibliothekszentrum des Landes Nordrhein-Westfalen，利哈伊大学，北卡罗来纳州立大学图书馆，SOAS-伦敦大学，德克萨斯A＆M图书馆，芝加哥大学图书馆和马里兰大学图书馆。OLE总经理Michael Winkler表示，FOLIO继续并建立在社区方法的OLE愿景上，以构建新的图书馆服务。他说，FOLIO成功和影响的关键是合作。“通过FOLIO，我们有理由将人员和图书馆聚集在一起。我们很高兴能够汇集我们才华横溢，敬业的个人和共享资源，以开发和贡献FOLIO平台和软件中出现的真正复杂的服务。在图书馆员，技术专家，服务提供商和供应商的这种独特和开放的合作中，我们能够以极其积极的方式改变图书馆技术的进程。“&lt;/p&gt;
+&lt;p&gt;美国德克萨斯A＆M大学图书馆院长David Carlson表示，FOLIO代表了图书馆系统开发的一项非凡发展，不仅能够改变系统市场，还能改变图书馆与供应商之间关系的转变。 。“FOLIO代表了图书馆和供应商之间的真正合作伙伴关系，我们每个人都根据我们独特的优势做出实质性的贡献。”Carlson说FOLIO对开放性的关注使其如此卓越。“通过FOLIO，未来是开放的：开放新的关系，开放真正的协作，并开放能力，使图书馆能够实现我们为用户服务的使命。&lt;/p&gt;
+&lt;p&gt;FOLIO项目旨在促进围绕创建现代技术生态系统的可持续的，以社区为导向的协作，该生态系统通过开源应用程序为图书馆提供管理图书馆资源和扩展图书馆价值的能力。&lt;/p&gt;
+&lt;p&gt;FOLIO的发展经过四个阶段。&lt;/p&gt;
+&lt;p&gt;阶段1：Alpha发布&lt;br&gt;
+alpha版本于2018年1月发布。测试版合作伙伴将实施并测试该版本，以便在2019年初发布测试版。&lt;/p&gt;
+&lt;p&gt;第2阶段：平台发布&lt;br&gt;
+代码很早就经常发布。 该测试版将于2019年初推出。社区可以实施该平台，提供反馈并跟踪开发进度。&lt;/p&gt;
+&lt;p&gt;阶段3：FOLIO在库中运行&lt;br&gt;
+到2019年初，预计至少有三个图书馆将FOLIO作为其图书馆服务平台实施。&lt;/p&gt;
+&lt;p&gt;第4阶段：早期实施者&lt;br&gt;
+11个图书馆计划在2019年实施FOLIO。根据早期采用者的反馈，将经常进行改进。 查看&lt;a href=&#34;https://www.folio.org/community/support/&#34;&gt;早期实施者&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;国内学校也在关注FOLIO的应用，北大和清华都召开了相关会议进行讨论。具体可以看&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzU2MDg1MTU0NA==&amp;amp;mid=2247484244&amp;amp;idx=1&amp;amp;sn=bca3b8a5b096692f860d024d8efd7f03&amp;amp;chksm=fc00fc63cb7775757401494b7f398aab13a0ce1002d992b0cb8c562e39e41be55b380343c34c&amp;amp;mpshare=1&amp;amp;scene=23&amp;amp;srcid=%23rd&#34;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;FOLIO的源代码在 &lt;a href=&#34;https://dev.folio.org/source-code&#34;&gt;https://dev.folio.org/source-code&lt;/a&gt;，其中有github仓库信息和文档教程。&lt;/p&gt;
+&lt;h3 id=&#34;如何加入社区&#34;&gt;如何加入社区&lt;/h3&gt;
+&lt;p&gt;自2016年3月份Code4Lib等会议开始就开源LSP项目进行首次公开​​对话以来，来自数十个国家的1,000多名成员加入了社区。社区成员可以通过多种方式参与：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;功能主义者 – 贡献他们对特定工作流程和功能领域的知识。&lt;/li&gt;
+&lt;li&gt;战略家 – 提出他们对未来几年图书馆技术必须如何发展的愿景。&lt;/li&gt;
+&lt;li&gt;开发人员 – 贡献代码并帮助构建新的可扩展平台的应用程序。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参考链接：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.folio.org/about/news-events/article/introducing-folio-a-new-collaboration-bringing-libraries-service-providers-and-developers-together-to-speed-innovation-and-redefine-the-future-of-library-automation/&#34;&gt;FOLIO简介 – 一项新的合作，将图书馆，服务提供商和开发人员聚集在一起，加速创新，重新定义图书馆自动化的未来&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.folio.org/about/news-events/article/folio-platform-begins-2018-with-a-strong-list-of-accomplishments-and-plans-for-rapid-expansion-over-the-next-twelve-months/&#34;&gt;FOLIO平台开始2018年，在未来12个月内有一个强大的成就和快速扩张计划&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.folio.org/&#34;&gt;FOLIO官网&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>如何为edx贡献代码</title>
+      <link>http://edustack.github.io/2019/04/13/contribute-to-openedx/</link>
+      <pubDate>Sat, 13 Apr 2019 09:55:19 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/04/13/contribute-to-openedx/</guid>
+      
+        <description>&lt;h1 id=&#34;open-edx贡献代码指南&#34;&gt;Open edX贡献代码指南&lt;/h1&gt;
+&lt;p&gt;这是一个帮助您开始为Open edX开源项目贡献代码的指南。如果您有兴趣为Open edX做出贡献，但却不知道哪些贡献最有价值，以下指南将告诉你如何为open edx开源项目作出你的贡献。&lt;/p&gt;
+&lt;p&gt;在我们合并您的贡献之前，您需要签署贡献者协议。我们建议尽快开始这个过程。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;选择个人捐助者协议还是作为更大组织的一部分做出贡献&#34;&gt;选择个人捐助者协议还是作为更大组织的一部分做出贡献？&lt;/h3&gt;
+&lt;p&gt;如果您将在学校或工作时间处理您的贡献，或者正在使用由该组织管理的GitHub或电子邮件帐户，您可能属于我们更大的组织协议。根据您的雇主的合同义务，您撰写的所有代码均为其财产，或者如果在他们购买的机器上书写，则可能是其财产。如果您对是否应签署个人捐助者协议或作为组织的一部分做出任何疑问，请将您的情况通过电子邮件发送至&lt;!-- raw HTML omitted --&gt;legal @ edx 。组织&lt;!-- raw HTML omitted --&gt;，他们将帮助您找到合适的协议。&lt;/p&gt;
+&lt;h3 id=&#34;协同开发工作的注意事宜&#34;&gt;协同开发工作的注意事宜：&lt;/h3&gt;
+&lt;p&gt;我们在Jira管理我们的项目工作，因此您需要&lt;a href=&#34;https://openedx.atlassian.net/secure/ViewProfile.jspa&#34;&gt;创建一个Jira帐户&lt;/a&gt;{.reference.external} 来与Open edX票证进行交互。我们建议从Jira INCR项目中的故障单开始，因为这些是极其包含在其范围内的故障单。您无需了解整个代码库即可做出贡献。完成这些门票的成功标准非常明确。这对于edX平台的新用户来说非常棒，因为进入门槛很低。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>LTI扩展包（LTI  Advantage）</title>
+      <link>http://edustack.github.io/2019/04/13/lti-advantage/</link>
+      <pubDate>Sat, 13 Apr 2019 09:55:05 +0000</pubDate>
+      
+      <guid>http://edustack.github.io/2019/04/13/lti-advantage/</guid>
+      
+        <description>&lt;p&gt;原文链接：&lt;a href=&#34;https://www.imsglobal.org/lti-advantage-faq&#34;&gt;https://www.imsglobal.org/lti-advantage-faq&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;LTI Advantage&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;是通往实现 &lt;strong&gt;数字化转型&lt;/strong&gt; 的方法，是一个快速发展的教育技术的生态系统，在这里用户对于创新的方式有着更多的选择和综合，最后能够让用户能更好的学习和体验。 &lt;!-- raw HTML omitted --&gt;通过延长学习工具互操作性的基础&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;（LTI&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;）1.3版， &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt; LTI Advantage&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;增加了功能，使学习工具和平台之间更深层次的集成，并提供更好的应用程序管理，隐私和安全可信的基础。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;ul&gt;
+&lt;li&gt;LTI 2.0版最终规范：&lt;a href=&#34;https://www.imsglobal.org/specs/ltiv2p0/implementation-guide&#34;&gt;https://www.imsglobal.org/specs/ltiv2p0/implementation-guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;推荐的LTI采用路线图：&lt;a href=&#34;https://www.imsglobal.org/lti-adoption-roadmap&#34;&gt;https://www.imsglobal.org/lti-adoption-roadmap&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>
