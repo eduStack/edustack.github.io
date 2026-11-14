@@ -1,110 +1,119 @@
 ---
 import '../styles/editorial.css';
+import { editorialCopy } from '../i18n/editorial';
+import { defaultLanguage, languages, type Lang } from '../i18n/languages';
+import { href } from '../i18n/ui';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const copy = editorialCopy[lang];
+const localPath = (path: string) => href(lang, path);
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const sitePath = (path: string) => `${base}${path}`;
-const homeUrl = sitePath('/');
+const homeUrl = href(lang);
 const canonical = new URL(homeUrl, Astro.site || Astro.url.origin);
 ---
 <!doctype html>
-<html lang="zh-Hans">
+<html lang={languages[lang].tag}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#faf7f0">
   <link rel="canonical" href={canonical} />
-  <link rel="alternate" hreflang="zh-Hans" href={canonical} />
-  <link rel="alternate" hreflang="en" href={new URL(sitePath('/en/'), Astro.site || Astro.url.origin)} />
-  <meta name="description" content="Edustack：有出处的家庭教育资源。从儿童发展出发，陪你读懂孩子成长的每个阶段。">
-  <title>Edustack · 陪孩子长大，也慢慢读懂孩子</title>
+  {(Object.keys(languages) as Lang[]).map((code) => <link rel="alternate" hreflang={languages[code].tag} href={new URL(href(code), Astro.site || Astro.url.origin)} />)}
+  <link rel="alternate" hreflang="x-default" href={new URL(href(defaultLanguage), Astro.site || Astro.url.origin)} />
+  <meta name="description" content={copy.description}>
+  <title>{copy.pageTitle}</title>
   <link rel="icon" href={sitePath('/editorial/favicon.svg')} type="image/svg+xml">
   
 </head>
 <body>
-  <a class="skip-link" href="#main">跳到主要内容</a>
+  <a class="skip-link" href="#main">{copy.skip}</a>
   <div class="utility-bar">
-    <div class="wrap utility-inner"><span>有出处的家庭教育资源 <span class="utility-dot">·</span> 0—18 岁</span><a href={sitePath('/en/')} lang="en">ENGLISH <span aria-hidden="true">↗</span></a></div>
+    <div class="wrap utility-inner"><span>{copy.tagline} <span class="utility-dot">·</span> {copy.ageSpan}</span><LanguageSwitcher lang={lang} /></div>
   </div>
   <header class="site-header wrap">
     <div class="masthead">
-      <p class="masthead-note">关于成长，<br>我们一起慢慢理解。</p>
-      <a class="brand" href={homeUrl} aria-label="Edustack 首页"><span class="brand-name">Edu<span>stack</span><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M7 26C7 15 11 6 26 5c-1 13-7 21-19 21Z"/><path d="m7 28 13-15"/></svg></span><span class="brand-subtitle">THE ART & SCIENCE OF GROWING TOGETHER</span></a>
-      <a class="profile-link" href={sitePath('/zh/me/')}><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>我的孩子<span aria-hidden="true">↗</span></a>
+      <p class="masthead-note">{copy.mastheadFirst}<br>{copy.mastheadSecond}</p>
+      <a class="brand" href={homeUrl} aria-label={copy.homeLabel}><span class="brand-name">Edu<span>stack</span><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M7 26C7 15 11 6 26 5c-1 13-7 21-19 21Z"/><path d="m7 28 13-15"/></svg></span><span class="brand-subtitle">THE ART & SCIENCE OF GROWING TOGETHER</span></a>
+      <a class="profile-link" href={localPath('me/')}><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>{copy.myChild}<span aria-hidden="true">↗</span></a>
     </div>
-    <nav class="main-nav" aria-label="主导航">
-      <a class="active" href={homeUrl} aria-current="page">首页</a>
-      <a href="#ages">按年龄</a>
-      <a href="#topics">家长关心的事</a>
-      <a href={sitePath('/zh/tools/')}>一起学与玩</a>
-      <a href="#reading">精选书与指南</a>
-      <a href={sitePath('/zh/educators/')}>教育家的启发</a>
-      <a class="search-link" href="#resource-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.7"/><path d="m16 16 5 5"/></svg><span>搜索</span></a>
+    <nav class="main-nav" aria-label={copy.mainNav}>
+      <a class="active" href={homeUrl} aria-current="page">{copy.home}</a>
+      <a href="#ages">{copy.byAge}</a>
+      <a href="#topics">{copy.parentQuestions}</a>
+      <a href={localPath('tools/')}>{copy.play}</a>
+      <a href="#reading">{copy.reading}</a>
+      <a href={localPath('educators/')}>{copy.educators}</a>
+      <a class="search-link" href="#resource-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.7"/><path d="m16 16 5 5"/></svg><span>{copy.search}</span></a>
     </nav>
   </header>
 
   <main id="main" tabindex="-1">
     <div class="wrap">
       <section class="opening" aria-labelledby="opening-title">
-        <div class="opening-copy"><h1 id="opening-title">陪孩子长大，也慢慢读懂孩子。</h1><p>面向 0—18 岁家庭，查找成长阶段、亲子活动与健康安全建议，重要建议附原始来源。</p></div>
-        <form id="search-panel" class="search-panel" role="search" aria-label="资源搜索" action={sitePath('/zh/library/')} method="get">
-          <label for="resource-search">你想了解孩子的什么？</label>
-          <div><input id="resource-search" type="search" name="q" placeholder="睡眠、屏幕时间、亲子沟通……" required><button type="submit">搜索</button></div>
+        <div class="opening-copy"><h1 id="opening-title">{copy.headline}</h1><p>{copy.intro}</p></div>
+        <form id="search-panel" class="search-panel" role="search" aria-label={copy.searchLabel} action={localPath('library/')} method="get">
+          <label for="resource-search">{copy.searchQuestion}</label>
+          <div><input id="resource-search" type="search" name="q" placeholder={copy.searchPlaceholder} required><button type="submit">{copy.search}</button></div>
         </form>
       </section>
 
-      <section class="lead-grid" aria-label="本期精选">
+      <section class="lead-grid" aria-label={copy.featured}>
         <article class="lead-story">
-          <a class="lead-image" href={sitePath('/zh/ages/toddlers/')} aria-label="阅读学步期的发展与亲子活动"><span class="image-note">成长，就在这些小小的日常里。</span><svg class="family-art" viewBox="0 0 900 500" role="img" aria-label="温暖的客厅里，妈妈与孩子一起搭积木，爸爸坐在一旁读书，小猫在地毯上休息"><use href={sitePath('/editorial/illustrations.svg#family')}/></svg></a>
-          <div class="story-meta"><span class="eyebrow">读懂成长</span><span>儿童发展 · 亲子互动</span></div>
-          <h2><a href={sitePath('/zh/ages/toddlers/')}>那些看似平常的来回，<br>是孩子认识世界的开始。</a></h2>
-          <p class="story-description">一次回应、一个拥抱、一场没有标准答案的游戏。了解孩子在发展什么，也找到你们可以一起做的小事。</p>
-          <div class="story-bottom"><div class="source-details"><span>发展资料 · CDC · 哈佛大学儿童发展中心</span><span>阶段内容更新 <time datetime="2026-11-13">2026-11-13</time></span></div><a class="text-link" href={sitePath('/zh/ages/')}>从孩子的年龄开始 <span aria-hidden="true">↗</span></a></div>
+          <a class="lead-image" href={localPath('ages/toddlers/')} aria-label={copy.leadLabel}><span class="image-note">{copy.imageNote}</span><svg class="family-art" viewBox="0 0 900 500" role="img" aria-label={copy.familyAlt}><use href={sitePath('/editorial/illustrations.svg#family')}/></svg></a>
+          <div class="story-meta"><span class="eyebrow">{copy.leadEyebrow}</span><span>{copy.leadCategory}</span></div>
+          <h2><a href={localPath('ages/toddlers/')}>{copy.leadTitleFirst}<br>{copy.leadTitleSecond}</a></h2>
+          <p class="story-description">{copy.leadDescription}</p>
+          <div class="story-bottom"><div class="source-details"><span>{copy.leadSources}</span><span>{copy.stageUpdated} <time datetime="2026-11-13">2026-11-13</time></span></div><a class="text-link" href={localPath('ages/')}>{copy.startAge} <span aria-hidden="true">↗</span></a></div>
         </article>
 
         <aside class="sidebar">
           <article class="today-note">
-            <div class="note-top"><span class="eyebrow">今天可以做的一件事</span><svg viewBox="0 0 35 35" aria-hidden="true"><circle cx="17.5" cy="17.5" r="7"/><path d="M17.5 2v4m0 23v4M2 17.5h4m23 0h4M6.5 6.5l3 3m16 16 3 3m0-22-3 3m-16 16-3 3"/></svg></div>
-            <span class="note-age">亲子对话 · 2½—7 岁</span>
-            <h2>今天吃饭时，<br>聊聊最开心的一件事。</h2>
-            <svg class="dinner-art" viewBox="0 0 420 190" role="img" aria-label="餐桌旁，孩子分享自己的一天，大人认真倾听，接着回应"><use href={sitePath('/editorial/illustrations.svg#dinner')}/></svg>
-            <p>等孩子说完，再接一句。试着你来我往，聊上五个来回。</p>
-            <a class="note-source" href={sitePath('/zh/resources/romeo-2018-conversational-turns/')}>这件小事背后的研究 <span aria-hidden="true">↗</span></a>
-            <div class="source-details note-details"><span>单项研究 · 横断面研究</span><span>来源核验 <time datetime="2026-11-13">2026-11-13</time></span></div>
+            <div class="note-top"><span class="eyebrow">{copy.today}</span><svg viewBox="0 0 35 35" aria-hidden="true"><circle cx="17.5" cy="17.5" r="7"/><path d="M17.5 2v4m0 23v4M2 17.5h4m23 0h4M6.5 6.5l3 3m16 16 3 3m0-22-3 3m-16 16-3 3"/></svg></div>
+            <span class="note-age">{copy.todayAge}</span>
+            <h2>{copy.todayTitleFirst}<br>{copy.todayTitleSecond}</h2>
+            <svg class="dinner-art" viewBox="0 0 420 190" role="img" aria-label={copy.dinnerAlt}><use href={sitePath('/editorial/illustrations.svg#dinner')}/></svg>
+            <p>{copy.todayDescription}</p>
+            <a class="note-source" href={localPath('resources/romeo-2018-conversational-turns/')}>{copy.todayResearch} <span aria-hidden="true">↗</span></a>
+            <div class="source-details note-details"><span>{copy.todayEvidence}</span><span>{copy.checked} <time datetime="2026-11-13">2026-11-13</time></span></div>
           </article>
-          <div class="editor-desk"><span class="eyebrow">也许你正在想</span><a href={sitePath('/zh/topics/screen-time/')}>屏幕时间，到底该怎么定？<span aria-hidden="true">↗</span></a><a href={sitePath('/zh/topics/social-media/')}>第一次用社交媒体前，聊些什么？<span aria-hidden="true">↗</span></a></div>
+          <div class="editor-desk"><span class="eyebrow">{copy.wondering}</span><a href={localPath('topics/screen-time/')}>{copy.screenQuestion}<span aria-hidden="true">↗</span></a><a href={localPath('topics/social-media/')}>{copy.mediaQuestion}<span aria-hidden="true">↗</span></a></div>
         </aside>
       </section>
 
       <section id="ages" class="age-section section-space" aria-labelledby="age-title">
-        <div class="section-heading"><div><span class="eyebrow">EVERY AGE, A NEW CHAPTER</span><h2 id="age-title">每个阶段，都有新的发现。</h2></div><p>在发展什么 · 可以一起做什么 · 健康与安全</p></div>
+        <div class="section-heading"><div><span class="eyebrow">EVERY AGE, A NEW CHAPTER</span><h2 id="age-title">{copy.ageTitle}</h2></div><p>{copy.ageDescription}</p></div>
         <div class="age-grid">
-          <a class="age-item" href={sitePath('/zh/ages/babies/')}><span class="age-range">0—12 个月 · 婴儿期</span><svg viewBox="0 0 200 120" role="img" aria-label="躺着探索自己双脚的婴儿"><use href={sitePath('/editorial/illustrations.svg#baby')}/></svg><h3>你好，小小的世界<span aria-hidden="true">↗</span></h3><p>依恋、感官与第一次回应</p></a>
-          <a class="age-item" href={sitePath('/zh/ages/toddlers/')}><span class="age-range">1—3 岁 · 学步期</span><svg viewBox="0 0 200 120" role="img" aria-label="蹲着搭积木的幼儿"><use href={sitePath('/editorial/illustrations.svg#toddler')}/></svg><h3>我想自己试试看<span aria-hidden="true">↗</span></h3><p>语言、探索与大大的情绪</p></a>
-          <a class="age-item" href={sitePath('/zh/ages/preschoolers/')}><span class="age-range">3—6 岁 · 学龄前</span><svg viewBox="0 0 200 120" role="img" aria-label="拿着画笔自由画画的学前儿童"><use href={sitePath('/editorial/illustrations.svg#preschool')}/></svg><h3>想象力开始冒芽<span aria-hidden="true">↗</span></h3><p>游戏、表达与交朋友</p></a>
-          <a class="age-item" href={sitePath('/zh/ages/school-age/')}><span class="age-range">6—12 岁 · 学龄期</span><svg viewBox="0 0 200 120" role="img" aria-label="一起看书的两个学龄儿童"><use href={sitePath('/editorial/illustrations.svg#school')}/></svg><h3>走向更大的天地<span aria-hidden="true">↗</span></h3><p>学习、友谊与独立尝试</p></a>
-          <a class="age-item" href={sitePath('/zh/ages/teens/')}><span class="age-range">12—18 岁 · 青少年</span><svg viewBox="0 0 200 120" role="img" aria-label="并肩坐着交谈的家长和青少年"><use href={sitePath('/editorial/illustrations.svg#teen')}/></svg><h3>靠近，也留些空间<span aria-hidden="true">↗</span></h3><p>自我、关系与青春期</p></a>
+          <a class="age-item" href={localPath('ages/babies/')}><span class="age-range">{copy.babyRange}</span><svg viewBox="0 0 200 120" role="img" aria-label={copy.babyAlt}><use href={sitePath('/editorial/illustrations.svg#baby')}/></svg><h3>{copy.babyTitle}<span aria-hidden="true">↗</span></h3><p>{copy.babyDescription}</p></a>
+          <a class="age-item" href={localPath('ages/toddlers/')}><span class="age-range">{copy.toddlerRange}</span><svg viewBox="0 0 200 120" role="img" aria-label={copy.toddlerAlt}><use href={sitePath('/editorial/illustrations.svg#toddler')}/></svg><h3>{copy.toddlerTitle}<span aria-hidden="true">↗</span></h3><p>{copy.toddlerDescription}</p></a>
+          <a class="age-item" href={localPath('ages/preschoolers/')}><span class="age-range">{copy.preschoolRange}</span><svg viewBox="0 0 200 120" role="img" aria-label={copy.preschoolAlt}><use href={sitePath('/editorial/illustrations.svg#preschool')}/></svg><h3>{copy.preschoolTitle}<span aria-hidden="true">↗</span></h3><p>{copy.preschoolDescription}</p></a>
+          <a class="age-item" href={localPath('ages/school-age/')}><span class="age-range">{copy.schoolRange}</span><svg viewBox="0 0 200 120" role="img" aria-label={copy.schoolAlt}><use href={sitePath('/editorial/illustrations.svg#school')}/></svg><h3>{copy.schoolTitle}<span aria-hidden="true">↗</span></h3><p>{copy.schoolDescription}</p></a>
+          <a class="age-item" href={localPath('ages/teens/')}><span class="age-range">{copy.teenRange}</span><svg viewBox="0 0 200 120" role="img" aria-label={copy.teenAlt}><use href={sitePath('/editorial/illustrations.svg#teen')}/></svg><h3>{copy.teenTitle}<span aria-hidden="true">↗</span></h3><p>{copy.teenDescription}</p></a>
         </div>
       </section>
 
       <section id="topics" class="topics-section section-space" aria-labelledby="topics-title">
-        <div class="section-heading"><div><span class="eyebrow">QUESTIONS WE SHARE</span><h2 id="topics-title">那些家长都会关心的事</h2></div><a class="text-link" href={sitePath('/zh/topics/')}>全部主题 <span aria-hidden="true">↗</span></a></div>
+        <div class="section-heading"><div><span class="eyebrow">QUESTIONS WE SHARE</span><h2 id="topics-title">{copy.topicsTitle}</h2></div><a class="text-link" href={localPath('topics/')}>{copy.allTopics} <span aria-hidden="true">↗</span></a></div>
         <div class="topic-grid">
-          <article class="topic-story"><a class="topic-image screen-art" href={sitePath('/zh/topics/screen-time/')} aria-label="了解屏幕时间"><svg viewBox="0 0 400 225" role="img" aria-label="家长与孩子一起商量平板电脑的使用安排"><use href={sitePath('/editorial/illustrations.svg#screens')}/></svg></a><span class="eyebrow">数字生活</span><h3><a href={sitePath('/zh/topics/screen-time/')}>屏幕时间，<br>先看年龄，再看怎么用。</a></h3><p>把 WHO、美国儿科学会等机构的建议放在一起，看清共识，也看见差异。</p><span class="article-meta">官方指南对照 · 0—18 岁<time datetime="2026-11-13">内容更新 2026-11-13</time></span></article>
-          <article class="topic-story"><a class="topic-image media-art" href={sitePath('/zh/topics/social-media/')} aria-label="了解青少年社交媒体"><svg viewBox="0 0 400 225" role="img" aria-label="青少年把手机放在一旁，与家长坐下来交谈"><use href={sitePath('/editorial/illustrations.svg#social')}/></svg></a><span class="eyebrow">青春期与沟通</span><h3><a href={sitePath('/zh/topics/social-media/')}>关于社交媒体，<br>和孩子一起把话聊开。</a></h3><p>从家庭约定、睡眠保护到媒体素养，了解开始使用之前值得讨论的事。</p><span class="article-meta">官方健康建议 · 美国卫生总监 · APA<time datetime="2026-11-13">内容更新 2026-11-13</time></span></article>
-          <article class="topic-story"><a class="topic-image reading-art" href={sitePath('/zh/resources/nurturing-care-framework-2018/')} aria-label="了解回应式照护"><svg viewBox="0 0 400 225" role="img" aria-label="大人顺着宝宝指的方向看，一起观察窗外的小鸟"><use href={sitePath('/editorial/illustrations.svg#respond')}/></svg></a><span class="eyebrow">日常里的发展科学</span><h3><a href={sitePath('/zh/resources/nurturing-care-framework-2018/')}>他指向一只小鸟，<br>你们的对话就开始了。</a></h3><p>留意孩子的目光和声音，跟着他的兴趣回应。认识养育照护中的回应式互动。</p><span class="article-meta">官方框架 · WHO · UNICEF<time datetime="2026-11-13">来源核验 2026-11-13</time></span></article>
+          <article class="topic-story"><a class="topic-image screen-art" href={localPath('topics/screen-time/')} aria-label={copy.screenLabel}><svg viewBox="0 0 400 225" role="img" aria-label={copy.screenAlt}><use href={sitePath('/editorial/illustrations.svg#screens')}/></svg></a><span class="eyebrow">{copy.screenCategory}</span><h3><a href={localPath('topics/screen-time/')}>{copy.screenTitleFirst}<br>{copy.screenTitleSecond}</a></h3><p>{copy.screenDescription}</p><span class="article-meta">{copy.screenEvidence}<time datetime="2026-11-13">{copy.contentDate}</time></span></article>
+          <article class="topic-story"><a class="topic-image media-art" href={localPath('topics/social-media/')} aria-label={copy.mediaLabel}><svg viewBox="0 0 400 225" role="img" aria-label={copy.mediaAlt}><use href={sitePath('/editorial/illustrations.svg#social')}/></svg></a><span class="eyebrow">{copy.mediaCategory}</span><h3><a href={localPath('topics/social-media/')}>{copy.mediaTitleFirst}<br>{copy.mediaTitleSecond}</a></h3><p>{copy.mediaDescription}</p><span class="article-meta">{copy.mediaEvidence}<time datetime="2026-11-13">{copy.contentDate}</time></span></article>
+          <article class="topic-story"><a class="topic-image reading-art" href={localPath('resources/nurturing-care-framework-2018/')} aria-label={copy.respondLabel}><svg viewBox="0 0 400 225" role="img" aria-label={copy.respondAlt}><use href={sitePath('/editorial/illustrations.svg#respond')}/></svg></a><span class="eyebrow">{copy.respondCategory}</span><h3><a href={localPath('resources/nurturing-care-framework-2018/')}>{copy.respondTitleFirst}<br>{copy.respondTitleSecond}</a></h3><p>{copy.respondDescription}</p><span class="article-meta">{copy.respondEvidence}<time datetime="2026-11-13">{copy.checkedDate}</time></span></article>
         </div>
       </section>
     </div>
 
     <section class="reading-band" id="reading" aria-labelledby="reading-title">
-      <div class="wrap reading-layout"><div class="reading-intro"><span class="eyebrow">A SMALL, THOUGHTFUL SHELF</span><h2 id="reading-title">好资源，<br>不必很多。</h2><p>几本值得翻开的书，<br>几份可以放心查阅的指南。<br>每一条，都有出处。</p><a class="text-link" href={sitePath('/zh/library/')}>走进资源库 <span aria-hidden="true">↗</span></a></div>
-        <div class="reading-list"><a class="reading-row" href={sitePath('/zh/resources/faber-mazlish-kids/')}><span class="resource-number">01</span><div><span class="resource-kind">经典著作 · 亲子沟通</span><h3>如何说，孩子才会听；<br class="desktop-break">怎么听，孩子才肯说</h3><p>Adele Faber & Elaine Mazlish</p><p class="resource-checked">来源核验 <time datetime="2026-11-13">2026-11-13</time></p></div><span class="row-arrow" aria-hidden="true">↗</span></a><a class="reading-row" href={sitePath('/zh/resources/aap-family-media-plan/')}><span class="resource-number">02</span><div><span class="resource-kind">官方工具 · 家庭约定</span><h3>一起制定家庭媒体使用计划</h3><p>美国儿科学会 · AAP</p><p class="resource-checked">来源核验 <time datetime="2026-11-13">2026-11-13</time></p></div><span class="row-arrow" aria-hidden="true">↗</span></a><a class="reading-row" href={sitePath('/zh/resources/nurturing-care-framework-2018/')}><span class="resource-number">03</span><div><span class="resource-kind">官方框架 · 早期发展</span><h3>儿童早期发展养育照护框架</h3><p>WHO · UNICEF · World Bank Group</p><p class="resource-checked">来源核验 <time datetime="2026-11-13">2026-11-13</time></p></div><span class="row-arrow" aria-hidden="true">↗</span></a></div>
+      <div class="wrap reading-layout"><div class="reading-intro"><span class="eyebrow">A SMALL, THOUGHTFUL SHELF</span><h2 id="reading-title">{copy.shelfTitleFirst}<br>{copy.shelfTitleSecond}</h2><p>{copy.shelfIntroFirst}<br>{copy.shelfIntroSecond}<br>{copy.shelfIntroThird}</p><a class="text-link" href={localPath('library/')}>{copy.library} <span aria-hidden="true">↗</span></a></div>
+        <div class="reading-list"><a class="reading-row" href={localPath('resources/faber-mazlish-kids/')}><span class="resource-number">01</span><div><span class="resource-kind">{copy.bookKind}</span><h3>{copy.bookTitleFirst}<br class="desktop-break">{copy.bookTitleSecond}</h3><p>Adele Faber & Elaine Mazlish</p><p class="resource-checked">{copy.checked} <time datetime="2026-11-13">2026-11-13</time></p></div><span class="row-arrow" aria-hidden="true">↗</span></a><a class="reading-row" href={localPath('resources/aap-family-media-plan/')}><span class="resource-number">02</span><div><span class="resource-kind">{copy.planKind}</span><h3>{copy.planTitle}</h3><p>{copy.planBy}</p><p class="resource-checked">{copy.checked} <time datetime="2026-11-13">2026-11-13</time></p></div><span class="row-arrow" aria-hidden="true">↗</span></a><a class="reading-row" href={localPath('resources/nurturing-care-framework-2018/')}><span class="resource-number">03</span><div><span class="resource-kind">{copy.frameworkKind}</span><h3>{copy.frameworkTitle}</h3><p>WHO · UNICEF · World Bank Group</p><p class="resource-checked">{copy.checked} <time datetime="2026-11-13">2026-11-13</time></p></div><span class="row-arrow" aria-hidden="true">↗</span></a></div>
       </div>
     </section>
 
-    <section class="trust-section wrap" id="about" aria-labelledby="trust-title"><div class="trust-intro"><svg class="sprout" viewBox="0 0 60 70" aria-hidden="true"><path d="M29 64V30M29 43C6 43 5 23 7 18c20 0 25 13 22 25ZM29 31C29 10 44 5 54 6c0 17-8 27-25 25Z"/></svg><h2 id="trust-title">养育有疑问，<br>查找有依据。</h2></div><div class="trust-points"><div><h3>每条内容，都能找到出处。</h3><p>重要建议附原始来源，区分指南、研究与著作，并标明内容更新或来源核验日期。</p></div><div><h3>少一点打扰，多一点安心。</h3><p>没有广告，无需注册。孩子的档案仅保存在你的浏览器里。</p></div></div></section>
+    <section class="trust-section wrap" id="about" aria-labelledby="trust-title"><div class="trust-intro"><svg class="sprout" viewBox="0 0 60 70" aria-hidden="true"><path d="M29 64V30M29 43C6 43 5 23 7 18c20 0 25 13 22 25ZM29 31C29 10 44 5 54 6c0 17-8 27-25 25Z"/></svg><h2 id="trust-title">{copy.trustTitleFirst}<br>{copy.trustTitleSecond}</h2></div><div class="trust-points"><div><h3>{copy.sourcesTitle}</h3><p>{copy.sourcesDescription}</p></div><div><h3>{copy.privacyTitle}</h3><p>{copy.privacyDescription}</p></div></div></section>
   </main>
 
-  <footer class="site-footer"><div class="wrap footer-inner"><a class="footer-brand" href={homeUrl}>Edustack<span>有出处的家庭教育资源</span></a><p>陪伴成长，也尊重每个家庭自己的节奏。</p><div><a href="#about">关于本站</a> · <a href="https://archive.edustack.org/">历史博客</a><span>内容仅供参考，不能代替专业建议。</span></div></div></footer>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="footer-brand" href={homeUrl}>Edustack<span>{copy.tagline}</span></a><p>{copy.footerNote}</p><div><a href="#about">{copy.about}</a> · <a href="https://archive.edustack.org/">{copy.archive}</a><span>{copy.disclaimer}</span></div></div></footer>
   
 </body>
 </html>

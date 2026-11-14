@@ -26,8 +26,17 @@ npm run check:links  # check every link still answers
 ```
 
 For access from another machine, run `npm run dev -- --host 0.0.0.0`.
-The editorial Chinese homepage is available at `/` and `/zh/`; the original
-English homepage is at `/en/`. English content pages retain their existing paths.
+The editorial homepage defaults to English at `/`; Simplified Chinese is at
+`/zh/`. `/en/` redirects to `/`. English content pages retain their existing
+unprefixed paths, with Chinese equivalents under `/zh/`. The language switcher
+opens the equivalent page in the selected language.
+
+Supported languages and URL prefixes are configured in `src/i18n/languages.ts`.
+Homepage text lives in `src/i18n/editorial.ts`, shared interface text in
+`src/i18n/ui.ts`, and content translations in `src/data/`. To add a language,
+provide its translations and page routes, then add it to the language registry;
+the shared switcher and language metadata use that registry. English remains
+the default; browser preferences do not override it automatically.
 
 No environment variables are needed locally. For deployment, copy `.env.example`
 to `.env` and set `SITE_URL` to the public site origin and `BASE_PATH` to the

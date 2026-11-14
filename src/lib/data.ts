@@ -6,8 +6,9 @@ import toolsRaw from '../data/tools.yaml?raw';
 import tipsRaw from '../data/tips.yaml?raw';
 import educatorsRaw from '../data/educators.yaml?raw';
 import sourcesRaw from '../data/sources.yaml?raw';
+import type { Lang } from '../i18n/languages';
 
-export type Lang = 'en' | 'zh';
+export type { Lang } from '../i18n/languages';
 export type L10n = { en: string; zh: string };
 export type L10nList = { en: string[]; zh: string[] };
 

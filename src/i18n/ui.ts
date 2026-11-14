@@ -1,4 +1,5 @@
 import type { Lang } from '../lib/data';
+import { languages } from './languages';
 
 export const ui = {
   en: {
@@ -62,16 +63,17 @@ export function href(lang: Lang, path = '') {
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   const [rawPath, hash] = path.replace(/^\//, '').split('#');
   const p = rawPath;
-  const prefix = lang === 'zh' ? '/zh' : p ? '' : '/en';
+  const prefix = languages[lang].prefix;
   const slash = p && !p.endsWith('/') && !p.includes('?') ? '/' : '';
   return `${base}${prefix}/${p}${slash}${hash !== undefined ? '#' + hash : ''}`;
 }
-/** Same page in the other language. */
+/** Same page in a supported language; English uses unprefixed URLs. */
 export function switchLang(pathname: string, to: Lang) {
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   let rest = pathname.startsWith(base) ? pathname.slice(base.length) : pathname;
-  rest = rest.replace(/^\/(?:zh|en)(\/|$)/, '/');
-  return to === 'zh' ? `${base}/zh${rest}` : rest === '/' ? `${base}/en/` : `${base}${rest}`;
+  const prefixes = Object.keys(languages).join('|');
+  rest = rest.replace(new RegExp(`^/(?:${prefixes})(/|$)`), '/');
+  return `${base}${languages[to].prefix}${rest || '/'}`;
 }
 export function fmtDate(iso: string, lang: Lang) {
   const [y, m, d] = iso.split('-').map(Number);

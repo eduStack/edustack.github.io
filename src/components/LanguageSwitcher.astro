@@ -1,0 +1,28 @@
+---
+import { languages, type Lang } from '../i18n/languages';
+import { switchLang } from '../i18n/ui';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const alternatives = (Object.keys(languages) as Lang[]).filter((code) => code !== lang);
+---
+<nav class="language-switcher" aria-label={languages[lang].switchLabel}>
+  {alternatives.map((code) => (
+    <a href={switchLang(Astro.url.pathname, code)} lang={languages[code].tag} hreflang={languages[code].tag}>
+      {languages[code].name}<span aria-hidden="true"> ↗</span>
+    </a>
+  ))}
+</nav>
+<script>
+  // Static pages only know the pathname at build time; keep live filters and anchors.
+  for (const link of document.querySelectorAll<HTMLAnchorElement>('.language-switcher a')) {
+    const target = new URL(link.href);
+    target.search = window.location.search;
+    target.hash = window.location.hash;
+    link.href = target.href;
+  }
+</script>
+<style>
+  .language-switcher { display: flex; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
+  a { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.25rem 0.5rem; }
+</style>
