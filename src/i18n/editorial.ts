@@ -117,6 +117,7 @@ const en = {
   "footerNote": "Growing together, at your family’s own pace.",
   "about": "About Edustack",
   "archive": "Historical blog",
+  "designReference": "Original design reference",
   "disclaimer": "For information only, not a substitute for professional advice."
 } as const;
 
@@ -237,6 +238,7 @@ const zh: Record<keyof typeof en, string> = {
   "footerNote": "陪伴成长，也尊重每个家庭自己的节奏。",
   "about": "关于本站",
   "archive": "历史博客",
+  "designReference": "原版设计参考",
   "disclaimer": "内容仅供参考，不能代替专业建议。"
 };
 

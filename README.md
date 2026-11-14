@@ -46,6 +46,13 @@ precedence. Restart the development server after changing `.env`.
 The sibling `Edustack preview/` directory is an older exported build. The current
 site is generated from `src/`, and `dist/` is recreated by `npm run build`.
 
+The complete original static design is permanently available at `/reference/`
+(Chinese: `/reference/zh/`; all 126 pages: `/reference/pages/`). Its files live in
+`public/reference/` and are copied unchanged during builds. See
+[`docs/original-design-reference.md`](docs/original-design-reference.md) for
+snapshot provenance and isolation details. Keep this snapshot fixed while
+redesigning the current site in `src/`.
+
 ## Where things live
 
 | Path | What |
