@@ -22,7 +22,8 @@ fixed while changing the current website in `src/`.
 Original relative page, asset, language-switch and search URLs remain inside
 the reference directory. The only publication adaptations are the reference
 notice and stylesheet, `noindex, nofollow` metadata, canonical URLs within the
-reference directory, and an isolated browser storage key:
+reference directory, removal of website open-source claims and source-code
+footer links, and an isolated browser storage key:
 `edustack.reference.profiles.v1`. The original key `edustack.profiles.v1` remains
 reserved for the current site. Reference pages retain the original external
 font and source links, so those resources still require network access.
