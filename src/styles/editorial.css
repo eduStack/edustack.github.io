@@ -14,7 +14,7 @@
   grid-template-columns: minmax(0, 2fr) minmax(18rem, 1fr);
   gap: 2.25rem;
 }
-.lead-image { display: block; background: #eee7d8; }
+.lead-image { display: block; }
 .family-art, .dinner-art, .age-item > img, .topic-image > img {
   display: block;
   inline-size: 100%;
@@ -158,9 +158,6 @@
 .topic-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
 .topic-image { display: block; margin-block-end: 1.25rem; }
 .topic-image > img { aspect-ratio: 16 / 9; }
-.screen-art { background: #e8d7c3; }
-.media-art { background: #dce5de; }
-.reading-art { background: #ece5b9; }
 .topic-story h3 { margin-block-start: 0.5rem; font-size: var(--type-section); }
 .topic-story h3 a { display: inline-block; min-block-size: 2.75rem; }
 .topic-story > p { margin-block-start: 1rem; color: var(--text); }

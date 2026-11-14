@@ -13,8 +13,8 @@ const localPath = (path: string) => href(lang, path);
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const sitePath = (path: string) => `${base}${path}`;
 const homeImage = (name: string, widths: number[], sizes: string, width: number, height: number) => ({
-  src: sitePath(`/editorial/home/${name}-${widths[widths.length - 1]}.webp`),
-  srcset: widths.map((size) => `${sitePath(`/editorial/home/${name}-${size}.webp`)} ${size}w`).join(', '),
+  src: sitePath(`/editorial/home/${name}-${widths[widths.length - 1]}.webp?v=transparent`),
+  srcset: widths.map((size) => `${sitePath(`/editorial/home/${name}-${size}.webp?v=transparent`)} ${size}w`).join(', '),
   sizes, width, height,
 });
 const homeUrl = href(lang);
