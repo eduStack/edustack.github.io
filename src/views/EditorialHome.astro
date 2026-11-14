@@ -96,7 +96,7 @@ const canonical = new URL(homeUrl, Astro.site || Astro.url.origin);
     <section class="trust-section wrap" id="about" aria-labelledby="trust-title"><div class="trust-intro"><svg class="sprout" viewBox="0 0 60 70" aria-hidden="true"><path d="M29 64V30M29 43C6 43 5 23 7 18c20 0 25 13 22 25ZM29 31C29 10 44 5 54 6c0 17-8 27-25 25Z"/></svg><h2 id="trust-title">{copy.trustTitleFirst}<br>{copy.trustTitleSecond}</h2></div><div class="trust-points"><div><h3>{copy.sourcesTitle}</h3><p>{copy.sourcesDescription}</p></div><div><h3>{copy.privacyTitle}</h3><p>{copy.privacyDescription}</p></div></div></section>
   </main>
 
-  <footer class="site-footer"><div class="wrap footer-inner"><a class="footer-brand" href={homeUrl}>eduStack<span>{copy.tagline}</span></a><p>{copy.footerNote}</p><div><a href="#about">{copy.about}</a> · <a href={sitePath(`/reference/${lang === 'zh' ? 'zh/' : ''}`)}>{copy.designReference}</a> · <a href="https://archive.edustack.org/">{copy.archive}</a><span>{copy.disclaimer}</span></div></div></footer>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="footer-brand" href={homeUrl}>eduStack<span>{copy.tagline}</span></a><p>{copy.footerNote}</p><div><a href="#about">{copy.about}</a> · <a href={sitePath(`/reference/${lang === 'zh' ? 'zh/' : ''}`)}>{copy.designReference}</a><span>{copy.disclaimer}</span></div></div></footer>
   
 </body>
 </html>
