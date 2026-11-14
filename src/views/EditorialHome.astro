@@ -12,6 +12,11 @@ const copy = editorialCopy[lang];
 const localPath = (path: string) => href(lang, path);
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const sitePath = (path: string) => `${base}${path}`;
+const homeImage = (name: string, widths: number[], sizes: string, width: number, height: number) => ({
+  src: sitePath(`/editorial/home/${name}-${widths[widths.length - 1]}.webp`),
+  srcset: widths.map((size) => `${sitePath(`/editorial/home/${name}-${size}.webp`)} ${size}w`).join(', '),
+  sizes, width, height,
+});
 const homeUrl = href(lang);
 const canonical = new URL(homeUrl, Astro.site || Astro.url.origin);
 ---
@@ -45,7 +50,7 @@ const canonical = new URL(homeUrl, Astro.site || Astro.url.origin);
 
       <section class="lead-grid" aria-label={copy.featured}>
         <article class="lead-story">
-          <a class="lead-image" href={localPath('ages/toddlers/')} aria-label={copy.leadLabel}><span class="image-note">{copy.imageNote}</span><svg class="family-art" viewBox="0 0 900 500" role="img" aria-label={copy.familyAlt}><use href={sitePath('/editorial/illustrations.svg#family')}/></svg></a>
+          <a class="lead-image" href={localPath('ages/toddlers/')} aria-label={copy.leadLabel}><span class="image-note">{copy.imageNote}</span><img class="family-art" {...homeImage('family', [640, 1280, 1680], '(max-width: 640px) calc(100vw - 32px), (max-width: 864px) calc(100vw - 48px), (max-width: 1088px) 60vw, 800px', 900, 500)} alt={copy.familyAlt} loading="eager" fetchpriority="high" decoding="async"></a>
           <div class="story-meta"><span class="eyebrow">{copy.leadEyebrow}</span><span>{copy.leadCategory}</span></div>
           <h2><a href={localPath('ages/toddlers/')}>{copy.leadTitleFirst}<br>{copy.leadTitleSecond}</a></h2>
           <p class="story-description">{copy.leadDescription}</p>
@@ -57,7 +62,7 @@ const canonical = new URL(homeUrl, Astro.site || Astro.url.origin);
             <div class="note-top"><span class="eyebrow">{copy.today}</span><svg viewBox="0 0 35 35" aria-hidden="true"><circle cx="17.5" cy="17.5" r="7"/><path d="M17.5 2v4m0 23v4M2 17.5h4m23 0h4M6.5 6.5l3 3m16 16 3 3m0-22-3 3m-16 16-3 3"/></svg></div>
             <span class="note-age">{copy.todayAge}</span>
             <h2>{copy.todayTitleFirst}<br>{copy.todayTitleSecond}</h2>
-            <svg class="dinner-art" viewBox="0 0 420 190" role="img" aria-label={copy.dinnerAlt}><use href={sitePath('/editorial/illustrations.svg#dinner')}/></svg>
+            <img class="dinner-art" {...homeImage('dinner', [480, 960], '(max-width: 640px) calc(100vw - 80px), (max-width: 864px) 50vw, 360px', 420, 190)} alt={copy.dinnerAlt} loading="eager" decoding="async">
             <p>{copy.todayDescription}</p>
             <a class="note-source" href={localPath('resources/romeo-2018-conversational-turns/')}>{copy.todayResearch} <span aria-hidden="true">↗</span></a>
             <div class="source-details note-details"><span>{copy.todayEvidence}</span><span>{copy.checked} <time datetime="2026-11-13">2026-11-13</time></span></div>
@@ -69,20 +74,20 @@ const canonical = new URL(homeUrl, Astro.site || Astro.url.origin);
       <section id="ages" class="age-section section-space" aria-labelledby="age-title">
         <div class="section-heading"><div><span class="eyebrow">EVERY AGE, A NEW CHAPTER</span><h2 id="age-title">{copy.ageTitle}</h2></div><p>{copy.ageDescription}</p></div>
         <div class="age-grid">
-          <a class="age-item" href={localPath('ages/babies/')}><span class="age-range">{copy.babyRange}</span><svg viewBox="0 0 200 120" role="img" aria-label={copy.babyAlt}><use href={sitePath('/editorial/illustrations.svg#baby')}/></svg><h3>{copy.babyTitle}<span aria-hidden="true">↗</span></h3><p>{copy.babyDescription}</p></a>
-          <a class="age-item" href={localPath('ages/toddlers/')}><span class="age-range">{copy.toddlerRange}</span><svg viewBox="0 0 200 120" role="img" aria-label={copy.toddlerAlt}><use href={sitePath('/editorial/illustrations.svg#toddler')}/></svg><h3>{copy.toddlerTitle}<span aria-hidden="true">↗</span></h3><p>{copy.toddlerDescription}</p></a>
-          <a class="age-item" href={localPath('ages/preschoolers/')}><span class="age-range">{copy.preschoolRange}</span><svg viewBox="0 0 200 120" role="img" aria-label={copy.preschoolAlt}><use href={sitePath('/editorial/illustrations.svg#preschool')}/></svg><h3>{copy.preschoolTitle}<span aria-hidden="true">↗</span></h3><p>{copy.preschoolDescription}</p></a>
-          <a class="age-item" href={localPath('ages/school-age/')}><span class="age-range">{copy.schoolRange}</span><svg viewBox="0 0 200 120" role="img" aria-label={copy.schoolAlt}><use href={sitePath('/editorial/illustrations.svg#school')}/></svg><h3>{copy.schoolTitle}<span aria-hidden="true">↗</span></h3><p>{copy.schoolDescription}</p></a>
-          <a class="age-item" href={localPath('ages/teens/')}><span class="age-range">{copy.teenRange}</span><svg viewBox="0 0 200 120" role="img" aria-label={copy.teenAlt}><use href={sitePath('/editorial/illustrations.svg#teen')}/></svg><h3>{copy.teenTitle}<span aria-hidden="true">↗</span></h3><p>{copy.teenDescription}</p></a>
+          <a class="age-item" href={localPath('ages/babies/')}><span class="age-range">{copy.babyRange}</span><img {...homeImage('baby', [240, 480], '(max-width: 480px) 28vw, 200px', 200, 120)} alt={copy.babyAlt} loading="lazy" decoding="async"><h3>{copy.babyTitle}<span aria-hidden="true">↗</span></h3><p>{copy.babyDescription}</p></a>
+          <a class="age-item" href={localPath('ages/toddlers/')}><span class="age-range">{copy.toddlerRange}</span><img {...homeImage('toddler', [240, 480], '(max-width: 480px) 28vw, 200px', 200, 120)} alt={copy.toddlerAlt} loading="lazy" decoding="async"><h3>{copy.toddlerTitle}<span aria-hidden="true">↗</span></h3><p>{copy.toddlerDescription}</p></a>
+          <a class="age-item" href={localPath('ages/preschoolers/')}><span class="age-range">{copy.preschoolRange}</span><img {...homeImage('preschool', [240, 480], '(max-width: 480px) 28vw, 200px', 200, 120)} alt={copy.preschoolAlt} loading="lazy" decoding="async"><h3>{copy.preschoolTitle}<span aria-hidden="true">↗</span></h3><p>{copy.preschoolDescription}</p></a>
+          <a class="age-item" href={localPath('ages/school-age/')}><span class="age-range">{copy.schoolRange}</span><img {...homeImage('school', [240, 480], '(max-width: 480px) 28vw, 200px', 200, 120)} alt={copy.schoolAlt} loading="lazy" decoding="async"><h3>{copy.schoolTitle}<span aria-hidden="true">↗</span></h3><p>{copy.schoolDescription}</p></a>
+          <a class="age-item" href={localPath('ages/teens/')}><span class="age-range">{copy.teenRange}</span><img {...homeImage('teen', [240, 480], '(max-width: 480px) 28vw, 200px', 200, 120)} alt={copy.teenAlt} loading="lazy" decoding="async"><h3>{copy.teenTitle}<span aria-hidden="true">↗</span></h3><p>{copy.teenDescription}</p></a>
         </div>
       </section>
 
       <section id="topics" class="topics-section section-space" aria-labelledby="topics-title">
         <div class="section-heading"><div><span class="eyebrow">QUESTIONS WE SHARE</span><h2 id="topics-title">{copy.topicsTitle}</h2></div><a class="text-link" href={localPath('topics/')}>{copy.allTopics} <span aria-hidden="true">↗</span></a></div>
         <div class="topic-grid">
-          <article class="topic-story"><a class="topic-image screen-art" href={localPath('topics/screen-time/')} aria-label={copy.screenLabel}><svg viewBox="0 0 400 225" role="img" aria-label={copy.screenAlt}><use href={sitePath('/editorial/illustrations.svg#screens')}/></svg></a><span class="eyebrow">{copy.screenCategory}</span><h3><a href={localPath('topics/screen-time/')}>{copy.screenTitleFirst}<br>{copy.screenTitleSecond}</a></h3><p>{copy.screenDescription}</p><span class="article-meta">{copy.screenEvidence}<time datetime="2026-11-13">{copy.contentDate}</time></span></article>
-          <article class="topic-story"><a class="topic-image media-art" href={localPath('topics/social-media/')} aria-label={copy.mediaLabel}><svg viewBox="0 0 400 225" role="img" aria-label={copy.mediaAlt}><use href={sitePath('/editorial/illustrations.svg#social')}/></svg></a><span class="eyebrow">{copy.mediaCategory}</span><h3><a href={localPath('topics/social-media/')}>{copy.mediaTitleFirst}<br>{copy.mediaTitleSecond}</a></h3><p>{copy.mediaDescription}</p><span class="article-meta">{copy.mediaEvidence}<time datetime="2026-11-13">{copy.contentDate}</time></span></article>
-          <article class="topic-story"><a class="topic-image reading-art" href={localPath('resources/nurturing-care-framework-2018/')} aria-label={copy.respondLabel}><svg viewBox="0 0 400 225" role="img" aria-label={copy.respondAlt}><use href={sitePath('/editorial/illustrations.svg#respond')}/></svg></a><span class="eyebrow">{copy.respondCategory}</span><h3><a href={localPath('resources/nurturing-care-framework-2018/')}>{copy.respondTitleFirst}<br>{copy.respondTitleSecond}</a></h3><p>{copy.respondDescription}</p><span class="article-meta">{copy.respondEvidence}<time datetime="2026-11-13">{copy.checkedDate}</time></span></article>
+          <article class="topic-story"><a class="topic-image screen-art" href={localPath('topics/screen-time/')} aria-label={copy.screenLabel}><img {...homeImage('screens', [480, 960], '(max-width: 640px) calc(100vw - 32px), (max-width: 864px) 46vw, 400px', 400, 225)} alt={copy.screenAlt} loading="lazy" decoding="async"></a><span class="eyebrow">{copy.screenCategory}</span><h3><a href={localPath('topics/screen-time/')}>{copy.screenTitleFirst}<br>{copy.screenTitleSecond}</a></h3><p>{copy.screenDescription}</p><span class="article-meta">{copy.screenEvidence}<time datetime="2026-11-13">{copy.contentDate}</time></span></article>
+          <article class="topic-story"><a class="topic-image media-art" href={localPath('topics/social-media/')} aria-label={copy.mediaLabel}><img {...homeImage('social', [480, 960], '(max-width: 640px) calc(100vw - 32px), (max-width: 864px) 46vw, 400px', 400, 225)} alt={copy.mediaAlt} loading="lazy" decoding="async"></a><span class="eyebrow">{copy.mediaCategory}</span><h3><a href={localPath('topics/social-media/')}>{copy.mediaTitleFirst}<br>{copy.mediaTitleSecond}</a></h3><p>{copy.mediaDescription}</p><span class="article-meta">{copy.mediaEvidence}<time datetime="2026-11-13">{copy.contentDate}</time></span></article>
+          <article class="topic-story"><a class="topic-image reading-art" href={localPath('resources/nurturing-care-framework-2018/')} aria-label={copy.respondLabel}><img {...homeImage('respond', [480, 960], '(max-width: 640px) calc(100vw - 32px), (max-width: 864px) 46vw, 400px', 400, 225)} alt={copy.respondAlt} loading="lazy" decoding="async"></a><span class="eyebrow">{copy.respondCategory}</span><h3><a href={localPath('resources/nurturing-care-framework-2018/')}>{copy.respondTitleFirst}<br>{copy.respondTitleSecond}</a></h3><p>{copy.respondDescription}</p><span class="article-meta">{copy.respondEvidence}<time datetime="2026-11-13">{copy.checkedDate}</time></span></article>
         </div>
       </section>
     </div>

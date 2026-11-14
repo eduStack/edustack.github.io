@@ -21,6 +21,12 @@
   color: #475849;
   font: 600 var(--type-note) / var(--leading-note) var(--serif);
 }
+.family-art, .dinner-art, .age-item > img, .topic-image > img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  object-fit: cover;
+}
 .family-art { aspect-ratio: 1.8; }
 .story-meta {
   display: flex;
@@ -144,8 +150,8 @@
 .age-item:first-child { padding-inline-start: 0; border-inline-start: 0; }
 .age-item:last-child { padding-inline-end: 0; }
 .age-range { font-size: var(--type-ui); color: var(--muted); }
-.age-item > svg { inline-size: 100%; max-inline-size: 12.5rem; block-size: 7.5rem; margin: 0.75rem auto; transition: transform 0.25s ease; }
-.age-item:hover > svg { transform: translateY(-0.25rem); }
+.age-item > img { max-inline-size: 12.5rem; aspect-ratio: 5 / 3; margin: 0.75rem auto; transition: transform 0.25s ease; }
+.age-item:hover > img { transform: translateY(-0.25rem); }
 .age-item h3 {
   display: flex;
   align-items: baseline;
@@ -158,7 +164,7 @@
 .topics-section { margin-block-start: 2.5rem; }
 .topic-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
 .topic-image { display: block; margin-block-end: 1.25rem; }
-.topic-image > svg { aspect-ratio: 16 / 9; }
+.topic-image > img { aspect-ratio: 16 / 9; }
 .screen-art { background: #e8d7c3; }
 .media-art { background: #dce5de; }
 .reading-art { background: #ece5b9; }
@@ -257,7 +263,7 @@
     border-inline-start: 0;
     border-block-end: 1px solid var(--line);
   }
-  .age-item > svg { grid-column: 2; grid-row: 1 / 4; block-size: auto; margin: 0; }
+  .age-item > img { grid-column: 2; grid-row: 1 / 4; margin: 0; }
   .age-item > p { margin-block-start: 0; }
 }
 
