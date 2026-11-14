@@ -1,0 +1,6 @@
+---
+import V from '../../views/Stage.astro';
+import { stages } from '../../lib/data';
+export function getStaticPaths() { return stages.map((stage) => ({ params: { id: stage.id }, props: { stage } })); }
+---
+<V lang="en" stage={Astro.props.stage} />

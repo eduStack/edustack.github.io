@@ -1,0 +1,33 @@
+---
+// "The research behind it": studies shown under a topic, stage or recommendation.
+// Plain-language finding first, then what kind of study it is and where it was published.
+import { t, href } from '../i18n/ui';
+import type { Lang, Resource } from '../lib/data';
+interface Props { items: Resource[]; lang: Lang; heading?: 'h2' | 'h3' }
+const { items, lang, heading = 'h2' } = Astro.props;
+const s = t(lang);
+const zh = lang === 'zh';
+const H = heading;
+---
+{items.length > 0 && (
+  <section class="stack" style="gap:12px" aria-label={s.behind}>
+    <div class="stack" style="gap:4px">
+      <H class="h-serif" style={`margin:0;font-size:${heading === 'h2' ? 28 : 20}px`}>{s.behind}</H>
+      <span class="muted" style="font-size:14px">{zh
+        ? '先写研究发现了什么，再写研究类型和出处。我们优先收录系统综述和元分析，每月检查一次新发表的研究。'
+        : 'What each study found comes first, then the kind of study and where it was published. We prefer systematic reviews and meta-analyses, and check for new research every month.'}</span>
+    </div>
+    <ul class="stack" style="list-style:none;padding:0;margin:0;gap:10px">
+      {items.map((r) => (
+        <li class="card soft" style="padding:16px 18px;gap:8px">
+          <p style="margin:0;font-size:16px;line-height:1.6">{r.summary[lang]}</p>
+          <div class="row" style="gap:6px 12px;font-size:14px;color:var(--ink-2)">
+            {r.design && <span class="chip t-research">{s.design[r.design]}</span>}
+            <span>{r.by}{r.year ? `, ${r.year}` : ''}</span>
+            <a href={href(lang, `resources/${r.id}`)}>{zh ? '研究详情' : 'Study details'}</a>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+)}

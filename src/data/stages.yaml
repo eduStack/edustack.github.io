@@ -1,0 +1,273 @@
+# Fixed age-stage pages. Three blocks, in this order:
+#   1. develop     - what children are developing at this stage (the main storyline). Every point names its source.
+#   2. activities  - what you can do together; free tools are added automatically from tools.yaml by age.
+#   3. health      - short health and safety essentials, linking to guidelines (facts + links + extra source keys).
+# research: studies shown as "the research behind it". roots: educators whose ideas connect to this stage.
+# reading: 1-2 classic parenting books as further reading.
+# src values are keys in sources.yaml or resource ids.
+- id: babies
+  minMonths: 0
+  maxMonths: 11
+  name: { en: "Babies", zh: "婴儿期" }
+  range: { en: "0–12 months", zh: "0–12 个月" }
+  focus: { en: "Bonding, first sounds, exploring with hands and mouth", zh: "依恋、咿呀学语、用手和嘴探索" }
+  intro:
+    en: In the first year, babies form bonds of love and trust with the people who care for them, and learn by looking, listening, reaching and exploring.
+    zh: 第一年里，宝宝和照顾他们的人建立起爱和信任，并通过看、听、伸手抓和探索来学习。
+  introSrc: cdc-pp-infants
+  develop:
+    areas:
+      - area: social
+        points:
+          - { en: "By 6 months, knows familiar people and laughs.", zh: "6 个月左右认得熟悉的人，会笑出声。", src: cdc-6m }
+          - { en: "By 1 year, plays games with you, like pat-a-cake.", zh: "1 岁左右会和你玩拍手游戏。", src: cdc-1y }
+      - area: language
+        points:
+          - { en: "By 6 months, takes turns making sounds with you.", zh: "6 个月左右会和你轮流发出声音。", src: cdc-6m }
+          - { en: "By 1 year, waves bye-bye, calls a parent \"mama\" or \"dada\", and understands \"no\".", zh: "1 岁左右会挥手再见、叫爸爸妈妈，听得懂“不”。", src: cdc-1y }
+      - area: thinking
+        points:
+          - { en: "By 6 months, puts things in their mouth to explore them and reaches for toys.", zh: "6 个月左右会把东西放进嘴里探索，伸手去够玩具。", src: cdc-6m }
+          - { en: "By 1 year, looks for things they see you hide, like a toy under a blanket.", zh: "1 岁左右会去找你藏起来的东西，比如盖在毯子下的玩具。", src: cdc-1y }
+      - area: movement
+        points:
+          - { en: "By 6 months, rolls from tummy to back.", zh: "6 个月左右能从趴着翻成躺着。", src: cdc-6m }
+          - { en: "By 1 year, pulls up to stand and walks holding on to furniture.", zh: "1 岁左右能扶着站起来、扶着家具走。", src: cdc-1y }
+    concern: { en: "If your child is not meeting the milestones for their age, has lost skills they once had, or you are worried about how they play, learn, speak, act or move, talk with your child's doctor. Don't wait: acting early can make a real difference.", zh: "如果孩子没有达到这个年龄的里程碑、原来会的不会了，或者你担心孩子在玩、学、说话、行为或运动方面有问题，尽早和医生沟通。不要等待，早发现早干预很重要。", src: cdc-concerned }
+  activities:
+    - { en: "Talk to your baby, and answer their sounds by repeating them and adding words.", zh: "多和宝宝说话；宝宝发出声音时，重复它并加上词语回应。", src: cdc-pp-infants }
+    - { en: "Read and sing to your baby.", zh: "给宝宝读书、唱歌。", src: cdc-pp-infants }
+    - { en: "Notice what your baby looks at or points to, and respond - \"serve and return\".", zh: "留意宝宝在看什么、指什么，并及时回应，这就是“发球与回球”式互动。", src: harvard-serve-return }
+    - { en: "Play peekaboo and hide-a-toy games, which exercise memory and self-control.", zh: "玩躲猫猫、藏玩具的游戏，锻炼记忆和自我控制。", src: harvard-ef-6-18m }
+  health:
+    links: [aap-safe-sleep, who-complementary-feeding-2023, who-under5-activity-sleep-2019]
+    extra: [who-vaccines, aap-safety]
+  facts:
+    - label: { en: "Sleep in 24 hours", zh: "每 24 小时睡眠" }
+      value: { en: "12–16 hours (4–11 months)", zh: "12–16 小时（4–11 个月）" }
+      source: WHO 2019; AASM 2016
+    - label: { en: "Screen time", zh: "屏幕时间" }
+      value: { en: "Not recommended", zh: "不建议" }
+      source: WHO 2019
+  research: [kuhl-2003-foreign-language, baillargeon-1985-object]
+  roots:
+    - { educator: piaget, en: "Babies learn through their senses and movement, as Piaget described - though research shows they understand more, earlier, than he thought.", zh: "宝宝通过感官和动作学习，这是皮亚杰的观点；不过研究发现，婴儿懂得比他认为的更多、更早。" }
+    - { educator: vygotsky, en: "Back-and-forth with caregivers is where thinking starts, in Vygotsky's view.", zh: "在维果茨基看来，思维从和照顾者的你来我往中开始。" }
+  reading: [gopnik-scientist-in-the-crib]
+  updated: 2026-11-13
+
+- id: toddlers
+  minMonths: 12
+  maxMonths: 35
+  name: { en: "Toddlers", zh: "学步期" }
+  range: { en: "1–3 years", zh: "1–3 岁" }
+  focus: { en: "First words to conversations, pretend play, big feelings", zh: "从第一个词到对话、假装游戏、强烈的情绪" }
+  intro:
+    en: Toddlers move from single words to short conversations, start to notice other people's feelings, and love to explore and pretend.
+    zh: 学步期孩子从说单个词发展到简单对话，开始留意别人的感受，喜欢探索和玩假装游戏。
+  introSrc: cdc-3y
+  develop:
+    areas:
+      - area: social
+        points:
+          - { en: "By 2, notices when others are hurt or upset, and looks at your face to see how to react in a new situation.", zh: "2 岁左右会注意到别人受伤或难过，遇到新情况会看你的表情决定怎么反应。", src: cdc-2y }
+          - { en: "By 3, calms down within 10 minutes after you leave, and joins other children to play.", zh: "3 岁左右在你离开后 10 分钟内能平静下来，会加入其他孩子一起玩。", src: cdc-3y }
+      - area: language
+        points:
+          - { en: "By 2, says at least two words together, like \"More milk\".", zh: "2 岁左右能把两个词连起来说，比如“还要奶”。", src: cdc-2y }
+          - { en: "By 3, talks with you in at least two back-and-forth exchanges and asks who, what, where and why questions.", zh: "3 岁左右能和你来回对话至少两轮，会问“谁、什么、哪里、为什么”。", src: cdc-3y }
+      - area: thinking
+        points:
+          - { en: "By 2, tries switches, knobs and buttons, and plays with more than one toy at a time, like toy food on a toy plate.", zh: "2 岁左右会试着按开关、拧旋钮，能同时摆弄几样玩具，比如把玩具食物放到玩具盘子里。", src: cdc-2y }
+          - { en: "By 3, avoids touching hot objects when you warn them.", zh: "3 岁左右听到你提醒后会避开烫的东西。", src: cdc-3y }
+      - area: movement
+        points:
+          - { en: "By 2, runs and kicks a ball.", zh: "2 岁左右会跑、会踢球。", src: cdc-2y }
+          - { en: "By 3, uses a fork and puts on some clothes by themselves.", zh: "3 岁左右会用叉子，能自己穿一些衣服。", src: cdc-3y }
+    concern: { en: "If your child is not meeting the milestones for their age, has lost skills they once had, or you are worried about how they play, learn, speak, act or move, talk with your child's doctor. Don't wait: acting early can make a real difference.", zh: "如果孩子没有达到这个年龄的里程碑、原来会的不会了，或者你担心孩子在玩、学、说话、行为或运动方面有问题，尽早和医生沟通。不要等待，早发现早干预很重要。", src: cdc-concerned }
+  activities:
+    - { en: "Set up a special time to read books together.", zh: "每天留一段固定的亲子阅读时间。", src: cdc-pp-t23 }
+    - { en: "Encourage pretend play.", zh: "鼓励孩子玩假装游戏。", src: cdc-pp-t23 }
+    - { en: "Go for walks to explore things around you, and teach simple songs and rhymes.", zh: "带孩子散步探索周围，教简单的儿歌。", src: cdc-pp-t23 }
+    - { en: "Give active physical challenges and let them try again when a first attempt fails.", zh: "给孩子一些动作上的小挑战，第一次没成功就让他再试试。", src: harvard-ef-18-36m }
+    - { en: "If you speak more than one language fluently, use them with your child.", zh: "如果你能流利地说不止一种语言，就和孩子用这些语言交流。", src: harvard-ef-18-36m }
+  health:
+    links: [who-under5-activity-sleep-2019, aap-media-young-minds-2016, cdc-milestones]
+    extra: [who-vaccines, aap-safety]
+  facts:
+    - label: { en: "Sleep in 24 hours", zh: "每 24 小时睡眠" }
+      value: { en: "11–14 hours", zh: "11–14 小时" }
+      source: WHO 2019; AASM 2016
+    - label: { en: "Physical activity", zh: "身体活动" }
+      value: { en: "180+ minutes", zh: "180 分钟以上" }
+      source: WHO 2019
+    - label: { en: "Sedentary screen time", zh: "久坐屏幕时间" }
+      value: { en: "None at 1; up to 1 hour at 2", zh: "1 岁不建议；2 岁不超过 1 小时" }
+      source: WHO 2019
+  research: [madigan-2019-screen-development, madigan-2020-screen-language, skene-2022-guided-play]
+  roots:
+    - { educator: montessori, en: "Toddlers' wish to do things themselves is what Montessori built her method on.", zh: "学步期孩子“我自己来”的愿望，正是蒙台梭利教学法的出发点。" }
+    - { educator: froebel, en: "Froebel put play at the centre of early learning; guided play is backed by research today.", zh: "福禄贝尔把游戏放在早期学习的中心；今天的研究支持有引导的游戏。" }
+    - { educator: vygotsky, en: "Language helps children plan and control what they do, a link Vygotsky studied.", zh: "语言帮助孩子计划和控制自己的行为，这是维果茨基研究的主题。" }
+  reading: [siegel-whole-brain-child, gopnik-scientist-in-the-crib]
+  updated: 2026-11-13
+
+- id: preschoolers
+  minMonths: 36
+  maxMonths: 71
+  name: { en: "Preschoolers", zh: "学龄前" }
+  range: { en: "3–6 years", zh: "3–6 岁" }
+  focus: { en: "Stories and conversations, playing by rules, early numbers", zh: "讲故事和对话、按规则玩、数字启蒙" }
+  intro:
+    en: Preschoolers start following rules in games with other children, tell stories, and begin to count and recognise letters.
+    zh: 学龄前孩子开始和小伙伴按规则玩游戏、会讲故事，也开始数数和认字母。
+  introSrc: cdc-5y
+  develop:
+    areas:
+      - area: social
+        points:
+          - { en: "By 5, follows rules or takes turns when playing games with other children, and does simple chores like clearing the table.", zh: "5 岁左右和其他孩子玩游戏时能遵守规则、轮流，能做简单家务，比如饭后收拾桌子。", src: cdc-5y }
+      - area: language
+        points:
+          - { en: "By 5, tells a story with at least two events and keeps a conversation going for more than three exchanges.", zh: "5 岁左右能讲一个至少有两件事的故事，能和人来回对话三轮以上。", src: cdc-5y }
+          - { en: "By 5, uses or recognises simple rhymes.", zh: "5 岁左右会说或能听出简单的押韵。", src: cdc-5y }
+      - area: thinking
+        points:
+          - { en: "By 5, counts to 10 and uses words about time, like \"yesterday\" and \"tomorrow\".", zh: "5 岁左右能数到 10，会用“昨天、明天”这类表示时间的词。", src: cdc-5y }
+          - { en: "By 5, pays attention for 5 to 10 minutes during activities like story time (screen time doesn't count).", zh: "5 岁左右在讲故事等活动中能专注 5–10 分钟（看屏幕不算）。", src: cdc-5y }
+      - area: movement
+        points:
+          - { en: "By 5, hops on one foot and buttons some buttons.", zh: "5 岁左右能单脚跳，能自己扣一些扣子。", src: cdc-5y }
+    concern: { en: "If your child is not meeting the milestones for their age, has lost skills they once had, or you are worried about how they play, learn, speak, act or move, talk with your child's doctor. Don't wait: acting early can make a real difference.", zh: "如果孩子没有达到这个年龄的里程碑、原来会的不会了，或者你担心孩子在玩、学、说话、行为或运动方面有问题，尽早和医生沟通。不要等待，早发现早干预很重要。", src: cdc-concerned }
+  activities:
+    - { en: "Keep reading together, and visit the library.", zh: "坚持一起阅读，常去图书馆。", src: cdc-pp-pre }
+    - { en: "Let your child help with simple chores, and offer a few simple choices.", zh: "让孩子帮忙做简单家务，给孩子几个简单的选择。", src: cdc-pp-pre }
+    - { en: "When they are upset, walk through the steps to solve the problem together.", zh: "孩子不高兴时，陪他一步步想办法解决问题。", src: cdc-pp-pre }
+    - { en: "Support imaginary play with props and stories, such as playing doctor.", zh: "用道具和故事支持角色扮演游戏，比如“看医生”。", src: harvard-ef-3-5 }
+    - { en: "Encourage play with other children to learn sharing and friendship.", zh: "鼓励孩子和其他小朋友一起玩，学会分享和交朋友。", src: cdc-pp-pre }
+  health:
+    links: [who-under5-activity-sleep-2019, aap-media-young-minds-2016, aap-effective-discipline-2018]
+    extra: [who-vaccines, aap-safety]
+  facts:
+    - label: { en: "Sleep in 24 hours", zh: "每 24 小时睡眠" }
+      value: { en: "10–13 hours", zh: "10–13 小时" }
+      source: WHO 2019; AASM 2016
+    - label: { en: "Physical activity", zh: "身体活动" }
+      value: { en: "180+ min, 60 of them vigorous", zh: "180 分钟以上，其中 60 分钟中高强度" }
+      source: WHO 2019
+    - label: { en: "Sedentary screen time", zh: "久坐屏幕时间" }
+      value: { en: "1 hour or less", zh: "不超过 1 小时" }
+      source: WHO 2019
+  research: [romeo-2018-conversational-turns, skene-2022-guided-play, madigan-2020-screen-language]
+  roots:
+    - { educator: froebel, en: "Froebel founded the kindergarten around play for exactly this age.", zh: "福禄贝尔正是为这个年龄的孩子创办了以游戏为中心的幼儿园。" }
+    - { educator: vygotsky, en: "Helping with just the hard part and then stepping back - \"scaffolding\" - builds on Vygotsky's ideas.", zh: "只帮最难的那一步然后慢慢放手，也就是“脚手架”，来自维果茨基的思路。" }
+    - { educator: montessori, en: "Montessori preschools are among the best-studied ways of learning through self-chosen activity.", zh: "蒙台梭利幼儿园是“自主选择活动来学习”研究得最多的模式之一。" }
+  reading: [faber-mazlish-kids, siegel-whole-brain-child]
+  updated: 2026-11-13
+
+- id: school-age
+  minMonths: 72
+  maxMonths: 143
+  name: { en: "School age", zh: "小学阶段" }
+  range: { en: "6–12 years", zh: "6–12 岁" }
+  focus: { en: "Attention and reading, friendships, handling setbacks", zh: "专注和阅读、友谊、面对挫折" }
+  intro:
+    en: School-age children's attention and language grow a lot, friends start to matter more, and learning to cope with failure becomes important.
+    zh: 小学阶段孩子的专注力和语言能力大幅提升，朋友变得更重要，学会面对失败也变得重要。
+  introSrc: mp-school
+  develop:
+    areas:
+      - area: thinking
+        points:
+          - { en: "A 6-year-old can usually focus on a task for at least 15 minutes; by 9, for about an hour.", zh: "6 岁孩子通常能专注一件事至少 15 分钟，9 岁时能专注约一小时。", src: mp-school }
+          - { en: "Around third grade, reading shifts from recognising words to understanding content.", zh: "大约从三年级开始，阅读从认字转向理解内容。", src: mp-school }
+      - area: language
+        points:
+          - { en: "Sentences grow more complex; a 6-year-old can follow 3 instructions in a row, a 10-year-old about 5.", zh: "句子越来越复杂；6 岁能连续听懂 3 个指令，10 岁大约 5 个。", src: mp-school }
+      - area: social
+        points:
+          - { en: "Being accepted by friends becomes more important, and children may join in behaviours to be part of the group.", zh: "被朋友接纳变得更重要，孩子可能为了合群而跟着做一些事。", src: mp-school }
+          - { en: "Children may \"try on\" lying or cheating as they learn how rules work; deal with it privately and calmly.", zh: "孩子可能会“试探性地”撒谎或作弊，这是他们在学习规则；私下、平静地处理。", src: mp-school }
+      - area: emotional
+        points:
+          - { en: "Learning to handle failure and frustration without losing self-esteem is a key task.", zh: "学会面对失败和挫折而不失去自信，是这个阶段的重要任务。", src: mp-school }
+      - area: body
+        points:
+          - { en: "There are big differences in height, build and the age puberty starts.", zh: "孩子之间的身高、体型以及青春期开始的时间差别很大。", src: mp-school }
+    concern: { en: "If you suspect a learning difficulty, bullying, anxiety or low mood, talk with your child's teacher or doctor.", zh: "如果怀疑孩子有学习困难、被欺负、焦虑或情绪低落，和老师或医生沟通。", src: mp-school }
+  activities:
+    - { en: "Play card and board games that need memory and strategy - from matching games for younger children to chess or Go for older ones.", zh: "玩需要记忆和策略的纸牌、棋类游戏：小一点玩配对游戏，大一点可以下象棋、围棋。", src: harvard-ef-7-12 }
+    - { en: "As children learn a game, step back and let them remember and enforce the rules themselves.", zh: "孩子熟悉游戏后，大人逐渐退出，让孩子自己记住和执行规则。", src: harvard-ef-5-7 }
+    - { en: "Talk about what their friends are doing, so they can fit in without crossing your family's limits.", zh: "和孩子聊聊朋友们在做什么，帮他们既能合群，又不越过家里的底线。", src: mp-school }
+    - { en: "Aim for at least 60 minutes of moderate-to-vigorous activity a day, together where you can.", zh: "每天至少 60 分钟中高强度运动，能一起就一起。", src: who-activity-2020 }
+  health:
+    links: [who-activity-2020, aap-family-media-plan, aap-effective-discipline-2018, aap-puberty-girls, aap-puberty-boys]
+    extra: [who-vaccines, aap-safety]
+  facts:
+    - label: { en: "Sleep in 24 hours", zh: "每 24 小时睡眠" }
+      value: { en: "9–12 hours", zh: "9–12 小时" }
+      source: AASM 2016
+    - label: { en: "Physical activity", zh: "身体活动" }
+      value: { en: "60 min a day, moderate to vigorous", zh: "每天 60 分钟中高强度" }
+      source: WHO 2020
+  research: [gershoff-2016-spanking, sisk-2018-mindset-meta, banerjee-2017-tarl]
+  roots:
+    - { educator: confucius, en: "Children in one class can be at very different levels; teaching to each child's level, as Confucius did, is backed by trials today.", zh: "同一个班的孩子水平可能差别很大；像孔子那样“因材施教”，今天有随机试验支持。" }
+    - { educator: dewey, en: "Dewey's \"learning by doing\" fits this age, as long as adults guide it.", zh: "杜威的“做中学”很适合这个年龄，前提是大人给予引导。" }
+    - { educator: tao-xingzhi, en: "Tao Xingzhi saw everyday life as education - chores and errands teach too.", zh: "陶行知认为“生活即教育”，家务和跑腿也是学习。" }
+    - { educator: piaget, en: "Piaget described this as the age of more logical, concrete thinking.", zh: "皮亚杰认为这是逻辑性、具体思维发展的阶段。" }
+  reading: [faber-mazlish-kids, dweck-mindset]
+  learning: true
+  updated: 2026-11-13
+
+- id: teens
+  minMonths: 144
+  maxMonths: 215
+  name: { en: "Teens", zh: "青少年" }
+  range: { en: "12–18 years", zh: "12–18 岁" }
+  focus: { en: "Identity, independence, mood and friendships", zh: "自我认同、独立、情绪和友谊" }
+  intro:
+    en: Teenagers move toward a more mature sense of who they are, separate from their parents, and turn more to friends - while their brains keep maturing into their 20s.
+    zh: 青少年逐渐形成更成熟的自我认识，开始和父母分离，更多转向朋友；他们的大脑要到 20 多岁才完全成熟。
+  introSrc: mp-teen
+  develop:
+    areas:
+      - area: thinking
+        points:
+          - { en: "Early teens often think in black-and-white terms; by the middle teens, abstract thinking grows.", zh: "青春期早期常常非黑即白地看问题；到青春期中期，抽象思维逐渐发展。", src: aap-teen-stages }
+          - { en: "The frontal lobes, which handle impulse control and complex decisions, keep maturing until well into the 20s.", zh: "负责冲动控制和复杂决策的大脑额叶，要到 20 多岁才发育完成。", src: aap-teen-stages }
+      - area: identity
+        points:
+          - { en: "It is normal to start separating from parents and forming their own identity; this can bring conflict.", zh: "开始和父母分离、形成自己的认同是正常的，这可能带来一些冲突。", src: mp-teen }
+      - area: social
+        points:
+          - { en: "Friends become more important, and peer pressure may peak in the middle teens.", zh: "朋友变得更重要，同伴压力在青春期中期可能达到高峰。", src: aap-teen-stages }
+      - area: emotional
+        points:
+          - { en: "Body changes make many teens self-conscious and worried about how they compare with peers.", zh: "身体变化让很多青少年变得敏感，担心自己和同伴比起来怎么样。", src: mp-teen }
+          - { en: "Pre-teens feel a growing need for privacy and may push back strongly against limits.", zh: "青春期前后的孩子越来越需要隐私，对限制可能反应强烈。", src: aap-teen-stages }
+    concern: { en: "Know the signs of anxiety and depression, and get help early if mood or behaviour changes last.", zh: "了解焦虑和抑郁的信号；如果情绪或行为的变化持续，尽早求助。", src: who-adolescent-mental-health }
+  activities:
+    - { en: "Help your teen set a goal that matters to them, plan the steps, and check progress along the way.", zh: "帮孩子定一个对他自己有意义的目标，一起规划步骤，并定期回顾进展。", src: harvard-ef-teens }
+    - { en: "Encourage talking themselves through tricky situations to manage impulses.", zh: "鼓励孩子遇到难事时“自言自语”地把步骤说出来，帮助控制冲动。", src: harvard-ef-teens }
+    - { en: "Support volunteering on a cause they care about.", zh: "支持孩子为自己关心的议题做志愿服务。", src: harvard-ef-teens }
+    - { en: "Agree screen and phone rules together, including protecting sleep.", zh: "一起商量屏幕和手机规则，包括保护睡眠时间。", src: apa-social-media-advisory-2023 }
+  health:
+    links: [who-adolescent-mental-health, apa-social-media-advisory-2023, us-surgeon-general-social-media-2023, aap-puberty-girls, aap-puberty-boys]
+    extra: [who-vaccines, aap-safety]
+  facts:
+    - label: { en: "Sleep in 24 hours", zh: "每 24 小时睡眠" }
+      value: { en: "8–10 hours", zh: "8–10 小时" }
+      source: AASM 2016
+    - label: { en: "Physical activity", zh: "身体活动" }
+      value: { en: "60 min a day, moderate to vigorous", zh: "每天 60 分钟中高强度" }
+      source: WHO 2020
+  research: [meeus-2011-identity, orben-2019-wellbeing-tech]
+  roots:
+    - { educator: erikson, en: "Erikson made identity the central task of adolescence; long-term studies show it forms gradually.", zh: "埃里克森把自我认同看作青春期的核心任务；长期研究发现它是逐步形成的。" }
+    - { educator: cai-yuanpei, en: "Cai Yuanpei argued for balanced education - body, mind, morals and the arts - which matters as schoolwork grows.", zh: "蔡元培主张五育并举，学业越来越重时，这种全面发展的思路更值得记住。" }
+    - { educator: piaget, en: "Piaget placed the start of abstract reasoning in adolescence.", zh: "皮亚杰认为抽象推理能力在青春期出现。" }
+  reading: [faber-mazlish-teens, siegel-brainstorm]
+  learning: true
+  updated: 2026-11-13

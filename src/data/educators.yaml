@@ -1,0 +1,167 @@
+# Classic educators. Every line names its source: a key in sources.yaml or a resource id.
+# supported / outdated: what modern research backs up, and what it does not.
+# texts: free, legal full texts only (public domain). If none, say so with texts: [].
+- id: confucius
+  name: { en: Confucius, zh: 孔子 }
+  years: "551–479 BCE (traditional dates)"
+  region: { en: China, zh: 中国 }
+  bio: { en: "Teacher and thinker of ancient China whose sayings were collected by his students in the Analects.", zh: "中国古代的教师和思想家，学生把他的言论编成了《论语》。", src: sep-confucius }
+  ideas:
+    - { en: "Learning and thinking go together: \"Learning without thinking is useless; thinking without learning is dangerous.\"", zh: "学习和思考缺一不可：“学而不思则罔，思而不学则殆。”", src: analects-2 }
+    - { en: "Teach each student according to who they are: asked the same question by two students, he gave them opposite advice. Later scholars summed this up as \"teaching according to aptitude\" (因材施教).", zh: "根据学生的情况教：两个学生问同一个问题，他给了相反的回答。后人把这种做法概括为“因材施教”。", src: analects-11 }
+    - { en: "Education is for everyone: \"In teaching there should be no distinction of classes.\"", zh: "教育面向所有人：“有教无类。”", src: analects-15 }
+  today: { en: "Notice what your child already knows and how they think, and adjust how you help, rather than using one approach for every child.", zh: "先看清孩子已经会什么、是怎么想的，再调整帮助的方式，而不是对每个孩子都用同一套办法。", src: analects-11 }
+  supported:
+    - { en: "Teaching children at their actual level, rather than strictly by grade, raised learning in large randomised trials.", zh: "大规模随机试验发现，按孩子的实际水平教学，而不是死板地按年级进度，能提高学习成绩。", src: banerjee-2017-tarl }
+  outdated: []
+  texts:
+    - { label: { en: "Analects, original Chinese (Wikisource)", zh: "《论语》原文（维基文库）" }, url: "https://zh.wikisource.org/wiki/論語" }
+    - { label: { en: "Analects, Chinese (Project Gutenberg)", zh: "《论语》（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/23839" }
+    - { label: { en: "Analects, James Legge English translation (Project Gutenberg)", zh: "《论语》理雅各英译本（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/4094" }
+
+- id: rousseau
+  name: { en: Jean-Jacques Rousseau, zh: 卢梭 }
+  years: "1712–1778"
+  region: { en: Geneva and France, zh: 日内瓦、法国 }
+  bio: { en: "Philosopher whose novel-treatise Emile set out an education that follows the child's natural development.", zh: "哲学家，在《爱弥儿》中提出顺应孩子天性发展的教育。", src: sep-rousseau }
+  ideas:
+    - { en: "Child-centred \"negative education\": education should work in harmony with the development of the child's natural capacities.", zh: "以儿童为中心的“消极教育”：教育应当顺应孩子天生能力的发展。", src: sep-rousseau }
+    - { en: "Children should learn from experience and discovery more than from books and lectures.", zh: "孩子应当更多从亲身经验和自己发现中学习，而不是靠书本和说教。", src: sep-rousseau }
+  today: { en: "Let children try things for themselves at a level that fits their age, while staying close enough to help.", zh: "让孩子在适合年龄的范围内亲自尝试，同时大人在旁边随时可以帮忙。", src: alfieri-2011-discovery }
+  supported:
+    - { en: "Discovery learning works when it comes with support such as feedback and examples.", zh: "有支持（反馈、示范）的发现式学习是有效的。", src: alfieri-2011-discovery }
+  outdated:
+    - { en: "Leaving children to discover things entirely alone teaches less than explicit teaching.", zh: "完全让孩子自己摸索，学到的比直接讲解少。", src: alfieri-2011-discovery }
+    - { en: "Book V of Emile says a woman \"is made to please and to be in subjection to man\" - a view of girls' education modern readers reject.", zh: "《爱弥儿》第五卷称女性“生来是为了取悦男性并服从男性”，这种女子教育观今天已被摒弃。", src: emile-text }
+  texts:
+    - { label: { en: "Emile, English translation (Project Gutenberg)", zh: "《爱弥儿》英译本（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/5427" }
+
+- id: froebel
+  name: { en: Friedrich Froebel, zh: 福禄贝尔 }
+  years: "1782–1852"
+  region: { en: Germany, zh: 德国 }
+  bio: { en: "German educator who founded the kindergarten and put play at the centre of early education.", zh: "德国教育家，创办了“幼儿园”，把游戏放在早期教育的中心。", src: brit-froebel }
+  ideas:
+    - { en: "Play is young children's main way of learning.", zh: "游戏是幼儿最主要的学习方式。", src: brit-froebel }
+    - { en: "Children learn through their own activity, using simple materials such as blocks and shapes (his \"gifts\").", zh: "孩子通过自己动手来学习，用积木、几何形体等简单材料（他称为“恩物”）。", src: brit-froebel }
+  today: { en: "Play is learning. Join in sometimes, ask a question or add a challenge, rather than either leaving play entirely alone or turning it into a lesson.", zh: "玩就是学。偶尔加入进去，问个问题或加点挑战，既不要完全放手不管，也不要把游戏变成上课。", src: skene-2022-guided-play }
+  supported:
+    - { en: "Play with gentle adult guidance helped 1- to 8-year-olds learn early maths and shapes better than direct teaching.", zh: "大人适度引导的游戏，比直接教学更能帮助 1–8 岁孩子学习早期数学和图形。", src: skene-2022-guided-play }
+  outdated:
+    - { en: "Free play on its own did less for some skills, such as spatial words, than play with guidance.", zh: "单纯的自由玩耍在某些能力（比如空间词汇）上不如有引导的游戏。", src: skene-2022-guided-play }
+  texts:
+    - { label: { en: "The Education of Man, 1885 English translation (Internet Archive)", zh: "《人的教育》1885 年英译本（互联网档案馆）" }, url: "https://archive.org/details/educationofman00froe" }
+    - { label: { en: "Autobiography of Friedrich Froebel (Project Gutenberg)", zh: "《福禄贝尔自传》英译本（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/16434" }
+
+- id: montessori
+  name: { en: Maria Montessori, zh: 蒙台梭利 }
+  years: "1870–1952"
+  region: { en: Italy, zh: 意大利 }
+  bio: { en: "Italian physician and educator who developed the Montessori method in the early 1900s.", zh: "意大利医生和教育家，20 世纪初创立了蒙台梭利教学法。", src: brit-montessori }
+  ideas:
+    - { en: "Children choose their own activities and move freely, rather than sitting at desks.", zh: "孩子自己选择活动、自由走动，而不是坐在课桌前听讲。", src: brit-montessori }
+    - { en: "Specially designed hands-on materials that appeal to the senses.", zh: "使用专门设计、调动感官的动手材料。", src: brit-montessori }
+    - { en: "Children are challenged according to their ability, and help each other learn.", zh: "按每个孩子的能力给出挑战，鼓励孩子互相教。", src: brit-montessori }
+  today: { en: "At home this can mean letting children do real tasks for themselves and choose between a few well-chosen activities.", zh: "在家里，可以让孩子自己做真实的小事，并在几样精选的活动中自己挑。", src: brit-montessori }
+  supported:
+    - { en: "A systematic review of 32 studies found Montessori pupils did somewhat better, academically and in executive function.", zh: "一项汇总 32 项研究的系统综述发现，蒙台梭利学生在学业和执行功能上表现略好。", src: randolph-2023-montessori }
+    - { en: "In a lottery-based study, Montessori preschool narrowed the gap between lower- and higher-income children.", zh: "一项抽签入学的追踪研究发现，蒙台梭利幼儿园缩小了不同收入家庭孩子之间的差距。", src: lillard-2017-montessori }
+  outdated:
+    - { en: "Benefits were larger in preschool and primary than in secondary school, and some outcomes rest on low-quality evidence.", zh: "效果在幼儿园和小学阶段更明显，中学阶段较小；部分结果的证据质量较低。", src: randolph-2023-montessori }
+  texts:
+    - { label: { en: "The Montessori Method (Project Gutenberg)", zh: "《蒙台梭利方法》英译本（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/39863" }
+    - { label: { en: "Dr. Montessori's Own Handbook (Project Gutenberg)", zh: "《蒙台梭利手册》英译本（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/29635" }
+
+- id: dewey
+  name: { en: John Dewey, zh: 杜威 }
+  years: "1859–1952"
+  region: { en: United States, zh: 美国 }
+  bio: { en: "American philosopher who founded the Laboratory School in Chicago to test ideas about education.", zh: "美国哲学家，在芝加哥创办“实验学校”来检验他的教育理论。", src: sep-dewey }
+  ideas:
+    - { en: "Education grows out of experience: children learn by doing and by working on real problems.", zh: "教育来自经验：孩子在做中学，在解决真实问题中学。", src: sep-dewey }
+    - { en: "School should be connected to community and democratic life, not cut off from it.", zh: "学校应当和社区、民主生活连在一起，而不是与之隔绝。", src: sep-dewey }
+  today: { en: "Hands-on projects work well when an adult guides them: give feedback, show examples, and ask your child to explain their thinking.", zh: "动手做项目很好，但需要大人引导：及时反馈、给出示范，并让孩子说说自己的想法。", src: alfieri-2011-discovery }
+  supported:
+    - { en: "Discovery and project learning with support beats both lectures and unguided discovery.", zh: "有支持的探究和项目式学习，效果好于单纯讲授，也好于无指导的自己摸索。", src: alfieri-2011-discovery }
+  outdated:
+    - { en: "Versions of \"learning by doing\" that give beginners little guidance do not work well.", zh: "对初学者几乎不给指导的“做中学”，效果并不好。", src: kirschner-2006-guidance }
+  texts:
+    - { label: { en: "Democracy and Education (Project Gutenberg)", zh: "《民主主义与教育》英文原著（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/852" }
+    - { label: { en: "The School and Society (Project Gutenberg)", zh: "《学校与社会》英文原著（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/53910" }
+    - { label: { en: "The Child and the Curriculum (Project Gutenberg)", zh: "《儿童与课程》英文原著（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/29259" }
+
+- id: cai-yuanpei
+  name: { en: Cai Yuanpei, zh: 蔡元培 }
+  years: "1868–1940"
+  region: { en: China, zh: 中国 }
+  bio: { en: "First minister of education of the Republic of China (1912) and head of Peking University from 1916 to 1926.", zh: "中华民国首任教育总长（1912），1916–1926 年主持北京大学。", src: brit-cai }
+  ideas:
+    - { en: "Five kinds of education should all be developed together: physical and military, practical, civic morality, worldview, and aesthetic education.", zh: "五育并举：军国民教育、实利主义教育、公民道德教育、世界观教育、美感教育，“皆今日之教育所不可偏废者也”。", src: cai-1912 }
+    - { en: "Aesthetic education - art and beauty - can do for character what religion once did.", zh: "“以美育代宗教”：用艺术和美的教育来涵养品格。", src: cai-1917 }
+  today: { en: "Make room for movement, art and music alongside schoolwork.", zh: "在学业之外，给运动、艺术和音乐留出时间。", src: cai-1912 }
+  supported:
+    - { en: "Today's guidelines also ask for daily physical activity: at least 60 minutes a day for ages 5–17.", zh: "今天的指南同样重视身体活动：5–17 岁每天至少 60 分钟。", src: who-activity-2020 }
+  outdated:
+    - { en: "He presented military-citizen education as a need of his time, given the threats China faced in 1912.", zh: "他把“军国民教育”说成是当时形势下“不能不采”的做法，带有那个时代的背景。", src: cai-1912 }
+  texts:
+    - { label: { en: "Cai Yuanpei's works (Wikisource, Chinese)", zh: "蔡元培作品（维基文库）" }, url: "https://zh.wikisource.org/wiki/Author:蔡元培" }
+
+- id: piaget
+  name: { en: Jean Piaget, zh: 皮亚杰 }
+  years: "1896–1980"
+  region: { en: Switzerland, zh: 瑞士 }
+  bio: { en: "Swiss psychologist who described how children's thinking develops through a series of stages.", zh: "瑞士心理学家，提出儿童思维按阶段发展的理论。", src: brit-piaget }
+  ideas:
+    - { en: "Children actively build their own understanding of the world.", zh: "孩子是主动构建自己对世界理解的。", src: brit-piaget }
+    - { en: "Thinking develops in stages, from learning through the senses and movement in infancy to abstract reasoning in adolescence.", zh: "思维分阶段发展：从婴儿期靠感官和动作认识世界，到青春期能进行抽象推理。", src: brit-piaget }
+  today: { en: "Give children objects to explore and problems slightly beyond them, and expect their reasoning to differ from an adult's.", zh: "给孩子可以摆弄的东西和稍有挑战的问题，并理解孩子的推理方式和大人不同。", src: brit-piaget }
+  supported: []
+  outdated:
+    - { en: "Babies understand more, earlier, than he thought: 5-month-olds already seem to know hidden objects still exist.", zh: "婴儿懂得比他认为的更多、更早：5 个月大的婴儿似乎已经知道被挡住的东西仍然存在。", src: baillargeon-1985-object }
+    - { en: "Some difficulties he put down to reasoning turned out to come mainly from memory limits.", zh: "他认为是推理能力不足造成的一些困难，后来发现主要是记忆容量的限制。", src: brit-post-piaget }
+  texts: []
+
+- id: vygotsky
+  name: { en: Lev Vygotsky, zh: 维果茨基 }
+  years: "1896–1934"
+  region: { en: Russia (Soviet Union), zh: 俄国（苏联） }
+  bio: { en: "Russian psychologist whose 1934 book Thought and Language studied how thinking and speech develop together.", zh: "俄国心理学家，1934 年出版《思维与语言》，研究思维和语言如何一起发展。", src: brit-thought-language }
+  ideas:
+    - { en: "Children's thinking grows out of social interaction: they watch how others think and act, then make it their own.", zh: "孩子的思维来自与人的互动：先看别人怎么想、怎么做，再内化成自己的。", src: brit-post-piaget }
+    - { en: "The \"zone of proximal development\": what a child can do with help today, they can do alone tomorrow.", zh: "“最近发展区”：孩子今天在帮助下能做到的，明天就能独立做到。", src: mind-in-society }
+  today: { en: "Help with just the part your child can't manage yet, then step back as they get it. Researchers call this \"scaffolding\".", zh: "只帮孩子还做不到的那一部分，孩子学会后就慢慢放手。研究者把这叫做“脚手架”。", src: wood-1976-scaffolding }
+  supported:
+    - { en: "Studies of adults tutoring young children described how well-judged help lets children finish tasks they couldn't do alone.", zh: "对大人辅导幼儿的研究发现，恰到好处的帮助能让孩子完成独自做不到的任务。", src: wood-1976-scaffolding }
+    - { en: "Play with gentle adult guidance improved some early learning more than direct teaching.", zh: "大人适度引导的游戏，在部分早期学习上比直接教学效果更好。", src: skene-2022-guided-play }
+  outdated: []
+  texts: []
+
+- id: tao-xingzhi
+  name: { en: Tao Xingzhi, zh: 陶行知 }
+  years: "1891–1946"
+  region: { en: China, zh: 中国 }
+  bio: { en: "Chinese educator who studied at Teachers College, Columbia, and in 1927 co-founded the Xiaozhuang rural teachers' school.", zh: "中国教育家，曾在哥伦比亚大学师范学院学习，1927 年参与创办晓庄试验乡村师范学校。", src: tc-tao }
+  ideas:
+    - { en: "Life is education.", zh: "生活即教育。", src: tc-tao }
+    - { en: "Teaching, learning and doing should be one.", zh: "教学做合一。", src: tc-tao }
+    - { en: "There should be no wall between school and society.", zh: "学校和社会之间不应有隔阂。", src: tc-tao }
+  today: { en: "Everyday life - cooking, shopping, fixing things - is a chance to learn together.", zh: "做饭、买东西、修东西，日常生活处处都是一起学习的机会。", src: tc-tao }
+  supported:
+    - { en: "Learning by doing works best with support such as feedback and examples.", zh: "在做中学，配合反馈和示范时效果最好。", src: alfieri-2011-discovery }
+  outdated: []
+  texts: []
+
+- id: erikson
+  name: { en: Erik Erikson, zh: 埃里克森 }
+  years: "1902–1994"
+  region: { en: Germany and United States, zh: 德国、美国 }
+  bio: { en: "Psychoanalyst whose 1950 book Childhood and Society set out his theory of psychosocial development.", zh: "精神分析学家，1950 年出版《童年与社会》，提出心理社会发展理论。", src: brit-childhood-society }
+  ideas:
+    - { en: "Life has eight psychosocial stages, each with its own demands, continuing into old age.", zh: "人的一生有八个心理社会发展阶段，每个阶段面对不同的任务，一直延续到老年。", src: brit-childhood-society }
+    - { en: "Adolescence centres on forming an identity - a sense of who one is.", zh: "青春期的核心是形成自我认同：知道“我是谁”。", src: meeus-2011-identity }
+  today: { en: "Teens trying out new ideas and friendships is part of building who they are. A warm home helps.", zh: "青少年尝试新想法、新朋友，是在建立自我。温暖的家庭对此有帮助。", src: meeus-2011-identity }
+  supported:
+    - { en: "Identity does develop gradually through adolescence, and teens with a more settled identity tend to be better adjusted.", zh: "自我认同确实在青春期逐步发展，认同感更成熟的青少年往往适应得更好。", src: meeus-2011-identity }
+  outdated:
+    - { en: "Identity formation is less of a dramatic \"crisis\" than often assumed; many teens change little.", zh: "自我认同的形成没有常说的那样像一场“危机”，很多青少年变化并不大。", src: meeus-2011-identity }
+  texts: []

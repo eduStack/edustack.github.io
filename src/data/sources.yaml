@@ -1,0 +1,44 @@
+# Web pages that short claims on stage and educator pages point to.
+# Every sentence we write on those pages names one of these keys (or a resource id) as its source.
+# Checked monthly with the other links.
+cdc-6m: { by: CDC, label: { en: "Milestones by 6 months", zh: "6 个月发育里程碑" }, url: "https://www.cdc.gov/act-early/milestones/6-months.html" }
+cdc-1y: { by: CDC, label: { en: "Milestones by 1 year", zh: "1 岁发育里程碑" }, url: "https://www.cdc.gov/act-early/milestones/1-year.html" }
+cdc-2y: { by: CDC, label: { en: "Milestones by 2 years", zh: "2 岁发育里程碑" }, url: "https://www.cdc.gov/act-early/milestones/2-years.html" }
+cdc-3y: { by: CDC, label: { en: "Milestones by 3 years", zh: "3 岁发育里程碑" }, url: "https://www.cdc.gov/act-early/milestones/3-years.html" }
+cdc-5y: { by: CDC, label: { en: "Milestones by 5 years", zh: "5 岁发育里程碑" }, url: "https://www.cdc.gov/act-early/milestones/5-years.html" }
+cdc-concerned: { by: CDC, label: { en: "Concerned about your child's development?", zh: "担心孩子的发育？" }, url: "https://www.cdc.gov/act-early/families/concerned.html" }
+cdc-pp-infants: { by: CDC, label: { en: "Positive parenting tips: infants (0–1)", zh: "积极养育建议：婴儿（0–1 岁）" }, url: "https://www.cdc.gov/child-development/positive-parenting-tips/infants.html" }
+cdc-pp-t12: { by: CDC, label: { en: "Positive parenting tips: toddlers (1–2)", zh: "积极养育建议：幼儿（1–2 岁）" }, url: "https://www.cdc.gov/child-development/positive-parenting-tips/toddlers-1-2-years.html" }
+cdc-pp-t23: { by: CDC, label: { en: "Positive parenting tips: toddlers (2–3)", zh: "积极养育建议：幼儿（2–3 岁）" }, url: "https://www.cdc.gov/child-development/positive-parenting-tips/toddlers-2-3-years.html" }
+cdc-pp-pre: { by: CDC, label: { en: "Positive parenting tips: preschoolers (3–5)", zh: "积极养育建议：学龄前（3–5 岁）" }, url: "https://www.cdc.gov/child-development/positive-parenting-tips/preschooler-3-5-years.html" }
+mp-school: { by: "MedlinePlus (US National Library of Medicine)", label: { en: "School-age children development", zh: "学龄儿童的发展" }, url: "https://medlineplus.gov/ency/article/002017.htm" }
+mp-teen: { by: "MedlinePlus (US National Library of Medicine)", label: { en: "Adolescent development", zh: "青少年的发展" }, url: "https://medlineplus.gov/ency/article/002003.htm" }
+aap-teen-stages: { by: American Academy of Pediatrics, label: { en: "Stages of adolescence", zh: "青春期的几个阶段" }, url: "https://www.healthychildren.org/English/ages-stages/teen/Pages/Stages-of-Adolescence.aspx" }
+harvard-serve-return: { by: Harvard Center on the Developing Child, label: { en: "Serve and return", zh: "“发球与回球”式互动" }, url: "https://developingchild.harvard.edu/key-concept/serve-and-return/" }
+harvard-ef-guide: { by: Harvard Center on the Developing Child, label: { en: "Activities guide: executive function skills", zh: "执行功能活动指南" }, url: "https://developingchild.harvard.edu/resources/handouts-tools/activities-guide-enhancing-and-practicing-executive-function-skills/" }
+harvard-ef-6-18m: { by: Harvard Center on the Developing Child, label: { en: "Activities for 6–18 months", zh: "6–18 个月活动" }, url: "https://developingchild.harvard.edu/wp-content/uploads/2024/10/Executive-Function-Activities-for-6-to-18-month-olds.pdf" }
+harvard-ef-18-36m: { by: Harvard Center on the Developing Child, label: { en: "Activities for 18–36 months", zh: "18–36 个月活动" }, url: "https://developingchild.harvard.edu/wp-content/uploads/2024/10/Executive-Function-Activities-for-18-to-36-month-olds.pdf" }
+harvard-ef-3-5: { by: Harvard Center on the Developing Child, label: { en: "Activities for 3–5 years", zh: "3–5 岁活动" }, url: "https://developingchild.harvard.edu/wp-content/uploads/2024/10/Executive-Function-Activities-for-3-to-5-year-olds.pdf" }
+harvard-ef-5-7: { by: Harvard Center on the Developing Child, label: { en: "Activities for 5–7 years", zh: "5–7 岁活动" }, url: "https://developingchild.harvard.edu/wp-content/uploads/2024/10/Executive-Function-Activities-for-5-to-7-year-olds.pdf" }
+harvard-ef-7-12: { by: Harvard Center on the Developing Child, label: { en: "Activities for 7–12 years", zh: "7–12 岁活动" }, url: "https://developingchild.harvard.edu/wp-content/uploads/2024/10/Executive-Function-Activities-for-7-to-12-year-olds.pdf" }
+harvard-ef-teens: { by: Harvard Center on the Developing Child, label: { en: "Activities for adolescents", zh: "青少年活动" }, url: "https://developingchild.harvard.edu/wp-content/uploads/2024/10/Activities-for-Adolescents.pdf" }
+who-vaccines: { by: World Health Organization, label: { en: "Vaccines and immunization", zh: "疫苗和免疫接种" }, url: "https://www.who.int/health-topics/vaccines-and-immunization" }
+aap-safety: { by: American Academy of Pediatrics, label: { en: "Safety and prevention", zh: "安全与预防" }, url: "https://www.healthychildren.org/English/safety-prevention/Pages/default.aspx" }
+sep-rousseau: { by: Stanford Encyclopedia of Philosophy, label: { en: "Jean Jacques Rousseau", zh: "卢梭（斯坦福哲学百科）" }, url: "https://plato.stanford.edu/entries/rousseau/" }
+sep-dewey: { by: Stanford Encyclopedia of Philosophy, label: { en: "John Dewey", zh: "杜威（斯坦福哲学百科）" }, url: "https://plato.stanford.edu/entries/dewey/" }
+sep-confucius: { by: Stanford Encyclopedia of Philosophy, label: { en: "Confucius", zh: "孔子（斯坦福哲学百科）" }, url: "https://plato.stanford.edu/entries/confucius/" }
+emile-text: { by: Project Gutenberg, label: { en: "Emile (Foxley translation), Book V", zh: "《爱弥儿》英译本第五卷" }, url: "https://www.gutenberg.org/ebooks/5427" }
+brit-froebel: { by: Encyclopaedia Britannica, label: { en: "Friedrich Froebel", zh: "福禄贝尔（大英百科）" }, url: "https://www.britannica.com/biography/Friedrich-Froebel" }
+brit-montessori: { by: Encyclopaedia Britannica, label: { en: "Montessori schools", zh: "蒙台梭利学校（大英百科）" }, url: "https://www.britannica.com/topic/Montessori-schools" }
+brit-piaget: { by: Encyclopaedia Britannica, label: { en: "Jean Piaget", zh: "皮亚杰（大英百科）" }, url: "https://www.britannica.com/biography/Jean-Piaget" }
+brit-post-piaget: { by: Encyclopaedia Britannica, label: { en: "Human intelligence: post-Piaget theories", zh: "人类智力：皮亚杰之后的理论（大英百科）" }, url: "https://www.britannica.com/science/human-intelligence-psychology/Post-Piaget-theories" }
+brit-thought-language: { by: Encyclopaedia Britannica, label: { en: "Thought and Language", zh: "《思维与语言》（大英百科）" }, url: "https://www.britannica.com/topic/Thought-and-Language" }
+mind-in-society: { by: "Vygotsky, Harvard University Press, 1978", label: { en: "Mind in Society (library record)", zh: "《社会中的心智》（图书馆记录）" }, url: "https://openlibrary.org/works/OL8298080W" }
+brit-childhood-society: { by: Encyclopaedia Britannica, label: { en: "Childhood and Society", zh: "《童年与社会》（大英百科）" }, url: "https://www.britannica.com/topic/Childhood-and-Society" }
+brit-cai: { by: Encyclopaedia Britannica, label: { en: "Cai Yuanpei", zh: "蔡元培（大英百科）" }, url: "https://www.britannica.com/biography/Cai-Yuanpei" }
+tc-tao: { by: "Teachers College, Columbia University", label: { en: "What you should know about Xingzhi Tao", zh: "关于陶行知（哥伦比亚大学师范学院）" }, url: "https://www.tc.columbia.edu/articles/2024/july/what-you-should-know-about-xingzhi-tao" }
+analects-2: { by: "Wikisource", label: { en: "Analects, Book 2 (Chinese text)", zh: "《论语·为政》原文" }, url: "https://zh.wikisource.org/wiki/論語/為政第二" }
+analects-11: { by: "Wikisource", label: { en: "Analects, Book 11 (Chinese text)", zh: "《论语·先进》原文" }, url: "https://zh.wikisource.org/wiki/論語/先進第十一" }
+cai-1912: { by: "Wikisource", label: { en: "Cai Yuanpei, views on the new education (1912)", zh: "蔡元培《对于新教育之意见》（1912）" }, url: "https://zh.wikisource.org/wiki/教育部總長蔡元培對於新教育之意見" }
+cai-1917: { by: "Wikisource", label: { en: "Cai Yuanpei, replacing religion with aesthetic education (1917)", zh: "蔡元培《以美育代宗教说》（1917）" }, url: "https://zh.wikisource.org/wiki/以美育代宗教說" }
+analects-15: { by: "Wikisource", label: { en: "Analects, Book 15 (Chinese text)", zh: "《论语·卫灵公》原文" }, url: "https://zh.wikisource.org/wiki/論語/衛靈公第十五" }

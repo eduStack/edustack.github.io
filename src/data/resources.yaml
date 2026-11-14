@@ -1,0 +1,916 @@
+# Every resource in the library.
+# Rules (enforced by scripts/validate-data.mjs):
+#   - url is required and must point to the original source
+#   - type: book | guideline | research
+#   - evidence: guideline | large | small | expert
+#       guideline = official guideline from an authoritative body
+#       large     = large study, systematic review or meta-analysis
+#       small     = single small study
+#       expert    = expert opinion, consensus statement or book
+#   - minMonths / maxMonths: the ages (in months) this resource is useful for, 0–215
+#   - sex: all | male | female  (only for growth and puberty content)
+#   - summary/whyAge/keyPoints/actions are short summaries in our words; the source is authoritative
+#   - checked: date the link and details were last verified (YYYY-MM-DD)
+#   - research items are not browsed on their own. They appear as "the research behind it"
+#     under the topics, stages and recommendations that list them. They need:
+#       design: meta-analysis | review | trial | cohort | experiment | observational | cross-sectional | large-dataset
+#     and their summary must state the finding in plain language first.
+#   - backedBy: research ids shown under a book or guideline as "the research behind it"
+#   - books also need isbn and publisher, and may have evidenceNote (shown in "further reading").
+#     A WorldCat library link is built from the isbn. No affiliate links.
+
+- id: who-under5-activity-sleep-2019
+  type: guideline
+  evidence: guideline
+  title:
+    en: Guidelines on physical activity, sedentary behaviour and sleep for children under 5 years of age
+    zh: WHO 5 岁以下儿童身体活动、久坐行为和睡眠指南
+  by: World Health Organization
+  year: 2019
+  url: https://www.who.int/publications/i/item/9789241550536
+  isbn: 978-92-4-155053-6
+  language: English, with other WHO language editions
+  free: true
+  minMonths: 0
+  maxMonths: 59
+  sex: all
+  topics: [sleep, activity, screen-time]
+  backedBy: [madigan-2019-screen-development, madigan-2020-screen-language]
+  core: true
+  summary:
+    en: The first WHO guideline to look at movement, sitting and sleep together for young children. It gives daily numbers for each age group.
+    zh: 世界卫生组织第一份把运动、久坐和睡眠放在一起考虑的低龄儿童指南，按年龄分段给出每天的具体数字。
+  whyAge:
+    en: It covers children under 5 in three groups (under 1, 1–2 and 3–4 years). For ages 5 to 17, see the WHO 2020 guidelines.
+    zh: 指南只针对 5 岁以下儿童，分为 1 岁以下、1–2 岁、3–4 岁三段。5–17 岁请看 WHO 2020 年指南。
+  keyPoints:
+    en:
+      - "Under 1: active several times a day, including at least 30 minutes on the tummy if not yet mobile; screen time not recommended; 14–17 hours of sleep at 0–3 months and 12–16 hours at 4–11 months."
+      - "1–2 years: at least 180 minutes of activity at any intensity; no sedentary screen time at age 1 and no more than 1 hour at age 2; 11–14 hours of sleep."
+      - "3–4 years: at least 180 minutes of activity including 60 minutes moderate to vigorous; no more than 1 hour of sedentary screen time; 10–13 hours of sleep."
+    zh:
+      - "1 岁以下：每天多次活动，还不会爬的婴儿每天至少俯趴 30 分钟；不建议看屏幕；0–3 个月睡 14–17 小时，4–11 个月睡 12–16 小时。"
+      - "1–2 岁：每天至少 180 分钟各种强度的活动；1 岁不建议久坐看屏幕，2 岁不超过 1 小时；睡 11–14 小时。"
+      - "3–4 岁：每天至少 180 分钟活动，其中至少 60 分钟中高强度；久坐看屏幕不超过 1 小时；睡 10–13 小时。"
+  actions:
+    en:
+      - Avoid keeping children restrained for more than an hour at a time, for example in a pram or car seat.
+      - When children are sitting still, read and tell stories together.
+      - Keep regular sleep and wake-up times.
+    zh:
+      - 不要让孩子一次被束缚超过 1 小时，比如长时间坐在推车或安全座椅里。
+      - 孩子安静坐着的时候，大人陪着一起读书、讲故事。
+      - 保持规律的入睡和起床时间。
+  checked: 2026-11-13
+
+- id: who-activity-2020
+  type: guideline
+  evidence: guideline
+  title:
+    en: WHO guidelines on physical activity and sedentary behaviour
+    zh: WHO 身体活动和久坐行为指南
+  by: World Health Organization
+  year: 2020
+  url: https://www.who.int/publications/i/item/9789240015128
+  isbn: 978-92-4-001512-8
+  language: English, with other WHO language editions
+  free: true
+  minMonths: 60
+  maxMonths: 215
+  sex: all
+  topics: [activity, screen-time]
+  summary:
+    en: Recommends an average of 60 minutes a day of moderate to vigorous activity for ages 5–17, and limiting sedentary time, especially recreational screen time.
+    zh: 建议 5–17 岁儿童青少年平均每天进行 60 分钟中高强度活动，并减少久坐时间，特别是娱乐性屏幕时间。
+  whyAge:
+    en: The children and adolescents section covers ages 5 to 17.
+    zh: 其中儿童青少年部分适用于 5–17 岁。
+  checked: 2026-11-13
+
+- id: who-complementary-feeding-2023
+  type: guideline
+  evidence: guideline
+  title:
+    en: WHO Guideline for complementary feeding of infants and young children 6–23 months of age
+    zh: WHO 6–23 个月婴幼儿辅食喂养指南
+  by: World Health Organization
+  year: 2023
+  url: https://www.who.int/publications/i/item/9789240081864
+  language: English
+  free: true
+  minMonths: 6
+  maxMonths: 23
+  sex: all
+  topics: [nutrition]
+  summary:
+    en: Guidance on starting solid foods, a varied diet, and foods and drinks to limit, for children aged 6 to 23 months.
+    zh: 关于 6–23 个月婴幼儿开始添加辅食、饮食多样化以及应限制的食物和饮料的建议。
+  checked: 2026-11-13
+
+- id: nurturing-care-framework-2018
+  type: guideline
+  evidence: guideline
+  title:
+    en: Nurturing Care Framework for Early Childhood Development
+    zh: 养育照护框架（儿童早期发展）
+  by: WHO, UNICEF, World Bank Group
+  year: 2018
+  url: https://nurturing-care.org/
+  language: English, with translations
+  free: true
+  minMonths: 0
+  maxMonths: 47
+  sex: all
+  topics: [development, responsive-care]
+  backedBy: [romeo-2018-conversational-turns, kuhl-2003-foreign-language]
+  core: true
+  summary:
+    en: The international framework for early childhood. It names five components of nurturing care - good health, adequate nutrition, safety and security, responsive caregiving and opportunities for early learning.
+    zh: 国际通行的儿童早期发展框架，提出养育照护的五个组成部分：良好健康、充足营养、安全保障、回应式照护和早期学习机会。
+  checked: 2026-11-13
+
+- id: cdc-milestones
+  type: guideline
+  evidence: guideline
+  title:
+    en: "CDC's Developmental Milestones (Learn the Signs. Act Early.)"
+    zh: 美国疾控中心（CDC）发育里程碑清单
+  by: US Centers for Disease Control and Prevention
+  year: 2022
+  yearNote:
+    en: revised 2022
+    zh: 2022 年修订
+  url: https://www.cdc.gov/act-early/milestones/index.html
+  language: English, Spanish
+  free: true
+  minMonths: 2
+  maxMonths: 71
+  sex: all
+  topics: [development]
+  core: true
+  summary:
+    en: Checklists of what most children can do at 12 ages from 2 months to 5 years, covering social, language, thinking and movement skills.
+    zh: 从 2 个月到 5 岁共 12 个年龄点，列出大多数孩子在社交、语言、认知和运动方面能做到的事。
+  actions:
+    en:
+      - If you have concerns about how your child plays, learns, speaks, acts or moves, talk with your child's doctor. Do not wait.
+    zh:
+      - 如果对孩子的玩耍、学习、说话、行为或运动有担心，尽早和医生沟通，不要等待。
+  checked: 2026-11-13
+
+- id: aap-family-media-plan
+  type: guideline
+  evidence: guideline
+  title:
+    en: Family Media Plan
+    zh: 家庭媒体使用计划（美国儿科学会）
+  by: American Academy of Pediatrics
+  year: null
+  yearNote:
+    en: updated regularly
+    zh: 持续更新
+  url: https://www.healthychildren.org/English/fmp/Pages/MediaPlan.aspx
+  language: English, Spanish
+  free: true
+  minMonths: 0
+  maxMonths: 215
+  sex: all
+  topics: [screen-time, social-media]
+  backedBy: [orben-2019-wellbeing-tech, madigan-2020-screen-language]
+  core: true
+  summary:
+    en: An online tool from the American Academy of Pediatrics for agreeing screen and device rules as a family.
+    zh: 美国儿科学会的在线工具，帮助全家一起商定屏幕和设备的使用规则。
+  checked: 2026-11-13
+
+- id: aap-media-young-minds-2016
+  type: guideline
+  evidence: guideline
+  title:
+    en: Media and Young Minds (AAP policy statement)
+    zh: 媒体与幼儿（美国儿科学会政策声明）
+  by: AAP Council on Communications and Media, Pediatrics
+  year: 2016
+  url: https://doi.org/10.1542/peds.2016-2591
+  doi: 10.1542/peds.2016-2591
+  language: English
+  free: true
+  minMonths: 0
+  maxMonths: 71
+  sex: all
+  topics: [screen-time]
+  backedBy: [madigan-2020-screen-language, madigan-2019-screen-development, kuhl-2003-foreign-language]
+  summary:
+    en: Under 18 months, avoid screen media other than video chatting. From 18 to 24 months, choose high-quality programmes and watch together. From 2 to 5 years, limit to 1 hour a day of high-quality programmes.
+    zh: 18 个月以下除视频通话外避免使用屏幕；18–24 个月如要接触，选择高质量节目并陪看；2–5 岁每天限 1 小时高质量节目。
+  checked: 2026-11-13
+
+- id: aap-safe-sleep
+  type: guideline
+  evidence: guideline
+  title:
+    en: "How to Keep Your Sleeping Baby Safe: AAP Policy Explained"
+    zh: 如何让宝宝安全睡眠（美国儿科学会）
+  by: American Academy of Pediatrics
+  year: 2022
+  url: https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/A-Parents-Guide-to-Safe-Sleep.aspx
+  language: English, Spanish
+  free: true
+  minMonths: 0
+  maxMonths: 11
+  sex: all
+  topics: [sleep, safety]
+  summary:
+    en: Place babies on their back, on a firm flat surface of their own, with no soft objects, to lower the risk of sleep-related infant death.
+    zh: 让宝宝仰睡在独立、平整、坚实的床面上，周围不放软物，以降低睡眠相关的婴儿死亡风险。
+  checked: 2026-11-13
+
+- id: aasm-sleep-2016
+  type: guideline
+  evidence: expert
+  title:
+    en: "Recommended Amount of Sleep for Pediatric Populations: A Consensus Statement of the American Academy of Sleep Medicine"
+    zh: 儿童睡眠时长建议：美国睡眠医学会共识声明
+  by: Paruthi et al., Journal of Clinical Sleep Medicine
+  year: 2016
+  url: https://doi.org/10.5664/jcsm.5866
+  doi: 10.5664/jcsm.5866
+  language: English
+  free: true
+  minMonths: 4
+  maxMonths: 215
+  sex: all
+  topics: [sleep]
+  summary:
+    en: "Expert panel recommendations for sleep per 24 hours: 12–16 hours at 4–12 months, 11–14 at 1–2 years, 10–13 at 3–5, 9–12 at 6–12 and 8–10 at 13–18."
+    zh: 专家组建议的每 24 小时睡眠时长：4–12 个月 12–16 小时，1–2 岁 11–14 小时，3–5 岁 10–13 小时，6–12 岁 9–12 小时，13–18 岁 8–10 小时。
+  checked: 2026-11-13
+
+- id: madigan-2020-screen-language
+  type: research
+  evidence: large
+  design: meta-analysis
+  title:
+    en: Associations Between Screen Use and Child Language Skills
+    zh: 屏幕使用与儿童语言能力的关联（系统综述与元分析）
+  by: Madigan et al., JAMA Pediatrics
+  year: 2020
+  url: https://doi.org/10.1001/jamapediatrics.2020.0327
+  doi: 10.1001/jamapediatrics.2020.0327
+  language: English
+  free: false
+  minMonths: 0
+  maxMonths: 155
+  sex: all
+  topics: [screen-time, language]
+  core: true
+  summary:
+    en: A meta-analysis of 42 studies. More screen use was linked to weaker language skills, while co-viewing with an adult and better-quality programmes were linked to stronger skills.
+    zh: 汇总 42 项研究的元分析：屏幕使用越多，语言能力越弱；而大人陪看和更优质的节目与更强的语言能力相关。
+  checked: 2026-11-13
+
+- id: madigan-2019-screen-development
+  type: research
+  evidence: large
+  design: cohort
+  title:
+    en: Association Between Screen Time and Children's Performance on a Developmental Screening Test
+    zh: 屏幕时间与儿童发育筛查表现的关联
+  by: Madigan et al., JAMA Pediatrics
+  year: 2019
+  url: https://doi.org/10.1001/jamapediatrics.2018.5056
+  doi: 10.1001/jamapediatrics.2018.5056
+  language: English
+  free: false
+  minMonths: 24
+  maxMonths: 60
+  sex: all
+  topics: [screen-time, development]
+  summary:
+    en: Following about 2,400 children, more screen time at 2 and 3 years was linked to poorer developmental screening results a year or more later.
+    zh: 跟踪约 2400 名儿童，2 岁和 3 岁时屏幕时间越多，一年后发育筛查结果越差。
+  checked: 2026-11-13
+
+- id: romeo-2018-conversational-turns
+  type: research
+  evidence: small
+  design: cross-sectional
+  title:
+    en: "Beyond the 30-Million-Word Gap: Children's Conversational Exposure Is Associated With Language-Related Brain Function"
+    zh: 超越“三千万词汇差距”：对话轮次与儿童大脑语言功能的关联
+  by: Romeo et al., Psychological Science
+  year: 2018
+  url: https://doi.org/10.1177/0956797617742725
+  doi: 10.1177/0956797617742725
+  language: English
+  free: false
+  minMonths: 36
+  maxMonths: 83
+  sex: all
+  topics: [language]
+  summary:
+    en: In a study of 4- to 6-year-olds, the number of back-and-forth conversational turns with adults predicted activity in language areas of the brain better than the number of words children heard.
+    zh: 对 4–6 岁儿童的研究发现，与大人来回对话的次数，比听到的词汇量更能预测大脑语言区的活动。
+  whyAge:
+    en: The children studied were 4 to 6. We list it from age 3 because the advice it supports, talking with your child, applies from the preschool years.
+    zh: 研究对象为 4–6 岁儿童。我们从 3 岁开始推荐，因为它支持的做法（和孩子多来回对话）适用于整个学龄前阶段。
+  checked: 2026-11-13
+
+- id: kuhl-2003-foreign-language
+  type: research
+  evidence: small
+  design: experiment
+  title:
+    en: "Foreign-language experience in infancy: Effects of short-term exposure and social interaction on phonetic learning"
+    zh: 婴儿期的外语经验：短期接触和社交互动对语音学习的影响
+  by: Kuhl, Tsao & Liu, PNAS
+  year: 2003
+  url: https://doi.org/10.1073/pnas.1532872100
+  doi: 10.1073/pnas.1532872100
+  language: English
+  free: true
+  minMonths: 6
+  maxMonths: 18
+  sex: all
+  topics: [language, screen-time]
+  summary:
+    en: 9-month-old infants learned Mandarin speech sounds from live sessions with a person, but not from the same material shown on video or audio.
+    zh: 9 个月大的婴儿通过与真人互动学会了普通话的语音，而观看同样内容的视频或只听音频则没有学会。
+  checked: 2026-11-13
+
+- id: gershoff-2016-spanking
+  type: research
+  evidence: large
+  design: meta-analysis
+  title:
+    en: "Spanking and child outcomes: Old controversies and new meta-analyses"
+    zh: 打屁股与儿童发展结果：旧争议与新的元分析
+  by: Gershoff & Grogan-Kaylor, Journal of Family Psychology
+  year: 2016
+  url: https://doi.org/10.1037/fam0000191
+  doi: 10.1037/fam0000191
+  language: English
+  free: false
+  minMonths: 0
+  maxMonths: 215
+  sex: all
+  topics: [discipline, emotions]
+  core: true
+  summary:
+    en: Meta-analyses of 75 studies found spanking was linked to a range of poor outcomes for children and was not linked to better behaviour.
+    zh: 对 75 项研究的元分析发现，打屁股与儿童多种不良结果相关，与行为改善无关。
+  checked: 2026-11-13
+
+- id: orben-2019-wellbeing-tech
+  type: research
+  evidence: large
+  design: large-dataset
+  title:
+    en: The association between adolescent well-being and digital technology use
+    zh: 青少年幸福感与数字技术使用的关联
+  by: Orben & Przybylski, Nature Human Behaviour
+  year: 2019
+  url: https://doi.org/10.1038/s41562-018-0506-1
+  doi: 10.1038/s41562-018-0506-1
+  language: English
+  free: false
+  minMonths: 120
+  maxMonths: 215
+  sex: all
+  topics: [screen-time, social-media, mental-health]
+  summary:
+    en: Using data on more than 350,000 adolescents, the study found that digital technology use explained at most 0.4% of the variation in well-being - a negative but very small association on average.
+    zh: 利用超过 35 万名青少年的数据，研究发现数字技术使用最多只能解释幸福感差异的 0.4%，平均而言是负相关但非常小。
+  checked: 2026-11-13
+
+- id: us-surgeon-general-social-media-2023
+  type: guideline
+  evidence: guideline
+  title:
+    en: "Social Media and Youth Mental Health: The U.S. Surgeon General's Advisory"
+    zh: 社交媒体与青少年心理健康：美国卫生总监公告
+  by: US Surgeon General
+  year: 2023
+  url: https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html
+  language: English
+  free: true
+  minMonths: 96
+  maxMonths: 215
+  sex: all
+  topics: [social-media, mental-health]
+  backedBy: [orben-2019-wellbeing-tech]
+  summary:
+    en: Reviews what is known and not yet known about social media and youth mental health, and asks families, companies and policymakers to act.
+    zh: 梳理社交媒体与青少年心理健康之间已知和未知的关系，呼吁家庭、企业和政策制定者采取行动。
+  actions:
+    en:
+      - Make a family media plan that sets limits, including for social media.
+      - Create tech-free zones at home and encourage in-person friendships.
+      - Model responsible use yourself.
+      - Teach children about technology and how to take part online responsibly.
+      - Report cyberbullying, online abuse and exploitation.
+    zh:
+      - 制定家庭媒体使用计划，包括社交媒体的使用限制。
+      - 在家里设立不用电子设备的区域，鼓励孩子线下交朋友。
+      - 家长自己做好负责任使用的示范。
+      - 教孩子了解技术，学会负责任地参与网络生活。
+      - 遇到网络欺凌、网络虐待和剥削要举报。
+  checked: 2026-11-13
+
+- id: apa-social-media-advisory-2023
+  type: guideline
+  evidence: guideline
+  title:
+    en: Health advisory on social media use in adolescence
+    zh: 青少年社交媒体使用健康建议（美国心理学会）
+  by: American Psychological Association
+  year: 2023
+  url: https://www.apa.org/topics/social-media-internet/health-advisory-adolescent-social-media-use
+  language: English
+  free: true
+  minMonths: 120
+  maxMonths: 215
+  sex: all
+  topics: [social-media, mental-health]
+  backedBy: [orben-2019-wellbeing-tech]
+  summary:
+    en: Ten recommendations based on the research to date, including adult monitoring in early adolescence, protecting sleep and physical activity, and social media literacy training before use begins.
+    zh: 基于现有研究的 10 条建议，包括青春期早期由大人监督、保护睡眠和运动时间、开始使用前先学习社交媒体素养。
+  actions:
+    en:
+      - In early adolescence (about 10–14), adult monitoring is advised for most young people; allow more independence as they mature.
+      - Keep social media from cutting into sleep (at least 8 hours) or physical activity. Use within an hour of bedtime is linked to poorer sleep.
+      - Limit comparison-driven content, especially about appearance.
+      - Teach social media literacy before your child starts using it.
+    zh:
+      - 青春期早期（约 10–14 岁）建议大人对多数孩子进行监督，随着成熟逐步放手。
+      - 不要让社交媒体挤占睡眠（至少 8 小时）和运动时间。睡前一小时内使用与睡眠变差有关。
+      - 减少容易引发攀比的内容，特别是关于外貌的内容。
+      - 在孩子开始使用之前，先教他们社交媒体素养。
+  checked: 2026-11-13
+
+- id: who-adolescent-mental-health
+  type: guideline
+  evidence: guideline
+  title:
+    en: Mental health of adolescents (WHO fact sheet)
+    zh: 青少年心理健康（WHO 简报）
+  by: World Health Organization
+  year: null
+  yearNote:
+    en: updated regularly
+    zh: 持续更新
+  url: https://www.who.int/news-room/fact-sheets/detail/adolescent-mental-health
+  language: English, with other WHO language editions
+  free: true
+  minMonths: 120
+  maxMonths: 215
+  sex: all
+  topics: [mental-health]
+  summary:
+    en: Key facts on mental health conditions in 10- to 19-year-olds, the factors that protect or put them at risk, and what helps.
+    zh: 关于 10–19 岁青少年心理健康问题的关键事实、保护因素和风险因素，以及有效的支持方式。
+  checked: 2026-11-13
+
+- id: aap-puberty-girls
+  type: guideline
+  evidence: guideline
+  title:
+    en: "Physical Development in Girls: What to Expect During Puberty"
+    zh: 女孩青春期身体发育：会经历什么
+  by: American Academy of Pediatrics
+  year: null
+  yearNote:
+    en: updated regularly
+    zh: 持续更新
+  url: https://www.healthychildren.org/English/ages-stages/gradeschool/puberty/Pages/Physical-Development-Girls-What-to-Expect.aspx
+  language: English, Spanish
+  free: true
+  minMonths: 96
+  maxMonths: 191
+  sex: female
+  topics: [puberty]
+  summary:
+    en: What physical changes to expect in girls during puberty and roughly when they happen.
+    zh: 女孩在青春期会出现哪些身体变化，以及大致的时间。
+  checked: 2026-11-13
+
+- id: aap-puberty-boys
+  type: guideline
+  evidence: guideline
+  title:
+    en: "Physical Development in Boys: What to Expect"
+    zh: 男孩青春期身体发育：会经历什么
+  by: American Academy of Pediatrics
+  year: null
+  yearNote:
+    en: updated regularly
+    zh: 持续更新
+  url: https://www.healthychildren.org/English/ages-stages/gradeschool/puberty/Pages/Physical-Development-Boys-What-to-Expect.aspx
+  language: English, Spanish
+  free: true
+  minMonths: 108
+  maxMonths: 203
+  sex: male
+  topics: [puberty]
+  summary:
+    en: What physical changes to expect in boys during puberty and roughly when they happen.
+    zh: 男孩在青春期会出现哪些身体变化，以及大致的时间。
+  checked: 2026-11-13
+
+- id: faber-mazlish-kids
+  type: book
+  evidence: expert
+  title:
+    en: How to Talk So Kids Will Listen & Listen So Kids Will Talk
+    zh: 《如何说孩子才会听，怎么听孩子才肯说》
+  by: Adele Faber, Elaine Mazlish
+  year: 1980
+  url: https://openlibrary.org/works/OL553866W
+  isbn: "9781451663884"
+  publisher: "Scribner (2012 edition)"
+  evidenceNote:
+    en: "Practical techniques from the authors' parenting workshops. Evidence level: expert opinion, not a research study."
+    zh: "方法来自作者多年的家长工作坊经验。证据等级：专家意见，不是研究结论。"
+  language: English; Chinese and many other translations
+  free: false
+  minMonths: 36
+  maxMonths: 155
+  sex: all
+  topics: [communication, emotions]
+  core: true
+  summary:
+    en: A long-running practical guide to everyday conversations with children - acknowledging feelings, inviting cooperation and alternatives to punishment.
+    zh: 长期再版的亲子沟通实用书：接纳孩子的感受、鼓励合作、用其他方式代替惩罚。
+  checked: 2026-11-13
+
+- id: faber-mazlish-teens
+  type: book
+  evidence: expert
+  title:
+    en: How to Talk So Teens Will Listen & Listen So Teens Will Talk
+    zh: 《如何说青少年才会听，怎么听青少年才肯说》
+  by: Adele Faber, Elaine Mazlish
+  year: 2005
+  url: https://openlibrary.org/works/OL553859W
+  isbn: "9780060741259"
+  publisher: "William Morrow / HarperCollins (2005)"
+  evidenceNote:
+    en: "Applies the same workshop-based techniques to teenagers. Evidence level: expert opinion."
+    zh: "把同一套工作坊方法用在青少年身上。证据等级：专家意见。"
+  language: English; Chinese and other translations
+  free: false
+  minMonths: 144
+  maxMonths: 215
+  sex: all
+  topics: [communication]
+  summary:
+    en: The same practical approach as the classic, adapted to the conversations parents have with teenagers.
+    zh: 沿用经典版的实用方法，针对和青少年之间的对话做了调整。
+  checked: 2026-11-13
+
+- id: siegel-whole-brain-child
+  type: book
+  evidence: expert
+  title:
+    en: The Whole-Brain Child
+    zh: 《全脑教养法》
+  by: Daniel J. Siegel, Tina Payne Bryson
+  year: 2011
+  url: https://drdansiegel.com/book/the-whole-brain-child/
+  isbn: "9780553386691"
+  publisher: "Bantam / Random House (2012 paperback)"
+  evidenceNote:
+    en: "Uses brain science to explain children's behaviour; the 12 strategies come from the authors' clinical experience rather than trials. Evidence level: expert opinion."
+    zh: "用脑科学解释孩子的行为；12 个方法来自作者的临床经验，并非经过试验检验。证据等级：专家意见。"
+  language: English; Chinese and other translations
+  free: false
+  minMonths: 24
+  maxMonths: 155
+  sex: all
+  topics: [emotions]
+  summary:
+    en: Explains, in terms children can understand, how the developing brain works, with twelve strategies for handling big feelings.
+    zh: 用孩子能听懂的方式解释大脑发育，给出 12 个应对强烈情绪的方法。
+  checked: 2026-11-13
+
+- id: siegel-brainstorm
+  type: book
+  evidence: expert
+  title:
+    en: "Brainstorm: The Power and Purpose of the Teenage Brain"
+    zh: 《青春期大脑风暴》
+  by: Daniel J. Siegel
+  year: 2013
+  url: https://drdansiegel.com/book/brainstorm/
+  isbn: "9780399168833"
+  publisher: "TarcherPerigee / Penguin (2015 paperback)"
+  evidenceNote:
+    en: "A psychiatrist's account of the teenage brain for parents and teens. Evidence level: expert opinion."
+    zh: "一位精神科医生写给家长和青少年的青春期大脑读本。证据等级：专家意见。"
+  language: English; Chinese and other translations
+  free: false
+  minMonths: 144
+  maxMonths: 215
+  sex: all
+  topics: [mental-health, emotions]
+  summary:
+    en: Presents teenage intensity, risk-taking and the push for independence as part of healthy brain development, and how parents can stay connected.
+    zh: 把青春期的情绪强烈、冒险和追求独立看作大脑健康发育的一部分，并说明家长如何保持联结。
+  checked: 2026-11-13
+
+- id: dweck-mindset
+  type: book
+  evidence: expert
+  title:
+    en: "Mindset: The New Psychology of Success"
+    zh: 《终身成长》
+  by: Carol S. Dweck
+  year: 2006
+  url: https://www.penguinrandomhouse.com/books/44330/mindset-by-carol-s-dweck-phd/
+  isbn: "9780345472328"
+  publisher: "Ballantine Books (2007 updated edition)"
+  evidenceNote:
+    en: "Later meta-analyses found growth-mindset effects on school results are smaller than the book suggests (see the research below)."
+    zh: "后来的元分析发现，成长型思维对学业成绩的影响比书中说的小（见下面的研究）。"
+  language: English; Chinese and many other translations
+  free: false
+  minMonths: 36
+  maxMonths: 215
+  sex: all
+  topics: [learning]
+  backedBy: [sisk-2018-mindset-meta]
+  core: true
+  summary:
+    en: Introduces the idea of a growth mindset and why praising effort and strategy differs from praising ability.
+    zh: 提出“成长型思维”，解释为什么表扬努力和方法与表扬聪明的效果不同。
+  checked: 2026-11-13
+
+- id: aap-effective-discipline-2018
+  type: guideline
+  evidence: guideline
+  title:
+    en: Effective Discipline to Raise Healthy Children (AAP clinical report)
+    zh: 有效管教，养育健康的孩子（美国儿科学会临床报告）
+  by: American Academy of Pediatrics; Sege & Siegel, Pediatrics
+  year: 2018
+  url: https://doi.org/10.1542/peds.2018-3112
+  doi: 10.1542/peds.2018-3112
+  language: English
+  free: true
+  minMonths: 0
+  maxMonths: 215
+  sex: all
+  topics: [discipline, emotions]
+  backedBy: [gershoff-2016-spanking]
+  core: true
+  summary:
+    en: The AAP advises against spanking, hitting, slapping, threatening, insulting or shaming children, and recommends teaching good behaviour through healthy forms of discipline instead.
+    zh: 美国儿科学会建议不要打孩子、扇耳光、威胁、辱骂或羞辱孩子，而是用健康的管教方式教孩子好的行为。
+  checked: 2026-11-13
+
+- id: sisk-2018-mindset-meta
+  type: research
+  evidence: large
+  design: meta-analysis
+  title:
+    en: "To What Extent and Under Which Circumstances Are Growth Mind-Sets Important to Academic Achievement? Two Meta-Analyses"
+    zh: 成长型思维对学业成绩有多重要、在什么情况下重要？两项元分析
+  by: Sisk et al., Psychological Science
+  year: 2018
+  url: https://doi.org/10.1177/0956797617739704
+  doi: 10.1177/0956797617739704
+  language: English
+  free: false
+  minMonths: 72
+  maxMonths: 215
+  sex: all
+  topics: [learning]
+  summary:
+    en: Across hundreds of studies, a growth mindset was only weakly linked to school results, and mindset programmes had small average effects. Students from low-income families or who were struggling at school may benefit more.
+    zh: 汇总数百项研究后发现，成长型思维和学业成绩的关联很弱，相关干预的平均效果也很小；来自低收入家庭或学业困难的学生可能受益更多。
+  checked: 2026-11-13
+
+- id: gopnik-scientist-in-the-crib
+  type: book
+  evidence: expert
+  title:
+    en: "The Scientist in the Crib: What Early Learning Tells Us About the Mind"
+    zh: 《孩子如何思考》（The Scientist in the Crib）
+  by: Alison Gopnik, Andrew N. Meltzoff, Patricia K. Kuhl
+  year: 1999
+  url: https://openlibrary.org/isbn/9780688177881
+  isbn: "9780688177881"
+  publisher: "Harper Paperbacks (2000)"
+  evidenceNote:
+    en: "Three developmental scientists summarise infant research up to 1999 for parents. Newer studies have added detail since."
+    zh: "三位发展心理学家把截至 1999 年的婴幼儿研究写给家长看。此后的新研究补充了不少细节。"
+  language: English; Chinese translation available
+  free: false
+  minMonths: 0
+  maxMonths: 47
+  sex: all
+  topics: [development, language]
+  summary:
+    en: Explains how babies and young children learn about people, objects and language by experimenting, much like small scientists.
+    zh: 介绍婴幼儿如何像小科学家一样，通过不断试验来认识人、物体和语言。
+  checked: 2026-11-13
+
+# ---- Research behind the Educators pages ----
+- id: alfieri-2011-discovery
+  type: research
+  evidence: large
+  design: meta-analysis
+  title:
+    en: Does discovery-based instruction enhance learning?
+    zh: 发现式教学能促进学习吗？
+  by: Alfieri et al., Journal of Educational Psychology
+  year: 2011
+  url: https://doi.org/10.1037/a0021017
+  doi: 10.1037/a0021017
+  language: English
+  free: false
+  minMonths: 36
+  maxMonths: 215
+  sex: all
+  topics: [learning]
+  summary:
+    en: Learners left to discover things entirely on their own learned less than with explicit teaching, but discovery with support - feedback, worked examples or being asked to explain - worked better than other methods.
+    zh: 完全让学习者自己去发现，效果不如直接讲解；但有支持的发现式学习（及时反馈、示范例题、让孩子说出理由）比其他方法效果更好。
+  checked: 2026-11-13
+
+- id: kirschner-2006-guidance
+  type: research
+  evidence: large
+  design: review
+  title:
+    en: "Why Minimal Guidance During Instruction Does Not Work"
+    zh: 为什么“最少指导”的教学行不通
+  by: Kirschner, Sweller & Clark, Educational Psychologist
+  year: 2006
+  url: https://doi.org/10.1207/s15326985ep4102_1
+  doi: 10.1207/s15326985ep4102_1
+  language: English
+  free: false
+  minMonths: 72
+  maxMonths: 215
+  sex: all
+  topics: [learning]
+  summary:
+    en: A review arguing that for beginners, teaching with little guidance (pure discovery or inquiry) works less well than strong guidance, because new learners are easily overloaded.
+    zh: 这篇综述认为，对初学者来说，几乎不给指导的教学（纯发现式、探究式）不如充分指导有效，因为新手很容易信息过载。
+  checked: 2026-11-13
+
+- id: skene-2022-guided-play
+  type: research
+  evidence: large
+  design: meta-analysis
+  title:
+    en: Can guidance during play enhance children's learning and development in educational contexts?
+    zh: 游戏中的引导能促进儿童的学习和发展吗？（系统综述与元分析）
+  by: Skene et al., Child Development
+  year: 2022
+  url: https://doi.org/10.1111/cdev.13730
+  doi: 10.1111/cdev.13730
+  language: English
+  free: true
+  minMonths: 12
+  maxMonths: 107
+  sex: all
+  topics: [learning, development]
+  summary:
+    en: For children aged 1 to 8, play with gentle adult guidance did better than direct teaching on early maths, shapes and switching between tasks, and better than free play on spatial words. Other outcomes showed no difference.
+    zh: 对 1–8 岁儿童，大人适度引导的游戏在早期数学、图形认识和任务切换上比直接教学效果好，在空间词汇上比自由玩耍效果好；其他方面没有发现差别。
+  checked: 2026-11-13
+
+- id: wood-1976-scaffolding
+  type: research
+  evidence: small
+  design: observational
+  title:
+    en: The role of tutoring in problem solving
+    zh: 辅导在解决问题中的作用（“脚手架”概念的出处）
+  by: Wood, Bruner & Ross, Journal of Child Psychology and Psychiatry
+  year: 1976
+  url: https://doi.org/10.1111/j.1469-7610.1976.tb00381.x
+  doi: 10.1111/j.1469-7610.1976.tb00381.x
+  language: English
+  free: false
+  minMonths: 36
+  maxMonths: 71
+  sex: all
+  topics: [learning]
+  summary:
+    en: Studying how an adult tutored 3- to 5-year-olds through a block-building task, the authors described "scaffolding" - the adult takes care of what the child cannot yet manage, so the child can complete the task.
+    zh: 研究者观察大人如何辅导 3–5 岁孩子完成搭积木任务，提出了“脚手架”的概念：大人先承担孩子还做不到的部分，让孩子能把任务完成。
+  checked: 2026-11-13
+
+- id: lillard-2017-montessori
+  type: research
+  evidence: small
+  design: cohort
+  title:
+    en: "Montessori Preschool Elevates and Equalizes Child Outcomes: A Longitudinal Study"
+    zh: 蒙台梭利幼儿园提升并缩小了儿童发展差距：一项追踪研究
+  by: Lillard et al., Frontiers in Psychology
+  year: 2017
+  url: https://doi.org/10.3389/fpsyg.2017.01783
+  doi: 10.3389/fpsyg.2017.01783
+  language: English
+  free: true
+  minMonths: 36
+  maxMonths: 71
+  sex: all
+  topics: [learning]
+  summary:
+    en: Following 141 children admitted to public preschools by lottery for 3 years, those in Montessori classrooms did better over time on academic achievement and social understanding, and the gap between lower- and higher-income children narrowed.
+    zh: 追踪 141 名通过抽签进入公立幼儿园的孩子 3 年，蒙台梭利班的孩子在学业和社会理解上逐渐表现更好，低收入和高收入家庭孩子的差距也缩小了。
+  checked: 2026-11-13
+
+- id: randolph-2023-montessori
+  type: research
+  evidence: large
+  design: meta-analysis
+  title:
+    en: "Montessori education's impact on academic and nonacademic outcomes: A systematic review"
+    zh: 蒙台梭利教育对学业和非学业结果的影响：系统综述
+  by: Randolph et al., Campbell Systematic Reviews
+  year: 2023
+  url: https://doi.org/10.1002/cl2.1330
+  doi: 10.1002/cl2.1330
+  language: English
+  free: true
+  minMonths: 36
+  maxMonths: 215
+  sex: all
+  topics: [learning]
+  summary:
+    en: Across 32 studies, Montessori pupils did somewhat better than those in traditional schools, academically and in areas like executive function. Effects were larger in preschool and primary school than in secondary, and some outcomes rest on low-quality evidence.
+    zh: 汇总 32 项研究，蒙台梭利学生在学业和执行功能等方面比传统学校的学生略好；效果在幼儿园和小学阶段比中学大，部分结果的证据质量较低。
+  checked: 2026-11-13
+
+- id: baillargeon-1985-object
+  type: research
+  evidence: small
+  design: experiment
+  title:
+    en: Object permanence in five-month-old infants
+    zh: 5 个月大婴儿的“客体永久性”
+  by: Baillargeon, Spelke & Wasserman, Cognition
+  year: 1985
+  url: https://doi.org/10.1016/0010-0277(85)90008-3
+  doi: 10.1016/0010-0277(85)90008-3
+  language: English
+  free: false
+  minMonths: 0
+  maxMonths: 23
+  sex: all
+  topics: [development]
+  summary:
+    en: Five-month-old babies looked longer when a screen appeared to pass through a hidden box, suggesting they knew the box still existed - months earlier than Piaget's account predicted.
+    zh: 5 个月大的婴儿在看到挡板似乎“穿过”了被挡住的盒子时，会看得更久，说明他们知道盒子仍然存在，比皮亚杰理论预测的早了好几个月。
+  checked: 2026-11-13
+
+- id: meeus-2011-identity
+  type: research
+  evidence: large
+  design: review
+  title:
+    en: "The Study of Adolescent Identity Formation 2000-2010: A Review of Longitudinal Research"
+    zh: 青少年自我认同形成研究（2000–2010）：追踪研究综述
+  by: Meeus, Journal of Research on Adolescence
+  year: 2011
+  url: https://doi.org/10.1111/j.1532-7795.2010.00716.x
+  doi: 10.1111/j.1532-7795.2010.00716.x
+  language: English
+  free: false
+  minMonths: 144
+  maxMonths: 215
+  sex: all
+  topics: [development, mental-health]
+  summary:
+    en: Long-term studies show identity develops gradually through adolescence and into adulthood, and is a less turbulent process than often assumed. Teens with a more settled identity tend to be better adjusted and to live in warm families.
+    zh: 长期追踪研究发现，自我认同在整个青春期乃至成年后逐步发展，过程没有通常想象的那么动荡；认同感更成熟的青少年往往适应更好，家庭也更温暖。
+  checked: 2026-11-13
+
+- id: banerjee-2017-tarl
+  type: research
+  evidence: large
+  design: trial
+  title:
+    en: "From Proof of Concept to Scalable Policies: Challenges and Solutions, with an Application"
+    zh: 从概念验证到可推广的政策（“按实际水平教学”的随机试验）
+  by: Banerjee et al., Journal of Economic Perspectives
+  year: 2017
+  url: https://doi.org/10.1257/jep.31.4.73
+  doi: 10.1257/jep.31.4.73
+  language: English
+  free: true
+  minMonths: 72
+  maxMonths: 143
+  sex: all
+  topics: [learning]
+  summary:
+    en: Randomised trials in Indian government schools found that teaching children at their actual learning level, rather than strictly by the grade syllabus, raised learning when it was implemented well.
+    zh: 在印度公立学校的随机试验发现，按孩子的实际水平分组教学，而不是死板地按年级教材进度，只要落实得好，就能提高学习成绩。
+  checked: 2026-11-13

@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import { topics, type Lang } from '../lib/data';
+import { href, t, fmtDate } from '../i18n/ui';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const zh = lang === 'zh';
+---
+<Base lang={lang} title={zh ? '主题' : 'Topics'} active="topics">
+<main class="wrap section">
+  <h1 class="h-serif" style="font-size:40px">{zh ? '主题' : 'Topics'}</h1>
+  <p class="prose">{zh ? '每个主题先给一句话结论，再把各权威机构的建议并排列出，标明一致和分歧。' : 'Each topic opens with the bottom line, then sets the positions of authoritative bodies side by side and marks where they agree and differ.'}</p>
+  <div class="grid">
+    {topics.map((tp) => <a class="card" href={href(lang, `topics/${tp.id}`)} style="gap:6px"><span style="font-size:22px;font-weight:700">{tp.name[lang]}</span><span style="color:var(--ink-2)">{tp.teaser[lang]}</span><span class="muted" style="font-size:13px">{tp.status === 'ready' ? `${t(lang).updated} ${fmtDate(tp.updated, lang)}` : (zh ? '正在核实来源' : 'Sources being checked')}</span></a>)}
+  </div>
+</main>
+</Base>

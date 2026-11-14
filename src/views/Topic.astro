@@ -1,0 +1,63 @@
+---
+import Base from '../layouts/Base.astro';
+import ResourceCard from '../components/ResourceCard.astro';
+import ResearchBehind from '../components/ResearchBehind.astro';
+import { topics, getResource, researchFor, type Lang, type Topic } from '../lib/data';
+import { t, href, fmtDate } from '../i18n/ui';
+interface Props { lang: Lang; topic: Topic }
+const { lang, topic } = Astro.props;
+const s = t(lang);
+const zh = lang === 'zh';
+const V = { agree: zh ? '一致' : 'Agree', differ: zh ? '不同' : 'Differ', single: zh ? '仅一方提到' : 'One source only' };
+const picks = topic.picks.map(getResource);
+const research = researchFor(topic.picks, topic.research ?? []);
+const others = topics.filter((x) => x.id !== topic.id);
+---
+<Base lang={lang} title={topic.name[lang]} active="topics">
+<main class="wrap" style="padding-top:28px;display:flex;flex-direction:column;gap:24px">
+  <nav aria-label={zh ? '位置' : 'Breadcrumb'} class="row muted" style="gap:6px;font-size:15px"><a href={href(lang, 'topics')}>{s.nav.topics}</a><span aria-hidden="true">/</span><span>{topic.name[lang]}</span></nav>
+  <header class="stack" style="gap:10px">
+    <h1 class="h-serif" style="font-size:clamp(32px,5vw,44px)">{topic.name[lang]}</h1>
+    <span class="muted" style="font-size:15px">{s.updated} {fmtDate(topic.updated, lang)} · {s.reviewedBy} {s.editors}</span>
+  </header>
+  {topic.status === 'preparing' ? (
+    <section class="card" style="padding:24px">
+      <p class="prose">{zh ? '我们还在核实这个主题的权威来源，核实完成后会在这里给出结论和各机构立场对比。下面先列出已经核实过的相关资源。' : "We are still checking authoritative sources for this topic. When that is done, this page will show the bottom line and each body's position. Below are related resources we have already checked."}</p>
+    </section>
+  ) : (
+    <>
+      <section class="card" style="padding:26px;gap:10px;border:2px solid var(--accent)" aria-labelledby="bl-h">
+        <h2 id="bl-h" style="margin:0;font-size:15px;color:var(--accent)">{zh ? '一句话结论' : 'The bottom line'}</h2>
+        <p class="h-serif" style="font-size:clamp(20px,2.6vw,25px);line-height:1.45;max-width:38em">{topic.bottomLine![lang]}</p>
+        <span class="muted" style="font-size:14px">{zh ? '根据下面各机构的建议归纳，完整内容请点开原文。' : 'Summarised from the positions below. Follow the links for the full guidance.'}</span>
+      </section>
+      <section class="stack" aria-labelledby="pos-h">
+        <div class="split"><h2 id="pos-h" class="h-serif" style="font-size:28px">{zh ? '各权威机构怎么说' : 'What each authority says'}</h2>
+          <span class="row muted" style="gap:8px;font-size:14px"><span class="chip v-agree">{V.agree}</span><span class="chip v-differ">{V.differ}</span><span class="chip v-single">{V.single}</span></span></div>
+        <div class="card tablebox" style="padding:0">
+          <table class="cmp">
+            <thead><tr><th scope="col" style="width:140px" class="muted">{zh ? '方面' : 'Question'}</th>
+              {topic.sources!.map((src) => <th scope="col"><a href={src.resource ? href(lang, `resources/${src.resource}`) : src.url}>{src.name[lang]}</a><div class="muted" style="font-weight:400;font-size:13px">{src.note[lang]}</div></th>)}
+              <th scope="col" style="width:150px" class="muted">{zh ? '比较' : 'Verdict'}</th></tr></thead>
+            <tbody>
+              {topic.rows!.map((row) => (
+                <tr class={row.verdict === 'differ' ? 'differ' : ''}>
+                  <th scope="row">{row.age[lang]}</th>
+                  {row.cells.map((c) => <td>{c[lang]}</td>)}
+                  <td><span class={`chip v-${row.verdict}`}>{V[row.verdict]}</span>{row.verdictNote && <div style="font-size:13px;margin-top:6px" class="muted">{row.verdictNote[lang]}</div>}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </>
+  )}
+  <section class="stack" aria-labelledby="tp-h">
+    <h2 id="tp-h" class="h-serif" style="font-size:28px">{zh ? `这个主题的 ${picks.length} 条精选` : `Our ${picks.length} picks on this topic`}</h2>
+    <div class="grid">{picks.map((r) => <ResourceCard r={r} lang={lang} />)}</div>
+  </section>
+  <ResearchBehind items={research} lang={lang} />
+  <div class="row" style="font-size:15px"><span class="muted">{zh ? '相关主题：' : 'Related topics:'}</span>{others.map((x) => <a href={href(lang, `topics/${x.id}`)}>{x.name[lang]}</a>)}</div>
+</main>
+</Base>

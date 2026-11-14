@@ -1,0 +1,49 @@
+---
+import { tips, getResource, type Lang } from '../lib/data';
+import { href } from '../i18n/ui';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const data = tips.map((tp) => {
+  const r = getResource(tp.resource);
+  return { min: tp.minMonths, max: tp.maxMonths, text: tp.text[lang], why: tp.why[lang], src: `${r.by}, ${r.year ?? ''}`.replace(/, $/, ''), link: href(lang, `resources/${r.id}`) };
+});
+const L = lang === 'zh'
+  ? { title: '今天可以做的一件事', why: '背后的依据', forKid: '给', example: '示例', add: '添加孩子，看适合他年龄的建议', note: '每天换一条，只从适合这个年龄的资源里选。' }
+  : { title: 'One thing to try today', why: 'Why this helps', forKid: 'For', example: 'Example', add: "Add a child to see tips for their age", note: 'A new one each day, picked from resources for their age.' };
+---
+<aside class="card hl" style="padding:24px;gap:14px" id="today" data-tips={JSON.stringify(data)} data-lang={lang}>
+  <div class="split" style="align-items:center">
+    <span style="font-size:14px;font-weight:700;color:var(--accent)">{L.title}</span>
+    <span style="font-size:14px" class="muted" data-for>{L.example}</span>
+  </div>
+  <p class="h-serif" style="font-size:22px;line-height:1.45" data-text>{data[1].text}</p>
+  <div style="background:var(--paper);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px">
+    <span style="font-size:14px;font-weight:700">{L.why}</span>
+    <span style="font-size:14px;line-height:1.6;color:var(--ink-2)" data-why>{data[1].why}</span>
+    <a style="font-size:14px" href={data[1].link} data-link>{data[1].src}</a>
+  </div>
+  <div class="row muted" style="font-size:14px"><span data-note hidden>{L.note}</span><a href={href(lang, 'me')} data-add>{L.add}</a></div>
+</aside>
+<script>
+  import { load, selected, ageMonths, ageText, dailyIndex } from '../lib/client';
+  const box = document.getElementById('today');
+  if (box) {
+    const tips = JSON.parse(box.dataset.tips || '[]');
+    const lang = box.dataset.lang || 'en';
+    const kid = selected(load());
+    if (kid) {
+      const mo = ageMonths(kid);
+      const fit = tips.filter((t: any) => mo >= t.min && mo <= t.max);
+      if (fit.length) {
+        const tip = fit[dailyIndex(fit.length)];
+        (box.querySelector('[data-text]') as HTMLElement).textContent = tip.text;
+        (box.querySelector('[data-why]') as HTMLElement).textContent = tip.why;
+        const a = box.querySelector('[data-link]') as HTMLAnchorElement; a.textContent = tip.src; a.href = tip.link;
+      }
+      const label = (kid.name ? kid.name + ' · ' : '') + ageText(mo, lang);
+      (box.querySelector('[data-for]') as HTMLElement).textContent = (lang === 'zh' ? '给 ' : 'For ') + label;
+      (box.querySelector('[data-note]') as HTMLElement).hidden = false;
+      (box.querySelector('[data-add]') as HTMLElement).hidden = true;
+    }
+  }
+</script>

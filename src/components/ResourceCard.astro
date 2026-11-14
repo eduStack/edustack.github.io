@@ -1,0 +1,18 @@
+---
+import { t, href } from '../i18n/ui';
+import { ageLabel, yearLabel, type Lang, type Resource } from '../lib/data';
+interface Props { r: Resource; lang: Lang; compact?: boolean }
+const { r, lang, compact } = Astro.props;
+const s = t(lang);
+---
+<article class={`card ${compact ? 'soft' : ''}`} style={compact ? 'padding:16px;gap:8px' : ''}
+  data-type={r.type} data-min={r.minMonths} data-max={r.maxMonths} data-sex={r.sex} data-topics={r.topics.join(' ')} data-free={r.free ? '1' : '0'} data-year={r.year ?? 0} data-checked={r.checked}>
+  <div class="chips">
+    <span class={`chip t-${r.type}`}>{s.type[r.type]}</span>
+    <span class="chip lv">{s.evidenceLabel}: {s.evidence[r.evidence]}</span>
+    <span class="chip">{ageLabel(r.minMonths, r.maxMonths, lang)}</span>
+  </div>
+  <a href={href(lang, `resources/${r.id}`)} style="font-size:17px;font-weight:700;line-height:1.4;color:var(--ink);text-decoration:none">{r.title[lang]}</a>
+  <p style="margin:0;font-size:15px;line-height:1.6;color:var(--ink-2)">{r.summary[lang]}</p>
+  <div class="src"><span>{r.by}</span>{yearLabel(r, lang) && <><span aria-hidden="true">·</span><span>{yearLabel(r, lang)}</span></>}</div>
+</article>

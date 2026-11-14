@@ -1,0 +1,6 @@
+---
+import V from '../../../views/Resource.astro';
+import { resources } from '../../../lib/data';
+export function getStaticPaths() { return resources.map((r) => ({ params: { id: r.id }, props: { r } })); }
+---
+<V lang="zh" r={Astro.props.r} />

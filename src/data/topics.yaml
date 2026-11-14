@@ -1,0 +1,103 @@
+# Topic pages: a one-line bottom line, then each authority's position side by side.
+# verdict: agree | differ | single (only one source addresses it)
+# picks: books and guidelines only. research: studies shown as "the research behind it".
+- id: screen-time
+  name: { en: "Screen time", zh: "屏幕时间" }
+  teaser: { en: "How much, at what age, and what counts", zh: "看多久、几岁开始、什么算屏幕时间" }
+  status: ready
+  updated: 2026-11-13
+  bottomLine:
+    en: Under 2, avoid screens apart from video calls. From 2 to 5, about an hour a day at most, ideally watched together. For school-age children and teens, there is no agreed number - the WHO and the AAP suggest consistent family limits, while Australia sets a 2-hour cap on recreational screen time.
+    zh: 2 岁以下，除视频通话外尽量不看屏幕；2–5 岁每天最多约 1 小时，最好大人陪看；学龄儿童和青少年阶段各机构没有统一的数字，WHO 和美国儿科学会建议全家定一致的规则，澳大利亚则建议娱乐性屏幕时间每天不超过 2 小时。
+  sources:
+    - name: { en: "World Health Organization", zh: "世界卫生组织" }
+      note: { en: "2019 (under 5), 2020 (5–17)", zh: "2019（5 岁以下）、2020（5–17 岁）" }
+      resource: who-under5-activity-sleep-2019
+    - name: { en: "American Academy of Pediatrics", zh: "美国儿科学会" }
+      note: { en: "Media and Young Minds 2016; Family Media Plan", zh: "2016 政策声明；家庭媒体使用计划" }
+      resource: aap-media-young-minds-2016
+    - name: { en: "Australian Government Department of Health", zh: "澳大利亚卫生部" }
+      note: { en: "24-hour movement guidelines", zh: "24 小时运动指南" }
+      url: https://www.health.gov.au/topics/physical-activity-and-exercise/physical-activity-and-exercise-guidelines-for-all-australians/for-children-and-young-people-5-to-17-years
+  rows:
+    - age: { en: "Under 18 months", zh: "18 个月以下" }
+      cells:
+        - { en: "Not recommended", zh: "不建议" }
+        - { en: "Avoid, except video chatting", zh: "除视频通话外避免" }
+        - { en: "No screen time", zh: "不看屏幕" }
+      verdict: agree
+    - age: { en: "18–24 months", zh: "18–24 个月" }
+      cells:
+        - { en: "Not recommended", zh: "不建议" }
+        - { en: "If introduced, choose high-quality programmes and watch together", zh: "如要接触，选高质量节目并陪看" }
+        - { en: "No screen time", zh: "不看屏幕" }
+      verdict: differ
+      verdictNote: { en: "The AAP allows some co-viewing", zh: "美国儿科学会允许少量陪看" }
+    - age: { en: "2–5 years", zh: "2–5 岁" }
+      cells:
+        - { en: "No more than 1 hour; less is better", zh: "不超过 1 小时，越少越好" }
+        - { en: "1 hour a day of high-quality programmes", zh: "每天 1 小时高质量节目" }
+        - { en: "No more than 1 hour a day", zh: "每天不超过 1 小时" }
+      verdict: agree
+    - age: { en: "5–17 years", zh: "5–17 岁" }
+      cells:
+        - { en: "Limit recreational screen time; no number given", zh: "减少娱乐性屏幕时间，未给具体数字" }
+        - { en: "Consistent limits set with a family media plan", zh: "用家庭媒体计划定一致的规则" }
+        - { en: "No more than 2 hours of recreational screen time a day", zh: "娱乐性屏幕时间每天不超过 2 小时" }
+      verdict: differ
+      verdictNote: { en: "Only Australia sets a number", zh: "只有澳大利亚给了具体数字" }
+  picks: [who-under5-activity-sleep-2019, aap-media-young-minds-2016, aap-family-media-plan, who-activity-2020]
+  research: [madigan-2020-screen-language, madigan-2019-screen-development, kuhl-2003-foreign-language, orben-2019-wellbeing-tech]
+
+- id: social-media
+  name: { en: "Social media", zh: "社交媒体" }
+  teaser: { en: "When to allow it and how to talk about it", zh: "什么时候可以用、怎么和孩子谈" }
+  status: ready
+  updated: 2026-11-13
+  bottomLine:
+    en: Neither advisory sets a starting age. Both say to make a family plan, protect sleep, and teach your child how social media works before they start - with closer adult involvement in the early teens.
+    zh: 两份公告都没有规定开始使用的年龄。它们都建议制定家庭计划、保护睡眠，并在孩子开始使用前教会他们社交媒体是怎么运作的；青春期早期大人要更多参与。
+  sources:
+    - name: { en: "US Surgeon General", zh: "美国卫生总监" }
+      note: { en: "Advisory, 2023", zh: "2023 年公告" }
+      resource: us-surgeon-general-social-media-2023
+    - name: { en: "American Psychological Association", zh: "美国心理学会" }
+      note: { en: "Health advisory, 2023", zh: "2023 年健康建议" }
+      resource: apa-social-media-advisory-2023
+  rows:
+    - age: { en: "Starting age", zh: "开始年龄" }
+      cells:
+        - { en: "No minimum age set", zh: "未规定最低年龄" }
+        - { en: "No minimum age set; depends on maturity and home", zh: "未规定最低年龄，取决于孩子的成熟度和家庭情况" }
+      verdict: agree
+    - age: { en: "Family rules", zh: "家庭规则" }
+      cells:
+        - { en: "Make a family media plan; tech-free zones at home", zh: "制定家庭媒体计划；家里设无设备区域" }
+        - { en: "Adult monitoring in early adolescence (about 10–14)", zh: "青春期早期（约 10–14 岁）由大人监督" }
+      verdict: agree
+    - age: { en: "Sleep", zh: "睡眠" }
+      cells:
+        - { en: "Not addressed as a specific rule", zh: "未作为具体规则提出" }
+        - { en: "Protect at least 8 hours; avoid use in the hour before bed", zh: "保证至少 8 小时睡眠；睡前一小时避免使用" }
+      verdict: single
+    - age: { en: "Before they start", zh: "开始使用之前" }
+      cells:
+        - { en: "Teach them about technology and responsible use", zh: "教孩子了解技术和负责任地使用" }
+        - { en: "Social media literacy training", zh: "学习社交媒体素养" }
+      verdict: agree
+  picks: [us-surgeon-general-social-media-2023, apa-social-media-advisory-2023, aap-family-media-plan]
+  research: [orben-2019-wellbeing-tech]
+
+- id: online-safety
+  name: { en: "Online safety", zh: "网络安全" }
+  teaser: { en: "Privacy, strangers, scams and harmful content", zh: "隐私、陌生人、诈骗和有害内容" }
+  status: preparing
+  updated: 2026-11-13
+  picks: [us-surgeon-general-social-media-2023, apa-social-media-advisory-2023]
+
+- id: anxiety-mood
+  name: { en: "Anxiety and low mood", zh: "焦虑和情绪低落" }
+  teaser: { en: "Signs to watch for and when to get help", zh: "要留意的信号，以及什么时候求助" }
+  status: preparing
+  updated: 2026-11-13
+  picks: [who-adolescent-mental-health, siegel-brainstorm]

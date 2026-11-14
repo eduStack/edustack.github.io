@@ -1,0 +1,85 @@
+---
+import Base from '../layouts/Base.astro';
+import ResourceCard from '../components/ResourceCard.astro';
+import ResearchBehind from '../components/ResearchBehind.astro';
+import { recommendations, researchFor, supportedBy, worldcat, ageLabel, yearLabel, type Lang, type Resource } from '../lib/data';
+import { t, href, fmtDate } from '../i18n/ui';
+interface Props { lang: Lang; r: Resource }
+const { lang, r } = Astro.props;
+const s = t(lang);
+const zh = lang === 'zh';
+const isResearch = r.type === 'research';
+const behind = isResearch ? [] : researchFor([r.id]);
+const sup = supportedBy(r.id);
+const related = isResearch ? [] : recommendations.filter((x) => x.id !== r.id && x.topics.some((tp) => r.topics.includes(tp))).slice(0, 3);
+const H = zh
+  ? { know: '家长须知', why: '为什么适合这个年龄', key: '原文要点', keyNote: '摘录转述，以原文为准', act: '原文建议的做法', src: '原文和核实记录', open: '阅读原文', related: '相关资源', ok: '链接有效', monthly: '每月自动检查' }
+  : { know: 'What parents should know', why: 'Why it fits this age', key: 'Key points from the original', keyNote: 'Paraphrased. The original is authoritative.', act: 'What the source suggests you do', src: 'Source and checks', open: 'Read the original', related: 'Related', ok: 'Link working', monthly: 'checked automatically every month' };
+const host = new URL(r.url).hostname.replace(/^www\./, '');
+const sections = [
+  { h: isResearch ? (zh ? '研究发现了什么' : 'What the study found') : H.know, body: r.summary[lang] },
+  r.whyAge && { h: H.why, body: r.whyAge[lang] },
+].filter(Boolean) as { h: string; body: string }[];
+let n = 0;
+---
+<Base lang={lang} title={r.title[lang]} description={r.summary[lang]} active={r.type === 'research' ? 'topics' : 'library'}>
+<main class="wrap" style="padding-top:28px;display:flex;flex-direction:column;gap:22px">
+  <nav aria-label={zh ? '位置' : 'Breadcrumb'} class="row muted" style="gap:6px;font-size:15px">{isResearch ? <span>{s.behind}</span> : <><a href={href(lang, 'library')}>{s.nav.library}</a><span aria-hidden="true">/</span><span>{s.typePlural[r.type]}</span></>}</nav>
+  <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start">
+    <article style="flex:999 1 600px;min-width:0;display:flex;flex-direction:column;gap:18px">
+      <header class="card" style="padding:28px;gap:14px">
+        <div class="chips"><span class={`chip t-${r.type}`}>{s.type[r.type]}</span>{r.design && <span class="chip">{s.design[r.design]}</span>}<span class="chip lv">{s.evidenceLabel}: {s.evidence[r.evidence]}</span><span class="chip">{ageLabel(r.minMonths, r.maxMonths, lang)}</span>{r.sex !== 'all' && <span class="chip">{r.sex === 'female' ? (zh ? '女孩' : 'Girls') : (zh ? '男孩' : 'Boys')}</span>}</div>
+        <h1 class="h-serif" style="font-size:clamp(26px,3.6vw,34px);line-height:1.25">{r.title[lang]}</h1>
+        {zh && <p lang="en" class="muted" style="margin:0;font-size:15px">{r.title.en}</p>}
+        <div class="row" style="gap:8px 22px;font-size:15px;color:var(--ink-2);border-top:1px solid var(--line-2);padding-top:12px">
+          <span><span class="muted">{zh ? '作者或机构' : 'Author or publisher'}</span> {r.by}</span>
+          {yearLabel(r, lang) && <span><span class="muted">{zh ? '发表' : 'Published'}</span> {yearLabel(r, lang)}</span>}
+          <span><span class="muted">{s.reviewedBy}</span> {s.editors}</span>
+          <span><span class="muted">{s.checked}</span> {fmtDate(r.checked, lang)}</span>
+        </div>
+        <div class="row" style="padding-top:4px;gap:10px"><a class="btn btn-primary" href={r.url} rel="noopener">{H.open} · {host} ↗</a>{r.isbn && <a class="btn btn-ghost" href={worldcat(r.isbn)} rel="noopener">{zh ? '附近图书馆（WorldCat）' : 'Find in a library (WorldCat)'} ↗</a>}</div>
+        {r.evidenceNote && <p style="margin:0;font-size:15px;color:var(--ink-2)"><b>{zh ? '证据说明：' : 'Evidence: '}</b>{r.evidenceNote[lang]}</p>}
+      </header>
+      {sections.map((sec) => <section class="card" style="padding:24px"><h2 style="margin:0;font-size:20px"><span class="muted" style="font-size:14px;margin-right:10px">{++n}</span>{sec.h}</h2><p class="prose">{sec.body}</p></section>)}
+      {r.keyPoints && <section class="card" style="padding:24px"><div class="split"><h2 style="margin:0;font-size:20px"><span class="muted" style="font-size:14px;margin-right:10px">{++n}</span>{H.key}</h2><span class="muted" style="font-size:14px">{H.keyNote}</span></div><ul class="prose" style="padding-left:20px">{r.keyPoints[lang].map((k) => <li style="margin-bottom:6px">{k}</li>)}</ul></section>}
+      {r.actions && <section class="card" style="padding:24px"><h2 style="margin:0;font-size:20px"><span class="muted" style="font-size:14px;margin-right:10px">{++n}</span>{H.act}</h2><ul class="prose" style="padding-left:20px">{r.actions[lang].map((k) => <li style="margin-bottom:6px">{k}</li>)}</ul></section>}
+      <section class="card" style="padding:24px"><h2 style="margin:0;font-size:20px"><span class="muted" style="font-size:14px;margin-right:10px">{++n}</span>{H.src}</h2>
+        <div class="stack" style="gap:6px;font-size:15px;color:var(--ink-2)">
+          <a href={r.url} style="word-break:break-all" rel="noopener">{r.url}</a>
+          <span>{r.by}. {r.title.en}. {r.year ?? ''}{r.publisher && `. ${r.publisher}`}{r.doi && `. doi:${r.doi}`}{r.isbn && `. ISBN ${r.isbn}`}</span>
+          <span>{H.ok} · {fmtDate(r.checked, lang)} · {H.monthly}</span>
+        </div>
+      </section>
+      <ResearchBehind items={behind} lang={lang} heading="h3" />
+      {isResearch && (sup.resources.length + sup.topics.length + sup.stages.length + sup.educators.length) > 0 && (
+        <section class="card" style="padding:24px"><h2 style="margin:0;font-size:20px">{zh ? '这项研究出现在哪些建议下面' : 'Where this study is used'}</h2>
+          <ul class="prose" style="padding-left:20px">
+            {sup.topics.map((x) => <li><a href={href(lang, `topics/${x.id}`)}>{(zh ? '主题：' : 'Topic: ') + x.name[lang]}</a></li>)}
+            {sup.stages.map((x) => <li><a href={href(lang, `ages/${x.id}`)}>{(zh ? '年龄阶段：' : 'Age stage: ') + x.name[lang] + ' ' + x.range[lang]}</a></li>)}
+            {sup.educators.map((x) => <li><a href={href(lang, `educators/${x.id}`)}>{(zh ? '教育家：' : 'Educator: ') + x.name[lang]}</a></li>)}
+            {sup.resources.map((x) => <li><a href={href(lang, `resources/${x.id}`)}>{x.title[lang]}</a></li>)}
+          </ul>
+        </section>
+      )}
+      {related.length > 0 && <section class="stack"><h2 style="margin:0;font-size:20px">{H.related}</h2><div class="grid">{related.map((x) => <ResourceCard r={x} lang={lang} compact />)}</div></section>}
+    </article>
+    <aside style="flex:1 1 280px;display:flex;flex-direction:column;gap:14px">
+      <dl class="card" style="padding:22px;gap:0;margin:0;font-size:15px">
+        {[
+          [zh ? '适用月龄' : 'Age range', zh ? `${r.minMonths}–${r.maxMonths} 个月` : `${r.minMonths} to ${r.maxMonths} months`],
+          [zh ? '类型' : 'Type', s.type[r.type]],
+          [s.evidenceLabel, s.evidence[r.evidence]],
+          [zh ? '原文语言' : 'Original language', r.language],
+          [zh ? '费用' : 'Cost', r.free ? (zh ? '免费阅读' : 'Free to read') : (zh ? '可能需要购买或订阅' : 'May need purchase or subscription')],
+          [zh ? '性别' : 'Sex', r.sex === 'all' ? (zh ? '通用' : 'Applies to all') : r.sex === 'female' ? (zh ? '女孩' : 'Girls') : (zh ? '男孩' : 'Boys')],
+        ].map(([k, v]) => <div style="display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line-2)"><dt class="muted">{k}</dt><dd style="margin:0;text-align:right">{v}</dd></div>)}
+      </dl>
+      <div class="card soft" style="padding:18px;gap:8px">
+        <div style="font-weight:700">{zh ? '链接失效或信息过时？' : 'Broken link or out of date?'}</div>
+        <p style="margin:0;font-size:14px" class="muted">{zh ? '可以在 GitHub 上报告错误，编辑核实后会更新。本站不接受资源投稿。' : 'Report it on GitHub and an editor will check and update it. We do not accept resource submissions.'}</p>
+        <a href="https://github.com/" style="font-size:15px">{zh ? '在 GitHub 报告错误' : 'Report a problem on GitHub'}</a>
+      </div>
+    </aside>
+  </div>
+</main>
+</Base>

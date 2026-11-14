@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import { tools, type Lang } from '../lib/data';
+import { t } from '../i18n/ui';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const zh = lang === 'zh';
+const subjects: Record<string, [string, string]> = { early: ['Early learning', '启蒙'], general: ['General', '综合'], coding: ['Coding', '编程'], science: ['Science', '科学'], reading: ['Reading', '阅读'] };
+const planned = zh ? [
+  ['生长曲线百分位', '输入身高体重，看在同龄同性别孩子中的位置。', '依据：WHO 儿童生长标准（0–5 岁）和 WHO 2007 生长参考（5–19 岁）'],
+  ['一天的作息对照', '填入睡眠、活动和屏幕时间，对照该年龄的建议。', '依据：WHO 2019、WHO 2020、AASM 2016'],
+  ['发育里程碑清单', '按月龄勾选，生成一份可以带去体检的清单。', '依据：CDC 发育里程碑（2022 修订）'],
+  ['家庭屏幕约定', '全家一起选规则，生成一张可以打印的约定。', '参考：美国儿科学会家庭媒体使用计划'],
+] : [
+  ['Growth chart percentiles', 'Enter height and weight to see where your child sits among children the same age and sex.', 'Based on WHO Child Growth Standards (0–5) and WHO 2007 growth reference (5–19)'],
+  ['A day at a glance', 'Enter sleep, activity and screen time and compare with the guidance for that age.', 'Based on WHO 2019, WHO 2020 and AASM 2016'],
+  ['Milestone checklist', "Tick off milestones for your child's age and print a list to take to a check-up.", 'Based on CDC milestones (2022 revision)'],
+  ['Family screen agreement', 'Choose rules together and print an agreement for the fridge.', 'Draws on the AAP Family Media Plan'],
+];
+---
+<Base lang={lang} title={t(lang).nav.tools} active="tools">
+<main class="wrap" style="padding-top:32px;display:flex;flex-direction:column;gap:36px">
+  <section class="stack" style="gap:16px">
+    <h1 class="h-serif" style="font-size:36px">{zh ? '免费学习工具' : 'Free learning tools'}</h1>
+    <p class="prose">{zh ? '和孩子一起用的免费学习工具。适用年龄来自各工具的官方说明。每个工具都要符合下面的挑选标准。' : "Free learning tools to use with your child. Age ranges come from each tool's own guidance. Every tool has to meet the criteria below."}</p>
+    <div id="criteria" class="card soft" style="padding:20px;gap:10px">
+      <h2 style="margin:0;font-size:18px">{zh ? '我们怎么挑选工具' : 'How we choose tools'}</h2>
+      <ol class="prose" style="padding-left:20px;margin:0">
+        {(zh ? [
+          ['免费', '核心内容免费使用，不需要订阅。'],
+          ['无广告', '上次检查时，网站和应用里没有发现广告。'],
+          ['孩子的数据', '有公开的隐私政策或家长说明页。我们链接原文，方便你自己判断，但不替它担保。'],
+          ['有研究或机构背景', '由大学或非营利机构开发，或公开发布研究和效果评估。'],
+          ['每月检查', '所有链接每月自动检查一次，失效或不再符合标准的会被移除。'],
+        ] : [
+          ['Free', 'Core content is free to use, with no subscription.'],
+          ['No ads', 'No advertising found on the site or app when we last checked.'],
+          ["Children's data", 'A public privacy policy or parents\' page. We link it so you can judge for yourself; we do not vouch for it.'],
+          ['Research or institutional backing', 'Built by a university or non-profit, or publishes research and evaluations.'],
+          ['Checked monthly', 'Every link is checked automatically each month. Tools that break or stop meeting these criteria are removed.'],
+        ]).map(([h, b]) => <li style="margin-bottom:4px"><b>{h}{zh ? '：' : ': '}</b>{b}</li>)}
+      </ol>
+    </div>
+    <div class="grid">
+      {tools.map((x) => (
+        <article class="card">
+          <div class="split" style="align-items:flex-start"><span style="font-size:18px;font-weight:700">{x.name}</span><span class="chip">{zh ? `${x.minAge}–${x.maxAge} 岁` : `Ages ${x.minAge}–${x.maxAge}`}</span></div>
+          <span class="chip t-tool" style="align-self:flex-start">{subjects[x.subject][zh ? 1 : 0]}</span>
+          <p style="margin:0;font-size:15px;color:var(--ink-2);flex:1">{x.what[lang]}</p>
+          <div class="src"><span>{x.by}</span><span aria-hidden="true">·</span><span>{x.languages[lang]}</span></div>
+          <span class="muted" style="font-size:13px">{x.backing[lang]} · <a href={x.backingUrl} rel="noopener">{zh ? '查看' : 'See'} ↗</a> · <a href={x.privacy} rel="noopener">{zh ? '隐私政策' : 'Privacy'} ↗</a></span>
+          <a href={x.url} rel="noopener">{zh ? '打开' : 'Open'} {new URL(x.url).hostname.replace(/^www\./, '')} ↗</a>
+        </article>
+      ))}
+    </div>
+  </section>
+  <section class="card" style="padding:28px;gap:18px">
+    <div class="split"><div class="stack" style="gap:6px"><h2 class="h-serif" style="font-size:28px">{zh ? 'Edustack 小工具' : 'Edustack tools'}</h2><span class="muted" style="max-width:44em">{zh ? '我们自己开发的网页小工具，在你的浏览器里运行，不上传任何数据。每个工具都注明所依据的公开标准。' : 'Small tools we build ourselves. They run in your browser and send nothing anywhere. Each one names the public standard it is based on.'}</span></div><span class="chip">{zh ? '规划中' : 'Planned'}</span></div>
+    <div class="grid">{planned.map(([h, b, src]) => <div class="card soft" style="gap:8px"><span style="font-weight:700;font-size:17px">{h}</span><span style="color:var(--ink-2);font-size:15px">{b}</span><span class="src">{src}</span></div>)}</div>
+  </section>
+</main>
+</Base>

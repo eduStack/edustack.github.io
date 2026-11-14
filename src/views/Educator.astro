@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import Cite from '../components/Cite.astro';
+import { educators, stagesFor, type Lang, type Educator, type Claim } from '../lib/data';
+import { t, href } from '../i18n/ui';
+interface Props { lang: Lang; e: Educator }
+const { lang, e } = Astro.props;
+const s = t(lang);
+const zh = lang === 'zh';
+const st = stagesFor(e.id);
+const others = educators.filter((x) => x.id !== e.id);
+const list = (items: Claim[]) => items;
+---
+<Base lang={lang} title={e.name[lang]} description={e.bio[lang]} active="educators">
+<main class="wrap" style="padding-top:28px;display:flex;flex-direction:column;gap:22px;max-width:960px">
+  <nav aria-label={zh ? '位置' : 'Breadcrumb'} class="row muted" style="gap:6px;font-size:15px"><a href={href(lang, 'educators')}>{s.nav.educators}</a><span aria-hidden="true">/</span><span>{e.name[lang]}</span></nav>
+  <header class="stack" style="gap:8px">
+    <h1 class="h-serif" style="font-size:clamp(32px,5vw,44px)">{e.name[lang]}{zh && <span class="muted" lang="en" style="font-size:20px;font-weight:400;margin-left:12px">{e.name.en}</span>}</h1>
+    <span class="muted" style="font-size:15px">{e.years} · {e.region[lang]}</span>
+    <p class="prose" style="font-size:18px">{e.bio[lang]}<Cite src={e.bio.src} lang={lang} /></p>
+  </header>
+  <section class="card" style="padding:24px;gap:12px">
+    <h2 style="margin:0;font-size:20px">{zh ? '核心思想' : 'Core ideas'}</h2>
+    <ul class="claims">{list(e.ideas).map((c) => <li>{c[lang]}<Cite src={c.src} lang={lang} /></li>)}</ul>
+  </section>
+  <section class="callout"><b>{zh ? '对今天的家长意味着什么：' : 'What it means for parents today: '}</b>{e.today[lang]}<Cite src={e.today.src} lang={lang} /></section>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))">
+    <section class="card" style="padding:22px;gap:12px;border-top:4px solid var(--accent)">
+      <h2 style="margin:0;font-size:18px">{zh ? '现代研究支持的' : 'What modern research supports'}</h2>
+      {e.supported.length ? <ul class="claims">{e.supported.map((c) => <li>{c[lang]}<Cite src={c.src} lang={lang} /></li>)}</ul>
+        : <p class="muted" style="margin:0">{zh ? '我们还没有找到直接检验这些观点、且足够可靠的研究。' : 'We have not yet found reliable research that tests these ideas directly.'}</p>}
+    </section>
+    <section class="card" style="padding:22px;gap:12px;border-top:4px solid #C9822B">
+      <h2 style="margin:0;font-size:18px">{zh ? '已经过时或需要修正的' : 'What is outdated or needs correcting'}</h2>
+      {e.outdated.length ? <ul class="claims">{e.outdated.map((c) => <li>{c[lang]}<Cite src={c.src} lang={lang} /></li>)}</ul>
+        : <p class="muted" style="margin:0">{zh ? '我们还没有找到可靠的研究指出需要修正的地方。' : 'We have not yet found reliable research showing what needs correcting.'}</p>}
+    </section>
+  </div>
+  <section class="card" style="padding:22px;gap:10px">
+    <h2 style="margin:0;font-size:18px">{zh ? '免费阅读原著' : 'Read the originals free'}</h2>
+    {e.texts.length ? <ul class="stack" style="list-style:none;padding:0;margin:0;gap:6px">{e.texts.map((x) => <li><a href={x.url} rel="noopener">{x.label[lang]} ↗</a></li>)}</ul>
+      : <p class="muted" style="margin:0">{zh ? '原著仍受版权保护，或我们没有找到合法的免费全文，因此不提供链接。' : 'The original works are still under copyright, or we found no legal free copy, so we do not link one.'}</p>}
+    <span class="muted" style="font-size:13px">{zh ? '只链接公有领域或官方免费公开的版本，例如古登堡计划、互联网档案馆、维基文库。' : 'We link only public-domain or officially free copies, such as Project Gutenberg, the Internet Archive and Wikisource.'}</span>
+  </section>
+  {st.length > 0 && <section class="stack" style="gap:8px"><h2 style="margin:0;font-size:18px">{zh ? '在哪些年龄阶段提到' : 'Age stages that draw on these ideas'}</h2><div class="row" style="gap:8px">{st.map((x) => <a class="chip" style="min-height:34px;padding:0 12px;text-decoration:none" href={href(lang, `ages/${x.id}#develop`)}>{x.name[lang]} · {x.range[lang]}</a>)}</div></section>}
+  <div class="row" style="font-size:15px;gap:6px 12px"><span class="muted">{zh ? '其他教育家：' : 'Other educators:'}</span>{others.map((x) => <a href={href(lang, `educators/${x.id}`)}>{x.name[lang]}</a>)}</div>
+</main>
+</Base>

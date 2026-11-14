@@ -1,0 +1,36 @@
+# What the monthly research scan looks for. Each entry is one PubMed query.
+# The scan only finds candidates. An editor reads each one and Josh approves it before it is added.
+# Age filter used for every query: infant, child, preschool child or adolescent (MeSH).
+journals: # "top paediatric journals": large studies here count even if they are not reviews
+  - JAMA Pediatr
+  - Pediatrics
+  - Lancet Child Adolesc Health
+  - J Am Acad Child Adolesc Psychiatry
+  - JAMA Netw Open
+  - BMJ
+  - Lancet
+  - JAMA
+  - Nat Hum Behav
+queries:
+  - topic: screen-time
+    q: '"screen time"[tiab] OR "screen use"[tiab] OR "digital media"[tiab] OR "television viewing"[tiab]'
+  - topic: social-media
+    q: '"social media"[tiab] OR smartphone*[tiab] OR "problematic internet use"[tiab]'
+  - topic: online-safety
+    q: cyberbullying[tiab] OR "online grooming"[tiab] OR sexting[tiab] OR "online harm*"[tiab]
+  - topic: mental-health
+    q: anxiety[tiab] OR depress*[tiab] OR "mental health"[tiab] OR "self-harm"[tiab]
+  - topic: sleep
+    q: '"sleep duration"[tiab] OR "sleep problems"[tiab] OR bedtime[tiab] OR "safe sleep"[tiab] OR SIDS[tiab]'
+  - topic: activity
+    q: '"physical activity"[tiab] OR "sedentary behavio*"[tiab]'
+  - topic: language
+    q: '"language development"[tiab] OR "shared reading"[tiab] OR "conversational turns"[tiab] OR "parent-child interaction"[tiab]'
+  - topic: discipline
+    q: spanking[tiab] OR "corporal punishment"[tiab] OR "harsh parenting"[tiab] OR "positive parenting"[tiab]
+  - topic: learning
+    q: '"growth mindset"[tiab] OR "homework"[tiab] OR "academic achievement"[tiab] AND parent*[tiab]'
+  - topic: nutrition
+    q: '"complementary feeding"[tiab] OR breastfeeding[tiab] OR "picky eating"[tiab]'
+  - topic: puberty
+    q: puberty[tiab] OR "pubertal timing"[tiab]

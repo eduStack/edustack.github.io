@@ -1,0 +1,6 @@
+---
+import V from '../../views/Educator.astro';
+import { educators } from '../../lib/data';
+export function getStaticPaths() { return educators.map((e) => ({ params: { id: e.id }, props: { e } })); }
+---
+<V lang="en" e={Astro.props.e} />
