@@ -9,9 +9,9 @@ const s = t(lang);
 const zh = lang === 'zh';
 ---
 <Base lang={lang} title={s.nav.educators} active="educators">
-<main class="wrap" style="padding-top:32px;display:flex;flex-direction:column;gap:22px">
+<main id="main" tabindex="-1" class="wrap" style="padding-top:32px;display:flex;flex-direction:column;gap:22px">
   <header class="stack" style="gap:10px">
-    <h1 class="h-serif" style="font-size:36px">{s.nav.educators}</h1>
+    <h1 class="h-serif" style="font-size:var(--type-feature)">{s.nav.educators}</h1>
     <p class="prose" style="max-width:44em">{zh
       ? '今天很多育儿和教育的说法，源头都在这些教育家的思想里。每一页列出他们的核心观点、对今天家长的意义，以及现代研究支持什么、哪些已经过时，并尽量链接到可以免费阅读的原著。'
       : "Many ideas in today's parenting and education go back to these thinkers. Each page gives their core ideas, what they mean for parents today, what modern research supports and what it does not, and links to free full texts where they exist."}</p>
@@ -19,9 +19,9 @@ const zh = lang === 'zh';
   <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))">
     {educators.map((e) => (
       <a class="card" href={href(lang, `educators/${e.id}`)} style="gap:8px;text-decoration:none;color:var(--ink)">
-        <span class="split" style="align-items:baseline"><span style="font-size:20px;font-weight:700">{e.name[lang]}</span><span class="muted" style="font-size:13px">{e.years}</span></span>
-        <span class="muted" style="font-size:14px">{e.region[lang]}</span>
-        <span style="font-size:15px;color:var(--ink-2);line-height:1.6">{e.bio[lang]}</span>
+        <span class="split" style="align-items:baseline"><span class="card-title" style="font-size:var(--type-section);font-weight:600">{e.name[lang]}</span><span class="muted" style="font-size:var(--type-note)">{e.years}</span></span>
+        <span class="muted" style="font-size:var(--type-note)">{e.region[lang]}</span>
+        <span style="font-size:var(--type-ui);color:var(--ink-2);line-height:var(--leading-body)">{e.bio[lang]}</span>
         <span class="chips">{stagesFor(e.id).map((st) => <span class="chip">{st.range[lang]}</span>)}{e.texts.length > 0 && <span class="chip t-guideline">{zh ? '有免费原著' : 'Free full text'}</span>}</span>
       </a>
     ))}

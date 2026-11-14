@@ -12,7 +12,7 @@ const s = t(lang);
     <span class="chip lv">{s.evidenceLabel}: {s.evidence[r.evidence]}</span>
     <span class="chip">{ageLabel(r.minMonths, r.maxMonths, lang)}</span>
   </div>
-  <a href={href(lang, `resources/${r.id}`)} style="font-size:17px;font-weight:700;line-height:1.4;color:var(--ink);text-decoration:none">{r.title[lang]}</a>
-  <p style="margin:0;font-size:15px;line-height:1.6;color:var(--ink-2)">{r.summary[lang]}</p>
+  <a class="card-title" href={href(lang, `resources/${r.id}`)} style="font-size:var(--type-body);font-weight:600;line-height:var(--leading-heading);color:var(--ink);text-decoration:none">{r.title[lang]}</a>
+  <p style="margin:0;font-size:var(--type-ui);line-height:var(--leading-body);color:var(--ink-2)">{r.summary[lang]}</p>
   <div class="src"><span>{r.by}</span>{yearLabel(r, lang) && <><span aria-hidden="true">·</span><span>{yearLabel(r, lang)}</span></>}</div>
 </article>

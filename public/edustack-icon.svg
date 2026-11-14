@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" role="img" aria-labelledby="title">
+  <title id="title">eduStack leaf</title>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .leaf { fill: #78C99B; }
+    }
+  </style>
+  <path class="leaf" fill="#18734B" fill-rule="evenodd" d="
+    M1.35 13.95 3.65 11.65
+    C2.35 9.02 2.95 6.37 5.03 4.24
+    C7.32 1.9 10.64 1.12 15 1
+    C14.76 5.21 14.1 8.72 11.65 11.1
+    C9.56 13.14 7.02 13.77 4.72 12.74
+    L2.42 15.02
+    A.76.76 0 0 1 1.35 13.95Z
+    M5.02 10.05
+    C6.36 8.26 8.51 6.13 10.84 4.48
+    A.67.67 0 0 1 11.69 5.52
+    C9.73 7.19 7.9 9.07 6.25 11.02
+    A.79.79 0 0 1 5.02 10.05Z"/>
+</svg>

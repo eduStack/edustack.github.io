@@ -7,11 +7,11 @@ const { lang } = Astro.props;
 const zh = lang === 'zh';
 ---
 <Base lang={lang} title={zh ? '按年龄' : 'By age'} active="stages">
-<main class="wrap section">
-  <h1 class="h-serif" style="font-size:40px">{zh ? '按年龄浏览' : 'Browse by age'}</h1>
+<main id="main" tabindex="-1" class="wrap section">
+  <h1 class="h-serif" style="font-size:var(--type-feature)">{zh ? '按年龄浏览' : 'Browse by age'}</h1>
   <p class="prose">{zh ? '五个阶段。每个阶段页分三块：这个阶段孩子在发展什么、你可以和孩子一起做什么、健康与安全要点。' : 'Five stages. Each page has three parts: what your child is developing, what you can do together, and health and safety essentials.'}</p>
   <div class="grid">
-    {stages.map((st) => <a class="card" href={href(lang, `ages/${st.id}`)} style="gap:6px"><span class="muted">{st.range[lang]}</span><span style="font-size:22px;font-weight:700">{st.name[lang]}</span><span style="color:var(--ink-2)">{st.focus[lang]}</span></a>)}
+    {stages.map((st) => <a class="card" href={href(lang, `ages/${st.id}`)} style="gap:6px"><span class="muted">{st.range[lang]}</span><span class="card-title" style="font-size:var(--type-section);font-weight:600">{st.name[lang]}</span><span style="color:var(--ink-2)">{st.focus[lang]}</span></a>)}
   </div>
 </main>
 </Base>

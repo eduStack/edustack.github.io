@@ -13,16 +13,16 @@ const L = lang === 'zh'
 ---
 <aside class="card hl" style="padding:24px;gap:14px" id="today" data-tips={JSON.stringify(data)} data-lang={lang}>
   <div class="split" style="align-items:center">
-    <span style="font-size:14px;font-weight:700;color:var(--accent)">{L.title}</span>
-    <span style="font-size:14px" class="muted" data-for>{L.example}</span>
+    <span style="font-size:var(--type-note);font-weight:600;color:var(--accent)">{L.title}</span>
+    <span style="font-size:var(--type-note)" class="muted" data-for>{L.example}</span>
   </div>
-  <p class="h-serif" style="font-size:22px;line-height:1.45" data-text>{data[1].text}</p>
-  <div style="background:var(--paper);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px">
-    <span style="font-size:14px;font-weight:700">{L.why}</span>
-    <span style="font-size:14px;line-height:1.6;color:var(--ink-2)" data-why>{data[1].why}</span>
-    <a style="font-size:14px" href={data[1].link} data-link>{data[1].src}</a>
+  <p class="h-serif" style="font-size:var(--type-section);line-height:var(--leading-heading)" data-text>{data[1].text}</p>
+  <div style="background:var(--paper);border-radius:0;padding:12px 14px;display:flex;flex-direction:column;gap:6px">
+    <span style="font-size:var(--type-note);font-weight:600">{L.why}</span>
+    <span style="font-size:var(--type-note);line-height:var(--leading-body);color:var(--ink-2)" data-why>{data[1].why}</span>
+    <a style="font-size:var(--type-note)" href={data[1].link} data-link>{data[1].src}</a>
   </div>
-  <div class="row muted" style="font-size:14px"><span data-note hidden>{L.note}</span><a href={href(lang, 'me')} data-add>{L.add}</a></div>
+  <div class="row muted" style="font-size:var(--type-note)"><span data-note hidden>{L.note}</span><a href={href(lang, 'me')} data-add>{L.add}</a></div>
 </aside>
 <script>
   import { load, selected, ageMonths, ageText, dailyIndex } from '../lib/client';

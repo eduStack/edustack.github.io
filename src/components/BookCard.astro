@@ -7,10 +7,10 @@ const { r, lang } = Astro.props;
 const zh = lang === 'zh';
 ---
 <article class="card soft" style="gap:8px;padding:18px">
-  <a href={href(lang, `resources/${r.id}`)} style="font-size:17px;font-weight:700;color:var(--ink);text-decoration:none;line-height:1.4">{r.title[lang]}</a>
-  <span class="muted" style="font-size:14px">{r.by}{yearLabel(r, lang) && ` · ${yearLabel(r, lang)}`}</span>
-  {r.evidenceNote && <p style="margin:0;font-size:15px;line-height:1.6;color:var(--ink-2)"><b>{zh ? '证据说明：' : 'Evidence: '}</b>{r.evidenceNote[lang]}</p>}
-  <div class="row" style="gap:6px 14px;font-size:14px">
+  <a class="card-title" href={href(lang, `resources/${r.id}`)} style="font-size:var(--type-body);font-weight:600;color:var(--ink);text-decoration:none;line-height:var(--leading-heading)">{r.title[lang]}</a>
+  <span class="muted" style="font-size:var(--type-note)">{r.by}{yearLabel(r, lang) && ` · ${yearLabel(r, lang)}`}</span>
+  {r.evidenceNote && <p style="margin:0;font-size:var(--type-ui);line-height:var(--leading-body);color:var(--ink-2)"><b>{zh ? '证据说明：' : 'Evidence: '}</b>{r.evidenceNote[lang]}</p>}
+  <div class="row" style="gap:6px 14px;font-size:var(--type-note)">
     {r.publisher && <span class="muted">{zh ? '出版：' : 'Publisher: '}{r.publisher}</span>}
     <a href={r.url} rel="noopener">{zh ? '出版信息' : 'Book details'} ↗</a>
     {r.isbn && <a href={worldcat(r.isbn)} rel="noopener">{zh ? '附近图书馆（WorldCat）' : 'Find in a library (WorldCat)'} ↗</a>}

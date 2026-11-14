@@ -20,11 +20,11 @@ const trust = zh ? [
 ];
 ---
 <Base lang={lang} title={zh ? '首页' : 'Home'} active="home">
-<main>
+<main id="main" tabindex="-1">
   <section class="wrap" style="padding-top:48px;padding-bottom:32px;display:flex;gap:32px;flex-wrap:wrap;align-items:center">
     <div style="flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:20px">
-      <h1 class="h-serif" style="font-size:clamp(34px,5vw,48px);line-height:1.15">{zh ? '孩子每个阶段在发展什么，你可以一起做什么。' : 'What your child is developing, and what you can do together.'}</h1>
-      <p style="margin:0;font-size:19px;line-height:1.6;color:var(--ink-2);max-width:34em">{zh
+      <h1 class="h-serif" style="font-size:var(--type-feature);line-height:var(--leading-heading)">{zh ? '孩子每个阶段在发展什么，你可以一起做什么。' : 'What your child is developing, and what you can do together.'}</h1>
+      <p style="margin:0;font-size:var(--type-body);line-height:var(--leading-body);color:var(--ink-2);max-width:34em">{zh
         ? '覆盖 0–18 岁。以发展心理学为主线，配上可以和孩子一起用的免费工具和活动，再加上健康与安全要点。我们不写自己的观点，每一句都链接到原始出处。'
         : 'For ages 0 to 18. Child development is the main thread, with free tools and activities to do together, plus health and safety essentials. We write no opinions of our own: every sentence links to its original source.'}</p>
       <form class="row" style="max-width:560px;gap:8px" action={href(lang, 'library')} method="get" role="search">
@@ -38,15 +38,15 @@ const trust = zh ? [
 
   <section class="wrap section" style="padding-top:8px" aria-labelledby="stage-h">
     <div class="split">
-      <h2 id="stage-h" class="h-serif" style="font-size:28px">{zh ? '按年龄浏览' : 'Browse by age'}</h2>
-      <span class="muted" style="font-size:14px">{zh ? '在发展什么 · 一起做什么 · 健康与安全' : 'Developing · Doing together · Health and safety'}</span>
+      <h2 id="stage-h" class="h-serif" style="font-size:var(--type-section)">{zh ? '按年龄浏览' : 'Browse by age'}</h2>
+      <span class="muted" style="font-size:var(--type-note)">{zh ? '在发展什么 · 一起做什么 · 健康与安全' : 'Developing · Doing together · Health and safety'}</span>
     </div>
     <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr))">
       {stages.map((st) => (
         <a class="card" href={href(lang, `ages/${st.id}`)} style="gap:6px;padding:18px">
-          <span class="muted" style="font-size:14px">{st.range[lang]}</span>
-          <span style="font-size:20px;font-weight:700">{st.name[lang]}</span>
-          <span style="font-size:14px;color:var(--ink-2)">{st.focus[lang]}</span>
+          <span class="muted" style="font-size:var(--type-note)">{st.range[lang]}</span>
+          <span style="font-size:var(--type-section);font-weight:600">{st.name[lang]}</span>
+          <span style="font-size:var(--type-note);color:var(--ink-2)">{st.focus[lang]}</span>
         </a>
       ))}
     </div>
@@ -54,15 +54,15 @@ const trust = zh ? [
 
   <section class="wrap section" style="padding-top:8px" aria-labelledby="ask-h">
     <div class="split">
-      <h2 id="ask-h" class="h-serif" style="font-size:28px">{zh ? '家长最常问的' : 'What parents ask about most'}</h2>
-      <span class="muted" style="font-size:14px">{zh ? '每个主题先给结论，再列出各权威机构的说法' : 'Each topic starts with the bottom line, then what each authority says'}</span>
+      <h2 id="ask-h" class="h-serif" style="font-size:var(--type-section)">{zh ? '家长最常问的' : 'What parents ask about most'}</h2>
+      <span class="muted" style="font-size:var(--type-note)">{zh ? '每个主题先给结论，再列出各权威机构的说法' : 'Each topic starts with the bottom line, then what each authority says'}</span>
     </div>
     <div class="grid">
       {topics.map((tp) => (
         <a class="card" href={href(lang, `topics/${tp.id}`)} style="gap:6px">
-          <span style="font-size:20px;font-weight:700">{tp.name[lang]}</span>
-          <span style="font-size:15px;color:var(--ink-2)">{tp.teaser[lang]}</span>
-          <span class="muted" style="font-size:13px">{tp.status === 'ready' ? `${s.updated} ${fmtDate(tp.updated, lang)}` : (zh ? '正在核实来源' : 'Sources being checked')}</span>
+          <span style="font-size:var(--type-section);font-weight:600">{tp.name[lang]}</span>
+          <span style="font-size:var(--type-ui);color:var(--ink-2)">{tp.teaser[lang]}</span>
+          <span class="muted" style="font-size:var(--type-note)">{tp.status === 'ready' ? `${s.updated} ${fmtDate(tp.updated, lang)}` : (zh ? '正在核实来源' : 'Sources being checked')}</span>
         </a>
       ))}
     </div>
@@ -72,33 +72,33 @@ const trust = zh ? [
     <div class="wrap stack" style="gap:20px">
       <div class="split">
         <div class="stack" style="gap:6px">
-          <h2 id="edu-h" class="h-serif" style="font-size:28px">{zh ? '思想源头：教育家' : 'Where the ideas come from: educators'}</h2>
-          <span class="muted" style="font-size:15px">{zh ? '从孔子到维果茨基，看他们的核心观点，以及现代研究支持什么、哪些已经过时' : 'From Confucius to Vygotsky: their core ideas, and what modern research supports and what it does not'}</span>
+          <h2 id="edu-h" class="h-serif" style="font-size:var(--type-section)">{zh ? '思想源头：教育家' : 'Where the ideas come from: educators'}</h2>
+          <span class="muted" style="font-size:var(--type-ui)">{zh ? '从孔子到维果茨基，看他们的核心观点，以及现代研究支持什么、哪些已经过时' : 'From Confucius to Vygotsky: their core ideas, and what modern research supports and what it does not'}</span>
         </div>
         <a href={href(lang, 'educators')}>{zh ? '全部教育家' : 'All educators'}</a>
       </div>
       <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,180px),1fr))">
         {educators.map((e) => (
           <a class="card" href={href(lang, `educators/${e.id}`)} style="gap:4px;padding:16px;text-decoration:none;color:var(--ink)">
-            <span style="font-size:18px;font-weight:700">{e.name[lang]}</span>
-            <span class="muted" style="font-size:13px">{e.years}</span>
+            <span style="font-size:var(--type-body);font-weight:600">{e.name[lang]}</span>
+            <span class="muted" style="font-size:var(--type-note)">{e.years}</span>
           </a>
         ))}
       </div>
       <a class="card soft" href={href(lang, 'library')} style="flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:16px">
-        <span class="stack" style="gap:2px"><span style="font-weight:700">{zh ? '经典育儿书和权威指南' : 'Classic parenting books and official guidelines'}</span><span class="muted" style="font-size:14px">{zh ? `资源库里共 ${resources.filter((r) => r.type !== 'research').length} 条，可按年龄和主题筛选` : `${resources.filter((r) => r.type !== 'research').length} in the library, filter by age and topic`}</span></span>
+        <span class="stack" style="gap:2px"><span style="font-weight:600">{zh ? '经典育儿书和权威指南' : 'Classic parenting books and official guidelines'}</span><span class="muted" style="font-size:var(--type-note)">{zh ? `资源库里共 ${resources.filter((r) => r.type !== 'research').length} 条，可按年龄和主题筛选` : `${resources.filter((r) => r.type !== 'research').length} in the library, filter by age and topic`}</span></span>
         <span class="btn btn-ghost">{zh ? '打开资源库' : 'Open the library'}</span>
       </a>
     </div>
   </section>
 
   <section class="wrap section" id="trust" aria-labelledby="trust-h">
-    <h2 id="trust-h" class="h-serif" style="font-size:28px">{s.whatWeInclude}</h2>
+    <h2 id="trust-h" class="h-serif" style="font-size:var(--type-section)">{s.whatWeInclude}</h2>
     <div class="grid">
-      {trust.map(([h, b]) => <div class="card"><span style="font-weight:700;font-size:17px">{h}</span><p style="margin:0;font-size:15px;color:var(--ink-2)">{b}</p></div>)}
+      {trust.map(([h, b]) => <div class="card"><span style="font-weight:600;font-size:var(--type-body)">{h}</span><p style="margin:0;font-size:var(--type-ui);color:var(--ink-2)">{b}</p></div>)}
     </div>
     <a class="card soft" href={href(lang, 'tools')} style="flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:center">
-      <span class="stack" style="gap:4px"><span style="font-weight:700;font-size:17px">{zh ? '免费学习工具单独放在一页' : 'Free learning tools have their own page'}</span><span class="muted" style="font-size:15px">{zh ? '可汗学院、Code.org、Scratch 等，不和上面的阅读资源混在一起。' : 'Khan Academy, Code.org, Scratch and others, kept apart from the reading list.'}</span></span>
+      <span class="stack" style="gap:4px"><span style="font-weight:600;font-size:var(--type-body)">{zh ? '免费学习工具单独放在一页' : 'Free learning tools have their own page'}</span><span class="muted" style="font-size:var(--type-ui)">{zh ? '可汗学院、Code.org、Scratch 等，不和上面的阅读资源混在一起。' : 'Khan Academy, Code.org, Scratch and others, kept apart from the reading list.'}</span></span>
       <span class="btn btn-ghost">{zh ? '去看免费工具' : 'See free tools'}</span>
     </a>
   </section>

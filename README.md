@@ -83,9 +83,19 @@ The production repository is `eduStack/edustack.github.io`, bound to
 path. The historical blog lives separately in `eduStack/edustack-archive`,
 published from `master` at `https://archive.edustack.org/`.
 
-The editorial homepage is `src/views/EditorialHome.astro`; its styles are in
-`src/styles/editorial.css` and local fonts/illustrations in `public/editorial/`.
-It uses native same-origin links and search, without preview-server ports.
+The editorial homepage is `src/views/EditorialHome.astro`. The homepage and
+interior pages share `src/components/SiteHeader.astro` and `src/styles/site.css`
+for branding, colours, type sizes and responsive navigation. Homepage-specific
+styles live in `src/styles/editorial.css`; interior components use
+`src/styles/global.css`. Local fonts and illustrations are in `public/editorial/`.
+Links and search use native same-origin URLs.
+
+The local Noto fonts are subsets. `src/styles/font-coverage.css` adds characters
+used by the interior pages beyond the original homepage subset. When adding
+Chinese content, check glyph coverage and extend these font assets as needed;
+font licences are stored alongside the files.
+`src/components/FontPreloads.astro` starts font requests in the document head;
+the font faces use a bounded blocking period to reduce visible font swapping.
 
 ## Licence
 

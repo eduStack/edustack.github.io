@@ -3,14 +3,12 @@ import '../styles/global.css';
 import { t, href, switchLang } from '../i18n/ui';
 import type { Lang } from '../lib/data';
 import { defaultLanguage, languages } from '../i18n/languages';
-import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import FontPreloads from '../components/FontPreloads.astro';
 
 interface Props { lang: Lang; title: string; description?: string; active?: string }
 const { lang, title, description, active } = Astro.props;
 const s = t(lang);
-const nav = [
-  ['home', ''], ['stages', 'ages'], ['tools', 'tools'], ['educators', 'educators'], ['topics', 'topics'], ['library', 'library'], ['me', 'me'],
-] as const;
 const desc = description ?? (lang === 'zh' ? '有出处的家庭教育资源：每个年龄的孩子在发展什么、可以一起做什么、健康安全要点，覆盖 0–18 岁。' : 'Parenting with sources: what your child is developing at each age, what you can do together, and health and safety essentials, for ages 0–18.');
 ---
 <!doctype html>
@@ -18,36 +16,22 @@ const desc = description ?? (lang === 'zh' ? '有出处的家庭教育资源：�
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#faf7f0" />
+  <FontPreloads lang={lang} />
   <title>{title} · {s.siteName}</title>
   <meta name="description" content={desc} />
   <link rel="canonical" href={new URL(switchLang(Astro.url.pathname, lang), Astro.site || Astro.url.origin)} />
   {(Object.keys(languages) as Lang[]).map((code) => <link rel="alternate" hreflang={languages[code].tag} href={new URL(switchLang(Astro.url.pathname, code), Astro.site || Astro.url.origin)} />)}
   <link rel="alternate" hreflang="x-default" href={new URL(switchLang(Astro.url.pathname, defaultLanguage), Astro.site || Astro.url.origin)} />
-  <link rel="icon" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`} type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/edustack-icon.svg`} type="image/svg+xml" />
 </head>
 <body data-lang={lang}>
-  <header style="background:var(--surface);border-bottom:1px solid var(--line)">
-    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:12px 16px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px">
-      <a href={href(lang)} style="display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)">
-        <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x="3" y="18" width="24" height="7" rx="2" fill="#23573F"></rect><rect x="6" y="10" width="18" height="7" rx="2" fill="#5E9A7A"></rect><rect x="9" y="2" width="12" height="7" rx="2" fill="#A9CDB7"></rect></svg>
-        <span style="display:flex;flex-direction:column;line-height:1.2"><span style="font-weight:700;font-size:18px">{s.siteName}</span><span style="font-size:12px;color:var(--muted)">{s.tagline}</span></span>
-      </a>
-      <div class="row" style="gap:8px">
-        <nav class="nav" aria-label={lang === 'zh' ? '主导航' : 'Main'} style="display:flex;gap:4px;flex-wrap:wrap">
-          {nav.map(([k, p]) => <a href={href(lang, p)} aria-current={active === k ? 'page' : undefined}>{s.nav[k]}</a>)}
-        </nav>
-        <LanguageSwitcher lang={lang} />
-      </div>
-    </div>
-  </header>
+  <SiteHeader lang={lang} active={active} mainId={active === 'me' ? 'me' : 'main'} />
   <slot />
-  <footer style="border-top:1px solid var(--line);background:var(--surface);margin-top:56px">
-    <div class="wrap" style="padding-top:28px;padding-bottom:32px;display:flex;gap:24px;justify-content:space-between;flex-wrap:wrap;font-size:14px;color:var(--muted);line-height:1.7">
-      <div style="max-width:620px;display:flex;flex-direction:column;gap:6px"><span style="font-weight:700;color:var(--ink)">{s.footerTitle}</span><span>{s.footerBody}</span></div>
-      <div class="row" style="gap:16px;align-items:flex-start"><a href={href(lang, '#about')}>{s.whatWeInclude}</a><a href={`${import.meta.env.BASE_URL}reference/${lang === 'zh' ? 'zh/' : ''}`}>{s.designReference}</a><a href="https://archive.edustack.org/">{lang === 'zh' ? '历史博客' : 'Historical blog'}</a><a href="https://github.com/eduStack/edustack.github.io">{s.sourceCode}</a></div>
+  <footer class="site-footer interior-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-description"><a class="footer-brand" href={href(lang)}>{s.siteName}<span>{s.tagline}</span></a><strong>{s.footerTitle}</strong><p>{s.footerBody}</p></div>
+      <div class="footer-links"><a href={href(lang, '#about')}>{s.whatWeInclude}</a><a href={`${import.meta.env.BASE_URL}reference/${lang === 'zh' ? 'zh/' : ''}`}>{s.designReference}</a><a href="https://archive.edustack.org/">{lang === 'zh' ? '历史博客' : 'Historical blog'}</a><a href="https://github.com/eduStack/edustack.github.io">{s.sourceCode}</a></div>
     </div>
   </footer>
 </body>

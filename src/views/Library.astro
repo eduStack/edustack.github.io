@@ -17,11 +17,11 @@ const used = [...new Set(resources.flatMap((r) => r.topics))].filter((k) => topi
 const sorted = [...resources].sort((a, b) => a.minMonths - b.minMonths);
 ---
 <Base lang={lang} title={s.nav.library} active="library">
-<main class="wrap" style="padding-top:32px;display:flex;flex-direction:column;gap:20px">
+<main id="main" tabindex="-1" class="wrap" style="padding-top:32px;display:flex;flex-direction:column;gap:20px">
   <div class="split" style="align-items:flex-end">
     <div class="stack" style="gap:6px">
-      <h1 class="h-serif" style="font-size:36px">{s.nav.library}</h1>
-      <span class="muted" style="font-size:15px">{zh ? `共 ${resources.length} 条经典著作和权威指南，全部由编辑挑选并核实。相关的学术研究附在每条资源下面。` : `${resources.length} books and guidelines, each chosen and checked by our editors. The research behind each one is listed on its page.`}</span>
+      <h1 class="h-serif" style="font-size:var(--type-feature)">{s.nav.library}</h1>
+      <span class="muted" style="font-size:var(--type-ui)">{zh ? `共 ${resources.length} 条经典著作和权威指南，全部由编辑挑选并核实。相关的学术研究附在每条资源下面。` : `${resources.length} books and guidelines, each chosen and checked by our editors. The research behind each one is listed on its page.`}</span>
     </div>
     <div class="row" style="gap:8px"><label for="sort" class="muted">{zh ? '排序' : 'Sort'}</label>
       <select id="sort"><option value="age">{zh ? '按年龄' : 'By age'}</option><option value="year">{zh ? '发表时间（最新在前）' : 'Newest first'}</option></select></div>
@@ -32,17 +32,17 @@ const sorted = [...resources].sort((a, b) => a.minMonths - b.minMonths);
   </div>
   <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start">
     <aside class="card" style="flex:1 1 240px;gap:18px" aria-label={zh ? '筛选' : 'Filters'}>
-      <div class="stack" style="gap:6px"><label for="q" style="font-weight:700">{zh ? '搜索' : 'Search'}</label><input id="q" type="search" /></div>
-      <div class="stack" style="gap:6px"><label for="age" style="font-weight:700">{zh ? '孩子年龄' : "Child's age"}</label>
+      <div class="stack" style="gap:6px"><label for="q" style="font-weight:600">{zh ? '搜索' : 'Search'}</label><input id="q" type="search" /></div>
+      <div class="stack" style="gap:6px"><label for="age" style="font-weight:600">{zh ? '孩子年龄' : "Child's age"}</label>
         <select id="age"><option value="">{zh ? '不限年龄' : 'Any age'}</option></select>
-        <span class="muted" style="font-size:13px">{zh ? '只显示适用年龄包含这个月龄的资源。' : 'Shows resources whose age range includes this age.'}</span></div>
-      <div class="stack" style="gap:6px"><label for="topic" style="font-weight:700">{zh ? '主题' : 'Topic'}</label>
+        <span class="muted" style="font-size:var(--type-note)">{zh ? '只显示适用年龄包含这个月龄的资源。' : 'Shows resources whose age range includes this age.'}</span></div>
+      <div class="stack" style="gap:6px"><label for="topic" style="font-weight:600">{zh ? '主题' : 'Topic'}</label>
         <select id="topic"><option value="">{zh ? '全部主题' : 'All topics'}</option>{used.map((k) => <option value={k}>{topicNames[k][zh ? 1 : 0]}</option>)}</select></div>
-      <label class="row" style="gap:8px;min-height:34px"><input type="checkbox" id="free" /> {zh ? '只看可免费阅读的' : 'Free to read only'}</label>
+      <label class="row" style="gap:8px;min-height:2.75rem"><input type="checkbox" id="free" /> {zh ? '只看可免费阅读的' : 'Free to read only'}</label>
       <a href={href(lang, 'tools')}>{zh ? '找免费学习工具？' : 'Looking for free learning tools?'}</a>
     </aside>
     <section style="flex:999 1 600px;min-width:0" class="stack" aria-live="polite">
-      <div class="muted" style="font-size:14px" id="count"></div>
+      <div class="muted" style="font-size:var(--type-note)" id="count"></div>
       <div class="stack" id="list">{sorted.map((r) => <ResourceCard r={r} lang={lang} />)}</div>
       <p id="empty" class="card" hidden>{zh ? '没有符合条件的资源。试试放宽筛选条件。' : 'No resources match. Try fewer filters.'}</p>
     </section>
