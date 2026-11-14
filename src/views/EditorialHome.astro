@@ -50,7 +50,7 @@ const canonical = new URL(homeUrl, Astro.site || Astro.url.origin);
 
       <section class="lead-grid" aria-label={copy.featured}>
         <article class="lead-story">
-          <a class="lead-image" href={localPath('ages/toddlers/')} aria-label={copy.leadLabel}><span class="image-note">{copy.imageNote}</span><img class="family-art" {...homeImage('family', [640, 1280, 1680], '(max-width: 640px) calc(100vw - 32px), (max-width: 864px) calc(100vw - 48px), (max-width: 1088px) 60vw, 800px', 900, 500)} alt={copy.familyAlt} loading="eager" fetchpriority="high" decoding="async"></a>
+          <a class="lead-image" href={localPath('ages/toddlers/')} aria-label={copy.leadLabel}><img class="family-art" {...homeImage('family', [640, 1280, 1680], '(max-width: 640px) calc(100vw - 32px), (max-width: 864px) calc(100vw - 48px), (max-width: 1088px) 60vw, 800px', 1681, 936)} alt={copy.familyAlt} loading="eager" fetchpriority="high" decoding="async"></a>
           <div class="story-meta"><span class="eyebrow">{copy.leadEyebrow}</span><span>{copy.leadCategory}</span></div>
           <h2><a href={localPath('ages/toddlers/')}>{copy.leadTitleFirst}<br>{copy.leadTitleSecond}</a></h2>
           <p class="story-description">{copy.leadDescription}</p>

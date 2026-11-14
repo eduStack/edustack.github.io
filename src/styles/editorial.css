@@ -15,19 +15,12 @@
   gap: 2.25rem;
 }
 .lead-image { display: block; background: #eee7d8; }
-.image-note {
-  display: block;
-  padding: 1rem 1.5rem 0;
-  color: #475849;
-  font: 600 var(--type-note) / var(--leading-note) var(--serif);
-}
 .family-art, .dinner-art, .age-item > img, .topic-image > img {
   display: block;
   inline-size: 100%;
   block-size: auto;
   object-fit: cover;
 }
-.family-art { aspect-ratio: 1.8; }
 .story-meta {
   display: flex;
   flex-wrap: wrap;
