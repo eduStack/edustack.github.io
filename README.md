@@ -1,8 +1,11 @@
-# Edustack
+# eduStack
 
 Parenting resources with sources, for children aged 0 to 18. English and Simplified Chinese.
 
-Edustack writes no original advice. It links to three kinds of resources, each chosen by the editors:
+The official brand spelling is **eduStack**. Historical reference pages retain
+their original branding as part of the fixed snapshot.
+
+eduStack writes no original advice. It links to three kinds of resources, each chosen by the editors:
 
 - **Classic books** on raising and educating children
 - **Guidelines** from authoritative bodies (WHO, UNICEF, national health departments, paediatric associations)

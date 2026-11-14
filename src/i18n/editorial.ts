@@ -2,13 +2,13 @@ import type { Lang } from './languages';
 
 const en = {
   "description": "Parenting resources with sources. Explore child development and find thoughtful ways to grow together, from birth to 18.",
-  "pageTitle": "Edustack · Growing together, understanding your child",
+  "pageTitle": "eduStack · Growing together, understanding your child",
   "skip": "Skip to main content",
   "tagline": "Parenting resources with sources",
   "ageSpan": "Ages 0–18",
   "mastheadFirst": "Growing together,",
   "mastheadSecond": "one discovery at a time.",
-  "homeLabel": "Edustack home",
+  "homeLabel": "eduStack home",
   "myChild": "My child",
   "mainNav": "Main navigation",
   "home": "Home",
@@ -115,21 +115,21 @@ const en = {
   "privacyTitle": "Room to read. Peace of mind.",
   "privacyDescription": "No ads and no sign-up. Your child’s profile stays in your browser.",
   "footerNote": "Growing together, at your family’s own pace.",
-  "about": "About Edustack",
+  "about": "About eduStack",
   "archive": "Historical blog",
   "designReference": "Original design reference",
   "disclaimer": "For information only, not a substitute for professional advice."
 } as const;
 
 const zh: Record<keyof typeof en, string> = {
-  "description": "Edustack：有出处的家庭教育资源。从儿童发展出发，陪你读懂孩子成长的每个阶段。",
-  "pageTitle": "Edustack · 陪孩子长大，也慢慢读懂孩子",
+  "description": "eduStack：有出处的家庭教育资源。从儿童发展出发，陪你读懂孩子成长的每个阶段。",
+  "pageTitle": "eduStack · 陪孩子长大，也慢慢读懂孩子",
   "skip": "跳到主要内容",
   "tagline": "有出处的家庭教育资源",
   "ageSpan": "0—18 岁",
   "mastheadFirst": "关于成长，",
   "mastheadSecond": "我们一起慢慢理解。",
-  "homeLabel": "Edustack 首页",
+  "homeLabel": "eduStack 首页",
   "myChild": "我的孩子",
   "mainNav": "主导航",
   "home": "首页",

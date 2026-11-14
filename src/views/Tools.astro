@@ -55,7 +55,7 @@ const planned = zh ? [
     </div>
   </section>
   <section class="card" style="padding:28px;gap:18px">
-    <div class="split"><div class="stack" style="gap:6px"><h2 class="h-serif" style="font-size:28px">{zh ? 'Edustack 小工具' : 'Edustack tools'}</h2><span class="muted" style="max-width:44em">{zh ? '我们自己开发的网页小工具，在你的浏览器里运行，不上传任何数据。每个工具都注明所依据的公开标准。' : 'Small tools we build ourselves. They run in your browser and send nothing anywhere. Each one names the public standard it is based on.'}</span></div><span class="chip">{zh ? '规划中' : 'Planned'}</span></div>
+    <div class="split"><div class="stack" style="gap:6px"><h2 class="h-serif" style="font-size:28px">{zh ? 'eduStack 小工具' : 'eduStack tools'}</h2><span class="muted" style="max-width:44em">{zh ? '我们自己开发的网页小工具，在你的浏览器里运行，不上传任何数据。每个工具都注明所依据的公开标准。' : 'Small tools we build ourselves. They run in your browser and send nothing anywhere. Each one names the public standard it is based on.'}</span></div><span class="chip">{zh ? '规划中' : 'Planned'}</span></div>
     <div class="grid">{planned.map(([h, b, src]) => <div class="card soft" style="gap:8px"><span style="font-weight:700;font-size:17px">{h}</span><span style="color:var(--ink-2);font-size:15px">{b}</span><span class="src">{src}</span></div>)}</div>
   </section>
 </main>
