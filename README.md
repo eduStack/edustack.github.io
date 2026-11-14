@@ -55,6 +55,12 @@ redesigning the current site in `src/`.
 
 ## Where things live
 
+Only website source, assets (including the fixed reference site), build and
+deployment configuration, licences, and website maintenance files belong in
+this repository. Keep original download archives, design research, migration
+notes, and generated research drafts in the local workspace. GitHub Pages
+publishes only `dist/`, not the repository's source or maintenance documents.
+
 | Path | What |
 | --- | --- |
 | `src/data/resources.yaml` | The library. Rules for each field are at the top of the file. |

@@ -7,3 +7,13 @@ dist/
 .DS_Store
 ._*
 *.log
+
+# Local source exports, design research, and generated editorial drafts.
+/*.zip
+/*.tar
+/*.tar.gz
+/Edustack preview/
+/design-previews/
+/migration/
+/README-2.md
+/research/candidates/
