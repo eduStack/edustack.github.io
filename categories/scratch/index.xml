@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scratch on eduStack.org</title>
-    <link>http://edustack.github.io/categories/scratch/</link>
+    <link>https://archive.edustack.org/categories/scratch/</link>
     <description>Recent content in Scratch on eduStack.org</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 31 Jul 2018 15:36:33 +0000</lastBuildDate><atom:link href="http://edustack.github.io/categories/scratch/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Jul 2018 15:36:33 +0000</lastBuildDate><atom:link href="https://archive.edustack.org/categories/scratch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CSTA K-12计算机科学标准2017版（CSTA K-12 Computer Science Standards）</title>
-      <link>http://edustack.github.io/2018/07/31/csta-k-12-computer-science-standards/</link>
+      <link>https://archive.edustack.org/2018/07/31/csta-k-12-computer-science-standards/</link>
       <pubDate>Tue, 31 Jul 2018 15:36:33 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2018/07/31/csta-k-12-computer-science-standards/</guid>
+      <guid>https://archive.edustack.org/2018/07/31/csta-k-12-computer-science-standards/</guid>
       <description>标准连接 https://www.csteachers.org/general/custom.asp?page=standards 可打印版本 https://www.csteachers.org/general/custom.asp?page=standards 计算机科学教师协会（CSTA）是一个支持和促进计算机科学教学的会员制组织。 CSTA为K-12教师及其学生提供了更好地理</description>
     </item>
     
     <item>
       <title>Scratch Conference 2018主题摘要</title>
-      <link>http://edustack.github.io/2018/07/29/scratch-conference-2018/</link>
+      <link>https://archive.edustack.org/2018/07/29/scratch-conference-2018/</link>
       <pubDate>Sun, 29 Jul 2018 15:04:08 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2018/07/29/scratch-conference-2018/</guid>
+      <guid>https://archive.edustack.org/2018/07/29/scratch-conference-2018/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;&lt;a href=&#34;https://scratch.mit.edu/conference&#34;&gt;https://scratch.mit.edu/conference&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Scratch2018年会在7月26日-28日举行，举行地点当然就在Scratch的出生地-MIT媒体实验室。目前还没有提供在线视频的回放，不过从官网我们可以看到一些有趣的话题。&lt;/p&gt;

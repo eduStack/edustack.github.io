@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://edustack.github.io/sitemap.xml
+Sitemap: https://archive.edustack.org/sitemap.xml

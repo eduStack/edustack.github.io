@@ -2,89 +2,89 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on eduStack.org</title>
-    <link>http://edustack.github.io/categories/</link>
+    <link>https://archive.edustack.org/categories/</link>
     <description>Recent content in Categories on eduStack.org</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 02 Jun 2020 01:30:43 +0000</lastBuildDate><atom:link href="http://edustack.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Jun 2020 01:30:43 +0000</lastBuildDate><atom:link href="https://archive.edustack.org/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Uncategorized</title>
-      <link>http://edustack.github.io/categories/uncategorized/</link>
+      <link>https://archive.edustack.org/categories/uncategorized/</link>
       <pubDate>Tue, 02 Jun 2020 01:30:43 +0000</pubDate>
       
-      <guid>http://edustack.github.io/categories/uncategorized/</guid>
+      <guid>https://archive.edustack.org/categories/uncategorized/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AI</title>
-      <link>http://edustack.github.io/categories/ai/</link>
+      <link>https://archive.edustack.org/categories/ai/</link>
       <pubDate>Sun, 16 Jun 2019 15:02:07 +0000</pubDate>
       
-      <guid>http://edustack.github.io/categories/ai/</guid>
+      <guid>https://archive.edustack.org/categories/ai/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Open edX</title>
-      <link>http://edustack.github.io/categories/open-edx/</link>
+      <link>https://archive.edustack.org/categories/open-edx/</link>
       <pubDate>Thu, 11 Apr 2019 12:58:35 +0000</pubDate>
       
-      <guid>http://edustack.github.io/categories/open-edx/</guid>
+      <guid>https://archive.edustack.org/categories/open-edx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>EdTech Info</title>
-      <link>http://edustack.github.io/categories/edtech-info/</link>
+      <link>https://archive.edustack.org/categories/edtech-info/</link>
       <pubDate>Thu, 31 Jan 2019 13:29:43 +0000</pubDate>
       
-      <guid>http://edustack.github.io/categories/edtech-info/</guid>
+      <guid>https://archive.edustack.org/categories/edtech-info/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OpenET</title>
-      <link>http://edustack.github.io/categories/openet/</link>
+      <link>https://archive.edustack.org/categories/openet/</link>
       <pubDate>Sun, 30 Sep 2018 03:05:11 +0000</pubDate>
       
-      <guid>http://edustack.github.io/categories/openet/</guid>
+      <guid>https://archive.edustack.org/categories/openet/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scratch</title>
-      <link>http://edustack.github.io/categories/scratch/</link>
+      <link>https://archive.edustack.org/categories/scratch/</link>
       <pubDate>Tue, 31 Jul 2018 15:36:33 +0000</pubDate>
       
-      <guid>http://edustack.github.io/categories/scratch/</guid>
+      <guid>https://archive.edustack.org/categories/scratch/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SCORM</title>
-      <link>http://edustack.github.io/categories/scorm/</link>
+      <link>https://archive.edustack.org/categories/scorm/</link>
       <pubDate>Thu, 09 Mar 2017 02:30:02 +0000</pubDate>
       
-      <guid>http://edustack.github.io/categories/scorm/</guid>
+      <guid>https://archive.edustack.org/categories/scorm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Xblock</title>
-      <link>http://edustack.github.io/categories/xblock/</link>
+      <link>https://archive.edustack.org/categories/xblock/</link>
       <pubDate>Sun, 20 Mar 2016 00:44:54 +0000</pubDate>
       
-      <guid>http://edustack.github.io/categories/xblock/</guid>
+      <guid>https://archive.edustack.org/categories/xblock/</guid>
       <description></description>
     </item>
     
     <item>
       <title>LTI</title>
-      <link>http://edustack.github.io/categories/lti/</link>
+      <link>https://archive.edustack.org/categories/lti/</link>
       <pubDate>Sat, 12 Dec 2015 03:50:13 +0000</pubDate>
       
-      <guid>http://edustack.github.io/categories/lti/</guid>
+      <guid>https://archive.edustack.org/categories/lti/</guid>
       <description></description>
     </item>
     

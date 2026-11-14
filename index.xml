@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>eduStack.org</title>
-    <link>http://edustack.github.io/</link>
+    <link>https://archive.edustack.org/</link>
     <description>Recent content on eduStack.org</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 02 Jun 2020 01:30:43 +0000</lastBuildDate>
     
-        <atom:link href="http://edustack.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://archive.edustack.org/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>http://edustack.github.io/about/</link>
+      <link>https://archive.edustack.org/about/</link>
       <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
       
-      <guid>http://edustack.github.io/about/</guid>
+      <guid>https://archive.edustack.org/about/</guid>
       
         <description>&lt;p&gt;Welcome to eduStack Blog.&lt;/p&gt;
 &lt;p&gt;This website is a backup of edustack.org.&lt;/p&gt;
@@ -27,10 +27,10 @@
     
     <item>
       <title>TAO（TestAssistépar Ordinateur）</title>
-      <link>http://edustack.github.io/2020/06/02/tao%EF%BC%88testassistepar-ordinateur%EF%BC%89/</link>
+      <link>https://archive.edustack.org/2020/06/02/tao%EF%BC%88testassistepar-ordinateur%EF%BC%89/</link>
       <pubDate>Tue, 02 Jun 2020 01:30:43 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2020/06/02/tao%EF%BC%88testassistepar-ordinateur%EF%BC%89/</guid>
+      <guid>https://archive.edustack.org/2020/06/02/tao%EF%BC%88testassistepar-ordinateur%EF%BC%89/</guid>
       
         <description>&lt;p&gt;&lt;strong&gt;TAO（TestAssistépar Ordinateur）&lt;/strong&gt; （&lt;a href=&#34;https://www.taotesting.com/&#34;&gt;https://www.taotesting.com/&lt;/a&gt;）是Henri Tudor研究中心（现称为卢森堡科学技术学院（LIST）和卢森堡大学）之间的联合项目，于2002年底启动。 &lt;/p&gt;
 &lt;p&gt;该团队开发了高度灵活且可自定义的基于计算机的评估（CBA）平台，该平台将100％基于网络，并且可以免费提供给全球教育界。最终结果是TAO平台，该平台的首个原型于2004年发布。&lt;/p&gt;
@@ -44,10 +44,10 @@
     
     <item>
       <title>一些教育相关机构</title>
-      <link>http://edustack.github.io/2020/02/12/%E4%B8%80%E4%BA%9B%E6%95%99%E8%82%B2%E7%9B%B8%E5%85%B3%E6%9C%BA%E6%9E%84/</link>
+      <link>https://archive.edustack.org/2020/02/12/%E4%B8%80%E4%BA%9B%E6%95%99%E8%82%B2%E7%9B%B8%E5%85%B3%E6%9C%BA%E6%9E%84/</link>
       <pubDate>Wed, 12 Feb 2020 08:19:19 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2020/02/12/%E4%B8%80%E4%BA%9B%E6%95%99%E8%82%B2%E7%9B%B8%E5%85%B3%E6%9C%BA%E6%9E%84/</guid>
+      <guid>https://archive.edustack.org/2020/02/12/%E4%B8%80%E4%BA%9B%E6%95%99%E8%82%B2%E7%9B%B8%E5%85%B3%E6%9C%BA%E6%9E%84/</guid>
       
         <description>&lt;p&gt;Course Hero&lt;br&gt;
 Espark Learning&lt;br&gt;
@@ -100,10 +100,10 @@ Discovery Education.&lt;/p&gt;
     
     <item>
       <title>Wise2019&amp;HighTechHigh&amp;MicroBit</title>
-      <link>http://edustack.github.io/2019/11/21/wise2019hightechhigh/</link>
+      <link>https://archive.edustack.org/2019/11/21/wise2019hightechhigh/</link>
       <pubDate>Thu, 21 Nov 2019 02:57:52 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2019/11/21/wise2019hightechhigh/</guid>
+      <guid>https://archive.edustack.org/2019/11/21/wise2019hightechhigh/</guid>
       
         <description>&lt;p&gt;11月20日，世界教育创新峰会（The World Innovation Summit for Education，简称WISE）在卡塔尔首都多哈举办。峰会宣布将其2019年度教育奖授予拉里·罗森斯托克（Larry Rosenstock），美国圣地亚哥公立特许学校网络——高科技高中（High Tech High，简称HTH）的创始校长兼首席执行官拉里·罗森斯托克先生。他所提出的创新学习模式，使得来自各种社会经济背景的学生有机会走向成功，对素质教育做出了极大贡献。&lt;br&gt;
 2019年WISE教育奖获奖项目为：家庭经济教育支持计划、联合世界学校—实现教育普及、Micro:bit教育基金会、快乐儿童项目、Arpan儿童人身安全教育项目和Akilah学院。&lt;/p&gt;
@@ -131,10 +131,10 @@ Discovery Education.&lt;/p&gt;
     
     <item>
       <title>Jupyter Notebook 资源索引</title>
-      <link>http://edustack.github.io/2019/07/28/jupyter-notebook-%E8%B5%84%E6%BA%90%E7%B4%A2%E5%BC%95/</link>
+      <link>https://archive.edustack.org/2019/07/28/jupyter-notebook-%E8%B5%84%E6%BA%90%E7%B4%A2%E5%BC%95/</link>
       <pubDate>Sun, 28 Jul 2019 12:11:35 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2019/07/28/jupyter-notebook-%E8%B5%84%E6%BA%90%E7%B4%A2%E5%BC%95/</guid>
+      <guid>https://archive.edustack.org/2019/07/28/jupyter-notebook-%E8%B5%84%E6%BA%90%E7%B4%A2%E5%BC%95/</guid>
       
         <description>&lt;p&gt;&lt;a href=&#34;https://awesomeopensource.com/project/markusschanta/awesome-jupyter&#34;&gt;https://awesomeopensource.com/project/markusschanta/awesome-jupyter&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://project-awesome.org/markusschanta/awesome-jupyter&#34;&gt;https://project-awesome.org/markusschanta/awesome-jupyter&lt;/a&gt;&lt;br&gt;
@@ -148,10 +148,10 @@ Discovery Education.&lt;/p&gt;
     
     <item>
       <title>人工智能教育资源</title>
-      <link>http://edustack.github.io/2019/06/16/aied/</link>
+      <link>https://archive.edustack.org/2019/06/16/aied/</link>
       <pubDate>Sun, 16 Jun 2019 15:02:07 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2019/06/16/aied/</guid>
+      <guid>https://archive.edustack.org/2019/06/16/aied/</guid>
       
         <description>&lt;p&gt;研究机构&lt;br&gt;
 欧洲学习和智能系统研究机构（European Laboratory for Learning and Intelligent Systems，ELLIS）&lt;a href=&#34;https://ellis.eu/&#34;&gt;https://ellis.eu/&lt;/a&gt;&lt;br&gt;
@@ -181,10 +181,10 @@ Discovery Education.&lt;/p&gt;
     
     <item>
       <title>WebAnno 一个基于web的分布式注释系统</title>
-      <link>http://edustack.github.io/2019/05/11/webanno-instroduce/</link>
+      <link>https://archive.edustack.org/2019/05/11/webanno-instroduce/</link>
       <pubDate>Sat, 11 May 2019 12:58:18 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2019/05/11/webanno-instroduce/</guid>
+      <guid>https://archive.edustack.org/2019/05/11/webanno-instroduce/</guid>
       
         <description>&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;
 &lt;p&gt;WebAnno 是什么？&lt;/p&gt;
@@ -213,10 +213,10 @@ Discovery Education.&lt;/p&gt;
     
     <item>
       <title>在线学习工具（Riff）简介</title>
-      <link>http://edustack.github.io/2019/04/27/learning-tool-online-riff/</link>
+      <link>https://archive.edustack.org/2019/04/27/learning-tool-online-riff/</link>
       <pubDate>Sat, 27 Apr 2019 05:20:01 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2019/04/27/learning-tool-online-riff/</guid>
+      <guid>https://archive.edustack.org/2019/04/27/learning-tool-online-riff/</guid>
       
         <description>&lt;!-- raw HTML omitted --&gt;
 &lt;h2 id=&#34;为什么选择riff&#34;&gt;为什么选择Riff？&lt;/h2&gt;
@@ -253,10 +253,10 @@ Discovery Education.&lt;/p&gt;
     
     <item>
       <title>What Works Clearinghouse的实践指南</title>
-      <link>http://edustack.github.io/2019/04/22/what-works-clearinghouse%E7%9A%84%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97/</link>
+      <link>https://archive.edustack.org/2019/04/22/what-works-clearinghouse%E7%9A%84%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97/</link>
       <pubDate>Mon, 22 Apr 2019 14:18:00 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2019/04/22/what-works-clearinghouse%E7%9A%84%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97/</guid>
+      <guid>https://archive.edustack.org/2019/04/22/what-works-clearinghouse%E7%9A%84%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97/</guid>
       
         <description>&lt;p&gt;&lt;a href=&#34;https://ies.ed.gov/ncee/wwc/&#34;&gt;https://ies.ed.gov/ncee/wwc/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;教育科学研究所（IES）是美国教育部的统计，研究和评估部门。 IES是独立的，无党派的。 IES的使命是为教育实践和政策提供科学依据，并以教育者，家长，政策制定者，研究人员和公众有用和易于获取的格式分享这些信息。&lt;/p&gt;
@@ -291,10 +291,10 @@ Discovery Education.&lt;/p&gt;
     
     <item>
       <title>美国AI教育政策</title>
-      <link>http://edustack.github.io/2019/04/22/%E7%BE%8E%E5%9B%BDai%E6%95%99%E8%82%B2%E6%94%BF%E7%AD%96/</link>
+      <link>https://archive.edustack.org/2019/04/22/%E7%BE%8E%E5%9B%BDai%E6%95%99%E8%82%B2%E6%94%BF%E7%AD%96/</link>
       <pubDate>Mon, 22 Apr 2019 04:04:50 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2019/04/22/%E7%BE%8E%E5%9B%BDai%E6%95%99%E8%82%B2%E6%94%BF%E7%AD%96/</guid>
+      <guid>https://archive.edustack.org/2019/04/22/%E7%BE%8E%E5%9B%BDai%E6%95%99%E8%82%B2%E6%94%BF%E7%AD%96/</guid>
       
         <description>&lt;p&gt;&lt;a href=&#34;http://www.ptech.org/&#34;&gt;http://www.ptech.org/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;P-TECH 9-14 School Model is a pioneering education reform initiative created by IBM, to prepare young people with the academic, technical and professional skills required for 21st Century Jobs and ongoing education. P-TECH represents the best of what public-private partnerships can look like, with students taking high school and college coursework simultaneously and engaging in industry-guided workforce development.&lt;/p&gt;
@@ -311,10 +311,10 @@ Discovery Education.&lt;/p&gt;
     
     <item>
       <title>EMOOCS2019将于5月20日在那不勒斯举办</title>
-      <link>http://edustack.github.io/2019/04/20/emoocs2019%E5%B0%86%E4%BA%8E5%E6%9C%8820%E6%97%A5%E5%9C%A8%E9%82%A3%E4%B8%8D%E5%8B%92%E6%96%AF%E4%B8%BE%E5%8A%9E/</link>
+      <link>https://archive.edustack.org/2019/04/20/emoocs2019%E5%B0%86%E4%BA%8E5%E6%9C%8820%E6%97%A5%E5%9C%A8%E9%82%A3%E4%B8%8D%E5%8B%92%E6%96%AF%E4%B8%BE%E5%8A%9E/</link>
       <pubDate>Fri, 19 Apr 2019 22:31:32 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2019/04/20/emoocs2019%E5%B0%86%E4%BA%8E5%E6%9C%8820%E6%97%A5%E5%9C%A8%E9%82%A3%E4%B8%8D%E5%8B%92%E6%96%AF%E4%B8%BE%E5%8A%9E/</guid>
+      <guid>https://archive.edustack.org/2019/04/20/emoocs2019%E5%B0%86%E4%BA%8E5%E6%9C%8820%E6%97%A5%E5%9C%A8%E9%82%A3%E4%B8%8D%E5%8B%92%E6%96%AF%E4%B8%BE%E5%8A%9E/</guid>
       
         <description>&lt;p&gt;&lt;a href=&#34;https://emoocs2019.eu/&#34;&gt;https://emoocs2019.eu/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;在MOOC十字路口，三者汇合，我们问自己大学学位是否仍然是就业市场的主要货币，或者是否可能出现更广泛的资格和微观证书组合。这对教育实践有何影响？需要做出哪些政策决定？由于在线访问消除了学习的地理障碍，但不断增长的MOOC市场越来越受到美国大平台的支配，欧洲高等教育机构希望在品牌，语言和文化方面采取什么样的战略政策？&lt;/p&gt;
@@ -326,10 +326,10 @@ Discovery Education.&lt;/p&gt;
     
     <item>
       <title>基于MOOC的学位课程：2018年MOOC统计和趋势的回顾</title>
-      <link>http://edustack.github.io/2019/04/20/%E5%9F%BA%E4%BA%8Emooc%E7%9A%84%E5%AD%A6%E4%BD%8D%E8%AF%BE%E7%A8%8B%EF%BC%9A2018%E5%B9%B4mooc%E7%BB%9F%E8%AE%A1%E5%92%8C%E8%B6%8B%E5%8A%BF%E7%9A%84%E5%9B%9E%E9%A1%BE/</link>
+      <link>https://archive.edustack.org/2019/04/20/%E5%9F%BA%E4%BA%8Emooc%E7%9A%84%E5%AD%A6%E4%BD%8D%E8%AF%BE%E7%A8%8B%EF%BC%9A2018%E5%B9%B4mooc%E7%BB%9F%E8%AE%A1%E5%92%8C%E8%B6%8B%E5%8A%BF%E7%9A%84%E5%9B%9E%E9%A1%BE/</link>
       <pubDate>Fri, 19 Apr 2019 22:22:34 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2019/04/20/%E5%9F%BA%E4%BA%8Emooc%E7%9A%84%E5%AD%A6%E4%BD%8D%E8%AF%BE%E7%A8%8B%EF%BC%9A2018%E5%B9%B4mooc%E7%BB%9F%E8%AE%A1%E5%92%8C%E8%B6%8B%E5%8A%BF%E7%9A%84%E5%9B%9E%E9%A1%BE/</guid>
+      <guid>https://archive.edustack.org/2019/04/20/%E5%9F%BA%E4%BA%8Emooc%E7%9A%84%E5%AD%A6%E4%BD%8D%E8%AF%BE%E7%A8%8B%EF%BC%9A2018%E5%B9%B4mooc%E7%BB%9F%E8%AE%A1%E5%92%8C%E8%B6%8B%E5%8A%BF%E7%9A%84%E5%9B%9E%E9%A1%BE/</guid>
       
         <description>&lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
@@ -364,10 +364,10 @@ FutureLearn – 870万&lt;/p&gt;
     
     <item>
       <title>2012年5月2日edX成立的报道</title>
-      <link>http://edustack.github.io/2019/04/19/2012%E5%B9%B45%E6%9C%882%E6%97%A5edx%E6%88%90%E7%AB%8B%E7%9A%84%E6%8A%A5%E9%81%93/</link>
+      <link>https://archive.edustack.org/2019/04/19/2012%E5%B9%B45%E6%9C%882%E6%97%A5edx%E6%88%90%E7%AB%8B%E7%9A%84%E6%8A%A5%E9%81%93/</link>
       <pubDate>Fri, 19 Apr 2019 11:17:40 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2019/04/19/2012%E5%B9%B45%E6%9C%882%E6%97%A5edx%E6%88%90%E7%AB%8B%E7%9A%84%E6%8A%A5%E9%81%93/</guid>
+      <guid>https://archive.edustack.org/2019/04/19/2012%E5%B9%B45%E6%9C%882%E6%97%A5edx%E6%88%90%E7%AB%8B%E7%9A%84%E6%8A%A5%E9%81%93/</guid>
       
         <description>&lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
@@ -397,10 +397,10 @@ EdX将通过支持哈佛大学和麻省理工学院教师可以使用的无限�
     
     <item>
       <title>Penn Center for Learning Analytics</title>
-      <link>http://edustack.github.io/2019/04/19/penn-center-for-learning-analytics/</link>
+      <link>https://archive.edustack.org/2019/04/19/penn-center-for-learning-analytics/</link>
       <pubDate>Thu, 18 Apr 2019 23:51:15 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2019/04/19/penn-center-for-learning-analytics/</guid>
+      <guid>https://archive.edustack.org/2019/04/19/penn-center-for-learning-analytics/</guid>
       
         <description>&lt;p&gt;&lt;a href=&#34;http://www.upenn.edu/learninganalytics/&#34;&gt;http://www.upenn.edu/learninganalytics/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;任务&lt;br&gt;
@@ -420,10 +420,10 @@ PCLA的研究人员开发了许多工具和模型，以便更好地理解大规�
     
     <item>
       <title>Open edX中的AI应用</title>
-      <link>http://edustack.github.io/2019/04/18/open-edx%E4%B8%AD%E7%9A%84ai%E5%BA%94%E7%94%A8/</link>
+      <link>https://archive.edustack.org/2019/04/18/open-edx%E4%B8%AD%E7%9A%84ai%E5%BA%94%E7%94%A8/</link>
       <pubDate>Thu, 18 Apr 2019 12:44:00 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2019/04/18/open-edx%E4%B8%AD%E7%9A%84ai%E5%BA%94%E7%94%A8/</guid>
+      <guid>https://archive.edustack.org/2019/04/18/open-edx%E4%B8%AD%E7%9A%84ai%E5%BA%94%E7%94%A8/</guid>
       
         <description>&lt;ul&gt;
 &lt;li&gt;
@@ -478,10 +478,10 @@ Both training and grading require more time than is acceptable within the reques
     
     <item>
       <title>SREE:Advancing Education Research</title>
-      <link>http://edustack.github.io/2019/04/18/sreeadvancing-education-research/</link>
+      <link>https://archive.edustack.org/2019/04/18/sreeadvancing-education-research/</link>
       <pubDate>Wed, 17 Apr 2019 23:30:33 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2019/04/18/sreeadvancing-education-research/</guid>
+      <guid>https://archive.edustack.org/2019/04/18/sreeadvancing-education-research/</guid>
       
         <description>&lt;p&gt;&lt;a href=&#34;https://www.sree.org/&#34;&gt;https://www.sree.org/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;SREE致力于推动与实践相关的研究，从幼儿期到过渡到高等教育和继续教育。 该协会致力于在新的环境和跨领域中产生知识并促进应用。 SREE组织会议和专业发展课程，汇集了不同的受众。&lt;/p&gt;
@@ -491,10 +491,10 @@ Both training and grading require more time than is acceptable within the reques
     
     <item>
       <title>使用Zabbix,Grafana,Icinga,SmokePing来进行网络管理监控</title>
-      <link>http://edustack.github.io/2019/04/13/%E4%BD%BF%E7%94%A8zabbixgrafanaicingasmokeping%E6%9D%A5%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E7%9B%91%E6%8E%A7/</link>
+      <link>https://archive.edustack.org/2019/04/13/%E4%BD%BF%E7%94%A8zabbixgrafanaicingasmokeping%E6%9D%A5%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E7%9B%91%E6%8E%A7/</link>
       <pubDate>Sat, 13 Apr 2019 11:30:47 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2019/04/13/%E4%BD%BF%E7%94%A8zabbixgrafanaicingasmokeping%E6%9D%A5%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E7%9B%91%E6%8E%A7/</guid>
+      <guid>https://archive.edustack.org/2019/04/13/%E4%BD%BF%E7%94%A8zabbixgrafanaicingasmokeping%E6%9D%A5%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E7%9B%91%E6%8E%A7/</guid>
       
         <description>&lt;p&gt;这几个软件是网络监控中常用的开源软件。haishanzheng老师发布了一个项目&lt;a href=&#34;https://github.com/haishanzheng/CampusMonitor&#34;&gt;https://github.com/haishanzheng/CampusMonitor&lt;/a&gt;，可以简化部署。这里仅介绍这几个软件。&lt;/p&gt;
 &lt;h2 id=&#34;zabbix&#34;&gt;Zabbix&lt;/h2&gt;
@@ -519,10 +519,10 @@ Both training and grading require more time than is acceptable within the reques
     
     <item>
       <title>开源图书馆平台FOLIO</title>
-      <link>http://edustack.github.io/2019/04/13/folio/</link>
+      <link>https://archive.edustack.org/2019/04/13/folio/</link>
       <pubDate>Sat, 13 Apr 2019 10:50:48 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2019/04/13/folio/</guid>
+      <guid>https://archive.edustack.org/2019/04/13/folio/</guid>
       
         <description>&lt;p&gt;FOLIO（&lt;a href=&#34;https://www.folio.org/&#34;&gt;https://www.folio.org/&lt;/a&gt;）是The Future of Libraries is Open的缩写。&lt;/p&gt;
 &lt;p&gt;FOLIO由开放式图书馆基金会（Open Library Foundation）主办，该基金会是一个独立的非营利组织，旨在确保图书馆和图书馆的开源和开放获取项目的可用性，可访问性和可持续性。&lt;/p&gt;
@@ -560,10 +560,10 @@ alpha版本于2018年1月发布。测试版合作伙伴将实施并测试该版�
     
     <item>
       <title>如何为edx贡献代码</title>
-      <link>http://edustack.github.io/2019/04/13/contribute-to-openedx/</link>
+      <link>https://archive.edustack.org/2019/04/13/contribute-to-openedx/</link>
       <pubDate>Sat, 13 Apr 2019 09:55:19 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2019/04/13/contribute-to-openedx/</guid>
+      <guid>https://archive.edustack.org/2019/04/13/contribute-to-openedx/</guid>
       
         <description>&lt;h1 id=&#34;open-edx贡献代码指南&#34;&gt;Open edX贡献代码指南&lt;/h1&gt;
 &lt;p&gt;这是一个帮助您开始为Open edX开源项目贡献代码的指南。如果您有兴趣为Open edX做出贡献，但却不知道哪些贡献最有价值，以下指南将告诉你如何为open edx开源项目作出你的贡献。&lt;/p&gt;
@@ -591,10 +591,10 @@ alpha版本于2018年1月发布。测试版合作伙伴将实施并测试该版�
     
     <item>
       <title>LTI扩展包（LTI  Advantage）</title>
-      <link>http://edustack.github.io/2019/04/13/lti-advantage/</link>
+      <link>https://archive.edustack.org/2019/04/13/lti-advantage/</link>
       <pubDate>Sat, 13 Apr 2019 09:55:05 +0000</pubDate>
       
-      <guid>http://edustack.github.io/2019/04/13/lti-advantage/</guid>
+      <guid>https://archive.edustack.org/2019/04/13/lti-advantage/</guid>
       
         <description>&lt;p&gt;原文链接：&lt;a href=&#34;https://www.imsglobal.org/lti-advantage-faq&#34;&gt;https://www.imsglobal.org/lti-advantage-faq&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;LTI Advantage&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;是通往实现 &lt;strong&gt;数字化转型&lt;/strong&gt; 的方法，是一个快速发展的教育技术的生态系统，在这里用户对于创新的方式有着更多的选择和综合，最后能够让用户能更好的学习和体验。 &lt;!-- raw HTML omitted --&gt;通过延长学习工具互操作性的基础&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;（LTI&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;）1.3版， &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt; LTI Advantage&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;增加了功能，使学习工具和平台之间更深层次的集成，并提供更好的应用程序管理，隐私和安全可信的基础。&lt;/p&gt;
