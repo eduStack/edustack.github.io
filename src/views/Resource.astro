@@ -13,11 +13,13 @@ const behind = isResearch ? [] : researchFor([r.id]);
 const sup = supportedBy(r.id);
 const related = isResearch ? [] : recommendations.filter((x) => x.id !== r.id && x.topics.some((tp) => r.topics.includes(tp))).slice(0, 3);
 const H = zh
-  ? { know: '家长须知', why: '为什么适合这个年龄', key: '原文要点', keyNote: '摘录转述，以原文为准', act: '原文建议的做法', src: '原文和核实记录', open: '阅读原文', related: '相关资源', ok: '链接有效', monthly: '每月自动检查' }
-  : { know: 'What parents should know', why: 'Why it fits this age', key: 'Key points from the original', keyNote: 'Paraphrased. The original is authoritative.', act: 'What the source suggests you do', src: 'Source and checks', open: 'Read the original', related: 'Related', ok: 'Link working', monthly: 'checked automatically every month' };
+  ? { know: '家长须知', why: '与成长阶段的关系', key: '导读要点', keyNote: '本站摘要与转述，请结合原文阅读', act: '可以怎么用', src: '出处和核验记录', open: '查看原始出处', related: '相关资源' }
+  : { know: 'What parents should know', why: 'How it relates to this stage', key: 'Reading notes', keyNote: 'Our summary and paraphrase. Read alongside the source.', act: 'How to use this resource', src: 'Sources and check record', open: 'Visit the original source', related: 'Related' };
 const host = new URL(r.url).hostname.replace(/^www\./, '');
 const sections = [
   { h: isResearch ? (zh ? '研究发现了什么' : 'What the study found') : H.know, body: r.summary[lang] },
+  r.purpose && { h: zh ? '它帮助解决什么问题' : 'What question it helps with', body: r.purpose[lang] },
+  r.audience && { h: zh ? '适合谁' : 'Who it is for', body: r.audience[lang] },
   r.whyAge && { h: H.why, body: r.whyAge[lang] },
 ].filter(Boolean) as { h: string; body: string }[];
 let n = 0;
@@ -30,7 +32,7 @@ let n = 0;
       <header class="card" style="padding:28px;gap:14px">
         <div class="chips"><span class={`chip t-${r.type}`}>{s.type[r.type]}</span>{r.design && <span class="chip">{s.design[r.design]}</span>}<span class="chip lv">{s.evidenceLabel}: {s.evidence[r.evidence]}</span><span class="chip">{ageLabel(r.minMonths, r.maxMonths, lang)}</span>{r.sex !== 'all' && <span class="chip">{r.sex === 'female' ? (zh ? '女孩' : 'Girls') : (zh ? '男孩' : 'Boys')}</span>}</div>
         <h1 class="h-serif" style="font-size:var(--type-feature);line-height:var(--leading-heading)">{r.title[lang]}</h1>
-        {zh && <p lang="en" class="muted" style="margin:0;font-size:var(--type-ui)">{r.title.en}</p>}
+        {(zh || r.originalTitle) && <p lang="en" class="muted" style="margin:0;font-size:var(--type-ui)">{r.originalTitle ?? r.title.en}</p>}
         <div class="row" style="gap:8px 22px;font-size:var(--type-ui);color:var(--ink-2);border-top:1px solid var(--line-2);padding-top:12px">
           <span><span class="muted">{zh ? '作者或机构' : 'Author or publisher'}</span> {r.by}</span>
           {yearLabel(r, lang) && <span><span class="muted">{zh ? '发表' : 'Published'}</span> {yearLabel(r, lang)}</span>}
@@ -43,11 +45,15 @@ let n = 0;
       {sections.map((sec) => <section class="card" style="padding:24px"><h2 style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:10px">{++n}</span>{sec.h}</h2><p class="prose">{sec.body}</p></section>)}
       {r.keyPoints && <section class="card" style="padding:24px"><div class="split"><h2 style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:10px">{++n}</span>{H.key}</h2><span class="muted" style="font-size:var(--type-note)">{H.keyNote}</span></div><ul class="prose" style="padding-left:20px">{r.keyPoints[lang].map((k) => <li style="margin-bottom:6px">{k}</li>)}</ul></section>}
       {r.actions && <section class="card" style="padding:24px"><h2 style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:10px">{++n}</span>{H.act}</h2><ul class="prose" style="padding-left:20px">{r.actions[lang].map((k) => <li style="margin-bottom:6px">{k}</li>)}</ul></section>}
+      {r.limits && <section class="card soft" style="padding:24px"><h2 style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:10px">{++n}</span>{zh ? '使用限制与需要留意的地方' : 'Limits and things to keep in mind'}</h2><p class="prose">{r.limits[lang]}</p></section>}
       <section class="card" style="padding:24px"><h2 style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:10px">{++n}</span>{H.src}</h2>
         <div class="stack" style="gap:6px;font-size:var(--type-ui);color:var(--ink-2)">
           <a href={r.url} style="word-break:break-all" rel="noopener">{r.url}</a>
-          <span>{r.by}. {r.title.en}. {r.year ?? ''}{r.publisher && `. ${r.publisher}`}{r.doi && `. doi:${r.doi}`}{r.isbn && `. ISBN ${r.isbn}`}</span>
-          <span>{H.ok} · {fmtDate(r.checked, lang)} · {H.monthly}</span>
+          <span>{r.by}. {r.originalTitle ?? r.title.en}. {r.year ?? ''}{r.publisher && `. ${r.publisher}`}{r.doi && `. doi:${r.doi}`}{r.isbn && `. ISBN ${r.isbn}`}</span>
+          {(r.sourceLinks ?? []).map((source) => <a href={source.url} rel="noopener">{source.label[lang]} ↗</a>)}
+          <span>{s.checked} · {fmtDate(r.checked, lang)}</span>
+          {r.checkedNote && <p style="margin:0;line-height:var(--leading-body)">{r.checkedNote[lang]}</p>}
+          {r.access && <p style="margin:0;line-height:var(--leading-body)"><b>{zh ? '获取与使用：' : 'Access and use: '}</b>{r.access[lang]}</p>}
         </div>
       </section>
       <ResearchBehind items={behind} lang={lang} heading="h3" />
@@ -66,7 +72,7 @@ let n = 0;
     <aside style="flex:1 1 280px;display:flex;flex-direction:column;gap:14px">
       <dl class="card" style="padding:22px;gap:0;margin:0;font-size:var(--type-ui)">
         {[
-          [zh ? '适用月龄' : 'Age range', zh ? `${r.minMonths}–${r.maxMonths} 个月` : `${r.minMonths} to ${r.maxMonths} months`],
+          [r.audience ? (zh ? '阶段筛选范围' : 'Stage filter range') : (zh ? '适用月龄' : 'Age range'), ageLabel(r.minMonths, r.maxMonths, lang)],
           [zh ? '类型' : 'Type', s.type[r.type]],
           [s.evidenceLabel, s.evidence[r.evidence]],
           [zh ? '原文语言' : 'Original language', r.language],

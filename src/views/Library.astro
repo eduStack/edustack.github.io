@@ -12,6 +12,7 @@ const topicNames: Record<string, [string, string]> = {
   'mental-health': ['Mental health', '心理健康'], nutrition: ['Nutrition', '营养'], development: ['Development', '发育'], language: ['Language', '语言'],
   emotions: ['Emotions', '情绪'], communication: ['Talking together', '亲子沟通'], discipline: ['Discipline', '管教'], learning: ['Learning', '学习'],
   safety: ['Safety', '安全'], puberty: ['Puberty', '青春期'], 'responsive-care': ['Responsive care', '回应式照护'],
+  'self-regulation': ['Self-regulation', '自我调节'], play: ['Play', '游戏'], attachment: ['Attachment', '依恋'],
 };
 const used = [...new Set(resources.flatMap((r) => r.topics))].filter((k) => topicNames[k]);
 const sorted = [...resources].sort((a, b) => a.minMonths - b.minMonths);
@@ -21,14 +22,14 @@ const sorted = [...resources].sort((a, b) => a.minMonths - b.minMonths);
   <div class="split" style="align-items:flex-end">
     <div class="stack" style="gap:6px">
       <h1 class="h-serif" style="font-size:var(--type-feature)">{s.nav.library}</h1>
-      <span class="muted" style="font-size:var(--type-ui)">{zh ? `共 ${resources.length} 条经典著作和权威指南，全部由编辑挑选并核实。相关的学术研究附在每条资源下面。` : `${resources.length} books and guidelines, each chosen and checked by our editors. The research behind each one is listed on its page.`}</span>
+      <span class="muted" style="font-size:var(--type-ui)">{zh ? `共 ${resources.length} 条书籍、经典导读、实用资源和指南，附原始出处与核验记录。相关研究可在资源和阶段页面查看。` : `${resources.length} books, classic readings, practical resources and guidelines, with original sources and check records. Related research appears on resource and age-stage pages.`}</span>
     </div>
     <div class="row" style="gap:8px"><label for="sort" class="muted">{zh ? '排序' : 'Sort'}</label>
       <select id="sort"><option value="age">{zh ? '按年龄' : 'By age'}</option><option value="year">{zh ? '发表时间（最新在前）' : 'Newest first'}</option></select></div>
   </div>
   <div class="row" style="gap:8px" role="group" aria-label={zh ? '资源类型' : 'Resource type'} id="types">
     <button class="pill" type="button" data-type="" aria-pressed="true">{zh ? '全部' : 'All'}</button>
-    {(['book', 'guideline'] as const).map((k) => <button class="pill" type="button" data-type={k} aria-pressed="false">{s.typePlural[k]}</button>)}
+    {(['book', 'classic', 'guide', 'guideline'] as const).map((k) => <button class="pill" type="button" data-type={k} aria-pressed="false">{s.typePlural[k]}</button>)}
   </div>
   <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start">
     <aside class="card" style="flex:1 1 240px;gap:18px" aria-label={zh ? '筛选' : 'Filters'}>

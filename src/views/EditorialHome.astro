@@ -2,7 +2,7 @@
 import '../styles/editorial.css';
 import { editorialCopy } from '../i18n/editorial';
 import { defaultLanguage, languages, type Lang } from '../i18n/languages';
-import { href } from '../i18n/ui';
+import { href, fmtDate } from '../i18n/ui';
 import SiteHeader from '../components/SiteHeader.astro';
 import FontPreloads from '../components/FontPreloads.astro';
 
@@ -87,7 +87,7 @@ const canonical = new URL(homeUrl, Astro.site || Astro.url.origin);
         <div class="topic-grid">
           <article class="topic-story"><a class="topic-image screen-art" href={localPath('topics/screen-time/')} aria-label={copy.screenLabel}><img {...homeImage('screens', [480, 960], '(max-width: 640px) calc(100vw - 32px), (max-width: 864px) 46vw, 400px', 400, 225)} alt={copy.screenAlt} loading="lazy" decoding="async"></a><span class="eyebrow">{copy.screenCategory}</span><h3><a href={localPath('topics/screen-time/')}>{copy.screenTitleFirst}<br>{copy.screenTitleSecond}</a></h3><p>{copy.screenDescription}</p><span class="article-meta">{copy.screenEvidence}<time datetime="2026-11-13">{copy.contentDate}</time></span></article>
           <article class="topic-story"><a class="topic-image media-art" href={localPath('topics/social-media/')} aria-label={copy.mediaLabel}><img {...homeImage('social', [480, 960], '(max-width: 640px) calc(100vw - 32px), (max-width: 864px) 46vw, 400px', 400, 225)} alt={copy.mediaAlt} loading="lazy" decoding="async"></a><span class="eyebrow">{copy.mediaCategory}</span><h3><a href={localPath('topics/social-media/')}>{copy.mediaTitleFirst}<br>{copy.mediaTitleSecond}</a></h3><p>{copy.mediaDescription}</p><span class="article-meta">{copy.mediaEvidence}<time datetime="2026-11-13">{copy.contentDate}</time></span></article>
-          <article class="topic-story"><a class="topic-image reading-art" href={localPath('resources/nurturing-care-framework-2018/')} aria-label={copy.respondLabel}><img {...homeImage('respond', [480, 960], '(max-width: 640px) calc(100vw - 32px), (max-width: 864px) 46vw, 400px', 400, 225)} alt={copy.respondAlt} loading="lazy" decoding="async"></a><span class="eyebrow">{copy.respondCategory}</span><h3><a href={localPath('resources/nurturing-care-framework-2018/')}>{copy.respondTitleFirst}<br>{copy.respondTitleSecond}</a></h3><p>{copy.respondDescription}</p><span class="article-meta">{copy.respondEvidence}<time datetime="2026-11-13">{copy.checkedDate}</time></span></article>
+          <article class="topic-story"><a class="topic-image reading-art" href={localPath('resources/harvard-serve-and-return/')} aria-label={copy.respondLabel}><img {...homeImage('respond', [480, 960], '(max-width: 640px) calc(100vw - 32px), (max-width: 864px) 46vw, 400px', 400, 225)} alt={copy.respondAlt} loading="lazy" decoding="async"></a><span class="eyebrow">{copy.respondCategory}</span><h3><a href={localPath('resources/harvard-serve-and-return/')}>{copy.respondTitleFirst}<br>{copy.respondTitleSecond}</a></h3><p>{copy.respondDescription}</p><span class="article-meta">{copy.respondEvidence}<time datetime="2026-11-14">{lang === 'zh' ? '来源核验 ' : 'Source checked '}{fmtDate('2026-11-14', lang)}</time></span></article>
         </div>
       </section>
     </div>

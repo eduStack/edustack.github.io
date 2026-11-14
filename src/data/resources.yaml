@@ -1,7 +1,7 @@
 # Every resource in the library.
 # Rules (enforced by scripts/validate-data.mjs):
 #   - url is required and must point to the original source
-#   - type: book | guideline | research
+#   - type: book | classic (historical reading) | guide (practical resource) | guideline | research
 #   - evidence: guideline | large | small | expert
 #       guideline = official guideline from an authoritative body
 #       large     = large study, systematic review or meta-analysis
@@ -18,6 +18,8 @@
 #   - backedBy: research ids shown under a book or guideline as "the research behind it"
 #   - books also need isbn and publisher, and may have evidenceNote (shown in "further reading").
 #     A WorldCat library link is built from the isbn. No affiliate links.
+#   - guides and classic readings also explain purpose, audience, limits, access and checkedNote.
+#     Their stage tags are editorial selections; the audience text preserves the source's actual scope.
 
 - id: who-under5-activity-sleep-2019
   type: guideline
@@ -914,3 +916,1015 @@
     en: Randomised trials in Indian government schools found that teaching children at their actual learning level, rather than strictly by the grade syllabus, raised learning when it was implemented well.
     zh: 在印度公立学校的随机试验发现，按孩子的实际水平分组教学，而不是死板地按年级教材进度，只要落实得好，就能提高学习成绩。
   checked: 2026-11-13
+
+# First curated batch: practical resources, classic readings and research.
+- id: harvard-serve-and-return
+  type: guide
+  evidence: expert
+  title:
+    en: "Serve and return: noticing and responding to your child"
+    zh: 回应式互动：留意并接住孩子的表达
+  by: Center on the Developing Child at Harvard University
+  year: null
+  url: https://developingchild.harvard.edu/key-concept/serve-and-return/
+  language: English
+  free: true
+  minMonths: 0
+  maxMonths: 71
+  sex: all
+  topics:
+    - responsive-care
+    - attachment
+    - language
+    - communication
+  summary:
+    en: >-
+      A university explainer about the back-and-forth between a young child and a caring adult: notice a look,
+      sound or gesture, respond, and leave room for the child to respond again.
+    zh: 哈佛儿童发展中心介绍幼儿与照顾者的来回互动：留意一个目光、声音或动作，作出回应，再给孩子继续表达的空间。
+  yearNote:
+    en: Undated concept page
+    zh: 概念说明页，未标独立发表年份
+  purpose:
+    en: What does responsive interaction look like during ordinary care, before a child can hold a conversation?
+    zh: 孩子还不会对话时，日常照护中的“回应”可以是什么样？
+  audience:
+    en: >-
+      Parents and other caregivers of babies and young children. Our stage tags cover birth through age 5;
+      they are not a developmental test.
+    zh: 婴幼儿与低龄儿童的父母及其他照顾者。本站关联 0–5 岁阶段，不作为发展测验。
+  whyAge:
+    en: >-
+      Looks, gestures and sounds can all start an exchange. Adapt your response to this child rather than
+      expecting words or eye contact on demand.
+    zh: 目光、动作与声音都可以开启交流。按孩子的表达方式回应，不要求孩子必须说话或按要求进行眼神接触。
+  keyPoints:
+    en:
+      - The exchange follows a child’s signal, not a fixed lesson.
+      - Naming what a child notices or feels can make the interaction meaningful.
+      - "Caregivers also need support: stress and difficult living conditions can make responsive care harder."
+    zh:
+      - 从孩子的信号开始，不必把互动变成固定课程。
+      - 为孩子留意的事物或感受配上语言，让交流更有意义。
+      - 照顾者也需要支持，压力与生活困难会增加回应式照护的难度。
+  actions:
+    en:
+      - >-
+        During an everyday moment, notice what catches your child’s attention and respond with a word, sound
+        or gesture.
+      - Pause to let the child take a turn; stop or change the activity if they disengage.
+      - Read the official concept page and its linked five-step handout for examples.
+    zh:
+      - 在日常照护中留意孩子正在关注什么，用语言、声音或动作回应。
+      - 停一停，让孩子接下一轮；孩子不想继续时，结束或换一种活动。
+      - 从官方概念页及其关联的五步互动材料了解示例。
+  limits:
+    en: >-
+      This is a developmental explanation, not a treatment or a promise about future ability. There is no
+      fixed daily quota here. Missing one interaction does not determine attachment or development.
+    zh: 这是发展知识说明，不是治疗方案，也不保证未来能力。这里没有统一的每日互动次数；漏掉一次回应并不决定依恋或发展结果。
+  evidenceNote:
+    en: >-
+      Expert explanation from a university centre. Related intervention research concerns structured
+      programmes, not the effect of reading this page.
+    zh: 大学研究中心的专业解释。关联干预研究针对有结构的项目，不是阅读本页的效果。
+  access:
+    en: >-
+      The official page is free to read in English. This is our original summary; follow the source’s terms
+      before reusing its text or images.
+    zh: 官方英文页面可免费阅读。本站提供原创摘要；复用原文或图片前需另查来源条款。
+  checkedNote:
+    en: >-
+      Checked the official concept page, including its explanation of caregiver stress and responsive
+      exchanges. We have not audited every linked video or handout.
+    zh: 已核对官方概念页中回应互动与照顾者压力的说明；未逐项审读全部关联视频和材料。
+  backedBy:
+    - jeong-2021-parenting-interventions
+    - bakermans-2003-sensitivity-attachment
+  checked: "2026-11-14"
+  originalTitle: Serve and Return
+- id: harvard-executive-function-activities
+  type: guide
+  evidence: expert
+  title:
+    en: Executive function activities, from infancy to adolescence
+    zh: 从婴儿到青春期：执行功能活动指南
+  by: Center on the Developing Child at Harvard University
+  year: 2014
+  url: >-
+    https://developingchild.harvard.edu/resources/handouts-tools/activities-guide-enhancing-and-practicing-executive-function-skills/
+  language: English
+  free: true
+  minMonths: 6
+  maxMonths: 215
+  sex: all
+  topics:
+    - self-regulation
+    - play
+    - learning
+  summary:
+    en: >-
+      An age-grouped collection of games and activities for practising working memory, inhibitory control and
+      flexible thinking, with adults gradually adjusting their help.
+    zh: 按年龄分组的游戏与活动材料，围绕工作记忆、抑制控制和灵活思考，说明成人如何逐步调整帮助。
+  purpose:
+    en: >-
+      How can we practise remembering, taking turns, planning and changing approach through enjoyable
+      activities?
+    zh: 怎样在有趣的活动中练习记忆、轮流、计划和调整做法？
+  audience:
+    en: >-
+      Caregivers and educators. Activity sections start at 6–18 months, then 18–36 months, 3–5, 5–7, 7–12
+      years and adolescence. Our tags include only the under-18 portion.
+    zh: 照顾者与教育工作者。活动原文分为 6–18 个月、18–36 个月、3–5 岁、5–7 岁、7–12 岁及青春期；本站只关联其中未满 18 岁的部分。
+  whyAge:
+    en: >-
+      Use the relevant section as a starting point and adjust to the child’s interests and abilities. The age
+      bands do not define an ability score.
+    zh: 以相应年龄章节为起点，再按兴趣与能力调整；年龄分组不是能力评分标准。
+  keyPoints:
+    en:
+      - The introduction distinguishes working memory, inhibitory control and cognitive flexibility.
+      - >-
+        The guide includes hiding games for infants, rule-based games for older children, and planning and
+        reflection for adolescents.
+      - Adults support a challenge, then step back as the child is ready.
+    zh:
+      - 导言区分工作记忆、抑制控制与认知灵活性。
+      - 指南包括婴儿藏物游戏、较大儿童的规则游戏，以及青春期的计划与反思。
+      - 成人先帮助孩子应对挑战，再在孩子准备好时逐步退后。
+  actions:
+    en:
+      - Open one age-specific section rather than trying to complete the whole guide.
+      - >-
+        Choose one activity with suitable materials and adult supervision, and simplify it if it is
+        frustrating.
+      - >-
+        Notice whether the child enjoys and understands the activity; do not turn it into a speed or ability
+        test.
+    zh:
+      - 先打开一个年龄章节，不必完成整套指南。
+      - 选一项材料合适、成人可陪同的活动；挫折过大时降低难度。
+      - 观察孩子是否投入、是否理解玩法，不把活动变成速度或能力测试。
+  limits:
+    en: >-
+      The guide itself says that not all suggested activities have been individually proven effective. It is
+      not ADHD treatment, a diagnostic checklist or a guarantee of higher intelligence or grades.
+    zh: 指南自己说明，并非每个建议活动都已单独验证效果。它不是 ADHD 治疗、诊断清单，也不保证提高智力或成绩。
+  evidenceNote:
+    en: >-
+      Expert activity guide with references; the evidence for self-regulation interventions does not validate
+      every activity in this collection.
+    zh: 附参考文献的专业活动指南；自我调节干预的总体证据不等于验证了其中每项活动。
+  access:
+    en: >-
+      The official page provides free English downloads and some translated editions. Check each edition and
+      its reuse terms; the website summary is not a complete translation.
+    zh: 官方提供免费英文下载及部分其他语言版本。各版语言和使用许可需分别查看；本站摘要不是全本翻译。
+  checkedNote:
+    en: >-
+      Read the official introduction and the English PDF’s introduction and age-group activity sections. The
+      PDF has 17 file pages including its cover; the official page describes a 16-page guide.
+    zh: 已读官方介绍及英文 PDF 的导言和分龄活动章节。PDF 含封面共 17 个文件页，官方介绍称正文指南为 16 页。
+  sourceLinks:
+    - label:
+        en: Official English activity guide (PDF)
+        zh: 官方英文活动指南（PDF）
+      url: >-
+        https://developingchild.harvard.edu/wp-content/uploads/2024/10/Enhancing-and-Practicing-Executive-Function-Skills-with-Children-from-Infancy-to-Adolescence-1.pdf
+  backedBy:
+    - pandey-2018-self-regulation
+  checked: "2026-11-14"
+  originalTitle: Enhancing and Practicing Executive Function Skills with Children from Infancy to Adolescence
+- id: who-early-childhood-development-2020
+  type: guideline
+  evidence: guideline
+  title:
+    en: "Improving early childhood development: responsive care and family support"
+    zh: WHO 儿童早期发展指南：回应照护与家庭支持
+  by: World Health Organization
+  year: 2020
+  url: https://www.who.int/publications/i/item/97892400020986
+  language: English
+  free: true
+  minMonths: 0
+  maxMonths: 35
+  sex: all
+  topics:
+    - responsive-care
+    - development
+    - mental-health
+  summary:
+    en: >-
+      WHO guidance brings together responsive caregiving, early learning, nutrition services and support for
+      maternal mental health during the first three years of life.
+    zh: WHO 将出生后前三年的回应式照护、早期学习、营养服务与母亲心理健康支持放在同一框架中考虑。
+  purpose:
+    en: What support matters in the first three years, beyond buying early-learning products?
+    zh: 出生后前三年，除了购买早教产品，哪些照护和家庭支持值得关注？
+  audience:
+    en: >-
+      The recommendations concern the first three years. The guideline is primarily for people planning and
+      delivering services; this page is a caregiver introduction.
+    zh: 建议重点针对出生后前三年。原指南主要面向服务规划和提供者；本页为照顾者导读。
+  whyAge:
+    en: >-
+      The recommendations focus on early childhood; this is not the only framework needed for school-age
+      children or teenagers.
+    zh: 原建议聚焦儿童早期，不能用它概括学龄儿童和青少年的全部需要。
+  keyPoints:
+    en:
+      - Responsive care and early-learning opportunities should be supported in the first three years.
+      - Care and learning support can be integrated with nutrition services.
+      - Maternal mental-health support belongs within early-childhood services.
+    zh:
+      - 在前三年支持回应式照护和早期学习机会。
+      - 照护、学习支持可与营养服务结合。
+      - 母亲心理健康支持应纳入儿童早期服务。
+  actions:
+    en:
+      - >-
+        Use the guideline to understand the kinds of support to ask an early-childhood or health service
+        about.
+      - >-
+        Connect daily talking and play with ordinary care rather than treating learning as a separate
+        intensive course.
+      - If a caregiver is struggling, seek support for the adult as well as for the child.
+    zh:
+      - 用指南了解可以向儿保或早期支持服务询问哪些帮助。
+      - 将说话、游戏与日常照护结合，不把学习变成额外的密集课程。
+      - 照顾者遇到困难时，同时为成人和孩子寻找支持。
+  limits:
+    en: >-
+      A service guideline is not an individual developmental assessment or a treatment plan. The evidence for
+      organised interventions cannot be transferred directly to a self-help article.
+    zh: 服务指南不是个体发展评估或治疗方案。有组织干预的证据不能直接转移到一篇自助文章上。
+  access:
+    en: >-
+      The official publication page and linked WHO files are free to access. Language editions and translation
+      or reuse permissions must be checked separately.
+    zh: 官方发布页及关联 WHO 文件可免费获取；各语言版本及翻译、转载许可应另行核对。
+  checkedNote:
+    en: >-
+      Verified the official 2020 publication page, overview and recommendation summary. The full guideline
+      download could not be read in this check; individual recommendations and evidence tables were not
+      independently reassessed.
+    zh: 已核对 2020 年官方发布页、概述与推荐概要。本次未能读取完整指南下载；未独立重评各项推荐与证据表。
+  backedBy:
+    - jeong-2021-parenting-interventions
+  checked: "2026-11-14"
+  originalTitle: "Improving early childhood development: WHO guideline"
+- id: who-parenting-interventions-2023
+  type: guideline
+  evidence: guideline
+  title:
+    en: "WHO parenting guidelines: nonviolent care and stronger relationships"
+    zh: WHO 养育干预指南：非暴力照护与亲子关系
+  by: World Health Organization
+  year: 2023
+  url: https://www.who.int/publications/i/item/9789240065505
+  language: English
+  free: true
+  minMonths: 0
+  maxMonths: 215
+  sex: all
+  topics:
+    - discipline
+    - communication
+    - responsive-care
+    - mental-health
+  summary:
+    en: >-
+      Guidance on structured parenting interventions to reduce maltreatment and harsh parenting, strengthen
+      parent–child relationships, and prevent emotional and behavioural problems.
+    zh: 针对有结构的养育干预，关注减少虐待与严厉养育、改善亲子关系，以及预防情绪和行为问题。
+  purpose:
+    en: What distinguishes evidence-based parenting support from a collection of discipline tips?
+    zh: 有证据支持的养育服务，与零散的管教技巧有什么区别？
+  audience:
+    en: >-
+      The guideline covers caregivers of children aged 0–17. It is principally for programme and service
+      decision-makers; families can use it to understand and ask about support.
+    zh: 原指南覆盖 0–17 岁儿童的照顾者，主要供项目和服务决策者使用；家庭可借此了解并询问支持服务。
+  whyAge:
+    en: >-
+      The full age range is covered, but a programme for a toddler is not automatically appropriate for a
+      teenager. Check the intervention’s own population and delivery conditions.
+    zh: 虽然覆盖全年龄，但学步期项目不能自动用于青春期；需查看具体干预的人群和实施条件。
+  keyPoints:
+    en:
+      - Parenting support aims to reduce violence and improve relationships, not simply secure obedience.
+      - Programmes have structured content and delivery conditions.
+      - Parent and child mental health are part of the intended outcomes.
+    zh:
+      - 养育支持关注减少暴力与改善关系，不只是让孩子服从。
+      - 项目有具体内容结构与实施条件。
+      - 家长和儿童的心理健康也是关注的结果。
+  actions:
+    en:
+      - Use the guideline as a reference when choosing a parenting-support programme.
+      - Ask a provider which ages the programme covers, how staff are trained and what support is available.
+      - Explore the linked PLH resource for examples of materials, keeping its training conditions in mind.
+    zh:
+      - 选择养育支持项目时，用本指南了解其依据和目标。
+      - 向服务提供者询问适用年龄、人员培训和可获得的支持。
+      - 通过关联的 PLH 资源了解材料示例，并保留其培训条件。
+  limits:
+    en: >-
+      This does not establish that every positive-parenting tip works, or that reading guidance equals taking
+      part in an evaluated programme. It does not replace safeguarding or mental-health services.
+    zh: 这不等于证明每条“积极养育”技巧都有效，也不等于阅读指南就完成了经过评估的项目；它不能代替儿童保护或心理健康服务。
+  access:
+    en: >-
+      WHO provides a free publication and evidence annex. Availability does not automatically authorise
+      translating or reproducing all programme materials.
+    zh: WHO 提供免费出版物及证据附件；可获取不自动代表可以翻译或复用所有项目材料。
+  checkedNote:
+    en: >-
+      Verified the official 10 February 2023 publication record, its overview and evidence-annex link. No
+      independent reassessment of recommendation certainty was performed.
+    zh: 已核对 2023 年 2 月 10 日官方发布记录、概述与证据附件入口；未独立重评推荐确定性。
+  checked: "2026-11-14"
+  originalTitle: >-
+    WHO guidelines on parenting interventions to prevent maltreatment and enhance parent–child relationships
+    with children aged 0–17 years
+- id: parenting-for-lifelong-health
+  type: guide
+  evidence: expert
+  title:
+    en: "Parenting for Lifelong Health: family materials and programmes"
+    zh: Parenting for Lifelong Health：家庭材料与养育项目
+  by: WHO and Parenting for Lifelong Health partners
+  year: null
+  url: https://www.who.int/teams/social-determinants-of-health/parenting-for-lifelong-health
+  language: English
+  free: true
+  minMonths: 24
+  maxMonths: 215
+  sex: all
+  topics:
+    - communication
+    - discipline
+    - emotions
+    - responsive-care
+  summary:
+    en: >-
+      A collection of parenting programmes and materials, including resources for families with children aged
+      2–9 and young people aged 10–17. It focuses on relationships and preventing violence.
+    zh: 一组养育项目与材料，包括面向 2–9 岁儿童家庭和 10–17 岁青少年家庭的资源，重点是亲子关系与预防暴力。
+  yearNote:
+    en: Programme collection; editions vary
+    zh: 项目资源集合，各手册版本不同
+  purpose:
+    en: >-
+      Where can families find structured examples of positive interaction, communication and managing
+      difficult situations?
+    zh: 哪里可以找到积极互动、沟通和应对困难情境的结构化材料示例？
+  audience:
+    en: >-
+      This selection focuses on the young-children programme (2–9) and teen programme (10–17). Other PLH
+      programmes have different age ranges. Manuals for facilitators and materials for families serve
+      different roles.
+    zh: 本条精选幼儿与儿童项目（2–9 岁）和青少年项目（10–17 岁）。其他 PLH 项目有不同年龄范围；带领者手册与家庭材料的用途不同。
+  whyAge:
+    en: >-
+      Choose the programme and family material for the relevant age. Do not combine rules from different
+      manuals into one universal plan.
+    zh: 按年龄选择项目和家庭材料，不把不同手册的规则拼成一套通用方案。
+  keyPoints:
+    en:
+      - The suite was designed with low-resource settings in mind.
+      - The official collection separates family materials from facilitator manuals.
+      - WHO states that the manuals should be accompanied by training through implementing partners.
+    zh:
+      - 这组项目考虑了资源有限地区的实施条件。
+      - 官方目录将家庭材料与带领者手册分开列出。
+      - WHO 说明，手册应配合实施伙伴提供的培训使用。
+  actions:
+    en:
+      - Start at the official manuals page and choose a parent handbook or family guidebook for the age group.
+      - Use the family material to understand the programme and prepare questions for a provider.
+      - >-
+        If considering running sessions for others, contact an implementing partner about training and
+        permissions.
+    zh:
+      - 从官方手册目录选择相应年龄的家长手册或家庭指南。
+      - 通过家庭材料了解项目，并准备向服务提供者提出的问题。
+      - 若计划带领其他家庭开展课程，先向实施伙伴了解培训与许可。
+  limits:
+    en: >-
+      An open-access manual is not a self-contained substitute for the evaluated programme. WHO describes
+      non-profit use, but permissions, language adaptations and training conditions must be checked for each
+      manual.
+    zh: 开放获取的手册不能单独替代经过评估的完整项目。WHO 说明材料面向非营利使用，但每本手册的许可、语言适配和培训条件仍需分别核对。
+  evidenceNote:
+    en: >-
+      A programme and materials entry, not a clinical guideline or a claim that every PLH variant has
+      identical evidence.
+    zh: 本条是项目与材料入口，不是临床指南，也不表示所有 PLH 版本具有相同证据。
+  sourceLinks:
+    - label:
+        en: Official manuals and family materials
+        zh: 官方手册与家庭材料目录
+      url: >-
+        https://www.who.int/teams/social-determinants-of-health/parenting-for-lifelong-health/programme-manuals
+    - label:
+        en: PLH parent handbook for young children
+        zh: PLH 儿童项目家长手册
+      url: >-
+        https://www.who.int/publications/m/item/parenting-for-lifelong-health-programme-for-young-children---parent-handbook
+    - label:
+        en: PLH family guidebook for parents and teens
+        zh: PLH 青少年家庭指南
+      url: https://www.who.int/publications/m/item/parenting-for-lifelong-health-for-teens---family-guidebook
+  access:
+    en: >-
+      The WHO collection provides free materials. The two English family editions checked use CC BY-NC-ND 4.0:
+      do not republish translations or adaptations without permission. This page only introduces and links to
+      the materials.
+    zh: WHO 目录提供免费材料。已核对的两份英文家庭版本采用 CC BY-NC-ND 4.0，未经许可不得翻译或改编后发布。本页只提供介绍与外链。
+  checkedNote:
+    en: >-
+      Read the WHO overview and manuals directory, and the opening and licence pages of the young-children
+      Parent Handbook (fifth edition, March 2018) and teen Family Guidebook (third edition, March 2018). This
+      was not a full programme review.
+    zh: 已读 WHO 概述与手册目录，以及儿童家长手册（第五版，2018 年 3 月）、青少年家庭指南（第三版，2018 年 3 月）的开篇与许可页；未审读完整项目。
+  checked: "2026-11-14"
+  originalTitle: Parenting for Lifelong Health
+- id: vroom-everyday-moments
+  type: guide
+  evidence: expert
+  title:
+    en: "Vroom: small interactions in everyday moments"
+    zh: Vroom：日常生活中的简短亲子互动
+  by: Bezos Family Foundation
+  year: null
+  url: https://www.vroom.org/
+  language: English
+  free: true
+  minMonths: 0
+  maxMonths: 71
+  sex: all
+  topics:
+    - responsive-care
+    - play
+    - language
+    - communication
+  summary:
+    en: >-
+      Free activity tips that fit into meals, getting dressed, travel and other shared moments, with brief
+      explanations of the ideas behind them.
+    zh: 把简短活动融入吃饭、穿衣、出门等共同生活时刻的免费提示，并附背后理念的简要说明。
+  yearNote:
+    en: Ongoing activity collection
+    zh: 持续提供的活动集合
+  purpose:
+    en: How can a busy family find a small, manageable way to interact without preparing a lesson?
+    zh: 忙碌家庭怎样找到无需备课、容易开始的小互动？
+  audience:
+    en: >-
+      Parents and caregivers of children from birth through age 5. Select tips for the child’s age and adapt
+      them to communication style, interests and access needs.
+    zh: 出生至 5 岁儿童的父母及其他照顾者。按年龄选择提示，并照顾孩子的表达方式、兴趣和可访问性需要。
+  whyAge:
+    en: >-
+      The service focuses on early childhood. It is not a substitute for resources designed for school-age
+      children or teenagers.
+    zh: 服务聚焦儿童早期，不能代替面向学龄儿童和青少年的资源。
+  keyPoints:
+    en:
+      - The official site describes more than 1,000 free activity tips.
+      - >-
+        The approach encourages looking, following the child’s interest, talking, taking turns and extending
+        an exchange.
+      - The site offers routes to app-based and printable materials.
+    zh:
+      - 官方介绍提供超过 1,000 条免费活动提示。
+      - 方法强调观察、跟随兴趣、交谈、轮流和适当延伸交流。
+      - 网站提供 App 与可打印材料的入口。
+  actions:
+    en:
+      - Try one tip that fits something you are already doing together.
+      - Let the child respond in their own way; shorten or change the activity if needed.
+      - Use the official print route if that suits you better than an app.
+    zh:
+      - 从已经会一起做的日常事情中，选一条合适的提示。
+      - 让孩子用自己的方式回应，需要时缩短或调整活动。
+      - 如果比 App 更方便，可从官方打印入口选择材料。
+  limits:
+    en: >-
+      The provider’s science explanation is not independent proof that each tip produces a particular outcome.
+      Avoid treating activities as a daily performance target or a developmental assessment.
+    zh: 提供方的科学说明不等于独立证明每条提示都有特定效果。不要把活动当每日绩效任务或发展评估。
+  evidenceNote:
+    en: >-
+      Curated practical resource; its website’s account of the science is distinct from an independent
+      effectiveness review.
+    zh: 精选实用资源；官网对科学依据的介绍与独立效果综述需要区分。
+  access:
+    en: >-
+      The English site and its linked activity options are free according to the provider; a Spanish route is
+      also offered. App and web-app features may have their own account and privacy conditions.
+    zh: 提供方说明英文网站及关联活动选项免费，并提供西语入口。App 和网页应用的具体功能可能有各自的账号与隐私条件。
+  sourceLinks:
+    - label:
+        en: The science behind Vroom
+        zh: Vroom 的科学说明
+      url: https://www.vroom.org/science
+  checkedNote:
+    en: >-
+      Read the official home and science pages, including the age focus and free-material description. Did not
+      audit every tip, app feature or language edition.
+    zh: 已读官方首页与科学说明页，核对年龄定位和免费材料介绍；未逐项审核全部提示、App 功能或语言版本。
+  checked: "2026-11-14"
+  originalTitle: Vroom
+- id: whitehead-aims-of-education
+  type: classic
+  evidence: expert
+  title:
+    en: "The Aims of Education: Whitehead on knowledge and life"
+    zh: 怀特海《教育的目的》：让知识与生活相连
+  by: Alfred North Whitehead
+  year: 1929
+  url: https://plato.stanford.edu/entries/whitehead/
+  language: English
+  free: true
+  minMonths: 72
+  maxMonths: 215
+  sex: all
+  topics:
+    - learning
+  summary:
+    en: >-
+      A classic reflection on education that challenges “inert ideas”: knowledge received but never used,
+      tested or connected with experience. This introduction draws on a scholarly account of the book.
+    zh: 一部反思教育目的的经典著作，批评只被记住、却没有运用、检验或联系经验的“惰性观念”。本导读依据权威学术条目对该书的介绍。
+  purpose:
+    en: Why can a child remember an answer but struggle to understand or use the idea?
+    zh: 为什么孩子记得答案，却难以理解或运用其中的知识？
+  audience:
+    en: >-
+      For caregivers reflecting on learning, particularly during school age and adolescence. The age tags are
+      our editorial placement, not Whitehead’s developmental norms or a reading assignment for children.
+    zh: 供照顾者思考学习，重点关联学龄期与青春期。年龄标签是本站编辑关联，不是怀特海提出的发展常模，也不是给孩子布置的书目。
+  whyAge:
+    en: >-
+      As schoolwork becomes more formal, this reading offers a question about meaning and application. Its
+      educational rhythm is recurrent, not a fixed sequence of child ages.
+    zh: 学习更系统后，可以借此思考意义与应用。他谈的教育节奏反复发生，不是按儿童年龄排定的固定阶段。
+  keyPoints:
+    en:
+      - Education involves using and connecting knowledge, not collecting disconnected facts.
+      - >-
+        Romance, precision and generalisation describe a recurring rhythm of exploration, disciplined learning
+        and application.
+      - Interest and experience matter alongside technique and detail.
+    zh:
+      - 教育包括运用和联系知识，不只是收集零散事实。
+      - 浪漫、精确与综合运用，描述探索、系统学习和应用之间反复发生的节奏。
+      - 兴趣和经验与技能、细节同样值得关注。
+  actions:
+    en:
+      - >-
+        After learning something, invite the child to connect it with a question, example or small project
+        that matters to them.
+      - >-
+        Use the text to reflect on the balance between exploration and practice, not to impose a new
+        timetable.
+    zh:
+      - 学过一个内容后，邀请孩子把它联系到在意的问题、例子或小项目。
+      - 借原著反思探索与练习的配合，不用它另订一套强制时间表。
+  limits:
+    en: >-
+      This is educational philosophy, not an experiment establishing a teaching method’s effectiveness. The
+      suggested use is our reflection prompt. This page is not a review of the whole book or a verified
+      Chinese translation.
+    zh: 这是教育哲学，不是验证某种教法效果的实验。“可以怎么用”是本站的思考提示；本页不是全书评介，也不是核定的中文译本。
+  access:
+    en: >-
+      The linked Stanford Encyclopedia of Philosophy entry is free scholarly commentary with book references
+      and excerpts; it is not the full book. Availability and cost of book editions vary.
+    zh: 所链接的斯坦福哲学百科条目可免费阅读，含书目和原文节选；它不是全书。各书籍版本的可获得性与费用不同。
+  checkedNote:
+    en: >-
+      Read the Stanford entry’s educational-philosophy discussion and its 1929 book reference. The full book
+      and specific Chinese editions were not reviewed.
+    zh: 已读斯坦福条目中的教育哲学讨论，并核对 1929 年书目；未通读全书或核定具体中文版本。
+  evidenceNote:
+    en: >-
+      Historical educational philosophy. Contemporary research must be considered separately for claims about
+      a particular activity.
+    zh: 历史教育哲学；若要判断某项具体活动的效果，需另看当代研究。
+  checked: "2026-11-14"
+  originalTitle: The Aims of Education and Other Essays
+- id: montaigne-education-of-children
+  type: classic
+  evidence: expert
+  title:
+    en: "Montaigne: understanding and judgement, not just recitation"
+    zh: 蒙田〈论儿童教育〉：理解与判断，不只是复述
+  by: Michel de Montaigne
+  year: null
+  url: https://www.gutenberg.org/cache/epub/3585/pg3585-images.html
+  language: English
+  free: true
+  minMonths: 72
+  maxMonths: 215
+  sex: all
+  topics:
+    - learning
+    - communication
+  summary:
+    en: >-
+      An essay in Montaigne’s Essays that asks education to develop judgement through conversation, experience
+      and examining ideas, rather than reward the repetition of other people’s words.
+    zh: 《随笔集》中的教育篇章，讨论通过交谈、经验和审视观点培养判断力，不把复述别人的话当成学习的终点。
+  yearNote:
+    en: 16th-century essay; Cotton/Hazlitt English edition
+    zh: 16 世纪篇章；Cotton/Hazlitt 英译本
+  purpose:
+    en: How can a parent tell whether a child understands an idea rather than only remembers the wording?
+    zh: 怎样了解孩子是在理解，还是只记住了表述？
+  audience:
+    en: >-
+      Caregivers of school-age children and teenagers. This is an adult reflection on education; the stage
+      tags are an editorial connection, not a child reading requirement.
+    zh: 学龄儿童与青少年的照顾者。它供成人反思教育；本站阶段标签不是孩子的必读要求。
+  whyAge:
+    en: It connects with conversations about reading and schoolwork, without prescribing an age-based method.
+    zh: 可联系阅读、作业中的交流，不提供按年龄规定的教学方法。
+  keyPoints:
+    en:
+      - A learner should examine ideas and make sense of them rather than merely repeat an authority.
+      - Conversation and experience are part of education.
+      - The essay addresses a historical setting involving private tutors and privileged boys.
+    zh:
+      - 学习者需要审视并理解观点，而不只是复述权威。
+      - 交谈与经验也是教育的一部分。
+      - 篇章的历史背景涉及私人导师和特权家庭男孩的教育。
+  actions:
+    en:
+      - Invite the child to explain an idea in their own words and offer a different example.
+      - Treat disagreement as a chance to ask for reasons, while remaining open to changing your own view.
+    zh:
+      - 邀请孩子用自己的话解释一个观点，再举一个不同的例子。
+      - 有分歧时询问理由，也给自己保留改变看法的空间。
+  limits:
+    en: >-
+      The reflection prompts are our interpretation, not a proven intervention. Historical class and gender
+      assumptions require critical reading. Chapter numbering varies: this Cotton/Hazlitt text labels it XXV;
+      other editions use I.26.
+    zh: 思考提示属于本站解释，不是经过验证的干预。历史阶层与性别假设需批判阅读。篇章编号随版本不同：本链接 Cotton/Hazlitt 版本标为 XXV，其他版本常标为 I.26。
+  access:
+    en: >-
+      Project Gutenberg provides the linked English text free of charge. Check local copyright rules and
+      edition details before reuse; Chinese translations have their own rights.
+    zh: Project Gutenberg 提供该英文文本免费阅读。复用前查看当地版权规则和版本信息；中文译本有各自权利。
+  checkedNote:
+    en: >-
+      Read the education essay’s passages on tutors, judgement, understanding and experience in the linked
+      edition. This is an essay in a collection, not a separate education book.
+    zh: 已读所链接版本中有关导师、判断、理解与经验的段落。它是文集篇章，不是一本独立教育专著。
+  evidenceNote:
+    en: Historical argument and reflection; not an empirical test of a parenting or learning method.
+    zh: 历史论述与反思，不是对育儿或学习方法的实证检验。
+  checked: "2026-11-14"
+  originalTitle: "Essays: Of the Education of Children (Cotton/Hazlitt edition, Chapter XXV)"
+- id: locke-thoughts-concerning-education
+  type: classic
+  evidence: expert
+  title:
+    en: "Locke’s Some Thoughts Concerning Education: habits and example"
+    zh: 洛克《教育漫话》：习惯、环境与成人示范
+  by: John Locke
+  year: 1693
+  url: https://plato.stanford.edu/entries/locke/
+  language: English
+  free: true
+  minMonths: 36
+  maxMonths: 215
+  sex: all
+  topics:
+    - learning
+    - discipline
+  summary:
+    en: >-
+      A classic work about education in the home, with an emphasis on habits, judgement, character and the
+      example set by adults. Read it as a historical argument rather than a modern childcare manual.
+    zh: 一部讨论家庭教育的经典著作，关注习惯、判断、品格与成人示范。适合当作历史思想阅读，不作为现代照护手册照做。
+  purpose:
+    en: How do repeated experiences, the home environment and adult behaviour shape education?
+    zh: 反复的经验、家庭环境和成人行为如何参与教育？
+  audience:
+    en: >-
+      Caregivers reflecting on habits and education from preschool through adolescence. These stage tags are
+      our editorial choice, not Locke’s empirically established age ranges.
+    zh: 供学龄前至青春期的照顾者反思习惯与教育。阶段标签是本站编辑选择，不是洛克经实证建立的年龄范围。
+  whyAge:
+    en: >-
+      Habits and adult example matter across stages, but modern expectations must account for a child’s
+      development and circumstances.
+    zh: 习惯与成人示范可跨阶段讨论，但现代实践仍需考虑孩子的发展与具体条件。
+  keyPoints:
+    en:
+      - The work grew from advice about a particular family’s child and was first published in 1693.
+      - Its educational setting differs from universal schooling and inclusive education today.
+      - It offers questions about habits and example, not modern evidence for every historical practice.
+    zh:
+      - 该书源自对特定家庭孩子教育的建议，初版为 1693 年。
+      - 其教育背景与今天的普及教育、包容教育不同。
+      - 可用它思考习惯与示范，不代表其中历史做法都有现代证据。
+  actions:
+    en:
+      - >-
+        Reflect on what everyday routines and adult examples communicate, rather than relying only on
+        instructions to the child.
+      - >-
+        Compare a historical claim with current developmental evidence and guidelines before considering
+        action.
+    zh:
+      - 观察日常安排和成人示范传递了什么，而不只给孩子口头要求。
+      - 考虑行动前，将历史主张与当代发展研究和指南对读。
+  limits:
+    en: >-
+      The work contains historical assumptions about class, gender, discipline and health. Do not use its
+      historical physical-care or punishment recommendations as current advice. The philosophical “blank
+      slate” should not be read as a denial of biological differences.
+    zh: 原著含阶层、性别、管教与健康方面的历史假设。不要把历史身体照护或惩罚做法当作现行建议；也不能把哲学中的“白板”理解为否认生物差异。
+  access:
+    en: >-
+      The Stanford Encyclopedia of Philosophy entry is a free scholarly introduction with book references, not
+      the complete original. Access to individual editions and translations varies.
+    zh: 斯坦福哲学百科提供免费学术介绍与书目，不是原著全文。具体版本和译本的获取条件不同。
+  checkedNote:
+    en: >-
+      Read the Stanford entry’s education section and its account of the 1693 publication and historical
+      audience. No complete review of a Chinese edition was performed.
+    zh: 已读斯坦福条目的教育部分，核对 1693 年出版与历史读者背景；未完整审读中文译本。
+  evidenceNote:
+    en: >-
+      Historical educational philosophy. Separate historical insight from modern recommendations and empirical
+      evidence.
+    zh: 历史教育哲学；应区分思想启发、现代建议与实证证据。
+  checked: "2026-11-14"
+  originalTitle: Some Thoughts Concerning Education
+- id: jeong-2021-parenting-interventions
+  type: research
+  evidence: large
+  title:
+    en: "Early parenting support: what a global review found"
+    zh: 早期养育支持：一项全球综述发现了什么
+  by: Jeong J, Franchett EE, Ramos de Oliveira CV, Rehmani K, Yousafzai AK
+  year: 2021
+  url: https://doi.org/10.1371/journal.pmed.1003602
+  language: English
+  free: true
+  minMonths: 0
+  maxMonths: 35
+  sex: all
+  topics:
+    - responsive-care
+    - development
+    - attachment
+  summary:
+    en: >-
+      Across 102 randomised trials in 33 countries, parenting programmes in the first three years improved
+      several child-development and caregiving outcomes. Results varied, and parental depressive symptoms did
+      not improve significantly overall.
+    zh: 汇总 33 个国家的 102 项随机试验，前三年的养育项目改善了多项儿童发展和照护结果，但效果存在差异，家长抑郁症状总体未见显著改善。
+  design: meta-analysis
+  doi: 10.1371/journal.pmed.1003602
+  purpose:
+    en: What evidence supports organised early-parenting support, and what should not be promised?
+    zh: 有组织的早期养育支持有哪些证据，又不能承诺什么？
+  audience:
+    en: >-
+      Caregivers and readers interested in programmes delivered during the first three years. The review
+      covers varied interventions, settings and participants.
+    zh: 关注出生后前三年养育项目的照顾者与读者；综述中的干预、场景与参与家庭各不相同。
+  whyAge:
+    en: The evidence concerns interventions in the first three years, not the whole 0–18 age range.
+    zh: 证据针对前三年的干预，不能外推至整个 0–18 岁。
+  keyPoints:
+    en:
+      - Cognitive, language, motor, social-emotional and some parenting outcomes improved on average.
+      - Effects differed by outcome and programme; caregiver depression did not improve significantly overall.
+      - Long-term follow-up and implementation in different local settings remain important.
+    zh:
+      - 认知、语言、运动、社会情绪及部分养育结果平均有所改善。
+      - 不同结果与项目的效果不同；照顾者抑郁总体未显著改善。
+      - 长期随访与不同地区的实际实施仍是重要问题。
+  actions:
+    en:
+      - Use this review to understand the rationale for responsive-care resources.
+      - >-
+        When considering a programme, check its age range, content, support and evaluation rather than
+        borrowing the review’s average effect.
+    zh:
+      - 借此理解回应式照护资源的研究背景。
+      - 选择项目时核对年龄、内容、支持方式和评估，不把综述平均效果当作个体收益。
+  limits:
+    en: >-
+      A review of structured interventions does not prove that a website, short article or isolated activity
+      produces the same benefit. Programme variation, study reporting and limited long-term data restrict
+      generalisation.
+    zh: 结构化干预综述不能证明网站、短文章或单项活动有相同收益。项目差异、研究报告与长期数据有限，限制了外推。
+  evidenceNote:
+    en: >-
+      Systematic review and meta-analysis of randomised trials; the pooled results do not validate eduStack as
+      an intervention.
+    zh: 随机试验的系统综述与荟萃分析；合并结果不构成对 eduStack 干预效果的验证。
+  sourceLinks:
+    - label:
+        en: Open full text (PLOS Medicine / PMC)
+        zh: 开放全文（PLOS Medicine / PMC）
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC8109838/
+  access:
+    en: Open-access article. This page is our summary, not a reproduction of intervention curricula.
+    zh: 论文开放获取；本页是本站摘要，不是干预课程的复制。
+  checkedNote:
+    en: >-
+      Verified the DOI, abstract and open full-text discussion, limitations and conclusions. Did not
+      independently reanalyse the trials or all supplementary data.
+    zh: 已核对 DOI、摘要及开放全文的讨论、局限和结论；未独立重分析试验或全部补充数据。
+  checked: "2026-11-14"
+  originalTitle: >-
+    Parenting interventions to promote early child development in the first three years of life: A global
+    systematic review and meta-analysis
+  publisher: PLOS Medicine, 18(5), e1003602
+- id: pandey-2018-self-regulation
+  type: research
+  evidence: large
+  title:
+    en: Self-regulation can be supported in different ways
+    zh: 支持自我调节：不只有一种训练方法
+  by: Pandey A, Hale D, Das S, Goddings AL, Blakemore SJ, Viner RM
+  year: 2018
+  url: https://doi.org/10.1001/jamapediatrics.2018.0232
+  language: English
+  free: true
+  minMonths: 24
+  maxMonths: 215
+  sex: all
+  topics:
+    - self-regulation
+    - learning
+    - emotions
+    - play
+  summary:
+    en: >-
+      A review of 49 studies covering 50 interventions and 23,098 participants aged 2–17 found that several
+      approaches can support self-regulation. Programmes and outcome measures differed substantially.
+    zh: 一项综述涵盖 49 项研究、50 项干预和 23,098 名 2–17 岁参与者，发现多种方法可以支持自我调节，但项目和测量方式差异明显。
+  design: meta-analysis
+  doi: 10.1001/jamapediatrics.2018.0232
+  purpose:
+    en: >-
+      Is self-regulation only about willpower, or can relationships, activities and learning environments
+      help?
+    zh: 自我调节只靠意志力，还是关系、活动和学习环境也能提供支持？
+  audience:
+    en: >-
+      Caregivers, educators and readers interested in self-regulation. Actual participants were aged 2–17,
+      across school, community and family programmes.
+    zh: 关注自我调节的照顾者、教育工作者与读者。实际参与者为 2–17 岁，涉及学校、社区与家庭项目。
+  whyAge:
+    en: The study range is broad; a preschool activity should not automatically be used for a teenager.
+    zh: 研究年龄范围较广，学龄前活动不能直接用于青少年。
+  keyPoints:
+    en:
+      - Interventions included curricula, family programmes, exercise, and social and personal skills.
+      - >-
+        The pooled task-performance effect drew on 19 studies, not all 49; report-based measures were too
+        heterogeneous for the same pooling.
+      - Longer-term educational and health outcomes were reported by fewer studies.
+    zh:
+      - 干预涉及课程、家庭项目、运动和社会与个人技能。
+      - 任务表现的合并效果来自 19 项研究，并非全部 49 项；报告式测量差异太大，未以同样方式合并。
+      - 只有较少研究报告较长期的教育与健康结果。
+  actions:
+    en:
+      - Use the review to ask what skill an activity supports and how adults help.
+      - >-
+        Read age-specific activity guidance alongside the review; choose manageable challenges rather than
+        ranking children’s self-control.
+    zh:
+      - 借此询问活动支持什么能力，以及成人怎样提供帮助。
+      - 结合分龄活动指南阅读，选择可完成的挑战，不按自控表现给孩子排名。
+  limits:
+    en: >-
+      The review was limited to published English-language studies and many studies were from the US.
+      Heterogeneous measures and programmes limit claims about one best approach or long-term transfer. It is
+      not evidence that a single cognitive game improves everything.
+    zh: 综述限于已发表英文研究，且很多来自美国。测量与项目差异限制了“最佳方法”和长期迁移的判断，不能据此说单个认知游戏会全面改善能力。
+  evidenceNote:
+    en: Review of randomised interventions; task-based and report-based outcomes need to be distinguished.
+    zh: 随机干预综述；需区分任务测量与报告测量的结果。
+  sourceLinks:
+    - label:
+        en: Open full text (JAMA Pediatrics / PMC)
+        zh: 开放全文（JAMA Pediatrics / PMC）
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6059379/
+  access:
+    en: >-
+      An author manuscript is available free through PMC. The reviewed programmes may have separate training
+      and licensing requirements.
+    zh: PMC 提供免费作者稿；被综述的项目可能有独立的培训和许可要求。
+  checkedNote:
+    en: >-
+      Read the abstract and open manuscript’s methods, results, discussion and limitations, including the
+      distinction between the full review and task-score pooling.
+    zh: 已读摘要及开放作者稿的方法、结果、讨论和局限，核对完整综述与任务分数合并范围的区别。
+  checked: "2026-11-14"
+  originalTitle: >-
+    Effectiveness of Universal Self-regulation-Based Interventions in Children and Adolescents: A Systematic
+    Review and Meta-analysis
+  publisher: JAMA Pediatrics, 172(6), 566–575
+- id: bakermans-2003-sensitivity-attachment
+  type: research
+  evidence: large
+  title:
+    en: "Sensitive care and attachment: what an early intervention review found"
+    zh: 敏感照护与依恋：一项早期干预综述的发现
+  by: Bakermans-Kranenburg MJ, van IJzendoorn MH, Juffer F
+  year: 2003
+  url: https://pubmed.ncbi.nlm.nih.gov/12696839/
+  language: English
+  free: false
+  minMonths: 0
+  maxMonths: 35
+  sex: all
+  topics:
+    - attachment
+    - responsive-care
+    - communication
+  summary:
+    en: >-
+      A classic meta-analysis found that preventive interventions could improve caregiver sensitivity and
+      infant attachment security. It supports studying concrete care behaviours, not labelling a family from a
+      short online test.
+    zh: 这项经典荟萃分析发现，预防性干预可以改善照护敏感性与婴儿依恋安全性。它关注具体照护行为，不支持通过简短网页测试给家庭贴标签。
+  design: meta-analysis
+  doi: 10.1037/0033-2909.129.2.195
+  purpose:
+    en: Does helping adults notice and respond to children’s signals relate to attachment outcomes?
+    zh: 帮助成人留意并回应孩子的信号，与依恋结果有什么联系？
+  audience:
+    en: >-
+      Readers interested in infant attachment and early caregiving. Our early-years tags identify a relevant
+      topic, not a diagnostic age window or a complete statement of every included study’s ages.
+    zh: 关注婴儿依恋与早期照护的读者。本站早期阶段标签用于主题关联，不是诊断年龄窗口，也不代表已核清全部纳入研究的年龄。
+  whyAge:
+    en: >-
+      The abstract concerns sensitivity and infant attachment in early childhood; detailed age and programme
+      selection requires the full study reports.
+    zh: 摘要讨论儿童早期照护敏感性与婴儿依恋；具体年龄与项目选择需查看完整研究报告。
+  keyPoints:
+    en:
+      - The review traced 70 studies producing 88 intervention effects.
+      - Randomised interventions showed improvements in sensitivity and attachment security.
+      - >-
+        The abstract discusses behaviour-focused interventions; it does not establish a universal session
+        count for families.
+    zh:
+      - 综述追踪 70 项研究，得到 88 个干预效应。
+      - 随机干预显示照护敏感性与依恋安全性改善。
+      - 摘要讨论以行为为重点的干预，不构成对所有家庭通用课时的规定。
+  actions:
+    en:
+      - Read this as background to responsive-care resources and questions about supportive services.
+      - >-
+        Do not use the article to assign an attachment type to a child or to judge a caregiver after one
+        interaction.
+    zh:
+      - 将它作为理解回应式照护资源及支持服务的研究背景。
+      - 不要据此判定孩子的依恋类型，或根据一次互动评价照顾者。
+  limits:
+    en: >-
+      This short introduction is based on the indexed abstract and verified bibliographic record; the complete
+      article was not available for review. It does not support a diagnosis, blaming mothers, a fixed
+      programme dose, or claims that our suggestions reproduce intervention effects.
+    zh: 本条短导读依据数据库摘要与已核验书目，未取得完整论文进行审读。它不支持诊断、归责母亲、规定统一课时，或声称本站提示能复现项目效果。
+  evidenceNote:
+    en: >-
+      Classic meta-analysis; abstract-level reading only. Programme-specific practice decisions require fuller
+      evidence and appropriate expertise.
+    zh: 经典荟萃分析；本次仅读摘要。具体项目实践决策需要更完整证据与相应专业支持。
+  sourceLinks:
+    - label:
+        en: Publisher DOI and full-text access
+        zh: 出版社 DOI 与全文获取
+      url: https://doi.org/10.1037/0033-2909.129.2.195
+  access:
+    en: >-
+      The linked PubMed abstract is free. The publisher’s complete article may require a subscription;
+      free-only library filtering does not classify this as a free full-text resource.
+    zh: 所链接 PubMed 摘要免费，出版社全文可能需订阅；本站不将其标为免费全文资源。
+  checkedNote:
+    en: >-
+      Verified the indexed abstract, DOI and publication record. Checked repository and publisher routes but
+      did not obtain the complete article; no claim of full-text review is made.
+    zh: 已核对数据库摘要、DOI 与发表记录；尝试仓储与出版社入口后仍未取得完整文章，不标注为全文审读。
+  checked: "2026-11-14"
+  originalTitle: "Less is more: Meta-analyses of sensitivity and attachment interventions in early childhood"
+  publisher: Psychological Bulletin, 129(2), 195–215

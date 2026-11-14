@@ -12,7 +12,8 @@ const s = t(lang);
 const zh = lang === 'zh';
 const i = stages.findIndex((x) => x.id === stage.id);
 const prev = stages[i - 1], next = stages[i + 1];
-const research = researchFor(stage.health.links, stage.research ?? []);
+const picks = (stage.picks ?? []).map(getResource);
+const research = researchFor([...stage.health.links, ...picks.map((r) => r.id)], stage.research ?? []);
 const ageTools = tools.filter((x) => x.maxAge * 12 + 11 >= stage.minMonths && x.minAge * 12 <= stage.maxMonths);
 const links = stage.health.links.map(getResource);
 const books = stage.reading.map(getResource);
@@ -71,6 +72,11 @@ const early = stage.maxMonths <= 71;
   <section id="together" class="stack" style="gap:18px;border-top:1px solid var(--line);padding-top:28px" aria-labelledby="tog-h">
     <div class="block-h"><span class="num">2</span><h2 id="tog-h" class="h-serif" style="font-size:var(--type-section);margin:0">{s.blocks.together}</h2></div>
     <ul class="claims card" style="padding:22px">{stage.activities.map((a) => <li>{a[lang]}<Cite src={a.src} lang={lang} /></li>)}</ul>
+    {picks.length > 0 && <section class="stack" style="gap:12px" aria-labelledby="picks-h">
+      <h3 id="picks-h" style="margin:0;font-size:var(--type-body)">{zh ? '这个阶段的精选资源' : 'Selected resources for this stage'}</h3>
+      <p class="muted" style="margin:0;font-size:var(--type-ui)">{zh ? '从适合当前需要的一项开始。经典导读供照顾者思考，不是孩子必须阅读的书单。' : 'Start with one resource that fits your needs. Classic readings are for caregivers to reflect on, not a required reading list for children.'}</p>
+      <div class="grid">{picks.map((r) => <ResourceCard r={r} lang={lang} compact />)}</div>
+    </section>}
     {ageTools.length > 0 && (
       <div class="stack" style="gap:10px">
         <div class="split"><h3 style="margin:0;font-size:var(--type-body)">{zh ? '适合这个年龄的免费工具' : 'Free tools for this age'}</h3><a href={href(lang, 'tools#criteria')}>{zh ? '我们怎么挑选工具' : 'How we choose tools'}</a></div>

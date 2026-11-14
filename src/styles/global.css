@@ -68,9 +68,9 @@ a.card:hover .card-title { color: var(--accent); text-decoration: underline; tex
 .chip.lv { background: transparent; border-color: #a4ac9f; color: var(--ink); }
 a.chip { min-block-size: 2.75rem; color: var(--ink); }
 a.chip:hover { border-color: var(--accent); color: var(--accent); }
-.t-guideline, .v-agree { background: #e1e8dc; color: #384d37; }
+.t-guideline, .t-guide, .v-agree { background: #e1e8dc; color: #384d37; }
 .t-research, .v-single { background: #e1e9e7; color: #304e51; }
-.t-book { background: #f2e5cb; color: #694b23; }
+.t-book, .t-classic { background: #f2e5cb; color: #694b23; }
 .t-tool { background: #e7e8d4; color: #4b5636; }
 .v-differ { background: #f3e0ce; color: #7a4325; }
 .src { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; font-size: var(--type-note); line-height: var(--leading-note); color: var(--muted); }

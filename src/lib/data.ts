@@ -17,11 +17,12 @@ export type Design = 'meta-analysis' | 'review' | 'trial' | 'cohort' | 'experime
 export type Claim = { en: string; zh: string; src: string };
 export interface Resource {
   id: string;
-  type: 'book' | 'guideline' | 'research';
+  type: 'book' | 'classic' | 'guide' | 'guideline' | 'research';
   evidence: 'guideline' | 'large' | 'small' | 'expert';
   design?: Design;
   backedBy?: string[];
   title: L10n;
+  originalTitle?: string;
   by: string;
   year: number | null;
   yearNote?: L10n;
@@ -41,6 +42,12 @@ export interface Resource {
   whyAge?: L10n;
   keyPoints?: L10nList;
   actions?: L10nList;
+  purpose?: L10n;
+  audience?: L10n;
+  limits?: L10n;
+  access?: L10n;
+  checkedNote?: L10n;
+  sourceLinks?: { label: L10n; url: string }[];
   checked: string;
 }
 export interface Stage {
@@ -51,6 +58,7 @@ export interface Stage {
   health: { links: string[]; extra: string[] };
   facts: { label: L10n; value: L10n; source: string }[];
   research?: string[];
+  picks?: string[];
   roots: { educator: string; en: string; zh: string }[];
   reading: string[];
   learning?: boolean; updated: string;

@@ -11,13 +11,23 @@ for (const r of resources) {
   const p = `resource ${r.id}`;
   if (ids.has(r.id)) errors.push(`${p}: duplicate id`); ids.add(r.id);
   if (!/^https:\/\//.test(r.url || '')) errors.push(`${p}: url must be https`);
-  if (!['book', 'guideline', 'research'].includes(r.type)) errors.push(`${p}: bad type`);
+  if (!['book', 'classic', 'guide', 'guideline', 'research'].includes(r.type)) errors.push(`${p}: bad type`);
   if (!['guideline', 'large', 'small', 'expert'].includes(r.evidence)) errors.push(`${p}: bad evidence`);
   if (!['all', 'male', 'female'].includes(r.sex)) errors.push(`${p}: bad sex`);
   if (!(r.minMonths >= 0 && r.maxMonths <= 215 && r.minMonths <= r.maxMonths)) errors.push(`${p}: bad age range`);
   if (!r.checked) errors.push(`${p}: missing checked date`);
   if (r.year == null && !r.yearNote) errors.push(`${p}: needs year or yearNote`);
   L(r.title, `${p}.title`); L(r.summary, `${p}.summary`);
+  if (r.originalTitle !== undefined && (typeof r.originalTitle !== 'string' || !r.originalTitle.trim())) errors.push(`${p}: originalTitle must be non-empty text`);
+  for (const key of ['purpose', 'audience', 'limits', 'access', 'checkedNote', 'whyAge', 'evidenceNote', 'yearNote']) if (r[key]) L(r[key], `${p}.${key}`);
+  for (const key of ['keyPoints', 'actions']) if (r[key]) {
+    for (const lang of ['en', 'zh']) if (!Array.isArray(r[key][lang]) || !r[key][lang].length || r[key][lang].some((x) => typeof x !== 'string' || !x.trim())) errors.push(`${p}.${key}.${lang}: needs a non-empty text list`);
+  }
+  for (const source of r.sourceLinks ?? []) {
+    L(source.label, `${p}.sourceLinks.label`);
+    if (!/^https:\/\//.test(source.url || '')) errors.push(`${p}: source link must be https`);
+  }
+  if (r.type === 'guide' || r.type === 'classic') for (const key of ['purpose', 'audience', 'limits', 'access', 'checkedNote']) if (!r[key]) errors.push(`${p}: ${r.type} needs ${key}`);
   if (r.type === 'research' && !['meta-analysis', 'review', 'trial', 'cohort', 'experiment', 'observational', 'cross-sectional', 'large-dataset'].includes(r.design)) errors.push(`${p}: research needs a design`);
   if (r.type !== 'research' && r.design) errors.push(`${p}: only research has a design`);
   if (r.type === 'book' && (!r.isbn || !r.publisher)) errors.push(`${p}: books need isbn and publisher`);
@@ -40,6 +50,11 @@ for (const s of stages) {
   s.health.links.forEach((id) => { need(id, p); notStudy(id, p); });
   s.health.extra.forEach((k) => { if (!sources[k]) errors.push(`${p}: unknown source ${k}`); });
   (s.research || []).forEach((id) => study(id, p));
+  (s.picks || []).forEach((id) => {
+    need(id, p); notStudy(id, p);
+    const r = resources.find((x) => x.id === id);
+    if (r && (r.maxMonths < s.minMonths || r.minMonths > s.maxMonths)) errors.push(`${p}: pick ${id} does not overlap this stage`);
+  });
   s.roots.forEach((r) => { if (!eduIds.has(r.educator)) errors.push(`${p}: unknown educator ${r.educator}`); L(r, `${p}.roots.${r.educator}`); });
   if (s.reading.length > 2) errors.push(`${p}: at most 2 further-reading books`);
   s.reading.forEach((id) => { need(id, p); if (types.get(id) !== 'book') errors.push(`${p}: reading ${id} is not a book`); });
