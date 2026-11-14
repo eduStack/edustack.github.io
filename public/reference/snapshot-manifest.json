@@ -144,187 +144,187 @@
     {
       "path": "resources/aap-effective-discipline-2018/index.html",
       "original_sha256": "766eead6de40d1ec8407608b61dfa1c880db563b8de584576e88a78b30b37398",
-      "published_sha256": "c7b6ebe20b3ef1f3269c54e2012d7963f2d2460327f224173661310f61faf1e2"
+      "published_sha256": "ed50be8c3605ce7a7377126040268a0c57b62ec8c6e4c3ee38f3a90a387cbbc9"
     },
     {
       "path": "resources/aap-family-media-plan/index.html",
       "original_sha256": "adf604b94897102136bf55f45e6b28f8732561fca734a0b32f66ad659d570992",
-      "published_sha256": "d68c87cbd6db90bb03ade5d72ac2e393230e4da500cded1df2cfc1c67650a1bf"
+      "published_sha256": "a6740711a1d7dd79567998868d21878fb795e86928ab40cf718a419f82195d8c"
     },
     {
       "path": "resources/aap-media-young-minds-2016/index.html",
       "original_sha256": "b0987d586026b653b7c6875c8284006dec4f1eba8a6765253425efb4eb470617",
-      "published_sha256": "ef553a069c69e690107e9bf69b740b8c90dd75421cbaa12f5328ee70b560f78e"
+      "published_sha256": "779fb2588cff22d06db294742ecf4363863abd75686d413d8ff4f36cf3e4ba90"
     },
     {
       "path": "resources/aap-puberty-boys/index.html",
       "original_sha256": "cb5f168a7539bc1b2e567beaf437610c9982a828507bb079c2d905faa4c0554b",
-      "published_sha256": "62c354b397eb60a26eeff708a5821b568d8f447e8f59ef7043d3a8feb242305b"
+      "published_sha256": "d6e339666e8dee63e96d7244cb02874ba3036240eb4b6b9625b811df177fbfd8"
     },
     {
       "path": "resources/aap-puberty-girls/index.html",
       "original_sha256": "1d2fedc5d097829a042f86a9cf3781cf0ca9f587c60b8b9687dafbaba4c471f2",
-      "published_sha256": "23a1618e9fd32123b0036464f3c98a2ea8d911baae782ee9d173d62dfebc15da"
+      "published_sha256": "0c0a66b70c4affd5edbbff4f78ce376201f1cdd5e3c13cb769a715d3dc49eddd"
     },
     {
       "path": "resources/aap-safe-sleep/index.html",
       "original_sha256": "70a613e98cad90301fbd9c4081fb4130d1cf7a5057e394fbf8982f80c062c0e7",
-      "published_sha256": "a4f02dde297fed8b855fda9b95a2e10d5133eafa6c930dfad46e1808acedaf5c"
+      "published_sha256": "8e12eec98b517e5d32ddee63a688162e1741ae57dc83b1ca6bb676e85d131795"
     },
     {
       "path": "resources/aasm-sleep-2016/index.html",
       "original_sha256": "beb6c5633d571c64b652b09849dd5b684c8e805da3ef5980deb3f908724638f7",
-      "published_sha256": "8f9331bb6b44e0105b37a026784408d16fb0f06696e8a6310e659de5cf5b33d6"
+      "published_sha256": "2ebce9f0d95e2b6b7209e9edb83cbb9b269a1b12263eb912977a8c23ae5254b4"
     },
     {
       "path": "resources/alfieri-2011-discovery/index.html",
       "original_sha256": "eef70e35680f81e7e9816ac359e36bae63b7395e26c584b14b1d18c483988f6c",
-      "published_sha256": "57968fbcea1d1ad5b7fe87ae34c9f85e9cae5b8417609b5a943fe3824ec74d3b"
+      "published_sha256": "bb0017e4e23f586c4d48c7326d1ffec032db795cf9b4fa16179b45587875c6ce"
     },
     {
       "path": "resources/apa-social-media-advisory-2023/index.html",
       "original_sha256": "9568865b910d347458c879e88240e0f4d73ff4b558ab2407480d751625ce87bb",
-      "published_sha256": "cfa72ed1ca9015bb5d84edf332f3713bd855f09289b201fa8132c04dedfdf05e"
+      "published_sha256": "b97a31919280f236fe3a0e4f9615f30b78963dd3152108871882fc82450099ad"
     },
     {
       "path": "resources/baillargeon-1985-object/index.html",
       "original_sha256": "eac51a8c258b5f425069dcb2fcf6bc170911b48010b26e71abbfbd5dab08b7d2",
-      "published_sha256": "562854fca127ced27ae168dba2a54ad647fd703898ef6d0aef18429832ad36f6"
+      "published_sha256": "6d3326e160d1a0be13c49931987f29b63f8365d4764217858f23c86a8ff05cf1"
     },
     {
       "path": "resources/banerjee-2017-tarl/index.html",
       "original_sha256": "c130dd5e004b596122c573c7ec92d338aac2e5f1c64b84d5097811ab5ef40e13",
-      "published_sha256": "91c238698739f2559eb93276023df86de2619f1a5c0689014e28b98ea252838d"
+      "published_sha256": "22e6e59f74b91e76104cd4441131524a0fd93b8e0d1dcf09ca32b6098025fa19"
     },
     {
       "path": "resources/cdc-milestones/index.html",
       "original_sha256": "9797bea3de11e68e6239c08b23b5c47de11176d65541c2ad2d6d2acf24c01dfd",
-      "published_sha256": "7ef6fd62e571f1fd7e5498f99c74a09828fce2f29526402b6c0742cb0373355d"
+      "published_sha256": "ac7652a1fbd728644f48cfbe5031fd338bbedde46272dc8500cd509fbed7b980"
     },
     {
       "path": "resources/dweck-mindset/index.html",
       "original_sha256": "ef0ab36b5ffd687c8edb464cb345439772f276ef3fd07de59a53d6d4d8fdc74e",
-      "published_sha256": "6a1c2f03fc80f6ac791027ad393dc5d9a4601faf57110208d3c90dac48d3e5dd"
+      "published_sha256": "ef5b9725dbe13aea1254e5dca4ff79be3ce0c9bad9e07614908b95febafc71d1"
     },
     {
       "path": "resources/faber-mazlish-kids/index.html",
       "original_sha256": "39aabce01358a8ec174e033c4b9f84795dd08cd1cd592da6ff03731c0110d5ae",
-      "published_sha256": "b1450f130f0b7afbc8b2b548db8bc0b5c3cb1e153fce5dd9e8f2262d5304b449"
+      "published_sha256": "6e10458e9e0cd83cd649a7173129f5e421eaf5779e4c07b20e79f2116cc709f9"
     },
     {
       "path": "resources/faber-mazlish-teens/index.html",
       "original_sha256": "dbc0053bec1cf02fd454e0705fbcbba0ea6aa988730d0cdf36b9566bf46c45bb",
-      "published_sha256": "12d70e92af616faff2d3fa33d104c04eb275663ced2899616e4da701e7799ae9"
+      "published_sha256": "dba3136f3763ff7889ed9de668c0fa8387cf029a1be66aeaa534801017fc44a7"
     },
     {
       "path": "resources/gershoff-2016-spanking/index.html",
       "original_sha256": "78e2b7a0858508816d12ce26432d776f91bb9e3685d06c4579e0307a7c02aafa",
-      "published_sha256": "a19663ddc89f7845ad80a626e37a3ebe87ac37383f0110eb6cf3bdd43a4d179e"
+      "published_sha256": "6c15b5a5ff4bbc0e17d776563939eb6cb3aecf71d65015f5e4e67e63377343a6"
     },
     {
       "path": "resources/gopnik-scientist-in-the-crib/index.html",
       "original_sha256": "4b697b1a017fb5121738dcaefe47a89a2c8c49dd6a66323ca5e93b24b963eae4",
-      "published_sha256": "8cdd04653a3d51922dd56db4d136b3365eea1ad4636951afb870452c783ece70"
+      "published_sha256": "c3a8f691d3a7ed4447e36bf8520c8e7d217f3588a30a2e5efac7952ccac06599"
     },
     {
       "path": "resources/kirschner-2006-guidance/index.html",
       "original_sha256": "51333640da224f49722ce3cf06dc18365adb400aaa9950437547fe72e6b902ca",
-      "published_sha256": "9719546cce5be3e6bce88e13a85b6e76085dcaee08c66a854054472004736d3b"
+      "published_sha256": "8914708666ae04f1b25a41001c5d77b3e51f1844c45c6b8b5355af7870b80d25"
     },
     {
       "path": "resources/kuhl-2003-foreign-language/index.html",
       "original_sha256": "e2c3ab6163c5630c3d970b81b4f34885c5ed94ce6fc21c75ffcc9d511757ce0d",
-      "published_sha256": "01d5599777863af4cc918c77d5a886e7cd30134d981dd377396990df396be852"
+      "published_sha256": "53e392af7f18442fc80a4faa3230578aa8db778cfeba11ee1fe852914cef58be"
     },
     {
       "path": "resources/lillard-2017-montessori/index.html",
       "original_sha256": "b1319c78b1ffe8c058f5dc2ded7003bee49164d8d550d5870fb710861f2af710",
-      "published_sha256": "b6562f06ef1361bfe45528f8605f17bfd0c62b43c2cc4af651cf0278bc419ff4"
+      "published_sha256": "72264e0944534f6feea14818b4d564a658a1747e1438e0f1df4e896f28dec178"
     },
     {
       "path": "resources/madigan-2019-screen-development/index.html",
       "original_sha256": "24d53800f937348ad03a7e8c34c5323718f64011fa0dfee89560273ba54541d3",
-      "published_sha256": "7cff7ddd5c97b4c392a77f35158ea63c1001ee904ca16ca3bbf4440915d25451"
+      "published_sha256": "c47cbaba9dc84668a7f58d42ee58122e1e4c2d9acf6f70c9b8c05623f8f10281"
     },
     {
       "path": "resources/madigan-2020-screen-language/index.html",
       "original_sha256": "d13a8c388453aec38bf819c1199d3a86bcf24880d81048920cf88054e3c51314",
-      "published_sha256": "c139b5a407204261c75882383c74920471e0a1ca1ac863c1c99406e5866f9535"
+      "published_sha256": "a874ea3e05c3f1086f15bf323dc4a4ccb2cd9975210db15698e8467ae62c23e3"
     },
     {
       "path": "resources/meeus-2011-identity/index.html",
       "original_sha256": "4d07f24da40a68eea5d7f71717f20494731d1fe97b60684fb5dc0adde7dd5b50",
-      "published_sha256": "fc236e79325fcc573b70b9f5a3e2997ba54e798aa04b2f0c083c20b832e4973f"
+      "published_sha256": "c2d0a6703eb7e413449bfac0977e77855cfd91ddff8073dc4fc1f77ad82d399e"
     },
     {
       "path": "resources/nurturing-care-framework-2018/index.html",
       "original_sha256": "7f29414669323e9b0092ad58e4aa7bac8046ded372acd53fa8412b7469615cca",
-      "published_sha256": "f91edc739e485ff85f5e003c7030872c3ec529bcd75715a2f599ac452355979d"
+      "published_sha256": "fa2165c968f2106dbc5d2f45b5ba65090d1b66d5ede4b2bd8fa91731475a9869"
     },
     {
       "path": "resources/orben-2019-wellbeing-tech/index.html",
       "original_sha256": "b4d7255537d1b6dc4460e9be71d88a847b1727ef73908feb0f048f6c4ab345c0",
-      "published_sha256": "61167c5227df675e5007c775da47b1f5a2d0082eea6a1b5f044a76e0076dde39"
+      "published_sha256": "45979f2ae33c7f581b82702844a96e597b86111776dd0b4b8c3273cca87ee424"
     },
     {
       "path": "resources/randolph-2023-montessori/index.html",
       "original_sha256": "6cca6312f62e265c1a87ddb52cc448b35b44a7e9463b801046e2aa59b1798ead",
-      "published_sha256": "82f11f373372586e4e4c3507d2e1bb94519235da2abbf6cea2bc3e35fff68cde"
+      "published_sha256": "9f0591ac7cb1462f1ea8b75b3de47c667628b2c532db380ef0339f3ed02b3397"
     },
     {
       "path": "resources/romeo-2018-conversational-turns/index.html",
       "original_sha256": "2afa7c12a663eac99a231d0d7522b3de10d7b238934b055e7554748dfca1af9f",
-      "published_sha256": "9459045ace1fc46770fe20c0dcacef43ff18ec055a9348eb2210df17cab251fd"
+      "published_sha256": "e25cd62492366115c4d1b1de2f683b8aa3173632945f24b348f10d0a4ddd7530"
     },
     {
       "path": "resources/siegel-brainstorm/index.html",
       "original_sha256": "c99a5397ad6b9af551c0897107d48b41e6fccb9727239d7ae1b3ba7f369cac3f",
-      "published_sha256": "18382f6603b595aa9583f58eb7d6d41fe859805e68682099a046e2f4452b0dda"
+      "published_sha256": "03e3106998e73ccfbf11e6bb73e34debf6c435ec539b29d38bbd4a9687ebd5f1"
     },
     {
       "path": "resources/siegel-whole-brain-child/index.html",
       "original_sha256": "d3a6a95f2b0ba83f3568bc6db6ab7af027707cb6e9d4cf4fc27d2805936f9237",
-      "published_sha256": "30e17b95efd2ce986a59fdec72f66b7665c14fc5e5178822c8d87294915b4700"
+      "published_sha256": "0b96b55d213c045abea27187ea136a6ae2e2211459b601cead3c7b82d9d93d39"
     },
     {
       "path": "resources/sisk-2018-mindset-meta/index.html",
       "original_sha256": "55f0e9410ad6fabf7f1b56bcfa663bb2c2ff18358bd71aee4083517bebf5d22a",
-      "published_sha256": "0bec89e671d7eed40141b193f8dfa159062eafb4041ac90cc9d2651268303524"
+      "published_sha256": "d4b8a089d46b6895f603fd4147e5c8526e04db56b0068d75a34a440cab6ac81d"
     },
     {
       "path": "resources/skene-2022-guided-play/index.html",
       "original_sha256": "f278f785ed09710d2a85dbad6cdb37ea91a05932cf827cd6e9484993a6ae2644",
-      "published_sha256": "5b1448af12be0e531ebb5dd75b688f631c8c0dcd9fd8dd81dc7088665b9b8551"
+      "published_sha256": "dcc25f79a92fd54470a0ae09aec7dc1898d6ccce7408308a0b236b18f2c70dc0"
     },
     {
       "path": "resources/us-surgeon-general-social-media-2023/index.html",
       "original_sha256": "462b79d54714ff3bf51f190637cba10e586a7c59005859e3186591621f733372",
-      "published_sha256": "f71b552f9972d4ecfc9c6fd30977695a47bceaadcd7ded628bd4f0a5d4ac9793"
+      "published_sha256": "7d53b705724e7021d25f46c4f27b2c9d1430d5747919e044863c01499c0dbb78"
     },
     {
       "path": "resources/who-activity-2020/index.html",
       "original_sha256": "f8e2a2fd5f6a72c90d48eaf2f9f4bcebcf6ada8d3094d5fd5fe09c5d9191109f",
-      "published_sha256": "90624f00fa68f589a79a40f369383a233e525c91acc5db9f7725262f46674c34"
+      "published_sha256": "18f9806544c7b7b24355517244827e4f9e0a00243859870a3663557a73273678"
     },
     {
       "path": "resources/who-adolescent-mental-health/index.html",
       "original_sha256": "ac72470c880461a5aa17f29973b2eca334575e673f0c1c976ba81f5fb89a64f6",
-      "published_sha256": "2b1ab910b61e5601baa4695d4739d7d8c9cd9164a65b56b66ab538813cf319c1"
+      "published_sha256": "edd1814e8d30d82c1834238d1db9a65a6eac9fc5dacfac86ae82efff0649c202"
     },
     {
       "path": "resources/who-complementary-feeding-2023/index.html",
       "original_sha256": "4cd2e1865d1e5db1519c21248a9779a1d34d043f7cf3ff0a259b1e77175ccabb",
-      "published_sha256": "353c453a3004dbf71c666166512b8d39ab1aadea159aedd4f22cf4e0586fbb09"
+      "published_sha256": "b0d4b341df3da29b2d7061f995c4cdb95600f82ce56ee9bd072f9152a2e0de0d"
     },
     {
       "path": "resources/who-under5-activity-sleep-2019/index.html",
       "original_sha256": "09361cd8b7d797cfdfccd1d9f139b0a452bb0a540b74c8a3b9c68ea8a37e352e",
-      "published_sha256": "b98dab7845497264593dacbf0799b3ae9e28a5bfb3f488b168fe3c573447fad7"
+      "published_sha256": "2114603df26c02570473435f4eddce943ad7fac1cb01749287d17cdf485efaab"
     },
     {
       "path": "resources/wood-1976-scaffolding/index.html",
       "original_sha256": "8c2cf348226850c18e09927d6154e58514e148c9bb8219241dd35141332a0e44",
-      "published_sha256": "0ac89a4c95f9ac0006c9c83f1c7ea8ee7cf80bdeb349b2d2baac6a2c7795537e"
+      "published_sha256": "0356a21629d41181bed919e4e1ce08359a5d9e0cde1dc6c25b22efe3bdf54fe3"
     },
     {
       "path": "tools/index.html",
@@ -459,187 +459,187 @@
     {
       "path": "zh/resources/aap-effective-discipline-2018/index.html",
       "original_sha256": "f49d5fc2a93113781708468ba2b68fe9dcc3a7abe3866e352dc7860319b401e8",
-      "published_sha256": "3cfe21a6c80ba26b4d558e6deba32148cfdad7187cb542a7e9dda47d5ae1924c"
+      "published_sha256": "eb5245b8b9dc2def308237db3b2c0982d00ed0bee5c1491d423b6e4b5cc62f9f"
     },
     {
       "path": "zh/resources/aap-family-media-plan/index.html",
       "original_sha256": "17f723999ce0b8e59e36d6c5bd02648cd04227c9be98f5e6c02e864ec18d6f04",
-      "published_sha256": "3479d829a4ea5c5e08905a2a6768c941917227f630facf34bca381473690d605"
+      "published_sha256": "d73427ef4131641418eea3ccde7f9d553ff79fde41f1bda64733bc45addd5282"
     },
     {
       "path": "zh/resources/aap-media-young-minds-2016/index.html",
       "original_sha256": "5d80570c78a3a441d000c6c68796d228f081af08a5fca8ba4a185a3705aeab04",
-      "published_sha256": "f9dfec2d1a581c3030cd2837b6bcec3fc21e991b0f27d086fa44810c7510d89a"
+      "published_sha256": "15fee0cc5152c82a652f3f6672acddefeab4a82cc623211ec34e8920c10c3469"
     },
     {
       "path": "zh/resources/aap-puberty-boys/index.html",
       "original_sha256": "633e703eeed6681aaf11a9dcb3d72826764bd4a23d115810a7f636b5e28faf1c",
-      "published_sha256": "9e78581df3dd3ca5bb19a92020826e557b08c9199445a30e3a8a3d77b7b9229a"
+      "published_sha256": "4c95067edfd2c209716c7d38b3cb8d66d5980326a7c4dd7742d2afd2ff2a8334"
     },
     {
       "path": "zh/resources/aap-puberty-girls/index.html",
       "original_sha256": "dfea4c039598d60b05ff692e1012ae999058c3a48767c8bedafff563d79eccb0",
-      "published_sha256": "0460a9d1e3fec71e15884ea601b76a783b77a5aa8e73d687eb7cf0883438f9ab"
+      "published_sha256": "8c682d681e44bbcece05a42a169e85cd5b536b51a8ef567ada915ddcd2907023"
     },
     {
       "path": "zh/resources/aap-safe-sleep/index.html",
       "original_sha256": "16e0f1f30129a6196f5ba589d2d7c00e75f00807962e091caa52858394053a09",
-      "published_sha256": "6f85b781df1d9d35904b191db48a905b2986621d3984c28246f06619a5eda86d"
+      "published_sha256": "148cfd8b0abafaf0e06e45c98cb31745995ad51a700777916c63f531985e9889"
     },
     {
       "path": "zh/resources/aasm-sleep-2016/index.html",
       "original_sha256": "78ca8b1079bd1fcf0c3013edc846c3cf544f7c8db5558590ff083d1b752075fa",
-      "published_sha256": "233daa19f02e1315870b61bfc785bf580201bb9b09768f4ea7c4be9056e95cbf"
+      "published_sha256": "55e4a0ea0fb8600527325deb189051300b73ba8142f72af30f79b4bbf1c076fe"
     },
     {
       "path": "zh/resources/alfieri-2011-discovery/index.html",
       "original_sha256": "67c1b3525b9aef831d6609a0094d5a78283ca7fb8e794c638b6c54dfdced83dd",
-      "published_sha256": "5348f5175a4f466eb2c55a690593089d0c73b925b23cbf7e68b831b858aa0199"
+      "published_sha256": "3c7828e42555650afaf12f1fdc824674d86b19201aaf446c51ef2fbca40682da"
     },
     {
       "path": "zh/resources/apa-social-media-advisory-2023/index.html",
       "original_sha256": "b81592fb2e948ffc211a705735cde4de4d2cb4db4ac46fd8078492711541cc74",
-      "published_sha256": "b5009ba1de4e3d955ce12b40a18e3e62be7228c446c619d5e8e79b0520d97556"
+      "published_sha256": "7c3fb8ee65ee44dfe4f6de3f418179a450bb8d4b3cde23b961082aa07d61133e"
     },
     {
       "path": "zh/resources/baillargeon-1985-object/index.html",
       "original_sha256": "02c74dc9d29cbe8eb79393d56912b9da99a3e1fc39106a8cf67c290fbc2e946e",
-      "published_sha256": "141ef85621318a0996df338f0f7f582d82a4081bbbc4a6971b540521566fb9de"
+      "published_sha256": "54bd90e1a5002f5c08556e98654b28911b4723a2c5094e6079d92359edf5ec91"
     },
     {
       "path": "zh/resources/banerjee-2017-tarl/index.html",
       "original_sha256": "dc22116fcb765963606d7b119801de25ee97e4abc162d458b34e64715b2d97dc",
-      "published_sha256": "31e650c5f32481b1ec33a6d238ae62ad33e7a66cd857b01a58f324dff0a980b5"
+      "published_sha256": "fb62abdee628a94dcd7353c7636f023e523d1a8593442b2aa46964487a4adbb7"
     },
     {
       "path": "zh/resources/cdc-milestones/index.html",
       "original_sha256": "dcc8e6075aa9f5b221002583c6d95ba6944ab5c4418ca21f0c7e3238c9c56798",
-      "published_sha256": "6f3de7d77a1555c3b389c804586c88ea8ed4bf000a981290009234cd600246e2"
+      "published_sha256": "bb9a51a1498f55aa08b6cb645be01b216783c38aef30d5301b9cb7573d7e0cc0"
     },
     {
       "path": "zh/resources/dweck-mindset/index.html",
       "original_sha256": "e2e306961b8846dc8b6f56f835c9c3ab01824d3d1782050210194d1c2dd7fff7",
-      "published_sha256": "37d90e16fc7b92ba87af32476e6daf79c24f3b339abf0b4905f73e280fd04461"
+      "published_sha256": "9139dd29095b65035d263c28e052f81aea83ad793a3a2794361dacf43cc2595d"
     },
     {
       "path": "zh/resources/faber-mazlish-kids/index.html",
       "original_sha256": "3f81ecde72def17fb147be1c749ac8839ad4773a7f91cd8e5aa79069237f5092",
-      "published_sha256": "d4d40119cbaa712a42a5fafe8b2816d9a74b8e17bd4220bd82b6f09f9de7a98b"
+      "published_sha256": "84a431020485aabace2b8865debd9017b0e55c5812daa369c0ffa492e0b0c571"
     },
     {
       "path": "zh/resources/faber-mazlish-teens/index.html",
       "original_sha256": "de7732cfdb554d4c89b87dfe2ed0e8a736fed371ce3471e90e74b72e2eb250c2",
-      "published_sha256": "8a57d6d7750f3ad82afce9d9d6455906e829927f2110444feda7e7a61a416f2a"
+      "published_sha256": "b2caf261033f2915bfd592b4c1be88e285c8fac6d055e923385fe311c388298f"
     },
     {
       "path": "zh/resources/gershoff-2016-spanking/index.html",
       "original_sha256": "376506148a6ae4f5cfa13085f8f68964ecdb30136f3fec566621183c4907b5f8",
-      "published_sha256": "e9fe5530061555f7ea47073b68cc829ea3960c5b5fa1d311446c62b85fe0dc6e"
+      "published_sha256": "7f096a617cafda91de760985ded61aae152224b65d0196f35a9943a27c7eaa8d"
     },
     {
       "path": "zh/resources/gopnik-scientist-in-the-crib/index.html",
       "original_sha256": "a801e35a2e82fa9437bddc7393b7917e063fd3fbbb5119f32d993915cbe58593",
-      "published_sha256": "7d8593dde58bdf9a86a753f61c1e8e3c8336380fa42894aa5ebc78d4b65151aa"
+      "published_sha256": "04d94605679eff1432d7c7859dcd9a6e09dcca393719145c2e1e304b69116178"
     },
     {
       "path": "zh/resources/kirschner-2006-guidance/index.html",
       "original_sha256": "bb924885b4621f509c1ef670f42f76d91e018b639854655fa8f0f51b4d1d7c46",
-      "published_sha256": "111955451bd431733fbe5e9b5827f9ea429131f10a5ce93cf9e7478a4448e4a6"
+      "published_sha256": "624d62e35dc1118b872f54ad1703d3e1eb4350ce2b5a12f344a2a59f1399a43c"
     },
     {
       "path": "zh/resources/kuhl-2003-foreign-language/index.html",
       "original_sha256": "73b3623f52f03bd2c45382b23a46fae43b37081dec2217752a37795295b04452",
-      "published_sha256": "0616be4750286132de27f0c842679a5f910fd094d0a8022da7597cb0f46ea74a"
+      "published_sha256": "7274bd4d79b5382ea98a19604bfd50a25b55dd82bae5f5e57435326fbb8c6cbe"
     },
     {
       "path": "zh/resources/lillard-2017-montessori/index.html",
       "original_sha256": "5449579e6f8321e4e373bbb4a8364df072e65dde67889d07f517101eeac1ad52",
-      "published_sha256": "cc17eeafc564d4cdab8e6ac1755da8b81a5977ba254514f72ce7f9e44ec79aac"
+      "published_sha256": "a8f9ca3a89ab0fe1d51a7a84f87187ba01e12bcd74af3cff3c30d11b38369bf7"
     },
     {
       "path": "zh/resources/madigan-2019-screen-development/index.html",
       "original_sha256": "e2513d400017388bf75c28b11f6a16e7b5b97bcf2ccf94132b53e9e43851278a",
-      "published_sha256": "785e2126964d9b48fec99c1e0038269c5dee856188c4d251a6e2e5c19fb656cb"
+      "published_sha256": "63eac5edd6c8cafa67e3d29fe3c0ff623bf4dc06a9b384f66776a70a393252b6"
     },
     {
       "path": "zh/resources/madigan-2020-screen-language/index.html",
       "original_sha256": "f5ab74895903b5324020df2cc05c5d3c63cd67ffbe346ba52ec936e792cd3eb0",
-      "published_sha256": "328ba96bdf3420d54e3e4a726075472db0c6dab918f5fa6c210b83a2b044a2dd"
+      "published_sha256": "3c5fa1712dcf2d4ab6bc3953e16f17fb69ae22e21595fd3103e1c1eb4c53639d"
     },
     {
       "path": "zh/resources/meeus-2011-identity/index.html",
       "original_sha256": "efedbe009d660d3fd5b047b5ffc12f172d8810e3b60e8c199cd6562c2ec7ba5e",
-      "published_sha256": "82a9cf4740255100b5de20b66d278865d0d6d2c304ebfde5fd0897b804546a32"
+      "published_sha256": "e5f2b6af5920ad878aeebe4c0956ea05dd07810b113f82ff5681a764c5f42dfe"
     },
     {
       "path": "zh/resources/nurturing-care-framework-2018/index.html",
       "original_sha256": "d2d218fe87e6ca20695d18d899b9a1acc08c2fff83931d6943d61cf767f6d1ac",
-      "published_sha256": "1ec07c2c9b178f8043906546189fe51b7fef2fa3dfb27bef2812b04c6e5db349"
+      "published_sha256": "36f257cc40ab36f137a97c33bd090f2e7bdaa36f6c72308a062fc0933afd155a"
     },
     {
       "path": "zh/resources/orben-2019-wellbeing-tech/index.html",
       "original_sha256": "9afa74de708cfb7e250562e42b5b8633c58f05ecdab74a62e8c136d7a02fa6e5",
-      "published_sha256": "ee4d480f4adda236f9d30be994d5b19dfce28886a30768af9807f9922edfa272"
+      "published_sha256": "7565e304b1405f974ed07eddcce7c10e09afbde8d6c702050810ec1f01697ccc"
     },
     {
       "path": "zh/resources/randolph-2023-montessori/index.html",
       "original_sha256": "adf8f0123d1285850c23bf5cfcfcae6b3a9248aa7cbb7e5baefd5a2bf0d3e60f",
-      "published_sha256": "ef666b34aa1473414179c7d127fb2471454bcaa7c616c5f1c9fae3e091537b16"
+      "published_sha256": "7ffe53c4a38188e1b0daaacc43cb9d931172078a84068f346b32a468afbc16fb"
     },
     {
       "path": "zh/resources/romeo-2018-conversational-turns/index.html",
       "original_sha256": "ac16e2f1a54281882fecc29e2499adae582ad643c6cdd0f2c10f5a819ffdb662",
-      "published_sha256": "cce2ce86d8b045fa4c075c6efc724af5f644f92469ec2f9137b0c1399284a2d3"
+      "published_sha256": "c8a078b43251450d2c6c1d0cdab2b2561bf9492d4e0c8c040577ec7ab65c818c"
     },
     {
       "path": "zh/resources/siegel-brainstorm/index.html",
       "original_sha256": "b501a47850635320b0a9c59563a889b8ececeeb6a36a4d77060b67e519aba848",
-      "published_sha256": "c320a5737c409b19a883819d569fb76d45f77f255241f5701817f3b7edfbbf8a"
+      "published_sha256": "4bd89c35c098ce4b8a65275902f51e3e79f3008c2f46a8a516c5dc207fe53818"
     },
     {
       "path": "zh/resources/siegel-whole-brain-child/index.html",
       "original_sha256": "3c279025ea691698b2f2d9660201b5744d3c6aeaaa28a63ea1032ebd06c758d0",
-      "published_sha256": "886f986cd2cf47b7b6cef3cbe8ceda958439ba301952e086011c0cb2fca7051a"
+      "published_sha256": "e08eeb7b2b6bdec1b4024b4033e34b885d6f9ba85fc6194370e0a4b8615d028a"
     },
     {
       "path": "zh/resources/sisk-2018-mindset-meta/index.html",
       "original_sha256": "cfa8d3d25f986c0d5207b29c2f9876cb1c872c3dd066b0cb6663716e229c2733",
-      "published_sha256": "3d92b2473834fcce9a1a5d45395a0e55cd1a4abb54b7cf2685ec8cf848c84e52"
+      "published_sha256": "a7e3f6de7a2c29c004aaa22eaafa6b135695c443437a18371a9bd787edbc756f"
     },
     {
       "path": "zh/resources/skene-2022-guided-play/index.html",
       "original_sha256": "cbb25bbe6a141ad0574c647efde4d6ac2e7e64a7ca22c717c6fc37bfd6858486",
-      "published_sha256": "b04f43cd1bd1d78cc538c9ce05c27c458af10580547376ef2a81717657f35f63"
+      "published_sha256": "b3d5dc533a294fbff91e63e88ca835e3a4d66943dc292eb826194e8e6879888d"
     },
     {
       "path": "zh/resources/us-surgeon-general-social-media-2023/index.html",
       "original_sha256": "17728465c4cda3a6ca10683ed759d08260eed83a5026461741dde6552994c4d1",
-      "published_sha256": "f9a79f8c1e174b98fc4fcddbd4de2a94183098208ec51462f2a71de52a2e4712"
+      "published_sha256": "f8be6505d677b314479883719a2b021f01b342860679687d15e32bad58945649"
     },
     {
       "path": "zh/resources/who-activity-2020/index.html",
       "original_sha256": "6d939934efdb66bd83c89457c729490fa866371ea6732f59e7a92595232d5366",
-      "published_sha256": "010820741cf1faa13c607e4647822fa150ed79d68f2447a5fde5c0eda22e86e6"
+      "published_sha256": "20a02701c2a440ab94c0eee6f9bc5b00faa3276b5aba343bf9a9c0e930627a7f"
     },
     {
       "path": "zh/resources/who-adolescent-mental-health/index.html",
       "original_sha256": "2761b358d6df4d6ec95b2b6bbed183fa838fa4c01344339f36ae150aafbe72ab",
-      "published_sha256": "69bb2f153a86c2e06fe8b134003bf9b88b9ea6d00f760cad25dc6391f4dc344a"
+      "published_sha256": "6208fd33770b0fe9d1b0b59e51fa2a43584739f23bdcfe9a2b8c79753ba2771c"
     },
     {
       "path": "zh/resources/who-complementary-feeding-2023/index.html",
       "original_sha256": "300990a7ddb6bcc172c26f08d0f84036d7d642edc25ae1415572b6931ac45df2",
-      "published_sha256": "36d661878c4230e72f4a848a3b017918443ea7517507092c543aa3f6f6ab0a20"
+      "published_sha256": "1bd6f25385c577f6eecc15f903205b826a30a5050801169e73948651f6a91126"
     },
     {
       "path": "zh/resources/who-under5-activity-sleep-2019/index.html",
       "original_sha256": "4580a92cb4b9b831edd86c1619bf9c5fa04087094257fbb49e1736a65b513fae",
-      "published_sha256": "4c24c68fdb421ba5692056027ff79a008e8ed7b663a3b8937a28f9cf65fde773"
+      "published_sha256": "ff287783f8de1a65b935983664da1b3eaa0cfcc10a0f61d3fc8007052ca8cd91"
     },
     {
       "path": "zh/resources/wood-1976-scaffolding/index.html",
       "original_sha256": "59e283caa1e382280b292765de68f9b7a036f3e6f00445ddc422e9a87f46536d",
-      "published_sha256": "45d1de900483e336f5426e31df2554e323134a3a4207e526e79d6ef49bb01670"
+      "published_sha256": "0c715ec02ef71d8f52ae56b3e26103bfe1e2cda3ce5a295eee7cb4ba9491e46f"
     },
     {
       "path": "zh/tools/index.html",

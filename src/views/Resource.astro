@@ -75,9 +75,8 @@ let n = 0;
         ].map(([k, v]) => <div style="display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line-2)"><dt class="muted">{k}</dt><dd style="margin:0;text-align:right">{v}</dd></div>)}
       </dl>
       <div class="card soft" style="padding:18px;gap:8px">
-        <div style="font-weight:600">{zh ? '链接失效或信息过时？' : 'Broken link or out of date?'}</div>
-        <p style="margin:0;font-size:var(--type-note)" class="muted">{zh ? '可以在 GitHub 上报告错误，编辑核实后会更新。本站不接受资源投稿。' : 'Report it on GitHub and an editor will check and update it. We do not accept resource submissions.'}</p>
-        <a href="https://github.com/" style="font-size:var(--type-ui)">{zh ? '在 GitHub 报告错误' : 'Report a problem on GitHub'}</a>
+        <div style="font-weight:600">{zh ? '资源维护' : 'Resource updates'}</div>
+        <p style="margin:0;font-size:var(--type-note)" class="muted">{zh ? '资源链接与内容由编辑核实和更新。' : 'Resource links and information are checked and updated by our editors.'}</p>
       </div>
     </aside>
   </div>
