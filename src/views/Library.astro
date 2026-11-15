@@ -3,18 +3,12 @@ import Base from '../layouts/Base.astro';
 import ResourceCard from '../components/ResourceCard.astro';
 import { recommendations as resources, type Lang } from '../lib/data';
 import { t, href } from '../i18n/ui';
+import { resourceTopics } from '../lib/taxonomy.mjs';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const s = t(lang);
 const zh = lang === 'zh';
-const topicNames: Record<string, [string, string]> = {
-  sleep: ['Sleep', '睡眠'], activity: ['Physical activity', '运动'], 'screen-time': ['Screen time', '屏幕时间'], 'social-media': ['Social media', '社交媒体'],
-  'mental-health': ['Mental health', '心理健康'], nutrition: ['Nutrition', '营养'], development: ['Development', '发育'], language: ['Language', '语言'],
-  emotions: ['Emotions', '情绪'], communication: ['Talking together', '亲子沟通'], discipline: ['Discipline', '管教'], learning: ['Learning', '学习'],
-  safety: ['Safety', '安全'], puberty: ['Puberty', '青春期'], 'responsive-care': ['Responsive care', '回应式照护'],
-  'self-regulation': ['Self-regulation', '自我调节'], play: ['Play', '游戏'], attachment: ['Attachment', '依恋'],
-};
-const used = [...new Set(resources.flatMap((r) => r.topics))].filter((k) => topicNames[k]);
+const used = [...new Set(resources.flatMap((r) => r.topics))];
 const sorted = [...resources].sort((a, b) => a.minMonths - b.minMonths);
 ---
 <Base lang={lang} title={s.nav.library} active="library">
@@ -38,7 +32,7 @@ const sorted = [...resources].sort((a, b) => a.minMonths - b.minMonths);
         <select id="age"><option value="">{zh ? '不限年龄' : 'Any age'}</option></select>
         <span class="muted" style="font-size:var(--type-note)">{zh ? '只显示适用年龄包含这个月龄的资源。' : 'Shows resources whose age range includes this age.'}</span></div>
       <div class="stack" style="gap:6px"><label for="topic" style="font-weight:600">{zh ? '主题' : 'Topic'}</label>
-        <select id="topic"><option value="">{zh ? '全部主题' : 'All topics'}</option>{used.map((k) => <option value={k}>{topicNames[k][zh ? 1 : 0]}</option>)}</select></div>
+        <select id="topic"><option value="">{zh ? '全部主题' : 'All topics'}</option>{used.map((k) => <option value={k}>{resourceTopics[k][lang]}</option>)}</select></div>
       <label class="row" style="gap:8px;min-height:2.75rem"><input type="checkbox" id="free" /> {zh ? '只看可免费阅读的' : 'Free to read only'}</label>
       <a href={href(lang, 'tools')}>{zh ? '找免费学习工具？' : 'Looking for free learning tools?'}</a>
     </aside>

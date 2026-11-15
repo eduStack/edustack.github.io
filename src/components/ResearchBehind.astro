@@ -26,6 +26,7 @@ const H = heading;
             <span>{r.by}{r.year ? `, ${r.year}` : ''}</span>
             <a href={href(lang, `resources/${r.id}`)}>{zh ? '研究详情' : 'Study details'}</a>
           </div>
+          {r.design && <p class="muted" style="margin:0;font-size:var(--type-ui)">{s.design[r.design]}{zh ? '：' : ': '}{s.designNote[r.design]}</p>}
         </li>
       ))}
     </ul>

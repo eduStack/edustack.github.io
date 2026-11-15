@@ -5,6 +5,7 @@ import { defaultLanguage, languages, type Lang } from '../i18n/languages';
 import { href, fmtDate } from '../i18n/ui';
 import SiteHeader from '../components/SiteHeader.astro';
 import FontPreloads from '../components/FontPreloads.astro';
+import { getResource, stages, topics } from '../lib/data';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -19,6 +20,15 @@ const homeImage = (name: string, widths: number[], sizes: string, width: number,
 });
 const homeUrl = href(lang);
 const canonical = new URL(homeUrl, Astro.site || Astro.url.origin);
+const leadStage = stages.find((stage) => stage.id === 'toddlers');
+const screenTopic = topics.find((topic) => topic.id === 'screen-time');
+const mediaTopic = topics.find((topic) => topic.id === 'social-media');
+if (!leadStage || !screenTopic || !mediaTopic) throw new Error('Homepage features must reference published stages and topics');
+const conversation = getResource('romeo-2018-conversational-turns');
+const responsiveCare = getResource('harvard-serve-and-return');
+const featuredBook = getResource('faber-mazlish-kids');
+const mediaPlan = getResource('aap-family-media-plan');
+const nurturingCare = getResource('nurturing-care-framework-2018');
 ---
 <!doctype html>
 <html lang={languages[lang].tag}>
@@ -41,7 +51,10 @@ const canonical = new URL(homeUrl, Astro.site || Astro.url.origin);
   <main id="main" tabindex="-1">
     <div class="wrap">
       <section class="opening" aria-labelledby="opening-title">
-        <div class="opening-copy"><h1 id="opening-title">{copy.headline}</h1><p>{copy.intro}</p></div>
+        <div class="opening-copy">
+          <h1 id="opening-title">{copy.headline}</h1>
+          <p>{copy.intro}</p>
+        </div>
         <form id="search-panel" class="search-panel" role="search" aria-label={copy.searchLabel} action={localPath('library/')} method="get">
           <label for="resource-search">{copy.searchQuestion}</label>
           <div><input id="resource-search" type="search" name="q" placeholder={copy.searchPlaceholder} required><button type="submit">{copy.search}</button></div>
@@ -54,7 +67,7 @@ const canonical = new URL(homeUrl, Astro.site || Astro.url.origin);
           <div class="story-meta"><span class="eyebrow">{copy.leadEyebrow}</span><span>{copy.leadCategory}</span></div>
           <h2><a href={localPath('ages/toddlers/')}>{copy.leadTitleFirst}<br>{copy.leadTitleSecond}</a></h2>
           <p class="story-description">{copy.leadDescription}</p>
-          <div class="story-bottom"><div class="source-details"><span>{copy.leadSources}</span><span>{copy.stageUpdated} <time datetime="2026-11-13">2026-11-13</time></span></div><a class="text-link" href={localPath('ages/')}>{copy.startAge} <span aria-hidden="true">↗</span></a></div>
+          <div class="story-bottom"><div class="source-details"><span>{copy.leadSources}</span><span>{copy.stageUpdated} <time datetime={leadStage.updated}>{fmtDate(leadStage.updated, lang)}</time></span></div><a class="text-link" href={localPath('ages/')}>{copy.startAge} <span aria-hidden="true">↗</span></a></div>
         </article>
 
         <aside class="sidebar">
@@ -64,8 +77,9 @@ const canonical = new URL(homeUrl, Astro.site || Astro.url.origin);
             <h2>{copy.todayTitleFirst}<br>{copy.todayTitleSecond}</h2>
             <img class="dinner-art" {...homeImage('dinner', [480, 960], '(max-width: 640px) calc(100vw - 80px), (max-width: 864px) 50vw, 360px', 420, 190)} alt={copy.dinnerAlt} loading="eager" decoding="async">
             <p>{copy.todayDescription}</p>
+            <p class="muted" style="font-size:var(--type-ui)">{copy.todayNote}</p>
             <a class="note-source" href={localPath('resources/romeo-2018-conversational-turns/')}>{copy.todayResearch} <span aria-hidden="true">↗</span></a>
-            <div class="source-details note-details"><span>{copy.todayEvidence}</span><span>{copy.checked} <time datetime="2026-11-13">2026-11-13</time></span></div>
+            <div class="source-details note-details"><span>{copy.todayEvidence}</span><span>{copy.checked} <time datetime={conversation.checked}>{fmtDate(conversation.checked, lang)}</time></span></div>
           </article>
           <div class="editor-desk"><span class="eyebrow">{copy.wondering}</span><a href={localPath('topics/screen-time/')}>{copy.screenQuestion}<span aria-hidden="true">↗</span></a><a href={localPath('topics/social-media/')}>{copy.mediaQuestion}<span aria-hidden="true">↗</span></a></div>
         </aside>
@@ -73,6 +87,7 @@ const canonical = new URL(homeUrl, Astro.site || Astro.url.origin);
 
       <section id="ages" class="age-section section-space" aria-labelledby="age-title">
         <div class="section-heading"><div><span class="eyebrow">EVERY AGE, A NEW CHAPTER</span><h2 id="age-title">{copy.ageTitle}</h2></div><p>{copy.ageDescription}</p></div>
+        <p class="age-note">{copy.ageNote}</p>
         <div class="age-grid">
           <a class="age-item" href={localPath('ages/babies/')}><span class="age-range">{copy.babyRange}</span><img {...homeImage('baby', [240, 480], '(max-width: 480px) 28vw, 200px', 200, 120)} alt={copy.babyAlt} loading="lazy" decoding="async"><h3>{copy.babyTitle}<span aria-hidden="true">↗</span></h3><p>{copy.babyDescription}</p></a>
           <a class="age-item" href={localPath('ages/toddlers/')}><span class="age-range">{copy.toddlerRange}</span><img {...homeImage('toddler', [240, 480], '(max-width: 480px) 28vw, 200px', 200, 120)} alt={copy.toddlerAlt} loading="lazy" decoding="async"><h3>{copy.toddlerTitle}<span aria-hidden="true">↗</span></h3><p>{copy.toddlerDescription}</p></a>
@@ -85,16 +100,16 @@ const canonical = new URL(homeUrl, Astro.site || Astro.url.origin);
       <section id="topics" class="topics-section section-space" aria-labelledby="topics-title">
         <div class="section-heading"><div><span class="eyebrow">QUESTIONS WE SHARE</span><h2 id="topics-title">{copy.topicsTitle}</h2></div><a class="text-link" href={localPath('topics/')}>{copy.allTopics} <span aria-hidden="true">↗</span></a></div>
         <div class="topic-grid">
-          <article class="topic-story"><a class="topic-image screen-art" href={localPath('topics/screen-time/')} aria-label={copy.screenLabel}><img {...homeImage('screens', [480, 960], '(max-width: 640px) calc(100vw - 32px), (max-width: 864px) 46vw, 400px', 400, 225)} alt={copy.screenAlt} loading="lazy" decoding="async"></a><span class="eyebrow">{copy.screenCategory}</span><h3><a href={localPath('topics/screen-time/')}>{copy.screenTitleFirst}<br>{copy.screenTitleSecond}</a></h3><p>{copy.screenDescription}</p><span class="article-meta">{copy.screenEvidence}<time datetime="2026-11-13">{copy.contentDate}</time></span></article>
-          <article class="topic-story"><a class="topic-image media-art" href={localPath('topics/social-media/')} aria-label={copy.mediaLabel}><img {...homeImage('social', [480, 960], '(max-width: 640px) calc(100vw - 32px), (max-width: 864px) 46vw, 400px', 400, 225)} alt={copy.mediaAlt} loading="lazy" decoding="async"></a><span class="eyebrow">{copy.mediaCategory}</span><h3><a href={localPath('topics/social-media/')}>{copy.mediaTitleFirst}<br>{copy.mediaTitleSecond}</a></h3><p>{copy.mediaDescription}</p><span class="article-meta">{copy.mediaEvidence}<time datetime="2026-11-13">{copy.contentDate}</time></span></article>
-          <article class="topic-story"><a class="topic-image reading-art" href={localPath('resources/harvard-serve-and-return/')} aria-label={copy.respondLabel}><img {...homeImage('respond', [480, 960], '(max-width: 640px) calc(100vw - 32px), (max-width: 864px) 46vw, 400px', 400, 225)} alt={copy.respondAlt} loading="lazy" decoding="async"></a><span class="eyebrow">{copy.respondCategory}</span><h3><a href={localPath('resources/harvard-serve-and-return/')}>{copy.respondTitleFirst}<br>{copy.respondTitleSecond}</a></h3><p>{copy.respondDescription}</p><span class="article-meta">{copy.respondEvidence}<time datetime="2026-11-14">{lang === 'zh' ? '来源核验 ' : 'Source checked '}{fmtDate('2026-11-14', lang)}</time></span></article>
+          <article class="topic-story"><a class="topic-image screen-art" href={localPath('topics/screen-time/')} aria-label={copy.screenLabel}><img {...homeImage('screens', [480, 960], '(max-width: 640px) calc(100vw - 32px), (max-width: 864px) 46vw, 400px', 400, 225)} alt={copy.screenAlt} loading="lazy" decoding="async"></a><span class="eyebrow">{copy.screenCategory}</span><h3><a href={localPath('topics/screen-time/')}>{copy.screenTitleFirst}<br>{copy.screenTitleSecond}</a></h3><p>{copy.screenDescription}</p><span class="article-meta">{copy.screenEvidence}<time datetime={screenTopic.updated}>{lang === 'zh' ? '内容更新 ' : 'Updated '}{fmtDate(screenTopic.updated, lang)}</time></span></article>
+          <article class="topic-story"><a class="topic-image media-art" href={localPath('topics/social-media/')} aria-label={copy.mediaLabel}><img {...homeImage('social', [480, 960], '(max-width: 640px) calc(100vw - 32px), (max-width: 864px) 46vw, 400px', 400, 225)} alt={copy.mediaAlt} loading="lazy" decoding="async"></a><span class="eyebrow">{copy.mediaCategory}</span><h3><a href={localPath('topics/social-media/')}>{copy.mediaTitleFirst}<br>{copy.mediaTitleSecond}</a></h3><p>{copy.mediaDescription}</p><span class="article-meta">{copy.mediaEvidence}<time datetime={mediaTopic.updated}>{lang === 'zh' ? '内容更新 ' : 'Updated '}{fmtDate(mediaTopic.updated, lang)}</time></span></article>
+          <article class="topic-story"><a class="topic-image reading-art" href={localPath('resources/harvard-serve-and-return/')} aria-label={copy.respondLabel}><img {...homeImage('respond', [480, 960], '(max-width: 640px) calc(100vw - 32px), (max-width: 864px) 46vw, 400px', 400, 225)} alt={copy.respondAlt} loading="lazy" decoding="async"></a><span class="eyebrow">{copy.respondCategory}</span><h3><a href={localPath('resources/harvard-serve-and-return/')}>{copy.respondTitleFirst}<br>{copy.respondTitleSecond}</a></h3><p>{copy.respondDescription}</p><span class="article-meta">{copy.respondEvidence}<time datetime={responsiveCare.checked}>{copy.checked} {fmtDate(responsiveCare.checked, lang)}</time></span></article>
         </div>
       </section>
     </div>
 
     <section class="reading-band" id="reading" aria-labelledby="reading-title">
       <div class="wrap reading-layout"><div class="reading-intro"><span class="eyebrow">A SMALL, THOUGHTFUL SHELF</span><h2 id="reading-title">{copy.shelfTitleFirst}<br>{copy.shelfTitleSecond}</h2><p>{copy.shelfIntroFirst}<br>{copy.shelfIntroSecond}<br>{copy.shelfIntroThird}</p><a class="text-link" href={localPath('library/')}>{copy.library} <span aria-hidden="true">↗</span></a></div>
-        <div class="reading-list"><a class="reading-row" href={localPath('resources/faber-mazlish-kids/')}><span class="resource-number">01</span><div><span class="resource-kind">{copy.bookKind}</span><h3>{copy.bookTitleFirst}<br class="desktop-break">{copy.bookTitleSecond}</h3><p>Adele Faber & Elaine Mazlish</p><p class="resource-checked">{copy.checked} <time datetime="2026-11-13">2026-11-13</time></p></div><span class="row-arrow" aria-hidden="true">↗</span></a><a class="reading-row" href={localPath('resources/aap-family-media-plan/')}><span class="resource-number">02</span><div><span class="resource-kind">{copy.planKind}</span><h3>{copy.planTitle}</h3><p>{copy.planBy}</p><p class="resource-checked">{copy.checked} <time datetime="2026-11-13">2026-11-13</time></p></div><span class="row-arrow" aria-hidden="true">↗</span></a><a class="reading-row" href={localPath('resources/nurturing-care-framework-2018/')}><span class="resource-number">03</span><div><span class="resource-kind">{copy.frameworkKind}</span><h3>{copy.frameworkTitle}</h3><p>WHO · UNICEF · World Bank Group</p><p class="resource-checked">{copy.checked} <time datetime="2026-11-13">2026-11-13</time></p></div><span class="row-arrow" aria-hidden="true">↗</span></a></div>
+        <div class="reading-list"><a class="reading-row" href={localPath('resources/faber-mazlish-kids/')}><span class="resource-number">01</span><div><span class="resource-kind">{copy.bookKind}</span><h3>{copy.bookTitleFirst}<br class="desktop-break">{copy.bookTitleSecond}</h3><p>Adele Faber & Elaine Mazlish</p><p class="resource-checked">{copy.checked} <time datetime={featuredBook.checked}>{fmtDate(featuredBook.checked, lang)}</time></p></div><span class="row-arrow" aria-hidden="true">↗</span></a><a class="reading-row" href={localPath('resources/aap-family-media-plan/')}><span class="resource-number">02</span><div><span class="resource-kind">{copy.planKind}</span><h3>{copy.planTitle}</h3><p>{copy.planBy}</p><p class="resource-checked">{copy.checked} <time datetime={mediaPlan.checked}>{fmtDate(mediaPlan.checked, lang)}</time></p></div><span class="row-arrow" aria-hidden="true">↗</span></a><a class="reading-row" href={localPath('resources/nurturing-care-framework-2018/')}><span class="resource-number">03</span><div><span class="resource-kind">{copy.frameworkKind}</span><h3>{copy.frameworkTitle}</h3><p>WHO · UNICEF · World Bank Group</p><p class="resource-checked">{copy.checked} <time datetime={nurturingCare.checked}>{fmtDate(nurturingCare.checked, lang)}</time></p></div><span class="row-arrow" aria-hidden="true">↗</span></a></div>
       </div>
     </section>
 

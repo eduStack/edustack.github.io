@@ -1,7 +1,9 @@
+# Publication: draft | in-review | published | needs-review. Only published items reach the site.
 # Classic educators. Every line names its source: a key in sources.yaml or a resource id.
 # supported / outdated: what modern research backs up, and what it does not.
 # texts: free, legal full texts only (public domain). If none, say so with texts: [].
 - id: confucius
+  publicationStatus: published
   name: { en: Confucius, zh: 孔子 }
   years: "551–479 BCE (traditional dates)"
   region: { en: China, zh: 中国 }
@@ -20,6 +22,7 @@
     - { label: { en: "Analects, James Legge English translation (Project Gutenberg)", zh: "《论语》理雅各英译本（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/4094" }
 
 - id: rousseau
+  publicationStatus: published
   name: { en: Jean-Jacques Rousseau, zh: 卢梭 }
   years: "1712–1778"
   region: { en: Geneva and France, zh: 日内瓦、法国 }
@@ -37,6 +40,7 @@
     - { label: { en: "Emile, English translation (Project Gutenberg)", zh: "《爱弥儿》英译本（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/5427" }
 
 - id: froebel
+  publicationStatus: published
   name: { en: Friedrich Froebel, zh: 福禄贝尔 }
   years: "1782–1852"
   region: { en: Germany, zh: 德国 }
@@ -54,6 +58,7 @@
     - { label: { en: "Autobiography of Friedrich Froebel (Project Gutenberg)", zh: "《福禄贝尔自传》英译本（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/16434" }
 
 - id: montessori
+  publicationStatus: published
   name: { en: Maria Montessori, zh: 蒙台梭利 }
   years: "1870–1952"
   region: { en: Italy, zh: 意大利 }
@@ -73,6 +78,7 @@
     - { label: { en: "Dr. Montessori's Own Handbook (Project Gutenberg)", zh: "《蒙台梭利手册》英译本（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/29635" }
 
 - id: dewey
+  publicationStatus: published
   name: { en: John Dewey, zh: 杜威 }
   years: "1859–1952"
   region: { en: United States, zh: 美国 }
@@ -91,6 +97,7 @@
     - { label: { en: "The Child and the Curriculum (Project Gutenberg)", zh: "《儿童与课程》英文原著（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/29259" }
 
 - id: cai-yuanpei
+  publicationStatus: published
   name: { en: Cai Yuanpei, zh: 蔡元培 }
   years: "1868–1940"
   region: { en: China, zh: 中国 }
@@ -107,6 +114,7 @@
     - { label: { en: "Cai Yuanpei's works (Wikisource, Chinese)", zh: "蔡元培作品（维基文库）" }, url: "https://zh.wikisource.org/wiki/Author:蔡元培" }
 
 - id: piaget
+  publicationStatus: published
   name: { en: Jean Piaget, zh: 皮亚杰 }
   years: "1896–1980"
   region: { en: Switzerland, zh: 瑞士 }
@@ -122,13 +130,14 @@
   texts: []
 
 - id: vygotsky
+  publicationStatus: published
   name: { en: Lev Vygotsky, zh: 维果茨基 }
   years: "1896–1934"
   region: { en: Russia (Soviet Union), zh: 俄国（苏联） }
   bio: { en: "Russian psychologist whose 1934 book Thought and Language studied how thinking and speech develop together.", zh: "俄国心理学家，1934 年出版《思维与语言》，研究思维和语言如何一起发展。", src: brit-thought-language }
   ideas:
     - { en: "Children's thinking grows out of social interaction: they watch how others think and act, then make it their own.", zh: "孩子的思维来自与人的互动：先看别人怎么想、怎么做，再内化成自己的。", src: brit-post-piaget }
-    - { en: "The \"zone of proximal development\": what a child can do with help today, they can do alone tomorrow.", zh: "“最近发展区”：孩子今天在帮助下能做到的，明天就能独立做到。", src: mind-in-society }
+    - { en: "The \"zone of proximal development\": the gap between what a child can do independently and what they can do with guidance from an adult or a more capable peer. With suitable support, some of these abilities may gradually become independent.", zh: "“最近发展区”：孩子独立能做到的，与在成人或能力更熟练的同伴帮助下能做到的之间的距离。适当支持可能帮助孩子逐步独立完成其中的任务，并不保证立刻学会。", src: mind-in-society }
   today: { en: "Help with just the part your child can't manage yet, then step back as they get it. Researchers call this \"scaffolding\".", zh: "只帮孩子还做不到的那一部分，孩子学会后就慢慢放手。研究者把这叫做“脚手架”。", src: wood-1976-scaffolding }
   supported:
     - { en: "Studies of adults tutoring young children described how well-judged help lets children finish tasks they couldn't do alone.", zh: "对大人辅导幼儿的研究发现，恰到好处的帮助能让孩子完成独自做不到的任务。", src: wood-1976-scaffolding }
@@ -137,6 +146,7 @@
   texts: []
 
 - id: tao-xingzhi
+  publicationStatus: published
   name: { en: Tao Xingzhi, zh: 陶行知 }
   years: "1891–1946"
   region: { en: China, zh: 中国 }
@@ -152,6 +162,7 @@
   texts: []
 
 - id: erikson
+  publicationStatus: published
   name: { en: Erik Erikson, zh: 埃里克森 }
   years: "1902–1994"
   region: { en: Germany and United States, zh: 德国、美国 }

@@ -1,14 +1,16 @@
+# Publication: draft | in-review | published | needs-review. Only published items reach the site.
 # Topic pages: a one-line bottom line, then each authority's position side by side.
 # verdict: agree | differ | single (only one source addresses it)
 # picks: books and guidelines only. research: studies shown as "the research behind it".
 - id: screen-time
+  publicationStatus: published
   name: { en: "Screen time", zh: "屏幕时间" }
   teaser: { en: "How much, at what age, and what counts", zh: "看多久、几岁开始、什么算屏幕时间" }
   status: ready
-  updated: 2026-11-13
+  updated: 2026-11-15
   bottomLine:
-    en: Under 2, avoid screens apart from video calls. From 2 to 5, about an hour a day at most, ideally watched together. For school-age children and teens, there is no agreed number - the WHO and the AAP suggest consistent family limits, while Australia sets a 2-hour cap on recreational screen time.
-    zh: 2 岁以下，除视频通话外尽量不看屏幕；2–5 岁每天最多约 1 小时，最好大人陪看；学龄儿童和青少年阶段各机构没有统一的数字，WHO 和美国儿科学会建议全家定一致的规则，澳大利亚则建议娱乐性屏幕时间每天不超过 2 小时。
+    en: For children under 2, recommendations differ. WHO does not recommend sedentary screen time; the AAP advises avoiding it before 18 months except for video calls, and choosing high-quality content to watch together if introducing it at 18–24 months. For ages 2–5, recommendations generally limit daily viewing to about an hour, with age boundaries and conditions differing by source. For school-age children and teens, WHO advises limiting sedentary time, especially recreational screen use, without a single numerical cap; the AAP recommends consistent family limits, while Australia recommends no more than 2 hours of recreational screen time a day.
+    zh: 2 岁以下，各机构的建议存在差异：WHO 不建议久坐看屏幕；美国儿科学会建议 18 个月前除视频通话外避免，18–24 个月如要接触，应选高质量内容并陪看。2–5 岁的建议通常将每天观看时间限于约 1 小时，具体年龄边界和条件需看各机构原文。学龄儿童和青少年阶段，WHO 建议减少久坐，特别是娱乐性屏幕时间，未给统一时长；美国儿科学会建议制定一致的家庭规则；澳大利亚建议娱乐性屏幕时间每天不超过 2 小时。
   sources:
     - name: { en: "World Health Organization", zh: "世界卫生组织" }
       note: { en: "2019 (under 5), 2020 (5–17)", zh: "2019（5 岁以下）、2020（5–17 岁）" }
@@ -50,6 +52,7 @@
   research: [madigan-2020-screen-language, madigan-2019-screen-development, kuhl-2003-foreign-language, orben-2019-wellbeing-tech]
 
 - id: social-media
+  publicationStatus: published
   name: { en: "Social media", zh: "社交媒体" }
   teaser: { en: "When to allow it and how to talk about it", zh: "什么时候可以用、怎么和孩子谈" }
   status: ready
@@ -89,6 +92,7 @@
   research: [orben-2019-wellbeing-tech]
 
 - id: online-safety
+  publicationStatus: published
   name: { en: "Online safety", zh: "网络安全" }
   teaser: { en: "Privacy, strangers, scams and harmful content", zh: "隐私、陌生人、诈骗和有害内容" }
   status: preparing
@@ -96,6 +100,7 @@
   picks: [us-surgeon-general-social-media-2023, apa-social-media-advisory-2023]
 
 - id: anxiety-mood
+  publicationStatus: published
   name: { en: "Anxiety and low mood", zh: "焦虑和情绪低落" }
   teaser: { en: "Signs to watch for and when to get help", zh: "要留意的信号，以及什么时候求助" }
   status: preparing

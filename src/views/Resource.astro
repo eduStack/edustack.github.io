@@ -30,7 +30,7 @@ let n = 0;
   <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start">
     <article style="flex:999 1 600px;min-width:0;display:flex;flex-direction:column;gap:18px">
       <header class="card" style="padding:28px;gap:14px">
-        <div class="chips"><span class={`chip t-${r.type}`}>{s.type[r.type]}</span>{r.design && <span class="chip">{s.design[r.design]}</span>}<span class="chip lv">{s.evidenceLabel}: {s.evidence[r.evidence]}</span><span class="chip">{ageLabel(r.minMonths, r.maxMonths, lang)}</span>{r.sex !== 'all' && <span class="chip">{r.sex === 'female' ? (zh ? '女孩' : 'Girls') : (zh ? '男孩' : 'Boys')}</span>}</div>
+        <div class="chips"><span class={`chip t-${r.type}`}>{s.type[r.type]}</span>{r.design && <span class="chip">{s.design[r.design]}</span>}<span class="chip lv">{s.evidenceLabel}: {s.evidence[r.evidence]}</span><span class="chip">{zh ? '阅读参考：' : 'Reading relevance: '}{ageLabel(r.minMonths, r.maxMonths, lang)}</span>{r.sex !== 'all' && <span class="chip">{r.sex === 'female' ? (zh ? '女孩' : 'Girls') : (zh ? '男孩' : 'Boys')}</span>}</div>
         <h1 class="h-serif" style="font-size:var(--type-feature);line-height:var(--leading-heading)">{r.title[lang]}</h1>
         {(zh || r.originalTitle) && <p lang="en" class="muted" style="margin:0;font-size:var(--type-ui)">{r.originalTitle ?? r.title.en}</p>}
         <div class="row" style="gap:8px 22px;font-size:var(--type-ui);color:var(--ink-2);border-top:1px solid var(--line-2);padding-top:12px">
@@ -40,6 +40,8 @@ let n = 0;
           <span><span class="muted">{s.checked}</span> {fmtDate(r.checked, lang)}</span>
         </div>
         <div class="row" style="padding-top:4px;gap:10px"><a class="btn btn-primary" href={r.url} rel="noopener">{H.open} · {host} ↗</a>{r.isbn && <a class="btn btn-ghost" href={worldcat(r.isbn)} rel="noopener">{zh ? '附近图书馆（WorldCat）' : 'Find in a library (WorldCat)'} ↗</a>}</div>
+        {r.design && <p style="margin:0;font-size:var(--type-ui);color:var(--ink-2)"><b>{s.design[r.design]}{zh ? '：' : ': '}</b>{s.designNote[r.design]}</p>}
+        <p class="muted" style="margin:0;font-size:var(--type-ui)">{s.evidenceHelp}</p>
         {r.evidenceNote && <p style="margin:0;font-size:var(--type-ui);color:var(--ink-2)"><b>{zh ? '证据说明：' : 'Evidence: '}</b>{r.evidenceNote[lang]}</p>}
       </header>
       {sections.map((sec) => <section class="card" style="padding:24px"><h2 style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:10px">{++n}</span>{sec.h}</h2><p class="prose">{sec.body}</p></section>)}
@@ -72,7 +74,7 @@ let n = 0;
     <aside style="flex:1 1 280px;display:flex;flex-direction:column;gap:14px">
       <dl class="card" style="padding:22px;gap:0;margin:0;font-size:var(--type-ui)">
         {[
-          [r.audience ? (zh ? '阶段筛选范围' : 'Stage filter range') : (zh ? '适用月龄' : 'Age range'), ageLabel(r.minMonths, r.maxMonths, lang)],
+          [zh ? '推荐阅读年龄' : 'Recommended reading age', ageLabel(r.minMonths, r.maxMonths, lang)],
           [zh ? '类型' : 'Type', s.type[r.type]],
           [s.evidenceLabel, s.evidence[r.evidence]],
           [zh ? '原文语言' : 'Original language', r.language],
@@ -80,6 +82,7 @@ let n = 0;
           [zh ? '性别' : 'Sex', r.sex === 'all' ? (zh ? '通用' : 'Applies to all') : r.sex === 'female' ? (zh ? '女孩' : 'Girls') : (zh ? '男孩' : 'Boys')],
         ].map(([k, v]) => <div style="display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line-2)"><dt class="muted">{k}</dt><dd style="margin:0;text-align:right">{v}</dd></div>)}
       </dl>
+      <p class="muted" style="margin:0;font-size:var(--type-ui)">{zh ? '这里指孩子的年龄，供家长选择相关阅读，不是研究对象的年龄或能力标准。原资料涉及的人群与使用限制请看正文。' : 'Ages refer to your child and help you choose relevant reading. They are not the study population or an ability standard. See the text for the source population and limits.'}</p>
       <div class="card soft" style="padding:18px;gap:8px">
         <div style="font-weight:600">{zh ? '资源维护' : 'Resource updates'}</div>
         <p style="margin:0;font-size:var(--type-note)" class="muted">{zh ? '资源链接与内容由编辑核实和更新。' : 'Resource links and information are checked and updated by our editors.'}</p>

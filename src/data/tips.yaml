@@ -1,47 +1,56 @@
+# Publication: draft | in-review | published | needs-review. Only published items reach the site.
 # "One thing to try today". Each tip must point to a resource in resources.yaml.
 - id: talk-turns
+  publicationStatus: published
   minMonths: 30
   maxMonths: 83
   resource: romeo-2018-conversational-turns
-  text: { en: "At a meal, ask about the best part of their day. When they finish, add a reply and see if you can keep the back-and-forth going for five turns.", zh: "吃饭时，问问孩子今天最开心的一件事。等孩子说完再接一句，试着你来我往聊上五个来回。" }
-  why: { en: "Back-and-forth conversation predicted activity in the brain's language areas better than the number of words children heard.", zh: "来回对话的次数，比孩子听到多少词更能预测大脑语言区的活动。" }
+  text: { en: "At a meal, ask about the best part of their day. Let your child finish, then respond. Follow their interest without counting turns.", zh: "吃饭时，问问孩子今天最开心的一件事。等孩子说完再接一句，跟着孩子的兴趣聊，不必凑次数。" }
+  why: { en: "A cross-sectional study of 4–6-year-olds linked more conversational turns with greater activity in a language-related brain region. This is an editorial activity example, with an editorial age suggestion, not a tested intervention; the study does not establish cause and effect.", zh: "一项对 4–6 岁儿童的横断面研究发现，较多对话与一个语言相关脑区更活跃有关。这是编辑提供的活动示例，推荐年龄也是编辑建议，不是经过验证的干预，研究不能确定因果。" }
 - id: serve-return
+  publicationStatus: published
   minMonths: 0
   maxMonths: 23
   resource: nurturing-care-framework-2018
   text: { en: "When your baby babbles or points, stop, look where they are looking, name what you see in a few words, then wait for their reply.", zh: "宝宝咿呀发声或用手指东西时，停下来顺着看过去，用几个词说出你看到的，然后等宝宝“接话”。" }
   why: { en: "Responsive caregiving is one of the five components of nurturing care.", zh: "回应式照护是养育照护的五个组成部分之一。" }
 - id: tummy-time
+  publicationStatus: published
   minMonths: 0
   maxMonths: 8
   resource: who-under5-activity-sleep-2019
   text: { en: "Spread short sessions of tummy time through the day, aiming for at least 30 minutes in total while your baby is awake.", zh: "在宝宝醒着的时候安排几次俯趴，一天加起来至少 30 分钟。" }
   why: { en: "The WHO recommends at least 30 minutes of tummy time a day for babies who are not yet mobile.", zh: "WHO 建议还不会爬的婴儿每天至少俯趴 30 分钟。" }
 - id: read-instead
+  publicationStatus: published
   minMonths: 12
   maxMonths: 59
   resource: who-under5-activity-sleep-2019
   text: { en: "Swap one screen session today for a book you read together.", zh: "今天把一次看屏幕的时间换成一起读一本书。" }
   why: { en: "When young children are sitting still, the WHO encourages reading and storytelling with a caregiver.", zh: "WHO 鼓励在孩子安静坐着时，由大人陪着读书、讲故事。" }
 - id: name-feelings
+  publicationStatus: published
   minMonths: 24
   maxMonths: 155
   resource: siegel-whole-brain-child
   text: { en: "Next time your child is upset, name the feeling before you try to fix the problem: \"You're really disappointed.\"", zh: "下次孩子不开心时，先说出他的感受，再想办法解决问题：“你真的很失望。”" }
   why: { en: "Connecting with the feeling first helps a child calm down enough to think - a core idea of The Whole-Brain Child.", zh: "先接住情绪，孩子才能平静下来思考，这是《全脑教养法》的核心观点之一。" }
 - id: media-plan
+  publicationStatus: published
   minMonths: 60
   maxMonths: 215
   resource: aap-family-media-plan
   text: { en: "Pick one room or one time of day to be device-free for the whole family, starting today.", zh: "从今天起，选一个房间或一天中的某个时段，全家都不用电子设备。" }
   why: { en: "Tech-free zones are part of the AAP Family Media Plan and the US Surgeon General's advice to families.", zh: "设立无设备区域是美国儿科学会家庭媒体计划和美国卫生总监对家庭的建议之一。" }
 - id: bedtime-phones
+  publicationStatus: published
   minMonths: 120
   maxMonths: 215
   resource: apa-social-media-advisory-2023
   text: { en: "Agree together on a time each night when phones go to charge outside the bedroom.", zh: "和孩子一起商定每晚一个时间，到点后手机放到卧室外充电。" }
   why: { en: "Social media use within an hour of bedtime is linked to poorer sleep; teens need at least 8 hours.", zh: "睡前一小时内使用社交媒体与睡眠变差有关；青少年至少需要 8 小时睡眠。" }
 - id: listen-first
+  publicationStatus: published
   minMonths: 144
   maxMonths: 215
   resource: faber-mazlish-teens

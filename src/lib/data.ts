@@ -7,15 +7,18 @@ import tipsRaw from '../data/tips.yaml?raw';
 import educatorsRaw from '../data/educators.yaml?raw';
 import sourcesRaw from '../data/sources.yaml?raw';
 import type { Lang } from '../i18n/languages';
+import { publishedItems, publicationStatuses } from './publication.mjs';
 
 export type { Lang } from '../i18n/languages';
 export type L10n = { en: string; zh: string };
 export type L10nList = { en: string[]; zh: string[] };
+export type PublicationStatus = typeof publicationStatuses[number];
+export interface Publishable { publicationStatus: PublicationStatus }
 
 export type Design = 'meta-analysis' | 'review' | 'trial' | 'cohort' | 'experiment' | 'observational' | 'cross-sectional' | 'large-dataset';
 /** A short sentence we wrote, with the key of its source (sources.yaml key or resource id). */
 export type Claim = { en: string; zh: string; src: string };
-export interface Resource {
+export interface Resource extends Publishable {
   id: string;
   type: 'book' | 'classic' | 'guide' | 'guideline' | 'research';
   evidence: 'guideline' | 'large' | 'small' | 'expert';
@@ -50,7 +53,7 @@ export interface Resource {
   sourceLinks?: { label: L10n; url: string }[];
   checked: string;
 }
-export interface Stage {
+export interface Stage extends Publishable {
   id: string; minMonths: number; maxMonths: number;
   name: L10n; range: L10n; focus: L10n; intro: L10n; introSrc: string;
   develop: { areas: { area: string; points: Claim[] }[]; concern: Claim };
@@ -63,13 +66,13 @@ export interface Stage {
   reading: string[];
   learning?: boolean; updated: string;
 }
-export interface Educator {
+export interface Educator extends Publishable {
   id: string; name: L10n; years: string; region: L10n;
   bio: Claim; ideas: Claim[]; today: Claim; supported: Claim[]; outdated: Claim[];
   texts: { label: L10n; url: string }[];
 }
 export interface Source { by: string; label: L10n; url: string }
-export interface Topic {
+export interface Topic extends Publishable {
   id: string; name: L10n; teaser: L10n; status: 'ready' | 'preparing'; updated: string;
   bottomLine?: L10n;
   sources?: { name: L10n; note: L10n; resource?: string; url?: string }[];
@@ -77,17 +80,17 @@ export interface Topic {
   picks: string[];
   research?: string[];
 }
-export interface Tool { id: string; name: string; url: string; minAge: number; maxAge: number; subject: string; by: string; what: L10n; languages: L10n; privacy: string; backing: L10n; backingUrl: string }
-export interface Tip { id: string; minMonths: number; maxMonths: number; resource: string; text: L10n; why: L10n }
+export interface Tool extends Publishable { id: string; name: string; url: string; minAge: number; maxAge: number; subject: string; by: string; what: L10n; languages: L10n; privacy: string; backing: L10n; backingUrl: string }
+export interface Tip extends Publishable { id: string; minMonths: number; maxMonths: number; resource: string; text: L10n; why: L10n }
 
 const asDate = (v: unknown) => (v instanceof Date ? v.toISOString().slice(0, 10) : String(v));
 
-export const resources = (yaml.load(resourcesRaw) as Resource[]).map((r) => ({ ...r, checked: asDate(r.checked) }));
-export const stages = (yaml.load(stagesRaw) as Stage[]).map((s) => ({ ...s, updated: asDate(s.updated) }));
-export const topics = (yaml.load(topicsRaw) as Topic[]).map((t) => ({ ...t, updated: asDate(t.updated) }));
-export const tools = yaml.load(toolsRaw) as Tool[];
-export const tips = yaml.load(tipsRaw) as Tip[];
-export const educators = yaml.load(educatorsRaw) as Educator[];
+export const resources = publishedItems(yaml.load(resourcesRaw) as Resource[]).map((r) => ({ ...r, checked: asDate(r.checked) }));
+export const stages = publishedItems(yaml.load(stagesRaw) as Stage[]).map((s) => ({ ...s, updated: asDate(s.updated) }));
+export const topics = publishedItems(yaml.load(topicsRaw) as Topic[]).map((t) => ({ ...t, updated: asDate(t.updated) }));
+export const tools = publishedItems(yaml.load(toolsRaw) as Tool[]);
+export const tips = publishedItems(yaml.load(tipsRaw) as Tip[]);
+export const educators = publishedItems(yaml.load(educatorsRaw) as Educator[]);
 export const sources = yaml.load(sourcesRaw) as Record<string, Source>;
 export const getEducator = (id: string) => { const e = educators.find((x) => x.id === id); if (!e) throw new Error(`Unknown educator: ${id}`); return e; };
 

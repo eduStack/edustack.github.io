@@ -1,3 +1,4 @@
+# Publication: draft | in-review | published | needs-review. Only published items reach the site.
 # Every resource in the library.
 # Rules (enforced by scripts/validate-data.mjs):
 #   - url is required and must point to the original source
@@ -22,6 +23,7 @@
 #     Their stage tags are editorial selections; the audience text preserves the source's actual scope.
 
 - id: who-under5-activity-sleep-2019
+  publicationStatus: published
   type: guideline
   evidence: guideline
   title:
@@ -66,6 +68,7 @@
   checked: 2026-11-13
 
 - id: who-activity-2020
+  publicationStatus: published
   type: guideline
   evidence: guideline
   title:
@@ -90,6 +93,7 @@
   checked: 2026-11-13
 
 - id: who-complementary-feeding-2023
+  publicationStatus: published
   type: guideline
   evidence: guideline
   title:
@@ -110,6 +114,7 @@
   checked: 2026-11-13
 
 - id: nurturing-care-framework-2018
+  publicationStatus: published
   type: guideline
   evidence: guideline
   title:
@@ -132,6 +137,7 @@
   checked: 2026-11-13
 
 - id: cdc-milestones
+  publicationStatus: published
   type: guideline
   evidence: guideline
   title:
@@ -161,6 +167,7 @@
   checked: 2026-11-13
 
 - id: aap-family-media-plan
+  publicationStatus: published
   type: guideline
   evidence: guideline
   title:
@@ -186,6 +193,7 @@
   checked: 2026-11-13
 
 - id: aap-media-young-minds-2016
+  publicationStatus: published
   type: guideline
   evidence: guideline
   title:
@@ -208,6 +216,7 @@
   checked: 2026-11-13
 
 - id: aap-safe-sleep
+  publicationStatus: published
   type: guideline
   evidence: guideline
   title:
@@ -228,6 +237,7 @@
   checked: 2026-11-13
 
 - id: aasm-sleep-2016
+  publicationStatus: published
   type: guideline
   evidence: expert
   title:
@@ -249,6 +259,7 @@
   checked: 2026-11-13
 
 - id: madigan-2020-screen-language
+  publicationStatus: published
   type: research
   evidence: large
   design: meta-analysis
@@ -272,6 +283,7 @@
   checked: 2026-11-13
 
 - id: madigan-2019-screen-development
+  publicationStatus: published
   type: research
   evidence: large
   design: cohort
@@ -294,6 +306,7 @@
   checked: 2026-11-13
 
 - id: romeo-2018-conversational-turns
+  publicationStatus: published
   type: research
   evidence: small
   design: cross-sectional
@@ -311,14 +324,18 @@
   sex: all
   topics: [language]
   summary:
-    en: In a study of 4- to 6-year-olds, the number of back-and-forth conversational turns with adults predicted activity in language areas of the brain better than the number of words children heard.
-    zh: 对 4–6 岁儿童的研究发现，与大人来回对话的次数，比听到的词汇量更能预测大脑语言区的活动。
+    en: In a cross-sectional study of 4- to 6-year-olds, more back-and-forth conversational turns with adults were associated with greater activity in a language-related brain region, even after accounting for the number of words children heard. This does not show that increasing conversation causes that change.
+    zh: 一项对 4–6 岁儿童的横断面研究发现，与大人来回对话较多，与一个语言相关脑区更活跃有关；考虑听到的词汇量后，这种关联仍存在。这不能说明增加对话就会引起这种变化。
   whyAge:
-    en: The children studied were 4 to 6. We list it from age 3 because the advice it supports, talking with your child, applies from the preschool years.
-    zh: 研究对象为 4–6 岁儿童。我们从 3 岁开始推荐，因为它支持的做法（和孩子多来回对话）适用于整个学龄前阶段。
+    en: The children studied were aged 4–6. Our reading tags cover ages 3–6 to help families find the topic; they do not extend the research findings to every tagged age.
+    zh: 研究对象为 4–6 岁儿童。本站阅读标签覆盖 3–6 岁，方便家庭查找相关话题，不代表研究结论适用于标签内每个年龄。
+  limits:
+    en: This study reports an association, not an intervention effect. Our suggestion to try a few conversational turns is an editorial activity example; five turns is not a tested dose, target or ability standard.
+    zh: 研究报告的是关联，不是干预效果。本站建议尝试几轮对话，是编辑提供的活动示例；五个来回不是经过验证的次数、训练目标或能力标准。
   checked: 2026-11-13
 
 - id: kuhl-2003-foreign-language
+  publicationStatus: published
   type: research
   evidence: small
   design: experiment
@@ -341,6 +358,7 @@
   checked: 2026-11-13
 
 - id: gershoff-2016-spanking
+  publicationStatus: published
   type: research
   evidence: large
   design: meta-analysis
@@ -364,6 +382,7 @@
   checked: 2026-11-13
 
 - id: orben-2019-wellbeing-tech
+  publicationStatus: published
   type: research
   evidence: large
   design: large-dataset
@@ -386,6 +405,7 @@
   checked: 2026-11-13
 
 - id: us-surgeon-general-social-media-2023
+  publicationStatus: published
   type: guideline
   evidence: guideline
   title:
@@ -420,6 +440,7 @@
   checked: 2026-11-13
 
 - id: apa-social-media-advisory-2023
+  publicationStatus: published
   type: guideline
   evidence: guideline
   title:
@@ -452,6 +473,7 @@
   checked: 2026-11-13
 
 - id: who-adolescent-mental-health
+  publicationStatus: published
   type: guideline
   evidence: guideline
   title:
@@ -475,6 +497,7 @@
   checked: 2026-11-13
 
 - id: aap-puberty-girls
+  publicationStatus: published
   type: guideline
   evidence: guideline
   title:
@@ -498,6 +521,7 @@
   checked: 2026-11-13
 
 - id: aap-puberty-boys
+  publicationStatus: published
   type: guideline
   evidence: guideline
   title:
@@ -521,6 +545,7 @@
   checked: 2026-11-13
 
 - id: faber-mazlish-kids
+  publicationStatus: published
   type: book
   evidence: expert
   title:
@@ -532,8 +557,8 @@
   isbn: "9781451663884"
   publisher: "Scribner (2012 edition)"
   evidenceNote:
-    en: "Practical techniques from the authors' parenting workshops. Evidence level: expert opinion, not a research study."
-    zh: "方法来自作者多年的家长工作坊经验。证据等级：专家意见，不是研究结论。"
+    en: "Practical techniques from the authors' parenting workshops. Evidence type: expert opinion, not a research study."
+    zh: "方法来自作者多年的家长工作坊经验。依据类型：专家意见，不是研究结论。"
   language: English; Chinese and many other translations
   free: false
   minMonths: 36
@@ -547,6 +572,7 @@
   checked: 2026-11-13
 
 - id: faber-mazlish-teens
+  publicationStatus: published
   type: book
   evidence: expert
   title:
@@ -558,8 +584,8 @@
   isbn: "9780060741259"
   publisher: "William Morrow / HarperCollins (2005)"
   evidenceNote:
-    en: "Applies the same workshop-based techniques to teenagers. Evidence level: expert opinion."
-    zh: "把同一套工作坊方法用在青少年身上。证据等级：专家意见。"
+    en: "Applies the same workshop-based techniques to teenagers. Evidence type: expert opinion."
+    zh: "把同一套工作坊方法用在青少年身上。依据类型：专家意见。"
   language: English; Chinese and other translations
   free: false
   minMonths: 144
@@ -572,6 +598,7 @@
   checked: 2026-11-13
 
 - id: siegel-whole-brain-child
+  publicationStatus: published
   type: book
   evidence: expert
   title:
@@ -583,8 +610,8 @@
   isbn: "9780553386691"
   publisher: "Bantam / Random House (2012 paperback)"
   evidenceNote:
-    en: "Uses brain science to explain children's behaviour; the 12 strategies come from the authors' clinical experience rather than trials. Evidence level: expert opinion."
-    zh: "用脑科学解释孩子的行为；12 个方法来自作者的临床经验，并非经过试验检验。证据等级：专家意见。"
+    en: "Uses brain science to explain children's behaviour; the 12 strategies come from the authors' clinical experience rather than trials. Evidence type: expert opinion."
+    zh: "用脑科学解释孩子的行为；12 个方法来自作者的临床经验，并非经过试验检验。依据类型：专家意见。"
   language: English; Chinese and other translations
   free: false
   minMonths: 24
@@ -597,6 +624,7 @@
   checked: 2026-11-13
 
 - id: siegel-brainstorm
+  publicationStatus: published
   type: book
   evidence: expert
   title:
@@ -608,8 +636,8 @@
   isbn: "9780399168833"
   publisher: "TarcherPerigee / Penguin (2015 paperback)"
   evidenceNote:
-    en: "A psychiatrist's account of the teenage brain for parents and teens. Evidence level: expert opinion."
-    zh: "一位精神科医生写给家长和青少年的青春期大脑读本。证据等级：专家意见。"
+    en: "A psychiatrist's account of the teenage brain for parents and teens. Evidence type: expert opinion."
+    zh: "一位精神科医生写给家长和青少年的青春期大脑读本。依据类型：专家意见。"
   language: English; Chinese and other translations
   free: false
   minMonths: 144
@@ -622,6 +650,7 @@
   checked: 2026-11-13
 
 - id: dweck-mindset
+  publicationStatus: published
   type: book
   evidence: expert
   title:
@@ -649,6 +678,7 @@
   checked: 2026-11-13
 
 - id: aap-effective-discipline-2018
+  publicationStatus: published
   type: guideline
   evidence: guideline
   title:
@@ -672,6 +702,7 @@
   checked: 2026-11-13
 
 - id: sisk-2018-mindset-meta
+  publicationStatus: published
   type: research
   evidence: large
   design: meta-analysis
@@ -694,6 +725,7 @@
   checked: 2026-11-13
 
 - id: gopnik-scientist-in-the-crib
+  publicationStatus: published
   type: book
   evidence: expert
   title:
@@ -720,6 +752,7 @@
 
 # ---- Research behind the Educators pages ----
 - id: alfieri-2011-discovery
+  publicationStatus: published
   type: research
   evidence: large
   design: meta-analysis
@@ -742,6 +775,7 @@
   checked: 2026-11-13
 
 - id: kirschner-2006-guidance
+  publicationStatus: published
   type: research
   evidence: large
   design: review
@@ -764,6 +798,7 @@
   checked: 2026-11-13
 
 - id: skene-2022-guided-play
+  publicationStatus: published
   type: research
   evidence: large
   design: meta-analysis
@@ -786,6 +821,7 @@
   checked: 2026-11-13
 
 - id: wood-1976-scaffolding
+  publicationStatus: published
   type: research
   evidence: small
   design: observational
@@ -808,6 +844,7 @@
   checked: 2026-11-13
 
 - id: lillard-2017-montessori
+  publicationStatus: published
   type: research
   evidence: small
   design: cohort
@@ -830,6 +867,7 @@
   checked: 2026-11-13
 
 - id: randolph-2023-montessori
+  publicationStatus: published
   type: research
   evidence: large
   design: meta-analysis
@@ -852,6 +890,7 @@
   checked: 2026-11-13
 
 - id: baillargeon-1985-object
+  publicationStatus: published
   type: research
   evidence: small
   design: experiment
@@ -869,11 +908,15 @@
   sex: all
   topics: [development]
   summary:
-    en: Five-month-old babies looked longer when a screen appeared to pass through a hidden box, suggesting they knew the box still existed - months earlier than Piaget's account predicted.
-    zh: 5 个月大的婴儿在看到挡板似乎“穿过”了被挡住的盒子时，会看得更久，说明他们知道盒子仍然存在，比皮亚杰理论预测的早了好几个月。
+    en: Five-month-old babies looked longer when a screen appeared to pass through a hidden box. The researchers interpreted this as suggesting an expectation that the hidden object continued to exist, earlier than Piaget's account suggested.
+    zh: 5 个月大的婴儿在看到挡板似乎“穿过”了被挡住的盒子时，会看得更久。研究者据此推测，婴儿可能已对隐藏物体的持续存在形成预期，比皮亚杰的描述更早。
+  limits:
+    en: Looking time is an indirect measure. This finding alone does not establish a full understanding of object permanence or show that every infant of this age has the same ability.
+    zh: 注视时间是间接测量；单凭这一结果，不能确定婴儿已完整理解客体永久性，也不能判断同龄婴儿都有相同能力。
   checked: 2026-11-13
 
 - id: meeus-2011-identity
+  publicationStatus: published
   type: research
   evidence: large
   design: review
@@ -896,6 +939,7 @@
   checked: 2026-11-13
 
 - id: banerjee-2017-tarl
+  publicationStatus: published
   type: research
   evidence: large
   design: trial
@@ -919,6 +963,7 @@
 
 # First curated batch: practical resources, classic readings and research.
 - id: harvard-serve-and-return
+  publicationStatus: published
   type: guide
   evidence: expert
   title:
@@ -1004,6 +1049,7 @@
   checked: "2026-11-14"
   originalTitle: Serve and Return
 - id: harvard-executive-function-activities
+  publicationStatus: published
   type: guide
   evidence: expert
   title:
@@ -1024,9 +1070,10 @@
     - learning
   summary:
     en: >-
-      An age-grouped collection of games and activities for practising working memory, inhibitory control and
-      flexible thinking, with adults gradually adjusting their help.
-    zh: 按年龄分组的游戏与活动材料，围绕工作记忆、抑制控制和灵活思考，说明成人如何逐步调整帮助。
+      An age-grouped collection of games and activities for practising working memory (briefly holding and
+      using information), inhibitory control (pausing or resisting an impulse) and flexible thinking (changing
+      approach when rules or situations change), with adults gradually adjusting their help.
+    zh: 按年龄分组的游戏与活动材料，围绕工作记忆（短时间记住并使用信息）、抑制控制（行动前停一停、克制冲动）和灵活思考（规则或情况变化时调整做法），说明成人如何逐步调整帮助。
   purpose:
     en: >-
       How can we practise remembering, taking turns, planning and changing approach through enjoyable
@@ -1044,13 +1091,15 @@
     zh: 以相应年龄章节为起点，再按兴趣与能力调整；年龄分组不是能力评分标准。
   keyPoints:
     en:
-      - The introduction distinguishes working memory, inhibitory control and cognitive flexibility.
+      - Working memory means briefly holding and using information, such as remembering the rules of a game.
+      - Inhibitory control helps us pause or resist an impulse; cognitive flexibility helps us change approach when rules or situations change.
       - >-
         The guide includes hiding games for infants, rule-based games for older children, and planning and
         reflection for adolescents.
       - Adults support a challenge, then step back as the child is ready.
     zh:
-      - 导言区分工作记忆、抑制控制与认知灵活性。
+      - 工作记忆：短时间记住并使用信息，例如记住游戏规则。
+      - 抑制控制：行动前停一停、克制冲动；认知灵活性：规则或情况变化时调整做法。
       - 指南包括婴儿藏物游戏、较大儿童的规则游戏，以及青春期的计划与反思。
       - 成人先帮助孩子应对挑战，再在孩子准备好时逐步退后。
   actions:
@@ -1097,6 +1146,7 @@
   checked: "2026-11-14"
   originalTitle: Enhancing and Practicing Executive Function Skills with Children from Infancy to Adolescence
 - id: who-early-childhood-development-2020
+  publicationStatus: published
   type: guideline
   evidence: guideline
   title:
@@ -1175,6 +1225,7 @@
   checked: "2026-11-14"
   originalTitle: "Improving early childhood development: WHO guideline"
 - id: who-parenting-interventions-2023
+  publicationStatus: published
   type: guideline
   evidence: guideline
   title:
@@ -1195,9 +1246,10 @@
     - mental-health
   summary:
     en: >-
-      Guidance on structured parenting interventions to reduce maltreatment and harsh parenting, strengthen
-      parent–child relationships, and prevent emotional and behavioural problems.
-    zh: 针对有结构的养育干预，关注减少虐待与严厉养育、改善亲子关系，以及预防情绪和行为问题。
+      Guidance on structured parenting interventions: parent-support programmes with defined content and
+      delivery, aimed at reducing maltreatment and harsh parenting, strengthening parent–child relationships,
+      and preventing emotional and behavioural problems.
+    zh: 针对有结构的养育干预——有明确内容与实施方式的家长支持项目，关注减少虐待与严厉养育、改善亲子关系，以及预防情绪和行为问题。
   purpose:
     en: What distinguishes evidence-based parenting support from a collection of discipline tips?
     zh: 有证据支持的养育服务，与零散的管教技巧有什么区别？
@@ -1249,6 +1301,7 @@
     WHO guidelines on parenting interventions to prevent maltreatment and enhance parent–child relationships
     with children aged 0–17 years
 - id: parenting-for-lifelong-health
+  publicationStatus: published
   type: guide
   evidence: expert
   title:
@@ -1352,6 +1405,7 @@
   checked: "2026-11-14"
   originalTitle: Parenting for Lifelong Health
 - id: vroom-everyday-moments
+  publicationStatus: published
   type: guide
   evidence: expert
   title:
@@ -1439,6 +1493,7 @@
   checked: "2026-11-14"
   originalTitle: Vroom
 - id: whitehead-aims-of-education
+  publicationStatus: published
   type: classic
   evidence: expert
   title:
@@ -1518,6 +1573,7 @@
   checked: "2026-11-14"
   originalTitle: The Aims of Education and Other Essays
 - id: montaigne-education-of-children
+  publicationStatus: published
   type: classic
   evidence: expert
   title:
@@ -1591,6 +1647,7 @@
   checked: "2026-11-14"
   originalTitle: "Essays: Of the Education of Children (Cotton/Hazlitt edition, Chapter XXV)"
 - id: locke-thoughts-concerning-education
+  publicationStatus: published
   type: classic
   evidence: expert
   title:
@@ -1669,6 +1726,7 @@
   checked: "2026-11-14"
   originalTitle: Some Thoughts Concerning Education
 - id: jeong-2021-parenting-interventions
+  publicationStatus: published
   type: research
   evidence: large
   title:
@@ -1753,6 +1811,7 @@
     systematic review and meta-analysis
   publisher: PLOS Medicine, 18(5), e1003602
 - id: pandey-2018-self-regulation
+  publicationStatus: published
   type: research
   evidence: large
   title:
@@ -1774,8 +1833,10 @@
   summary:
     en: >-
       A review of 49 studies covering 50 interventions and 23,098 participants aged 2–17 found that several
-      approaches can support self-regulation. Programmes and outcome measures differed substantially.
-    zh: 一项综述涵盖 49 项研究、50 项干预和 23,098 名 2–17 岁参与者，发现多种方法可以支持自我调节，但项目和测量方式差异明显。
+      approaches can support self-regulation: adjusting attention, emotions or behaviour to suit a situation
+      or goal. Studies measured different aspects of this, and programmes and outcome measures differed
+      substantially.
+    zh: 一项综述涵盖 49 项研究、50 项干预和 23,098 名 2–17 岁参与者，发现多种方法可以支持自我调节——根据情境或目标调整注意、情绪或行为。各研究测量的具体方面不同，项目和测量方式也差异明显。
   design: meta-analysis
   doi: 10.1001/jamapediatrics.2018.0232
   purpose:
@@ -1841,6 +1902,7 @@
     Review and Meta-analysis
   publisher: JAMA Pediatrics, 172(6), 566–575
 - id: bakermans-2003-sensitivity-attachment
+  publicationStatus: published
   type: research
   evidence: large
   title:
@@ -1860,10 +1922,12 @@
     - communication
   summary:
     en: >-
-      A classic meta-analysis found that preventive interventions could improve caregiver sensitivity and
-      infant attachment security. It supports studying concrete care behaviours, not labelling a family from a
+      A classic meta-analysis found that preventive interventions could improve caregiver sensitivity:
+      noticing, interpreting and appropriately responding to a child's signals. Infant attachment security
+      could also improve: how confidently an infant seeks comfort and support from a familiar caregiver when
+      distressed, and uses that caregiver as a base for exploration. These are not labels to assign from a
       short online test.
-    zh: 这项经典荟萃分析发现，预防性干预可以改善照护敏感性与婴儿依恋安全性。它关注具体照护行为，不支持通过简短网页测试给家庭贴标签。
+    zh: 这项经典荟萃分析发现，预防性干预可以改善照护敏感性——留意、理解孩子的信号，并作出适当回应；也可以改善婴儿依恋安全性——婴儿不安时能否信赖熟悉的照顾者、寻求安慰与支持，并以其为探索的依靠。这些不是通过简短网页测试就能判定的标签。
   design: meta-analysis
   doi: 10.1037/0033-2909.129.2.195
   purpose:
@@ -1882,13 +1946,13 @@
   keyPoints:
     en:
       - The review traced 70 studies producing 88 intervention effects.
-      - Randomised interventions showed improvements in sensitivity and attachment security.
+      - Randomised interventions showed improvements in sensitivity and attachment security; sensitivity here describes care behaviours, not an adult's personality.
       - >-
         The abstract discusses behaviour-focused interventions; it does not establish a universal session
         count for families.
     zh:
       - 综述追踪 70 项研究，得到 88 个干预效应。
-      - 随机干预显示照护敏感性与依恋安全性改善。
+      - 随机干预显示照护敏感性与依恋安全性改善；这里的“敏感性”指照护行为，不是说成人性格敏感。
       - 摘要讨论以行为为重点的干预，不构成对所有家庭通用课时的规定。
   actions:
     en:

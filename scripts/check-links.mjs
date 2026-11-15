@@ -3,7 +3,11 @@
 // Some sites block automated requests (403); those are reported as warnings to check by hand.
 import { readFileSync } from 'node:fs';
 import yaml from 'js-yaml';
-const load = (f) => yaml.load(readFileSync(new URL(`../src/data/${f}`, import.meta.url), 'utf8'));
+import { publishedItems } from '../src/lib/publication.mjs';
+const load = (f) => {
+  const data = yaml.load(readFileSync(new URL(`../src/data/${f}`, import.meta.url), 'utf8'));
+  return Array.isArray(data) ? publishedItems(data) : data;
+};
 const urls = [
   ...load('resources.yaml').flatMap((r) => [[r.id, r.url], ...(r.sourceLinks ?? []).map((s) => [`${r.id} source`, s.url])]),
   ...load('tools.yaml').flatMap((t) => [[t.id, t.url], [`${t.id} privacy`, t.privacy], [`${t.id} backing`, t.backingUrl]]),

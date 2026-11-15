@@ -31,13 +31,13 @@ const planned = zh ? [
           ['无广告', '上次检查时，网站和应用里没有发现广告。'],
           ['孩子的数据', '有公开的隐私政策或家长说明页。我们链接原文，方便你自己判断，但不替它担保。'],
           ['有研究或机构背景', '由大学或非营利机构开发，或公开发布研究和效果评估。'],
-          ['每月检查', '所有链接每月自动检查一次，失效或不再符合标准的会被移除。'],
+          ['持续维护', '我们定期检查链接。自动检查无法确认内容、费用或隐私政策是否变化，仍需人工复核。'],
         ] : [
           ['Free', 'Core content is free to use, with no subscription.'],
           ['No ads', 'No advertising found on the site or app when we last checked.'],
           ["Children's data", 'A public privacy policy or parents\' page. We link it so you can judge for yourself; we do not vouch for it.'],
           ['Research or institutional backing', 'Built by a university or non-profit, or publishes research and evaluations.'],
-          ['Checked monthly', 'Every link is checked automatically each month. Tools that break or stop meeting these criteria are removed.'],
+          ['Ongoing maintenance', 'We check links periodically. Automated checks cannot confirm changes to content, costs or privacy policies; these need editorial review.'],
         ]).map(([h, b]) => <li style="margin-bottom:4px"><b>{h}{zh ? '：' : ': '}</b>{b}</li>)}
       </ol>
     </div>
@@ -55,7 +55,7 @@ const planned = zh ? [
     </div>
   </section>
   <section class="card" style="padding:28px;gap:18px">
-    <div class="split"><div class="stack" style="gap:6px"><h2 class="h-serif" style="font-size:var(--type-section)">{zh ? 'eduStack 小工具' : 'eduStack tools'}</h2><span class="muted" style="max-width:44em">{zh ? '我们自己开发的网页小工具，在你的浏览器里运行，不上传任何数据。每个工具都注明所依据的公开标准。' : 'Small tools we build ourselves. They run in your browser and send nothing anywhere. Each one names the public standard it is based on.'}</span></div><span class="chip">{zh ? '规划中' : 'Planned'}</span></div>
+    <div class="split"><div class="stack" style="gap:6px"><h2 class="h-serif" style="font-size:var(--type-section)">{zh ? 'eduStack 小工具' : 'eduStack tools'}</h2><span class="muted" style="max-width:44em">{zh ? '以下是还未开发的候选方向，不是可使用的工具。我们会逐步选择具体任务，开发在浏览器里运行的小工具，并说明依据与数据保存方式。' : 'These are possible directions, not tools you can use yet. We will select specific tasks and build browser-based tools, with clear sources and data storage information.'}</span></div><span class="chip">{zh ? '规划中' : 'Planned'}</span></div>
     <div class="grid">{planned.map(([h, b, src]) => <div class="card soft" style="gap:8px"><span class="card-title" style="font-weight:600;font-size:var(--type-body)">{h}</span><span style="color:var(--ink-2);font-size:var(--type-ui)">{b}</span><span class="src">{src}</span></div>)}</div>
   </section>
 </main>

@@ -9,6 +9,7 @@
 }
 .opening h1 { font-size: var(--type-section); }
 .opening p { margin-block-start: 0.75rem; color: var(--text); }
+.age-note { margin-block: -0.5rem 1.5rem; color: var(--text); font-size: var(--type-ui); }
 .lead-grid {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(18rem, 1fr);

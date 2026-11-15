@@ -5,11 +5,12 @@ import type { Lang } from '../lib/data';
 import { defaultLanguage, languages } from '../i18n/languages';
 import SiteHeader from '../components/SiteHeader.astro';
 import FontPreloads from '../components/FontPreloads.astro';
+import { editorialCopy } from '../i18n/editorial';
 
 interface Props { lang: Lang; title: string; description?: string; active?: string }
 const { lang, title, description, active } = Astro.props;
 const s = t(lang);
-const desc = description ?? (lang === 'zh' ? '有出处的家庭教育资源：每个年龄的孩子在发展什么、可以一起做什么、健康安全要点，覆盖 0–18 岁。' : 'Parenting with sources: what your child is developing at each age, what you can do together, and health and safety essentials, for ages 0–18.');
+const desc = description ?? editorialCopy[lang].description;
 ---
 <!doctype html>
 <html lang={languages[lang].tag}>

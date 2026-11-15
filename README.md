@@ -1,17 +1,27 @@
 # eduStack
 
-Parenting resources with sources, for children aged 0 to 18. English and Simplified Chinese.
+Source-based parenting resources and tools, centred on psychological development
+from birth up to the 18th birthday. English and Simplified Chinese.
 
 The official brand spelling is **eduStack**. Historical reference pages retain
 their original branding as part of the fixed snapshot.
 
-eduStack writes no original advice. It links to three kinds of resources, each chosen by the editors:
+eduStack provides short editorial introductions and links to selected resources:
 
 - **Classic books** on raising and educating children
 - **Guidelines** from authoritative bodies (WHO, UNICEF, national health departments, paediatric associations)
 - **Research** in peer-reviewed journals
+- **Practical resources and classic readings**, with scope, uses and limitations
+- **Learning websites and tools**, with external tools available now and possible browser tools clearly marked as planned
 
-Every resource has an evidence label (official guideline, large study or review, small study, expert opinion), an age range in months, a link to the original and the date it was last checked. There are no ads, no accounts and no tracking; a child's age is kept only in the parent's browser. The site does not accept resource submissions; please open an issue to report a broken link or an error.
+Library resources identify their source, age range, evidence label and source-check
+date. Introductions preserve source limits and distinguish ideas, guidelines and
+research. There are no ads or accounts; child profiles stay in the parent's
+browser. The ordinary homepage offers public editorial selections and does not
+yet personalise itself from a saved profile.
+
+Page responsibilities, shared design rules, age boundaries, content fields and
+publication states are specified in [Website Foundations](docs/site-foundations.md).
 
 ## Run locally
 
@@ -25,6 +35,7 @@ npm run check        # Astro/TypeScript diagnostics and data validation
 npm run build        # static site in dist/
 npm run preview      # serve the production build locally
 npm run check:data   # validate the data files
+npm run test:content # publication filtering and validation regression checks
 npm run check:links  # check every link still answers
 ```
 
@@ -71,6 +82,8 @@ publishes only `dist/`, not the repository's source or maintenance documents.
 | `src/data/topics.yaml` | Topic pages: bottom line plus positions side by side. |
 | `src/data/tips.yaml` | "One thing to try today", each tied to a resource. |
 | `src/data/tools.yaml` | Free learning tools, kept separate from the library. |
+| `src/lib/publication.mjs` | Only explicitly published content reaches routes, lists and browser data. |
+| `src/lib/taxonomy.mjs` | Primary age boundaries, development areas and bilingual resource topic labels. |
 | `src/i18n/ui.ts` | Interface text in both languages. |
 | `src/views/` | Page templates; `src/pages/` and `src/pages/zh/` are thin wrappers. |
 
