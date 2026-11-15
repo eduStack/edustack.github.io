@@ -32,7 +32,10 @@ them, and preserve accurate source names and citations.
 
 The main menu order is Home, By age, Tools, Educators, Topics, Library, My child.
 The homepage alone adds Search at the right edge. Reserve the same search
-column on interior pages so the other links do not move between pages.
+space on interior pages so the other links do not move between pages. Use equal
+left and right columns to centre the main menu independently of Search. On
+small screens, centre wrapped menu rows across the full width and place Search
+in a separate row at the right; reserve that row on interior pages too.
 Educators stays a first-level entry. Navigation translations use `ui.ts`.
 
 ## Public And Specialist Language
