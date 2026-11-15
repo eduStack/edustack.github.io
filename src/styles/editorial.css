@@ -259,7 +259,7 @@
 
 @media (forced-colors: active) {
   a:focus-visible, button:focus-visible, input:focus-visible { outline-color: Highlight; }
-  .main-nav > a.active { color: LinkText; }
+  .main-nav-links > a.active { color: LinkText; }
   .today-note { border: 1px solid CanvasText; }
 }
 
