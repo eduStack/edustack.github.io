@@ -6,9 +6,12 @@ import { defaultLanguage, languages } from '../i18n/languages';
 import SiteHeader from '../components/SiteHeader.astro';
 import FontPreloads from '../components/FontPreloads.astro';
 import { editorialCopy } from '../i18n/editorial';
+import PwaHead from '../components/PwaHead.astro';
+import PwaStatus from '../components/PwaStatus.astro';
+import PwaUpdates from '../components/PwaUpdates.astro';
 
-interface Props { lang: Lang; title: string; description?: string; active?: string }
-const { lang, title, description, active } = Astro.props;
+interface Props { lang: Lang; title: string; description?: string; active?: string; noindex?: boolean }
+const { lang, title, description, active, noindex = false } = Astro.props;
 const s = t(lang);
 const desc = description ?? editorialCopy[lang].description;
 ---
@@ -19,8 +22,10 @@ const desc = description ?? editorialCopy[lang].description;
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#faf7f0" />
   <FontPreloads lang={lang} />
+  <PwaHead lang={lang} />
   <title>{title} · {s.siteName}</title>
   <meta name="description" content={desc} />
+  {noindex && <meta name="robots" content="noindex" />}
   <link rel="canonical" href={new URL(switchLang(Astro.url.pathname, lang), Astro.site || Astro.url.origin)} />
   {(Object.keys(languages) as Lang[]).map((code) => <link rel="alternate" hreflang={languages[code].tag} href={new URL(switchLang(Astro.url.pathname, code), Astro.site || Astro.url.origin)} />)}
   <link rel="alternate" hreflang="x-default" href={new URL(switchLang(Astro.url.pathname, defaultLanguage), Astro.site || Astro.url.origin)} />
@@ -28,7 +33,9 @@ const desc = description ?? editorialCopy[lang].description;
 </head>
 <body data-lang={lang}>
   <SiteHeader lang={lang} active={active} mainId={active === 'me' ? 'me' : 'main'} />
+  <PwaStatus lang={lang} />
   <slot />
+  <PwaUpdates lang={lang} />
   <footer class="site-footer interior-footer">
     <div class="wrap footer-inner">
       <div class="footer-description"><a class="footer-brand" href={href(lang)}>{s.siteName}<span>{s.tagline}</span></a><strong>{s.footerTitle}</strong><p>{s.footerBody}</p></div>

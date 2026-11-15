@@ -6,4 +6,4 @@ interface Props { src: string; lang: Lang }
 const { src, lang } = Astro.props;
 const c = cite(src, lang);
 ---
-<a class="cite" href={c.internal ? href(lang, `resources/${c.url}`) : c.url} rel={c.internal ? undefined : 'noopener'}>{c.text}{!c.internal && ' ↗'}</a>
+<a class="cite" href={c.internal ? href(lang, `resources/${c.url}`) : c.url} target={c.internal ? undefined : '_blank'} rel={c.internal ? undefined : 'noopener noreferrer'} aria-describedby={c.internal ? undefined : 'pwa-external-note'}>{c.text}{!c.internal && ' ↗'}</a>

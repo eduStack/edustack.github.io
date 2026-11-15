@@ -257,3 +257,12 @@ research or private profiles into the website deployment.
 Phase-one completion establishes the framework and rules. It does not require
 every topic, tool or resource to be written. Dedicated stage homepages,
 profile-driven homepages and new tools retain their later-phase scope.
+
+## Lightweight PWA
+
+Installation, limited offline reading and release updates use the static build
+and a service worker; they do not add accounts or a backend. See [PWA](pwa.md)
+for cache limits, upgrade behaviour and verification. Application version and
+update controls appear only in an installed standalone window. The homepage
+offers installation with manual help. External resources open another tab or
+browser context; internal navigation stays in the current window.

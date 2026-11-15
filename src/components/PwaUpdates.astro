@@ -1,0 +1,13 @@
+---
+import type { Lang } from '../i18n/languages';
+import { pwaCopy } from '../i18n/pwa';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const s = pwaCopy[lang];
+---
+<div class="pwa-updates wrap" hidden data-pwa-updates>
+  <span data-pwa-version></span>
+  <button type="button" class="pwa-text-button" data-pwa-check>{s.check}</button>
+  <p role="status" data-pwa-check-result></p>
+  <div class="pwa-notice" data-pwa-update hidden><p role="status">{s.updateReady}</p><div class="pwa-actions"><button type="button" class="pwa-button" data-pwa-apply>{s.update}</button><button type="button" class="pwa-text-button" data-pwa-later>{s.later}</button></div></div>
+</div>

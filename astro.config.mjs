@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import { loadEnv } from 'vite';
+import { pwaIntegration } from './scripts/pwa-build.mjs';
 
 const env = { ...loadEnv(process.env.NODE_ENV || 'development', process.cwd(), ''), ...process.env };
 
@@ -11,4 +12,5 @@ export default defineConfig({
   base: env.BASE_PATH || '/',
   trailingSlash: 'always',
   build: { format: 'directory' },
+  integrations: [pwaIntegration()],
 });

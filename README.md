@@ -36,6 +36,7 @@ npm run build        # static site in dist/
 npm run preview      # serve the production build locally
 npm run check:data   # validate the data files
 npm run test:content # publication filtering and validation regression checks
+npm run test:pwa     # PWA versioning, cache boundaries and fallback checks
 npm run check:links  # check every link still answers
 ```
 

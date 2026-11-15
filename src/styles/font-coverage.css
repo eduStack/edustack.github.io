@@ -47,3 +47,19 @@
   font-display: block;
   unicode-range: U+4E25, U+4EA7, U+4ED3, U+4EF7, U+4F73, U+501F, U+50A8, U+51D1, U+51ED, U+523B, U+5374, U+5389, U+53E3, U+5458, U+5883, U+589E, U+592A, U+5BC6, U+5BFB, U+5C01, U+5C06, U+5C40, U+5C42, U+5C5E, U+5DE7, U+60EF, U+60F0, U+6170, U+6279, U+62FC, U+6389, U+63CF, U+64B0, U+6B3E, U+6CBB, U+6D1B, U+6D6A, U+6D77, U+6D89, U+6EE1, U+6F0F, U+6F2B, U+732E, U+73AF, U+7530, U+7597, U+75C7, U+773C, U+788C, U+7AE0, U+7C4D, U+7ED5, U+7EE7, U+805A, U+82E5, U+835F, U+83B7, U+8403, U+867D, U+878D, U+8BAD, U+8BBF, U+8BCA, U+8D56, U+8DC3, U+8DE8, U+8DF5, U+8FC1, U+9012, U+9014, U+901F, U+9080, U+96F6;
 }
+
+@font-face {
+  font-family: ReadingSans;
+  src: url('/editorial/reading-sans-extended-4.woff2') format('woff2');
+  font-weight: 400;
+  font-display: block;
+  unicode-range: U+4E91, U+5740, U+6062, U+6682, U+680F, U+7AEF, U+83DC, U+8FD4, U+95ED;
+}
+
+@font-face {
+  font-family: EditorialSerif;
+  src: url('/editorial/editorial-serif-extended-4.woff2') format('woff2');
+  font-weight: 600;
+  font-display: block;
+  unicode-range: U+4E91, U+5740, U+6062, U+6682, U+680F, U+7AEF, U+83DC, U+8FD4, U+95ED;
+}

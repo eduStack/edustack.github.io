@@ -10,10 +10,11 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check && npm run check:data && npm run test:content",
+    "check": "astro check && npm run check:data && npm run test:content && npm run test:pwa",
     "check:data": "node scripts/validate-data.mjs",
     "check:links": "node scripts/check-links.mjs",
-    "test:content": "node --test scripts/content-publication.test.mjs"
+    "test:content": "node --test scripts/content-publication.test.mjs",
+    "test:pwa": "node --test scripts/pwa-build.test.mjs"
   },
   "dependencies": {
     "astro": "5.18.2",

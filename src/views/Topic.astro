@@ -37,7 +37,7 @@ const others = topics.filter((x) => x.id !== topic.id);
         <div class="card tablebox" style="padding:0">
           <table class="cmp">
             <thead><tr><th scope="col" style="width:140px" class="muted">{zh ? '方面' : 'Question'}</th>
-              {topic.sources!.map((src) => <th scope="col"><a href={src.resource ? href(lang, `resources/${src.resource}`) : src.url}>{src.name[lang]}</a><div class="muted" style="font-weight:400;font-size:var(--type-note)">{src.note[lang]}</div></th>)}
+              {topic.sources!.map((src) => <th scope="col"><a href={src.resource ? href(lang, `resources/${src.resource}`) : src.url} target={src.resource ? undefined : '_blank'} rel={src.resource ? undefined : 'noopener noreferrer'} aria-describedby={src.resource ? undefined : 'pwa-external-note'}>{src.name[lang]}</a><div class="muted" style="font-weight:400;font-size:var(--type-note)">{src.note[lang]}</div></th>)}
               <th scope="col" style="width:150px" class="muted">{zh ? '比较' : 'Verdict'}</th></tr></thead>
             <tbody>
               {topic.rows!.map((row) => (

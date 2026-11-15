@@ -38,7 +38,7 @@ const list = (items: Claim[]) => items;
   </div>
   <section class="card" style="padding:22px;gap:10px">
     <h2 style="margin:0;font-size:var(--type-section)">{zh ? '免费阅读原著' : 'Read the originals free'}</h2>
-    {e.texts.length ? <ul class="stack" style="list-style:none;padding:0;margin:0;gap:6px">{e.texts.map((x) => <li><a href={x.url} rel="noopener">{x.label[lang]} ↗</a></li>)}</ul>
+    {e.texts.length ? <ul class="stack" style="list-style:none;padding:0;margin:0;gap:6px">{e.texts.map((x) => <li><a href={x.url} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{x.label[lang]} ↗</a></li>)}</ul>
       : <p class="muted" style="margin:0">{zh ? '原著仍受版权保护，或我们没有找到合法的免费全文，因此不提供链接。' : 'The original works are still under copyright, or we found no legal free copy, so we do not link one.'}</p>}
     <span class="muted" style="font-size:var(--type-note)">{zh ? '只链接公有领域或官方免费公开的版本，例如古登堡计划、互联网档案馆、维基文库。' : 'We link only public-domain or officially free copies, such as Project Gutenberg, the Internet Archive and Wikisource.'}</span>
   </section>

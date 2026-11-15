@@ -39,7 +39,7 @@ let n = 0;
           <span><span class="muted">{s.reviewedBy}</span> {s.editors}</span>
           <span><span class="muted">{s.checked}</span> {fmtDate(r.checked, lang)}</span>
         </div>
-        <div class="row" style="padding-top:4px;gap:10px"><a class="btn btn-primary" href={r.url} rel="noopener">{H.open} · {host} ↗</a>{r.isbn && <a class="btn btn-ghost" href={worldcat(r.isbn)} rel="noopener">{zh ? '附近图书馆（WorldCat）' : 'Find in a library (WorldCat)'} ↗</a>}</div>
+        <div class="row" style="padding-top:4px;gap:10px"><a class="btn btn-primary" href={r.url} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{H.open} · {host} ↗</a>{r.isbn && <a class="btn btn-ghost" href={worldcat(r.isbn)} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{zh ? '附近图书馆（WorldCat）' : 'Find in a library (WorldCat)'} ↗</a>}</div>
         {r.design && <p style="margin:0;font-size:var(--type-ui);color:var(--ink-2)"><b>{s.design[r.design]}{zh ? '：' : ': '}</b>{s.designNote[r.design]}</p>}
         <p class="muted" style="margin:0;font-size:var(--type-ui)">{s.evidenceHelp}</p>
         {r.evidenceNote && <p style="margin:0;font-size:var(--type-ui);color:var(--ink-2)"><b>{zh ? '证据说明：' : 'Evidence: '}</b>{r.evidenceNote[lang]}</p>}
@@ -50,9 +50,9 @@ let n = 0;
       {r.limits && <section class="card soft" style="padding:24px"><h2 style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:10px">{++n}</span>{zh ? '使用限制与需要留意的地方' : 'Limits and things to keep in mind'}</h2><p class="prose">{r.limits[lang]}</p></section>}
       <section class="card" style="padding:24px"><h2 style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:10px">{++n}</span>{H.src}</h2>
         <div class="stack" style="gap:6px;font-size:var(--type-ui);color:var(--ink-2)">
-          <a href={r.url} style="word-break:break-all" rel="noopener">{r.url}</a>
+          <a href={r.url} style="word-break:break-all" target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{r.url}</a>
           <span>{r.by}. {r.originalTitle ?? r.title.en}. {r.year ?? ''}{r.publisher && `. ${r.publisher}`}{r.doi && `. doi:${r.doi}`}{r.isbn && `. ISBN ${r.isbn}`}</span>
-          {(r.sourceLinks ?? []).map((source) => <a href={source.url} rel="noopener">{source.label[lang]} ↗</a>)}
+          {(r.sourceLinks ?? []).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{source.label[lang]} ↗</a>)}
           <span>{s.checked} · {fmtDate(r.checked, lang)}</span>
           {r.checkedNote && <p style="margin:0;line-height:var(--leading-body)">{r.checkedNote[lang]}</p>}
           {r.access && <p style="margin:0;line-height:var(--leading-body)"><b>{zh ? '获取与使用：' : 'Access and use: '}</b>{r.access[lang]}</p>}

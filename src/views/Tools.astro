@@ -48,8 +48,8 @@ const planned = zh ? [
           <span class="chip t-tool" style="align-self:flex-start">{subjects[x.subject][zh ? 1 : 0]}</span>
           <p style="margin:0;font-size:var(--type-ui);color:var(--ink-2);flex:1">{x.what[lang]}</p>
           <div class="src"><span>{x.by}</span><span aria-hidden="true">·</span><span>{x.languages[lang]}</span></div>
-          <span class="muted" style="font-size:var(--type-note)">{x.backing[lang]} · <a href={x.backingUrl} rel="noopener">{zh ? '查看' : 'See'} ↗</a> · <a href={x.privacy} rel="noopener">{zh ? '隐私政策' : 'Privacy'} ↗</a></span>
-          <a href={x.url} rel="noopener">{zh ? '打开' : 'Open'} {new URL(x.url).hostname.replace(/^www\./, '')} ↗</a>
+          <span class="muted" style="font-size:var(--type-note)">{x.backing[lang]} · <a href={x.backingUrl} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{zh ? '查看' : 'See'} ↗</a> · <a href={x.privacy} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{zh ? '隐私政策' : 'Privacy'} ↗</a></span>
+          <a href={x.url} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{zh ? '打开' : 'Open'} {new URL(x.url).hostname.replace(/^www\./, '')} ↗</a>
         </article>
       ))}
     </div>

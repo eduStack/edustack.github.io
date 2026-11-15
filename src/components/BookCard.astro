@@ -12,7 +12,7 @@ const zh = lang === 'zh';
   {r.evidenceNote && <p style="margin:0;font-size:var(--type-ui);line-height:var(--leading-body);color:var(--ink-2)"><b>{zh ? '证据说明：' : 'Evidence: '}</b>{r.evidenceNote[lang]}</p>}
   <div class="row" style="gap:6px 14px;font-size:var(--type-note)">
     {r.publisher && <span class="muted">{zh ? '出版：' : 'Publisher: '}{r.publisher}</span>}
-    <a href={r.url} rel="noopener">{zh ? '出版信息' : 'Book details'} ↗</a>
-    {r.isbn && <a href={worldcat(r.isbn)} rel="noopener">{zh ? '附近图书馆（WorldCat）' : 'Find in a library (WorldCat)'} ↗</a>}
+    <a href={r.url} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{zh ? '出版信息' : 'Book details'} ↗</a>
+    {r.isbn && <a href={worldcat(r.isbn)} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{zh ? '附近图书馆（WorldCat）' : 'Find in a library (WorldCat)'} ↗</a>}
   </div>
 </article>

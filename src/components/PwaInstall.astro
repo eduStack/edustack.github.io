@@ -1,0 +1,13 @@
+---
+import type { Lang } from '../i18n/languages';
+import { pwaCopy } from '../i18n/pwa';
+import '../styles/pwa.css';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const s = pwaCopy[lang];
+---
+<section class="pwa-install" aria-labelledby="pwa-install-title" data-pwa-install-section>
+  <div><h2 id="pwa-install-title">{s.title}</h2><p>{s.intro}</p></div>
+  <button type="button" class="pwa-button" data-pwa-install aria-haspopup="dialog" hidden>{s.install}</button>
+  <noscript><p>{s.browser}</p></noscript>
+</section>

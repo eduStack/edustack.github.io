@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import { pwaCopy } from '../i18n/pwa';
+import { href } from '../i18n/ui';
+import type { Lang } from '../i18n/languages';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const s = pwaCopy[lang];
+---
+<Base lang={lang} title={s.offlineTitle} description={s.offlineBody} noindex>
+  <main id="main" tabindex="-1" class="wrap pwa-offline">
+    <h1 class="h-serif">{s.offlineTitle}</h1><p>{s.offlineBody}</p>
+    <a class="btn btn-primary" href={href(lang)}>{s.home}</a>
+  </main>
+</Base>

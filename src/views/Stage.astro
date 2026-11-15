@@ -82,7 +82,7 @@ const early = stage.maxMonths <= 71;
         <div class="split"><h3 style="margin:0;font-size:var(--type-body)">{zh ? '适合这个年龄的免费工具' : 'Free tools for this age'}</h3><a href={href(lang, 'tools#criteria')}>{zh ? '我们怎么挑选工具' : 'How we choose tools'}</a></div>
         <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr))">
           {ageTools.map((x) => (
-            <a class="card soft" href={x.url} rel="noopener" style="gap:4px;padding:14px 16px;text-decoration:none;color:var(--ink)">
+            <a class="card soft" href={x.url} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note" style="gap:4px;padding:14px 16px;text-decoration:none;color:var(--ink)">
               <span style="font-weight:600">{x.name} ↗</span>
               <span style="font-size:var(--type-note);color:var(--ink-2)">{x.what[lang]}</span>
               <span class="muted" style="font-size:var(--type-note)">{zh ? `${x.minAge}–${x.maxAge} 岁` : `Ages ${x.minAge}–${x.maxAge}`} · {x.by}</span>
@@ -100,7 +100,7 @@ const early = stage.maxMonths <= 71;
     </div>
     <ul class="stack" style="list-style:none;padding:0;margin:0;gap:6px;font-size:var(--type-ui)">
       {links.map((r) => <li><a href={href(lang, `resources/${r.id}`)}>{r.title[lang]}</a> <span class="muted" style="font-size:var(--type-note)">· {r.by.split(',')[0]}</span></li>)}
-      {stage.health.extra.map((k) => <li><a href={sources[k].url} rel="noopener">{sources[k].label[lang]} ↗</a> <span class="muted" style="font-size:var(--type-note)">· {sources[k].by}</span></li>)}
+      {stage.health.extra.map((k) => <li><a href={sources[k].url} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{sources[k].label[lang]} ↗</a> <span class="muted" style="font-size:var(--type-note)">· {sources[k].by}</span></li>)}
     </ul>
   </section>
 

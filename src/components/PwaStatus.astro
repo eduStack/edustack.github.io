@@ -1,0 +1,22 @@
+---
+import type { Lang } from '../i18n/languages';
+import { pwaCopy } from '../i18n/pwa';
+import '../styles/pwa.css';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const s = pwaCopy[lang];
+---
+<div class="pwa-notices wrap" data-pwa-root data-lang={lang}>
+  <div class="pwa-notice" data-pwa-connection hidden><p role="status" data-pwa-connection-text></p><button type="button" class="pwa-text-button" data-pwa-reload hidden>{s.reload}</button></div>
+</div>
+<dialog class="pwa-dialog" data-pwa-help aria-labelledby="pwa-help-title" aria-describedby="pwa-help-limits">
+  <h2 id="pwa-help-title">{s.helpTitle}</h2>
+  <p data-pwa-ios hidden>{s.ios}</p><p data-pwa-browser>{s.browser}</p>
+  <p id="pwa-help-limits">{s.limits}</p>
+  <form method="dialog"><button class="pwa-button">{s.close}</button></form>
+</dialog>
+<span id="pwa-external-note" class="pwa-sr-only">{s.external}</span>
+<script>
+  import { initPwa } from '../lib/pwa-client';
+  initPwa();
+</script>
