@@ -8,6 +8,10 @@ const zh = lang === 'zh';
 const externalTools = tools.filter((tool) => tool.kind !== 'internal');
 const internalTools = tools.filter((tool) => tool.kind === 'internal');
 const subjects: Record<string, [string, string]> = { early: ['Early learning', '启蒙'], general: ['General', '综合'], coding: ['Coding', '编程'], science: ['Science', '科学'], reading: ['Reading', '阅读'] };
+const toolTypes: Record<string, [string, string]> = {
+  'browser-tool': ['eduStack tool', '本站工具'], 'learning-platform': ['Learning platform', '学习平台'],
+  'picture-books': ['Picture books', '绘本资源'], 'creative-platform': ['Creative platform', '创作平台'], simulation: ['Interactive simulation', '互动仿真'],
+};
 const planned: [string, string, string][] = [];
 /* const planned = zh ? [
   ['生长曲线百分位', '输入身高体重，看在同龄同性别孩子中的位置。', '依据：WHO 儿童生长标准（0–5 岁）和 WHO 2007 生长参考（5–19 岁）'],
@@ -51,7 +55,7 @@ const planned: [string, string, string][] = [];
       {externalTools.map((x) => (
         <article class="card" data-tool-min={x.minAge * 12} data-tool-max={Math.min((x.maxAge + 1) * 12 - 1, 215)}>
           <div class="split" style="align-items:flex-start"><a class="card-title" href={href(lang, `tools/${x.id}`)} style="font-size:var(--type-body);font-weight:600">{x.name[lang]}</a><span class="chip">{zh ? `${x.minAge}–${x.maxAge} 岁` : `Ages ${x.minAge}–${x.maxAge}`}</span></div>
-          <span class="chip t-tool" style="align-self:flex-start">{subjects[x.subject][zh ? 1 : 0]}</span>
+          <div class="row" style="gap:6px"><span class="chip t-tool" style="align-self:flex-start">{toolTypes[x.toolType ?? 'learning-platform']?.[zh ? 1 : 0] ?? (zh ? '外部工具' : 'External tool')}</span><span class="chip" style="align-self:flex-start">{subjects[x.subject][zh ? 1 : 0]}</span></div>
           <p style="margin:0;font-size:var(--type-ui);color:var(--ink-2);flex:1">{x.what[lang]}</p>
           <div class="src"><span>{x.by}</span><span aria-hidden="true">·</span><span>{x.languages[lang]}</span></div>
           <span class="muted" style="font-size:var(--type-note)">{x.backing[lang]} · <a href={x.backingUrl} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{zh ? '查看' : 'See'} ↗</a> · <a href={x.privacy} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{zh ? '隐私政策' : 'Privacy'} ↗</a></span>
@@ -65,7 +69,7 @@ const planned: [string, string, string][] = [];
     <div class="split"><div class="stack" style="gap:6px"><h2 id="edustack-tools-heading" class="h-serif" style="font-size:var(--type-section)">{zh ? 'eduStack 工具' : 'eduStack tools'}</h2><span class="muted">{zh ? '在浏览器中运行，先使用，再决定是否保存。' : 'Browser tools you can try first and save only if useful.'}</span></div><span class="chip">{zh ? '本站开发' : 'Built here'}</span></div>
     <div class="grid">{internalTools.map((x) => <article class="card">
       <div class="split" style="align-items:flex-start"><a class="card-title" href={href(lang, x.route!.replace(/^\//, '').replace(/\/$/, ''))} style="font-size:var(--type-body);font-weight:600">{x.name[lang]}</a><span class="chip">{zh ? `${x.minAge}–${x.maxAge} 岁起点` : `Starting ages ${x.minAge}–${x.maxAge}`}</span></div>
-      <span class="chip t-tool" style="align-self:flex-start">{zh ? '任务安排' : 'Planning'}</span>
+      <span class="chip t-tool" style="align-self:flex-start">{toolTypes[x.toolType ?? 'browser-tool'][zh ? 1 : 0]}</span>
       <p style="margin:0;font-size:var(--type-ui);color:var(--ink-2)">{x.what[lang]}</p>
       <span class="muted" style="font-size:var(--type-note)">{x.backing[lang]}</span>
       <a href={href(lang, x.route!.replace(/^\//, '').replace(/\/$/, ''))}>{zh ? '打开工具' : 'Open tool'} →</a>

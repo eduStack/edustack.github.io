@@ -185,6 +185,7 @@ for (const t of tools) {
   const p = `tool ${t.id}`;
   const kind = t.kind ?? 'external';
   if (!['external', 'internal'].includes(kind)) errors.push(`${p}: unknown kind`);
+  if (t.toolType !== undefined && !['browser-tool', 'learning-platform', 'picture-books', 'creative-platform', 'simulation'].includes(t.toolType)) errors.push(`${p}: unknown toolType`);
   if (kind === 'external') for (const k of ['url', 'privacy', 'backingUrl']) if (!/^https:\/\//.test(t[k] || '')) errors.push(`${p}: ${k} must be https`);
   if (kind === 'internal') {
     if (!/^\/[a-z0-9-]+(?:\/[a-z0-9-]+)*\/?$/.test(t.route || '')) errors.push(`${p}: internal tool needs a route`);

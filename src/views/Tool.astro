@@ -11,6 +11,7 @@ const relatedActivities = activitiesForTool(tool.id);
 const zh = lang === 'zh';
 const related = (tool.relatedResources ?? []).map(getResource);
 const ageStages = stages.filter((stage) => tool.minAge * 12 <= stage.maxMonths && (tool.maxAge + 1) * 12 - 1 >= stage.minMonths);
+const typeLabel = tool.toolType === 'picture-books' ? (zh ? '绘本资源' : 'Picture books') : tool.toolType === 'creative-platform' ? (zh ? '创作平台' : 'Creative platform') : tool.toolType === 'simulation' ? (zh ? '互动仿真' : 'Interactive simulation') : tool.toolType === 'learning-platform' ? (zh ? '学习平台' : 'Learning platform') : (zh ? '本站工具' : 'eduStack tool');
 const details = [
   [zh ? '由谁提供' : 'Provider', tool.by],
   [zh ? '适用年龄' : 'Listed ages', zh ? `${tool.minAge}–${tool.maxAge} 岁` : `Ages ${tool.minAge}–${tool.maxAge}`],
@@ -24,7 +25,7 @@ const details = [
   <main id="main" tabindex="-1" class="wrap tool-detail">
     <nav class="row muted" aria-label={zh ? '位置' : 'Breadcrumb'}><a href={href(lang, 'tools')}>{zh ? '工具' : 'Tools'}</a><span aria-hidden="true">/</span><span>{tool.name[lang]}</span></nav>
     <header class="stack">
-      <div class="chips"><span class="chip t-tool">{zh ? '外部工具' : 'External tool'}</span>{(tool.topics ?? []).map((key) => <a class="chip" href={`${href(lang, 'library')}?type=tool&topic=${key}`}>{resourceTopics[key][lang]}</a>)}</div>
+      <div class="chips"><span class="chip t-tool">{typeLabel}</span>{(tool.topics ?? []).map((key) => <a class="chip" href={`${href(lang, 'library')}?type=tool&topic=${key}`}>{resourceTopics[key][lang]}</a>)}</div>
       <h1 class="h-serif">{tool.name[lang]}</h1>
       <p class="prose">{tool.what[lang]}</p>
       <div class="row"><a class="btn btn-primary" href={tool.url} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{zh ? '前往官方工具' : 'Open the official tool'} ↗</a><a href={`${href(lang, 'library')}?type=tool`}>{zh ? '浏览工具' : 'Browse tools'}</a></div>

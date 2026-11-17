@@ -117,7 +117,7 @@ export interface Topic extends Publishable {
   tools?: { tool: string; reason: L10n }[];
 }
 export interface Tool extends Publishable {
-  id: string; name: L10n; kind?: 'external' | 'internal'; url?: string; route?: string; storageKey?: string; templateSource?: string; minAge: number; maxAge: number;
+  id: string; name: L10n; kind?: 'external' | 'internal'; toolType?: 'browser-tool' | 'learning-platform' | 'picture-books' | 'creative-platform' | 'simulation'; url?: string; route?: string; storageKey?: string; templateSource?: string; minAge: number; maxAge: number;
   subject: string; by: string; what: L10n; languages: L10n;
   privacy?: string; backing: L10n; backingUrl?: string;
   topics?: string[];
@@ -153,6 +153,13 @@ export const tools = publishedItems(yaml.load(toolsRaw) as Array<Omit<Tool, 'nam
   name: typeof tool.name === 'string' ? { en: tool.name, zh: tool.name } : tool.name,
   checked: tool.checked ? asDate(tool.checked) : undefined,
 }));
+export const toolTypeLabel = (tool: Tool, lang: Lang) => ({
+  'browser-tool': { en: 'eduStack tool', zh: '本站工具' },
+  'learning-platform': { en: 'Learning platform', zh: '学习平台' },
+  'picture-books': { en: 'Picture books', zh: '绘本资源' },
+  'creative-platform': { en: 'Creative platform', zh: '创作平台' },
+  simulation: { en: 'Interactive simulation', zh: '互动仿真' },
+}[tool.toolType ?? (tool.kind === 'internal' ? 'browser-tool' : 'learning-platform')][lang]);
 export const tips = publishedItems(yaml.load(tipsRaw) as Tip[]);
 export const educators = publishedItems(yaml.load(educatorsRaw) as Educator[]).map((e) => ({ ...e, reviewed: asDate(e.reviewed) }));
 export const sources = yaml.load(sourcesRaw) as Record<string, Source>;

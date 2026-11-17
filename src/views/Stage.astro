@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import ActivityCard from '../components/ActivityCard.astro';
 import StageReading from '../components/StageReading.astro';
-import { stages, topics, getActivity, getStageHome, getTool, type Lang, type Stage } from '../lib/data';
+import { stages, topics, getActivity, getStageHome, getTool, toolTypeLabel, type Lang, type Stage } from '../lib/data';
 import { t, href, fmtDate } from '../i18n/ui';
 interface Props { lang: Lang; stage: Stage }
 const { lang, stage } = Astro.props;
@@ -64,7 +64,7 @@ const guideLinks = [
       {home.tools.length ? <>
         <p class="stage-note muted">{zh ? '目录年龄可能只覆盖本阶段的一部分，请先看具体范围和使用条件。工具不能代替亲子相处，也不保证学习效果。' : 'Listed ages may cover only part of this stage. Check the specific range and conditions. Tools do not replace time together or guarantee learning outcomes.'}</p>
         <div class="tool-pair">{home.tools.map((selection) => { const tool = getTool(selection.tool); return <article class="stage-tool" data-tool={tool.id}>
-          <p class="src">{zh ? '外部工具' : 'External tool'} · {zh ? `${tool.minAge}–${tool.maxAge} 岁` : `Ages ${tool.minAge}–${tool.maxAge}`}</p>
+          <p class="src">{toolTypeLabel(tool, lang)} · {zh ? `${tool.minAge}–${tool.maxAge} 岁` : `Ages ${tool.minAge}–${tool.maxAge}`}</p>
           <h3><a href={href(lang, `tools/${tool.id}`)}>{tool.name[lang]}</a></h3><p>{selection.reason[lang]}</p>
           <p class="src">{tool.languages[lang]} · {tool.by}</p><a class="tool-link" href={href(lang, `tools/${tool.id}`)}>{zh ? '查看用途、隐私与使用条件' : 'Check purpose, privacy and access'} <span aria-hidden="true">↗</span></a>
         </article>; })}</div>

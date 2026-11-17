@@ -1,7 +1,7 @@
 ---
 import ActivityCard from './ActivityCard.astro';
 import StageReading from './StageReading.astro';
-import { getResource, getStageHome, getTool, getActivity, topics, stages, type Lang } from '../lib/data';
+import { getResource, getStageHome, getTool, getActivity, toolTypeLabel, topics, stages, type Lang } from '../lib/data';
 import { fmtDate, href } from '../i18n/ui';
 
 interface Props { lang: Lang }
@@ -83,7 +83,7 @@ const illustrations: Record<string, string> = {
           {home.tools.map((selection) => {
             const tool = getTool(selection.tool);
             return <article class="personal-tool" data-home-age-item data-tool={tool.id} data-min-months={tool.minAge * 12} data-max-months={Math.min((tool.maxAge + 1) * 12 - 1, 215)}>
-              <p class="home-source-date">{zh ? '外部工具' : 'External tool'} · {zh ? `${tool.minAge}–${tool.maxAge} 岁` : `Ages ${tool.minAge}–${tool.maxAge}`}</p>
+              <p class="home-source-date">{toolTypeLabel(tool, lang)} · {zh ? `${tool.minAge}–${tool.maxAge} 岁` : `Ages ${tool.minAge}–${tool.maxAge}`}</p>
               <h3><a href={href(lang, `tools/${tool.id}/`)}>{tool.name[lang]}</a></h3>
               <p>{selection.reason[lang]}</p>
               <p class="home-source-date">{tool.languages[lang]} · {tool.by}</p>
