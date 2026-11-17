@@ -1,0 +1,126 @@
+---
+import Base from '../layouts/Base.astro';
+import yaml from 'js-yaml';
+import templatesRaw from '../data/task-breakdown.yaml?raw';
+import { type Lang } from '../lib/data';
+import { href } from '../i18n/ui';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const zh = lang === 'zh';
+const templates = yaml.load(templatesRaw) as { id: string; title: { en: string; zh: string }; summary: { en: string; zh: string }; steps: { en: string[]; zh: string[] } }[];
+const labels = zh ? {
+  title: '任务拆分', intro: '把一件熟悉的事整理成几个可以商量、修改和开始的小步骤。你可以直接使用，也可以保存到这台浏览器。',
+  template: '选择一个开始方式', blank: '从空白开始', task: '任务名称', step: '步骤', add: '添加一步', save: '保存到本机', restore: '恢复已保存内容', clear: '清除本机保存', fresh: '开始新任务', print: '打印', saved: '已保存到这台浏览器。', unsaved: '有未保存的修改。', empty: '还没有保存的任务。', saveError: '保存失败，当前内容仍可继续编辑或打印。', clearConfirm: '清除本机保存的任务？当前编辑内容也会清空。', newConfirm: '当前有未保存修改，确定开始新任务吗？', remove: '删除', up: '上移', down: '下移', required: '至少保留一步。', privacy: '这是一份本地草稿。不会写入孩子档案、网址或公开页面。', source: '设计依据与限制', sourceText: '这是 eduStack 的原创整理工具，参考计划、成人支持和执行功能相关资料。它不是能力评估、治疗或效果保证。安全和必需事项仍由成人负责。', back: '返回工具目录'
+} : {
+  title: 'Task breakdown', intro: 'Turn one familiar task into small steps you can discuss, change and start. Use it without saving, or save it in this browser.',
+  template: 'Choose a starting point', blank: 'Start blank', task: 'Task name', step: 'Step', add: 'Add a step', save: 'Save on this device', restore: 'Restore saved task', clear: 'Clear device save', fresh: 'Start a new task', print: 'Print', saved: 'Saved in this browser.', unsaved: 'You have unsaved changes.', empty: 'There is no saved task yet.', saveError: 'Saving failed. You can keep editing or print the current task.', clearConfirm: 'Clear the saved task? The current draft will also be cleared.', newConfirm: 'You have unsaved changes. Start a new task?', remove: 'Delete', up: 'Move up', down: 'Move down', required: 'Keep at least one step.', privacy: 'This is a local draft. It is not written to a child profile, URL or public page.', source: 'Design basis and limits', sourceText: 'This original eduStack organising tool draws on guidance about planning, adult support and executive function. It is not an assessment, treatment or guarantee of an outcome. Adults remain responsible for safety and essentials.', back: 'Back to tools'
+};
+const templateData = JSON.stringify(templates);
+---
+<Base lang={lang} title={labels.title} description={labels.intro} active="tools">
+  <main id="main" tabindex="-1" class="wrap task-tool">
+    <nav class="row muted" aria-label={zh ? '位置' : 'Breadcrumb'}><a href={href(lang, 'tools')}>{labels.back}</a><span aria-hidden="true">/</span><span>{labels.title}</span></nav>
+    <header class="stack intro">
+      <div class="chips"><span class="chip t-tool">{zh ? '本站工具' : 'eduStack tool'}</span><span class="chip">{zh ? '6–11 岁起点' : 'Starting ages 6–11'}</span></div>
+      <h1 class="h-serif">{labels.title}</h1>
+      <p class="prose">{labels.intro}</p>
+      <p class="muted privacy-note">{labels.privacy}</p>
+    </header>
+    <section class="task-panel" aria-labelledby="task-heading">
+      <h2 id="task-heading" class="sr-only">{labels.title}</h2>
+      <div class="task-toolbar">
+        <label for="template">{labels.template}</label>
+        <select id="template" data-template>
+          <option value="blank">{labels.blank}</option>
+          {templates.map((template) => <option value={template.id}>{template.title[lang]}</option>)}
+        </select>
+        <button class="btn" type="button" data-new>{labels.fresh}</button>
+      </div>
+      <label class="field-label" for="task-title">{labels.task}</label>
+      <input id="task-title" class="task-title" data-title maxlength="80" autocomplete="off" />
+      <div class="step-heading"><h3>{labels.step}</h3><span class="muted" data-count></span></div>
+      <ol class="steps" data-steps aria-label={labels.step}></ol>
+      <button class="btn add-step" type="button" data-add>{labels.add}</button>
+      <div class="task-actions">
+        <button class="btn btn-primary" type="button" data-save>{labels.save}</button>
+        <button class="btn" type="button" data-restore>{labels.restore}</button>
+        <button class="btn" type="button" data-print>{labels.print}</button>
+        <button class="btn danger" type="button" data-clear>{labels.clear}</button>
+      </div>
+      <p class="status" role="status" aria-live="polite" data-status></p>
+    </section>
+    <section class="card basis"><h2>{labels.source}</h2><p class="prose">{labels.sourceText}</p></section>
+  </main>
+</Base>
+<script define:vars={{ templateData, labels, storageKey: 'edustack.task-breakdown.v1' }}>
+  const templates = JSON.parse(templateData);
+  const templateSelect = document.querySelector('[data-template]');
+  const titleInput = document.querySelector('[data-title]');
+  const stepsList = document.querySelector('[data-steps]');
+  const count = document.querySelector('[data-count]');
+  const status = document.querySelector('[data-status]');
+  const blank = () => ({ version: 1, title: '', steps: [{ id: crypto.randomUUID(), text: '', done: false }] });
+  let draft = blank();
+  let dirty = false;
+  const say = (message) => { status.textContent = message; };
+  const markDirty = () => { dirty = true; saved = false; say(labels.unsaved); };
+  const valid = (value) => value && value.version === 1 && typeof value.title === 'string' && value.title.length <= 80 && Array.isArray(value.steps) && value.steps.length >= 1 && value.steps.length <= 30 && value.steps.every((step) => step && typeof step.id === 'string' && typeof step.text === 'string' && step.text.length <= 160 && typeof step.done === 'boolean');
+  const readSaved = () => { try { const value = JSON.parse(localStorage.getItem(storageKey) || 'null'); return valid(value) ? value : null; } catch { return null; } };
+  const writeSaved = () => { try { localStorage.setItem(storageKey, JSON.stringify(draft)); dirty = false; say(labels.saved); } catch { say(labels.saveError); } };
+  const render = () => {
+    titleInput.value = draft.title;
+    stepsList.replaceChildren();
+    draft.steps.forEach((step, index) => {
+      const item = document.createElement('li'); item.className = 'step-row';
+      const check = document.createElement('input'); check.type = 'checkbox'; check.checked = step.done; check.ariaLabel = `${labels.step} ${index + 1}`;
+      check.addEventListener('change', () => { step.done = check.checked; markDirty(); });
+      const input = document.createElement('input'); input.type = 'text'; input.maxLength = 160; input.value = step.text; input.placeholder = `${labels.step} ${index + 1}`; input.setAttribute('aria-label', `${labels.step} ${index + 1}`);
+      input.addEventListener('input', () => { step.text = input.value; markDirty(); });
+      const controls = document.createElement('span'); controls.className = 'step-controls';
+      const button = (text, label, action, disabled = false) => { const button = document.createElement('button'); button.type = 'button'; button.className = 'icon-btn'; button.textContent = text; button.setAttribute('aria-label', label); button.disabled = disabled; button.addEventListener('click', action); controls.append(button); };
+      button('↑', `${labels.up} ${index + 1}`, () => { [draft.steps[index - 1], draft.steps[index]] = [draft.steps[index], draft.steps[index - 1]]; markDirty(); render(); }, index === 0);
+      button('↓', `${labels.down} ${index + 1}`, () => { [draft.steps[index], draft.steps[index + 1]] = [draft.steps[index + 1], draft.steps[index]]; markDirty(); render(); }, index === draft.steps.length - 1);
+      button('×', `${labels.remove} ${index + 1}`, () => { if (draft.steps.length === 1) return say(labels.required); draft.steps.splice(index, 1); markDirty(); render(); });
+      item.append(check, input, controls); stepsList.append(item);
+    });
+    count.textContent = `${draft.steps.length}/30`;
+  };
+  const choose = (id) => { const template = templates.find((item) => item.id === id); draft = template ? { version: 1, title: template.title[document.body.dataset.lang === 'zh' ? 'zh' : 'en'], steps: template.steps[document.body.dataset.lang === 'zh' ? 'zh' : 'en'].map((text) => ({ id: crypto.randomUUID(), text, done: false })) } : blank(); dirty = false; say(''); render(); };
+  titleInput.addEventListener('input', () => { draft.title = titleInput.value; markDirty(); });
+  templateSelect.addEventListener('change', () => { if (dirty && !window.confirm(labels.newConfirm)) { templateSelect.value = 'blank'; return; } choose(templateSelect.value); });
+  document.querySelector('[data-add]').addEventListener('click', () => { if (draft.steps.length >= 30) return; draft.steps.push({ id: crypto.randomUUID(), text: '', done: false }); markDirty(); render(); });
+  document.querySelector('[data-save]').addEventListener('click', writeSaved);
+  document.querySelector('[data-restore]').addEventListener('click', () => { const value = readSaved(); if (!value) return say(labels.empty); draft = value; dirty = false; say(labels.saved); render(); });
+  document.querySelector('[data-clear]').addEventListener('click', () => { if (!window.confirm(labels.clearConfirm)) return; try { localStorage.removeItem(storageKey); draft = blank(); dirty = false; say(''); render(); } catch { say(labels.saveError); } });
+  document.querySelector('[data-new]').addEventListener('click', () => { if (dirty && !window.confirm(labels.newConfirm)) return; templateSelect.value = 'blank'; choose('blank'); });
+  document.querySelector('[data-print]').addEventListener('click', () => window.print());
+  render();
+</script>
+<style>
+  .task-tool { padding-block: 2rem 4rem; display: flex; flex-direction: column; gap: 2rem; }
+  .intro { max-width: 52rem; }
+  .privacy-note { border-inline-start: 3px solid var(--accent); padding-inline-start: 0.75rem; }
+  .task-panel { display: flex; flex-direction: column; gap: 1rem; max-width: 54rem; padding: clamp(1rem, 3vw, 2rem); border: 1px solid var(--line); background: var(--paper); }
+  .task-toolbar, .task-actions, .step-heading { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
+  .task-toolbar label, .field-label, .step-heading h3 { font-weight: 650; }
+  select, input { font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--line-strong); padding: 0.65rem 0.75rem; border-radius: 0; }
+  select { min-width: 14rem; }
+  .task-title { width: 100%; font-size: var(--type-section); }
+  .step-heading { justify-content: space-between; margin-top: 0.5rem; }
+  .step-heading h3 { margin: 0; font-size: var(--type-body); }
+  .steps { display: flex; flex-direction: column; gap: 0.6rem; margin: 0; padding-inline-start: 0; list-style: none; counter-reset: task-step; }
+  .step-row { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 0.5rem; align-items: center; counter-increment: task-step; }
+  .step-row::before { content: counter(task-step); min-inline-size: 1.7rem; text-align: center; color: var(--muted); }
+  .step-row input[type='text'] { width: 100%; }
+  .step-controls { display: flex; gap: 0.25rem; }
+  .icon-btn { min-width: 2rem; min-height: 2rem; padding: 0.2rem; border: 1px solid var(--line); background: var(--shelf); color: var(--ink); cursor: pointer; }
+  .icon-btn:disabled { opacity: 0.4; cursor: default; }
+  .add-step { align-self: flex-start; }
+  .task-actions { border-top: 1px solid var(--line); padding-top: 1rem; }
+  .danger { color: var(--danger, #8d2929); }
+  .status { min-height: 1.5em; margin: 0; color: var(--ink-2); }
+  .basis { max-width: 54rem; }
+  @media (max-width: 38rem) { .step-row { grid-template-columns: auto minmax(0, 1fr); } .step-controls { grid-column: 2; } select { width: 100%; } }
+  @media print { .task-tool { padding: 0; } .task-toolbar, .task-actions, .add-step, .step-controls, .privacy-note, nav, .basis { display: none !important; } .task-panel { border: 0; padding: 0; } .task-title { border: 0; padding-inline: 0; } .step-row input[type='text'] { border: 0; padding-inline: 0; } }
+</style>

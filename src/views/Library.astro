@@ -1,93 +1,168 @@
 ---
 import Base from '../layouts/Base.astro';
-import ResourceCard from '../components/ResourceCard.astro';
-import { recommendations as resources, type Lang } from '../lib/data';
+import SearchCard from '../components/search/SearchCard.astro';
+import { buildSearchIndex } from '../lib/search/index';
+import type { Lang } from '../i18n/languages';
 import { t, href } from '../i18n/ui';
-import { resourceTopics } from '../lib/taxonomy.mjs';
+import { resourceTopics, primaryStages } from '../lib/taxonomy.mjs';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const s = t(lang);
 const zh = lang === 'zh';
-const used = [...new Set(resources.flatMap((r) => r.topics))];
-const sorted = [...resources].sort((a, b) => a.minMonths - b.minMonths);
+const entries = buildSearchIndex();
+const usedTopics = Object.entries(resourceTopics).filter(([key]) => entries.some((entry) => entry.topics.includes(key)));
+const typeLabels = { ...s.type, tool: zh ? '工具' : 'Tool', educator: zh ? '人物与思想' : 'Thinker and ideas', topic: zh ? '专题' : 'Topic', activity: zh ? '活动' : 'Activity' };
+const stages = zh ? ['出生至 1 岁', '1–3 岁', '3–6 岁', '6–12 岁', '12–18 岁'] : ['Birth to 1 year', '1–3 years', '3–6 years', '6–12 years', '12–18 years'];
+const publicIndex = JSON.stringify(entries).replace(/</g, '\\u003c');
 ---
 <Base lang={lang} title={s.nav.library} active="library">
-<main id="main" tabindex="-1" class="wrap" style="padding-top:32px;display:flex;flex-direction:column;gap:20px">
-  <div class="split" style="align-items:flex-end">
-    <div class="stack" style="gap:6px">
-      <h1 class="h-serif" style="font-size:var(--type-feature)">{s.nav.library}</h1>
-      <span class="muted" style="font-size:var(--type-ui)">{zh ? `共 ${resources.length} 条书籍、经典导读、实用资源和指南，附原始出处与核验记录。相关研究可在资源和阶段页面查看。` : `${resources.length} books, classic readings, practical resources and guidelines, with original sources and check records. Related research appears on resource and age-stage pages.`}</span>
-    </div>
-    <div class="row" style="gap:8px"><label for="sort" class="muted">{zh ? '排序' : 'Sort'}</label>
-      <select id="sort"><option value="age">{zh ? '按年龄' : 'By age'}</option><option value="year">{zh ? '发表时间（最新在前）' : 'Newest first'}</option></select></div>
-  </div>
-  <div class="row" style="gap:8px" role="group" aria-label={zh ? '资源类型' : 'Resource type'} id="types">
-    <button class="pill" type="button" data-type="" aria-pressed="true">{zh ? '全部' : 'All'}</button>
-    {(['book', 'classic', 'guide', 'guideline'] as const).map((k) => <button class="pill" type="button" data-type={k} aria-pressed="false">{s.typePlural[k]}</button>)}
-  </div>
-  <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start">
-    <aside class="card" style="flex:1 1 240px;gap:18px" aria-label={zh ? '筛选' : 'Filters'}>
-      <div class="stack" style="gap:6px"><label for="q" style="font-weight:600">{zh ? '搜索' : 'Search'}</label><input id="q" type="search" /></div>
-      <div class="stack" style="gap:6px"><label for="age" style="font-weight:600">{zh ? '孩子年龄' : "Child's age"}</label>
-        <select id="age"><option value="">{zh ? '不限年龄' : 'Any age'}</option></select>
-        <span class="muted" style="font-size:var(--type-note)">{zh ? '只显示适用年龄包含这个月龄的资源。' : 'Shows resources whose age range includes this age.'}</span></div>
-      <div class="stack" style="gap:6px"><label for="topic" style="font-weight:600">{zh ? '主题' : 'Topic'}</label>
-        <select id="topic"><option value="">{zh ? '全部主题' : 'All topics'}</option>{used.map((k) => <option value={k}>{resourceTopics[k][lang]}</option>)}</select></div>
-      <label class="row" style="gap:8px;min-height:2.75rem"><input type="checkbox" id="free" /> {zh ? '只看可免费阅读的' : 'Free to read only'}</label>
-      <a href={href(lang, 'tools')}>{zh ? '找免费学习工具？' : 'Looking for free learning tools?'}</a>
-    </aside>
-    <section style="flex:999 1 600px;min-width:0" class="stack" aria-live="polite">
-      <div class="muted" style="font-size:var(--type-note)" id="count"></div>
-      <div class="stack" id="list">{sorted.map((r) => <ResourceCard r={r} lang={lang} />)}</div>
-      <p id="empty" class="card" hidden>{zh ? '没有符合条件的资源。试试放宽筛选条件。' : 'No resources match. Try fewer filters.'}</p>
+<main id="main" tabindex="-1" class="wrap library">
+  <header class="library-heading">
+    <h1 class="h-serif">{s.nav.library}</h1>
+    <p class="prose">{zh ? '一起探索书籍、指南、研究、思想、活动与实用工具。先读简介，再查看出处、适用范围和获取条件。' : 'Explore books, guidelines, research, ideas, activities and practical tools. Start with an introduction, then check the source, scope and access details.'}</p>
+  </header>
+  <nav class="browse-links" aria-label={zh ? '分类浏览' : 'Browse collections'}>
+    <span class="muted">{zh ? '也可以直接浏览：' : 'Or browse:'}</span>
+    <a href={href(lang, 'activities')}>{zh ? '活动' : 'Activities'}</a><a href={href(lang, 'ages')}>{s.nav.stages}</a><a href={href(lang, 'tools')}>{s.nav.tools}</a><a href={href(lang, 'educators')}>{s.nav.educators}</a><a href={href(lang, 'topics')}>{s.nav.topics}</a>
+  </nav>
+  <noscript><p class="callout">{zh ? '开启 JavaScript 可搜索和筛选。下方仍可浏览全部已发布条目，或使用上方分类入口。' : 'Enable JavaScript to search and filter. You can still browse all published entries below or use the collection links above.'}</p></noscript>
+  <button id="toggle-filters" class="btn filter-toggle" type="button" aria-controls="library-filters" aria-expanded="false" hidden>{zh ? '搜索与筛选' : 'Search and filters'}</button>
+  <p id="active-filters" class="muted note" hidden></p>
+  <div class="library-layout">
+    <form id="library-filters" class="card filters" role="search" hidden aria-label={zh ? '搜索与筛选' : 'Search and filters'}>
+      <div class="field"><label for="q">{zh ? '搜索关键词' : 'Search keywords'}</label><input id="q" name="q" type="search" placeholder={zh ? '标题、作者、主题…' : 'Title, author, topic…'} /></div>
+      <div class="field"><label for="type">{zh ? '内容类型' : 'Content type'}</label><select id="type" name="type"><option value="">{zh ? '全部类型' : 'All types'}</option>{Object.entries(typeLabels).map(([key, label]) => <option value={key}>{label}</option>)}</select></div>
+      <div class="field"><label for="age">{zh ? '适用年龄' : 'Age relevance'}</label><select id="age" name="age" aria-describedby="age-help"><option value="">{zh ? '不限年龄' : 'Any age'}</option><optgroup label={zh ? '成长阶段' : 'Age stages'}>{primaryStages.map((stage, i) => <option value={stage.id}>{stages[i]}</option>)}</optgroup><optgroup label={zh ? '具体年龄' : 'Specific age'}>{Array.from({ length: 18 }, (_, years) => <option value={`year:${years}`}>{zh ? `${years} 岁` : `${years} years`}</option>)}</optgroup></select><p class="muted note" id="age-help">{zh ? '年龄帮助选择阅读内容，不用于评估孩子的能力。' : 'Age helps you choose reading; it is not an assessment of a child’s abilities.'}</p></div>
+      <div class="field"><label for="topic">{zh ? '主题' : 'Subject'}</label><select id="topic" name="topic"><option value="">{zh ? '全部主题' : 'All subjects'}</option>{usedTopics.map(([key, label]) => <option value={key}>{label[lang]}</option>)}</select></div>
+      <div class="field"><label for="language">{zh ? '原始资源语言' : 'Original source language'}</label><select id="language" name="language"><option value="">{zh ? '不限语言' : 'Any language'}</option><option value="en">English</option><option value="zh">中文</option><option value="es">Español</option><option value="multi">{zh ? '多语言' : 'Multilingual'}</option></select></div>
+      <label class="free-control" for="free"><input id="free" name="free" type="checkbox" />{zh ? '只看可免费获取的原始资源' : 'Free source access only'}</label>
+      <div class="field"><label for="sort">{zh ? '排序' : 'Sort results'}</label><select id="sort" name="sort"><option value="relevance">{zh ? '相关性与编辑精选' : 'Relevance and editorial picks'}</option><option value="newest">{zh ? '发表时间（最新在前）' : 'Publication: newest first'}</option></select></div>
+      <p class="muted note">{zh ? '活动日期指本站初次发布，资料日期指原始发表。筛选仅匹配已记录的信息。人物、专题或其他年龄、语言、获取条件未知的条目，可能在对应筛选后隐藏。' : 'Activity dates refer to their first publication on eduStack; reading dates refer to source publication. Filters match recorded information only. Thinkers, topics and other entries with unknown age, language or access details may be hidden when those filters are active.'}</p>
+      <button type="submit" class="btn btn-primary filter-apply">{zh ? '查看结果' : 'Show results'}</button>
+      <button type="button" class="btn" id="reset-all">{zh ? '重置全部' : 'Reset all'}</button>
+    </form>
+    <section class="results" aria-label={zh ? '资源列表' : 'Library results'}>
+      <p id="count" class="muted note" role="status" aria-atomic="true" tabindex="-1">{zh ? `共 ${entries.length} 条已发布内容` : `${entries.length} published entries`}</p>
+      <div id="list" class="stack">{entries.map((entry) => <SearchCard entry={entry} lang={lang} />)}</div>
+      <div id="empty" class="card empty" hidden><h2 class="h-serif">{zh ? '没有符合条件的条目' : 'No entries match'}</h2><p>{zh ? '试试减少筛选条件，或换一个较短的关键词。' : 'Try fewer filters or a shorter search term.'}</p><div class="row"><button type="button" class="btn" id="clear-filters">{zh ? '保留关键词，清除筛选' : 'Clear filters, keep keywords'}</button><button type="button" class="btn" id="empty-reset">{zh ? '重置全部' : 'Reset all'}</button></div></div>
     </section>
   </div>
+  <script id="library-index" type="application/json" set:html={publicIndex} />
 </main>
 <script>
-  import { load, ageMonths, ageText } from '../lib/client';
-  const lang = document.body.dataset.lang || 'en';
-  const zh = lang === 'zh';
+  import { searchEntries } from '../lib/search/engine.mjs';
+  import { createProfileSearch, effectiveProfileSearch, updateProfileSearch, resetProfileSearch, restoreProfileSearch, changeProfileSearchChild, serializeProfileSearch } from '../lib/search/profile.mjs';
+  import type { SearchEntry } from '../lib/search/types';
+  import { ageMonths, load, selected } from '../lib/client';
+  const form = document.getElementById('library-filters') as HTMLFormElement;
   const list = document.getElementById('list')!;
-  const cards = [...list.querySelectorAll('article')] as HTMLElement[];
-  const q = document.getElementById('q') as HTMLInputElement;
-  const age = document.getElementById('age') as HTMLSelectElement;
-  const topic = document.getElementById('topic') as HTMLSelectElement;
-  const free = document.getElementById('free') as HTMLInputElement;
-  const sort = document.getElementById('sort') as HTMLSelectElement;
-  const types = [...document.querySelectorAll('#types .pill')] as HTMLButtonElement[];
-  let type = '';
-  const store = load();
-  store.children.forEach((c, i) => {
-    const mo = ageMonths(c);
-    const o = new Option(`${c.name || (zh ? `孩子 ${i + 1}` : `Child ${i + 1}`)} · ${ageText(mo, lang)}`, String(mo));
-    o.dataset.sex = c.sex;
-    age.add(o);
-  });
-  for (const [mo, en, z] of [[6, '6 months', '6 个月'], [24, '2 years', '2 岁'], [48, '4 years', '4 岁'], [96, '8 years', '8 岁'], [168, '14 years', '14 岁']] as const) age.add(new Option(zh ? z : en, String(mo)));
-  if (store.children.length) age.selectedIndex = 1;
-  q.value = new URLSearchParams(location.search).get('q') || '';
-  function apply() {
-    const term = q.value.trim().toLowerCase();
-    const mo = age.value === '' ? null : Number(age.value);
-    const sex = age.selectedOptions[0]?.dataset.sex || '';
-    let n = 0;
-    for (const c of cards) {
-      const d = c.dataset;
-      const ok = (!type || d.type === type)
-        && (mo === null || (mo >= Number(d.min) && mo <= Number(d.max)))
-        && (!topic.value || (d.topics || '').split(' ').includes(topic.value))
-        && (!free.checked || d.free === '1')
-        && (d.sex === 'all' || !sex || d.sex === sex)
-        && (!term || (c.textContent || '').toLowerCase().includes(term));
-      c.hidden = !ok; if (ok) n++;
+  const cards = new Map([...list.querySelectorAll<HTMLElement>('[data-search-key]')].map((card) => [card.dataset.searchKey!, card]));
+  const entries: SearchEntry[] = JSON.parse(document.getElementById('library-index')!.textContent!);
+  const zh = document.body.dataset.lang === 'zh';
+  const q = form.elements.namedItem('q') as HTMLInputElement;
+  const free = form.elements.namedItem('free') as HTMLInputElement;
+  const toggle = document.getElementById('toggle-filters') as HTMLButtonElement;
+  const active = document.getElementById('active-filters')!;
+  const mobile = () => matchMedia('(max-width: 48em)').matches;
+  const selects = ['type', 'age', 'topic', 'language', 'sort'] as const;
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const currentProfileMonths = () => {
+    try {
+      const child = selected(load());
+      if (child) return ageMonths(child);
+    } catch {}
+    return null;
+  };
+  let model = createProfileSearch(new URLSearchParams(location.search), currentProfileMonths());
+  function syncControls() {
+    const { state, profileAge } = effectiveProfileSearch(model);
+    q.value = state.q;
+    free.checked = state.free;
+    for (const key of selects) {
+      const select = form.elements.namedItem(key) as HTMLSelectElement;
+      const value = state[key];
+      select.value = key === 'age' && profileAge && /^\d+$/.test(value) ? `year:${Math.floor(Number(value) / 12)}` : value;
     }
-    const sorted = [...cards].sort((a, b) => sort.value === 'year' ? Number(b.dataset.year) - Number(a.dataset.year) : Number(a.dataset.min) - Number(b.dataset.min));
-    sorted.forEach((c) => list.appendChild(c));
-    document.getElementById('count')!.textContent = zh ? `显示 ${n} 条` : `Showing ${n}`;
-    document.getElementById('empty')!.hidden = n > 0;
   }
-  types.forEach((b) => b.addEventListener('click', () => { type = b.dataset.type || ''; types.forEach((x) => x.setAttribute('aria-pressed', String(x === b))); apply(); }));
-  [q, age, topic, free, sort].forEach((el) => el.addEventListener('input', apply));
-  apply();
+  function updateLanguageLinks() {
+    for (const link of document.querySelectorAll<HTMLAnchorElement>('.language-switcher a')) {
+      const target = new URL(link.href);
+      target.search = location.search; target.hash = location.hash; link.href = target.href;
+    }
+  }
+  function render(updateUrl = true) {
+    const { state, profileAge, outOfRange } = effectiveProfileSearch(model);
+    const results = searchEntries(entries, state);
+    for (const card of cards.values()) card.hidden = true;
+    for (const entry of results) {
+      const card = cards.get(entry.key);
+      if (card) { card.hidden = false; list.appendChild(card); }
+    }
+    document.getElementById('count')!.textContent = zh ? `显示 ${results.length} 条，共 ${entries.length} 条已发布内容` : `Showing ${results.length} of ${entries.length} published entries`;
+    document.getElementById('empty')!.hidden = results.length > 0;
+    const conditions = [state.q ? `${zh ? '关键词' : 'Keywords'}: ${state.q}` : ''];
+    for (const key of selects.filter((key) => key !== 'sort')) {
+      if (!state[key]) continue;
+      const select = form.elements.namedItem(key) as HTMLSelectElement;
+      const label = form.querySelector(`label[for="${key}"]`)!.textContent;
+      conditions.push(`${label}: ${select.selectedOptions[0]?.textContent ?? state[key]}`);
+    }
+    if (state.free) conditions.push(zh ? '原始资源免费' : 'Free source access');
+    if (state.sort === 'newest') conditions.push(zh ? '按发表时间排序' : 'Newest publication first');
+    if (profileAge) conditions.push(zh ? '按当前孩子年龄' : "Current child's age");
+    if (outOfRange) conditions.push(zh ? '当前孩子已超出本站 0–17 岁的年龄范围；资源库未按档案年龄筛选，可继续通用浏览。' : "The current child is outside the site's age range of 0–17 years. The library is open for general browsing without a profile age filter.");
+    active.textContent = conditions.filter(Boolean).join(' · ');
+    active.hidden = !active.textContent;
+    if (updateUrl) {
+      const query = serializeProfileSearch(model).toString();
+      history.replaceState(null, '', `${location.pathname}${query ? '?' + query : ''}${location.hash}`);
+    }
+    updateLanguageLinks();
+  }
+  function readControls(ageChanged = false) {
+    const params = new URLSearchParams();
+    for (const [key, value] of new FormData(form)) if (typeof value === 'string') params.set(key, value);
+    if (free.checked) params.set('free', '1');
+    model = updateProfileSearch(model, params, ageChanged); render();
+  }
+  q.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(() => readControls(), 180); });
+  form.addEventListener('change', (event) => { clearTimeout(timer); readControls(event.target === form.elements.namedItem('age')); });
+  const showFilters = (open: boolean) => { form.hidden = !open; toggle.setAttribute('aria-expanded', String(open)); };
+  toggle.addEventListener('click', () => showFilters(form.hidden));
+  form.addEventListener('submit', (event) => {
+    event.preventDefault(); clearTimeout(timer); readControls();
+    if (mobile()) { showFilters(false); document.getElementById('count')!.focus(); }
+  });
+  function reset(keepQuery = false) {
+    clearTimeout(timer); model = resetProfileSearch(model, keepQuery ? q.value : '');
+    syncControls(); render(); showFilters(true); q.focus();
+  }
+  document.getElementById('reset-all')!.addEventListener('click', () => reset());
+  document.getElementById('empty-reset')!.addEventListener('click', () => reset());
+  document.getElementById('clear-filters')!.addEventListener('click', () => reset(true));
+  window.addEventListener('popstate', () => { clearTimeout(timer); model = restoreProfileSearch(model, new URLSearchParams(location.search)); syncControls(); render(false); });
+  window.addEventListener('edustack:profilechange', () => { model = changeProfileSearchChild(model, currentProfileMonths()); syncControls(); render(false); });
+  syncControls(); render(false); toggle.hidden = false; showFilters(!mobile());
+  matchMedia('(max-width: 48em)').addEventListener('change', () => showFilters(true));
 </script>
+<style>
+  .library { display: flex; flex-direction: column; gap: 1.5rem; padding-block-start: 2rem; }
+  .library-heading { display: grid; gap: 0.75rem; }
+  .browse-links { display: flex; align-items: center; flex-wrap: wrap; gap: 0.25rem 1.5rem; padding-block: 0.75rem; border-block: 1px solid var(--line); font-size: var(--type-ui); }
+  .browse-links a { display: inline-flex; align-items: center; min-block-size: 2.75rem; }
+  .library-layout { display: grid; grid-template-columns: minmax(15rem, 19rem) minmax(0, 1fr); align-items: start; gap: 1.5rem; }
+  .library-layout:has(.filters[hidden]) { grid-template-columns: minmax(0, 1fr); }
+  .filters { gap: 1.25rem; }
+  .field { display: grid; gap: 0.375rem; }
+  .field label { font-weight: 600; }
+  .field input, .field select { width: 100%; min-width: 0; }
+  .note { font-size: var(--type-note); line-height: var(--leading-note); margin: 0; }
+  .free-control { display: flex; align-items: center; gap: 0.625rem; min-block-size: 2.75rem; }
+  .results { display: grid; gap: 1rem; min-width: 0; }
+  .empty p { margin: 0; }
+  [hidden] { display: none !important; }
+  .filter-toggle, .filter-apply { display: none; }
+  @media (max-width: 48em) { .filter-toggle, .filter-apply { display: inline-flex; } .library-layout { grid-template-columns: minmax(0, 1fr); } .filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } .filters > .note { grid-column: 1 / -1; } }
+  @media (max-width: 30em) { .filters { grid-template-columns: minmax(0, 1fr); } }
+</style>
 </Base>

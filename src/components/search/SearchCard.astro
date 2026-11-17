@@ -1,0 +1,28 @@
+---
+import type { SearchEntry } from '../../lib/search/types';
+import type { Lang } from '../../i18n/languages';
+import { ageLabel } from '../../lib/data';
+import { t, href } from '../../i18n/ui';
+interface Props { entry: SearchEntry; lang: Lang }
+const { entry, lang } = Astro.props;
+const zh = lang === 'zh';
+const labels = { ...t(lang).type, tool: zh ? '工具' : 'Tool', educator: zh ? '人物与思想' : 'Thinker and ideas', topic: zh ? '专题' : 'Topic', activity: zh ? '活动' : 'Activity' };
+---
+<article class="card search-card" data-search-key={entry.key}>
+  <div class="chips">
+    <span class={`chip t-${entry.type}`}>{labels[entry.type]}</span>
+    {entry.minMonths !== null && entry.maxMonths !== null && <span class="chip">{entry.ageLabel?.[lang] ?? ageLabel(entry.minMonths, entry.maxMonths, lang)}</span>}
+    {entry.preparing && <span class="chip">{zh ? '内容准备中' : 'In preparation'}</span>}
+    {entry.free === true && <span class="chip">{zh ? '原始资源可免费获取' : 'Free source access'}</span>}
+  </div>
+  <h2><a class="card-title" href={href(lang, entry.path)}>{entry.title[lang]}</a></h2>
+  <p class="summary">{entry.summary[lang]}</p>
+  {(entry.by || entry.year !== null || entry.sourceLanguage) && <div class="src">{entry.by && <span>{entry.by}</span>}{entry.year !== null && <span>{entry.dateKind === 'site-publication' ? (zh ? '本站发布 ' : 'Published here ') : ''}{entry.year}</span>}{entry.sourceLanguage && <span>{zh ? '原始语言：' : 'Source language: '}{entry.sourceLanguage[lang]}</span>}</div>}
+</article>
+<style>
+  h2 { margin: 0; font-size: var(--type-body); }
+  .card-title { color: var(--ink); text-decoration: none; overflow-wrap: anywhere; }
+  .card-title:hover { color: var(--accent); text-decoration: underline; }
+  .summary { margin: 0; font-size: var(--type-ui); line-height: var(--leading-body); color: var(--ink-2); }
+  .search-card[hidden] { display: none; }
+</style>

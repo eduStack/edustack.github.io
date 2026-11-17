@@ -1,0 +1,99 @@
+---
+import Base from '../layouts/Base.astro';
+import ActivityCard from '../components/ActivityCard.astro';
+import { activities, type Lang } from '../lib/data';
+import { href } from '../i18n/ui';
+import { primaryStages } from '../lib/taxonomy.mjs';
+import { durationLabels, settingLabels } from '../lib/activity-filter.mjs';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const zh = lang === 'zh';
+const stageNames = zh ? ['出生至1岁', '1–3岁', '3–6岁', '6–12岁', '12–18岁'] : ['Birth to 1 year', '1–3 years', '3–6 years', '6–12 years', '12–18 years'];
+const index = activities.map(({ id, minMonths, maxMonths, duration, setting }) => ({ id, minMonths, maxMonths, duration, setting }));
+---
+<Base lang={lang} title={zh ? '一起试试' : 'Activities'} active="activities">
+  <main id="main" tabindex="-1" class="wrap activities">
+    <header class="stack"><h1 class="h-serif">{zh ? '一起试试' : 'Try something together'}</h1><p class="prose">{zh ? '找一件能和孩子一起做的小事。按你们的时间、地点和需要调整，不必追求完成或表现。' : 'Find a small thing to do with your child. Adapt it to your time, place and needs, without a target to finish or perform.'}</p></header>
+    <p class="muted"><a href={href(lang, 'library')}>{zh ? '查找相关阅读' : 'Find related reading'}</a> · <a href={href(lang, 'ages')}>{zh ? '按年龄浏览' : 'Browse by age'}</a></p>
+    <noscript><p class="callout">{zh ? '开启 JavaScript 可按年龄、时间和场景筛选。下方仍可阅读全部已发布活动。' : 'Enable JavaScript to filter by age, time and setting. All published activities remain readable below.'}</p></noscript>
+    <form id="activity-filters" class="card filters" hidden aria-label={zh ? '筛选活动' : 'Filter activities'}>
+      <div class="field"><label for="activity-age">{zh ? '年龄' : 'Age'}</label><select id="activity-age" name="age" aria-describedby="activity-age-help"><option value="any">{zh ? '不限年龄' : 'Any age'}</option><optgroup label={zh ? '成长阶段' : 'Age stages'}>{primaryStages.map((stage, i) => <option value={stage.id}>{stageNames[i]}</option>)}</optgroup><optgroup label={zh ? '具体年龄' : 'Specific age'}>{Array.from({ length: 18 }, (_, years) => <option value={`year:${years}`}>{zh ? `${years} 岁` : `${years} years`}</option>)}</optgroup></select></div>
+      <div class="field"><label for="activity-duration">{zh ? '时间' : 'Time'}</label><select id="activity-duration" name="duration"><option value="">{zh ? '不限时间' : 'Any duration'}</option>{Object.entries(durationLabels).map(([value, label]) => <option value={value}>{label[lang]}</option>)}</select></div>
+      <div class="field"><label for="activity-setting">{zh ? '场景' : 'Setting'}</label><select id="activity-setting" name="setting"><option value="">{zh ? '不限场景' : 'Any setting'}</option>{Object.entries(settingLabels).map(([value, label]) => <option value={value}>{label[lang]}</option>)}</select></div>
+      <p class="muted note" id="activity-age-help">{zh ? '年龄用于帮助选择，不是能力评估。具体做法和陪伴要求请查看活动。时间只是安排参考。' : 'Ages help you choose; they are not an ability assessment. Check each activity for adult support and adaptations. Times are flexible guides.'}</p>
+      <div class="row"><button class="btn btn-primary" type="submit">{zh ? '查看结果' : 'Show results'}</button><button class="btn" type="button" id="activity-reset">{zh ? '重置全部' : 'Reset all'}</button></div>
+    </form>
+    <p id="activity-conditions" class="muted note" hidden></p>
+    <section class="stack" aria-label={zh ? '活动列表' : 'Activity results'}>
+      <p id="activity-count" role="status" aria-atomic="true" class="muted note">{zh ? `共${activities.length}项活动` : `${activities.length} activities`}</p>
+      <div class="grid" id="activity-list">{activities.map((activity) => <ActivityCard activity={activity} lang={lang} heading={2} />)}</div>
+      <div class="card" id="activity-empty" hidden><h2>{zh ? '没有符合条件的活动' : 'No activities match'}</h2><p>{zh ? '试试减少筛选条件，或浏览全部活动。' : 'Try fewer filters or browse all activities.'}</p><button class="btn" type="button" id="activity-empty-reset">{zh ? '浏览全部活动' : 'Browse all activities'}</button></div>
+    </section>
+    <script id="activity-index" type="application/json" set:html={JSON.stringify(index).replace(/</g, '\\u003c')} />
+  </main>
+</Base>
+<script>
+  import { parseActivityFilters, serializeActivityFilters, effectiveActivityFilters, filterActivities } from '../lib/activity-filter.mjs';
+  import { ageMonths, load, selected } from '../lib/client';
+  const form = document.getElementById('activity-filters') as HTMLFormElement;
+  const entries = JSON.parse(document.getElementById('activity-index')!.textContent!);
+  const cards = [...document.querySelectorAll<HTMLElement>('[data-activity-id]')];
+  const zh = document.body.dataset.lang === 'zh';
+  const keys = ['age', 'duration', 'setting'] as const;
+  let state = parseActivityFilters(new URLSearchParams(location.search));
+  const control = (key: string) => form.elements.namedItem(key) as HTMLSelectElement;
+  function profileMonths() {
+    try { const child = selected(load()); return child ? ageMonths(child) : null; } catch { return null; }
+  }
+  function render() {
+    const effective = effectiveActivityFilters(state, profileMonths());
+    const matches = new Set(filterActivities(entries, effective.state).map((entry: { id: string }) => entry.id));
+    for (const card of cards) card.hidden = !matches.has(card.dataset.activityId!);
+    for (const key of keys) {
+      const value = effective.state[key] || (key === 'age' ? 'any' : '');
+      control(key).value = key === 'age' && effective.profileAge && /^\d+$/.test(value) ? `year:${Math.floor(Number(value) / 12)}` : value;
+    }
+    document.getElementById('activity-count')!.textContent = zh ? `显示${matches.size}项，共${entries.length}项活动` : `Showing ${matches.size} of ${entries.length} activities`;
+    document.getElementById('activity-empty')!.hidden = matches.size > 0;
+    const conditions = keys.filter((key) => effective.state[key] && effective.state[key] !== 'any').map((key) => `${form.querySelector(`label[for="activity-${key}"]`)!.textContent}: ${control(key).selectedOptions[0]?.textContent}`);
+    if (effective.profileAge) conditions.push(zh ? '按当前孩子年龄筛选；年龄不会写入网址。' : "Filtered by the current child's age; this age stays out of the URL.");
+    if (effective.outOfRange) conditions.push(zh ? '当前孩子超出本站0–17岁范围，正在通用浏览。' : 'The current child is outside the site’s age range of 0–17 years. Showing general browsing.');
+    const active = document.getElementById('activity-conditions')!;
+    active.textContent = conditions.join(' · '); active.hidden = !conditions.length;
+    for (const link of document.querySelectorAll<HTMLAnchorElement>('.language-switcher a')) {
+      const url = new URL(link.href); url.search = location.search; url.hash = location.hash; link.href = url.href;
+    }
+  }
+  function update(ageChanged: boolean) {
+    const params = new URLSearchParams();
+    for (const key of keys) params.set(key, key === 'age' && !ageChanged ? state.age : control(key).value);
+    const next = parseActivityFilters(params);
+    const query = serializeActivityFilters(next).toString();
+    if (serializeActivityFilters(state).toString() !== query) history.pushState(null, '', `${location.pathname}${query ? '?' + query : ''}${location.hash}`);
+    state = next; render();
+  }
+  form.addEventListener('change', (event) => update(event.target === control('age')));
+  form.addEventListener('submit', (event) => { event.preventDefault(); update(false); });
+  function reset() {
+    state = { age: 'any', duration: '', setting: '' };
+    history.pushState(null, '', `${location.pathname}?age=any${location.hash}`); render(); control('age').focus();
+  }
+  document.getElementById('activity-reset')!.addEventListener('click', reset);
+  document.getElementById('activity-empty-reset')!.addEventListener('click', reset);
+  window.addEventListener('popstate', () => { state = parseActivityFilters(new URLSearchParams(location.search)); render(); });
+  window.addEventListener('edustack:profilechange', render);
+  render(); form.hidden = false;
+</script>
+<style>
+  .activities { display: flex; flex-direction: column; gap: 1.5rem; padding-block-start: 2rem; }
+  p, h2 { margin: 0; }
+  .filters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .field { display: grid; gap: 0.375rem; }
+  label { font-weight: 600; }
+  select { width: 100%; min-width: 0; }
+  .filters > p, .filters > .row { grid-column: 1 / -1; }
+  .note { font-size: var(--type-note); }
+  [hidden] { display: none !important; }
+  @media (max-width: 40em) { .filters { grid-template-columns: minmax(0, 1fr); } }
+  @media print { .filters, #activity-conditions { display: none !important; } }
+</style>

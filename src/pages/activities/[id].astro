@@ -1,0 +1,6 @@
+---
+import Activity from '../../views/Activity.astro';
+import { activities } from '../../lib/data';
+export function getStaticPaths() { return activities.map((activity) => ({ params: { id: activity.id }, props: { activity } })); }
+---
+<Activity lang="en" activity={Astro.props.activity} />

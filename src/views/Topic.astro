@@ -1,8 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
+import ActivityCard from '../components/ActivityCard.astro';
 import ResourceCard from '../components/ResourceCard.astro';
 import ResearchBehind from '../components/ResearchBehind.astro';
-import { topics, getResource, researchFor, type Lang, type Topic } from '../lib/data';
+import { topics, tools, getResource, getActivity, getTool, cite, researchFor, type Lang, type Topic } from '../lib/data';
 import { t, href, fmtDate } from '../i18n/ui';
 interface Props { lang: Lang; topic: Topic }
 const { lang, topic } = Astro.props;
@@ -12,6 +13,9 @@ const V = { agree: zh ? '一致' : 'Agree', differ: zh ? '不同' : 'Differ', si
 const picks = topic.picks.map(getResource);
 const research = researchFor(topic.picks, topic.research ?? []);
 const others = topics.filter((x) => x.id !== topic.id);
+const resourceIds = [...topic.picks, ...(topic.research ?? [])];
+const chosenTools = (topic.tools ?? []).map((selection) => ({ ...selection, item: getTool(selection.tool) }));
+const linkedTools = tools.filter((tool) => !chosenTools.some((entry) => entry.tool === tool.id) && tool.relatedResources?.some((id) => resourceIds.includes(id)));
 ---
 <Base lang={lang} title={topic.name[lang]} active="topics">
 <main id="main" tabindex="-1" class="wrap" style="padding-top:28px;display:flex;flex-direction:column;gap:24px">
@@ -22,22 +26,22 @@ const others = topics.filter((x) => x.id !== topic.id);
   </header>
   {topic.status === 'preparing' ? (
     <section class="card" style="padding:24px">
-      <p class="prose">{zh ? '我们还在核实这个主题的权威来源，核实完成后会在这里给出结论和各机构立场对比。下面先列出已经核实过的相关资源。' : "We are still checking authoritative sources for this topic. When that is done, this page will show the bottom line and each body's position. Below are related resources we have already checked."}</p>
+      <p class="prose">{zh ? '我们还在核实这个主题的权威来源，核实完成后会在这里整理相关解释与做法。下面先列出已经核实过的相关资源。' : "We are still checking authoritative sources for this topic. Once checked, this page will bring together explanations and things to try. Below are related resources we have already checked."}</p>
     </section>
   ) : (
     <>
       <section class="card" style="padding:26px;gap:10px;border:2px solid var(--accent)" aria-labelledby="bl-h">
         <h2 id="bl-h" style="margin:0;font-size:var(--type-ui);color:var(--accent)">{zh ? '一句话结论' : 'The bottom line'}</h2>
         <p class="h-serif" style="font-size:var(--type-section);line-height:var(--leading-heading);max-width:38em">{topic.bottomLine![lang]}</p>
-        <span class="muted" style="font-size:var(--type-note)">{zh ? '根据下面各机构的建议归纳，完整内容请点开原文。' : 'Summarised from the positions below. Follow the links for the full guidance.'}</span>
+        <span class="muted" style="font-size:var(--type-note)">{zh ? '本站根据下列资料整理；具体依据和编辑解释见正文。' : 'An editorial summary of the sources below. See the explanations and source notes for scope.'}</span>
       </section>
-      <section class="stack" aria-labelledby="pos-h">
+      {Boolean(topic.rows?.length && topic.sources?.length) && <section class="stack" aria-labelledby="pos-h">
         <div class="split"><h2 id="pos-h" class="h-serif" style="font-size:var(--type-section)">{zh ? '各权威机构怎么说' : 'What each authority says'}</h2>
           <span class="row muted" style="gap:8px;font-size:var(--type-note)"><span class="chip v-agree">{V.agree}</span><span class="chip v-differ">{V.differ}</span><span class="chip v-single">{V.single}</span></span></div>
         <div class="card tablebox" style="padding:0">
           <table class="cmp">
             <thead><tr><th scope="col" style="width:140px" class="muted">{zh ? '方面' : 'Question'}</th>
-              {topic.sources!.map((src) => <th scope="col"><a href={src.resource ? href(lang, `resources/${src.resource}`) : src.url} target={src.resource ? undefined : '_blank'} rel={src.resource ? undefined : 'noopener noreferrer'} aria-describedby={src.resource ? undefined : 'pwa-external-note'}>{src.name[lang]}</a><div class="muted" style="font-weight:400;font-size:var(--type-note)">{src.note[lang]}</div></th>)}
+              {topic.sources!.map((src) => <th scope="col"><a href={src.resource ? href(lang, `resources/${src.resource}`) : src.url} target={src.resource ? undefined : '_blank'} rel={src.resource ? undefined : 'noopener noreferrer'} aria-describedby={src.resource ? undefined : 'pwa-external-note'}>{src.name[lang]}</a><div class="muted" style="font-weight:400;font-size:var(--type-note)">{src.note[lang]}</div>{(src.additionalResources ?? []).map((id) => <div style="font-weight:400;font-size:var(--type-note)"><a href={href(lang, `resources/${id}`)}>{getResource(id).title[lang]}</a></div>)}</th>)}
               <th scope="col" style="width:150px" class="muted">{zh ? '比较' : 'Verdict'}</th></tr></thead>
             <tbody>
               {topic.rows!.map((row) => (
@@ -50,14 +54,23 @@ const others = topics.filter((x) => x.id !== topic.id);
             </tbody>
           </table>
         </div>
-      </section>
+      </section>}
     </>
   )}
-  <section class="stack" aria-labelledby="tp-h">
+  {(topic.sections ?? []).map((section) => <section id={`explain-${section.id}`} class="card">
+    <h2 class="h-serif" style="font-size:var(--type-section)">{section.title[lang]}</h2>
+    <p class="prose">{section.text[lang]}</p>
+    <ul>{section.citations.map((citation) => { const source = cite(citation.src, lang); return <li><a href={source.internal ? href(lang, `resources/${source.url}`) : source.url} target={source.internal ? undefined : '_blank'} rel={source.internal ? undefined : 'noopener noreferrer'}>{source.text}</a><p class="muted">{citation.note[lang]}</p></li>; })}</ul>
+  </section>)}
+  {Boolean(topic.activities?.length) && <section class="stack"><h2 class="h-serif" style="font-size:var(--type-section)">{zh ? '一起试试' : 'Try something together'}</h2><div class="grid">{topic.activities!.map((selection) => <div class="stack"><ActivityCard activity={getActivity(selection.activity)} lang={lang} /><p>{selection.reason[lang]}</p></div>)}</div></section>}
+  {chosenTools.length > 0 && <section class="card"><h2>{zh ? '可以辅助使用的工具' : 'Optional tools'}</h2>{chosenTools.map((selection) => <div><a href={href(lang, `tools/${selection.tool}`)}>{selection.item.name}</a><p>{selection.reason[lang]}</p></div>)}</section>}
+  {picks.length > 0 && <section class="stack" aria-labelledby="tp-h">
     <h2 id="tp-h" class="h-serif" style="font-size:var(--type-section)">{zh ? `这个主题的 ${picks.length} 条精选` : `Our ${picks.length} picks on this topic`}</h2>
     <div class="grid">{picks.map((r) => <ResourceCard r={r} lang={lang} />)}</div>
-  </section>
+  </section>}
   <ResearchBehind items={research} lang={lang} />
+  {linkedTools.length > 0 && <section class="card"><h2 style="margin:0;font-size:var(--type-section)">{zh ? '相关工具' : 'Related tools'}</h2><p class="muted" style="margin:0;font-size:var(--type-ui)">{zh ? '按相关阅读关联，请查看工具的用途和条件；不表示这些研究评估或认可了工具。' : 'Connected through related reading. Check each tool’s purpose and conditions; the research does not necessarily evaluate or endorse it.'}</p><div class="row">{linkedTools.map((tool) => <a href={href(lang, `tools/${tool.id}`)}>{tool.name[lang]}</a>)}</div></section>}
+  <a href={href(lang, 'library')}>{zh ? '到资源库继续查找指南、研究与工具' : 'Continue exploring guidelines, research and tools in the library'}</a>
   <div class="row" style="font-size:var(--type-ui)"><span class="muted">{zh ? '相关主题：' : 'Related topics:'}</span>{others.map((x) => <a href={href(lang, `topics/${x.id}`)}>{x.name[lang]}</a>)}</div>
 </main>
 </Base>

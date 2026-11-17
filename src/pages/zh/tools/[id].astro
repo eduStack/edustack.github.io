@@ -1,0 +1,6 @@
+---
+import Tool from '../../../views/Tool.astro';
+import { tools } from '../../../lib/data';
+export function getStaticPaths() { return tools.filter((tool) => tool.kind !== 'internal').map((tool) => ({ params: { id: tool.id }, props: { tool } })); }
+---
+<Tool lang="zh" tool={Astro.props.tool} />

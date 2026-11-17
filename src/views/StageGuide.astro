@@ -1,0 +1,116 @@
+---
+import Base from '../layouts/Base.astro';
+import ResourceCard from '../components/ResourceCard.astro';
+import ResearchBehind from '../components/ResearchBehind.astro';
+import Cite from '../components/Cite.astro';
+import BookCard from '../components/BookCard.astro';
+import { stages, tools, sources, getResource, getEducator, researchFor, type Lang, type Stage } from '../lib/data';
+import { t, href, fmtDate } from '../i18n/ui';
+interface Props { lang: Lang; stage: Stage }
+const { lang, stage } = Astro.props;
+const s = t(lang);
+const zh = lang === 'zh';
+const i = stages.findIndex((x) => x.id === stage.id);
+const prev = stages[i - 1], next = stages[i + 1];
+const picks = (stage.picks ?? []).map(getResource);
+const research = researchFor([...stage.health.links, ...picks.map((r) => r.id)], stage.research ?? []);
+const ageTools = tools.filter((x) => x.maxAge * 12 + 11 >= stage.minMonths && x.minAge * 12 <= stage.maxMonths);
+const links = stage.health.links.map(getResource);
+const books = stage.reading.map(getResource);
+const early = stage.maxMonths <= 71;
+---
+<Base lang={lang} title={`${stage.name[lang]} ${stage.range[lang]} · ${zh ? '详细导读' : 'In-depth guide'}`} active="stages" profileStage={stage.id}>
+<main id="main" tabindex="-1" class="wrap" style="padding-top:28px;display:flex;flex-direction:column;gap:32px">
+  <nav class="row" aria-label={zh ? '位置' : 'Breadcrumb'}><a href={href(lang)}>{s.nav.home}</a><span aria-hidden="true">/</span><a href={href(lang, `ages/${stage.id}`)}>{stage.name[lang]} · {zh ? '阶段精选' : 'Stage selections'}</a><span aria-hidden="true">/</span><span>{zh ? '详细导读' : 'In-depth guide'}</span></nav>
+  <nav aria-label={zh ? '年龄阶段' : 'Age stages'} class="split" style="align-items:center">
+    {prev ? <a class="btn btn-ghost" href={href(lang, `ages/${prev.id}`)}>← {prev.name[lang]} · {prev.range[lang]}</a> : <span class="muted" style="font-size:var(--type-note)">{zh ? '第一个阶段' : 'First stage'}</span>}
+    <div class="row" style="gap:4px">
+      {stages.map((x) => <a class="chip" style={`min-height:2.75rem;padding:0 12px;text-decoration:none;${x.id === stage.id ? 'background:var(--ink);color:var(--paper)' : ''}`} href={href(lang, `ages/${x.id}`)} aria-current={x.id === stage.id ? 'page' : undefined}>{x.range[lang]}</a>)}
+    </div>
+    {next ? <a class="btn btn-ghost" href={href(lang, `ages/${next.id}`)}>{next.name[lang]} · {next.range[lang]} →</a> : <span class="muted" style="font-size:var(--type-note)">{zh ? '最后一个阶段' : 'Last stage'}</span>}
+  </nav>
+
+  <header class="stack" style="gap:10px">
+    <span class="muted" style="font-size:var(--type-ui)">{stage.range[lang]} · {s.updated} {fmtDate(stage.updated, lang)}</span>
+    <h1 class="h-serif" style="font-size:var(--type-feature);line-height:var(--leading-heading)">{zh ? `${stage.name[lang]}，${stage.range[lang]}` : `${stage.name[lang]}, ${stage.range[lang]}`}</h1>
+    <p class="prose" style="font-size:var(--type-body)">{stage.intro[lang]}<Cite src={stage.introSrc} lang={lang} /></p>
+    <a href={`${href(lang, 'library')}?age=${stage.id}`}>{zh ? '浏览这个阶段的资料与工具' : 'Browse resources and tools for this stage'}</a>
+    <ol class="row" style="list-style:none;padding:0;margin:0;gap:8px;font-size:var(--type-ui)">
+      <li><a href="#develop">1 · {s.blocks.develop}</a></li>
+      <li><a href="#together">2 · {s.blocks.together}</a></li>
+      <li><a href="#health">3 · {s.blocks.health}</a></li>
+    </ol>
+  </header>
+
+  <section id="develop" class="stack" style="gap:18px" aria-labelledby="dev-h">
+    <div class="block-h"><span class="num">1</span><h2 id="dev-h" class="h-serif" style="font-size:var(--type-section);margin:0">{s.blocks.develop}</h2></div>
+    {early && <p class="muted" style="margin:0;font-size:var(--type-ui);max-width:46em">{zh ? '下面是大多数孩子在这个年龄能做到的事，用来了解孩子，不是打分表。每个孩子的节奏不同。' : 'These are things most children can do by this age. They are for understanding your child, not a scorecard; every child develops at their own pace.'}<Cite src="cdc-pp-infants" lang={lang} /></p>}
+    <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))">
+      {stage.develop.areas.map((a) => (
+        <div class="card" style="gap:10px">
+          <h3 style="margin:0;font-size:var(--type-body)">{s.area[a.area as keyof typeof s.area]}</h3>
+          <ul class="claims">{a.points.map((p) => <li>{p[lang]}<Cite src={p.src} lang={lang} /></li>)}</ul>
+        </div>
+      ))}
+    </div>
+    <div class="callout"><b>{zh ? '什么时候找医生：' : 'When to talk to a doctor: '}</b>{stage.develop.concern[lang]}<Cite src={stage.develop.concern.src} lang={lang} /></div>
+    <ResearchBehind items={research} lang={lang} heading="h3" />
+    <section class="stack" style="gap:12px" aria-labelledby="roots-h">
+      <div class="stack" style="gap:4px">
+        <h3 id="roots-h" class="h-serif" style="margin:0;font-size:var(--type-section)">{s.blocks.roots}</h3>
+        <span class="muted" style="font-size:var(--type-note)">{zh ? '这些发展特点和哪些教育家的思想有关。点开可以看现代研究支持什么、哪些已经过时。' : 'Educators whose ideas connect to this stage. Open one to see what modern research supports and what it does not.'}</span>
+      </div>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr))">
+        {stage.roots.map((r) => { const e = getEducator(r.educator); return (
+          <a class="card soft" href={href(lang, `educators/${e.id}`)} style="gap:6px;padding:16px;text-decoration:none;color:var(--ink)">
+            <span class="card-title" style="font-weight:600;font-size:var(--type-body)">{e.name[lang]} <span class="muted" style="font-weight:400;font-size:var(--type-note)">{e.years}</span></span>
+            <span style="font-size:var(--type-ui);color:var(--ink-2);line-height:var(--leading-body)">{r[lang]}</span>
+          </a>
+        ); })}
+      </div>
+    </section>
+  </section>
+
+  <section id="together" class="stack" style="gap:18px;border-top:1px solid var(--line);padding-top:28px" aria-labelledby="tog-h">
+    <div class="block-h"><span class="num">2</span><h2 id="tog-h" class="h-serif" style="font-size:var(--type-section);margin:0">{s.blocks.together}</h2></div>
+    <ul class="claims card" style="padding:22px">{stage.activities.map((a) => <li>{a[lang]}<Cite src={a.src} lang={lang} /></li>)}</ul>
+    {picks.length > 0 && <section class="stack" style="gap:12px" aria-labelledby="picks-h">
+      <h3 id="picks-h" style="margin:0;font-size:var(--type-body)">{zh ? '这个阶段的精选资源' : 'Selected resources for this stage'}</h3>
+      <p class="muted" style="margin:0;font-size:var(--type-ui)">{zh ? '从适合当前需要的一项开始。经典导读供照顾者思考，不是孩子必须阅读的书单。' : 'Start with one resource that fits your needs. Classic readings are for caregivers to reflect on, not a required reading list for children.'}</p>
+      <div class="grid">{picks.map((r) => <ResourceCard r={r} lang={lang} compact />)}</div>
+    </section>}
+    {ageTools.length > 0 && (
+      <div class="stack" style="gap:10px">
+        <div class="split"><h3 style="margin:0;font-size:var(--type-body)">{zh ? '适合这个年龄的免费工具' : 'Free tools for this age'}</h3><a href={href(lang, 'tools#criteria')}>{zh ? '我们怎么挑选工具' : 'How we choose tools'}</a></div>
+        <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr))">
+          {ageTools.map((x) => (
+            <a class="card soft" href={href(lang, `tools/${x.id}`)} style="gap:4px;padding:14px 16px;text-decoration:none;color:var(--ink)">
+              <span style="font-weight:600">{x.name[lang]}</span>
+              <span style="font-size:var(--type-note);color:var(--ink-2)">{x.what[lang]}</span>
+              <span class="muted" style="font-size:var(--type-note)">{zh ? `${x.minAge}–${x.maxAge} 岁` : `Ages ${x.minAge}–${x.maxAge}`} · {x.by}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </section>
+
+  <section id="health" class="stack" style="gap:16px;border-top:1px solid var(--line);padding-top:28px" aria-labelledby="hl-h">
+    <div class="block-h"><span class="num">3</span><h2 id="hl-h" class="h-serif" style="font-size:var(--type-section);margin:0">{s.blocks.health}</h2></div>
+    <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr))">
+      {stage.facts.map((f) => <div class="card" style="gap:4px;padding:14px"><span class="muted" style="font-size:var(--type-note)">{f.label[lang]}</span><span style="font-size:var(--type-body);font-weight:600">{f.value[lang]}</span><span class="muted" style="font-size:var(--type-note)">{f.source}</span></div>)}
+    </div>
+    <ul class="stack" style="list-style:none;padding:0;margin:0;gap:6px;font-size:var(--type-ui)">
+      {links.map((r) => <li><a href={href(lang, `resources/${r.id}`)}>{r.title[lang]}</a> <span class="muted" style="font-size:var(--type-note)">· {r.by.split(',')[0]}</span></li>)}
+      {stage.health.extra.map((k) => <li><a href={sources[k].url} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{sources[k].label[lang]} ↗</a> <span class="muted" style="font-size:var(--type-note)">· {sources[k].by}</span></li>)}
+    </ul>
+  </section>
+
+  {books.length > 0 && (
+    <section class="stack" style="gap:12px;border-top:1px solid var(--line);padding-top:24px" aria-labelledby="rd-h">
+      <div class="stack" style="gap:4px"><h2 id="rd-h" style="margin:0;font-size:var(--type-section)">{s.blocks.reading}</h2><span class="muted" style="font-size:var(--type-note)">{zh ? '经典育儿书，附证据说明。链接到出版信息和图书馆馆藏（WorldCat），不含购买推广链接。' : 'Classic parenting books with a note on the evidence. Links go to publisher details and library holdings (WorldCat). No affiliate links.'}</span></div>
+      <div class="grid">{books.map((b) => <BookCard r={b} lang={lang} />)}</div>
+    </section>
+  )}
+</main>
+</Base>

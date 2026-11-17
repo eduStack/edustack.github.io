@@ -1,0 +1,188 @@
+---
+import ActivityCard from './ActivityCard.astro';
+import StageReading from './StageReading.astro';
+import { getResource, getStageHome, getTool, getActivity, topics, stages, type Lang } from '../lib/data';
+import { fmtDate, href } from '../i18n/ui';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const zh = lang === 'zh';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const illustrations: Record<string, string> = {
+  babies: 'baby', toddlers: 'toddler', preschoolers: 'preschool', 'school-age': 'school', teens: 'teen',
+};
+---
+<div class="personal-home" data-home-personal hidden>
+  <p class="personal-browse-all"><a class="home-link" href={href(lang, 'library/')}>{zh ? '浏览全部精选' : 'Browse all selections'} <span aria-hidden="true">↗</span></a></p>
+  {stages.map((stage) => {
+    const home = getStageHome(stage.id);
+    const prefix = `home-${stage.id}`;
+    const readingGroups = [
+      {
+        id: 'start', className: 'home-start', selections: home.startingPoints, summary: true,
+        eyebrow: zh ? '不必一次读完' : 'ONE SMALL START',
+        title: zh ? '先从贴近日常的事开始' : 'Start close to everyday life',
+        intro: zh ? '选一项符合当前需要的资料，先读用途和适用范围。' : 'Choose a reading that fits your needs. Begin with its purpose and scope.',
+        empty: zh ? '本阶段的主推荐中，暂无符合当前月龄的条目。可以到资源库继续查找。' : 'None of this stage’s starting selections match the current age in months. Explore the library for more reading.',
+      },
+      {
+        id: 'reflection', className: 'home-reflection', selections: [home.reflection], summary: false,
+        eyebrow: zh ? '慢慢读，也值得' : 'ROOM TO REFLECT',
+        title: zh ? '经典与思考' : 'Classics and reflection',
+        intro: zh ? '供成人思考的阅读，不是孩子的必读书单，也不是已证实有效的养育处方。' : 'Reading for adults to reflect on, rather than a required book list for children or a proven parenting prescription.',
+        empty: zh ? '本阶段的经典精选暂无符合当前月龄的条目。可以先看其他导读。' : 'This stage’s classic selection does not match the current age in months. Start with another reading above.',
+      },
+    ];
+    return <section class="personal-stage" data-home-stage={stage.id} aria-labelledby={`${prefix}-title`} hidden>
+      <header class="personal-opening">
+        <div class="personal-opening-copy">
+          <p class="home-eyebrow">{stage.name[lang]} · {stage.range[lang]}</p>
+          <h1 id={`${prefix}-title`}>{home.headline[lang]}</h1>
+          <p>{home.intro[lang]}</p>
+          <p class="home-guidance">{zh ? '为家长和照顾者挑选。年龄只帮助找资料，每个孩子的节奏都不同。' : 'Selected for parents and caregivers. Age helps you find reading; every child has their own pace.'}</p>
+        </div>
+        <img class="personal-art" src={`${base}/editorial/home/${illustrations[stage.id]}-480.webp?v=transparent`} width="480" height="288" alt="" decoding="async" />
+      </header>
+
+      <nav class="personal-contents" aria-label={zh ? '本页内容' : 'On this page'}>
+        <a href={`#${prefix}-start`}>{zh ? '从这里开始' : 'Start here'}</a>
+        <a href={`#${prefix}-reflection`}>{zh ? '经典与思考' : 'Classics'}</a>
+        {Boolean(home.activities?.length) && <a href={`#${prefix}-activities`}>{zh ? '一起试试' : 'Activities'}</a>}<a href={`#${prefix}-tools`}>{zh ? '用得上的工具' : 'Tools'}</a>
+        <a href={`#${prefix}-context`}>{zh ? '研究与更新' : 'Research and updates'}</a>
+        <a href={`#${prefix}-explore`}>{zh ? '继续探索' : 'Explore further'}</a>
+        <button type="button" class="personal-mode-choice" data-home-general-choice aria-pressed="false">{zh ? '普通首页' : 'General homepage'}</button>
+      </nav>
+
+      {readingGroups.map((group) => <section id={`${prefix}-${group.id}`} class={`personal-section ${group.className}`} aria-labelledby={`${prefix}-${group.id}-title`}>
+        <div class="personal-section-intro">
+          <div><p class="home-eyebrow">{group.eyebrow}</p><h2 id={`${prefix}-${group.id}-title`}>{group.title}</h2></div>
+          <p>{group.intro}</p>
+        </div>
+        <div class="personal-readings" data-home-age-group>
+          {group.selections.map((selection) => {
+            const resource = getResource(selection.resource);
+            return <div class="personal-reading" data-home-age-item data-min-months={resource.minMonths} data-max-months={resource.maxMonths}>
+              <StageReading selection={selection} lang={lang} summary={group.summary} />
+              <p class="home-source-date">{zh ? '来源核验：' : 'Source checked: '}<time datetime={resource.checked}>{fmtDate(resource.checked, lang)}</time></p>
+            </div>;
+          })}
+          <p class="home-empty" data-home-age-empty hidden>{group.empty}</p>
+        </div>
+      </section>)}
+
+      {Boolean(home.activities?.length) && <section id={`${prefix}-activities`} class="personal-section"><div class="personal-section-intro"><h2>{zh ? '一起试试' : 'Try something together'}</h2><a class="home-link" href={href(lang, 'activities')}>{zh ? '浏览活动' : 'Browse activities'}</a></div><p class="home-guidance">{zh ? '看具体年龄，按兴趣选择；自由玩耍和休息同样重要。' : 'Check the age range and follow their interests. Free play and rest matter too.'}</p><div class="personal-readings" data-home-age-group>{home.activities!.map((selection) => { const activity = getActivity(selection.activity); return <div class="stack" data-home-age-item data-min-months={activity.minMonths} data-max-months={activity.maxMonths}><ActivityCard activity={activity} lang={lang}/><p>{selection.reason[lang]}</p></div>; })}<p class="home-empty" data-home-age-empty hidden>{zh ? '当前月龄暂无匹配的活动精选，可以浏览活动目录或先看相关阅读。' : 'No selected activity matches the current age. Browse activities or start with the reading above.'}</p></div></section>}
+      {Boolean(home.topics?.length) && <section class="personal-section"><h2>{zh ? '带着问题读' : 'Explore a question'}</h2>{home.topics!.map((selection) => { const topic = topics.find((item) => item.id === selection.topic)!; return <div><a class="home-link" href={href(lang, `topics/${topic.id}`)}>{topic.name[lang]}</a><p>{selection.reason[lang]}</p></div>; })}</section>}
+
+      <section id={`${prefix}-tools`} class="personal-section" aria-labelledby={`${prefix}-tools-title`}>
+        <div class="personal-section-intro">
+          <div><p class="home-eyebrow">{zh ? '按需要选择' : 'SOMETHING TO TRY'}</p><h2 id={`${prefix}-tools-title`}>{zh ? '用得上的工具' : 'Tools you might find useful'}</h2></div>
+          <a class="home-link" href={href(lang, 'tools/')}>{zh ? '浏览工具目录' : 'Browse the tool directory'} <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="home-guidance">{zh ? '先看具体年龄和使用条件，按兴趣选择。工具不能代替亲子相处，也不保证学习效果。' : 'Check the specific ages and access conditions, and follow your child’s interests. Tools do not replace time together or guarantee learning outcomes.'}</p>
+        <div class="personal-tools" data-home-age-group>
+          {home.tools.map((selection) => {
+            const tool = getTool(selection.tool);
+            return <article class="personal-tool" data-home-age-item data-tool={tool.id} data-min-months={tool.minAge * 12} data-max-months={Math.min((tool.maxAge + 1) * 12 - 1, 215)}>
+              <p class="home-source-date">{zh ? '外部工具' : 'External tool'} · {zh ? `${tool.minAge}–${tool.maxAge} 岁` : `Ages ${tool.minAge}–${tool.maxAge}`}</p>
+              <h3><a href={href(lang, `tools/${tool.id}/`)}>{tool.name[lang]}</a></h3>
+              <p>{selection.reason[lang]}</p>
+              <p class="home-source-date">{tool.languages[lang]} · {tool.by}</p>
+              <p class="home-source-date">{tool.checked ? <>{zh ? '来源核验：' : 'Source checked: '}<time datetime={tool.checked}>{fmtDate(tool.checked, lang)}</time></> : (zh ? '尚未记录工具来源核验日期。' : 'A source-check date has not been recorded for this tool.')}</p>
+              <a class="home-link" href={href(lang, `tools/${tool.id}/`)}>{zh ? '查看用途、隐私与使用条件' : 'Check purpose, privacy and access'} <span aria-hidden="true">↗</span></a>
+            </article>;
+          })}
+          <p class="home-empty" data-home-age-empty hidden>{home.tools.length ? (zh ? '本阶段已选工具暂无符合当前月龄的条目。可以先使用阅读与活动资料，或到工具目录核对其他工具。' : 'None of this stage’s selected tools match the current age in months. Start with the readings and activities, or check other tools in the directory.') : stage.id === 'babies' ? (zh ? '当前工具目录暂无适合一岁前宝宝的条目。可以先从回应式互动资料开始，陪伴不需要应用或屏幕。' : 'Our current directory has no tool listed for babies under one. Start with the responsive interaction reading; time together does not need an app or a screen.') : (zh ? '这个阶段暂未挑选工具。可以先使用阅读与活动资料，或到工具目录查看具体适用范围。' : 'No tool has been selected for this stage yet. Start with the readings and activities, or check specific ages in the tool directory.')}</p>
+        </div>
+      </section>
+
+      <section id={`${prefix}-context`} class="personal-section" aria-labelledby={`${prefix}-context-title`}>
+        <div class="personal-section-intro">
+          <div><p class="home-eyebrow">{zh ? '看见依据，也看见边界' : 'READ WITH CONTEXT'}</p><h2 id={`${prefix}-context-title`}>{zh ? '研究背景与近期关注' : 'Research context and recent updates'}</h2></div>
+          <a class="home-link" href={href(lang, 'library/')}>{zh ? '到资源库继续查找' : 'Explore the library'} <span aria-hidden="true">↗</span></a>
+        </div>
+        {home.updates?.length ? <div class="personal-readings" data-home-age-group>
+          {home.updates.map((selection) => {
+            const resource = getResource(selection.resource);
+            return <div class="personal-reading" data-home-age-item data-min-months={resource.minMonths} data-max-months={resource.maxMonths}>
+              <p class="home-source-date">{zh ? '本阶段选入：' : 'Selected for this stage: '}<time datetime={selection.selectedOn}>{fmtDate(selection.selectedOn, lang)}</time>{zh ? '；不代表原始发表或修订日期。' : '; not the source publication or revision date.'}</p>
+              <StageReading selection={selection} lang={lang} />
+              <p class="home-source-date">{zh ? '来源核验：' : 'Source checked: '}<time datetime={resource.checked}>{fmtDate(resource.checked, lang)}</time></p>
+            </div>;
+          })}
+          <p class="home-empty" data-home-age-empty hidden>{zh ? '当前月龄暂无匹配的近期精选。可阅读以下已有研究背景。' : 'No recent selection matches the current age in months. Explore the existing research context below.'}</p>
+        </div> : <p class="home-empty" data-home-recent-empty>{zh ? '近期暂无新增精选。以下是已有的研究与指南背景，年份指原始发表时间；收录或核验日期不代表新发现。' : 'No recent additions have been selected for this stage. These are existing research and guideline readings; years refer to original publication. Addition or check dates do not make them new findings.'}</p>}
+        <div class="personal-readings" data-home-age-group>
+          {home.context.map((selection) => {
+            const resource = getResource(selection.resource);
+            return <div class="personal-reading" data-home-age-item data-min-months={resource.minMonths} data-max-months={resource.maxMonths}>
+              <StageReading selection={selection} lang={lang} />
+              <p class="home-source-date">{zh ? '来源核验：' : 'Source checked: '}<time datetime={resource.checked}>{fmtDate(resource.checked, lang)}</time></p>
+            </div>;
+          })}
+          <p class="home-empty" data-home-age-empty hidden>{zh ? '本阶段研究背景暂无符合当前月龄的条目。可到资源库查看其他资料的适用范围。' : 'None of this stage’s research readings match the current age in months. Check the library for other resources and their scope.'}</p>
+        </div>
+      </section>
+
+      <section id={`${prefix}-explore`} class="personal-explore" aria-labelledby={`${prefix}-explore-title`}>
+        <div><p class="home-eyebrow">{zh ? '想多了解一点' : 'TAKE A CLOSER LOOK'}</p><h2 id={`${prefix}-explore-title`}>{zh ? '带着自己的问题，继续探索' : 'Explore a question in more depth'}</h2><p>{zh ? '详细导读包括成长变化、日常相处和健康资料；也可以自主浏览其他阶段与资源。' : 'The full guide covers changes, everyday activities and health information. You can also browse other stages and resources.'}</p></div>
+        <nav aria-label={zh ? '继续探索' : 'Explore further'}>
+          <a class="home-link" href={href(lang, `ages/${stage.id}/guide/`)}>{zh ? '阅读这个阶段的详细导读' : 'Read the full stage guide'} <span aria-hidden="true">↗</span></a>
+          <a class="home-link" href={href(lang, 'library/')}>{zh ? '浏览资源库' : 'Browse the library'} <span aria-hidden="true">↗</span></a>
+          <a class="home-link" href={href(lang, 'ages/')}>{zh ? '了解其他成长阶段' : 'Explore other stages'} <span aria-hidden="true">↗</span></a>
+        </nav>
+      </section>
+    </section>;
+  })}
+</div>
+
+<style>
+  .personal-home { --accent-line: #c5aa89; }
+  .personal-browse-all { align-self: end; margin: 0; font-size: var(--type-ui); }
+  .personal-stage { display: flex; flex-direction: column; gap: 2.5rem; padding-block: 2rem 3rem; }
+  .personal-opening { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 2rem; align-items: center; }
+  .personal-opening-copy { display: flex; flex-direction: column; gap: 1rem; }
+  h1 { font-size: var(--type-feature); }
+  h2, h3 { font-size: var(--type-section); }
+  .home-eyebrow { color: var(--accent); font-size: var(--type-note); line-height: var(--leading-note); letter-spacing: 0.04em; }
+  .personal-art { inline-size: 100%; max-inline-size: 27rem; block-size: auto; justify-self: center; mix-blend-mode: multiply; }
+  .home-guidance { font-size: var(--type-ui); color: var(--muted); }
+  .personal-contents { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; border-block: 1px solid var(--line); font-size: var(--type-ui); }
+  .personal-contents a { display: inline-flex; align-items: center; min-block-size: 2.75rem; padding-block: 0.5rem; }
+  .personal-mode-choice { display: inline-flex; align-items: center; min-block-size: 2.75rem; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 0.2em; }
+  .personal-section { display: flex; flex-direction: column; gap: 1.5rem; }
+  .personal-section-intro { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 1rem 2rem; }
+  .personal-section-intro h2, .personal-explore h2 { margin-block-start: 0.5rem; }
+  .personal-section-intro > p { max-inline-size: 26rem; font-size: var(--type-ui); color: var(--muted); }
+  .personal-readings, .personal-tools { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+  .personal-reading { display: flex; flex-direction: column; gap: 1rem; }
+  .home-start .personal-reading { border-block-start: 2px solid var(--accent-line); padding-block-start: 1.5rem; }
+  .home-start .personal-reading:first-child { border-color: var(--accent); }
+  .home-reflection { padding: 2rem; border-block: 1px solid var(--line); background: var(--shelf); }
+  .home-reflection .personal-readings { grid-template-columns: minmax(0, 1fr); }
+  .home-reflection .personal-reading { max-inline-size: 48rem; }
+  .personal-tool { display: flex; flex-direction: column; gap: 0.75rem; border-block-start: 1px solid var(--line); padding-block-start: 1.5rem; }
+  .home-source-date { color: var(--muted); font-size: var(--type-note); line-height: var(--leading-note); margin: 0; }
+  .personal-reading > .home-source-date:last-child { margin-block-start: auto; }
+  .home-empty { grid-column: 1 / -1; padding: 1rem 1.25rem; background: var(--shelf); border-inline-start: 2px solid var(--accent-line); font-size: var(--type-ui); }
+  .home-reflection .home-empty { padding: 0; border: 0; }
+  .home-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 1rem; min-block-size: 2.75rem; font-size: var(--type-ui); text-decoration: underline; text-underline-offset: 0.2em; }
+  .home-link span { flex-shrink: 0; }
+  .personal-tool .home-link { margin-block-start: auto; align-self: start; }
+  .personal-explore { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 2rem; border-block-start: 1px solid var(--ink); padding-block-start: 2rem; }
+  .personal-explore p:last-child { margin-block-start: 1rem; font-size: var(--type-ui); }
+  .personal-explore nav { display: flex; flex-direction: column; }
+  .personal-explore nav a + a { border-block-start: 1px solid var(--line); }
+  .personal-home :global(.stage-reading p:not(.src):not(.reason)) { font-size: var(--type-body); }
+  .personal-home :global(.stage-reading .reason) { font-size: var(--type-body); }
+  .personal-home :global(.stage-reading .src) { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem; font-size: var(--type-note); line-height: var(--leading-note); color: var(--muted); }
+  .personal-home :global(.stage-reading .chip) { display: inline-flex; padding: 0.125rem 0.5rem; border: 1px solid var(--line); background: var(--shelf); color: var(--ink); font-size: var(--type-note); }
+  .personal-home :global(.stage-reading .reading-link) { display: inline-flex; gap: 0.75rem; align-items: center; min-block-size: 2.75rem; text-decoration: underline; text-underline-offset: 0.2em; }
+  @media (max-width: 40em) {
+    .personal-stage { gap: 2rem; padding-block-start: 1.5rem; }
+    .personal-opening, .personal-readings, .personal-tools, .personal-explore { grid-template-columns: minmax(0, 1fr); }
+    .personal-opening { gap: 1rem; }
+    .personal-art { max-inline-size: 17rem; }
+    .home-reflection { padding: 1.5rem; }
+    .personal-readings > .personal-reading + .personal-reading { padding-block-start: 1.5rem; border-block-start: 1px solid var(--line); }
+  }
+</style>

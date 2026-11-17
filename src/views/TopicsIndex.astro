@@ -1,17 +1,57 @@
 ---
 import Base from '../layouts/Base.astro';
-import { topics, type Lang } from '../lib/data';
+import { activities, resources, topics, tools, type Lang } from '../lib/data';
 import { href, t, fmtDate } from '../i18n/ui';
+import { primaryStages } from '../lib/taxonomy.mjs';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const zh = lang === 'zh';
+const stageLabels = zh ? ['出生至 1 岁', '1–3 岁', '3–6 岁', '6–12 岁', '12–18 岁'] : ['Birth to 1 year', '1–3 years', '3–6 years', '6–12 years', '12–18 years'];
+const rangesForTopic = (topic: (typeof topics)[number]) => {
+  const ranges: { min: number; max: number }[] = [];
+  for (const id of topic.picks) { const resource = resources.find((item) => item.id === id); if (resource?.minMonths != null && resource.maxMonths != null) ranges.push({ min: resource.minMonths, max: resource.maxMonths }); }
+  for (const selection of topic.activities ?? []) { const activity = activities.find((item) => item.id === selection.activity); if (activity) ranges.push({ min: activity.minMonths, max: activity.maxMonths }); }
+  for (const selection of topic.tools ?? []) { const tool = tools.find((item) => item.id === selection.tool); if (tool) ranges.push({ min: tool.minAge * 12, max: Math.min(tool.maxAge * 12 + 11, 215) }); }
+  return ranges;
+};
+const topicCards = topics.map((topic) => ({ topic, ranges: rangesForTopic(topic) }));
 ---
 <Base lang={lang} title={zh ? '主题' : 'Topics'} active="topics">
 <main id="main" tabindex="-1" class="wrap section">
   <h1 class="h-serif" style="font-size:var(--type-feature)">{zh ? '主题' : 'Topics'}</h1>
-  <p class="prose">{zh ? '每个主题先给一句话结论，再把各权威机构的建议并排列出，标明一致和分歧。' : 'Each topic opens with the bottom line, then sets the positions of authoritative bodies side by side and marks where they agree and differ.'}</p>
+  <p class="prose">{zh ? '围绕日常问题，找到相关解释、可以尝试的活动和可用工具。需要时对照各机构建议，了解共识、分歧与适用范围。' : 'Explore everyday questions through explanations, activities and optional tools. Where useful, compare authoritative guidance and its scope, agreement and differences.'}</p>
+  <p class="muted topic-age-note">{zh ? '可以按孩子所处阶段查看已有适龄精选；主题本身可能跨越多个阶段，没有年龄标记的主题仍会保留。' : 'Choose a stage to see the age-relevant selections currently available. Topics may span stages; topics without an age range remain available.'}</p>
+  <form id="topic-filters" class="topic-filters" hidden aria-label={zh ? '主题筛选' : 'Topic filters'}>
+    <label for="topic-age">{zh ? '适合哪个阶段' : 'Relevant stage'}</label>
+    <select id="topic-age" name="age"><option value="">{zh ? '所有阶段' : 'All stages'}</option>{primaryStages.map((stage, i) => <option value={stage.id}>{stageLabels[i]}</option>)}</select>
+    <button class="btn" type="button" id="topic-reset">{zh ? '查看全部主题' : 'Show all topics'}</button>
+  </form>
   <div class="grid">
-    {topics.map((tp) => <a class="card" href={href(lang, `topics/${tp.id}`)} style="gap:6px"><span class="card-title" style="font-size:var(--type-section);font-weight:600">{tp.name[lang]}</span><span style="color:var(--ink-2)">{tp.teaser[lang]}</span><span class="muted" style="font-size:var(--type-note)">{tp.status === 'ready' ? `${t(lang).updated} ${fmtDate(tp.updated, lang)}` : (zh ? '正在核实来源' : 'Sources being checked')}</span></a>)}
+    {topicCards.map(({ topic: tp, ranges }) => <a class="card topic-card" data-topic-id={tp.id} data-ranges={ranges.map((range) => `${range.min}-${range.max}`).join(',')} href={href(lang, `topics/${tp.id}`)} style="gap:6px"><span class="card-title" style="font-size:var(--type-section);font-weight:600">{tp.name[lang]}</span><span style="color:var(--ink-2)">{tp.teaser[lang]}</span><span class="muted" style="font-size:var(--type-note)">{tp.status === 'ready' ? `${t(lang).updated} ${fmtDate(tp.updated, lang)}` : (zh ? '正在核实来源' : 'Sources being checked')}</span></a>)}
   </div>
+  <p id="topic-empty" class="callout" hidden>{zh ? '这个阶段暂时没有适龄精选主题；可以查看全部主题，或换一个阶段。' : 'There are no age-relevant featured topics for this stage yet. Show all topics or choose another stage.'}</p>
 </main>
 </Base>
+<script>
+  const form = document.getElementById('topic-filters') as HTMLFormElement;
+  const select = document.getElementById('topic-age') as HTMLSelectElement;
+  const cards = [...document.querySelectorAll<HTMLAnchorElement>('.topic-card')];
+  const empty = document.getElementById('topic-empty') as HTMLElement;
+  const valid = new Set(['babies', 'toddlers', 'preschoolers', 'school-age', 'teens']);
+  const ranges: Record<string, [number, number]> = { babies: [0, 11], toddlers: [12, 35], preschoolers: [36, 71], 'school-age': [72, 143], teens: [144, 215] };
+  const setLanguageLinks = () => document.querySelectorAll<HTMLAnchorElement>('.language-switcher a').forEach((link) => { const target = new URL(link.href); target.search = location.search; target.hash = location.hash; link.href = target.href; });
+  const match = (card: HTMLAnchorElement, age: string) => { if (!age) return true; const [min, max] = ranges[age]; const values = (card.dataset.ranges || '').split(',').filter(Boolean).map((value) => value.split('-').map(Number) as [number, number]); return values.length === 0 || values.some(([low, high]) => low <= max && high >= min); };
+  const render = (push = false) => { const age = valid.has(select.value) ? select.value : ''; cards.forEach((card) => { card.hidden = !match(card, age); }); empty.hidden = cards.some((card) => !card.hidden); if (push) { const url = new URL(location.href); if (age) url.searchParams.set('age', age); else url.searchParams.delete('age'); history.replaceState(null, '', url); } setLanguageLinks(); };
+  select.addEventListener('change', () => render(true));
+  (document.getElementById('topic-reset') as HTMLButtonElement).addEventListener('click', () => { select.value = ''; render(true); });
+  window.addEventListener('popstate', () => { select.value = new URLSearchParams(location.search).get('age') || ''; render(); });
+  select.value = new URLSearchParams(location.search).get('age') || ''; render(); form.hidden = false;
+</script>
+<style>
+  .topic-age-note { margin: 0; max-width: 52rem; }
+  .topic-filters { display: flex; flex-wrap: wrap; align-items: end; gap: .75rem 1rem; border-block: 1px solid var(--line); padding-block: 1rem; }
+  .topic-filters label { font-weight: 600; }
+  .topic-filters select { min-height: 2.75rem; min-width: min(100%, 16rem); font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 4px; padding: .5rem; }
+  [hidden] { display: none !important; }
+  @media (max-width: 30em) { .topic-filters { align-items: stretch; flex-direction: column; } .topic-filters select, .topic-filters button { width: 100%; } }
+</style>

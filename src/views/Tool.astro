@@ -1,0 +1,71 @@
+---
+import Base from '../layouts/Base.astro';
+import ActivityCard from '../components/ActivityCard.astro';
+import ResourceCard from '../components/ResourceCard.astro';
+import { activitiesForTool, stages, getResource, type Lang, type Tool } from '../lib/data';
+import { resourceTopics } from '../lib/taxonomy.mjs';
+import { href, fmtDate } from '../i18n/ui';
+interface Props { lang: Lang; tool: Tool }
+const { lang, tool } = Astro.props;
+const relatedActivities = activitiesForTool(tool.id);
+const zh = lang === 'zh';
+const related = (tool.relatedResources ?? []).map(getResource);
+const ageStages = stages.filter((stage) => tool.minAge * 12 <= stage.maxMonths && (tool.maxAge + 1) * 12 - 1 >= stage.minMonths);
+const details = [
+  [zh ? '由谁提供' : 'Provider', tool.by],
+  [zh ? '适用年龄' : 'Listed ages', zh ? `${tool.minAge}–${tool.maxAge} 岁` : `Ages ${tool.minAge}–${tool.maxAge}`],
+  [zh ? '原资料语言' : 'Source languages', tool.languages[lang]],
+  [zh ? '设备与形式' : 'Device and format', tool.device?.[lang] ?? (zh ? '本条目未单独记录设备要求，请先查看官方说明。' : 'Device requirements have not been separately recorded; check the provider’s instructions.')],
+  [zh ? '账号与登记' : 'Accounts and registration', tool.registration?.[lang] ?? (zh ? '本条目未单独核验账号要求；浏览、保存和社区功能可能不同，请查看官方说明。' : 'Account requirements have not been separately checked; browsing, saving and community features may differ. Check the provider’s instructions.')],
+  [zh ? '来源核验日期' : 'Source-check date', tool.checked ? fmtDate(tool.checked, lang) : (zh ? '原记录未注明独立核验日期。' : 'The original record has no separate source-check date.')],
+];
+---
+<Base lang={lang} title={tool.name[lang]} description={tool.what[lang]} active="tools">
+  <main id="main" tabindex="-1" class="wrap tool-detail">
+    <nav class="row muted" aria-label={zh ? '位置' : 'Breadcrumb'}><a href={href(lang, 'tools')}>{zh ? '工具' : 'Tools'}</a><span aria-hidden="true">/</span><span>{tool.name[lang]}</span></nav>
+    <header class="stack">
+      <div class="chips"><span class="chip t-tool">{zh ? '外部工具' : 'External tool'}</span>{(tool.topics ?? []).map((key) => <a class="chip" href={`${href(lang, 'library')}?type=tool&topic=${key}`}>{resourceTopics[key][lang]}</a>)}</div>
+      <h1 class="h-serif">{tool.name[lang]}</h1>
+      <p class="prose">{tool.what[lang]}</p>
+      <div class="row"><a class="btn btn-primary" href={tool.url} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{zh ? '前往官方工具' : 'Open the official tool'} ↗</a><a href={`${href(lang, 'library')}?type=tool`}>{zh ? '浏览工具' : 'Browse tools'}</a></div>
+    </header>
+    <div class="tool-columns">
+      <article class="stack">
+        <section class="card"><h2>{zh ? '可以怎么用' : 'What you can use it for'}</h2><p class="prose">{tool.purpose?.[lang] ?? tool.what[lang]}</p></section>
+        <section class="card"><h2>{zh ? '适合谁' : 'Who it is for'}</h2><p class="prose">{tool.audience?.[lang] ?? (zh ? `目录记录的孩子年龄为 ${tool.minAge}–${tool.maxAge} 岁。年龄帮助选择内容，不是能力评估；具体活动和成人陪伴要求请看官方说明。` : `The directory lists ages ${tool.minAge}–${tool.maxAge}. Ages help select activities and are not an ability assessment; check the provider’s activity and adult-support requirements.`)}</p></section>
+        <section class="card soft"><h2>{zh ? '费用、限制与使用条件' : 'Access, limits and conditions'}</h2>
+          <p class="prose">{tool.access?.[lang] ?? (zh ? '按本目录的筛选标准，核心内容可免费使用；额外服务、地区可用性和现行条件请向官方核对。' : 'Selected for free core access under this directory’s criteria. Check the provider for extras, regional availability and current terms.')}</p>
+          <p class="prose">{tool.limits?.[lang] ?? (zh ? '本条目不是对所有功能和年龄的效果评估，也不是安全保证。内容、费用与隐私政策可能变化；结合孩子的需要、使用情境和官方说明判断。' : 'This record is not an evaluation of every feature and age group or a safety guarantee. Content, prices and privacy policies may change; consider your child’s needs, the setting and the provider’s guidance.')}</p>
+        </section>
+        <section class="card"><h2>{zh ? '出处、机构与隐私' : 'Sources, provider and privacy'}</h2>
+          <p class="prose">{tool.backing[lang]}</p>
+          <p class="muted">{zh ? '机构背景或一般学习研究不等于证实这款工具对每个孩子有效。外部工具的数据由其提供方处理。' : 'Institutional backing or general learning research does not establish effectiveness for every child. External tools handle data under their provider’s policies.'}</p>
+          <ul class="tool-links">
+            <li><a href={tool.url} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{zh ? '官方网站' : 'Official website'} ↗</a></li>
+            <li><a href={tool.backingUrl} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{zh ? '背景或研究资料' : 'Background or research'} ↗</a></li>
+            <li><a href={tool.privacy} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{zh ? '隐私政策或家长说明' : 'Privacy policy or parent information'} ↗</a></li>
+          </ul>
+          <p class="muted">{zh ? '本页使用原创简述和外部链接，不提供原网站内容的转载许可。' : 'This page provides an original introduction and external links; it does not grant permission to republish the provider’s content.'}</p>
+        </section>
+      </article>
+      <aside class="stack">
+        <section class="card"><h2>{zh ? '使用前看一眼' : 'Before you start'}</h2><dl>{details.map(([label, value]) => <div class="detail-row"><dt class="muted">{label}</dt><dd>{value}</dd></div>)}</dl></section>
+        <section class="card"><h2>{zh ? '相关年龄阶段' : 'Related age stages'}</h2><p class="muted">{zh ? '按目录年龄范围关联，不表示每项功能都适合整个阶段。' : 'Linked by the listed age range; not every feature suits the whole stage.'}</p><div class="stack">{ageStages.map((stage) => <a href={href(lang, `ages/${stage.id}`)}>{stage.name[lang]} · {stage.range[lang]}</a>)}</div></section>
+      </aside>
+    </div>
+    {related.length > 0 && <section class="stack"><h2 class="h-serif">{zh ? '相关延伸阅读' : 'Related reading'}</h2><p class="muted">{zh ? '按主题提供阅读背景，不表示这些资料评估或认可了这款工具。' : 'Reading connected by subject, not evidence that these sources evaluated or endorsed this tool.'}</p><div class="grid">{related.map((resource) => <ResourceCard r={resource} lang={lang} compact />)}</div></section>}
+{relatedActivities.length > 0 && <section class="stack"><h2 class="h-serif" style="font-size:var(--type-section)">{zh ? '相关活动' : 'Related activities'}</h2><p class="muted">{zh ? '本站设计的实践示例；相关资料不等于验证了活动整体效果。' : 'Editorial activities connected to this reading; the sources do not establish their overall effectiveness.'}</p><div class="grid">{relatedActivities.map((activity) => <ActivityCard activity={activity} lang={lang} />)}</div></section>}
+  </main>
+</Base>
+<style>
+  .tool-detail { padding-block-start: 2rem; display: flex; flex-direction: column; gap: 2rem; }
+  h2 { margin: 0; font-size: var(--type-section); }
+  .tool-columns { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+  dl { margin: 0; }
+  .detail-row { padding-block: 0.75rem; border-block-end: 1px solid var(--line); font-size: var(--type-ui); }
+  dd { margin: 0.25rem 0 0; overflow-wrap: anywhere; }
+  .tool-links { margin: 0; padding-inline-start: 1.25rem; }
+  .tool-links li + li { margin-block-start: 0.5rem; }
+  .muted { margin-block: 0; font-size: var(--type-ui); }
+  @media (max-width: 48em) { .tool-columns { grid-template-columns: minmax(0, 1fr); } }
+</style>

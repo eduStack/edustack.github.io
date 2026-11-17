@@ -1,30 +1,111 @@
 ---
 import Base from '../layouts/Base.astro';
-import Cite from '../components/Cite.astro';
 import { educators, stagesFor, type Lang } from '../lib/data';
 import { t, href } from '../i18n/ui';
+import { browseEducators, educatorBrowseState, educatorDirections, educatorRegions } from '../lib/educator-browse.mjs';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const s = t(lang);
 const zh = lang === 'zh';
+const ordered = browseEducators(educators, educatorBrowseState(), lang);
+const labels = (items: Record<string, { en: string; zh: string }>) => Object.entries(items).sort((a, b) => a[1][lang].localeCompare(b[1][lang], lang));
 ---
 <Base lang={lang} title={s.nav.educators} active="educators">
 <main id="main" tabindex="-1" class="wrap" style="padding-top:32px;display:flex;flex-direction:column;gap:22px">
   <header class="stack" style="gap:10px">
     <h1 class="h-serif" style="font-size:var(--type-feature)">{s.nav.educators}</h1>
     <p class="prose" style="max-width:44em">{zh
-      ? '今天很多育儿和教育的说法，源头都在这些教育家的思想里。每一页列出他们的核心观点、对今天家长的意义，以及现代研究支持什么、哪些已经过时，并尽量链接到可以免费阅读的原著。'
-      : "Many ideas in today's parenting and education go back to these thinkers. Each page gives their core ideas, what they mean for parents today, what modern research supports and what it does not, and links to free full texts where they exist."}</p>
+      ? '孩子会背却不理解？什么时候帮忙，什么时候放手？从家庭里的问题出发，读一读教育家、哲学家与心理学家的思考。每篇导读介绍代表作品、可以借鉴的想法和阅读时需要留意的局限。'
+      : 'What if a child can recite but does not understand? When should we help, and when should we step back? Explore family questions through educators, philosophers and psychologists, with introductions to their works, useful ideas and limitations.'}</p>
+    <p class="muted" style="max-width:44em;margin:0">{zh ? '经典思想帮助我们思考教育，不等于经过验证的育儿方案。相关现代研究另行说明；阶段标签表示本站在哪些导读中引用，并非适龄处方。' : 'Classic ideas invite reflection; they are not tested parenting programmes. Related modern research is discussed separately. Age labels show where our guides draw on an idea, not a prescription for that age.'}</p>
   </header>
-  <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))">
-    {educators.map((e) => (
-      <a class="card" href={href(lang, `educators/${e.id}`)} style="gap:8px;text-decoration:none;color:var(--ink)">
-        <span class="split" style="align-items:baseline"><span class="card-title" style="font-size:var(--type-section);font-weight:600">{e.name[lang]}</span><span class="muted" style="font-size:var(--type-note)">{e.years}</span></span>
-        <span class="muted" style="font-size:var(--type-note)">{e.region[lang]}</span>
+  <section class="browse-panel" aria-label={zh ? '排序与筛选' : 'Sort and filter'}>
+    <form id="educator-controls" hidden>
+      <div class="browse-field"><label for="educator-sort">{zh ? '排序方式' : 'Sort by'}</label><select id="educator-sort" name="sort">
+        <option value="oldest">{zh ? '出生年代：最早在前' : 'Birth year: earliest first'}</option>
+        <option value="newest">{zh ? '出生年代：最近在前' : 'Birth year: latest first'}</option>
+        <option value="direction">{zh ? '教育思想方向' : 'Educational direction'}</option>
+        <option value="region">{zh ? '关联地区' : 'Associated region'}</option>
+        <option value="name">{zh ? '姓名' : 'Name'}</option>
+      </select></div>
+      <div class="browse-field"><label for="educator-direction">{zh ? '流派与思想方向' : 'Tradition and direction'}</label><select id="educator-direction" name="direction"><option value="">{zh ? '全部方向' : 'All directions'}</option>{labels(educatorDirections).map(([key, label]) => <option value={key}>{label[lang]}</option>)}</select></div>
+      <div class="browse-field"><label for="educator-region">{zh ? '关联地区' : 'Associated region'}</label><select id="educator-region" name="region"><option value="">{zh ? '全部地区' : 'All regions'}</option>{labels(educatorRegions).map(([key, label]) => <option value={key}>{label[lang]}</option>)}</select></div>
+      <button class="btn" type="button" id="educator-reset">{zh ? '重置' : 'Reset'}</button>
+    </form>
+    <p class="muted browse-note" id="educator-sort-note">{zh ? '年代以出生年为准，约数沿用原资料；出生年未记录的人物排在年代排序的最后。' : 'Chronology uses birth years, with approximate dates following the sources. Unrecorded birth years come last in either chronological order.'}</p>
+    <p class="muted browse-note">{zh ? '方向标签是本站根据导读整理的阅读线索，可相互交叉，不代表人物只属于一个流派。按方向排序时采用卡片首个方向，组内按年代；地区仅用于浏览，不代表国籍或全部活动范围。' : 'Direction labels are overlapping reading guides drawn from our introductions, not exclusive school memberships. Direction sorting uses the first label on each card, then birth year. Regions aid browsing and do not define nationality or all places of activity.'}</p>
+    <noscript><p class="muted browse-note">{zh ? '开启 JavaScript 可切换排序和筛选；下方仍可按年代浏览全部人物。' : 'Enable JavaScript to change sorting and filters. All thinkers remain available below in chronological order.'}</p></noscript>
+    <p class="browse-note" id="educator-count" role="status" aria-live="polite" aria-atomic="true">{zh ? `共 ${ordered.length} 位人物` : `${ordered.length} thinkers`}</p>
+  </section>
+  <div id="educator-list" class="grid" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))">
+    {ordered.map((e) => (
+      <a class="card" data-educator={e.id} data-birth-year={e.birthYear ?? ''} data-origin={e.origin} data-directions={e.directions.join(' ')} data-name-en={e.name.en} data-name-zh={e.name.zh} href={href(lang, `educators/${e.id}`)} style="gap:8px;text-decoration:none;color:var(--ink)">
+        <h2 class="card-title" style="font-size:var(--type-section);font-weight:600;margin:0">{e.name[lang]}</h2>
+        <span class="muted" style="font-size:var(--type-note)">{e.years} · {e.region[lang]} · {e.role[lang]}</span>
+        <strong style="font-size:var(--type-body)">{e.question[lang]}</strong>
         <span style="font-size:var(--type-ui);color:var(--ink-2);line-height:var(--leading-body)">{e.bio[lang]}</span>
-        <span class="chips">{stagesFor(e.id).map((st) => <span class="chip">{st.range[lang]}</span>)}{e.texts.length > 0 && <span class="chip t-guideline">{zh ? '有免费原著' : 'Free full text'}</span>}</span>
+        {e.works.length > 0 && <span class="muted" style="font-size:var(--type-ui)">{zh ? '代表阅读：' : 'Read: '}{e.works[0].title[lang]}</span>}
+        <span class="direction-labels muted">{e.directions.map((key) => educatorDirections[key][lang]).join(' · ')}</span>
+        {stagesFor(e.id).length > 0 && <span class="muted related-stages">{zh ? '相关阶段导读：' : 'Related stage guides: '}{stagesFor(e.id).map((st, index) => <span>{index > 0 && ' · '}{st.range[lang]}</span>)}</span>}
+        {e.texts.length > 0 && <span class="chip t-guideline">{zh ? '有在线原著入口' : 'Original text links'}</span>}
       </a>
     ))}
   </div>
+  <p id="educator-empty" class="callout" hidden>{zh ? '没有同时符合这些条件的人物。试试减少筛选条件，或使用“重置”浏览全部人物。' : 'No thinkers match this combination. Try fewer filters or Reset to browse everyone.'}</p>
 </main>
 </Base>
+<script>
+  import { browseEducators, educatorBrowseState } from '../lib/educator-browse.mjs';
+  const form = document.getElementById('educator-controls') as HTMLFormElement;
+  const list = document.getElementById('educator-list')!;
+  const cards = [...list.querySelectorAll<HTMLAnchorElement>('[data-educator]')];
+  const entries = cards.map((card) => ({
+    id: card.dataset.educator!, birthYear: card.dataset.birthYear === '' ? null : Number(card.dataset.birthYear),
+    origin: card.dataset.origin!, directions: card.dataset.directions!.split(' '),
+    name: { en: card.dataset.nameEn!, zh: card.dataset.nameZh! },
+  }));
+  const byId = new Map(cards.map((card) => [card.dataset.educator!, card]));
+  const lang = document.documentElement.lang.startsWith('zh') ? 'zh' : 'en';
+  const field = (name: string) => form.elements.namedItem(name) as HTMLSelectElement;
+  function render(fromUrl = false) {
+    const params = fromUrl ? new URLSearchParams(location.search) : new URLSearchParams();
+    if (!fromUrl) for (const key of ['sort', 'direction', 'region']) params.set(key, field(key).value);
+    const state = educatorBrowseState(params);
+    for (const key of ['sort', 'direction', 'region'] as const) field(key).value = state[key];
+    const results = browseEducators(entries, state, lang);
+    const visible = new Set(results.map((entry) => entry.id));
+    for (const card of cards) card.hidden = !visible.has(card.dataset.educator!);
+    // Move the existing links so visual, reading and keyboard order stay aligned.
+    for (const entry of results) list.append(byId.get(entry.id)!);
+    document.getElementById('educator-count')!.textContent = lang === 'zh' ? `显示 ${results.length} / ${entries.length} 位人物` : `Showing ${results.length} of ${entries.length} thinkers`;
+    document.getElementById('educator-empty')!.hidden = results.length !== 0;
+    document.getElementById('educator-sort-note')!.hidden = state.sort !== 'oldest' && state.sort !== 'newest';
+    if (!fromUrl) {
+      const url = new URL(location.href);
+      for (const [key, value] of Object.entries(state)) {
+        if (!value || (key === 'sort' && value === 'oldest')) url.searchParams.delete(key);
+        else url.searchParams.set(key, value);
+      }
+      if (url.href !== location.href) history.pushState(null, '', url);
+    }
+    for (const link of document.querySelectorAll<HTMLAnchorElement>('.language-switcher a')) {
+      const target = new URL(link.href); target.search = location.search; target.hash = location.hash; link.href = target.href;
+    }
+  }
+  form.addEventListener('change', () => render());
+  form.addEventListener('submit', (event) => { event.preventDefault(); render(); });
+  document.getElementById('educator-reset')!.addEventListener('click', () => { form.reset(); render(); });
+  window.addEventListener('popstate', () => render(true));
+  render(true);
+  form.hidden = false;
+</script>
+<style>
+  .browse-panel { border-block: 1px solid var(--line); padding-block: 20px; display: grid; gap: 12px; }
+  form { display: flex; flex-wrap: wrap; gap: 16px; align-items: end; }
+  .browse-field { display: grid; gap: 6px; flex: 1 1 15rem; min-width: 0; }
+  label { font-size: var(--type-ui); }
+  select { width: 100%; min-width: 0; min-height: 2.75rem; font: inherit; font-size: var(--type-ui); color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 4px; padding: 8px; }
+  .browse-note, .direction-labels { font-size: var(--type-ui); margin: 0; }
+  .related-stages { font-size: var(--type-note); }
+  [hidden] { display: none !important; }
+</style>

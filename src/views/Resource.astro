@@ -1,16 +1,28 @@
 ---
 import Base from '../layouts/Base.astro';
+import ActivityCard from '../components/ActivityCard.astro';
 import ResourceCard from '../components/ResourceCard.astro';
 import ResearchBehind from '../components/ResearchBehind.astro';
-import { recommendations, researchFor, supportedBy, worldcat, ageLabel, yearLabel, type Lang, type Resource } from '../lib/data';
+import { activitiesForResource, recommendations, researchFor, supportedBy, stagesForResource, topicsForResource, toolsForResource, worldcat, ageLabel, yearLabel, type Lang, type Resource } from '../lib/data';
 import { t, href, fmtDate } from '../i18n/ui';
 interface Props { lang: Lang; r: Resource }
 const { lang, r } = Astro.props;
 const s = t(lang);
+const relatedActivities = activitiesForResource(r.id);
 const zh = lang === 'zh';
 const isResearch = r.type === 'research';
 const behind = isResearch ? [] : researchFor([r.id]);
 const sup = supportedBy(r.id);
+const ageStages = stagesForResource(r.id);
+const linkedTopics = topicsForResource(r.id);
+const linkedTools = toolsForResource(r.id);
+const readingNote = {
+  guideline: zh ? '指南说明某类人群和情境下的专业建议，使用时先核对适用地区、对象与版本。本站导读不是完整指南。' : 'Guidelines give professional recommendations for defined populations and settings. Check the population, region and version before applying them. This introduction is not the full guideline.',
+  research: zh ? '先看研究对象、方法和局限，再理解结果能说明什么。单篇研究不能代替完整证据，也不能用于诊断孩子。' : 'Read the population, methods and limitations before interpreting the findings. One study does not replace the wider evidence or diagnose your child.',
+  book: zh ? '这是供照顾者选择阅读的书籍介绍。作者的解释和建议不等于全部获得研究证实，原著、版本与书评应分别看待。' : 'This is a reading introduction for caregivers. An author’s explanations and advice are not all established research findings; distinguish the original work, its edition and commentary.',
+  classic: zh ? '历史思想可帮助反思教育，也受时代和社会条件限制。区分原著、后来的评论与今天的研究。' : 'Historical ideas can prompt reflection, but reflect their time and social setting. Distinguish original works, later commentary and current research.',
+  guide: zh ? '先看适用对象和具体使用方式，从符合家庭情境的一项开始；本站的举例不等于原资料已经评估过的干预。' : 'Check the intended audience and instructions, then start with something that fits your family. Our activity examples are not necessarily evaluated interventions.',
+}[r.type];
 const related = isResearch ? [] : recommendations.filter((x) => x.id !== r.id && x.topics.some((tp) => r.topics.includes(tp))).slice(0, 3);
 const H = zh
   ? { know: '家长须知', why: '与成长阶段的关系', key: '导读要点', keyNote: '本站摘要与转述，请结合原文阅读', act: '可以怎么用', src: '出处和核验记录', open: '查看原始出处', related: '相关资源' }
@@ -24,9 +36,9 @@ const sections = [
 ].filter(Boolean) as { h: string; body: string }[];
 let n = 0;
 ---
-<Base lang={lang} title={r.title[lang]} description={r.summary[lang]} active={r.type === 'research' ? 'topics' : 'library'}>
+<Base lang={lang} title={r.title[lang]} description={r.summary[lang]} active="library">
 <main id="main" tabindex="-1" class="wrap" style="padding-top:28px;display:flex;flex-direction:column;gap:22px">
-  <nav aria-label={zh ? '位置' : 'Breadcrumb'} class="row muted" style="gap:6px;font-size:var(--type-ui)">{isResearch ? <span>{s.behind}</span> : <><a href={href(lang, 'library')}>{s.nav.library}</a><span aria-hidden="true">/</span><span>{s.typePlural[r.type]}</span></>}</nav>
+  <nav aria-label={zh ? '位置' : 'Breadcrumb'} class="row muted" style="gap:6px;font-size:var(--type-ui)"><a href={href(lang, 'library')}>{s.nav.library}</a><span aria-hidden="true">/</span><a href={`${href(lang, 'library')}?type=${r.type}`}>{s.typePlural[r.type]}</a></nav>
   <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start">
     <article style="flex:999 1 600px;min-width:0;display:flex;flex-direction:column;gap:18px">
       <header class="card" style="padding:28px;gap:14px">
@@ -44,10 +56,11 @@ let n = 0;
         <p class="muted" style="margin:0;font-size:var(--type-ui)">{s.evidenceHelp}</p>
         {r.evidenceNote && <p style="margin:0;font-size:var(--type-ui);color:var(--ink-2)"><b>{zh ? '证据说明：' : 'Evidence: '}</b>{r.evidenceNote[lang]}</p>}
       </header>
+      <section class="callout"><h2 style="margin:0 0 8px;font-size:var(--type-body)">{zh ? '如何阅读这类资料' : 'How to read this kind of source'}</h2><p style="margin:0">{readingNote}</p></section>
       {sections.map((sec) => <section class="card" style="padding:24px"><h2 style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:10px">{++n}</span>{sec.h}</h2><p class="prose">{sec.body}</p></section>)}
       {r.keyPoints && <section class="card" style="padding:24px"><div class="split"><h2 style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:10px">{++n}</span>{H.key}</h2><span class="muted" style="font-size:var(--type-note)">{H.keyNote}</span></div><ul class="prose" style="padding-left:20px">{r.keyPoints[lang].map((k) => <li style="margin-bottom:6px">{k}</li>)}</ul></section>}
       {r.actions && <section class="card" style="padding:24px"><h2 style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:10px">{++n}</span>{H.act}</h2><ul class="prose" style="padding-left:20px">{r.actions[lang].map((k) => <li style="margin-bottom:6px">{k}</li>)}</ul></section>}
-      {r.limits && <section class="card soft" style="padding:24px"><h2 style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:10px">{++n}</span>{zh ? '使用限制与需要留意的地方' : 'Limits and things to keep in mind'}</h2><p class="prose">{r.limits[lang]}</p></section>}
+      <section class="card soft" style="padding:24px"><h2 style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:10px">{++n}</span>{zh ? '使用限制与需要留意的地方' : 'Limits and things to keep in mind'}</h2><p class="prose">{r.limits?.[lang] ?? (zh ? '本条目尚未逐项整理原资料的全部适用限制。请核对原文的人群、情境与例外；本站年龄标签仅帮助选择相关阅读。' : 'The full source-specific limitations have not yet been itemised in this record. Check the original population, setting and exceptions; our age tags only help select relevant reading.')}</p></section>
       <section class="card" style="padding:24px"><h2 style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:10px">{++n}</span>{H.src}</h2>
         <div class="stack" style="gap:6px;font-size:var(--type-ui);color:var(--ink-2)">
           <a href={r.url} style="word-break:break-all" target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{r.url}</a>
@@ -55,9 +68,21 @@ let n = 0;
           {(r.sourceLinks ?? []).map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{source.label[lang]} ↗</a>)}
           <span>{s.checked} · {fmtDate(r.checked, lang)}</span>
           {r.checkedNote && <p style="margin:0;line-height:var(--leading-body)">{r.checkedNote[lang]}</p>}
-          {r.access && <p style="margin:0;line-height:var(--leading-body)"><b>{zh ? '获取与使用：' : 'Access and use: '}</b>{r.access[lang]}</p>}
+          <p style="margin:0;line-height:var(--leading-body)"><b>{zh ? '获取与使用：' : 'Access and use: '}</b>{r.access?.[lang] ?? (r.free ? (zh ? '当前记录为可免费阅读；具体版本和条件请以原网站说明为准。免费访问不代表可复制或改编全文。' : 'Recorded as free to read; check the source for the available version and conditions. Free access does not grant permission to copy or adapt the full text.') : (zh ? '可能需要购买、订阅或通过图书馆获取。本站摘要免费，原文的费用和许可单独适用。' : 'The source may require purchase, a subscription or library access. Our introduction is free; the original work has separate access and reuse terms.'))}</p>
+          <p style="margin:0;line-height:var(--leading-body)"><b>{zh ? '版本记录：' : 'Version record: '}</b>{r.sourceVersion?.[lang] ?? (zh ? '已列原始发表信息，尚无单独的修订版本记录；现行版本请向原机构核对。' : 'Original publication information is listed; a separate revision record has not been added. Check the source for its current version.')}</p>
+          <p style="margin:0;line-height:var(--leading-body)"><b>{zh ? '地区与情境：' : 'Region and setting: '}</b>{r.region?.[lang] ?? (zh ? '本条目尚未单独整理地区适用信息；不要将来源机构所在国家等同于通用适用范围。' : 'Regional applicability has not been separately recorded. The organisation’s home country does not establish where the guidance applies.')}</p>
         </div>
       </section>
+      {(ageStages.length + linkedTopics.length + linkedTools.length + (isResearch ? 0 : sup.educators.length)) > 0 && <section class="card" style="padding:24px">
+        <h2 style="margin:0;font-size:var(--type-section)">{zh ? '继续查找与使用' : 'Explore and put it to use'}</h2>
+        <div class="row">
+          {ageStages.map((stage) => <a href={href(lang, `ages/${stage.id}`)}>{stage.name[lang]} · {stage.range[lang]}</a>)}
+          {linkedTopics.map((topic) => <a href={href(lang, `topics/${topic.id}`)}>{topic.name[lang]}</a>)}
+          {linkedTools.map((tool) => <a href={href(lang, `tools/${tool.id}`)}>{tool.name[lang]}</a>)}
+          {!isResearch && sup.educators.map((educator) => <a href={href(lang, `educators/${educator.id}`)}>{zh ? '人物与思想：' : 'Thinker and ideas: '}{educator.name[lang]}</a>)}
+        </div>
+        {linkedTools.length > 0 && <p class="muted" style="margin:0;font-size:var(--type-ui)">{zh ? '工具与阅读按主题关联，不表示本资料评估或认可了这些工具。' : 'Tools and readings are connected by subject; this does not mean the source evaluated or endorsed the tools.'}</p>}
+      </section>}
       <ResearchBehind items={behind} lang={lang} heading="h3" />
       {isResearch && (sup.resources.length + sup.topics.length + sup.stages.length + sup.educators.length) > 0 && (
         <section class="card" style="padding:24px"><h2 style="margin:0;font-size:var(--type-section)">{zh ? '这项研究出现在哪些建议下面' : 'Where this study is used'}</h2>
@@ -89,5 +114,11 @@ let n = 0;
       </div>
     </aside>
   </div>
+{relatedActivities.length > 0 && <section class="stack"><h2 class="h-serif" style="font-size:var(--type-section)">{zh ? '相关活动' : 'Related activities'}</h2><p class="muted">{zh ? '本站设计的实践示例；相关资料不等于验证了活动整体效果。' : 'Editorial activities connected to this reading; the sources do not establish their overall effectiveness.'}</p><div class="grid">{relatedActivities.map((activity) => <ActivityCard activity={activity} lang={lang} />)}</div></section>}
 </main>
 </Base>
+
+<style>
+  dl.card > div { flex-wrap: wrap; }
+  dl.card dt, dl.card dd { min-inline-size: 0; overflow-wrap: anywhere; }
+</style>

@@ -9,7 +9,9 @@ import PwaHead from '../components/PwaHead.astro';
 import PwaStatus from '../components/PwaStatus.astro';
 import PwaUpdates from '../components/PwaUpdates.astro';
 import PwaInstall from '../components/PwaInstall.astro';
-import { getResource, stages, topics } from '../lib/data';
+import ActivityCard from '../components/ActivityCard.astro';
+import PersonalHome from '../components/PersonalHome.astro';
+import { getResource, getActivity, stages, topics } from '../lib/data';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -40,6 +42,11 @@ const nurturingCare = getResource('nurturing-care-framework-2018');
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#faf7f0">
+  <script is:inline>
+    // Wait briefly for local profile selection, without flashing the general recommendations.
+    document.documentElement.dataset.homePending = '';
+    setTimeout(() => { delete document.documentElement.dataset.homePending; }, 1800);
+  </script>
   <FontPreloads lang={lang} />
   <PwaHead lang={lang} />
   <link rel="canonical" href={canonical} />
@@ -50,14 +57,14 @@ const nurturingCare = getResource('nurturing-care-framework-2018');
   <link rel="icon" href={sitePath('/edustack-icon.svg')} type="image/svg+xml">
   
 </head>
-<body>
+<body data-lang={lang}>
   <SiteHeader lang={lang} home />
   <PwaStatus lang={lang} />
 
   <main id="main" tabindex="-1">
     <div class="wrap">
       <section class="opening" aria-labelledby="opening-title">
-        <div class="opening-copy">
+        <div class="opening-copy" data-home-general>
           <h1 id="opening-title">{copy.headline}</h1>
           <p>{copy.intro}</p>
         </div>
@@ -67,7 +74,10 @@ const nurturingCare = getResource('nurturing-care-framework-2018');
         </form>
       </section>
 
+      <p id="home-view-note" class="home-view-note" role="status" hidden></p>
+      <PersonalHome lang={lang} />
       <PwaInstall lang={lang} />
+      <div data-home-general>
       <section class="lead-grid" aria-label={copy.featured}>
         <article class="lead-story">
           <a class="lead-image" href={localPath('ages/toddlers/')} aria-label={copy.leadLabel}><img class="family-art" {...homeImage('family', [640, 1280, 1680], '(max-width: 640px) calc(100vw - 32px), (max-width: 864px) calc(100vw - 48px), (max-width: 1088px) 60vw, 800px', 1681, 936)} alt={copy.familyAlt} loading="eager" fetchpriority="high" decoding="async"></a>
@@ -92,6 +102,8 @@ const nurturingCare = getResource('nurturing-care-framework-2018');
         </aside>
       </section>
 
+      <section class="section-space" aria-labelledby="general-activities-title"><div class="section-heading"><div><span class="eyebrow">TRY SOMETHING TOGETHER</span><h2 id="general-activities-title">{lang === 'zh' ? '有空时，一起试试' : 'A little time together'}</h2></div><a class="text-link" href={localPath('activities/')}>{lang === 'zh' ? '按年龄找活动' : 'Find activities by age'}</a></div><p>{lang === 'zh' ? '两项面向不同年龄的公共精选。按孩子的兴趣选择，也可以自由玩耍或休息。' : 'Two public selections for different ages. Follow your child’s interests; free play and rest are welcome too.'}</p><div class="general-activity-grid">{['story-new-ending', 'weekend-one-choice'].map((id) => <ActivityCard activity={getActivity(id)} lang={lang}/>)}</div></section>
+
       <section id="ages" class="age-section section-space" aria-labelledby="age-title">
         <div class="section-heading"><div><span class="eyebrow">EVERY AGE, A NEW CHAPTER</span><h2 id="age-title">{copy.ageTitle}</h2></div><p>{copy.ageDescription}</p></div>
         <p class="age-note">{copy.ageNote}</p>
@@ -112,9 +124,10 @@ const nurturingCare = getResource('nurturing-care-framework-2018');
           <article class="topic-story"><a class="topic-image reading-art" href={localPath('resources/harvard-serve-and-return/')} aria-label={copy.respondLabel}><img {...homeImage('respond', [480, 960], '(max-width: 640px) calc(100vw - 32px), (max-width: 864px) 46vw, 400px', 400, 225)} alt={copy.respondAlt} loading="lazy" decoding="async"></a><span class="eyebrow">{copy.respondCategory}</span><h3><a href={localPath('resources/harvard-serve-and-return/')}>{copy.respondTitleFirst}<br>{copy.respondTitleSecond}</a></h3><p>{copy.respondDescription}</p><span class="article-meta">{copy.respondEvidence}<time datetime={responsiveCare.checked}>{copy.checked} {fmtDate(responsiveCare.checked, lang)}</time></span></article>
         </div>
       </section>
+      </div>
     </div>
 
-    <section class="reading-band" id="reading" aria-labelledby="reading-title">
+    <section class="reading-band" id="reading" aria-labelledby="reading-title" data-home-general>
       <div class="wrap reading-layout"><div class="reading-intro"><span class="eyebrow">A SMALL, THOUGHTFUL SHELF</span><h2 id="reading-title">{copy.shelfTitleFirst}<br>{copy.shelfTitleSecond}</h2><p>{copy.shelfIntroFirst}<br>{copy.shelfIntroSecond}<br>{copy.shelfIntroThird}</p><a class="text-link" href={localPath('library/')}>{copy.library} <span aria-hidden="true">↗</span></a></div>
         <div class="reading-list"><a class="reading-row" href={localPath('resources/faber-mazlish-kids/')}><span class="resource-number">01</span><div><span class="resource-kind">{copy.bookKind}</span><h3>{copy.bookTitleFirst}<br class="desktop-break">{copy.bookTitleSecond}</h3><p>Adele Faber & Elaine Mazlish</p><p class="resource-checked">{copy.checked} <time datetime={featuredBook.checked}>{fmtDate(featuredBook.checked, lang)}</time></p></div><span class="row-arrow" aria-hidden="true">↗</span></a><a class="reading-row" href={localPath('resources/aap-family-media-plan/')}><span class="resource-number">02</span><div><span class="resource-kind">{copy.planKind}</span><h3>{copy.planTitle}</h3><p>{copy.planBy}</p><p class="resource-checked">{copy.checked} <time datetime={mediaPlan.checked}>{fmtDate(mediaPlan.checked, lang)}</time></p></div><span class="row-arrow" aria-hidden="true">↗</span></a><a class="reading-row" href={localPath('resources/nurturing-care-framework-2018/')}><span class="resource-number">03</span><div><span class="resource-kind">{copy.frameworkKind}</span><h3>{copy.frameworkTitle}</h3><p>WHO · UNICEF · World Bank Group</p><p class="resource-checked">{copy.checked} <time datetime={nurturingCare.checked}>{fmtDate(nurturingCare.checked, lang)}</time></p></div><span class="row-arrow" aria-hidden="true">↗</span></a></div>
       </div>
@@ -128,3 +141,8 @@ const nurturingCare = getResource('nurturing-care-framework-2018');
   
 </body>
 </html>
+
+<style>
+.general-activity-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.5rem; margin-block-start: 1.5rem; }
+@media(max-width:40em) { .general-activity-grid { grid-template-columns:minmax(0,1fr); } }
+</style>

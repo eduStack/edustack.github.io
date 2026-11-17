@@ -1,15 +1,120 @@
 # Publication: draft | in-review | published | needs-review. Only published items reach the site.
-# Free learning tools ("what you can do together"). Kept separate from the reading library.
+# Free learning tools ("what you can do together"). Their own collection also feeds the shared library.
 # Every tool must meet the vetting criteria shown on the Tools page:
 #   free     - core content free, no subscription
 #   noAds    - no advertising found when we last checked
 #   privacy  - a public privacy policy or parents' page (we link it; we do not vouch for it)
 #   backing  - made by a university or non-profit, or publishes research or evaluation (backingUrl)
 # Link checks are scheduled monthly; content, costs and privacy changes need editorial review.
-- { id: khan-academy-kids, publicationStatus: published, name: Khan Academy Kids, url: "https://www.khanacademy.org/kids", minAge: 2, maxAge: 8, subject: early, by: Khan Academy (non-profit), what: { en: "Reading, maths and social-emotional activities. The app says it is free, with no ads and no subscriptions.", zh: "阅读、数学和社交情绪启蒙活动。官方说明完全免费、无广告、无订阅。" }, languages: { en: "English, Spanish", zh: 英文、西语 }, privacy: "https://www.khanacademy.org/kids/privacy-policy", backing: { en: "Non-profit; publishes research on learning outcomes", zh: "非营利机构，公开学习效果研究" }, backingUrl: "https://blog.khanacademy.org/research/" }
-- { id: khan-academy, publicationStatus: published, name: Khan Academy, url: "https://www.khanacademy.org/", minAge: 6, maxAge: 18, subject: general, by: Khan Academy (non-profit), what: { en: "Courses and practice in maths, science, coding and more, organised by grade.", zh: "按年级组织的数学、科学、编程等课程和练习。" }, languages: { en: Many languages, zh: 多语言 }, privacy: "https://www.khanacademy.org/about/privacy-policy", backing: { en: "Non-profit; publishes research on learning outcomes", zh: "非营利机构，公开学习效果研究" }, backingUrl: "https://blog.khanacademy.org/research/" }
-- { id: storyweaver, publicationStatus: published, name: StoryWeaver, url: "https://storyweaver.org.in/", minAge: 2, maxAge: 12, subject: reading, by: Pratham Books (non-profit), what: { en: "Thousands of free picture books, many in several languages.", zh: "数千本免费绘本，很多有多个语言版本。" }, languages: { en: Many languages, zh: 多语言 }, privacy: "https://storyweaver.org.in/privacy-policy", backing: { en: "Non-profit children's publisher", zh: "非营利儿童出版社" }, backingUrl: "https://storyweaver.org.in/" }
-- { id: scratchjr, publicationStatus: published, name: ScratchJr, url: "https://www.scratchjr.org/", minAge: 5, maxAge: 7, subject: coding, by: "MIT, Tufts University", what: { en: "A tablet coding app for young children; no reading needed.", zh: "面向低龄孩子的平板编程应用，不识字也能用。" }, languages: { en: Many languages, zh: 多语言 }, privacy: "https://www.scratchjr.org/about/privacy", backing: { en: "University-built; publishes its research", zh: "大学开发，公开相关研究" }, backingUrl: "https://www.scratchjr.org/about/research" }
-- { id: scratch, publicationStatus: published, name: Scratch, url: "https://scratch.mit.edu/", minAge: 8, maxAge: 16, subject: coding, by: MIT Media Lab, what: { en: "Make animations, games and stories with code blocks and share them.", zh: "用积木编程做动画、游戏和故事，并分享到社区。" }, languages: { en: Many languages, zh: 多语言 }, privacy: "https://scratch.mit.edu/parents/", backing: { en: "University-built; publishes its research", zh: "大学开发，公开相关研究" }, backingUrl: "https://scratch.mit.edu/research" }
-- { id: code-org, publicationStatus: published, name: CodeAI (formerly Code.org), url: "https://code.org/", minAge: 4, maxAge: 18, subject: coding, by: CodeAI, what: { en: "Free courses from block coding to text coding, including the Hour of Code.", zh: "从积木编程到文本编程的免费分级课程，包括“编程一小时”。" }, languages: { en: Many languages, zh: 多语言 }, privacy: "https://code.org/en-US/privacy", backing: { en: "Its privacy policy says student data is not used for advertising", zh: "隐私政策承诺不把学生数据用于广告" }, backingUrl: "https://code.org/en-US/privacy" }
-- { id: phet, publicationStatus: published, name: PhET Interactive Simulations, url: "https://phet.colorado.edu/", minAge: 8, maxAge: 18, subject: science, by: University of Colorado Boulder, what: { en: "Interactive physics, chemistry and maths simulations that run in the browser.", zh: "在浏览器里运行的物理、化学、数学互动仿真实验。" }, languages: { en: Many languages, zh: 多语言 }, privacy: "https://phet.colorado.edu/en/privacy-policy", backing: { en: "University-built; publishes its research", zh: "大学开发，公开相关研究" }, backingUrl: "https://phet.colorado.edu/en/research" }
+- id: task-breakdown
+  publicationStatus: published
+  kind: internal
+  route: /tools/task-breakdown/
+  storageKey: edustack.task-breakdown.v1
+  templateSource: task-breakdown
+  name: { en: "Task breakdown", zh: "任务拆分" }
+  minAge: 6
+  maxAge: 11
+  subject: general
+  by: eduStack
+  what: { en: "Turn one everyday task into a short, editable list of steps.", zh: "把一件日常任务整理成一份可以编辑的短步骤清单。" }
+  languages: { en: "English and Chinese", zh: "英文和中文" }
+  backing: { en: "An original eduStack browser tool informed by planning and adult-support guidance.", zh: "eduStack 原创浏览器工具，参考计划和成人支持相关指导。" }
+  topics: [learning, communication]
+  relatedResources: [harvard-executive-function-activities]
+  purpose: { en: "Make a task easier to discuss, adjust and start; it does not assess a child's ability.", zh: "帮助家长和孩子讨论、调整并开始一件事，不评估孩子的能力。" }
+  audience: { en: "Families working on a familiar, low-risk task together. Adults remain responsible for safety and essential items.", zh: "一起处理熟悉、低风险任务的家庭。安全和必需物品始终由成人负责。" }
+  limits: { en: "This is an organising aid, not a treatment, school assessment or guarantee of better self-regulation. Text stays in this browser when saved.", zh: "这是整理任务的辅助工具，不是治疗、学校评估，也不保证改善自我调节。保存后文字留在这台浏览器中。" }
+  access: { en: "Free and runs in the browser. No account is required; saving is optional.", zh: "免费并在浏览器中运行。不需要账号，保存是可选的。" }
+  device: { en: "Works in a modern browser; printing is available.", zh: "可在现代浏览器中使用，并支持打印。" }
+- { id: khan-academy-kids, publicationStatus: published, name: Khan Academy Kids, url: "https://www.khanacademy.org/kids", minAge: 2, maxAge: 8, subject: early, by: Khan Academy (non-profit), what: { en: "Reading, maths and social-emotional activities. The app says it is free, with no ads and no subscriptions.", zh: "阅读、数学和社交情绪启蒙活动。官方说明完全免费、无广告、无订阅。" }, languages: { en: "English, Spanish", zh: 英文、西语 }, privacy: "https://www.khanacademy.org/kids/privacy-policy", backing: { en: "Non-profit; publishes research on learning outcomes", zh: "非营利机构，公开学习效果研究" }, backingUrl: "https://blog.khanacademy.org/research/", topics: ["learning", "language", "emotions"], relatedResources: ["skene-2022-guided-play"], purpose: {"en": "Explore early reading, maths and social-emotional activities.", "zh": "探索早期阅读、数学与社交情绪活动。"}, audience: {"en": "Families choosing activities for children aged 2–8, following the existing editorial age tags.", "zh": "按既有编辑年龄标签，供为 2–8 岁孩子选择活动的家庭参考。"}, access: {"en": "The recorded official description says the app is free, with no ads or subscriptions. Current device and account requirements have not been recorded here.", "zh": "既有官方介绍说明应用免费、无广告、无订阅；本页尚未记录当前设备和账户要求。"}, limits: {"en": "Further reading links explain learning and adult support; they are not evaluations of this particular tool. Check the provider for current access, costs and privacy terms.", "zh": "延伸阅读介绍学习与成人支持，不是对此工具的效果评估。当前访问、费用与隐私条款请向服务方确认。"} }
+- { id: khan-academy, publicationStatus: published, name: Khan Academy, url: "https://www.khanacademy.org/", minAge: 6, maxAge: 18, subject: general, by: Khan Academy (non-profit), what: { en: "Courses and practice in maths, science, coding and more, organised by grade.", zh: "按年级组织的数学、科学、编程等课程和练习。" }, languages: { en: Many languages, zh: 多语言 }, privacy: "https://www.khanacademy.org/about/privacy-policy", backing: { en: "Non-profit; publishes research on learning outcomes", zh: "非营利机构，公开学习效果研究" }, backingUrl: "https://blog.khanacademy.org/research/", topics: ["learning"] }
+- { id: storyweaver, publicationStatus: published, name: StoryWeaver, url: "https://storyweaver.org.in/", minAge: 2, maxAge: 12, subject: reading, by: Pratham Books (non-profit), what: { en: "Thousands of free picture books, many in several languages.", zh: "数千本免费绘本，很多有多个语言版本。" }, languages: { en: Many languages, zh: 多语言 }, privacy: "https://storyweaver.org.in/privacy-policy", backing: { en: "Non-profit children's publisher", zh: "非营利儿童出版社" }, backingUrl: "https://storyweaver.org.in/", topics: ["learning", "language"], relatedResources: ["harvard-serve-and-return"], limits: {"en": "Further reading links explain learning and adult support; they are not evaluations of this particular tool. Check the provider for current access, costs and privacy terms.", "zh": "延伸阅读介绍学习与成人支持，不是对此工具的效果评估。当前访问、费用与隐私条款请向服务方确认。"} }
+- { id: scratchjr, publicationStatus: published, name: ScratchJr, url: "https://www.scratchjr.org/", minAge: 5, maxAge: 7, subject: coding, by: "MIT, Tufts University", what: { en: "A tablet coding app for young children; no reading needed.", zh: "面向低龄孩子的平板编程应用，不识字也能用。" }, languages: { en: Many languages, zh: 多语言 }, privacy: "https://www.scratchjr.org/about/privacy", backing: { en: "University-built; publishes its research", zh: "大学开发，公开相关研究" }, backingUrl: "https://www.scratchjr.org/about/research", topics: ["learning", "play"], relatedResources: ["skene-2022-guided-play"], purpose: {"en": "Make early coding activities accessible through a tablet app.", "zh": "通过平板应用开展早期编程活动。"}, audience: {"en": "Families choosing activities for children aged 5–7; the existing description says reading is not required.", "zh": "供为 5–7 岁孩子选择活动的家庭参考；既有介绍说明无需识字。"}, device: {"en": "Tablet app, according to the recorded description; supported models and operating-system versions are not recorded.", "zh": "既有介绍为平板应用；本页未记录支持的机型与操作系统版本。"}, limits: {"en": "Further reading links explain learning and adult support; they are not evaluations of this particular tool. Check the provider for current access, costs and privacy terms.", "zh": "延伸阅读介绍学习与成人支持，不是对此工具的效果评估。当前访问、费用与隐私条款请向服务方确认。"} }
+- { id: scratch, publicationStatus: published, name: Scratch, url: "https://scratch.mit.edu/", minAge: 8, maxAge: 16, subject: coding, by: MIT Media Lab, what: { en: "Make animations, games and stories with code blocks and share them.", zh: "用积木编程做动画、游戏和故事，并分享到社区。" }, languages: { en: Many languages, zh: 多语言 }, privacy: "https://scratch.mit.edu/parents/", backing: { en: "University-built; publishes its research", zh: "大学开发，公开相关研究" }, backingUrl: "https://scratch.mit.edu/research", topics: ["learning", "play"], relatedResources: ["kirschner-2006-guidance"], limits: {"en": "Further reading links explain learning and adult support; they are not evaluations of this particular tool. Check the provider for current access, costs and privacy terms.", "zh": "延伸阅读介绍学习与成人支持，不是对此工具的效果评估。当前访问、费用与隐私条款请向服务方确认。"} }
+- { id: code-org, publicationStatus: published, name: CodeAI (formerly Code.org), url: "https://code.org/", minAge: 4, maxAge: 18, subject: coding, by: CodeAI, what: { en: "Free courses from block coding to text coding, including the Hour of Code.", zh: "从积木编程到文本编程的免费分级课程，包括“编程一小时”。" }, languages: { en: Many languages, zh: 多语言 }, privacy: "https://code.org/en-US/privacy", backing: { en: "Its privacy policy says student data is not used for advertising", zh: "隐私政策承诺不把学生数据用于广告" }, backingUrl: "https://code.org/en-US/privacy", topics: ["learning"] }
+- { id: phet, publicationStatus: published, name: PhET Interactive Simulations, url: "https://phet.colorado.edu/", minAge: 8, maxAge: 18, subject: science, by: University of Colorado Boulder, what: { en: "Interactive physics, chemistry and maths simulations that run in the browser.", zh: "在浏览器里运行的物理、化学、数学互动仿真实验。" }, languages: { en: Many languages, zh: 多语言 }, privacy: "https://phet.colorado.edu/en/privacy-policy", backing: { en: "University-built; publishes its research", zh: "大学开发，公开相关研究" }, backingUrl: "https://phet.colorado.edu/en/research", topics: ["learning"], relatedResources: ["alfieri-2011-discovery"], purpose: {"en": "Explore physics, chemistry and maths through interactive simulations.", "zh": "通过互动仿真探索物理、化学与数学。"}, audience: {"en": "Families choosing activities for children aged 8–18, following the existing editorial age tags.", "zh": "按既有编辑年龄标签，供为 8–18 岁孩子选择活动的家庭参考。"}, device: {"en": "Browser-based simulations, according to the recorded description; compatibility for each simulation must be checked with the provider.", "zh": "既有介绍为浏览器仿真；具体仿真的兼容性需在服务方确认。"}, limits: {"en": "Further reading links explain learning and adult support; they are not evaluations of this particular tool. Check the provider for current access, costs and privacy terms.", "zh": "延伸阅读介绍学习与成人支持，不是对此工具的效果评估。当前访问、费用与隐私条款请向服务方确认。"} }
+- id: growth-chart
+  publicationStatus: published
+  kind: internal
+  route: /tools/growth-chart/
+  storageKey: edustack.growth-chart.v1
+  templateSource: practical-tool
+  name: { en: "Growth record", zh: "生长曲线记录" }
+  minAge: 0
+  maxAge: 18
+  subject: general
+  by: eduStack
+  what: { en: "Record height and weight and calculate a non-diagnostic BMI.", zh: "记录身高体重并计算非诊断性的体重指数。" }
+  languages: { en: "English and Chinese", zh: "英文和中文" }
+  backing: { en: "An original eduStack browser tool informed by WHO growth-standard guidance.", zh: "eduStack 原创浏览器工具，参考 WHO 儿童生长标准的使用思路。" }
+  topics: [development]
+  relatedResources: [who-early-childhood-development-2020]
+  purpose: { en: "Keep a simple measurement record before discussing growth with a professional.", zh: "在向专业人员询问前，先保留一份简单的测量记录。" }
+  audience: { en: "Families recording routine measurements; it does not calculate percentiles or diagnose.", zh: "记录日常测量的家庭；不计算百分位，也不作诊断。" }
+  limits: { en: "BMI alone cannot assess a child's health or growth.", zh: "单独的体重指数不能判断孩子的健康或生长。" }
+  access: { en: "Free, browser-only, no account required.", zh: "免费、仅在浏览器运行，不需要账号。" }
+  device: { en: "Modern browser; printing is not needed.", zh: "现代浏览器；当前版本不需要打印。" }
+- id: daily-routine
+  publicationStatus: published
+  kind: internal
+  route: /tools/daily-routine/
+  storageKey: edustack.daily-routine.v1
+  templateSource: practical-tool
+  name: { en: "A day at a glance", zh: "一天的作息对照" }
+  minAge: 0
+  maxAge: 18
+  subject: general
+  by: eduStack
+  what: { en: "Compare sleep, movement and recreational screen time as a family conversation starter.", zh: "把睡眠、活动和娱乐屏幕时间放在一起，作为家庭讨论的起点。" }
+  languages: { en: "English and Chinese", zh: "英文和中文" }
+  backing: { en: "An original tool informed by WHO movement guidance and AASM sleep recommendations.", zh: "原创工具，参考 WHO 活动指南和 AASM 睡眠建议。" }
+  topics: [activity, sleep, screen-time]
+  relatedResources: [who-activity-2020, aasm-sleep-2016]
+  purpose: { en: "Notice patterns worth discussing, without scoring a child.", zh: "发现值得讨论的作息模式，不给孩子打分。" }
+  audience: { en: "Families reviewing a typical day together.", zh: "一起回顾普通一天的家庭。" }
+  limits: { en: "Guidance varies by age and context; the indicators are not a clinical assessment.", zh: "建议会因年龄和情境而不同；这些指标不是临床评估。" }
+  access: { en: "Free, browser-only, no account required.", zh: "免费、仅在浏览器运行，不需要账号。" }
+  device: { en: "Modern browser.", zh: "现代浏览器。" }
+- id: milestones
+  publicationStatus: published
+  kind: internal
+  route: /tools/milestones/
+  storageKey: edustack.milestones.v1
+  templateSource: practical-tool
+  name: { en: "Milestone checklist", zh: "发育里程碑清单" }
+  minAge: 0
+  maxAge: 12
+  subject: general
+  by: eduStack
+  what: { en: "Tick everyday behaviours you have observed and note questions.", zh: "勾选已经观察到的日常表现，并记下疑问。" }
+  languages: { en: "English and Chinese", zh: "英文和中文" }
+  backing: { en: "An original checklist informed by public milestone guidance.", zh: "原创清单，参考公开的发育里程碑指南。" }
+  topics: [development]
+  relatedResources: [cdc-milestones]
+  purpose: { en: "Prepare observations and questions for a conversation with a professional.", zh: "为和专业人员交流准备观察记录和问题。" }
+  audience: { en: "Families observing development in everyday settings.", zh: "在日常生活中观察孩子发展的家庭。" }
+  limits: { en: "It is not a screening tool, diagnosis or complete developmental measure.", zh: "不是筛查工具、诊断工具，也不是完整的发展测量。" }
+  access: { en: "Free, browser-only, no account required.", zh: "免费、仅在浏览器运行，不需要账号。" }
+  device: { en: "Modern browser.", zh: "现代浏览器。" }
+- id: screen-agreement
+  publicationStatus: published
+  kind: internal
+  route: /tools/screen-agreement/
+  storageKey: edustack.screen-agreement.v1
+  templateSource: practical-tool
+  name: { en: "Family screen agreement", zh: "家庭屏幕约定" }
+  minAge: 2
+  maxAge: 18
+  subject: general
+  by: eduStack
+  what: { en: "Write and print a screen agreement that fits your family.", zh: "写下适合你们家庭的屏幕使用约定并打印。" }
+  languages: { en: "English and Chinese", zh: "英文和中文" }
+  backing: { en: "An original tool informed by family media planning guidance.", zh: "原创工具，参考家庭媒体计划相关指导。" }
+  topics: [learning, communication]
+  relatedResources: [aap-family-media-plan]
+  purpose: { en: "Make expectations visible and adjustable for children and adults.", zh: "把孩子和成人都要遵守的约定写清楚，并可以随时调整。" }
+  audience: { en: "Families making shared screen expectations.", zh: "一起制定屏幕使用约定的家庭。" }
+  limits: { en: "A family agreement is not a universal rule or a guarantee of behaviour.", zh: "家庭约定不是统一规则，也不保证行为一定改变。" }
+  access: { en: "Free, browser-only, no account required.", zh: "免费、仅在浏览器运行，不需要账号。" }
+  device: { en: "Modern browser; printing is available.", zh: "现代浏览器；支持打印。" }

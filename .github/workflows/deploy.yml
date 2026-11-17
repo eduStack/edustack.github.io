@@ -26,6 +26,7 @@ jobs:
         env:
           SITE_URL: https://www.edustack.org
           BASE_PATH: /
+      - run: npm run test:built
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

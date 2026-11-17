@@ -1,128 +1,424 @@
 # Publication: draft | in-review | published | needs-review. Only published items reach the site.
 # Classic educators. Every line names its source: a key in sources.yaml or a resource id.
 # supported / outdated: what modern research backs up, and what it does not.
-# texts: free, legal full texts only (public domain). If none, say so with texts: [].
+# texts: checked free editions; public-domain status can vary by territory and translation.
+# reviewed is the local editorial review date, not a new online source-check date.
 - id: confucius
+  birthYear: -551
+  origin: east-asia
+  directions: [confucian]
   publicationStatus: published
-  name: { en: Confucius, zh: 孔子 }
-  years: "551–479 BCE (traditional dates)"
-  region: { en: China, zh: 中国 }
-  bio: { en: "Teacher and thinker of ancient China whose sayings were collected by his students in the Analects.", zh: "中国古代的教师和思想家，学生把他的言论编成了《论语》。", src: sep-confucius }
+  name:
+    en: Confucius
+    zh: 孔子
+  years: 551–479 BCE (traditional dates)
+  region:
+    en: China
+    zh: 中国
+  role:
+    en: Teacher and philosopher
+    zh: 教师与哲学思想家
+  question:
+    en: How can I adapt my help to the child in front of me?
+    zh: 怎样按孩子的实际情况调整帮助？
+  works:
+    - title:
+        en: Analects
+        zh: 《论语》
+      note:
+        en: >-
+          Compiled by disciples and later followers. The linked Legge English text contains the twenty
+          Analects books, without the Chinese text or Legge’s full commentary. Compare specific passages and
+          translations rather than treating one rendering as definitive.
+        zh: 由弟子及后学记录编纂。链接的理雅各英文文本含《论语》二十篇，不含中文原典或完整注释；应对照具体章句和译本，不将一个英译视为定论。
+      src: sep-confucius
+  basis:
+    en: >-
+      Based on the recorded SEP introduction and selected Analects passages linked here. This is a short
+      thematic introduction, not a complete reading of all textual layers or commentaries.
+    zh: 依据已有 SEP 学术介绍与所链接的《论语》选定章句整理，是主题短导读，未完成全部文本层次和注疏的审读。
+  reviewed: "2026-11-17"
+  bio:
+    en: >-
+      Teacher and thinker of ancient China whose sayings and conversations were compiled by disciples and
+      later followers in the Analects.
+    zh: 中国古代教师和思想家，其言论与对话由弟子及后学记录编纂为《论语》。
+    src: sep-confucius
   ideas:
-    - { en: "Learning and thinking go together: \"Learning without thinking is useless; thinking without learning is dangerous.\"", zh: "学习和思考缺一不可：“学而不思则罔，思而不学则殆。”", src: analects-2 }
-    - { en: "Teach each student according to who they are: asked the same question by two students, he gave them opposite advice. Later scholars summed this up as \"teaching according to aptitude\" (因材施教).", zh: "根据学生的情况教：两个学生问同一个问题，他给了相反的回答。后人把这种做法概括为“因材施教”。", src: analects-11 }
-    - { en: "Education is for everyone: \"In teaching there should be no distinction of classes.\"", zh: "教育面向所有人：“有教无类。”", src: analects-15 }
-  today: { en: "Notice what your child already knows and how they think, and adjust how you help, rather than using one approach for every child.", zh: "先看清孩子已经会什么、是怎么想的，再调整帮助的方式，而不是对每个孩子都用同一套办法。", src: analects-11 }
+    - en: >-
+        Learning and thinking go together: "Learning without thinking is useless; thinking without learning is
+        dangerous."
+      zh: 学习和思考缺一不可：“学而不思则罔，思而不学则殆。”
+      src: analects-2
+    - en: >-
+        Teach each student according to who they are: asked the same question by two students, he gave them
+        opposite advice. Later scholars summed this up as "teaching according to aptitude" (因材施教).
+      zh: 根据学生的情况教：两个学生问同一个问题，他给了相反的回答。后人把这种做法概括为“因材施教”。
+      src: analects-11
+    - en: "Education is for everyone: \"In teaching there should be no distinction of classes.\""
+      zh: 教育面向所有人：“有教无类。”
+      src: analects-15
+  today:
+    en: >-
+      Our family reflection: notice what your child already understands and how they reason, then adjust the
+      help you offer.
+    zh: 本站家庭借鉴：先观察孩子已经理解什么、怎样思考，再调整帮助的方式。
+    src: analects-11
   supported:
-    - { en: "Teaching children at their actual level, rather than strictly by grade, raised learning in large randomised trials.", zh: "大规模随机试验发现，按孩子的实际水平教学，而不是死板地按年级进度，能提高学习成绩。", src: banerjee-2017-tarl }
-  outdated: []
+    - en: >-
+        Teaching children at their actual level, rather than strictly by grade, raised learning in large
+        randomised trials.
+      zh: 大规模随机试验发现，按孩子的实际水平教学，而不是死板地按年级进度，能提高学习成绩。
+      src: banerjee-2017-tarl
+  outdated:
+    - en: >-
+        The Analects belongs to an ancient setting of ritual and unequal social roles. Its moral authority
+        does not make every historical hierarchy a rule for families today.
+      zh: 《论语》处于古代礼制与不平等社会角色的背景中，不能因其道德影响就把历史等级关系当作今天家庭的规范。
+      src: sep-confucius
   texts:
-    - { label: { en: "Analects, original Chinese (Wikisource)", zh: "《论语》原文（维基文库）" }, url: "https://zh.wikisource.org/wiki/論語" }
-    - { label: { en: "Analects, Chinese (Project Gutenberg)", zh: "《论语》（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/23839" }
-    - { label: { en: "Analects, James Legge English translation (Project Gutenberg)", zh: "《论语》理雅各英译本（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/4094" }
+    - label:
+        en: Analects, original Chinese (Wikisource)
+        zh: 《论语》原文（维基文库）
+      url: https://zh.wikisource.org/wiki/論語
+    - label:
+        en: Analects, James Legge English translation (Project Gutenberg)
+        zh: 《论语》理雅各英译本（古登堡计划）
+      url: https://www.gutenberg.org/ebooks/3330
 
 - id: rousseau
+  birthYear: 1712
+  origin: europe
+  directions: [child, freedom]
   publicationStatus: published
-  name: { en: Jean-Jacques Rousseau, zh: 卢梭 }
-  years: "1712–1778"
-  region: { en: Geneva and France, zh: 日内瓦、法国 }
-  bio: { en: "Philosopher whose novel-treatise Emile set out an education that follows the child's natural development.", zh: "哲学家，在《爱弥儿》中提出顺应孩子天性发展的教育。", src: sep-rousseau }
+  name:
+    en: Jean-Jacques Rousseau
+    zh: 卢梭
+  years: 1712–1778
+  region:
+    en: Geneva and France
+    zh: 日内瓦、法国
+  role:
+    en: Philosopher and writer on education
+    zh: 哲学家与教育思想作者
+  question:
+    en: How much room should a child have to learn from experience?
+    zh: 该给孩子多少从经验中学习的空间？
+  works:
+    - title:
+        en: Emile, or On Education
+        zh: 《爱弥儿》
+      note:
+        en: >-
+          First published in 1762; the linked electronic text is Barbara Foxley’s English translation in five
+          books. It is a philosophical education narrative, not a childcare manual, and its gender assumptions
+          in Book V require critical reading.
+        zh: 1762年初版，链接电子文本为 Barbara Foxley 英译五卷。这是哲学教育叙事，不是育儿手册；第五卷性别假设须批判阅读。
+      src: emile-text
+  basis:
+    en: >-
+      Uses the recorded SEP discussion, the linked edition's book information and selected Book V material,
+      alongside discovery-learning research. The complete work and Chinese translations have not been
+      reviewed.
+    zh: 依据已有 SEP 讨论、链接版本书目信息及第五卷选定材料，并与发现学习研究对读；未通读全书或完整审读中文译本。
+  reviewed: "2026-11-17"
+  bio:
+    en: >-
+      Philosopher whose novel-treatise Emile set out an education that follows the child's natural
+      development.
+    zh: 哲学家，在《爱弥儿》中提出顺应孩子天性发展的教育。
+    src: sep-rousseau
   ideas:
-    - { en: "Child-centred \"negative education\": education should work in harmony with the development of the child's natural capacities.", zh: "以儿童为中心的“消极教育”：教育应当顺应孩子天生能力的发展。", src: sep-rousseau }
-    - { en: "Children should learn from experience and discovery more than from books and lectures.", zh: "孩子应当更多从亲身经验和自己发现中学习，而不是靠书本和说教。", src: sep-rousseau }
-  today: { en: "Let children try things for themselves at a level that fits their age, while staying close enough to help.", zh: "让孩子在适合年龄的范围内亲自尝试，同时大人在旁边随时可以帮忙。", src: alfieri-2011-discovery }
+    - en: >-
+        Child-centred "negative education": education should work in harmony with the development of the
+        child's natural capacities.
+      zh: 以儿童为中心的“消极教育”：教育应当顺应孩子天生能力的发展。
+      src: sep-rousseau
+    - en: Children should learn from experience and discovery more than from books and lectures.
+      zh: 孩子应当更多从亲身经验和自己发现中学习，而不是靠书本和说教。
+      src: sep-rousseau
+  today:
+    en: >-
+      Our family suggestion: offer manageable chances to try, while providing examples, feedback or help when
+      needed.
+    zh: 本站家庭建议：提供能力范围内的尝试机会，需要时给出示范、反馈或帮助。
+    src: alfieri-2011-discovery
   supported:
-    - { en: "Discovery learning works when it comes with support such as feedback and examples.", zh: "有支持（反馈、示范）的发现式学习是有效的。", src: alfieri-2011-discovery }
+    - en: Discovery learning works when it comes with support such as feedback and examples.
+      zh: 有支持（反馈、示范）的发现式学习是有效的。
+      src: alfieri-2011-discovery
   outdated:
-    - { en: "Leaving children to discover things entirely alone teaches less than explicit teaching.", zh: "完全让孩子自己摸索，学到的比直接讲解少。", src: alfieri-2011-discovery }
-    - { en: "Book V of Emile says a woman \"is made to please and to be in subjection to man\" - a view of girls' education modern readers reject.", zh: "《爱弥儿》第五卷称女性“生来是为了取悦男性并服从男性”，这种女子教育观今天已被摒弃。", src: emile-text }
+    - en: Leaving children to discover things entirely alone teaches less than explicit teaching.
+      zh: 完全让孩子自己摸索，学到的比直接讲解少。
+      src: alfieri-2011-discovery
+    - en: >-
+        Book V of Emile says a woman "is made to please and to be in subjection to man" - a view of girls'
+        education modern readers reject.
+      zh: 《爱弥儿》第五卷称女性“生来是为了取悦男性并服从男性”，这种女子教育观今天已被摒弃。
+      src: emile-text
   texts:
-    - { label: { en: "Emile, English translation (Project Gutenberg)", zh: "《爱弥儿》英译本（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/5427" }
+    - label:
+        en: Emile, English translation (Project Gutenberg)
+        zh: 《爱弥儿》英译本（古登堡计划）
+      url: https://www.gutenberg.org/ebooks/5427
 
 - id: froebel
+  birthYear: 1782
+  origin: europe
+  directions: [child, experience]
   publicationStatus: published
   name: { en: Friedrich Froebel, zh: 福禄贝尔 }
   years: "1782–1852"
   region: { en: Germany, zh: 德国 }
+  role: { en: "Educator and kindergarten founder", zh: "教育实践者与幼儿园创始人物" }
+  question: { en: "What can play offer, and when should I join in?", zh: "游戏能带来什么，大人何时参与？" }
+  works:
+    - title: { en: "Autobiography of Friedrich Froebel", zh: "《福禄贝尔自传》" }
+      note: { en: "The checked Gutenberg record identifies the 1889 English edition translated and annotated by Emilie Michaelis and H. Keatley Moore. Read for historical background, not as a tested play programme.", zh: "已核验的 Gutenberg 书目标明 1889 年英文版，由 Emilie Michaelis 与 H. Keatley Moore 翻译并注释。适合了解历史背景，不是经过验证的游戏课程。" }
+      src: froebel-autobiography
+  basis: { en: "Uses recorded biographical and Froebel Trust introductions, the autobiography's catalogue record, and modern guided-play research. No complete reading of Froebel's original works is claimed.", zh: "依据已有传记与 Froebel Trust 介绍、自传目录记录及现代引导式游戏研究，未声称通读福禄贝尔原著。" }
+  reviewed: '2026-11-17'
   bio: { en: "German educator who founded the kindergarten and put play at the centre of early education.", zh: "德国教育家，创办了“幼儿园”，把游戏放在早期教育的中心。", src: brit-froebel }
   ideas:
     - { en: "Play is young children's main way of learning.", zh: "游戏是幼儿最主要的学习方式。", src: brit-froebel }
     - { en: "Children learn through their own activity, using simple materials such as blocks and shapes (his \"gifts\").", zh: "孩子通过自己动手来学习，用积木、几何形体等简单材料（他称为“恩物”）。", src: brit-froebel }
-  today: { en: "Play is learning. Join in sometimes, ask a question or add a challenge, rather than either leaving play entirely alone or turning it into a lesson.", zh: "玩就是学。偶尔加入进去，问个问题或加点挑战，既不要完全放手不管，也不要把游戏变成上课。", src: skene-2022-guided-play }
+  today: { en: "Our family suggestion: leave room for child-led play and sometimes offer a question, hint or manageable challenge. This is an editorial example, not a tested Froebel activity.", zh: "本站家庭建议：保留孩子主导的游戏空间，适时提供问题、提示或力所能及的挑战。这是编辑举例，不是已验证的福禄贝尔活动。", src: skene-2022-guided-play }
   supported:
-    - { en: "Play with gentle adult guidance helped 1- to 8-year-olds learn early maths and shapes better than direct teaching.", zh: "大人适度引导的游戏，比直接教学更能帮助 1–8 岁孩子学习早期数学和图形。", src: skene-2022-guided-play }
+    - { en: "A review covering studies of children aged 1–8 found advantages of guided play over direct instruction for some outcomes, including early maths and shape knowledge. This does not establish benefits for every age, skill or Froebel programme.", zh: "一项涵盖 1–8 岁儿童研究的综述发现，引导式游戏在早期数学、图形知识等部分结果上优于直接教学；不能推断每个年龄、所有技能或福禄贝尔课程都有同样收益。", src: skene-2022-guided-play }
   outdated:
     - { en: "Free play on its own did less for some skills, such as spatial words, than play with guidance.", zh: "单纯的自由玩耍在某些能力（比如空间词汇）上不如有引导的游戏。", src: skene-2022-guided-play }
   texts:
-    - { label: { en: "The Education of Man, 1885 English translation (Internet Archive)", zh: "《人的教育》1885 年英译本（互联网档案馆）" }, url: "https://archive.org/details/educationofman00froe" }
     - { label: { en: "Autobiography of Friedrich Froebel (Project Gutenberg)", zh: "《福禄贝尔自传》英译本（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/16434" }
 
 - id: montessori
+  birthYear: 1870
+  origin: europe
+  directions: [child, experience]
   publicationStatus: published
-  name: { en: Maria Montessori, zh: 蒙台梭利 }
-  years: "1870–1952"
-  region: { en: Italy, zh: 意大利 }
-  bio: { en: "Italian physician and educator who developed the Montessori method in the early 1900s.", zh: "意大利医生和教育家，20 世纪初创立了蒙台梭利教学法。", src: brit-montessori }
+  name:
+    en: Maria Montessori
+    zh: 蒙台梭利
+  years: 1870–1952
+  region:
+    en: Italy
+    zh: 意大利
+  role:
+    en: Physician and educator
+    zh: 医生与教育实践者
+  question:
+    en: How can the home help a child do more independently?
+    zh: 怎样安排家庭环境，让孩子多做一点自己的事？
+  works:
+    - title:
+        en: The Montessori Method
+        zh: 《蒙台梭利方法》
+      note:
+        en: >-
+          The 1912 English edition was translated by Anne E. George, with an introduction by Henry W. Holmes.
+          Begin with observation and environment in Chapter IV and discipline in Chapter V; the historical
+          diet and health sections are not current medical guidance.
+        zh: 1912年英文版由 Anne E. George 译、Henry W. Holmes 作导论。可从第四章观察与环境、第五章纪律入手；历史饮食及健康章节不能当作现行医疗指南。
+      src: montessori-method-text
+  basis:
+    en: >-
+      Uses biographical and AMI explanations, the 1912 edition’s title page and contents, and selected
+      observation/environment passages in Chapter IV. The whole book has not been read; school research does
+      not validate our family example.
+    zh: 依据传记与 AMI 说明、1912年版题页目录及第四章观察与环境选段，未通读全书；学校研究不能直接验证本站家庭示例。
+  reviewed: "2026-11-17"
+  bio:
+    en: Italian physician and educator who developed the Montessori method in the early 1900s.
+    zh: 意大利医生和教育家，20 世纪初创立了蒙台梭利教学法。
+    src: brit-montessori
   ideas:
-    - { en: "Children choose their own activities and move freely, rather than sitting at desks.", zh: "孩子自己选择活动、自由走动，而不是坐在课桌前听讲。", src: brit-montessori }
-    - { en: "Specially designed hands-on materials that appeal to the senses.", zh: "使用专门设计、调动感官的动手材料。", src: brit-montessori }
-    - { en: "Children are challenged according to their ability, and help each other learn.", zh: "按每个孩子的能力给出挑战，鼓励孩子互相教。", src: brit-montessori }
-  today: { en: "At home this can mean letting children do real tasks for themselves and choose between a few well-chosen activities.", zh: "在家里，可以让孩子自己做真实的小事，并在几样精选的活动中自己挑。", src: brit-montessori }
+    - en: Children choose their own activities and move freely, rather than sitting at desks.
+      zh: 孩子自己选择活动、自由走动，而不是坐在课桌前听讲。
+      src: brit-montessori
+    - en: Specially designed hands-on materials that appeal to the senses.
+      zh: 使用专门设计、调动感官的动手材料。
+      src: brit-montessori
+    - en: Children are challenged according to their ability, and help each other learn.
+      zh: 按每个孩子的能力给出挑战，鼓励孩子互相教。
+      src: brit-montessori
+    - en: >-
+        Chapter IV connects observation with children’s spontaneous activity and describes furniture and
+        washing facilities designed for their independent use.
+      zh: 第四章将观察与儿童自发活动联系起来，并描述便于儿童自主使用的桌椅、盥洗设施等环境安排。
+      src: montessori-method-text
+  today:
+    en: >-
+      Our family interpretation: make a few suitable activities accessible and let children take part in real
+      tasks with help matched to their ability.
+    zh: 本站家庭借鉴：让几样合适的活动容易取用，并按孩子的能力提供帮助，让他们参与真实小事。
+    src: brit-montessori
   supported:
-    - { en: "A systematic review of 32 studies found Montessori pupils did somewhat better, academically and in executive function.", zh: "一项汇总 32 项研究的系统综述发现，蒙台梭利学生在学业和执行功能上表现略好。", src: randolph-2023-montessori }
-    - { en: "In a lottery-based study, Montessori preschool narrowed the gap between lower- and higher-income children.", zh: "一项抽签入学的追踪研究发现，蒙台梭利幼儿园缩小了不同收入家庭孩子之间的差距。", src: lillard-2017-montessori }
+    - en: >-
+        A systematic review of 32 studies found Montessori pupils did somewhat better, academically and in
+        executive function.
+      zh: 一项汇总 32 项研究的系统综述发现，蒙台梭利学生在学业和执行功能上表现略好。
+      src: randolph-2023-montessori
+    - en: >-
+        In a lottery-based study, Montessori preschool narrowed the gap between lower- and higher-income
+        children.
+      zh: 一项抽签入学的追踪研究发现，蒙台梭利幼儿园缩小了不同收入家庭孩子之间的差距。
+      src: lillard-2017-montessori
   outdated:
-    - { en: "Benefits were larger in preschool and primary than in secondary school, and some outcomes rest on low-quality evidence.", zh: "效果在幼儿园和小学阶段更明显，中学阶段较小；部分结果的证据质量较低。", src: randolph-2023-montessori }
+    - en: >-
+        Benefits were larger in preschool and primary than in secondary school, and some outcomes rest on
+        low-quality evidence.
+      zh: 效果在幼儿园和小学阶段更明显，中学阶段较小；部分结果的证据质量较低。
+      src: randolph-2023-montessori
   texts:
-    - { label: { en: "The Montessori Method (Project Gutenberg)", zh: "《蒙台梭利方法》英译本（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/39863" }
-    - { label: { en: "Dr. Montessori's Own Handbook (Project Gutenberg)", zh: "《蒙台梭利手册》英译本（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/29635" }
+    - label:
+        en: The Montessori Method (Project Gutenberg)
+        zh: 《蒙台梭利方法》英译本（古登堡计划）
+      url: https://www.gutenberg.org/ebooks/39863
 
 - id: dewey
+  birthYear: 1859
+  origin: north-america
+  directions: [experience, justice]
   publicationStatus: published
-  name: { en: John Dewey, zh: 杜威 }
-  years: "1859–1952"
-  region: { en: United States, zh: 美国 }
-  bio: { en: "American philosopher who founded the Laboratory School in Chicago to test ideas about education.", zh: "美国哲学家，在芝加哥创办“实验学校”来检验他的教育理论。", src: sep-dewey }
+  name:
+    en: John Dewey
+    zh: 杜威
+  years: 1859–1952
+  region:
+    en: United States
+    zh: 美国
+  role:
+    en: Philosopher and educational reformer
+    zh: 哲学家与教育改革者
+  question:
+    en: How can a hands-on activity become a chance to think?
+    zh: 怎样让动手活动也成为思考的机会？
+  works:
+    - title:
+        en: Democracy and Education
+        zh: 《民主主义与教育》
+      note:
+        en: >-
+          Published in 1916. Chapter XI connects action with noticing and understanding its consequences:
+          activity alone does not constitute meaningful experience. This is not a ready-made family project
+          curriculum.
+        zh: 1916 年出版。第十一章把行动与觉察、理解其后果联系起来；仅仅参加活动并不自动形成有意义的经验。这不是现成的家庭项目课程。
+      src: dewey-democracy-text
+    - title:
+        en: How We Think
+        zh: 《我们怎样思维》
+      note:
+        en: >-
+          The linked text is the 1910 edition, not the 1933 revision. Chapter I distinguishes a flow of ideas
+          from reflection that examines the grounds and implications of a belief.
+        zh: 所链接为1910年版，不是1933年修订版。第一章区分思绪流动与考察信念依据、后续含义的反思思考。
+      src: dewey-how-we-think
+  basis:
+    en: >-
+      Uses SEP, the opening of Democracy and Education XI and selected reflective-thinking passages in How We
+      Think I. Full electronic texts are available, but neither work was read in full. Modern guidance
+      research remains a separate comparison.
+    zh: 依据 SEP、《民主主义与教育》第十一章开头及《我们怎样思维》第一章反思思考选段；两部电子全文均已取得，但未通读。现代指导学习研究仍是单独对照。
+  reviewed: "2026-11-17"
+  bio:
+    en: American philosopher who founded the Laboratory School in Chicago to test ideas about education.
+    zh: 美国哲学家，在芝加哥创办“实验学校”来检验他的教育理论。
+    src: sep-dewey
   ideas:
-    - { en: "Education grows out of experience: children learn by doing and by working on real problems.", zh: "教育来自经验：孩子在做中学，在解决真实问题中学。", src: sep-dewey }
-    - { en: "School should be connected to community and democratic life, not cut off from it.", zh: "学校应当和社区、民主生活连在一起，而不是与之隔绝。", src: sep-dewey }
-  today: { en: "Hands-on projects work well when an adult guides them: give feedback, show examples, and ask your child to explain their thinking.", zh: "动手做项目很好，但需要大人引导：及时反馈、给出示范，并让孩子说说自己的想法。", src: alfieri-2011-discovery }
+    - en: "Education grows out of experience: children learn by doing and by working on real problems."
+      zh: 教育来自经验：孩子在做中学，在解决真实问题中学。
+      src: sep-dewey
+    - en: School should be connected to community and democratic life, not cut off from it.
+      zh: 学校应当和社区、民主生活连在一起，而不是与之隔绝。
+      src: sep-dewey
+    - en: >-
+        Reflection involves examining reasons and consequences, not merely doing an activity or producing an
+        answer.
+      zh: 反思需要考察理由与后果，不只是做完活动或给出答案。
+      src: dewey-how-we-think
+  today:
+    en: >-
+      Our family suggestion: during an everyday problem or activity, offer examples and feedback and invite
+      the child to explain their reasoning. This is our application of guidance research.
+    zh: 本站家庭建议：一起处理日常问题或活动时，提供示范和反馈，并邀请孩子解释思路。这是本站对指导学习研究的借鉴。
+    src: alfieri-2011-discovery
   supported:
-    - { en: "Discovery and project learning with support beats both lectures and unguided discovery.", zh: "有支持的探究和项目式学习，效果好于单纯讲授，也好于无指导的自己摸索。", src: alfieri-2011-discovery }
+    - en: >-
+        A meta-analysis distinguished unsupported discovery from discovery with feedback, examples or
+        explanation prompts; supported discovery had better outcomes in its comparisons. It did not validate
+        project-based learning as a whole or all of Dewey's ideas.
+      zh: 一项荟萃分析区分无支持的发现学习与配合反馈、示例或解释提示的发现学习；有支持的发现学习在相应比较中结果更好。这不等于验证整个项目式学习或杜威的全部思想。
+      src: alfieri-2011-discovery
   outdated:
-    - { en: "Versions of \"learning by doing\" that give beginners little guidance do not work well.", zh: "对初学者几乎不给指导的“做中学”，效果并不好。", src: kirschner-2006-guidance }
+    - en: Versions of "learning by doing" that give beginners little guidance do not work well.
+      zh: 对初学者几乎不给指导的“做中学”，效果并不好。
+      src: kirschner-2006-guidance
+    - en: >-
+        Chapter XI uses a burn as an example of linking action and consequence. It is an illustration, not
+        permission to expose children to avoidable injury.
+      zh: 第十一章以烧伤说明行动与后果的联系；这个例子不能作为让孩子承受可避免伤害的依据。
+      src: dewey-democracy-text
   texts:
-    - { label: { en: "Democracy and Education (Project Gutenberg)", zh: "《民主主义与教育》英文原著（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/852" }
-    - { label: { en: "The School and Society (Project Gutenberg)", zh: "《学校与社会》英文原著（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/53910" }
-    - { label: { en: "The Child and the Curriculum (Project Gutenberg)", zh: "《儿童与课程》英文原著（古登堡计划）" }, url: "https://www.gutenberg.org/ebooks/29259" }
+    - label:
+        en: Democracy and Education (Project Gutenberg)
+        zh: 《民主主义与教育》英文原著（古登堡计划）
+      url: https://www.gutenberg.org/ebooks/852
+    - label:
+        en: How We Think, 1910 (Project Gutenberg)
+        zh: 《我们怎样思维》1910年版（古登堡计划）
+      url: https://www.gutenberg.org/ebooks/37423
 
 - id: cai-yuanpei
+  birthYear: 1868
+  origin: east-asia
+  directions: [humanist, justice]
   publicationStatus: published
   name: { en: Cai Yuanpei, zh: 蔡元培 }
   years: "1868–1940"
   region: { en: China, zh: 中国 }
+  role: { en: "Education administrator and university reformer", zh: "教育行政与大学改革者" }
+  question: { en: "What place should movement and art have alongside schoolwork?", zh: "在学业之外，运动与艺术该占什么位置？" }
+  works:
+    - title: { en: "Views on the New Education (1912)", zh: "《对于新教育之意见》（1912）" }
+      note: { en: "An education-policy article, not a parenting book; read the five-part proposal in the context of the early Republic of China.", zh: "教育政策文章，并非育儿专著；五育主张须放回民国初年的历史背景阅读。" }
+      src: cai-1912
+    - title: { en: "Replacing Religion with Aesthetic Education (1917)", zh: "《以美育代宗教说》（1917）" }
+      note: { en: "An argument about aesthetic education, character and religion. Its historical proposal is distinct from evidence for a particular art activity.", zh: "讨论美育、品格与宗教关系的文章；历史主张不同于某项艺术活动的效果证据。" }
+      src: cai-1917
+  basis: { en: "Based on the recorded biography and the two linked Chinese articles, with current physical-activity guidance as a separate comparison. No complete collected works or causal effects of aesthetic education were reviewed.", zh: "依据已有传记及所链接的两篇中文文章，另以现行身体活动指南对照；未审读全集，也未验证美育的因果效果。" }
+  reviewed: '2026-11-17'
   bio: { en: "First minister of education of the Republic of China (1912) and head of Peking University from 1916 to 1926.", zh: "中华民国首任教育总长（1912），1916–1926 年主持北京大学。", src: brit-cai }
   ideas:
     - { en: "Five kinds of education should all be developed together: physical and military, practical, civic morality, worldview, and aesthetic education.", zh: "五育并举：军国民教育、实利主义教育、公民道德教育、世界观教育、美感教育，“皆今日之教育所不可偏废者也”。", src: cai-1912 }
     - { en: "Aesthetic education - art and beauty - can do for character what religion once did.", zh: "“以美育代宗教”：用艺术和美的教育来涵养品格。", src: cai-1917 }
-  today: { en: "Make room for movement, art and music alongside schoolwork.", zh: "在学业之外，给运动、艺术和音乐留出时间。", src: cai-1912 }
+  today: { en: "Our family reflection: look at whether the weekly routine leaves room for movement, art and music alongside schoolwork.", zh: "本站家庭借鉴：看看一周安排中，是否在学业之外给运动、艺术和音乐留下空间。", src: cai-1912 }
   supported:
-    - { en: "Today's guidelines also ask for daily physical activity: at least 60 minutes a day for ages 5–17.", zh: "今天的指南同样重视身体活动：5–17 岁每天至少 60 分钟。", src: who-activity-2020 }
+    - { en: "WHO recommends an average of at least 60 minutes a day of moderate-to-vigorous physical activity across the week for ages 5–17. This supports making room for movement, not Cai's whole five-part scheme.", zh: "WHO 建议 5–17 岁儿童青少年一周内平均每天至少进行 60 分钟中高强度身体活动。这支持为运动留出时间，不能验证蔡元培的整套五育方案。", src: who-activity-2020 }
   outdated:
     - { en: "He presented military-citizen education as a need of his time, given the threats China faced in 1912.", zh: "他把“军国民教育”说成是当时形势下“不能不采”的做法，带有那个时代的背景。", src: cai-1912 }
   texts:
     - { label: { en: "Cai Yuanpei's works (Wikisource, Chinese)", zh: "蔡元培作品（维基文库）" }, url: "https://zh.wikisource.org/wiki/Author:蔡元培" }
 
 - id: piaget
+  birthYear: 1896
+  origin: europe
+  directions: [development]
   publicationStatus: published
   name: { en: Jean Piaget, zh: 皮亚杰 }
   years: "1896–1980"
   region: { en: Switzerland, zh: 瑞士 }
+  role: { en: "Developmental psychologist", zh: "发展心理学家" }
+  question: { en: "Why does my child reason differently from an adult?", zh: "为什么孩子的推理和大人不一样？" }
+  works:
+    - title: { en: "The Psychology of the Child", zh: "《儿童心理学》" }
+      note: { en: "Coauthored with Bärbel Inhelder. The checked publisher record identifies the English Basic Books edition; it is not a sole-authored parenting manual or a diagnostic age chart.", zh: "与 Bärbel Inhelder（英海尔德）合著；已核对 Basic Books 英文版出版社书目。并非皮亚杰独著的育儿手册，也不是诊断年龄表。" }
+      src: piaget-inhelder-psychology
+  basis: { en: "Uses recorded biographical accounts and the coauthored book's publisher description, compared with later developmental research. The book and its original studies have not been fully reviewed.", zh: "依据已有传记论述及合著书的出版社介绍，并与后续发展研究对照；未完整审读原书及其全部原始研究。" }
+  reviewed: '2026-11-17'
   bio: { en: "Swiss psychologist who described how children's thinking develops through a series of stages.", zh: "瑞士心理学家，提出儿童思维按阶段发展的理论。", src: brit-piaget }
   ideas:
     - { en: "Children actively build their own understanding of the world.", zh: "孩子是主动构建自己对世界理解的。", src: brit-piaget }
     - { en: "Thinking develops in stages, from learning through the senses and movement in infancy to abstract reasoning in adolescence.", zh: "思维分阶段发展：从婴儿期靠感官和动作认识世界，到青春期能进行抽象推理。", src: brit-piaget }
-  today: { en: "Give children objects to explore and problems slightly beyond them, and expect their reasoning to differ from an adult's.", zh: "给孩子可以摆弄的东西和稍有挑战的问题，并理解孩子的推理方式和大人不同。", src: brit-piaget }
+  today: { en: "Our family reflection: offer things to explore and ask how the child arrived at an answer. Use their reasoning to guide help, rather than using a stage label to limit what they may try.", zh: "本站家庭借鉴：提供可探索的材料，并询问孩子怎样得到答案；根据其实际思路调整帮助，不用阶段标签限制尝试。", src: brit-piaget }
   supported: []
   outdated:
     - { en: "Babies understand more, earlier, than he thought: 5-month-olds already seem to know hidden objects still exist.", zh: "婴儿懂得比他认为的更多、更早：5 个月大的婴儿似乎已经知道被挡住的东西仍然存在。", src: baillargeon-1985-object }
@@ -130,49 +426,2374 @@
   texts: []
 
 - id: vygotsky
+  birthYear: 1896
+  origin: europe
+  directions: [development, culture]
   publicationStatus: published
   name: { en: Lev Vygotsky, zh: 维果茨基 }
   years: "1896–1934"
   region: { en: Russia (Soviet Union), zh: 俄国（苏联） }
+  role: { en: "Psychologist of social and cultural development", zh: "研究社会文化与发展的心理学家" }
+  question: { en: "When should I help, and when can I step back?", zh: "什么时候该帮忙，什么时候可以放手？" }
+  works:
+    - title: { en: "Thought and Language", zh: "《思维与语言》" }
+      note: { en: "The original work appeared in 1934. English titles and translations vary; this introduction relies on a recorded scholarly reference, not a complete review of a selected translation.", zh: "原作出版于 1934 年，英文书名及译本存在差异；本导读依据已有学术工具书介绍，未完整审读某个选定译本。" }
+      src: brit-thought-language
+    - title: { en: "Mind in Society", zh: "《社会中的心智》（译名随版本不同）" }
+      note: { en: "A posthumous edited and translated collection, first published in 1978, prepared by Michael Cole, Vera John-Steiner, Sylvia Scribner and Ellen Souberman. It is not a new book Vygotsky personally published in 1978.", zh: "1978 年首次出版的身后编选译集，由 Michael Cole、Vera John-Steiner、Sylvia Scribner 与 Ellen Souberman 编选，不是维果茨基本人在 1978 年亲自出版的新书。" }
+      src: vygotsky-harvard
+  basis: { en: "Uses recorded reference accounts and the Harvard publisher's collection description and contents, with later tutoring research. Neither original work was read in full; 'scaffolding' is a later research term.", zh: "依据已有工具书论述与哈佛出版社的编选说明、目录，并与后来的辅导研究对读；未通读原著，“脚手架”是后来的研究术语。" }
+  reviewed: '2026-11-17'
   bio: { en: "Russian psychologist whose 1934 book Thought and Language studied how thinking and speech develop together.", zh: "俄国心理学家，1934 年出版《思维与语言》，研究思维和语言如何一起发展。", src: brit-thought-language }
   ideas:
     - { en: "Children's thinking grows out of social interaction: they watch how others think and act, then make it their own.", zh: "孩子的思维来自与人的互动：先看别人怎么想、怎么做，再内化成自己的。", src: brit-post-piaget }
     - { en: "The \"zone of proximal development\": the gap between what a child can do independently and what they can do with guidance from an adult or a more capable peer. With suitable support, some of these abilities may gradually become independent.", zh: "“最近发展区”：孩子独立能做到的，与在成人或能力更熟练的同伴帮助下能做到的之间的距离。适当支持可能帮助孩子逐步独立完成其中的任务，并不保证立刻学会。", src: mind-in-society }
-  today: { en: "Help with just the part your child can't manage yet, then step back as they get it. Researchers call this \"scaffolding\".", zh: "只帮孩子还做不到的那一部分，孩子学会后就慢慢放手。研究者把这叫做“脚手架”。", src: wood-1976-scaffolding }
+  today: { en: "Our family suggestion: help with a part the child cannot yet manage, notice their response, and reduce help as they gain control. Later researchers described related tutoring support as 'scaffolding'.", zh: "本站家庭建议：帮助孩子暂时做不到的部分，观察其反应，逐步掌握后再减少帮助。后来的研究者把相关辅导支持称为“脚手架”。", src: wood-1976-scaffolding }
   supported:
     - { en: "Studies of adults tutoring young children described how well-judged help lets children finish tasks they couldn't do alone.", zh: "对大人辅导幼儿的研究发现，恰到好处的帮助能让孩子完成独自做不到的任务。", src: wood-1976-scaffolding }
-    - { en: "Play with gentle adult guidance improved some early learning more than direct teaching.", zh: "大人适度引导的游戏，在部分早期学习上比直接教学效果更好。", src: skene-2022-guided-play }
-  outdated: []
+    - { en: "A guided-play review found advantages over direct instruction for some early learning outcomes, with no advantage on others. This does not test Vygotsky's whole theory.", zh: "引导式游戏综述发现，部分早期学习结果优于直接教学，其他结果未见优势；这不是对维果茨基整套理论的检验。", src: skene-2022-guided-play }
+  outdated:
+    - { en: "The later scaffolding study observed tutoring of 3–5-year-olds on a construction task. It does not establish a universal amount of help, fixed learning stage or guaranteed transfer to every skill.", zh: "后来的脚手架研究观察的是成人辅导 3–5 岁儿童完成建构任务，不能据此规定通用帮助量、固定学习阶段，或保证迁移到所有技能。", src: wood-1976-scaffolding }
   texts: []
 
 - id: tao-xingzhi
+  birthYear: 1891
+  origin: east-asia
+  directions: [experience, justice]
   publicationStatus: published
   name: { en: Tao Xingzhi, zh: 陶行知 }
   years: "1891–1946"
   region: { en: China, zh: 中国 }
+  role: { en: "Educator and social reformer", zh: "教育实践者与社会改革者" }
+  question: { en: "What can we learn together in ordinary daily life?", zh: "日常生活里，有什么可以一起学？" }
+  works: []
+  basis: { en: "Uses the recorded Teachers College introduction and research notes on life education. No specific edition of the collected works or original education essays has been sufficiently checked for a representative-work entry; no complete reading is claimed.", zh: "依据已有哥伦比亚大学师范学院介绍及生活教育研究记录；尚未充分核验可列作代表作品的全集版本或教育原文篇目，未声称通读原著。" }
+  reviewed: '2026-11-17'
   bio: { en: "Chinese educator who studied at Teachers College, Columbia, and in 1927 co-founded the Xiaozhuang rural teachers' school.", zh: "中国教育家，曾在哥伦比亚大学师范学院学习，1927 年参与创办晓庄试验乡村师范学校。", src: tc-tao }
   ideas:
     - { en: "Life is education.", zh: "生活即教育。", src: tc-tao }
     - { en: "Teaching, learning and doing should be one.", zh: "教学做合一。", src: tc-tao }
     - { en: "There should be no wall between school and society.", zh: "学校和社会之间不应有隔阂。", src: tc-tao }
-  today: { en: "Everyday life - cooking, shopping, fixing things - is a chance to learn together.", zh: "做饭、买东西、修东西，日常生活处处都是一起学习的机会。", src: tc-tao }
+  today: { en: "Our family examples: involve a child in suitable parts of cooking, shopping or fixing things, and talk together about what happened. These examples are our interpretation of life education.", zh: "本站家庭举例：让孩子参与做饭、购物或修理中适合自己的部分，再一起讨论过程；这些例子是本站对生活教育的借鉴。", src: tc-tao }
   supported:
-    - { en: "Learning by doing works best with support such as feedback and examples.", zh: "在做中学，配合反馈和示范时效果最好。", src: alfieri-2011-discovery }
-  outdated: []
+    - { en: "A discovery-learning meta-analysis supports the importance of feedback, examples and explanation prompts. It is a comparison for life education, not a test of Tao's whole approach or our household activities.", zh: "发现学习荟萃分析支持反馈、示例和解释提示的重要性；可与生活教育对读，但不是对陶行知整套思想或本站家务活动的检验。", src: alfieri-2011-discovery }
+  outdated:
+    - { en: "His work concerned schools, rural education and social reform. A historical account of that work does not establish a tested parenting curriculum for every family.", zh: "其工作涉及学校、乡村教育与社会改革，对这些实践的历史介绍不能确立适合每个家庭的已验证育儿课程。", src: tc-tao }
   texts: []
 
 - id: erikson
+  birthYear: 1902
+  origin: north-america
+  directions: [development]
   publicationStatus: published
   name: { en: Erik Erikson, zh: 埃里克森 }
   years: "1902–1994"
   region: { en: Germany and United States, zh: 德国、美国 }
+  role: { en: "Psychoanalyst and psychosocial theorist", zh: "精神分析学家与心理社会发展理论作者" }
+  question: { en: "How can I understand a teenager's questions about who they are?", zh: "怎样理解青少年对“我是谁”的探索？" }
+  works:
+    - title: { en: "Childhood and Society", zh: "《童年与社会》" }
+      note: { en: "First published in 1950. The recorded reference identifies the work and psychosocial theory; its life-stage framework is a historical perspective, not a diagnostic checklist.", zh: "1950 年初版，已有工具书记录核对其书目及心理社会理论；人生阶段框架可作历史视角，不是诊断清单。" }
+      src: brit-childhood-society
+  basis: { en: "Uses the recorded reference entry and a review of longitudinal identity research. The full book has not been reviewed, and evidence about identity does not validate all eight stages.", zh: "依据已有工具书条目与自我认同纵向研究综述，未完整审读原书；有关认同的证据不能验证全部八阶段。" }
+  reviewed: '2026-11-17'
   bio: { en: "Psychoanalyst whose 1950 book Childhood and Society set out his theory of psychosocial development.", zh: "精神分析学家，1950 年出版《童年与社会》，提出心理社会发展理论。", src: brit-childhood-society }
   ideas:
     - { en: "Life has eight psychosocial stages, each with its own demands, continuing into old age.", zh: "人的一生有八个心理社会发展阶段，每个阶段面对不同的任务，一直延续到老年。", src: brit-childhood-society }
     - { en: "Adolescence centres on forming an identity - a sense of who one is.", zh: "青春期的核心是形成自我认同：知道“我是谁”。", src: meeus-2011-identity }
-  today: { en: "Teens trying out new ideas and friendships is part of building who they are. A warm home helps.", zh: "青少年尝试新想法、新朋友，是在建立自我。温暖的家庭对此有帮助。", src: meeus-2011-identity }
+  today: { en: "Our family reflection: make room for conversations about a teenager's changing interests, friendships and commitments, without insisting that every change is an identity crisis.", zh: "本站家庭借鉴：给青少年谈论兴趣、朋友和选择的变化留出空间，不把每次变化都看作认同危机。", src: meeus-2011-identity }
   supported:
     - { en: "Identity does develop gradually through adolescence, and teens with a more settled identity tend to be better adjusted.", zh: "自我认同确实在青春期逐步发展，认同感更成熟的青少年往往适应得更好。", src: meeus-2011-identity }
   outdated:
     - { en: "Identity formation is less of a dramatic \"crisis\" than often assumed; many teens change little.", zh: "自我认同的形成没有常说的那样像一场“危机”，很多青少年变化并不大。", src: meeus-2011-identity }
   texts: []
+
+- id: whitehead
+  birthYear: 1861
+  origin: europe
+  directions: [humanist, experience]
+  publicationStatus: published
+  name: { en: Alfred North Whitehead, zh: 怀特海 }
+  years: "1861–1947"
+  region: { en: Britain and United States, zh: 英国、美国 }
+  role: { en: "Mathematician and philosopher", zh: "数学家与哲学家" }
+  question: { en: "Why can a child remember something but struggle to use it?", zh: "孩子记住了，为什么还不会用？" }
+  works:
+    - title: { en: "The Aims of Education and Other Essays", zh: "《教育的目的》" }
+      note: { en: "A collection of essays published in 1929. Start with the aims and rhythms of education. Our linked introduction draws on the SEP discussion and bibliography, rather than a full reading of the book.", zh: "1929 年出版的教育论文集，可从教育目的与教育节奏相关篇目开始。本站所链接导读依据 SEP 的讨论与书目，未通读原书。" }
+      src: whitehead-aims-of-education
+  basis: { en: "Based on section 5 and the bibliography of the SEP entry recorded in the 2026-11-14 research. The original book and a specific Chinese translation have not been read in full or cleared for reproduction.", zh: "依据 2026-11-14 研究记录中的 SEP 条目第五节与书目，未通读原著或某个中文译本，也未取得复制原书的授权。" }
+  reviewed: '2026-11-17'
+  bio: { en: "Mathematician and philosopher who also wrote about the aims and rhythms of education.", zh: "数学家、哲学家，也论述教育的目的与学习的节奏。", src: sep-whitehead }
+  ideas:
+    - { en: "He warned against 'inert ideas': information that is received but never used, tested or connected in a new way.", zh: "他警惕“惰性观念”：接收了知识，却没有运用、检验或建立新的联系。", src: sep-whitehead }
+    - { en: "He described recurring cycles of exploration, precision and application, rather than a single pass through a fixed age schedule.", zh: "他把探索、精确掌握与综合运用看作反复出现的学习循环，而不是按固定年龄单向推进的时间表。", src: sep-whitehead }
+  today: { en: "Our family reflection: after learning an idea, invite the child to connect it with a familiar situation, then notice where practice or explanation would help. This is our prompt, not a tested Whitehead intervention.", zh: "本站家庭借鉴：学过一个观点后，邀请孩子联系熟悉的情境，再观察哪里需要练习或解释。这是本站思考提示，不是经过验证的怀特海干预。", src: sep-whitehead }
+  supported: []
+  outdated:
+    - { en: "This philosophical account does not establish developmental age norms or evidence that one three-part lesson sequence works for every learner.", zh: "这种哲学论述不能确立发展年龄常模，也不能证明某套三步课堂流程适合每个学习者。", src: sep-whitehead }
+  texts: []
+
+- id: montaigne
+  birthYear: 1533
+  origin: europe
+  directions: [humanist]
+  publicationStatus: published
+  name:
+    en: Michel de Montaigne
+    zh: 蒙田
+  years: 1533–1592
+  region:
+    en: France
+    zh: 法国
+  role:
+    en: Philosopher and essayist
+    zh: 哲学家与随笔作家
+  question:
+    en: Does being able to repeat an answer mean a child understands it?
+    zh: 孩子能复述答案，就算理解了吗？
+  works:
+    - title:
+        en: "Essays: Of the Education of Children"
+        zh: 《随笔集》〈论儿童教育〉
+      note:
+        en: >-
+          Start with the essay on children’s education. In the Cotton translation edited by Hazlitt,
+          Gutenberg’s electronic volume 5 calls it Chapter XXV; modern references often use I.26. That file is
+          one complete electronic subdivision, not all the Essays.
+        zh: 先读儿童教育篇。Cotton译、Hazlitt编的Gutenberg电子第5分卷将其标为第XXV章，现代常见定位为I.26；该文件是完整电子分卷，不是整部《随笔集》。
+      src: montaigne-education-of-children
+  basis:
+    en: >-
+      Uses the recorded SEP account and selected passages on tutors, judgement, understanding and experience
+      in Gutenberg 3585. The complete Essays and modern Chinese translations have not been reviewed.
+    zh: 依据已有 SEP 介绍及 Gutenberg 3585 中关于导师、判断、理解和经验的选定段落；未通读《随笔集》或审读现代中文译本。
+  reviewed: "2026-11-17"
+  bio:
+    en: French philosopher and essayist who examined education, judgement and experience in his Essays.
+    zh: 法国哲学家、随笔作家，在《随笔集》中讨论教育、判断与经验。
+    src: sep-montaigne
+  ideas:
+    - en: >-
+        Education should cultivate a learner's judgement and understanding, rather than measure only memory
+        and repetition.
+      zh: 教育应当培养学习者的判断与理解，不能只看记忆和复述。
+      src: montaigne-education-text
+    - en: Conversation and experience give learners opportunities to examine what they have been taught.
+      zh: 交谈与经验为学习者提供审视所学内容的机会。
+      src: montaigne-education-text
+  today:
+    en: >-
+      Our family suggestion: ask the child to explain an idea in their own words and try another example.
+      Treat the conversation as a way to understand their thinking, rather than another recitation test.
+    zh: 本站家庭建议：请孩子用自己的话解释一个观点，再试举不同的例子。借交流了解其思路，不把对话变成另一场背诵测验。
+    src: montaigne-education-text
+  supported: []
+  outdated:
+    - en: >-
+        The essay addresses privileged boys and private tutors. Its class and gender setting cannot be treated
+        as a universal model of inclusive education today.
+      zh: 篇章以特权家庭男孩与私人导师为背景，其阶层、性别条件不能直接作为今天普及和包容教育的通用模式。
+      src: montaigne-education-text
+  texts:
+    - label:
+        en: Essays, Cotton/Hazlitt English edition (Project Gutenberg)
+        zh: 《随笔集》Cotton/Hazlitt 旧英译版（古登堡计划）
+      url: https://www.gutenberg.org/ebooks/3585
+
+- id: locke
+  birthYear: 1632
+  origin: europe
+  directions: [experience, humanist]
+  publicationStatus: published
+  name:
+    en: John Locke
+    zh: 洛克
+  years: 1632–1704
+  region:
+    en: England
+    zh: 英格兰
+  role:
+    en: Philosopher and writer on education
+    zh: 哲学家与教育思想作者
+  question:
+    en: What do our routines and adult examples teach a child?
+    zh: 日常安排与成人示范，正在教给孩子什么？
+  works:
+    - title:
+        en: Some Thoughts Concerning Education
+        zh: 《教育漫话》
+      note:
+        en: >-
+          First published in 1693. The linked Standard Ebooks text provides numbered sections, based on a
+          Wikisource transcription and historical scans. Start with §§64–66 on rules and practice and §§118
+          and 120 on questions and curiosity; modern translations need separate checks.
+        zh: 1693 年初版。Standard Ebooks 电子文本依据 Wikisource 转录及历史扫描，保留编号段。可先读第64—66节的规则与练习、第118及120节的提问与好奇心；现代中译另核。
+      src: sep-locke
+  basis:
+    en: >-
+      Uses SEP and selected passages in the Standard Ebooks text, including §§64–66, 118 and 120. A complete
+      file is held, but the book and Chinese translations have not been read in full. Historical health,
+      punishment and social assumptions remain subject to separate review.
+    zh: 依据 SEP 与 Standard Ebooks 文本第64—66、118、120节等选段；已存完整文件，但未通读原书或中文译本。历史健康、责罚与社会假设仍需另行审视。
+  reviewed: "2026-11-17"
+  bio:
+    en: English philosopher whose educational writing considered character, reason and the home environment.
+    zh: 英国哲学家，其教育论述关注品格、理性与家庭环境。
+    src: sep-locke
+  ideas:
+    - en: >-
+        He treated the gradual growth of reason and character as a responsibility of education, with attention
+        to the particular child.
+      zh: 他把理性与品格的逐步发展视为教育的任务，并重视具体孩子的特点。
+      src: sep-locke
+    - en: >-
+        His educational writing connects learning, habits and the capacity to question prejudice and
+        authority.
+      zh: 其教育论述把学习、习惯与质疑偏见和权威的能力联系起来。
+      src: sep-locke
+    - en: >-
+        In §§64–66 he questions overloading children with rules and describes practice adjusted to what a
+        child can actually do. This is a historical argument, not a validated habit-training protocol.
+      zh: 第64—66节质疑用过多规则加重儿童记忆负担，并讨论按实际能力安排练习；这是历史论述，不是经过验证的习惯训练方案。
+      src: locke-original-se
+    - en: >-
+        Sections 118 and 120 ask adults to take children’s questions seriously and avoid dismissive or
+        deceptive answers.
+      zh: 第118及120节要求成人认真对待孩子的问题，避免轻视或用欺骗性的回答敷衍。
+      src: locke-original-se
+  today:
+    en: >-
+      Our family reflection: consider what repeated routines and adult behaviour communicate, and adjust
+      expectations to the child's abilities and circumstances. This is our interpretation, not a historical
+      care prescription.
+    zh: 本站家庭借鉴：观察反复出现的安排和成人行为传递了什么，按孩子的能力与处境调整期待。这是本站解释，不是照搬历史照护方法。
+    src: sep-locke
+  supported: []
+  outdated:
+    - en: >-
+        The book addresses the English gentry of its time. Its historical class, discipline and health
+        assumptions need separate scrutiny; it is not a current childcare guideline.
+      zh: 该书面向当时的英国乡绅家庭，阶层、管教和健康方面的历史假设需要另行审视，不能作为现行照护指南。
+      src: locke-thoughts-concerning-education
+    - en: >-
+        Locke's rejection of innate ideas does not mean a child has no inborn capacities or biological
+        differences.
+      zh: 洛克反对天赋观念，不等于孩子没有先天能力或生物差异。
+      src: sep-locke
+  texts:
+    - label:
+        en: Some Thoughts Concerning Education (Standard Ebooks)
+        zh: 《教育漫话》英文电子版（Standard Ebooks）
+      url: https://standardebooks.org/ebooks/john-locke/some-thoughts-concerning-education
+
+- id: russell
+  birthYear: 1872
+  origin: europe
+  directions: [humanist, freedom]
+  publicationStatus: published
+  name: { en: Bertrand Russell, zh: 罗素 }
+  years: "1872–1970"
+  region: { en: Britain, zh: 英国 }
+  role: { en: "Philosopher and logician", zh: "哲学家与逻辑学家" }
+  question: { en: "What should education nurture beyond knowledge and marks?", zh: "除了知识与成绩，教育还应培养什么？" }
+  works:
+    - title: { en: "On Education, Especially in Early Childhood / Education and the Good Life", zh: "《论教育》／《教育与美好生活》（译名依版本）" }
+      note: { en: "One work published in 1926 under British and US titles. The linked Gutenberg text is the US edition, Education and the Good Life; the titles should not be counted as two separate books.", zh: "同一部作品于 1926 年以英、美两种标题出版；链接的 Gutenberg 文本为美国版《教育与美好生活》，不能把双标题算成两本独立作品。" }
+      src: sep-russell
+  basis: { en: "Uses the recorded SEP bibliography and the US edition's contents, introduction and selected character passages in the aims-of-education chapter. Not read chapter by chapter. Gutenberg's US public-domain notice does not settle copyright elsewhere; Russell died in 1970, and translations have separate rights.", zh: "依据已有 SEP 书目，以及美国版目录、导言和教育目的章中选定的品格段落，未逐章通读。Gutenberg 的美国公版提示不决定其他地区版权；罗素于 1970 年去世，译本另有权利。" }
+  reviewed: '2026-11-17'
+  bio: { en: "British philosopher and logician who also wrote about education and took part in an experimental school.", zh: "英国哲学家、逻辑学家，也撰写教育论述并参与实验学校实践。", src: sep-russell }
+  ideas:
+    - { en: "His account of educational aims includes vitality, courage, sensitivity and intelligence, rather than knowledge alone.", zh: "其教育目的论述把活力、勇气、敏感性与理智纳入考虑，不只关注知识。", src: russell-education-text }
+    - { en: "The introduction connects parents' concerns about their own children with the wider quality and availability of education.", zh: "导言把父母对自己孩子的关切，与更广泛的教育质量和可及性联系起来。", src: russell-education-text }
+  today: { en: "Our family reflection: when planning learning, ask what opportunities a child has for curiosity, consideration of others and growing confidence alongside schoolwork. This is our prompt, not an empirically tested Russell programme.", zh: "本站家庭借鉴：安排学习时，也问问孩子是否有机会保持好奇、体察他人与逐步建立信心。这是本站思考提示，不是经过实证检验的罗素课程。", src: russell-education-text }
+  supported: []
+  outdated:
+    - { en: "This is a 1926 argument using the psychology and social assumptions of its time. Infant care, punishment, gender and references to heredity or eugenics require separate chapter-level review before any practical use.", zh: "这是使用当时心理学与社会假设的 1926 年论述；婴儿照护、惩罚、性别，以及遗传或优生观念相关内容，都需逐章另核，不能直接用于实践。", src: russell-education-text }
+  texts:
+    - { label: { en: "Education and the Good Life, 1926 US edition (Project Gutenberg; check local copyright)", zh: "《教育与美好生活》1926 年美国版（古登堡计划；使用前核查当地版权）" }, url: "https://www.gutenberg.org/ebooks/70302" }
+
+# Additional introductions based on reviewed sources; original texts remain local.
+- id: zhu-xi
+  birthYear: 1130
+  origin: east-asia
+  directions: [confucian]
+  publicationStatus: published
+  name:
+    en: Zhu Xi
+    zh: 朱熹
+  years: 1130–1200
+  region:
+    en: China
+    zh: 中国
+  role:
+    en: Philosopher and teacher
+    zh: 哲学家与教师
+  question:
+    en: Why do everyday habits take practice even after we understand a rule?
+    zh: 为什么讲了道理，日常习惯仍需要反复练习？
+  works:
+    - title:
+        en: Commentaries on the Four Books
+        zh: 《四书章句集注》
+      note:
+        en: >-
+          A major commentary project. This introduction uses scholarly accounts of learning and
+          self-cultivation, not a complete reading of the commentaries. The authorship and compilation of
+          Xiaoxue require separate checking.
+        zh: 重要的经典注释著作。本篇依据学术介绍讨论学习与修养，未通读注释；《小学》的编纂分工仍需另核。
+      src: educator-zhu-xi-1
+  basis:
+    en: >-
+      Uses selected SEP and IEP discussions of learning and self-cultivation. No complete original work was
+      reviewed.
+    zh: 依据 SEP 与 IEP 中学习、修养的相关讨论，未通读原著；两份条目同作者，不作为两份独立效果证据。
+  reviewed: "2026-11-17"
+  bio:
+    en: >-
+      Song-dynasty thinker who linked study, reflection and ethical practice in an influential account of
+      self-cultivation.
+    zh: 宋代思想家，将学习、反思和日常实践联系起来，形成有重要影响的修养论。
+    src: educator-zhu-xi-1
+  ideas:
+    - en: Study and moral development require reflection and action as well as reading.
+      zh: 朱熹把学习与道德修养联系起来，读书之外也强调反思、观察和实际行为。
+      src: educator-zhu-xi-1
+    - en: Self-cultivation includes attention to situations, relationships and the effects of one’s conduct.
+      zh: 其修养论同时关注内在态度与对事物、关系和具体情境的考察。
+      src: educator-zhu-xi-1
+  today:
+    en: >-
+      Connect a familiar rule with one shared task, discuss its effect on others and examine the example
+      adults set.
+    zh: 家长可将读到的规则与一件真实家庭事务相连，和孩子讨论行为是否照顾他人，并先检查自己的示范。
+    src: educator-zhu-xi-1
+  supported: []
+  outdated:
+    - en: >-
+        Song-dynasty ritual, hierarchy and cosmology are historical commitments, not present-day family rules.
+        The two scholarly accounts used here share an author and are not independent effectiveness studies.
+      zh: 宋代礼教、等级和宇宙论不能直接变成现代亲子规范。 两条百科为同一作者；无教育效果实证；不将敬等同现代正念训练。
+      src: educator-zhu-xi-1
+  texts: []
+- id: chen-heqin
+  birthYear: 1892
+  origin: east-asia
+  directions: [child, experience]
+  publicationStatus: published
+  name:
+    en: Chen Heqin
+    zh: 陈鹤琴
+  years: 1892–1982
+  region:
+    en: China
+    zh: 中国
+  role:
+    en: Child educator and psychological researcher
+    zh: 儿童教育家与心理学研究者
+  question:
+    en: Can we understand play, emotions and daily habits within the same family setting?
+    zh: 孩子的游戏、情绪和日常习惯，是否能放在共同的家庭环境中理解？
+  works:
+    - title:
+        en: Family Education
+        zh: 《家庭教育》
+      note:
+        en: >-
+          First published in 1925. The checked Commercial Press edition is dated July 2019 and includes a
+          modern introduction by Ke Xiaowei. Start with the listed chapters on play, fear and crying, parental
+          example and experience; their full text has not been reviewed.
+        zh: 1925 年初版；已核商务印书馆 2019 年版书目与柯小卫导读责任。可从游戏、怕与哭、父母以身作则及经验等章入手；目前未读这些章的完整正文。
+      src: educator-chen-heqin-1
+  basis:
+    en: >-
+      Uses the Commercial Press description and contents, plus a scholarly reference preview; no
+      chapter-by-chapter reading or validation of the book’s practical principles.
+    zh: 依据商务书介、目录及学术工具书预览，未逐章阅读或核验书中的具体原则。
+  reviewed: "2026-11-17"
+  bio:
+    en: Chinese educator who used observation and educational practice to study children and family life.
+    zh: 重视儿童观察、实验与教育实践的中国儿童教育家。
+    src: educator-chen-heqin-1
+  ideas:
+    - en: He studied children through observation and educational practice.
+      zh: 陈鹤琴是重视儿童观察、实验和教育实践的儿童教育家与心理学研究者。
+      src: educator-chen-heqin-2
+    - en: >-
+        The contents of Family Education bring together learning, habits, play, emotion and adult example;
+        chapter headings are reading leads, not verified practical rules.
+      zh: 《家庭教育》1925年初版，现代商务版目录把儿童学习、生活习惯、游戏、情绪和家庭示范放在同一本书中讨论。
+      src: educator-chen-heqin-1
+  today:
+    en: >-
+      Record one recurring everyday situation and the adults’ responses, then use the relevant chapter as a
+      question for further reading.
+    zh: 先记录一个重复出现的生活情境及成人反应，再选择相关篇章对读；目前不能把目录标题改造成陈氏具体操作原则。
+    src: educator-chen-heqin-2
+  supported: []
+  outdated:
+    - en: >-
+        Only the publisher description, contents and a reference preview were reviewed. This does not verify
+        the book’s individual principles. Historical health advice, punishment and gender expectations need
+        separate review.
+      zh: 目前只核对书介、目录和学术预览，尚未核验书中各项具体原则。历史上的健康建议、惩罚与性别期待须另行审查，不能直接作为今天的家庭规范。
+      src: educator-chen-heqin-1
+  texts: []
+- id: fukuzawa-yukichi
+  birthYear: 1835
+  origin: east-asia
+  directions: [humanist, justice]
+  publicationStatus: published
+  name:
+    en: Fukuzawa Yukichi
+    zh: 福泽谕吉
+  years: 1835–1901
+  region:
+    en: Japan
+    zh: 日本
+  role:
+    en: Educator and social thinker
+    zh: 教育与社会思想家
+  question:
+    en: How can learning help a child develop judgement and responsibility?
+    zh: 学习怎样帮助孩子逐步承担自己的判断和责任？
+  works:
+    - title:
+        en: An Encouragement of Learning
+        zh: 《劝学》
+      note:
+        en: >-
+          Originally a series of pamphlets, 1872–1876. The checked complete English translation is by David A.
+          Dilworth, with an introduction by Shunsaku Nishikawa, Columbia University Press, 2013.
+        zh: 原作于 1872—1876 年以系列小册子发表。已核 2013 年 Columbia 英译本：David A. Dilworth 译，Shunsaku Nishikawa 导论；未通读 17 节原文。
+      src: educator-fukuzawa-yukichi-1
+  basis:
+    en: >-
+      Uses the publisher’s substantive description and Keio’s institutional history; not a full reading of the
+      Japanese work or English translation.
+    zh: 依据出版社实质介绍及庆应官方历史，未通读日文原著或英文译本。
+  reviewed: "2026-11-17"
+  bio:
+    en: Founder of Keio and a writer who connected learning, independence and Japan’s modern transformation.
+    zh: 庆应义塾创办者，其论述将学习、个人独立与日本近代转型联系起来。
+    src: educator-fukuzawa-yukichi-2
+  ideas:
+    - en: He connected learning with personal independence and social relationships.
+      zh: 福泽将学习与个人独立、社会关系及日本近代国家转型相联系。
+      src: educator-fukuzawa-yukichi-1
+    - en: >-
+        His educational arguments belong to Japan’s modern transformation and nation-building, rather than a
+        timeless formula for personal success.
+      zh: 其关于教育与独立的讨论有近代日本国家建构的明确语境，不能直接缩写成个人成功口号。
+      src: educator-fukuzawa-yukichi-1
+  today:
+    en: >-
+      Let a child compare reasons, make a manageable choice and revisit what happened. This is our family
+      application, not an exercise prescribed in the book.
+    zh: 让孩子在真实小任务中比较理由、作选择并复盘，家长说明这一活动为本站借鉴，而非福泽原文指定方法。
+    src: educator-fukuzawa-yukichi-1
+  supported: []
+  outdated:
+    - en: >-
+        The account relies on publisher and institutional explanations. Concepts of civilisation and national
+        independence carry historical and political disputes.
+      zh: 思想概括依据出版社介绍，不能声称直接分析17节原文。 自由、文明与国民独立涉及近代日本政治及其历史争议，不作为无条件普适价值结论。
+      src: educator-fukuzawa-yukichi-1
+  texts: []
+- id: makiguchi
+  birthYear: 1871
+  origin: east-asia
+  directions: [experience, culture]
+  publicationStatus: published
+  name:
+    en: Tsunesaburo Makiguchi
+    zh: 牧口常三郎
+  years: 1871–1944
+  region:
+    en: Japan
+    zh: 日本
+  role:
+    en: Teacher and educational thinker
+    zh: 教师与教育思想家
+  question:
+    en: What matters in education besides competitive results?
+    zh: 我们衡量教育时，除了竞争成绩还关心哪些生活能力？
+  works:
+    - title:
+        en: The System of Value-Creating Pedagogy
+        zh: 《创价教育学体系》
+      note:
+        en: >-
+          The first volume appeared on 18 November 1930. Jogai, later Josei, Toda helped organise outlines and
+          notes. This introduction uses institutional explanations and excerpts, not the four-volume original.
+        zh: 首卷于 1930 年 11 月 18 日出版，户田城外（后称户田城圣）协助整理纲要与笔记。本篇依据机构说明与节引，未读日文四卷原著。
+      src: educator-makiguchi-1
+  basis:
+    en: >-
+      Uses two explanations from a Soka Gakkai-affiliated site; they are not an independent evaluation or a
+      full original-text reading.
+    zh: 依据创价学会关联网站的两篇说明，不作为独立效果评价，也未通读原著。
+  reviewed: "2026-11-17"
+  bio:
+    en: Japanese teacher who made happiness and participation in social life central questions for education.
+    zh: 日本教师，将幸福与参与社会生活的能力纳入教育目的的思考。
+    src: educator-makiguchi-1
+  ideas:
+    - en: He linked educational purpose with happiness and participation in social life.
+      zh: 牧口将教育目的与人的幸福及参与社会生活的能力联系起来。
+      src: educator-makiguchi-2
+    - en: Teachers should record and reflect on practice, learning from successes and failures.
+      zh: 他强调教育者记录、反思课堂经验，从实际成功和失败中形成并检验教育认识。
+      src: educator-makiguchi-1
+  today:
+    en: >-
+      Discuss whether learning offers chances to solve everyday problems, contribute to others and experience
+      accomplishment.
+    zh: 家庭可一起讨论学习是否增加解决生活问题、帮助他人和体验成就的机会。
+    src: educator-makiguchi-2
+  supported: []
+  outdated:
+    - en: >-
+        The sources are affiliated with Soka Gakkai and have a commemorative viewpoint. Happiness as an
+        educational aim is a philosophical position, not proof of a programme’s effects.
+      zh: 两页均由创价学会相关网站提供，明确有纪念与组织立场；不作为独立学界共识。 幸福目标是教育哲学立场，不等于证明某课程能提高幸福。
+      src: educator-makiguchi-1
+  texts: []
+- id: tagore
+  birthYear: 1861
+  origin: south-asia
+  directions: [child, culture]
+  publicationStatus: published
+  name:
+    en: Rabindranath Tagore
+    zh: 泰戈尔
+  years: 1861–1941
+  region:
+    en: Bengal / India
+    zh: 孟加拉／印度
+  role:
+    en: Poet and school founder
+    zh: 诗人与学校创办者
+  question:
+    en: Does family life leave room for nature and artistic expression?
+    zh: 除了书本和成绩，家庭是否给孩子留下感受自然和艺术表达的空间？
+  works:
+    - title:
+        en: My School, in Personality — a reading lead
+        zh: 《Personality》中的〈My School〉——待读线索
+      note:
+        en: >-
+          This is a route for further reading, not an essay summarised here: the English text and edition have
+          not yet been checked. The account below concerns school practice documented by the university and
+          Nobel biography.
+        zh: 这是继续阅读的线索，尚未核得英文篇章正文与版本，不提供该篇摘要。以下介绍依据大学历史及诺贝尔传记中的办学实践。
+      src: educator-tagore-1
+  basis:
+    en: Uses Visva-Bharati’s substantive history and the Nobel biography; the My School essay has not been read.
+    zh: 依据 Visva-Bharati 的实质历史正文与诺贝尔传记，未读〈My School〉原篇。
+  reviewed: "2026-11-17"
+  bio:
+    en: Founded a school at Santiniketan in 1901, bringing learning, nature, shared life and the arts together.
+    zh: 1901 年在 Santiniketan 创办学校，将学习、自然、共同生活与艺术表达联系起来。
+    src: educator-tagore-1
+  ideas:
+    - en: He founded a school at Santiniketan in 1901, forming a basis for the later Visva-Bharati.
+      zh: 泰戈尔于1901年在Santiniketan创办学校，后成为Visva-Bharati发展的基础。
+      src: educator-tagore-1
+    - en: >-
+        The university’s history describes learning in nature, shared teacher–student life, music, painting
+        and drama.
+      zh: 大学历史说明其学校重视自然中的学习、师生共同生活，以及音乐、绘画和戏剧等表达机会。
+      src: educator-tagore-1
+  today:
+    en: >-
+      Invite a child to observe a natural place and choose how to express the experience through drawing,
+      words, movement or music.
+    zh: 安排孩子自主观察一处自然环境，再自由选择画、说、写或音乐表达；这是本站设计，不是Tagore原章活动。
+    src: educator-tagore-1
+  supported: []
+  outdated:
+    - en: >-
+        Institutional history has a commemorative viewpoint. The school’s Upanishadic and colonial-era context
+        matters; the Nobel Prize in literature did not validate its educational effects.
+      zh: 大学自述有机构纪念立场；Nobel文学奖不代表教育效果验证。 本轮仍未取得My School英语正文，不生成该篇原文摘要。
+      src: educator-tagore-1
+  texts: []
+- id: gandhi
+  birthYear: 1869
+  origin: south-asia
+  directions: [experience, justice]
+  publicationStatus: published
+  name:
+    en: M. K. Gandhi
+    zh: 甘地
+  years: 1869–1948
+  region:
+    en: India
+    zh: 印度
+  role:
+    en: Social thinker and basic-education advocate
+    zh: 社会思想家与基本教育倡导者
+  question:
+    en: How can everyday activity become meaningful learning?
+    zh: 孩子参加家务时，怎样同时有机会理解原因、解决问题和尊重劳动？
+  works:
+    - title:
+        en: Basic Education selections, from The Voice of Truth
+        zh: 《The Voice of Truth》中的基本教育选编
+      note:
+        en: >-
+          The linked pages quote Selected Works, volume 6. They are excerpts, not a complete standalone book.
+          Thoughts on Education by Vinoba Bhave and The Story of Nayee Talim by Marjorie Sykes are different
+          authors’ works.
+        zh: >-
+          链接页注明选自《Selected Works》第 6 卷，是选编节文，不是一部已核全本的独立著作。Vinoba Bhave 的《Thoughts on Education》、Marjorie
+          Sykes 的《The Story of Nayee Talim》均非甘地原著。
+      src: educator-gandhi-1
+  basis:
+    en: >-
+      Uses selected passages on two documentary-site pages; original periodical dates and the full collected
+      volume were not checked.
+    zh: 依据文献站两页选编中的已读段落，未逐条核原刊日期或通读整卷。
+  reviewed: "2026-11-17"
+  bio:
+    en: Connected education with practical activity, community life and the development of the whole person.
+    zh: 将教育与实际活动、共同生活及人的整体成长联系起来。
+    src: educator-gandhi-1
+  ideas:
+    - en: Basic education connects useful activity with the development of body, mind and spirit.
+      zh: 基本教育把有用活动与身体、智力、精神及品格的整体发展联系起来。
+      src: educator-gandhi-1
+    - en: >-
+        Learners should understand the reasons behind what they do, rather than only repeat a craft or
+        memorise words.
+      zh: 学习者应当理解活动的缘由，而不是只机械生产或背诵词语。
+      src: educator-gandhi-1
+  today:
+    en: >-
+      Choose a safe shared household task and talk about materials, reasons and its contribution to others. Do
+      not treat this as a requirement for productive child labour.
+    zh: 共同做一件安全、适龄的生活任务，让孩子解释步骤与原因；不设产量或挣钱目标。
+    src: educator-gandhi-1
+  supported: []
+  outdated:
+    - en: >-
+        The discussion belongs to colonial India and a particular social and economic programme. Craft, labour
+        and school finance proposals cannot be transferred directly into family expectations.
+      zh: 正文为后编选集节引，部分转录有明显拼写错误，原刊日期与版次仍待核。 不将自给学校、延迟读写、灵性及民族国家主张包装成现代发展科学。
+      src: educator-gandhi-1
+  texts:
+    - label:
+        en: "Basic Education: selected passages, not a complete book"
+        zh: 基本教育：选编节文，并非完整专著
+      url: https://www.mkgandhi.org/edugandhi/basic.php
+- id: xunzi
+  birthYear: -310
+  origin: east-asia
+  directions: [confucian]
+  publicationStatus: published
+  name:
+    en: Xunzi
+    zh: 荀子
+  years: c. 310–235 BCE
+  region:
+    en: Ancient China
+    zh: 中国先秦
+  role:
+    en: Philosopher of learning and ethical formation
+    zh: 研究学习与道德养成的哲学家
+  question:
+    en: How do example, surroundings and practice help a habit develop?
+    zh: 习惯是否需要成人示范、环境支持和持续练习？
+  works:
+    - title:
+        en: "Xunzi: Encouraging Learning, Self-Cultivation and Human Nature Is Bad"
+        zh: 《荀子》：〈劝学〉〈修身〉〈性恶〉
+      note:
+        en: >-
+          These are priorities for future original-text reading. This introduction uses scholarly accounts and
+          their excerpts; it does not offer summaries based on a completed reading of the three Chinese
+          chapters.
+        zh: 这三篇是后续原典选读重点。本篇依据学术解说及其节引，未完成三篇中文原典的逐篇审读；文本编纂与部分篇章归属有争议。
+      src: educator-xunzi-1
+  basis:
+    en: >-
+      Uses SEP and IEP discussions of moral cultivation and textual history, not a complete original-text
+      reading.
+    zh: 依据 SEP、IEP 关于修养与文本形成的讨论，未通读原典。
+  reviewed: "2026-11-17"
+  bio:
+    en: Saw learning, teachers, examples and deliberate practice as central to ethical change.
+    zh: 将学习、教师、榜样和有意识的实践视为道德改变的重要条件。
+    src: educator-xunzi-1
+  ideas:
+    - en: Ethical change requires learning, teachers, examples and practice.
+      zh: 荀子把学习视为人的道德改变过程，教师、榜样和实际练习在其中具有重要地位。
+      src: educator-xunzi-1
+    - en: >-
+        His account of human nature concerns unregulated desires; it is not a claim that a child deliberately
+        wants to do wrong.
+      zh: 其性恶说讨论未经反思节制的天生欲望，不是说孩子故意作恶；伪指有意识形成的行为和习惯。
+      src: educator-xunzi-1
+  today:
+    en: >-
+      Demonstrate and practise one achievable habit together, then reflect on it without labelling a child as
+      bad.
+    zh: 以一项可实现的家庭礼貌或协作习惯反复示范、共同练习并复盘，而非用性恶给孩子定性。
+    src: educator-xunzi-1
+  supported: []
+  outdated:
+    - en: >-
+        Ancient ritual and social hierarchy are not modern family rules. The terms nature and deliberate
+        activity need historical explanation; dates and some textual attributions remain uncertain.
+      zh: 两份学术解说提供实质依据，但不是中文《劝学》《修身》《性恶》逐篇核读。 传统礼乐及等级划分不能直接移植；IEP较旧书目称Knoblock唯一全译已被2014 Hutton译本更新，采用SEP较新书目。
+      src: educator-xunzi-1
+  texts: []
+- id: wang-yangming
+  birthYear: 1472
+  origin: east-asia
+  directions: [confucian, experience]
+  publicationStatus: published
+  name:
+    en: Wang Yangming
+    zh: 王阳明
+  years: 1472–1529
+  region:
+    en: China
+    zh: 中国
+  role:
+    en: Philosopher of understanding and action
+    zh: 研究认识与行动的哲学家
+  question:
+    en: What does understanding a principle look like in everyday action?
+    zh: 孩子或家长会说道理，怎样看见它在日常行为中的意义？
+  works:
+    - title:
+        en: Instructions for Practical Living
+        zh: 《传习录》
+      note:
+        en: >-
+          A text formed from conversations, letters and related teaching materials. The 1963 Wing-tsit Chan
+          translation is a checked bibliographic lead, not a translation read in full here. Specific
+          childhood-teaching essays still need original-text verification.
+        zh: 由谈话、书信等传授材料形成的文本。1963 年陈荣捷英译为已核书目线索，未通读；〈训蒙大意〉〈教约〉仍待原典核验，不据此介绍具体儿童教学法。
+      src: educator-wang-yangming-1
+  basis:
+    en: >-
+      Uses SEP and IEP explanations and selected quotations; neither the whole Instructions nor the childhood
+      essays was read.
+    zh: 依据 SEP、IEP 解说及节引，未通读《传习录》或核读两篇蒙学原文。
+  reviewed: "2026-11-17"
+  bio:
+    en: Ming-dynasty thinker who connected moral understanding with action and self-cultivation.
+    zh: 明代思想家，将道德理解与行动、反省联系起来。
+    src: educator-wang-yangming-1
+  ideas:
+    - en: >-
+        Being able to talk about a moral principle is not sufficient to show that it is understood in
+        practice.
+      zh: 王阳明把道德认识与行动紧密相连，单能谈论道理并不足以说明真正理解。
+      src: educator-wang-yangming-1
+    - en: His criticism of knowledge pursued for examinations and status belongs to Ming-dynasty institutions.
+      zh: 其学习批评针对为考试和名利积累外在知识、忽略自身道德实践的倾向，有明代制度背景。
+      src: educator-wang-yangming-1
+  today:
+    en: >-
+      Adults can start with a small principle they endorse but struggle to follow, demonstrate a correction
+      and discuss a practical next step.
+    zh: 成人先选择一件自己认可却常做不到的小事，公开示范如何改正，再与孩子讨论可行动的下一步。
+    src: educator-wang-yangming-1
+  supported: []
+  outdated:
+    - en: >-
+        The unity of understanding and action does not remove children’s developmental limits or justify shame
+        and obedience. This is Confucian philosophy, not an executive-function model.
+      zh: 知行合一不能作为否认儿童能力限制、要求无条件服从或羞辱失败的理由。 未核两篇蒙学原文，因此没有“王阳明具体儿童教学法”结论。
+      src: educator-wang-yangming-1
+  texts: []
+- id: comenius
+  birthYear: 1592
+  origin: europe
+  directions: [experience, religious]
+  publicationStatus: published
+  name:
+    en: John Amos Comenius
+    zh: 夸美纽斯
+  years: 1592–1670
+  region:
+    en: Central Europe
+    zh: 中欧
+  role:
+    en: Educator and author of illustrated learning books
+    zh: 教育家与图文学习著作作者
+  question:
+    en: How can we connect a child’s observations with words and pictures?
+    zh: 怎样把孩子见到的事物与词语、图画连接起来？
+  works:
+    - title:
+        en: Orbis Pictus; The Great Didactic
+        zh: 《世界图解》；《大教学论》
+      note:
+        en: >-
+          Orbis Pictus: Charles Hoole’s translation, edited by C. W. Bardeen, 1887; the editor explains
+          changes from earlier versions. The Great Didactic is a distinct work, verified bibliographically but
+          not read here.
+        zh: 《世界图解》采用 Charles Hoole 旧译、C. W. Bardeen 编订的 1887 年版，编者说明其与早期版本有差别。《大教学论》为另一部作品，本篇只核书目，未读正文。
+      src: educator-comenius-2
+  basis:
+    en: >-
+      Uses the 1887 editor’s explanation and selected author-preface pages, plus a university-library
+      bibliography. The whole book and the Great Didactic were not read.
+    zh: 依据 1887 年编者版本说明、作者序选页及大学图书馆书目，未通读全书或《大教学论》。
+  reviewed: "2026-11-17"
+  bio:
+    en: Sought to connect learning about things with words and pictures in works such as Orbis Pictus.
+    zh: 在《世界图解》等著作中，尝试将对事物的认识与词语、图画联系起来。
+    src: educator-comenius-2
+  ideas:
+    - en: >-
+        The author’s preface connects visible things, pictures and naming, rather than treating words alone as
+        the starting point.
+      zh: 作者序把可见的事物、图画与命名联系起来，不把孤立的词语作为唯一出发点。
+      src: educator-comenius-2
+    - en: >-
+        The preface recommends beginning with simpler things and includes observation and drawing as ways to
+        engage with them.
+      zh: 序言建议从较简单的事物开始，并将观察、绘画纳入学习过程。
+      src: educator-comenius-2
+  today:
+    en: >-
+      Observe one familiar object together, draw it and compare the words used to describe it. This is our
+      example, not a reproduced historical lesson.
+    zh: 一起观察一个熟悉的物体，画下来，再比较描述它的词语。这是本站示例，不是复刻历史课程。
+    src: educator-comenius-2
+  supported: []
+  outdated:
+    - en: >-
+        The educational project includes Christian and seventeenth-century social assumptions. The local text
+        transcription is not a complete collection of the illustrations; no modern learning effect is
+        established here.
+      zh: 其教育项目具有基督教及十七世纪社会背景；本地文字转录不含完整图像，历史主张也不是现代效果证据。
+      src: educator-comenius-2
+  texts:
+    - label:
+        en: Orbis Pictus, 1887 Hoole/Bardeen edition
+        zh: 《世界图解》1887 年 Hoole／Bardeen 版
+      url: https://gutenberg.pglaf.org/2/8/2/9/28299/28299-h/28299-h.htm
+- id: pestalozzi
+  birthYear: 1746
+  origin: europe
+  directions: [child, experience]
+  publicationStatus: published
+  name:
+    en: Johann Heinrich Pestalozzi
+    zh: 裴斯泰洛齐
+  years: 1746–1827
+  region:
+    en: Switzerland
+    zh: 瑞士
+  role:
+    en: Educator of observation and elementary learning
+    zh: 重视观察与基础学习的教育家
+  question:
+    en: What helps when a child can repeat a word but does not understand it?
+    zh: 孩子会背词，却不明白所指的事物时可以怎样帮助？
+  works:
+    - title:
+        en: How Gertrude Teaches Her Children
+        zh: 《葛笃德怎样教育她的孩子》
+      note:
+        en: >-
+          The 1801 work consists of 14 letters to Gessner, not a case report about one mother. The linked
+          German transcription includes an 1820 preface and regularised spelling and punctuation. The 1894
+          English edition has Cooke as editor and Holland and Turner as translators.
+        zh: 1801 年原作为致 Gessner 的 14 封信，不是某位母亲的教养案例报告。链接德文转录含 1820 年序，拼写标点经规范化；1894 英译由 Cooke 编，Holland、Turner 译。
+      src: educator-pestalozzi-2
+  basis:
+    en: >-
+      Uses a previously read original excerpt and scholarly introduction. All 14 letters have now been
+      obtained, but acquisition does not mean they have all been read.
+    zh: 依据此前已读的原文选段和研究导论；现已取得 14 封信，但并未全部审读。
+  reviewed: "2026-11-17"
+  bio:
+    en: Asked how adults could help children turn everyday impressions into clearer understanding.
+    zh: 关注成人如何帮助儿童把日常印象逐步整理为较清楚的理解。
+    src: educator-pestalozzi-4
+  ideas:
+    - en: >-
+        Adults can help organise experience so that vague impressions become clearer concepts, rather than
+        starting with memorised words alone.
+      zh: 学习不止从背诵词语开始，成人要帮助孩子整理经验，使模糊观察逐步形成较清楚的概念。
+      src: educator-pestalozzi-3
+    - en: >-
+        Language, form and number organise his elementary teaching; this is a historical proposal, not a
+        uniquely validated developmental sequence.
+      zh: 语言、形状与数量是其元素教学的组织线索；这不是今日发展心理学已经确认的唯一教学顺序。
+      src: educator-pestalozzi-4
+  today:
+    en: >-
+      Observe a familiar object together, compare its shape or quantity and invite the child to describe what
+      they notice.
+    zh: 从熟悉物体一起观察、比较形状与数量，再请孩子描述；这是本站据已读思想提出的低压力示例，不是作者原有练习或已验证干预。
+    src: educator-pestalozzi-3
+  supported: []
+  outdated:
+    - en: >-
+        The source association promotes this tradition. Historical ideas about maternal instinct, obedience
+        and religion are not family norms today; education is not the mother’s responsibility alone.
+      zh: 研究协会有传承推广立场，导论与原文选段身份已分开。 母性本能、服从与宗教道德等历史假定不可直接作为当代家庭规范；不要将早教责任集中给母亲。
+      src: educator-pestalozzi-2
+  texts:
+    - label:
+        en: How Gertrude Teaches Her Children, German transcription
+        zh: 《葛笃德怎样教育她的孩子》德文转录
+      url: >-
+        https://www.heinrich-pestalozzi.de/werke/pestalozzi-volltexte-auf-dieser-website/1801-wie-gertrud-ihre-kinder-lehrt
+- id: malaguzzi
+  birthYear: 1920
+  origin: europe
+  directions: [child, care]
+  publicationStatus: published
+  name:
+    en: Loris Malaguzzi and the Reggio Emilia community
+    zh: 马拉古齐与瑞吉欧教育共同体
+  years: 1920–1994 (Malaguzzi)
+  region:
+    en: Italy
+    zh: 意大利
+  role:
+    en: Educator and municipal early-years community
+    zh: 教育家与市政幼教共同体
+  question:
+    en: How can we listen when a child prefers drawing or building to talking?
+    zh: 孩子不愿用说话解释想法时，我们还能怎样倾听？
+  works:
+    - title:
+        en: "The Hundred Languages of Children: The Reggio Emilia Experience in Transformation"
+        zh: 《儿童的一百种语言》（第三版）
+      note:
+        en: >-
+          The checked third edition is dated 2011 and edited by Carolyn Edwards, Lella Gandini and George
+          Forman. It is not a sole-authored book by Malaguzzi or the same thing as the exhibition.
+        zh: 已核第三版出版登记为 2011 年，由 Carolyn Edwards、Lella Gandini、George Forman 编；不是马拉古齐独著，也不同于同名展览。
+      src: educator-malaguzzi-3
+  basis:
+    en: >-
+      Uses Reggio Children’s explanations and publisher metadata for the edited volume; no full reading of the
+      book or evaluation of a family programme.
+    zh: 依据 Reggio Children 机构说明及编著出版元数据，未通读原书或验证家庭课程效果。
+  reviewed: "2026-11-17"
+  bio:
+    en: >-
+      Malaguzzi was a leading figure in an approach developed with children, teachers, families and municipal
+      services in Reggio Emilia.
+    zh: 马拉古齐是瑞吉欧教育的重要推动者，这一传统由儿童、教师、家庭与市政幼教服务共同发展。
+    src: educator-malaguzzi-1
+  ideas:
+    - en: >-
+        Children can explore and express ideas through words, drawing, movement and other media; a hundred
+        languages is a metaphor, not a learning-style test.
+      zh: 儿童能够借助言语、绘画、动作等多种方式理解和表达；一百种语言是潜能的隐喻，不是学习风格测试。
+      src: educator-malaguzzi-2
+    - en: >-
+        Documentation supports shared observation, interpretation and changes to learning, rather than just
+        displaying attractive finished work.
+      zh: 学习记录用于共同观察、解释和调整活动，而非仅展示漂亮成品。
+      src: educator-malaguzzi-2
+  today:
+    en: >-
+      Invite a child to explain an idea through drawing, building or movement, then revisit the process
+      together.
+    zh: 邀请孩子任选画图、搭建或动作来说明，再一起回看过程；这是本站建议，不是移植瑞吉欧官方课程。
+    src: educator-malaguzzi-2
+  supported: []
+  outdated:
+    - en: >-
+        Institutional explanations are not independent evidence of effectiveness. Municipal staffing,
+        documentation and shared decision-making differ from family conditions; do not diagnose a child from a
+        single artwork.
+      zh: 机构自述和出版社书介有推广立场，不用其中有效性措辞当独立研究结论。 市政幼教系统的人员、记录与共同决策条件不同于家庭；不按一次作品诊断心理。
+      src: educator-malaguzzi-3
+  texts: []
+- id: bruner
+  birthYear: 1915
+  origin: north-america
+  directions: [development, culture]
+  publicationStatus: published
+  name:
+    en: Jerome Bruner
+    zh: 布鲁纳
+  years: 1915–2016
+  region:
+    en: United States
+    zh: 美国
+  role:
+    en: Psychologist and curriculum thinker
+    zh: 心理学家与课程思想家
+  question:
+    en: How can returning to a familiar topic lead to deeper learning?
+    zh: 同一主题学过后，怎样让后续学习更深入？
+  works:
+    - title:
+        en: The Process of Education
+        zh: 《教育过程》
+      note:
+        en: >-
+          Originally published in 1960. The checked Harvard edition is a revised 1976 edition; a 2021 online
+          metadata date is not the original publication year.
+        zh: 原作出版于 1960 年，已核 Harvard 版本为 1976 年修订版；2021 年在线元数据登记不是原作出版年。
+      src: educator-bruner-1
+  basis:
+    en: >-
+      Uses the publisher’s substantive account and edition metadata, not a full reading or chapter-by-chapter
+      summary.
+    zh: 依据出版社实质介绍与版本元数据，未通读或制作逐章摘要。
+  reviewed: "2026-11-17"
+  bio:
+    en: Explored how learners can revisit important concepts in increasingly developed forms.
+    zh: 思考学习者如何反复接触重要概念，并逐步加深理解。
+    src: educator-bruner-1
+  ideas:
+    - en: >-
+        Introduce central concepts in understandable forms, then revisit them with more formal and abstract
+        explanations as experience grows.
+      zh: 课程可以先以可理解的具体形式引入核心概念，再随经验增加回访，并提升形式化和抽象程度。
+      src: educator-bruner-1
+    - en: >-
+        A spiral curriculum is not identical repetition and does not mean abstract material should always be
+        taught earlier.
+      zh: 螺旋课程不是把同一练习原样重复，也不意味着越早教越抽象越好。
+      src: educator-bruner-1
+  today:
+    en: >-
+      Return to a sharing problem using objects, then drawings and later numerical explanations, adjusting to
+      the child’s understanding.
+    zh: 例如同一个分享问题，先分实物、后画图，再讨论数字表达；这是本站示例，不是作者原活动，也不保证固定年龄适用。
+    src: educator-bruner-1
+  supported: []
+  outdated:
+    - en: >-
+        The publisher description is not a family intervention trial. This introduction does not extend to a
+        review of all Bruner’s work on discovery, representation or scaffolding.
+      zh: 原书不是当代家庭干预试验，不能据出版社书介宣称儿童学业效果。 未读序言或全目录实质内容，不能生成逐章摘要；不把支架单归布鲁纳。
+      src: educator-bruner-1
+  texts: []
+- id: noddings
+  birthYear: 1929
+  origin: north-america
+  directions: [care]
+  publicationStatus: published
+  name:
+    en: Nel Noddings
+    zh: 诺丁斯
+  years: 1929–2022
+  region:
+    en: United States
+    zh: 美国
+  role:
+    en: Philosopher of care and moral education
+    zh: 关怀伦理与道德教育哲学家
+  question:
+    en: Why might a child not feel cared for when I believe I am helping?
+    zh: 我觉得已经很关心孩子，为什么孩子仍感受不到？
+  works:
+    - title:
+        en: "Caring: A Relational Approach to Ethics and Moral Education"
+        zh: 《关怀：伦理与道德教育的关系取向》（篇名暂译）
+      note:
+        en: >-
+          The second edition is dated 2013. The 1984 first edition used A Feminine Approach in its subtitle;
+          do not apply the newer subtitle to the original edition.
+        zh: 第二版为 2013 年，副标题为关系取向；1984 年初版副标题使用女性取向，不能将新版副标题直接套给初版。中文书名需随具体译本核对。
+      src: educator-noddings-1
+  basis:
+    en: >-
+      Uses the second-edition publisher description and contents, with a bibliographic record for the original
+      subtitle; neither edition was read in full.
+    zh: 依据第二版出版社介绍与目录，并以可追溯书目区分初版副标题；未通读任一版。
+  reviewed: "2026-11-17"
+  bio:
+    en: >-
+      Placed concrete relationships and the response of the person receiving care at the centre of ethical
+      reflection.
+    zh: 把具体关系以及被关怀者的回应放在伦理思考的重要位置。
+    src: educator-noddings-1
+  ideas:
+    - en: An adult’s intention to care is not enough, by itself, to establish a caring relationship.
+      zh: 关怀伦理关注具体关系与回应，不能仅凭成人自认用心就判定关系已经建立。
+      src: educator-noddings-1
+    - en: >-
+        The book distinguishes the carer and the cared-for, and discusses dialogue, practice and confirmation
+        in moral education.
+      zh: 目录区分关怀者和被关怀者，并在道德教育中列出对话、实践和确认。
+      src: educator-noddings-1
+  today:
+    en: Before helping, ask what the child needs, then check whether the response was understood as help.
+    zh: 在提供帮助前问孩子需要什么，并回看自己的回应是否被理解；这是本站据关系视角提出的问题，不是书中验证步骤。
+    src: educator-noddings-1
+  supported: []
+  outdated:
+    - en: >-
+        This is philosophical argument, not proof of effects in every family. Care includes boundaries,
+        children’s rights and adults’ needs; it is not a demand for maternal self-sacrifice.
+      zh: 哲学论证与章节目录不是有效性试验，不能推论所有家庭情境效果。 需顾及儿童权利、成人负担和关系边界，不能把关怀写成母亲单方牺牲。
+      src: educator-noddings-1
+  texts: []
+- id: bell-hooks
+  birthYear: 1952
+  origin: north-america
+  directions: [justice, care]
+  publicationStatus: published
+  name:
+    en: bell hooks
+    zh: bell hooks
+  years: 1952–2021
+  region:
+    en: United States
+    zh: 美国
+  role:
+    en: Writer, teacher and cultural critic
+    zh: 作家、教师与文化批评者
+  question:
+    en: How can we take a young person’s experience and disagreement seriously?
+    zh: 怎样认真对待青少年的经验和不同意见？
+  works:
+    - title:
+        en: 'Teaching to Transgress: Education as the Practice of Freedom'
+        zh: 《Teaching to Transgress：作为自由实践的教育》（书名暂译）
+      note:
+        en: >-
+          A route for further reading. Engaged Pedagogy is a checked chapter title; the 2014 digital record is
+          not the work’s first-publication date. The 1994 original-edition lead has not been newly checked
+          against its title page.
+        zh: 作为进一步阅读入口；Engaged Pedagogy 为已核章节标题。2014 年数字记录不是首版年，1994 年原版线索尚未以扉页重新核验；本篇不提供原书逐章摘要。
+      src: educator-bell-hooks-1
+  basis:
+    en: >-
+      Uses Berea’s substantive biography and a university-hosted abstract of Saartje Tack’s later teaching
+      reflection. No full reading of Teaching to Transgress.
+    zh: 依据 Berea 实质人物介绍及大学保存的 Saartje Tack 后续教学研究摘要，未通读《Teaching to Transgress》。
+  reviewed: '2026-11-17'
+  bio:
+    en: >-
+      A writer and teacher whose work connected lived experience, education and challenges to racial, class
+      and gender inequalities.
+    zh: 将生活经验、教育及对种族、阶级、性别不平等的思考联系起来的作家与教师。
+    src: educator-bell-hooks-3
+  ideas:
+    - en: >-
+        Berea’s account connects her teaching and mentoring with attention to community, lived experience and
+        liberation.
+      zh: Berea 的介绍把她的教学、指导学生与共同体、生活经验及解放的关切联系起来。
+      src: educator-bell-hooks-3
+    - en: >-
+        Her engaged pedagogy has informed later discussions about whose knowledge and experience receive
+        recognition in a classroom. This is supported here by a later scholar’s reflection, not a parenting
+        trial.
+      zh: 其参与式教育影响了后人关于课堂认可谁的知识与经验的讨论；本篇所据为后续学者的教学反思，不是亲子干预试验。
+      src: educator-bell-hooks-4
+  today:
+    en: >-
+      Ask an older child how they understand a shared problem, listen before correcting and discuss whose
+      experience may be missing.
+    zh: 和青少年谈一件有分歧的事，先认真听取其经历，再讨论不同理由。这是本站借鉴，不是已验证的 hooks 家庭课程。
+    src: educator-bell-hooks-3
+  supported: []
+  outdated:
+    - en: >-
+        Berea is a commemorative institutional source. The later study is a theoretical reflection on a
+        university gender-studies class, not evidence for a family programme or a text written by hooks.
+      zh: Berea 为纪念机构，后续论文为大学课堂的理论反思；两者都不等于读过原著或验证了亲子方法。高等教育与文化政治语境不能直接变成幼儿管教流程。
+      src: educator-bell-hooks-4
+  texts: []
+
+- id: freire
+  birthYear: 1921
+  origin: south-america
+  directions: [justice, care]
+  publicationStatus: published
+  name:
+    en: Paulo Freire
+    zh: 弗莱雷
+  years: 1921–1997
+  region:
+    en: Brazil
+    zh: 巴西
+  role:
+    en: Educator of dialogue and adult literacy
+    zh: 对话教育与成人识字教育家
+  question:
+    en: How can we explore a real problem when a child sees it differently?
+    zh: 孩子对现实问题提出不同看法时，怎样一起探究？
+  works:
+    - title:
+        en: Pedagogy of the Oppressed
+        zh: 《被压迫者教育学》
+      note:
+        en: >-
+          The checked UK Penguin edition is dated 2017. The sequence of the early manuscript and first
+          editions in different languages requires separate bibliographic work; the full text and translator
+          of this edition were not reviewed.
+        zh: 已核英国 Penguin 2017 年版书目与实质介绍。早期手稿及不同语种首刊的关系仍需另核；未审读此版全文或译者版权页。
+      src: educator-freire-1
+  basis:
+    en: >-
+      Uses a publisher’s substantive introduction and the Freire Institute account; not the complete original
+      or an effectiveness review.
+    zh: 依据出版社实质介绍与 Freire Institute 说明，未通读原著或完成效果评估。
+  reviewed: "2026-11-17"
+  bio:
+    en: >-
+      Developed educational arguments around dialogue, learners’ lived problems and participation in changing
+      society.
+    zh: 围绕对话、学习者的现实问题和参与社会改变展开教育思考。
+    src: educator-freire-1
+  ideas:
+    - en: >-
+        Problem-posing education brings learners’ lived situations into discussion and invites participation
+        in making knowledge.
+      zh: 问题化教育把学习者的生活经验和真实问题带入讨论，使其参与知识形成。
+      src: educator-freire-1
+    - en: >-
+        His criticism of banking education concerns power and silence, not simply the number of questions
+        asked in a lesson.
+      zh: 对银行式教育的批评涉及权力与沉默，不能缩减成课堂多提几个问题。
+      src: educator-freire-1
+  today:
+    en: >-
+      Choose a school or community problem the child cares about, compare information and perspectives, then
+      discuss possible action.
+    zh: 共同选择一个孩子关心的学校或社区问题，核对信息和不同立场，再讨论能采取的行动；这是本站推论，不是Freire官方亲子活动。
+    src: educator-freire-1
+  supported: []
+  outdated:
+    - en: >-
+        Adult literacy and liberation politics are not the same as family disagreement. Dialogue does not
+        require rejecting all adult guidance; institutional advocacy is not independent effectiveness
+        evidence.
+      zh: Freire Institute倡导这一传统并招募会员，不是中立效果评审；Penguin同样是出版社书介。 成人识字、阶级与解放政治情境不能直接等同儿童家庭冲突；不将批判性当成拒绝一切成人引导。
+      src: educator-freire-1
+  texts: []
+- id: russell-bishop
+  birthYear: null
+  origin: oceania
+  directions: [culture, justice]
+  publicationStatus: published
+  name:
+    en: Russell Bishop
+    zh: Russell Bishop
+  years: Contemporary / 当代
+  region:
+    en: Aotearoa New Zealand
+    zh: 新西兰
+  role:
+    en: Researcher of culturally responsive teaching
+    zh: 文化回应与关系教学研究者
+  question:
+    en: How can a child’s home language and cultural experience be valued in learning?
+    zh: 怎样让孩子的家庭语言和文化经验在学习中受到尊重？
+  works:
+    - title:
+        en: "Teaching to the North-East: Relationship-based learning in practice"
+        zh: 《Teaching to the North-East：关系教学实践》（书名暂译）
+      note:
+        en: >-
+          NZCER Press, 2019. It is a different publication from the 2023 chapter with a similar title. This
+          introduction uses the publisher’s substantive explanation.
+        zh: NZCER Press，2019 年；与 2023 年相近标题的章节为不同出版物。本篇依据出版社实质介绍，未读原书全文。
+      src: educator-russell-bishop-1
+  basis:
+    en: >-
+      Uses NZCER’s book description; no new causal claims are drawn from the research record or from the 2023
+      chapter.
+    zh: 依据 NZCER 书介，不据研究登记或 2023 年章节新增因果效果结论。
+  reviewed: "2026-11-17"
+  bio:
+    en: >-
+      Studies relationships and culturally responsive teaching, including mainstream classrooms serving Māori
+      learners.
+    zh: 研究关系教学与文化回应，包括新西兰主流课堂中的毛利学习者。
+    src: educator-russell-bishop-1
+  ideas:
+    - en: >-
+        Teaching can treat learners’ language, culture and existing knowledge as resources, rather than
+        interpreting difference as a deficit.
+      zh: 把学生的语言、文化与已有知识视为教学资源，避免将差异解释为缺陷。
+      src: educator-russell-bishop-1
+    - en: >-
+        Relationships and learning progress matter together; teachers observe the effects of interaction and
+        adjust practice.
+      zh: 关系教学同时关心学习进展，教师需观察互动的影响并调整做法，不能简化成只要关系好就够了。
+      src: educator-russell-bishop-1
+  today:
+    en: >-
+      Talk with the child and teacher about how familiar languages, stories and ways of understanding could
+      enter a learning task.
+    zh: 与孩子及教师讨论孩子熟悉的语言、故事和理解方式能怎样进入学习任务；这是本站跨情境借鉴，不是已验证亲子干预。
+    src: educator-russell-bishop-1
+  supported: []
+  outdated:
+    - en: >-
+        A New Zealand classroom and teacher-development context does not establish effects in all cultures or
+        homes. The original research methods have not been reviewed here.
+      zh: 实读依据是出版社介绍；其促进所有学习者的主张不等于所有文化与年龄均已验证。 Te Kotahitanga研究/教师发展与家庭场景不同；本轮未读原研究方法，不能新增因果效果结论。
+      src: educator-russell-bishop-1
+  texts: []
+- id: plato
+  birthYear: -428
+  origin: europe
+  directions: [classical]
+  publicationStatus: published
+  name:
+    en: Plato
+    zh: 柏拉图
+  years: c. 428–348 BCE
+  region:
+    en: Ancient Greece
+    zh: 古希腊
+  role:
+    en: Philosopher of education and political life
+    zh: 讨论教育与政治生活的哲学家
+  question:
+    en: How can learning help a child examine what first seems obvious?
+    zh: 我们希望孩子学会什么判断，而不仅是记住什么？
+  works:
+    - title:
+        en: Republic, Books II–III and VII; Laws, Book VII
+        zh: 《理想国》第二、三、七卷；《法律篇》第七卷
+      note:
+        en: >-
+          The checked original-text selections include Jowett’s translations of Republic VII and Laws VII. A
+          complete electronic Republic is available, but only the selected education passages inform this
+          introduction.
+        zh: 已核原文选段包括 Jowett 英译《理想国》第七卷、《法律篇》第七卷。虽已取得《理想国》完整电子文本，本篇仅依据教育相关选段。
+      src: educator-plato-2
+  basis:
+    en: >-
+      Uses a scholarly account and selected education books, not the complete dialogues or an evaluation of
+      their methods.
+    zh: 依据学术介绍及教育相关书卷选段，未通读对话全篇或验证其方法效果。
+  reviewed: '2026-11-17'
+  bio:
+    en: Explored how education shapes judgement, character and participation in a shared political world.
+    zh: 讨论教育如何影响判断、品格以及参与共同政治生活的能力。
+    src: educator-plato-1
+  ideas:
+    - en: >-
+        The Republic links education with the formation of character and judgement, rather than the transfer
+        of information alone.
+      zh: 《理想国》将教育与品格、判断的形成联系起来，不只是传递信息。
+      src: educator-plato-2
+    - en: >-
+        Book VII describes education as a reorientation of understanding and discusses play in early learning
+        within a selective political education scheme.
+      zh: 第七卷把教育理解为认识方向的转变，并在具有选拔性的城邦教育安排中讨论早期学习的游戏。
+      src: educator-plato-2
+  today:
+    en: >-
+      Compare an initial answer with a different explanation and ask what would make either account
+      convincing.
+    zh: 可从游戏、身体活动和共同生活的关系提出讨论，不把哲学统治者选拔转作孩子能力分级。
+    src: educator-plato-2
+  supported: []
+  outdated:
+    - en: >-
+        The proposals belong to an unequal ancient city, including restrictive political authority and limits
+        on who receives which education. They are not a modern model of children’s rights or family
+        instruction.
+      zh: 古代精英等级、奴隶制和国家控制背景；《法律篇》仍容许惩罚且严格控制游戏创新。 男女共同教育的论证不等同现代平等教育；不从古代年龄安排推导现代发展常模。
+      src: educator-plato-1
+  texts:
+    - label:
+        en: Republic, Jowett translation
+        zh: 《理想国》Jowett 英译
+      url: https://www.gutenberg.org/ebooks/1497
+
+- id: aristotle
+  birthYear: -384
+  origin: europe
+  directions: [classical]
+  publicationStatus: published
+  name:
+    en: Aristotle
+    zh: 亚里士多德
+  years: 384–322 BCE
+  region:
+    en: Ancient Greece
+    zh: 古希腊
+  role:
+    en: Philosopher of ethics and education
+    zh: 伦理与教育哲学家
+  question:
+    en: How do repeated actions and adult example shape everyday habits?
+    zh: 家庭重复的互动实际在练习什么？
+  works:
+    - title:
+        en: Politics, Books VII–VIII; Nicomachean Ethics, Book II
+        zh: 《政治学》第七、八卷；《尼各马可伦理学》第二卷
+      note:
+        en: >-
+          Start with the selected education books and the ethics discussion of habituation. The locally held
+          Politics uses William Ellis’s translation, while the previously read online selections use a
+          different translation; quote only with the version specified.
+        zh: 先读教育书卷及伦理学的习惯讨论。本地《政治学》为 William Ellis 英译，前轮在线选段采用不同译本；引用必须注明所据版本。
+      src: educator-aristotle-2
+  basis:
+    en: >-
+      Uses selected Politics VII–VIII and Ethics II passages with scholarly context; a full Politics file is
+      held but has not been read in full.
+    zh: 依据《政治学》第七、八卷、《伦理学》第二卷选段及学术背景；已存完整《政治学》文件，但未通读。
+  reviewed: "2026-11-17"
+  bio:
+    en: Connected education, habits, practical judgement and the conditions of a good shared life.
+    zh: 将教育、习惯、实践判断与良好共同生活的条件联系起来。
+    src: educator-aristotle-1
+  ideas:
+    - en: >-
+        Ethics discusses how repeated action contributes to dispositions; practice matters alongside
+        instruction.
+      zh: 德性需要在实际活动中形成；反复活动也可能形成坏习惯，不能把重复本身视为善。
+      src: educator-aristotle-4
+    - en: >-
+        Politics VII–VIII connects education with the purposes and shared life of the city, including music
+        and leisure as well as usefulness.
+      zh: 《政治学》第七、八卷将教育与城邦目的及共同生活联系起来，也讨论音乐、闲暇，不只关注实用。
+      src: educator-aristotle-3
+  today:
+    en: >-
+      Practise one achievable shared task with clear examples and time to reflect, while respecting a child’s
+      ability and willingness to participate.
+    zh: 可讨论成人示范、在真实情境练习合作，以及为艺术和休息保留价值；这是编辑推论。
+    src: educator-aristotle-4
+  supported: []
+  outdated:
+    - en: >-
+        Ancient citizenship excluded many people and accepted slavery and unequal gender roles. Habituation is
+        not a justification for coercion or a fixed modern training schedule.
+      zh: 公民权仅属于少数，包含性别、奴隶制和劳动等级偏见；不能把共同教育误写成现代全民公平教育。 古代婴幼儿饮食、耐寒等意见不作为现代健康建议；德性论不是实证训练方案。
+      src: educator-aristotle-2
+  texts:
+    - label:
+        en: Politics, William Ellis translation
+        zh: 《政治学》William Ellis 英译
+      url: https://www.gutenberg.org/ebooks/6762
+- id: ibn-khaldun
+  birthYear: 1332
+  origin: africa
+  directions: [culture, experience]
+  publicationStatus: published
+  name:
+    en: Ibn Khaldun
+    zh: 伊本·赫勒敦
+  years: 1332–1406
+  region:
+    en: North Africa / Maghreb
+    zh: 北非马格里布
+  role:
+    en: Historian and social thinker
+    zh: 历史与社会思想家
+  question:
+    en: When a child is struggling, should we add difficulty or improve the support?
+    zh: 孩子没有理解时，我们是补充支持还是继续加难？
+  works:
+    - title:
+        en: Muqaddimah, teaching and severity sections in Chapter VI
+        zh: 《历史绪论》第六章：教学与严厉对待学生相关节
+      note:
+        en: >-
+          The online Rosenthal translation has a numbering discrepancy: the teaching page’s URL says 36 while
+          its body heading says 56. Use the section title until a reliable printed reference settles
+          numbering.
+        zh: 在线 Rosenthal 译文有编号差异：教学页 URL 写 36，正文标题写 56；核定印本前按节标题定位，不将 URL 编号当标准篇号。
+      src: educator-ibn-khaldun-2
+  basis:
+    en: >-
+      Uses two selected translated sections and their historical context; no full reading of the Muqaddimah or
+      print-page verification.
+    zh: 依据两节已读译文及历史语境，未通读全书或完成印本页码核验。
+  reviewed: '2026-11-17'
+  bio:
+    en: >-
+      Discussed gradual teaching and the effects of harsh treatment within a wider account of learning and
+      society.
+    zh: 在对学习与社会的讨论中，论及循序教学以及严厉对待学生的影响。
+    src: educator-ibn-khaldun-1
+  ideas:
+    - en: >-
+        Begin with an outline, then revisit the subject with deeper explanations instead of presenting
+        difficult conclusions all at once.
+      zh: 教学方法篇主张先给学科轮廓，再以复习和更深解释逐步建立掌握，而非一开始就堆积困难结论。
+      src: educator-ibn-khaldun-2
+    - en: >-
+        The section on severity links violent and humiliating treatment with fear, concealment and a loss of
+        initiative, while still permitting corporal punishment.
+      zh: 严厉篇把暴力、羞辱与畏惧、欺瞒和主动性受损联系起来，但仍容许体罚，并非现代非暴力规范。
+      src: educator-ibn-khaldun-3
+  today:
+    en: >-
+      When understanding stalls, revisit a simpler explanation and invite questions without fear. Contemporary
+      nonviolent guidance comes from modern sources.
+    zh: 可用来讨论恐惧为何影响表达和学习；现代非暴力原则须另依据当代指南。
+    src: educator-ibn-khaldun-2
+  supported: []
+  outdated:
+    - en: >-
+        The text still permits corporal punishment and includes discriminatory generalisations and status
+        hierarchies. It is not a modern nonviolent parenting framework or a validated rule of three
+        repetitions.
+      zh: 明确含针对犹太人的歧视性概括、主奴与身份等级；不传播其偏见为事实。 网络转录存在乱码与编号差异；三次复习不是适用于所有儿童的已验证定额。
+      src: educator-ibn-khaldun-3
+  texts:
+    - label:
+        en: 'Muqaddimah: teaching section, Rosenthal translation'
+        zh: 《历史绪论》教学相关节，Rosenthal 英译
+      url: https://www.muslimphilosophy.com/ik/Muqaddimah/Chapter6/Ch_6_36.htm
+
+- id: al-ghazali
+  birthYear: 1058
+  origin: west-central-asia
+  directions: [religious]
+  publicationStatus: published
+  name:
+    en: al-Ghazali
+    zh: 安萨里（加扎利）
+  years: c. 1058–1111
+  region:
+    en: Khorasan / Persian Islamic tradition
+    zh: 呼罗珊／波斯伊斯兰思想传统
+  role:
+    en: Theologian and philosopher of ethical cultivation
+    zh: 神学家与伦理修养思想家
+  question:
+    en: Does the example adults set match the character they ask of children?
+    zh: 成人的日常示范是否与自己要求孩子的品格一致？
+  works:
+    - title:
+        en: 'Ihya, Book XXII: On Disciplining the Soul'
+        zh: 《宗教学科的复兴》第二十二卷：品格修养相关部分
+      note:
+        en: >-
+          T. J. Winter’s scholarly translation has a child-rearing section listed at page 75. The public
+          sample does not include that section. This introduction does not reconstruct it from an uncollated
+          intermediary translation.
+        zh: T. J. Winter 学术译本目录将儿童养育小节定位在第 75 页，但公开样章不含该节。本篇不据未经校订的转译重构其具体建议。
+      src: educator-al-ghazali-2
+  basis:
+    en: >-
+      Uses scholarly ethical explanations and a publisher sample’s contents; the reliable translation of the
+      child-rearing section remains unread.
+    zh: 依据学术伦理解释及出版社样章目录，可靠译本的儿童养育小节仍未读。
+  reviewed: '2026-11-17'
+  bio:
+    en: Discussed the shaping of character through repeated action within Islamic spiritual and ethical life.
+    zh: 在伊斯兰精神与伦理生活中，讨论持续行为与品格修养的关系。
+    src: educator-al-ghazali-1
+  ideas:
+    - en: Character can be shaped through repeated conduct and cultivation within religious life.
+      zh: 其伦理把品格视为可以通过持续行为和修养塑造，宗教实践与人格习惯相联。
+      src: educator-al-ghazali-1
+    - en: >-
+        A child-rearing section belongs to Book XXII of the Ihya; locating it does not mean its detailed
+        recommendations have been reviewed in a reliable translation.
+      zh: 儿童养育小节属于《复兴》第二十二卷；定位到目录，不表示已通过可靠译本审读其具体建议。
+      src: educator-al-ghazali-2
+  today:
+    en: >-
+      Use this as a question about adult example and responsibility, rather than importing historical rules
+      about food, sleep or obedience.
+    zh: 适合比较不同传统怎样理解照顾责任；不要转用历史禁食、饮食、寝具或服从规定。
+    src: educator-al-ghazali-1
+  supported: []
+  outdated:
+    - en: >-
+        The discussion has specific religious, gender and social assumptions. It is not universal
+        developmental science, and historical bodily discipline is not health or parenting guidance.
+      zh: 这属于特定宗教、性别与社会背景的伦理讨论，不是普适儿童发展科学。历史身体规训不可直接用于健康或管教；本篇未据未经校订的转译提供儿童养育细则。
+      src: educator-al-ghazali-1
+  texts: []
+
+- id: nyerere
+  birthYear: 1922
+  origin: africa
+  directions: [justice, culture]
+  publicationStatus: published
+  name:
+    en: Julius K. Nyerere
+    zh: 朱利叶斯·尼雷尔
+  years: 1922–1999
+  region:
+    en: Tanzania
+    zh: 坦桑尼亚
+  role:
+    en: Teacher and education-policy thinker
+    zh: 教师与教育政策思想家
+  question:
+    en: How can learning help a child understand and contribute to shared life?
+    zh: 学习能怎样帮助孩子理解家人、社区和实际生活？
+  works:
+    - title:
+        en: Education for Self-Reliance
+        zh: 《Education for Self-Reliance》（教育与自力更生）
+      note:
+        en: >-
+          A policy essay and booklet signed March 1967, not a parenting book. The archive’s 2008 web date is
+          distinct from the original publication.
+        zh: 署名日期为 1967 年 3 月的政策文章／小册子，并非育儿专著；档案网站 2008 年发布记录不是原作出版年。
+      src: educator-nyerere-2
+  basis:
+    en: >-
+      Uses selected pages of the original booklet, including its date, not a complete policy evaluation or
+      full reading.
+    zh: 依据原册选页及日期目读，未通读或完成政策效果评价。
+  reviewed: "2026-11-17"
+  bio:
+    en: Linked education with decolonisation, practical knowledge and the needs of the community in Tanzania.
+    zh: 在坦桑尼亚去殖民化背景中，将教育与实际知识、共同体需要联系起来。
+    src: educator-nyerere-1
+  ideas:
+    - en: >-
+        He questioned education shaped by colonial institutions and preparation for a small number of salaried
+        positions.
+      zh: 反思殖民教育遗产以及只为少数高薪职位准备的学校制度，要求教育服务本地社会与多数人生活。
+      src: educator-nyerere-2
+    - en: >-
+        He linked literacy, numeracy and thinking with practical production and community responsibility,
+        without simply dismissing book learning.
+      zh: 把识字、数理、思考与实际生产及共同体责任相连；并非简单轻视书本学习。
+      src: educator-nyerere-2
+  today:
+    en: >-
+      Discuss an age-appropriate shared task and the different experiences family and community members bring
+      to it.
+    zh: 可讨论安全、适龄的共同任务及尊重不同经验；不得从政策原文直接推导儿童劳动要求。
+    src: educator-nyerere-2
+  supported: []
+  outdated:
+    - en: >-
+        The proposals address a socialist, predominantly rural society with specific resource constraints.
+        School-production and entry-age proposals are not general family rules, and policy effectiveness has
+        not been evaluated here.
+      zh: 背景为1967坦桑尼亚去殖民化、社会主义、农业经济与教育资源约束。 原文主张学校生产支持自身并提高入学年龄，不能当普遍权利或当代入学年龄标准。
+      src: educator-nyerere-2
+  texts:
+    - label:
+        en: Education for Self-Reliance, 1967 original booklet
+        zh: 《Education for Self-Reliance》1967 年原册
+      url: https://www.juliusnyerere.org/uploads/education_for_self_reliance_1967.pdf
+- id: spencer
+  birthYear: 1820
+  origin: europe
+  directions: [experience]
+  publicationStatus: published
+  name:
+    en: Herbert Spencer
+    zh: 斯宾塞
+  years: 1820–1903
+  region:
+    en: Britain
+    zh: 英国
+  role:
+    en: Philosopher and education writer
+    zh: 哲学家与教育论述作者
+  question:
+    en: How is what a child learns connected to life beyond the lesson?
+    zh: 我们给孩子的任务与真实生活有什么关系？
+  works:
+    - title:
+        en: "Education: Intellectual, Moral, and Physical"
+        zh: 《教育论：智育、德育和体育》
+      note:
+        en: >-
+          The four essays were collected in 1861. The linked Essays on Education and Kindred Subjects is an
+          expanded collection with Charles W. Eliot’s introduction and additional essays; it is not identical
+          to the original book.
+        zh: >-
+          四篇文章于 1861 年合刊；链接《Essays on Education and Kindred Subjects》是含 Charles W. Eliot
+          导论及其他文章的扩编文集，不能将整卷等同原书。
+      src: educator-spencer-1
+  basis:
+    en: >-
+      Uses selected passages and the expanded collection’s edition explanation; no full reading or claim that
+      historical advice is current health guidance.
+    zh: 依据已读选段及扩编版本说明，未通读，也不将历史建议作为现行健康指南。
+  reviewed: "2026-11-17"
+  bio:
+    en: Asked what knowledge prepares people for life and discussed intellectual, moral and physical education.
+    zh: 追问什么知识有助于生活，并讨论智育、德育与体育。
+    src: educator-spencer-1
+  ideas:
+    - en: >-
+        He assessed knowledge in relation to life, including care of oneself and children, civic activity and
+        cultural leisure.
+      zh: 以生活准备与科学学习重新衡量课程价值，涵盖自身生活、养育、公民活动与文化闲暇。
+      src: educator-spencer-1
+    - en: >-
+        His discussion of consequences questions arbitrary added punishments, but includes unsafe examples
+        that should not be adopted.
+      zh: 他在后果与德育的讨论中质疑随意附加的惩罚，但包含不应采用的危险例子。
+      src: educator-spencer-1
+  today:
+    en: >-
+      Connect a learning task with a real need, and discuss only low-risk, repairable consequences with adult
+      support.
+    zh: 可讨论低风险、可补救的行为后果与成人支持；安全限制是本站当代编辑判断，不能伪称斯宾塞已提出充分保护规范。
+    src: educator-spencer-1
+  supported: []
+  outdated:
+    - en: >-
+        The text allows children to learn through burns in one example. That historical safety threshold is
+        unacceptable for our family suggestions: never use danger, hunger, humiliation or withdrawal of care
+        as a lesson.
+      zh: 不能用自然后果正当化危险、羞辱、饥饿或撤回照护；蜡烛段实际容许烧伤，不应美化。 19世纪科学、性别和社会进化假设须历史定位，也不应把粗略社会达尔文主义标签代替具体解释。
+      src: educator-spencer-1
+  texts:
+    - label:
+        en: Essays on Education and Kindred Subjects, expanded collection
+        zh: 《Essays on Education and Kindred Subjects》扩编文集
+      url: https://www.gutenberg.org/ebooks/16510
+- id: nietzsche
+  birthYear: 1844
+  origin: europe
+  directions: [freedom, humanist]
+  publicationStatus: published
+  name:
+    en: Friedrich Nietzsche
+    zh: 尼采
+  years: 1844–1900
+  region:
+    en: Germany
+    zh: 德国
+  role:
+    en: Philosopher of culture and self-formation
+    zh: 文化与自我形成哲学家
+  question:
+    en: Have speed, rankings and future income become our only educational goals?
+    zh: 教育目标是否被收入、排名和速度完全占据？
+  works:
+    - title:
+        en: On the Future of Our Educational Institutions; Schopenhauer as Educator
+        zh: 《论我们教育机构的未来》；〈作为教育家的叔本华〉
+      note:
+        en: >-
+          The first work is based on 1872 lectures; the second essay dates from 1874 and is by Nietzsche, not
+          Schopenhauer. The locally held Collins translation’s title page says 1910; keep this separate from
+          other edition dates.
+        zh: 前者为 1872 年讲演，后者为 1874 年尼采文章，不是叔本华本人著作。本地 Collins 译本题页标 1910 年，与其他版本年份分开；未通读五讲或整篇文章。
+      src: educator-nietzsche-2
+  basis:
+    en: >-
+      Uses selected lecture and essay passages plus scholarly background; a complete electronic essay
+      container was obtained, not read in full.
+    zh: 依据讲演与文章选段及学术背景；取得完整电子合卷不表示已经通读。
+  reviewed: "2026-11-17"
+  bio:
+    en: >-
+      Questioned education organised only around earnings and conformity, while defending a deeply
+      hierarchical view of culture.
+    zh: 质疑只围绕收入与顺从时代安排的教育，同时持有鲜明的文化等级观。
+    src: educator-nietzsche-3
+  ideas:
+    - en: >-
+        He criticised education reduced to quickly gaining earning power or conforming to current cultural
+        demands.
+      zh: 批评把教育压缩为快速获得赚钱能力，以及文化只适应当下需要的倾向。
+      src: educator-nietzsche-1
+    - en: >-
+        Schopenhauer as Educator uses the figure of an educator to reflect on self-formation and examples,
+        rather than provide standard parenting steps.
+      zh: 在叔本华篇中借教育者形象讨论自我形成、摆脱束缚与榜样关系，而非给出标准化育儿步骤。
+      src: educator-nietzsche-2
+  today:
+    en: >-
+      With an older child, compare different reasons for learning and discuss admired examples while
+      questioning hierarchy and exclusion.
+    zh: 可与青少年讨论值得敬重的榜样及自主判断，同时明确质疑其精英等级观。
+    src: educator-nietzsche-1
+  supported: []
+  outdated:
+    - en: >-
+        Elitism and contempt for mass culture are substantial parts of these texts. They conflict with
+        inclusive education; no family intervention effect follows from the philosophical argument.
+      zh: 强烈精英主义，原文贬抑普遍文化和大众；不能包装为当代包容教育理论。 哲学与修辞文本，没有家庭干预效果数据；未通读五讲或叔本华篇。
+      src: educator-nietzsche-2
+  texts:
+    - label:
+        en: Schopenhauer as Educator, in Thoughts Out of Season II
+        zh: 〈作为教育家的叔本华〉所在电子合卷
+      url: https://www.gutenberg.org/ebooks/38226
+- id: simone-weil
+  birthYear: 1909
+  origin: europe
+  directions: [religious, care]
+  publicationStatus: published
+  name:
+    en: Simone Weil
+    zh: 西蒙娜·薇依
+  years: 1909–1943
+  region:
+    en: France
+    zh: 法国
+  role:
+    en: Philosopher of attention and ethical life
+    zh: 关注注意与伦理生活的哲学家
+  question:
+    en: Can we notice a child’s difficulty before rushing to judge the result?
+    zh: 陪孩子面对难题时，能否先了解困难，而不急着评价成绩？
+  works:
+    - title:
+        en: Reflections on the Right Use of School Studies with a View to the Love of God
+        zh: 〈为爱上帝而正确运用学校学习的思考〉（篇名暂译）
+      note:
+        en: >-
+          Written in 1942 and later included in the posthumous Waiting for God. The writing date is not the
+          publication date of an educational book. Translations and collection editions need separate
+          checking.
+        zh: 写于 1942 年，后收入身后文集《Waiting for God》；写作年不是教育专著出版年。中文译名及文集版本需另核。
+      src: educator-simone-weil-1
+  basis:
+    en: >-
+      Uses two scholarly explanations and their selected quotations; neither the whole essay nor the
+      collection was read directly in full.
+    zh: 依据两份学术解释及其节引，未直接通读原篇或整部文集。
+  reviewed: "2026-11-17"
+  bio:
+    en: Connected patient attention in study with openness to the world and concern for other people.
+    zh: 将学习中的耐心注意，与面向真实世界及关切他人的态度联系起来。
+    src: educator-simone-weil-1
+  ideas:
+    - en: Study offers a setting for receptive attention, not only for marks or accumulated knowledge.
+      zh: 学习在她的伦理中不仅指成绩或知识积累，也为一种耐心、接纳对象的注意提供练习场合。
+      src: educator-simone-weil-1
+    - en: >-
+        Attention involves holding back one’s assumptions and becoming receptive to the situation of others;
+        its purpose also has a religious dimension.
+      zh: 注意包含暂缓自身预设、愿意面对他人处境的态度，其目的也有宗教维度。
+      src: educator-simone-weil-1
+  today:
+    en: >-
+      Pause with a difficult task, ask what is actually confusing and listen without turning every setback
+      into a lesson about character.
+    zh: 可与较大孩子讨论耐心和倾听他人；不把失败强行浪漫化或要求儿童承受痛苦来成长。
+    src: educator-simone-weil-1
+  supported: []
+  outdated:
+    - en: >-
+        This is ethical and religious philosophy. Attention here is not a clinical measure or a validated
+        executive-function exercise, and it is not ADHD treatment advice.
+      zh: 基督教柏拉图主义及伦理宗教背景；注意不等于现代执行功能测量或经过验证的训练。 两处学术二手解释与节选足以一般短介绍，但不声称直接通读原篇；不用于ADHD诊疗建议。
+      src: educator-simone-weil-1
+  texts: []
+- id: savitribai-phule
+  birthYear: 1831
+  origin: south-asia
+  directions: [justice]
+  publicationStatus: published
+  name:
+    en: Savitribai Phule
+    zh: 萨维特里拜·普勒
+  years: 1831–1897
+  region:
+    en: India
+    zh: 印度
+  role:
+    en: Teacher and advocate of educational access
+    zh: 教师与教育机会倡导者
+  question:
+    en: Who may be missing out on the chance to learn and participate?
+    zh: 怎样让女孩及处于不利环境的孩子拥有学习机会？
+  works:
+    - title:
+        en: "Savitribai: Journey of a Trailblazer — a supporting biography"
+        zh: "《Savitribai: Journey of a Trailblazer》——辅助传记"
+      note:
+        en: >-
+          Azim Premji University, 2014; concept and script by Leah Verghese, Ranjna and Medha Sundar,
+          illustrations by Sumon Chitrakar. This modern graphic biography is not a book written by Phule. Her
+          poetry remains a separate research lead.
+        zh: >-
+          Azim Premji University，2014 年；Leah Verghese、Ranjna、Medha Sundar 构思与编写，Sumon Chitrakar
+          绘图。这是现代图文传记，不是普勒本人著作；其诗作仍是另行核验的线索。
+      src: educator-savitribai-phule-1
+  basis:
+    en: >-
+      Uses the biography’s cover, rights page, foreword, selected education-practice pages and bibliography;
+      no direct reading of Phule’s original writings.
+    zh: 依据传记封面、版权页、前言、教育实践选页及书目，未读普勒原著。
+  reviewed: "2026-11-17"
+  bio:
+    en: >-
+      Worked to widen educational opportunities for girls and people excluded by caste in nineteenth-century
+      India.
+    zh: 在十九世纪印度参与扩大女孩及受种姓排斥者的教育机会。
+    src: educator-savitribai-phule-1
+  ideas:
+    - en: >-
+        A university-published biography describes her work as a teacher and headmistress at the Bhidewada
+        girls’ school opened in 1848.
+      zh: 大学出版传记记述她在 1848 年开办的 Bhidewada 女校担任教师、校长的实践。
+      src: educator-savitribai-phule-1
+    - en: >-
+        Her educational work can be considered through access and social exclusion; this does not establish a
+        particular parenting technique.
+      zh: 可从教育机会与社会排斥的角度理解其教育实践，不据此推导某种亲子技巧。
+      src: educator-savitribai-phule-1
+  today:
+    en: >-
+      Ask whose language, disability, gender or circumstances make a family or group activity harder to join,
+      and what could remove that barrier.
+    zh: 看看一次家庭或集体活动中，谁可能因语言、残障、性别或生活条件难以参与，并讨论怎样减少障碍。
+    src: educator-savitribai-phule-1
+  supported: []
+  outdated:
+    - en: >-
+        The graphic dialogue is dramatised, not a transcript of historical speech. Avoid an unqualified claim
+        that she was India’s first teacher. Sharing conditions do not permit arbitrary translation or altered
+        images.
+      zh: 漫画对话经过创作，并非历史逐字引语；不作“印度第一位教师”的绝对化宣传。分享条件也不自动允许翻译或修改插图。
+      src: educator-savitribai-phule-1
+  texts: []
+- id: kant
+  birthYear: 1724
+  origin: europe
+  directions: [humanist, freedom]
+  publicationStatus: published
+  name:
+    en: Immanuel Kant
+    zh: 康德
+  years: 1724–1804
+  region:
+    en: Prussia
+    zh: 普鲁士
+  role:
+    en: Philosopher and lecturer on pedagogy
+    zh: 哲学家与教育学讲授者
+  question:
+    en: How can rules support a child’s growing capacity for judgement?
+    zh: 教育中的规则与孩子将来的自主判断有什么关系？
+  works:
+    - title:
+        en: Lectures on Pedagogy / Über Pädagogik
+        zh: 《论教育》／《教育学讲义》
+      note:
+        en: >-
+          The Cambridge chapter’s introduction explains the lecture and compilation history. The checked
+          collection was printed in 2007 and placed online in 2013; those dates are distinct from 1803.
+        zh: Cambridge 章节导论说明授课与编选过程；已核文集印本为 2007 年、上线为 2013 年，两者与 1803 年文本分开。未读完整教育学正文。
+      src: educator-kant-1
+  basis:
+    en: >-
+      Uses SEP’s education-related discussion and the Cambridge translator’s introduction; the complete
+      pedagogy text remains unread.
+    zh: 依据 SEP 教育相关讨论及 Cambridge 译者导论，完整教育学正文仍未读。
+  reviewed: "2026-11-17"
+  bio:
+    en: Linked questions about education with the development of judgement and moral character.
+    zh: 将教育问题与判断、道德品格的形成联系起来。
+    src: educator-kant-3
+  ideas:
+    - en: >-
+        His educational concerns included reform and the development of moral character, rather than the
+        acquisition of skills alone.
+      zh: 其教育关切包括改革与道德品格的形成，不只关注技能获得。
+      src: educator-kant-3
+    - en: >-
+        The 1803 pedagogy text was compiled by Friedrich Theodor Rink from lecture materials, not written as a
+        finished textbook by Kant.
+      zh: 1803 年教育学文本由 Friedrich Theodor Rink 从讲义材料中选编，并非康德亲自写定的完整教科书。
+      src: educator-kant-1
+  today:
+    en: >-
+      Discuss why a rule exists and invite an older child to explain reasons, without claiming that this is a
+      verified Kantian parenting method.
+    zh: 说明一条规则的理由，并邀请较大孩子解释自己的看法；不将这个示例称为经过验证的康德式管教方法。
+    src: educator-kant-3
+  supported: []
+  outdated:
+    - en: >-
+        This limited introduction uses a scholarly account of educational aims and a translator’s
+        introduction. It does not establish specific discipline methods, age standards or the correctness of
+        every historical judgement.
+      zh: 本篇限于学术解说中的教育目的与译者导论，不据此确定具体管教方法、年龄标准或所有历史判断的正确性。
+      src: educator-kant-1
+  texts: []
+- id: arendt
+  birthYear: 1906
+  origin: europe
+  directions: [humanist]
+  publicationStatus: published
+  name:
+    en: Hannah Arendt
+    zh: 汉娜·阿伦特
+  years: 1906–1975
+  region:
+    en: Germany / United States
+    zh: 德国／美国
+  role:
+    en: Political thinker who wrote on education
+    zh: 讨论教育的政治思想家
+  question:
+    en: How can adults protect children while introducing them to the wider world?
+    zh: 怎样既保护孩子，又逐步让他们接触真实世界？
+  works:
+    - title:
+        en: The Crisis in Education
+        zh: 〈教育的危机〉
+      note:
+        en: >-
+          Published in Partisan Review, volume XXV, issue 4, 1958, pages 493–513. Its relationship to editions
+          of Between Past and Future needs edition-specific checking; this introduction uses selected
+          original-journal pages.
+        zh: 刊于 1958 年《Partisan Review》第 XXV 卷第 4 期，493—513 页。本篇据原刊选页；与《Between Past and Future》各版的收录关系仍需逐版核对。
+      src: educator-arendt-3
+  basis:
+    en: >-
+      Uses the original issue’s contents, opening and selected pages, together with scholarly context; not the
+      entire essay.
+    zh: 依据原刊目录、开篇与选页及学术语境，未通读整篇文章。
+  reviewed: "2026-11-17"
+  bio:
+    en: Considered education as adults’ responsibility both for children growing up and for a shared world.
+    zh: 将教育理解为成人同时对成长中的儿童与共同世界承担责任。
+    src: educator-arendt-12
+  ideas:
+    - en: >-
+        Children are both growing beings and newcomers to an existing world; education must attend to both
+        situations.
+      zh: 她从儿童既在成长、又新进入已有世界的双重处境讨论教育。
+      src: educator-arendt-3
+    - en: >-
+        Adults should take responsibility for introducing that world without depriving newcomers of the
+        possibility of renewing it.
+      zh: 成人应承担介绍共同世界的责任，同时不给新来者创造和更新世界的可能性设死限制。
+      src: educator-arendt-11
+  today:
+    en: >-
+      Discuss a real-world issue at a manageable level while keeping adults responsible for safety and
+      allowing the child room to form a view.
+    zh: 可作为家长反思责任与渐进参与的讨论材料；具体年龄、保护措施和儿童权利须依据现代指南。
+    src: educator-arendt-3
+  supported: []
+  outdated:
+    - en: >-
+        This is political philosophy in a historical setting, not developmental measurement. Its account of
+        authority and private life is not a substitute for current children’s rights; OCR requires checking
+        before quotation.
+      zh: 历史政治哲学论述，不是发展测量或干预研究；对儿童解放、私人领域等判断不能原样写成当代儿童权利规范。 未通读全文；本轮读取目录、开篇与列出的相关页。
+      src: educator-arendt-3
+  texts: []
+- id: jaspers
+  birthYear: 1883
+  origin: europe
+  directions: [freedom, care]
+  publicationStatus: published
+  name:
+    en: Karl Jaspers
+    zh: 卡尔·雅斯贝尔斯
+  years: 1883–1969
+  region:
+    en: Germany / Switzerland
+    zh: 德国／瑞士
+  role:
+    en: Philosopher of freedom and communication
+    zh: 关注自由与交流的哲学家
+  question:
+    en: How can we leave room for serious questions and changing one’s mind?
+    zh: 怎样给孩子认真提问、听取理由和修正看法的空间？
+  works:
+    - title:
+        en: Was ist Erziehung? Ein Lesebuch
+        zh: 《Was ist Erziehung?》教育读本
+      note:
+        en: >-
+          German National Library records identify the 1977 and 1992 Piper editions and Hermann Horn’s
+          compilation role. The Chinese titles and translations must be checked by edition; the reader’s
+          contents have not been read.
+        zh: 德国国家图书馆记录核对了 1977、1992 年 Piper 版本及 Hermann Horn 编选责任。中文《什么是教育》《何为教育》等须逐版核对；未读该读本正文。
+      src: educator-jaspers-1
+  basis:
+    en: >-
+      Uses scholarly discussion of university education and national-library bibliographic records; no reading
+      of the compiled reader or verification of popular quotations.
+    zh: 依据大学教育学术讨论及国家图书馆书目，未读教育读本，也未核实流传名句。
+  reviewed: "2026-11-17"
+  bio:
+    en: >-
+      Connected education with freedom, communication and a community seeking truth, particularly in
+      university life.
+    zh: 将教育与自由、交流、共同求真联系起来，尤其关注大学生活。
+    src: educator-jaspers-2
+  ideas:
+    - en: >-
+        His educational reflections connect freedom, truth-seeking and communication with university reform
+        and democratic culture.
+      zh: 其教育思考与自由、求真、交流，以及战后民主文化和大学改革联系紧密。
+      src: educator-jaspers-2
+    - en: >-
+        Was ist Erziehung? is a posthumous reader compiled by Hermann Horn, not a book completed by Jaspers in
+        1977.
+      zh: 1977 年出版的《Was ist Erziehung?》由 Hermann Horn 在雅斯贝尔斯身后编选，并非作者于该年亲自写定的著作。
+      src: educator-jaspers-1
+  today:
+    en: >-
+      Make space for a child to ask a question, hear another person’s reasons and revise a view when the
+      reasons change.
+    zh: 可作为家庭交流的反思入口；不能把大学改革主张直接当作幼儿训练方法。
+    src: educator-jaspers-2
+  supported: []
+  outdated:
+    - en: >-
+        University reform is not an early-years training programme. A catalogue cannot support chapter
+        summaries, and popular quotations attributed to Jaspers need original-source checking.
+      zh: DNB仅核书目；未读该读本正文，不据书目生成逐章摘要。 SEP的大学教育介绍不代表每一项主张可直接用于家庭。
+      src: educator-jaspers-1
+  texts: []
+- id: john-stuart-mill
+  birthYear: 1806
+  origin: europe
+  directions: [humanist, freedom]
+  publicationStatus: published
+  name:
+    en: John Stuart Mill
+    zh: 约翰·斯图亚特·密尔
+  years: 1806–1873
+  region:
+    en: Britain
+    zh: 英国
+  role:
+    en: Philosopher and writer on broad education
+    zh: 哲学家与通识教育论述作者
+  question:
+    en: Beyond marks and future work, what learning experiences should a child have?
+    zh: 除了分数和将来的职业，孩子还需要接触哪些学习经验？
+  works:
+    - title:
+        en: Inaugural Address Delivered to the University of St Andrews
+        zh: 圣安德鲁斯大学就职演说
+      note:
+        en: >-
+          Delivered on 1 February 1867. The linked text is in Collected Works XXI, edited by John M. Robson
+          with an introduction by Stefan Collini. Read the address within the volume, not the entire volume as
+          a single education treatise.
+        zh: >-
+          发表于 1867 年 2 月 1 日；所链文本收入 John M. Robson 编、Stefan Collini 导论的《Collected Works》第 XXI
+          卷。核心选读是一篇演说，不把整卷当作单一教育专著。
+      src: educator-john-stuart-mill-1
+  basis:
+    en: >-
+      Uses selected address passages at edited pages 217–221 and 251–252 and the edition’s notes; not a full
+      reading of the address or collected volume.
+    zh: 依据演说编校页 217—221、251—252 相关段落与版本说明，未通读演说或整卷。
+  reviewed: "2026-11-17"
+  bio:
+    en: Argued for education that includes literary, scientific, moral and aesthetic development.
+    zh: 主张教育兼顾文学、科学、道德与审美方面的培养。
+    src: educator-john-stuart-mill-1
+  ideas:
+    - en: >-
+        The St Andrews address distinguishes broad university education from professional training,
+        emphasising judgement and understanding.
+      zh: 演说把大学的通识教育与具体职业训练区分，重视判断与理解，而非只掌握谋生技术。
+      src: educator-john-stuart-mill-2
+    - en: >-
+        Literature and science need not be competing alternatives; the address also makes room for poetry, art
+        and aesthetic cultivation.
+      zh: 演说反对文学与科学二选一，也把诗歌、艺术及审美纳入人的培养。
+      src: educator-john-stuart-mill-2
+  today:
+    en: >-
+      Review whether family learning leaves room for reading, science, art and open discussion, without
+      prescribing a uniform curriculum.
+    zh: 可用来检查家庭是否保留科学探索、阅读、艺术与讨论的空间；不据此规定统一课程或照搬密尔童年训练。
+    src: educator-john-stuart-mill-2
+  supported: []
+  outdated:
+    - en: >-
+        The context is nineteenth-century university education. The modern edited volume retains editorial
+        rights; Mill’s own intensive childhood education is not a model families should copy.
+      zh: 以19世纪大学教育为语境，不是儿童分龄课程。 保留文本中的时代与阶层局限；并非所有判断都适用于当代。
+      src: educator-john-stuart-mill-1
+  texts: []
+- id: socrates
+  birthYear: -469
+  origin: europe
+  directions: [classical, care]
+  publicationStatus: published
+  name: { en: Socrates, zh: 苏格拉底 }
+  years: c. 469–399 BCE
+  region: { en: "Athens, ancient Greece", zh: 古希腊雅典 }
+  role: { en: Philosopher of questioning and self-examination, zh: 重视提问与自省的哲学家 }
+  question:
+    en: How can we help a child explain their reasons while admitting what we do not know?
+    zh: 怎样帮助孩子说清理由，也让成人愿意承认自己不知道？
+  works:
+    - title: { en: "Plato’s Apology", zh: "柏拉图《申辩篇》" }
+      note:
+        en: >-
+          Start with the passages on recognising the limits of knowledge, caring about character and
+          examining one’s life. The linked text is Benjamin Jowett’s English translation, PG1656.
+          Plato wrote this portrayal of Socrates’ defence; it is not a work authored by Socrates
+          or an independently verified verbatim court transcript.
+        zh: >-
+          可先读承认认识局限、关心品格及检视生活的段落。链接为 Benjamin Jowett 英译，PG1656。
+          这是柏拉图写作的苏格拉底申辩形象，不是苏格拉底亲著，也不是经独立核实的法庭逐字实录。
+      src: educator-socrates-apology
+    - title: { en: "Plato’s Meno", zh: "柏拉图《美诺篇》" }
+      note:
+        en: >-
+          The selected geometry exchange moves from a confident mistake to recognising uncertainty and
+          continuing inquiry. This Jowett translation, PG1643, also contains a translator’s introduction.
+          The dialogue’s recollection theory is not modern experimental evidence about how children learn.
+        zh: >-
+          所选几何问答从自信的错误走向承认未知、继续探究。Jowett 英译 PG1643 另含译者介绍，须与对话正文区分。
+          对话中的回忆说不是关于儿童学习的现代实验证据。
+      src: educator-socrates-meno
+    - title: { en: "Xenophon’s Memorabilia", zh: "色诺芬《回忆苏格拉底》" }
+      note:
+        en: >-
+          Compare Book IV, especially section VI on clarifying what a claim means and returning to a
+          shared starting point. The linked text is H. G. Dakyns’ English translation, PG1177.
+          Xenophon offers another authored portrait, not a neutral record that automatically resolves
+          disagreements with Plato.
+        zh: >-
+          可对读第四卷，尤其第六节中澄清概念、回到讨论共同起点的段落。链接为 H. G. Dakyns 英译，PG1177。
+          色诺芬提供另一种作者叙述，不是能自动解决与柏拉图分歧的中立实录。
+      src: educator-socrates-memorabilia
+  basis:
+    en: >-
+      Uses the SEP account of the Socratic problem, IEP discussions of ignorance and questioning,
+      and selected passages in the three linked old English translations. Complete electronic texts
+      were acquired locally; the works and translators’ introductions were not read in full.
+      No original writing by Socrates survives, and the historical figure must be distinguished
+      from the characters presented by other authors.
+    zh: >-
+      依据 SEP 关于苏格拉底问题的说明、IEP 对承认未知及问答的讨论，以及所列三部旧英译的选定段落。
+      已在本地取得完整电子文本，但未通读三部作品或译者介绍。没有苏格拉底本人著作传世，
+      须区分历史人物与其他作者笔下的对话形象。
+  reviewed: '2026-11-17'
+  bio:
+    en: >-
+      A philosopher of ancient Athens known through others’ accounts for examining claims,
+      questioning confident assertions and asking how one should live.
+    zh: 古雅典哲学家，主要通过他人记述为人所知，重视检视主张、追问自信断言及思考应当怎样生活。
+    src: educator-socrates-sep
+  ideas:
+    - en: >-
+        In Plato’s Apology, Socrates distinguishes not knowing from mistakenly believing that one knows.
+        Examining one’s own judgment matters alongside questioning other people.
+      zh: 在柏拉图《申辩篇》中，苏格拉底区分不知道与误以为自己知道；检视自己的判断，与追问他人同样重要。
+      src: educator-socrates-apology
+    - en: >-
+        Philosophical questioning can ask what a claim means, what reasons support it and whether
+        those reasons fit together. Exposing an inconsistency does not by itself prove the correct answer;
+        scholars debate what the Socratic examination establishes.
+      zh: 哲学问答可以澄清主张的含义、依据及理由之间是否一致；发现矛盾本身并不证明正确答案，学者对苏格拉底诘问能确立什么仍有争论。
+      src: educator-socrates-iep
+    - en: >-
+        The Apology gives care for character and examination of life priority over accumulating wealth
+        and reputation. This is an ethical challenge, not a reason to dismiss a child’s material needs or safety.
+      zh: 《申辩篇》把品格与生活反思置于积累财富、名声之前。这是伦理追问，不是忽视儿童生活需要或安全的理由。
+      src: educator-socrates-apology
+  today:
+    en: >-
+      With a child who wants to discuss a small everyday disagreement, ask what they mean, listen to
+      their reason and explore an example together. Adults can say “I am not sure” and revise their own view.
+      Offer information or a demonstration when needed; pause if the child is tired or distressed.
+      The aim is shared understanding, not trapping the child into the adult’s preferred answer.
+    zh: >-
+      孩子愿意讨论一件日常小分歧时，先问清其意思、听取理由，再一起看一个具体例子。
+      成人也可以承认“不确定”并修正自己的看法；需要时直接提供信息或示范，孩子疲倦或难过时先暂停。
+      目的在于共同理解，不是用提问把孩子逼到成人预设的答案。
+    src: educator-socrates-iep
+  supported: []
+  outdated:
+    - en: >-
+        Plato, Xenophon and Aristophanes present different Socrates figures. The Socratic problem
+        prevents treating every saying or dialogue as the historical person’s verified words.
+      zh: 柏拉图、色诺芬与阿里斯托芬呈现不同的苏格拉底形象；“苏格拉底问题”意味着不能把每句名言或对话当作历史人物的已证实原话。
+      src: educator-socrates-sep
+    - en: >-
+        Meno’s geometry scene involves an enslaved boy and questions shaped by Socrates within a
+        philosophical argument about recollection. It does not show that all knowledge is innate or
+        that children need no instruction. Ancient exchanges that shame or disorient an interlocutor
+        do not justify humiliating children; these texts do not establish an effective parenting programme.
+      zh: >-
+        《美诺篇》的几何场景涉及一名被奴役的男孩及苏格拉底引导的提问，服务于回忆说的哲学论证；
+        不能据此断言一切知识天生具备，或儿童无需教学。古代问答中令对方羞愧、困惑的做法不能成为羞辱儿童的理由，
+        这些文本也不能证明一种养育课程有效。
+      src: educator-socrates-meno
+  texts:
+    - label: { en: "Plato, Apology — Jowett translation (complete electronic text)", zh: "柏拉图《申辩篇》Jowett英译（完整电子文字版）" }
+      url: https://gutenberg.pglaf.org/1/6/5/1656/1656-0.txt
+    - label: { en: "Plato, Meno — Jowett translation (complete electronic text)", zh: "柏拉图《美诺篇》Jowett英译（完整电子文字版）" }
+      url: https://gutenberg.pglaf.org/1/6/4/1643/1643.txt
+    - label: { en: "Xenophon, Memorabilia — Dakyns translation (complete electronic text)", zh: "色诺芬《回忆苏格拉底》Dakyns英译（完整电子文字版）" }
+      url: https://gutenberg.pglaf.org/1/1/7/1177/1177-0.txt
+- id: krishnamurti
+  birthYear: 1895
+  origin: south-asia
+  directions: [freedom]
+  publicationStatus: published
+  name:
+    en: Jiddu Krishnamurti
+    zh: 克里希那穆提
+  years: 1895–1986
+  region:
+    en: India / international
+    zh: 印度／跨国教育实践
+  role:
+    en: Thinker and school founder
+    zh: 思想家与学校创办者
+  question:
+    en: When discussing achievement, are we also listening to a child’s worries?
+    zh: 当我们关注成绩时，有没有认真听过孩子的担心和感受？
+  works:
+    - title:
+        en: Education and the Significance of Life
+        zh: 《Education and the Significance of Life》（中文译名依版本）
+      note:
+        en: >-
+          A 1954 German-translation library record notes original copyright 1953; the foundation shop’s 1992
+          field must not be treated as the original year. The 1977 discussion linked here is a separate
+          source, not the book’s text.
+        zh: 1954 年德译图书馆记录注明原文版权 1953；基金会商店的 1992 年字段不能当原作首版年。本篇另用的 1977 年讨论逐字稿，不是该书正文。
+      src: educator-krishnamurti-library
+  basis:
+    en: >-
+      Uses the foundation’s book description, a library record and selected opening passages of the 1977
+      discussion; the book has not been read in full.
+    zh: 依据基金会书介、图书馆记录及 1977 年讨论开篇选段，未通读原书。
+  reviewed: '2026-11-17'
+  bio:
+    en: >-
+      Asked how education could attend to self-understanding and psychological life as well as technical
+      achievement.
+    zh: 追问教育如何在技术成就之外，关注自我认识与心理生活。
+    src: educator-krishnamurti-4
+  ideas:
+    - en: The foundation’s description of his education book emphasises self-understanding and reducing fear.
+      zh: 基金会书籍说明重视自我认识，以及减少恐惧的教育环境。
+      src: educator-krishnamurti-2
+    - en: >-
+        A 1977 discussion questions education limited to technical knowledge and memorisation, and considers
+        the psychological lives of learners and adults.
+      zh: 1977讨论开篇批评只发展技术和信息记忆的片面教育，主张同时关注人的心理生活。
+      src: educator-krishnamurti-4
+  today:
+    en: >-
+      Ask a child about a current worry and examine the expectations adults bring to the conversation, without
+      blaming the family or withdrawing needed professional help.
+    zh: 可作为家长观察自身期待、与孩子对话的反思素材；不要据演讲归咎父母，也不据此停止必要的专业支持。
+    src: educator-krishnamurti-2
+  supported: []
+  outdated:
+    - en: >-
+        The foundation promotes this tradition and is not an independent evaluator. Absolute claims in the
+        talks do not establish psychological causation or a validated family method.
+      zh: 基金会为思想传播机构，自述不能当独立效果评价。 演讲包含绝对化判断及将社会暴力归于家庭/心理的论辩，不转换成因果结论或责备家长的文案。
+      src: educator-krishnamurti-4
+  texts:
+    - label:
+        en: 1977 Ojai discussion transcript, separate from the book
+        zh: 1977 年 Ojai 讨论逐字稿，与书籍正文分开
+      url: https://kfoundation.org/transcript/public-discussion-3-ojai-california-12-april-1977/

@@ -1,0 +1,21 @@
+# Original eduStack templates. These are starting points, not instructions to finish.
+- id: pack-bag
+  title: { en: "Pack a bag", zh: "整理书包" }
+  summary: { en: "Make a short list for one familiar school day.", zh: "为一个熟悉的上学日列出一份简短清单。" }
+  steps:
+    en: ["Check what the next day needs", "Choose the books or materials", "Put them in the bag", "Do one final check"]
+    zh: ["看看明天需要什么", "选出书本或材料", "把它们放进书包", "最后检查一次"]
+
+- id: get-ready
+  title: { en: "Get ready to go", zh: "准备出门" }
+  summary: { en: "Turn a familiar outing into a few visible steps.", zh: "把一次熟悉的出门整理成几个看得见的步骤。" }
+  steps:
+    en: ["Say where you are going", "Choose the clothes or items you need", "Put the items by the door", "Let an adult do the final safety check"]
+    zh: ["说清楚要去哪里", "选出需要的衣物或物品", "把物品放到门口", "由成人做最后的安全检查"]
+
+- id: small-project
+  title: { en: "Make a small project", zh: "完成一个小项目" }
+  summary: { en: "Break a small making project into steps you can change.", zh: "把一个小制作分成可以调整的步骤。" }
+  steps:
+    en: ["Choose what to make", "Gather safe materials", "Try the first step", "Change the plan if needed", "Stop, save or finish"]
+    zh: ["选定要做什么", "准备安全材料", "先试第一步", "需要时调整计划", "暂停、保存或完成"]

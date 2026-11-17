@@ -12,8 +12,8 @@
 #   - sex: all | male | female  (only for growth and puberty content)
 #   - summary/whyAge/keyPoints/actions are short summaries in our words; the source is authoritative
 #   - checked: date the link and details were last verified (YYYY-MM-DD)
-#   - research items are not browsed on their own. They appear as "the research behind it"
-#     under the topics, stages and recommendations that list them. They need:
+#   - research items can be browsed in the shared library and also appear as
+#     "the research behind it" under related topics, stages and recommendations. They need:
 #       design: meta-analysis | review | trial | cohort | experiment | observational | cross-sectional | large-dataset
 #     and their summary must state the finding in plain language first.
 #   - backedBy: research ids shown under a book or guideline as "the research behind it"
@@ -621,6 +621,24 @@
   summary:
     en: Explains, in terms children can understand, how the developing brain works, with twelve strategies for handling big feelings.
     zh: 用孩子能听懂的方式解释大脑发育，给出 12 个应对强烈情绪的方法。
+  sourceVersion:
+    en: Originally published in 2011; the recorded ISBN identifies the Bantam / Random House 2012 paperback.
+    zh: 原作出版于 2011 年；所列 ISBN 对应 Bantam / Random House 2012 年平装版。
+  purpose:
+    en: A parent-facing introduction to the authors' approach to understanding strong emotions and everyday conflicts.
+    zh: 帮助家长了解两位作者如何理解强烈情绪与日常冲突。
+  audience:
+    en: Parents and caregivers. The child-age tags are our reading selections, not a developmental test or an instruction for children to read the book.
+    zh: 面向父母与照顾者；孩子年龄标签是本站阅读关联，不是发展测验，也不是要求孩子读此书。
+  limits:
+    en: The authors' explanations and strategies are not evidence that every strategy has been tested as a separate intervention. This introduction is based on the official book description, not a review of the whole book.
+    zh: 作者的解释与方法，不等于每项方法都已作为独立干预接受检验。本导读依据官方书籍介绍，不是全书评介。
+  access:
+    en: The official description is free to read; the book may need purchase or library borrowing. The recorded ISBN is for an English paperback, and translations are separate editions. Free downloads on the author's site are not a general permission to reproduce or adapt them.
+    zh: 官方介绍页可免费阅读；书籍可能需要购买或向图书馆借阅。所列 ISBN 对应英文平装，译本另有版本。作者网站提供免费下载，不代表普遍允许转载或改编。
+  checkedNote:
+    en: The existing source record covers the author's book page and edition details, not a full-book reading or the selected edition's copyright page. The linked website's terms were reviewed separately in the local rights record.
+    zh: 既有来源记录涵盖作者书籍页和版本资料，未通读全书或核验所选版本版权页；网站条款另见本地版权核查记录。
   checked: 2026-11-13
 
 - id: siegel-brainstorm
@@ -1296,6 +1314,12 @@
       Verified the official 10 February 2023 publication record, its overview and evidence-annex link. No
       independent reassessment of recommendation certainty was performed.
     zh: 已核对 2023 年 2 月 10 日官方发布记录、概述与证据附件入口；未独立重评推荐确定性。
+  region:
+    en: WHO international guidance; programme delivery must fit the local setting.
+    zh: WHO 国际指南；项目实施需结合当地场景。
+  sourceVersion:
+    en: Official WHO publication dated 10 February 2023; no later revision was established in the recorded check.
+    zh: WHO 官方出版记录日期为 2023 年 2 月 10 日；既有核验未确认后续修订。
   checked: "2026-11-14"
   originalTitle: >-
     WHO guidelines on parenting interventions to prevent maltreatment and enhance parent–child relationships
@@ -1570,6 +1594,9 @@
       Historical educational philosophy. Contemporary research must be considered separately for claims about
       a particular activity.
     zh: 历史教育哲学；若要判断某项具体活动的效果，需另看当代研究。
+  sourceVersion:
+    en: 1929 original work; this introduction uses the Stanford Encyclopedia of Philosophy commentary, not a verified full-book edition.
+    zh: 原作出版于 1929 年；本导读依据斯坦福哲学百科评论，未核定全书版本。
   checked: "2026-11-14"
   originalTitle: The Aims of Education and Other Essays
 - id: montaigne-education-of-children
@@ -1805,6 +1832,12 @@
       Verified the DOI, abstract and open full-text discussion, limitations and conclusions. Did not
       independently reanalyse the trials or all supplementary data.
     zh: 已核对 DOI、摘要及开放全文的讨论、局限和结论；未独立重分析试验或全部补充数据。
+  region:
+    en: Review of trials in 33 countries; results do not establish effectiveness in every local setting.
+    zh: 汇总 33 国试验；结果不能证明在每个地方都同样有效。
+  sourceVersion:
+    en: 2021 PLOS Medicine article, volume 18, issue 5, e1003602.
+    zh: 2021 年 PLOS Medicine 论文，第 18 卷第 5 期，e1003602。
   checked: "2026-11-14"
   originalTitle: >-
     Parenting interventions to promote early child development in the first three years of life: A global

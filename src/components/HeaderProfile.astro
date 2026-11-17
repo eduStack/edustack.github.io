@@ -1,0 +1,67 @@
+---
+import { stages, type Lang } from '../lib/data';
+import { href } from '../i18n/ui';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const zh = lang === 'zh';
+const stageData = stages.map((stage) => ({ min: stage.minMonths, max: stage.maxMonths, name: stage.name[lang] }));
+---
+<div class="header-profile" data-header-profile data-config={JSON.stringify({ me: href(lang, 'me/'), stages: stageData, zh })}>
+  <a class="profile-link" data-header-trigger href={href(lang, 'me/')}><span class="header-profile-label">{zh ? '我的孩子' : 'My child'}</span><span aria-hidden="true">↗</span></a>
+  <div class="header-profile-details" data-header-details hidden>
+    <strong data-header-child></strong>
+    <span data-header-stage></span>
+  </div>
+  <div class="header-profile-menu" data-header-menu hidden></div>
+</div>
+<script>
+  import { ageMonths, ageText, readProfiles, selected, save, saveHomeMode } from '../lib/client';
+  const root = document.querySelector<HTMLElement>('[data-header-profile]');
+  if (root) {
+    const config = JSON.parse(root.dataset.config || '{}');
+    const trigger = root.querySelector<HTMLAnchorElement>('[data-header-trigger]')!;
+    const details = root.querySelector<HTMLElement>('[data-header-details]')!;
+    const childLine = root.querySelector<HTMLElement>('[data-header-child]')!;
+    const stageLine = root.querySelector<HTMLElement>('[data-header-stage]')!;
+    const menu = root.querySelector<HTMLElement>('[data-header-menu]')!;
+    const render = () => {
+      const profiles = readProfiles();
+      const child = selected(profiles.store);
+      menu.replaceChildren();
+      if (!child) {
+        trigger.href = config.me;
+        trigger.removeAttribute('data-has-children');
+        details.hidden = true;
+        menu.hidden = true;
+        return;
+      }
+      const name = child.name || `${config.zh ? '孩子' : 'Child'} ${profiles.store.children.findIndex((item: { id: string }) => item.id === child.id) + 1}`;
+      const months = ageMonths(child);
+      const stage = config.stages.find((item: { min: number; max: number }) => months >= item.min && months <= item.max);
+      childLine.textContent = `${name} · ${ageText(months, config.zh ? 'zh' : 'en')}`;
+      stageLine.textContent = stage?.name || '';
+      details.hidden = false;
+      if (profiles.store.children.length > 1) {
+        trigger.href = '#';
+        trigger.dataset.hasChildren = 'true';
+      } else {
+        trigger.href = config.me;
+        trigger.removeAttribute('data-has-children');
+      }
+      for (const item of profiles.store.children) {
+        const option = document.createElement('button');
+        option.type = 'button'; option.textContent = `${item.name || (config.zh ? '孩子' : 'Child')} · ${ageText(ageMonths(item), config.zh ? 'zh' : 'en')}`;
+        option.dataset.childId = item.id; option.className = item.id === child.id ? 'selected' : '';
+        option.addEventListener('click', () => { if (save({ ...profiles.store, sel: item.id })) { saveHomeMode('child'); menu.hidden = true; render(); window.dispatchEvent(new CustomEvent('edustack:profilechange')); } });
+        menu.append(option);
+      }
+      const edit = document.createElement('a'); edit.href = config.me; edit.textContent = config.zh ? '编辑孩子档案' : 'Edit child profiles'; edit.className = 'header-profile-edit'; menu.append(edit);
+      menu.hidden = true;
+    };
+    trigger.addEventListener('click', (event) => { if (trigger.dataset.hasChildren !== 'true') return; event.preventDefault(); menu.hidden = !menu.hidden; });
+    render();
+    window.addEventListener('edustack:profilechange', render);
+    window.addEventListener('storage', render);
+  }
+</script>

@@ -10,11 +10,18 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check && npm run check:data && npm run test:content && npm run test:pwa",
+    "check": "astro check && npm run check:data && npm run test:content && npm run test:search && npm run test:activities && npm run test:task && npm run test:educators && npm run test:profile && npm run test:pwa",
     "check:data": "node scripts/validate-data.mjs",
     "check:links": "node scripts/check-links.mjs",
     "test:content": "node --test scripts/content-publication.test.mjs",
-    "test:pwa": "node --test scripts/pwa-build.test.mjs"
+    "test:search": "node --test scripts/search.test.mjs",
+    "test:educators": "node --test scripts/educator-browse.test.mjs",
+    "test:profile": "node --test scripts/profile.test.mjs scripts/profile-filter.test.mjs",
+    "test:profile:browser": "node --test scripts/profile-browser.test.mjs",
+    "test:built": "node --test scripts/site-build.test.mjs",
+    "test:pwa": "node --test scripts/pwa-build.test.mjs",
+    "test:activities": "node --test scripts/activity-filter.test.mjs",
+    "test:task": "node --test scripts/task-breakdown.test.mjs"
   },
   "dependencies": {
     "astro": "5.18.2",
@@ -23,6 +30,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
     "@types/js-yaml": "^4.0.9",
+    "playwright": "1.65.1",
     "typescript": "^5.9.3"
   }
 }

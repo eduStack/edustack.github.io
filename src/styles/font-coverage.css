@@ -63,3 +63,115 @@
   font-display: block;
   unicode-range: U+4E91, U+5740, U+6062, U+6682, U+680F, U+7AEF, U+83DC, U+8FD4, U+95ED;
 }
+
+@font-face {
+  font-family: ReadingSans;
+  src: url('/editorial/reading-sans-extended-5.woff2') format('woff2');
+  font-weight: 400;
+  font-display: block;
+  unicode-range: U+4ED4, U+517C, U+521A, U+5339, U+5C1A, U+5F7C, U+6001, U+6237, U+63AA, U+64CD, U+6DF1, U+822C, U+8F9E, U+904D;
+}
+
+@font-face {
+  font-family: EditorialSerif;
+  src: url('/editorial/editorial-serif-extended-5.woff2') format('woff2');
+  font-weight: 600;
+  font-display: block;
+  unicode-range: U+4ED4, U+517C, U+521A, U+5339, U+5C1A, U+5F7C, U+6001, U+6237, U+63AA, U+64CD, U+6DF1, U+822C, U+8F9E, U+904D;
+}
+
+@font-face {
+  font-family: ReadingSans;
+  src: url('/editorial/reading-sans-extended-6.woff2') format('woff2');
+  font-weight: 400;
+  font-display: block;
+  unicode-range: U+516D, U+5170, U+5237, U+52C7, U+53D9, U+5802, U+5947, U+5F1F, U+5FAA, U+60D5, U+6258, U+638C, U+63E1, U+642C, U+6C14, U+6CDB, U+758F, U+793C, U+7E82, U+7EB5, U+7EC5, U+7F57, U+8B66, U+8BF5, U+8D4B, U+9057, U+9274, U+9769;
+}
+
+@font-face {
+  font-family: EditorialSerif;
+  src: url('/editorial/editorial-serif-extended-6.woff2') format('woff2');
+  font-weight: 600;
+  font-display: block;
+  unicode-range: U+516D, U+5170, U+5237, U+52C7, U+53D9, U+5802, U+5947, U+5F1F, U+5FAA, U+60D5, U+6258, U+638C, U+63E1, U+642C, U+6C14, U+6CDB, U+758F, U+793C, U+7E82, U+7EB5, U+7EC5, U+7F57, U+8B66, U+8BF5, U+8D4B, U+9057, U+9274, U+9769;
+}
+
+@font-face {
+  font-family: ReadingSans;
+  src: url('/editorial/reading-sans-extended-7.woff2') format('woff2');
+  font-weight: 400;
+  font-display: block;
+  unicode-range: U+E4, U+F1, U+3008, U+3009, U+FF0F;
+}
+
+@font-face {
+  font-family: EditorialSerif;
+  src: url('/editorial/editorial-serif-extended-7.woff2') format('woff2');
+  font-weight: 600;
+  font-display: block;
+  unicode-range: U+E4, U+F1, U+3008, U+3009, U+FF0F;
+}
+
+@font-face {
+  font-family: ReadingSans;
+  src: url('/editorial/reading-sans-extended-8.woff2') format('woff2');
+  font-weight: 400;
+  font-display: block;
+  unicode-range: U+A7, U+DC, U+101, U+4E01, U+4E03, U+4E4C, U+4E5D, U+4E71, U+4EAE, U+4F0A, U+4F17, U+4F2A, U+5021, U+519C, U+520A, U+5267, U+526F, U+529D, U+52B3, U+52D2, U+52DF, U+534F, U+5361, U+53D4, U+5409, U+547D, U+548E, U+54ED, U+552F, U+55BB, U+56DB, U+5723, U+574F, U+57CE, U+5806, U+5851, U+585E, U+587E, U+5938, U+5956, U+5974, U+5979, U+5A1C, U+5B5F, U+5B64, U+5B87, U+5B8B, U+5B99, U+5BA3, U+5BBE, U+5BD2, U+5BDD, U+5C24, U+5C3C, U+5DF4, U+5E02, U+5E0C, U+5E1D, U+5E86, U+5E97, U+5ED3, U+5F17, U+5FE0, U+5FEB, U+5FFD, U+6015, U+6050, U+6076, U+60E7, U+6208, U+6249, U+624E, U+6269, U+626B, U+62C9, U+62D2, U+62D4, U+62DB, U+62DC, U+6323, U+635F, U+6377, U+63D2, U+64A4, U+64AD, U+6551, U+6566, U+656C, U+6577, U+65A5, U+65CF, U+6687, U+6731, U+67CF, U+67EF, U+6851, U+68B0, U+690D, U+695A, U+699C, U+6B27, U+6B32, U+6B8B, U+6B96, U+6BDB, U+6C0F, U+6C49, U+6C89, U+6CE2, U+6CF0, U+6CFD, U+6D17, U+6D4E, U+6EAF, U+6F02, U+6F5C, U+70DB, U+70E7, U+71B9, U+7267, U+7272, U+727A, U+72B9, U+738B, U+73CA, U+7434, U+7518, U+754F, U+75DB, U+76E5, U+7701, U+7792, U+7840, U+788D, U+7981, U+79E6, U+7A46, U+7ADE, U+7B03, U+7C97, U+7CCA, U+7D2F, U+7EB2, U+7EBD, U+7F13, U+7F18, U+7F72, U+7FF0, U+8010, U+804C, U+8131, U+814A, U+82E6, U+8340, U+8363, U+83B1, U+8428, U+845B, U+8587, U+85AA, U+8721, U+87BA, U+884D, U+8861, U+88F4, U+89C9, U+8BD7, U+8C0B, U+8C15, U+8D2C, U+8D5A, U+8D6B, U+8F7B, U+8FA9, U+8FDF, U+8FEB, U+90A6, U+90CE, U+91D1, U+94B1, U+94F6, U+95F2, U+9633, U+963F, U+9648, U+9677, U+96B6, U+96F7, U+9965, U+997F, U+9A6C, U+9C81, U+9C9C, U+9E64, U+9ED8, U+9F50;
+}
+
+@font-face {
+  font-family: EditorialSerif;
+  src: url('/editorial/editorial-serif-extended-8.woff2') format('woff2');
+  font-weight: 600;
+  font-display: block;
+  unicode-range: U+A7, U+DC, U+101, U+4E01, U+4E03, U+4E4C, U+4E5D, U+4E71, U+4EAE, U+4F0A, U+4F17, U+4F2A, U+5021, U+519C, U+520A, U+5267, U+526F, U+529D, U+52B3, U+52D2, U+52DF, U+534F, U+5361, U+53D4, U+5409, U+547D, U+548E, U+54ED, U+552F, U+55BB, U+56DB, U+5723, U+574F, U+57CE, U+5806, U+5851, U+585E, U+587E, U+5938, U+5956, U+5974, U+5979, U+5A1C, U+5B5F, U+5B64, U+5B87, U+5B8B, U+5B99, U+5BA3, U+5BBE, U+5BD2, U+5BDD, U+5C24, U+5C3C, U+5DF4, U+5E02, U+5E0C, U+5E1D, U+5E86, U+5E97, U+5ED3, U+5F17, U+5FE0, U+5FEB, U+5FFD, U+6015, U+6050, U+6076, U+60E7, U+6208, U+6249, U+624E, U+6269, U+626B, U+62C9, U+62D2, U+62D4, U+62DB, U+62DC, U+6323, U+635F, U+6377, U+63D2, U+64A4, U+64AD, U+6551, U+6566, U+656C, U+6577, U+65A5, U+65CF, U+6687, U+6731, U+67CF, U+67EF, U+6851, U+68B0, U+690D, U+695A, U+699C, U+6B27, U+6B32, U+6B8B, U+6B96, U+6BDB, U+6C0F, U+6C49, U+6C89, U+6CE2, U+6CF0, U+6CFD, U+6D17, U+6D4E, U+6EAF, U+6F02, U+6F5C, U+70DB, U+70E7, U+71B9, U+7267, U+7272, U+727A, U+72B9, U+738B, U+73CA, U+7434, U+7518, U+754F, U+75DB, U+76E5, U+7701, U+7792, U+7840, U+788D, U+7981, U+79E6, U+7A46, U+7ADE, U+7B03, U+7C97, U+7CCA, U+7D2F, U+7EB2, U+7EBD, U+7F13, U+7F18, U+7F72, U+7FF0, U+8010, U+804C, U+8131, U+814A, U+82E6, U+8340, U+8363, U+83B1, U+8428, U+845B, U+8587, U+85AA, U+8721, U+87BA, U+884D, U+8861, U+88F4, U+89C9, U+8BD7, U+8C0B, U+8C15, U+8D2C, U+8D5A, U+8D6B, U+8F7B, U+8FA9, U+8FDF, U+8FEB, U+90A6, U+90CE, U+91D1, U+94B1, U+94F6, U+95F2, U+9633, U+963F, U+9648, U+9677, U+96B6, U+96F7, U+9965, U+997F, U+9A6C, U+9C81, U+9C9C, U+9E64, U+9ED8, U+9F50;
+}
+
+@font-face {
+  font-family: ReadingSans;
+  src: url('/editorial/reading-sans-extended-9.woff2') format('woff2');
+  font-weight: 400;
+  font-display: block;
+  unicode-range: U+5026, U+5448, U+5BCC, U+5F79, U+60D1, U+6127, U+6F84, U+7533, U+75B2, U+76FE, U+77DB, U+82AC, U+8BD8, U+8D22, U+903C;
+}
+
+@font-face {
+  font-family: EditorialSerif;
+  src: url('/editorial/editorial-serif-extended-9.woff2') format('woff2');
+  font-weight: 600;
+  font-display: block;
+  unicode-range: U+5026, U+5448, U+5BCC, U+5F79, U+60D1, U+6127, U+6F84, U+7533, U+75B2, U+76FE, U+77DB, U+82AC, U+8BD8, U+8D22, U+903C;
+}
+
+@font-face {
+  font-family: ReadingSans;
+  src: url('/editorial/reading-sans-extended-10.woff2') format('woff2');
+  font-weight: 400;
+  font-display: block;
+  unicode-range: U+5112, U+51B7, U+6D0B, U+6D32, U+6D3E, U+813E;
+}
+
+@font-face {
+  font-family: EditorialSerif;
+  src: url('/editorial/editorial-serif-extended-10.woff2') format('woff2');
+  font-weight: 600;
+  font-display: block;
+  unicode-range: U+5112, U+51B7, U+6D0B, U+6D32, U+6D3E, U+813E;
+}
+
+@font-face {
+  font-family: ReadingSans;
+  src: url('/editorial/reading-sans-extended-11.woff2') format('woff2');
+  font-weight: 400;
+  font-display: block;
+  unicode-range: U+5151, U+5201, U+5242, U+5319, U+5C16, U+5C3E, U+5E3D, U+677E, U+70ED, U+786C, U+7EA0, U+7ED1, U+8212, U+82B1, U+836F, U+88C1, U+8D76, U+94A5, U+94BB, U+9510, U+9732, U+987F, U+9A76, U+9A7E;
+}
+
+@font-face {
+  font-family: EditorialSerif;
+  src: url('/editorial/editorial-serif-extended-11.woff2') format('woff2');
+  font-weight: 600;
+  font-display: block;
+  unicode-range: U+5151, U+5201, U+5242, U+5319, U+5C16, U+5C3E, U+5E3D, U+677E, U+70ED, U+786C, U+7EA0, U+7ED1, U+8212, U+82B1, U+836F, U+88C1, U+8D76, U+94A5, U+94BB, U+9510, U+9732, U+987F, U+9A76, U+9A7E;
+}

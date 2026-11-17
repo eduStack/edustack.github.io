@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+import ResourceCard from '../components/ResourceCard.astro';
+import { type Activity, type Lang, resources, tools, stages, cite, topicsForActivity } from '../lib/data';
+import { href, fmtDate } from '../i18n/ui';
+import { settingLabels, activityAgeLabel } from '../lib/activity-filter.mjs';
+interface Props { activity: Activity; lang: Lang }
+const { activity, lang } = Astro.props;
+const zh = lang === 'zh';
+const relatedReadings = resources.filter((resource) => activity.readings.includes(resource.id));
+const relatedTools = tools.filter((tool) => activity.tools.includes(tool.id));
+const relatedTopics = topicsForActivity(activity.id);
+const citations = activity.citations.map((citation) => ({ ...citation, link: cite(citation.src, lang) }));
+---
+<Base lang={lang} title={activity.title[lang]} description={activity.summary[lang]} active="activities">
+  <main id="main" tabindex="-1" class="wrap activity-detail">
+    <nav class="row muted" aria-label={zh ? '位置' : 'Breadcrumb'}><a href={href(lang, 'activities')}>{zh ? '一起试试' : 'Activities'}</a><span aria-hidden="true">/</span><span>{activity.title[lang]}</span></nav>
+    <header class="stack">
+      <div class="chips"><span class="chip">{activityAgeLabel(activity.minMonths, activity.maxMonths, lang)}</span>{activity.setting.map((setting) => <span class="chip">{settingLabels[setting][lang]}</span>)}</div>
+      <h1 class="h-serif">{activity.title[lang]}</h1>
+      <p class="prose">{activity.summary[lang]}</p>
+    </header>
+    <section class="card preparation" aria-labelledby="prepare-heading">
+      <h2 id="prepare-heading">{zh ? '开始前' : 'Before you begin'}</h2>
+      <dl><div><dt>{zh ? '参与和陪伴' : 'Who joins in'}</dt><dd>{activity.participants[lang]}</dd></div><div><dt>{zh ? '时间' : 'Time'}</dt><dd>{activity.time[lang]}</dd></div><div><dt>{zh ? '材料' : 'Materials'}</dt><dd>{activity.materials[lang]}</dd></div></dl>
+    </section>
+    <section class="card" aria-labelledby="steps-heading"><h2 id="steps-heading">{zh ? '一起做' : 'Try it together'}</h2><ol class="steps">{activity.steps[lang].map((step) => <li>{step}</li>)}</ol></section>
+    <section class="card soft"><h2>{zh ? '按你们的情况调整' : 'Make it work for you'}</h2><p class="prose">{activity.adaptations[lang]}</p></section>
+    {activity.cautions[lang] && <section class="card"><h2>{zh ? '需要留意' : 'Keep in mind'}</h2><p class="prose">{activity.cautions[lang]}</p></section>}
+    <section class="card" aria-labelledby="basis-heading">
+      <h2 id="basis-heading">{zh ? '设计依据与出处' : 'Design notes and sources'}</h2>
+      <p class="prose">{activity.basis[lang]}</p>
+      <p class="muted">{zh ? '本站原创活动。下列出处说明设计依据，不表示整个活动或这些步骤已经过效果验证。' : 'An original eduStack activity. The sources explain its design basis; they do not establish that this whole activity or sequence has been tested for effectiveness.'}</p>
+      <ul class="source-list">{citations.map(({ note, link }) => <li><a href={link.internal ? href(lang, `resources/${link.url}`) : link.url} target={link.internal ? undefined : '_blank'} rel={link.internal ? undefined : 'noopener noreferrer'} aria-describedby={link.internal ? undefined : 'pwa-external-note'}>{link.text}{!link.internal && ' ↗'}</a><p>{note[lang]}</p></li>)}</ul>
+      <p class="muted">{zh ? '首次发布' : 'First published'}: {fmtDate(activity.created, lang)} · {zh ? '内容更新' : 'Updated'}: {fmtDate(activity.updated, lang)} · {zh ? '最近核验' : 'Last checked'}: {fmtDate(activity.checked, lang)}</p>
+    </section>
+    {relatedReadings.length > 0 && <section class="stack related"><h2>{zh ? '继续阅读' : 'Read a little more'}</h2><div class="grid">{relatedReadings.map((resource) => <ResourceCard r={resource} lang={lang} compact />)}</div></section>}
+    {relatedTools.length > 0 && <section class="stack related"><h2>{zh ? '可选辅助工具' : 'Optional tools'}</h2><p>{zh ? '活动可以直接开展；需要时再看看这些工具的适用范围和条件。' : 'You can do this activity as written. If useful, check these tools and their scope and conditions.'}</p><div class="grid">{relatedTools.map((tool) => <article class="card"><h3><a href={href(lang, `tools/${tool.id}`)}>{tool.name[lang]}</a></h3><p>{tool.what[lang]}</p></article>)}</div></section>}
+    {relatedTopics.length > 0 && <section class="stack related"><h2>{zh ? '相关专题' : 'Related topics'}</h2><ul>{relatedTopics.map((topic) => <li><a href={href(lang, `topics/${topic.id}`)}>{topic.name[lang]}</a></li>)}</ul></section>}
+    <nav class="related row" aria-label={zh ? '相关年龄阶段' : 'Related age stages'}>{stages.filter((stage) => stage.minMonths <= activity.maxMonths && stage.maxMonths >= activity.minMonths).map((stage) => <a href={href(lang, `ages/${stage.id}`)}>{stage.name[lang]} · {stage.range[lang]}</a>)}</nav>
+    <p class="return-link"><a href={href(lang, 'activities')}>{zh ? '浏览更多活动' : 'Browse more activities'}</a></p>
+  </main>
+</Base>
+<style>
+  .activity-detail { display: flex; flex-direction: column; gap: 1.5rem; padding-block-start: 2rem; max-width: 64rem; }
+  h2 { margin: 0; font-size: var(--type-section); }
+  h3, p, dl { margin: 0; }
+  dl { display: grid; gap: 1rem; }
+  dt { font-weight: 600; } dd { margin: 0.25rem 0 0; }
+  .steps { margin: 0; padding-inline-start: 1.75rem; }
+  .steps li { padding-inline-start: 0.375rem; margin-block: 0.75rem; line-height: var(--leading-body); }
+  .source-list { padding-inline-start: 1.25rem; margin: 0; }
+  .source-list li + li { margin-block-start: 1rem; }
+  .source-list p { margin-block-start: 0.375rem; font-size: var(--type-ui); }
+  .muted { font-size: var(--type-ui); }
+  @media print {
+    :global(.site-header), :global(.site-footer), :global([data-profile-context]), :global(.pwa-status), :global(.pwa-update) { display: none !important; }
+    .activity-detail { max-width: none; padding: 0; gap: 1rem; }
+    .activity-detail > nav, .related, .return-link { display: none; }
+    .card { box-shadow: none; border: 0; padding: 0; break-inside: auto; }
+    h2, dt { break-after: avoid; }
+    .steps li, .source-list li { break-inside: avoid; }
+    a { overflow-wrap: anywhere; }
+  }
+</style>

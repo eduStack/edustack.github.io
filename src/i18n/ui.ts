@@ -5,7 +5,7 @@ export const ui = {
   en: {
     siteName: 'eduStack',
     tagline: 'Parenting resources with sources',
-    nav: { home: 'Home', stages: 'By age', topics: 'Topics', educators: 'Educators', me: 'My child', library: 'Library', tools: 'Tools' },
+    nav: { home: 'Home', stages: 'By age', topics: 'Topics', educators: 'Educators', me: 'My child', library: 'Library', tools: 'Tools', activities: 'Activities' },
     langName: 'English', otherLang: '简体中文',
     type: { book: 'Classic book', classic: 'Classic reading', guide: 'Practical resource', guideline: 'Guideline', research: 'Research' },
     typePlural: { book: 'Classic books', classic: 'Classic readings', guide: 'Practical resources', guideline: 'Guidelines', research: 'Research' },
@@ -42,7 +42,7 @@ export const ui = {
   zh: {
     siteName: 'eduStack',
     tagline: '有出处的家庭教育资源',
-    nav: { home: '首页', stages: '按年龄', topics: '主题', educators: '教育家', me: '我的孩子', library: '资源库', tools: '工具' },
+    nav: { home: '首页', stages: '按年龄', topics: '主题', educators: '教育家', me: '我的孩子', library: '资源库', tools: '工具', activities: '活动' },
     langName: '简体中文', otherLang: 'English',
     type: { book: '经典著作', classic: '经典导读', guide: '实用资源', guideline: '权威指南', research: '学术研究' },
     typePlural: { book: '经典著作', classic: '经典导读', guide: '实用资源', guideline: '权威指南', research: '学术研究' },

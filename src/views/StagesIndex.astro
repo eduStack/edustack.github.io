@@ -10,7 +10,8 @@ const zh = lang === 'zh';
 <Base lang={lang} title={zh ? '按年龄' : 'By age'} active="stages">
 <main id="main" tabindex="-1" class="wrap section">
   <h1 class="h-serif" style="font-size:var(--type-feature)">{zh ? '按年龄浏览' : 'Browse by age'}</h1>
-  <p class="prose">{zh ? '五个阶段。每个阶段页分三块：这个阶段孩子在发展什么、你可以和孩子一起做什么、健康与安全要点。' : 'Five stages. Each page has three parts: what your child is developing, what you can do together, and health and safety essentials.'}</p>
+  <p class="prose">{zh ? '选一个阶段，从少量精选开始：理解日常相处、读一点经典、了解研究，再找一个用得上的工具。每个阶段也保留详细的成长、活动与健康导读。' : 'Choose a stage and start with a few thoughtful selections: everyday family life, classic reading, research and useful tools. Each stage also has an in-depth guide to growing up, activities and health.'}</p>
+  <a href={href(lang)}>{zh ? '返回普通首页' : 'Back to the general homepage'}</a>
   <p class="prose">{editorialCopy[lang].ageNote}</p>
   <div class="grid">
     {stages.map((st) => <a class="card" href={href(lang, `ages/${st.id}`)} style="gap:6px"><span class="muted">{st.range[lang]}</span><span class="card-title" style="font-size:var(--type-section);font-weight:600">{st.name[lang]}</span><span style="color:var(--ink-2)">{st.focus[lang]}</span></a>)}

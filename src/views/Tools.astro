@@ -1,12 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
 import { tools, type Lang } from '../lib/data';
-import { t } from '../i18n/ui';
+import { t, href } from '../i18n/ui';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const zh = lang === 'zh';
+const externalTools = tools.filter((tool) => tool.kind !== 'internal');
+const internalTools = tools.filter((tool) => tool.kind === 'internal');
 const subjects: Record<string, [string, string]> = { early: ['Early learning', '启蒙'], general: ['General', '综合'], coding: ['Coding', '编程'], science: ['Science', '科学'], reading: ['Reading', '阅读'] };
-const planned = zh ? [
+const planned: [string, string, string][] = [];
+/* const planned = zh ? [
   ['生长曲线百分位', '输入身高体重，看在同龄同性别孩子中的位置。', '依据：WHO 儿童生长标准（0–5 岁）和 WHO 2007 生长参考（5–19 岁）'],
   ['一天的作息对照', '填入睡眠、活动和屏幕时间，对照该年龄的建议。', '依据：WHO 2019、WHO 2020、AASM 2016'],
   ['发育里程碑清单', '按月龄勾选，生成一份可以带去体检的清单。', '依据：CDC 发育里程碑（2022 修订）'],
@@ -16,13 +19,16 @@ const planned = zh ? [
   ['A day at a glance', 'Enter sleep, activity and screen time and compare with the guidance for that age.', 'Based on WHO 2019, WHO 2020 and AASM 2016'],
   ['Milestone checklist', "Tick off milestones for your child's age and print a list to take to a check-up.", 'Based on CDC milestones (2022 revision)'],
   ['Family screen agreement', 'Choose rules together and print an agreement for the fridge.', 'Draws on the AAP Family Media Plan'],
-];
+]; */
 ---
 <Base lang={lang} title={t(lang).nav.tools} active="tools">
 <main id="main" tabindex="-1" class="wrap" style="padding-top:32px;display:flex;flex-direction:column;gap:36px">
   <section class="stack" style="gap:16px">
     <h1 class="h-serif" style="font-size:var(--type-feature)">{zh ? '免费学习工具' : 'Free learning tools'}</h1>
     <p class="prose">{zh ? '和孩子一起用的免费学习工具。适用年龄来自各工具的官方说明。每个工具都要符合下面的挑选标准。' : "Free learning tools to use with your child. Age ranges come from each tool's own guidance. Every tool has to meet the criteria below."}</p>
+    <a href={`${href(lang, 'library')}?type=tool`}>{zh ? '按年龄、主题和语言查找工具' : 'Find tools by age, subject and language'}</a>
+    <div id="tool-profile-filter" class="tool-profile-filter" hidden aria-live="polite"><span id="tool-profile-message"></span><button id="tool-show-all" class="btn" type="button"></button></div>
+    <p id="tool-profile-empty" class="callout" hidden></p>
     <div id="criteria" class="card soft" style="padding:20px;gap:10px">
       <h2 style="margin:0;font-size:var(--type-section)">{zh ? '我们怎么挑选工具' : 'How we choose tools'}</h2>
       <ol class="prose" style="padding-left:20px;margin:0">
@@ -42,21 +48,75 @@ const planned = zh ? [
       </ol>
     </div>
     <div class="grid">
-      {tools.map((x) => (
-        <article class="card">
-          <div class="split" style="align-items:flex-start"><span class="card-title" style="font-size:var(--type-body);font-weight:600">{x.name}</span><span class="chip">{zh ? `${x.minAge}–${x.maxAge} 岁` : `Ages ${x.minAge}–${x.maxAge}`}</span></div>
+      {externalTools.map((x) => (
+        <article class="card" data-tool-min={x.minAge * 12} data-tool-max={Math.min((x.maxAge + 1) * 12 - 1, 215)}>
+          <div class="split" style="align-items:flex-start"><a class="card-title" href={href(lang, `tools/${x.id}`)} style="font-size:var(--type-body);font-weight:600">{x.name[lang]}</a><span class="chip">{zh ? `${x.minAge}–${x.maxAge} 岁` : `Ages ${x.minAge}–${x.maxAge}`}</span></div>
           <span class="chip t-tool" style="align-self:flex-start">{subjects[x.subject][zh ? 1 : 0]}</span>
           <p style="margin:0;font-size:var(--type-ui);color:var(--ink-2);flex:1">{x.what[lang]}</p>
           <div class="src"><span>{x.by}</span><span aria-hidden="true">·</span><span>{x.languages[lang]}</span></div>
           <span class="muted" style="font-size:var(--type-note)">{x.backing[lang]} · <a href={x.backingUrl} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{zh ? '查看' : 'See'} ↗</a> · <a href={x.privacy} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{zh ? '隐私政策' : 'Privacy'} ↗</a></span>
-          <a href={x.url} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{zh ? '打开' : 'Open'} {new URL(x.url).hostname.replace(/^www\./, '')} ↗</a>
+          <a href={x.url!} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{zh ? '打开' : 'Open'} {new URL(x.url!).hostname.replace(/^www\./, '')} ↗</a>
+          <a href={href(lang, `tools/${x.id}`)}>{zh ? '用途、使用条件与相关资料' : 'Purpose, access and related reading'}</a>
         </article>
       ))}
     </div>
   </section>
-  <section class="card" style="padding:28px;gap:18px">
+  {internalTools.length > 0 && <section class="stack" aria-labelledby="edustack-tools-heading">
+    <div class="split"><div class="stack" style="gap:6px"><h2 id="edustack-tools-heading" class="h-serif" style="font-size:var(--type-section)">{zh ? 'eduStack 工具' : 'eduStack tools'}</h2><span class="muted">{zh ? '在浏览器中运行，先使用，再决定是否保存。' : 'Browser tools you can try first and save only if useful.'}</span></div><span class="chip">{zh ? '本站开发' : 'Built here'}</span></div>
+    <div class="grid">{internalTools.map((x) => <article class="card">
+      <div class="split" style="align-items:flex-start"><a class="card-title" href={href(lang, x.route!.replace(/^\//, '').replace(/\/$/, ''))} style="font-size:var(--type-body);font-weight:600">{x.name[lang]}</a><span class="chip">{zh ? `${x.minAge}–${x.maxAge} 岁起点` : `Starting ages ${x.minAge}–${x.maxAge}`}</span></div>
+      <span class="chip t-tool" style="align-self:flex-start">{zh ? '任务安排' : 'Planning'}</span>
+      <p style="margin:0;font-size:var(--type-ui);color:var(--ink-2)">{x.what[lang]}</p>
+      <span class="muted" style="font-size:var(--type-note)">{x.backing[lang]}</span>
+      <a href={href(lang, x.route!.replace(/^\//, '').replace(/\/$/, ''))}>{zh ? '打开工具' : 'Open tool'} →</a>
+    </article>)}</div>
+  </section>}
+  {planned.length > 0 && <section class="card" style="padding:28px;gap:18px">
     <div class="split"><div class="stack" style="gap:6px"><h2 class="h-serif" style="font-size:var(--type-section)">{zh ? 'eduStack 小工具' : 'eduStack tools'}</h2><span class="muted" style="max-width:44em">{zh ? '以下是还未开发的候选方向，不是可使用的工具。我们会逐步选择具体任务，开发在浏览器里运行的小工具，并说明依据与数据保存方式。' : 'These are possible directions, not tools you can use yet. We will select specific tasks and build browser-based tools, with clear sources and data storage information.'}</span></div><span class="chip">{zh ? '规划中' : 'Planned'}</span></div>
     <div class="grid">{planned.map(([h, b, src]) => <div class="card soft" style="gap:8px"><span class="card-title" style="font-weight:600;font-size:var(--type-body)">{h}</span><span style="color:var(--ink-2);font-size:var(--type-ui)">{b}</span><span class="src">{src}</span></div>)}</div>
-  </section>
+  </section>}
 </main>
+<script>
+  import { ageMonths, ageText, load, selected } from '../lib/client';
+  const controls = document.getElementById('tool-profile-filter')!;
+  const message = document.getElementById('tool-profile-message')!;
+  const empty = document.getElementById('tool-profile-empty')!;
+  const allButton = document.getElementById('tool-show-all') as HTMLButtonElement;
+  const cards = [...document.querySelectorAll<HTMLElement>('[data-tool-min]')];
+  const zh = document.body.dataset.lang === 'zh';
+  let profileMode = true;
+  const showAll = () => cards.forEach((card) => { card.hidden = false; });
+  const apply = () => {
+    let child;
+    try { child = selected(load()); } catch { child = undefined; }
+    if (!child) { controls.hidden = true; message.textContent = ''; empty.hidden = true; empty.textContent = ''; showAll(); return; }
+    const months = ageMonths(child);
+    const name = child.name || (zh ? '当前孩子' : 'your child');
+    controls.hidden = false;
+    if (!profileMode) {
+      showAll();
+      message.textContent = zh ? `已显示全部工具；${name}当前为 ${ageText(months, 'zh')}。` : `All tools are shown; ${name} is ${ageText(months, 'en')}.`;
+      allButton.textContent = zh ? '只看当前孩子适用工具' : 'Show tools for current child';
+      empty.hidden = true;
+      return;
+    }
+    let count = 0;
+    cards.forEach((card) => {
+      const match = months >= Number(card.dataset.toolMin) && months <= Number(card.dataset.toolMax);
+      card.hidden = !match;
+      if (match) count++;
+    });
+    message.textContent = zh ? `按 ${name} 的年龄（${ageText(months, 'zh')}）显示工具。` : `Showing tools for ${name} (${ageText(months, 'en')}).`;
+    allButton.textContent = zh ? '查看全部工具' : 'Show all tools';
+    empty.hidden = count > 0;
+    empty.textContent = zh ? '当前年龄没有匹配的工具。可以查看全部工具，或到资源库使用更多筛选条件。' : 'No tools match this age. You can show all tools or use the library for more filters.';
+  };
+  allButton.addEventListener('click', () => { profileMode = !profileMode; apply(); });
+  window.addEventListener('edustack:profilechange', () => { profileMode = true; apply(); });
+  apply();
+</script>
+<style>
+  .tool-profile-filter { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; padding: 0.875rem 1rem; border-block: 1px solid var(--line); background: var(--shelf); font-size: var(--type-ui); }
+  .tool-profile-filter span { flex: 1 1 18rem; }
+</style>
 </Base>

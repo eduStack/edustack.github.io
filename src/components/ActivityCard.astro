@@ -1,0 +1,28 @@
+---
+import { type Activity, type Lang } from '../lib/data';
+import { href } from '../i18n/ui';
+import { durationLabels, settingLabels, activityAgeLabel } from '../lib/activity-filter.mjs';
+interface Props { activity: Activity; lang: Lang; heading?: 2 | 3 }
+const { activity, lang, heading = 3 } = Astro.props;
+const Heading = heading === 2 ? 'h2' : 'h3';
+---
+<article class="card activity-card" data-activity-id={activity.id}>
+  <div class="chips"><span class="chip">{lang === 'zh' ? '一起试试' : 'Try together'}</span><span class="chip">{activityAgeLabel(activity.minMonths, activity.maxMonths, lang)}</span><span class="chip">{durationLabels[activity.duration][lang]}</span></div>
+  <Heading><a href={href(lang, `activities/${activity.id}`)}>{activity.title[lang]}</a></Heading>
+  <p>{activity.summary[lang]}</p>
+  <p class="muted">{activity.setting.map((setting) => settingLabels[setting][lang]).join(' · ')}</p>
+  <p class="materials"><strong>{lang === 'zh' ? '准备：' : 'Bring: '}</strong>{activity.materials[lang]}</p>
+</article>
+<style>
+  .activity-card { display: flex; flex-direction: column; gap: 0.75rem; padding: 1.5rem; border: 1px solid var(--line); background: var(--paper); min-inline-size: 0; overflow-wrap: anywhere; }
+  .activity-card[hidden] { display: none; }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .chip { font-size: var(--type-note); color: var(--muted); border: 1px solid var(--line); padding: 0.125rem 0.5rem; }
+  .muted { color: var(--muted); }
+
+  h2, h3 { margin: 0; font-size: var(--type-body); line-height: var(--leading-heading); }
+  h2 a, h3 a { color: var(--ink); text-decoration: none; }
+  h2 a:hover, h3 a:hover { text-decoration: underline; }
+  p { margin: 0; font-size: var(--type-ui); }
+  .materials { color: var(--ink-2); }
+</style>

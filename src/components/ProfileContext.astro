@@ -1,0 +1,216 @@
+---
+import { stages, type Lang } from '../lib/data';
+import { href } from '../i18n/ui';
+
+interface Props { lang: Lang; home?: boolean; viewStage?: string; showContext?: boolean }
+const { lang, home = false, viewStage, showContext = true } = Astro.props;
+const zh = lang === 'zh';
+const stageData = stages.map((stage) => ({
+  id: stage.id,
+  min: stage.minMonths,
+  max: stage.maxMonths,
+  name: stage.name[lang],
+  range: stage.range[lang],
+  href: href(lang, `ages/${stage.id}`),
+}));
+const config = JSON.stringify({
+  home,
+  viewStage: viewStage ?? '',
+  stages: stageData,
+  me: href(lang, 'me'),
+  general: href(lang),
+  copy: {
+    homeLabel: zh ? '首页内容' : 'Your homepage',
+    homeTitle: zh ? '从当前阶段开始' : 'Start with your child’s stage',
+    homeAction: zh ? '查看这个阶段的精选' : 'See this stage’s selections',
+    currentLabel: zh ? '当前孩子' : 'Current child',
+    currentStage: zh ? '当前阶段' : 'Current stage',
+    browseStage: zh ? '查看这个阶段' : 'View this stage',
+    browseAges: zh ? '浏览年龄阶段' : 'Browse age stages',
+    switchChild: zh ? '切换或编辑' : 'Switch or edit',
+    viewingOther: zh ? '你正在查看其他阶段；当前孩子所在阶段是' : 'You are browsing another stage; your child’s stage is',
+    viewingCurrent: zh ? '这是当前孩子所在的阶段' : 'This is your child’s current stage',
+    outOfRange: zh ? '当前年龄超出本站阶段内容范围' : 'This age is outside the site’s current stage range',
+    general: zh ? '继续通用浏览' : 'Continue general browsing',
+    generalHome: zh ? '普通首页' : 'General homepage',
+    childLabel: zh ? '孩子' : 'Child',
+    chooseChild: zh ? '为谁查看' : 'Choose a child',
+    profileSaved: zh ? '已切换当前孩子。' : 'Current child changed.',
+    saveFailed: zh ? '无法保存切换，仍使用原来的孩子档案。请检查浏览器存储设置后重试。' : 'The switch could not be saved. The previous child is still selected. Check browser storage settings and try again.',
+    modeFailed: zh ? '已在本页切换，但无法记住这个首页选择。请检查浏览器存储设置。' : 'The view changed for this page, but this homepage preference could not be saved. Check browser storage settings.',
+    generalNote: zh ? '正在浏览公共精选，孩子档案仍保留。' : 'Browsing general selections. Your child profiles are still saved.',
+    personalNote: zh ? '按当前年龄精选，仍可随时浏览其他阶段和全部资料。' : 'Selected for the current age. Other stages and the full library remain available.',
+    invalidNote: zh ? '保存的孩子档案格式无效，当前显示普通首页。可到“我的孩子”修复或重新导入。' : 'Saved child profiles are invalid, so this is the general homepage. Manage or import profiles in My child.',
+    unavailableNote: zh ? '此浏览器暂时无法读取档案，当前显示普通首页，仍可按年龄浏览。' : 'This browser cannot currently read profiles. The general homepage and browsing by age remain available.',
+    outsideNote: zh ? '当前孩子的年龄超出本站 0–17 岁的内容范围，先显示普通首页。你可以切换孩子或继续自主浏览。' : 'The current child is outside the site’s age range of 0–17 years. This is the general homepage; switch children or continue exploring.',
+  },
+});
+---
+{showContext && <aside id={home ? 'profile-home' : 'profile-context'} class:list={{ 'profile-context': true, 'profile-home-context': home }} data-profile-context data-config={config} hidden aria-live="polite">
+  <div class="profile-context-copy">
+    <span class="profile-context-label" data-label></span>
+    <strong data-title></strong>
+    <span class="profile-context-meta" data-meta></span>
+  </div>
+  <div class="profile-context-actions">
+    <a class="btn btn-primary" data-stage-link></a>
+    <a data-me-link></a>
+  </div>
+  <div class="profile-child-controls">
+    <div class="profile-child-buttons" data-child-buttons role="group" aria-label={zh ? '为谁查看' : 'Choose a child'}></div>
+    <div data-child-select-wrap hidden><label for="profile-child-select">{zh ? '为谁查看' : 'Choose a child'}</label><select id="profile-child-select" data-child-select></select></div>
+  </div>
+  <p class="profile-feedback" data-profile-message role="status" hidden></p>
+</aside>}
+<script>
+  import { ageMonths, ageText, readProfiles, selected, save, readHomeMode, saveHomeMode, type HomeMode } from '../lib/client';
+  const root = document.querySelector<HTMLElement>('[data-profile-context]');
+  if (root) {
+    const config = JSON.parse(root.dataset.config || '{}');
+    const lang = document.body.dataset.lang || 'en';
+    let homeMode: HomeMode = readHomeMode();
+    const buttonGroup = root.querySelector<HTMLElement>('[data-child-buttons]')!;
+    const childSelect = root.querySelector<HTMLSelectElement>('[data-child-select]')!;
+    const message = root.querySelector<HTMLElement>('[data-profile-message]')!;
+    const showMessage = (text: string) => { message.textContent = text; message.hidden = !text; };
+    const render = () => {
+      const profiles = readProfiles();
+      const child = selected(profiles.store);
+      const months = child ? ageMonths(child) : NaN;
+      const stage = config.stages.find((item: { min: number; max: number }) => months >= item.min && months <= item.max);
+      const generalAnchor = ['#ages', '#topics', '#reading'].includes(location.hash);
+      const personal = !!child && !!stage && homeMode === 'child' && !generalAnchor;
+      if (config.home) {
+        document.documentElement.dataset.homeView = personal ? 'child' : 'general';
+        document.querySelectorAll<HTMLElement>('[data-home-general]').forEach((node) => { node.hidden = personal; });
+        const content = document.querySelector<HTMLElement>('[data-home-personal]');
+        if (content) content.hidden = !personal;
+        document.querySelectorAll<HTMLElement>('[data-home-stage]').forEach((node) => {
+          node.hidden = !personal || node.dataset.homeStage !== stage?.id;
+          for (const group of node.querySelectorAll<HTMLElement>('[data-home-age-group]')) {
+            let count = 0;
+            group.querySelectorAll<HTMLElement>('[data-home-age-item]').forEach((item) => {
+              item.hidden = !personal || months < Number(item.dataset.minMonths) || months > Number(item.dataset.maxMonths);
+              if (!item.hidden) count++;
+            });
+            group.querySelectorAll<HTMLElement>('[data-home-age-empty]').forEach((empty) => { empty.hidden = count > 0; });
+          }
+        });
+        const note = document.getElementById('home-view-note');
+        if (note) {
+          note.textContent = profiles.status === 'invalid' ? config.copy.invalidNote : profiles.status === 'unavailable' ? config.copy.unavailableNote : child && !stage ? config.copy.outsideNote : '';
+          note.hidden = !note.textContent;
+        }
+        delete document.documentElement.dataset.homePending;
+      }
+      if (!child) {
+        root.hidden = true;
+        root.querySelectorAll('[data-label], [data-title], [data-meta], [data-stage-link], [data-me-link]').forEach((node) => { node.textContent = ''; node.removeAttribute('href'); });
+        buttonGroup.replaceChildren(); childSelect.replaceChildren(); showMessage('');
+        return;
+      }
+      const name = child.name || `${config.copy.childLabel} ${profiles.store.children.findIndex((item) => item.id === child.id) + 1}`;
+      const viewingOther = stage && config.viewStage && config.viewStage !== stage.id;
+      root.querySelector<HTMLElement>('[data-label]')!.textContent = config.home ? config.copy.homeLabel : config.copy.currentLabel;
+      root.querySelector<HTMLElement>('[data-title]')!.textContent = config.home ? (personal ? `${stage.name} · ${stage.range}` : config.copy.generalHome) : `${name} · ${ageText(months, lang)}`;
+      root.querySelector<HTMLElement>('[data-meta]')!.textContent = config.home
+        ? personal ? config.copy.personalNote : config.copy.generalNote
+        : stage ? (viewingOther ? `${config.copy.viewingOther} ${stage.name} ${stage.range}` : `${config.copy.viewingCurrent} · ${stage.name} ${stage.range}`) : config.copy.outOfRange;
+      const stageLink = root.querySelector<HTMLAnchorElement>('[data-stage-link]')!;
+      stageLink.href = stage?.href || `${config.general}ages/`;
+      stageLink.textContent = stage ? (config.home ? config.copy.homeAction : config.copy.browseStage) : config.copy.browseAges;
+      stageLink.hidden = config.home;
+      const meLink = root.querySelector<HTMLAnchorElement>('[data-me-link]')!;
+      meLink.href = config.me;
+      meLink.textContent = config.copy.switchChild;
+      document.querySelectorAll<HTMLButtonElement>('[data-home-general-choice]').forEach((choice) => choice.setAttribute('aria-pressed', String(!personal)));
+      root.querySelector<HTMLElement>('.profile-child-controls')!.hidden = !!document.getElementById('me');
+      const focusedId = (document.activeElement as HTMLElement)?.dataset.childChoice;
+      buttonGroup.replaceChildren(); childSelect.replaceChildren();
+      const useSelect = profiles.store.children.length > 3;
+      buttonGroup.hidden = useSelect;
+      root.querySelector<HTMLElement>('[data-child-select-wrap]')!.hidden = !useSelect;
+      if (useSelect && config.home && !personal) childSelect.add(new Option(config.copy.chooseChild, ''));
+      for (const [index, item] of profiles.store.children.entries()) {
+        const label = `${item.name || `${config.copy.childLabel} ${index + 1}`} · ${ageText(ageMonths(item), lang)}`;
+        if (useSelect) {
+          const option = new Option(label, item.id); option.selected = item.id === child.id && (!config.home || personal); childSelect.add(option);
+        } else {
+          const button = document.createElement('button');
+          button.type = 'button'; button.className = 'profile-choice'; button.dataset.childChoice = item.id;
+          button.textContent = label; button.setAttribute('aria-pressed', String(item.id === child.id && (!config.home || personal)));
+          buttonGroup.append(button);
+        }
+      }
+      root.hidden = false;
+      if (focusedId) [...buttonGroup.querySelectorAll<HTMLButtonElement>('button')].find((button) => button.dataset.childChoice === focusedId)?.focus({ preventScroll: true });
+    };
+    function chooseChild(id: string) {
+      const { store } = readProfiles();
+      if (!store.children.some((child) => child.id === id)) return;
+      if (!save({ ...store, sel: id })) { render(); showMessage(config.copy.saveFailed); return; }
+      let persisted = true;
+      if (config.home) {
+        homeMode = 'child'; persisted = saveHomeMode(homeMode);
+        if (['#ages', '#topics', '#reading'].includes(location.hash)) {
+          history.replaceState(null, '', location.pathname + location.search);
+          document.querySelectorAll<HTMLAnchorElement>('.language-switcher a').forEach((link) => {
+            const target = new URL(link.href); target.search = location.search; target.hash = ''; link.href = target.href;
+          });
+        }
+      }
+      render(); showMessage(persisted ? config.copy.profileSaved : config.copy.modeFailed);
+    }
+    buttonGroup.addEventListener('click', (event) => {
+      const button = (event.target as Element).closest<HTMLButtonElement>('[data-child-choice]');
+      if (button?.dataset.childChoice) chooseChild(button.dataset.childChoice);
+    });
+    childSelect.addEventListener('change', () => chooseChild(childSelect.value));
+    document.querySelectorAll('[data-home-general-choice]').forEach((choice) => choice.addEventListener('click', () => {
+      homeMode = 'general'; const persisted = saveHomeMode(homeMode);
+      render(); showMessage(persisted ? '' : config.copy.modeFailed);
+    }));
+    render();
+    window.addEventListener('edustack:profilechange', render);
+    window.addEventListener('hashchange', render);
+    window.addEventListener('storage', (event) => {
+      if (event.key === null || event.key === 'edustack.profiles.v1' || event.key === 'edustack.home-view.v1') {
+        homeMode = readHomeMode();
+        window.dispatchEvent(new CustomEvent('edustack:profilechange'));
+      }
+    });
+  }
+</script>
+<style>
+  .profile-context {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    inline-size: min(73.75rem, calc(100% - 6rem));
+    margin: 0 auto;
+    padding: 0.875rem 0;
+    border-block: 1px solid var(--line);
+    background: var(--shelf);
+  }
+  .profile-home-context { margin-block-start: 1rem; }
+  .profile-context-copy { display: flex; min-inline-size: 0; flex-direction: column; gap: 0.2rem; }
+  .profile-context-label { color: var(--accent); font-size: var(--type-note); letter-spacing: 0.04em; }
+  .profile-context-copy strong { font-family: var(--serif); font-size: var(--type-section); line-height: var(--leading-heading); }
+  .profile-context-meta { color: var(--muted); font-size: var(--type-ui); }
+  .profile-context-actions { display: flex; align-items: center; justify-content: flex-end; gap: 0.75rem 1rem; flex-wrap: wrap; font-size: var(--type-ui); }
+  .profile-context-actions .btn { flex-shrink: 0; }
+  .profile-child-controls, .profile-feedback { flex-basis: 100%; min-inline-size: 0; }
+  .profile-child-buttons { display: flex; flex-wrap: wrap; gap: 0.625rem; }
+  .profile-context :global(.profile-choice) { font: inherit; font-size: var(--type-ui); min-block-size: 2.75rem; max-inline-size: 100%; padding: 0.5rem 0.875rem; border: 1px solid var(--line); background: var(--paper); color: var(--ink); cursor: pointer; overflow-wrap: anywhere; }
+  .profile-context :global(.profile-choice[aria-pressed='true']) { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+  [data-child-select-wrap] { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; font-size: var(--type-ui); }
+  [data-child-select] { min-inline-size: 0; max-inline-size: 100%; min-block-size: 2.75rem; font: inherit; padding: 0.5rem; border: 1px solid var(--line); background: var(--paper); color: var(--ink); }
+  .profile-feedback { margin: 0; color: var(--ink); font-size: var(--type-ui); }
+  .profile-home-context { display: none !important; }
+  @media (max-width: 40em) {
+    .profile-context { inline-size: calc(100% - 2rem); align-items: stretch; flex-direction: column; }
+    .profile-context-actions { justify-content: flex-start; }
+  }
+</style>

@@ -1,7 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import Cite from '../components/Cite.astro';
-import { educators, stagesFor, type Lang, type Educator, type Claim } from '../lib/data';
+import ResourceCard from '../components/ResourceCard.astro';
+import { educators, resources, stagesFor, type Lang, type Educator } from '../lib/data';
 import { t, href } from '../i18n/ui';
 interface Props { lang: Lang; e: Educator }
 const { lang, e } = Astro.props;
@@ -9,40 +10,53 @@ const s = t(lang);
 const zh = lang === 'zh';
 const st = stagesFor(e.id);
 const others = educators.filter((x) => x.id !== e.id);
-const list = (items: Claim[]) => items;
+const sourceIds = new Set([...([e.bio, e.today, ...e.ideas, ...e.supported, ...e.outdated].map((claim) => claim.src)), ...e.works.map((work) => work.src)]);
+const readings = resources.filter((resource) => sourceIds.has(resource.id));
 ---
 <Base lang={lang} title={e.name[lang]} description={e.bio[lang]} active="educators">
 <main id="main" tabindex="-1" class="wrap" style="padding-top:28px;display:flex;flex-direction:column;gap:22px;max-width:960px">
   <nav aria-label={zh ? '位置' : 'Breadcrumb'} class="row muted" style="gap:6px;font-size:var(--type-ui)"><a href={href(lang, 'educators')}>{s.nav.educators}</a><span aria-hidden="true">/</span><span>{e.name[lang]}</span></nav>
   <header class="stack" style="gap:8px">
     <h1 class="h-serif" style="font-size:var(--type-feature)">{e.name[lang]}{zh && <span class="muted" lang="en" style="font-size:var(--type-section);font-weight:400;margin-left:12px">{e.name.en}</span>}</h1>
-    <span class="muted" style="font-size:var(--type-ui)">{e.years} · {e.region[lang]}</span>
+    <span class="muted" style="font-size:var(--type-ui)">{e.years} · {e.region[lang]} · {e.role[lang]}</span>
     <p class="prose" style="font-size:var(--type-body)">{e.bio[lang]}<Cite src={e.bio.src} lang={lang} /></p>
+    <p style="margin:0;font-size:var(--type-section)">{e.question[lang]}</p>
   </header>
+  <section class="callout"><h2 style="margin:0 0 8px;font-size:var(--type-section)">{zh ? '家长可以怎样借鉴' : 'An idea to try at home'}</h2><p style="margin:0">{e.today[lang]}<Cite src={e.today.src} lang={lang} /></p><p class="muted" style="margin:8px 0 0;font-size:var(--type-ui)">{zh ? '这是本站结合所列来源提出的家庭情境示例，不是原著引文或经过单独验证的干预方案。' : 'This family example is our interpretation of the cited sources, not a quotation or a separately evaluated intervention.'}</p></section>
+  <section class="card" style="padding:24px;gap:12px">
+    <h2 style="margin:0;font-size:var(--type-section)">{zh ? '从哪些作品开始读' : 'Where to start reading'}</h2>
+    {e.works.length ? <ul class="claims">{e.works.map((work) => <li><strong>{work.title[lang]}</strong><Cite src={work.src} lang={lang} /><p style="margin:6px 0 0">{work.note[lang]}</p></li>)}</ul> : <p style="margin:0">{zh ? '具体作品及版本仍需核对；本篇先依据下列人物资料介绍思想，不提供逐书摘要。' : 'Specific works and editions still need checking. This introduction uses the biographical sources below, without offering book summaries.'}</p>}
+  </section>
   <section class="card" style="padding:24px;gap:12px">
     <h2 style="margin:0;font-size:var(--type-section)">{zh ? '核心思想' : 'Core ideas'}</h2>
-    <ul class="claims">{list(e.ideas).map((c) => <li>{c[lang]}<Cite src={c.src} lang={lang} /></li>)}</ul>
+    <ul class="claims">{e.ideas.map((c) => <li>{c[lang]}<Cite src={c.src} lang={lang} /></li>)}</ul>
   </section>
-  <section class="callout"><b>{zh ? '对今天的家长意味着什么：' : 'What it means for parents today: '}</b>{e.today[lang]}<Cite src={e.today.src} lang={lang} /></section>
+  {readings.length > 0 && <section class="stack"><h2 style="margin:0;font-size:var(--type-section)">{zh ? '这些介绍所引用的资料' : 'Readings cited in this introduction'}</h2><p class="muted" style="margin:0;font-size:var(--type-ui)">{zh ? '区分历史思想、后来的研究与本站的解释，具体关系以正文引用为准。' : 'Distinguish historical ideas, later research and our explanation; the citations in the text specify each connection.'}</p><div class="grid">{readings.map((resource) => <ResourceCard r={resource} lang={lang} compact />)}</div></section>}
+  <a href={`${href(lang, 'library')}?q=${encodeURIComponent(e.name[lang])}`}>{zh ? '在资源库查找相关思想与阅读' : 'Search the library for related ideas and reading'}</a>
+  <p class="muted" style="margin:0">{zh ? '下面区分相关的现代研究与历史语境。相近问题上的研究，不等于验证了这位思想家的全部理论，也不能直接推断在家采用某个做法的效果。' : "The following separates related modern research from historical context. Research on a similar question does not validate a thinker's whole theory or establish the effect of a particular home activity."}</p>
   <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))">
     <section class="card" style="padding:22px;gap:12px;border-top:4px solid var(--accent)">
-      <h2 style="margin:0;font-size:var(--type-section)">{zh ? '现代研究支持的' : 'What modern research supports'}</h2>
+      <h2 style="margin:0;font-size:var(--type-section)">{zh ? '相关现代研究' : 'Related modern research'}</h2>
       {e.supported.length ? <ul class="claims">{e.supported.map((c) => <li>{c[lang]}<Cite src={c.src} lang={lang} /></li>)}</ul>
-        : <p class="muted" style="margin:0">{zh ? '我们还没有找到直接检验这些观点、且足够可靠的研究。' : 'We have not yet found reliable research that tests these ideas directly.'}</p>}
+        : <p class="muted" style="margin:0">{zh ? '本篇暂未纳入直接相关的现代研究；这些思想作为历史与哲学阅读，不作为已证实的方法。' : 'This introduction does not yet include directly related modern research. Read these ideas as historical and philosophical reflection, not established methods.'}</p>}
     </section>
     <section class="card" style="padding:22px;gap:12px;border-top:4px solid #a68e53">
-      <h2 style="margin:0;font-size:var(--type-section)">{zh ? '已经过时或需要修正的' : 'What is outdated or needs correcting'}</h2>
+      <h2 style="margin:0;font-size:var(--type-section)">{zh ? '历史语境与阅读边界' : 'Historical context and limits'}</h2>
       {e.outdated.length ? <ul class="claims">{e.outdated.map((c) => <li>{c[lang]}<Cite src={c.src} lang={lang} /></li>)}</ul>
-        : <p class="muted" style="margin:0">{zh ? '我们还没有找到可靠的研究指出需要修正的地方。' : 'We have not yet found reliable research showing what needs correcting.'}</p>}
+        : <p class="muted" style="margin:0">{zh ? '本篇尚未完成系统的历史局限评述。没有列出修正，不表示全部主张仍然适用；请结合当代儿童权利、养育指南和具体家庭情境阅读。' : 'A systematic account of historical limitations is not yet complete. An empty list of corrections does not establish that all claims still apply; read alongside current child rights, parenting guidance and your family context.'}</p>}
     </section>
   </div>
   <section class="card" style="padding:22px;gap:10px">
-    <h2 style="margin:0;font-size:var(--type-section)">{zh ? '免费阅读原著' : 'Read the originals free'}</h2>
+    <h2 style="margin:0;font-size:var(--type-section)">{zh ? '在线原著入口' : 'Original texts online'}</h2>
     {e.texts.length ? <ul class="stack" style="list-style:none;padding:0;margin:0;gap:6px">{e.texts.map((x) => <li><a href={x.url} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{x.label[lang]} ↗</a></li>)}</ul>
-      : <p class="muted" style="margin:0">{zh ? '原著仍受版权保护，或我们没有找到合法的免费全文，因此不提供链接。' : 'The original works are still under copyright, or we found no legal free copy, so we do not link one.'}</p>}
-    <span class="muted" style="font-size:var(--type-note)">{zh ? '只链接公有领域或官方免费公开的版本，例如古登堡计划、互联网档案馆、维基文库。' : 'We link only public-domain or officially free copies, such as Project Gutenberg, the Internet Archive and Wikisource.'}</span>
+      : <p class="muted" style="margin:0">{zh ? '本篇暂未提供已核对的免费原著全文入口。可从作品旁的书目或学术介绍继续查找；这不代表原著不存在免费版本。' : 'This introduction does not yet provide a checked free full-text link. Follow the bibliographic or scholarly sources beside each work; this does not mean no free edition exists.'}</p>}
+    <p class="muted" style="margin:0;font-size:var(--type-ui)">{zh ? '可在线阅读不等于可自由转载或翻译。古登堡计划主要依据美国版权条件，其他地区的版权状态、译者与编者权利需另行核对；请查看链接所指具体版本的说明。本站不托管这些原著。' : 'Online access does not grant permission to reproduce or translate. Project Gutenberg primarily applies US copyright rules; local copyright and translator or editor rights require separate checks. Consult the specific linked edition. We do not host these works.'}</p>
   </section>
-  {st.length > 0 && <section class="stack" style="gap:8px"><h2 style="margin:0;font-size:var(--type-section)">{zh ? '在哪些年龄阶段提到' : 'Age stages that draw on these ideas'}</h2><div class="row" style="gap:8px">{st.map((x) => <a class="chip" style="min-height:2.75rem;padding:0 12px;text-decoration:none" href={href(lang, `ages/${x.id}#develop`)}>{x.name[lang]} · {x.range[lang]}</a>)}</div></section>}
+  <section class="stack" style="gap:8px"><h2 style="margin:0;font-size:var(--type-section)">{zh ? '导读依据与复核' : 'Basis of this introduction'}</h2><p style="margin:0">{e.basis[lang]}</p><p class="muted" style="margin:0;font-size:var(--type-ui)">{zh ? '本站编辑复核：' : 'Editorial review: '}<time datetime={e.reviewed}>{e.reviewed}</time>{zh ? '。日期表示本站导读复核，不是原作出版、外部网页更新或全文审读日期。' : '. This is the date we reviewed our introduction, not the publication, external page update or full-text reading date.'}</p></section>
+  {st.length > 0 && <section class="stack" style="gap:8px"><h2 style="margin:0;font-size:var(--type-section)">{zh ? '在哪些年龄阶段提到' : 'Age stages that draw on these ideas'}</h2><div class="row" style="gap:8px">{st.map((x) => <a class="chip" style="min-height:2.75rem;padding:0 12px;text-decoration:none" href={href(lang, `ages/${x.id}/guide#develop`)}>{x.name[lang]} · {x.range[lang]}</a>)}</div></section>}
   <div class="row" style="font-size:var(--type-ui);gap:6px 12px"><span class="muted">{zh ? '其他教育家：' : 'Other educators:'}</span>{others.map((x) => <a href={href(lang, `educators/${x.id}`)}>{x.name[lang]}</a>)}</div>
 </main>
 </Base>
+<style>
+  .claims li { overflow-wrap: anywhere; }
+</style>

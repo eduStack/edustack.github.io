@@ -1,0 +1,6 @@
+---
+import StageGuide from '../../../../views/StageGuide.astro';
+import { stages } from '../../../../lib/data';
+export function getStaticPaths() { return stages.map((stage) => ({ params: { id: stage.id }, props: { stage } })); }
+---
+<StageGuide lang="zh" stage={Astro.props.stage} />

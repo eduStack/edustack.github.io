@@ -9,7 +9,7 @@ const zh = lang === 'zh';
 const data = {
   res: resources.filter((r) => r.type !== 'research').map((r) => ({ id: r.id, type: r.type, ev: r.evidence, min: r.minMonths, max: r.maxMonths, sex: r.sex, title: r.title[lang], summary: r.summary[lang], by: r.by, year: yearLabel(r, lang), age: ageLabel(r.minMonths, r.maxMonths, lang), link: href(lang, `resources/${r.id}`) })),
   stages: stages.map((st) => {
-    const c = (src: string) => { const x = cite(src, lang); return { cite: x.text, url: x.internal ? href(lang, `resources/${x.url}`) : x.url }; };
+    const c = (src: string) => { const x = cite(src, lang); return { cite: x.text, url: x.internal ? href(lang, `resources/${x.url}`) : x.url, external: !x.internal }; };
     return {
       id: st.id, min: st.minMonths, max: st.maxMonths, name: `${st.name[lang]} ${st.range[lang]}`, link: href(lang, `ages/${st.id}`),
       develop: st.develop.areas.map((a) => ({ label: s.area[a.area as keyof typeof s.area], points: a.points.map((p) => ({ text: p[lang], ...c(p.src) })) })),
@@ -20,7 +20,7 @@ const data = {
     };
   }),
   tips: tips.map((tp) => { const r = getResource(tp.resource); return { min: tp.minMonths, max: tp.maxMonths, text: tp.text[lang], why: tp.why[lang], src: `${r.by}${r.year ? ', ' + r.year : ''}`, link: href(lang, `resources/${r.id}`) }; }),
-  tools: tools.map((x) => ({ name: x.name, min: x.minAge * 12, max: x.maxAge * 12 + 11, age: `${x.minAge}–${x.maxAge}` })),
+  tools: tools.map((x) => ({ name: x.name[lang], min: x.minAge * 12, max: x.maxAge * 12 + 11, age: `${x.minAge}–${x.maxAge}` })),
   labels: { type: s.type, evidence: s.evidence, evidenceLabel: s.evidenceLabel },
 };
 const now = new Date();
@@ -51,6 +51,7 @@ const months = zh ? Array.from({ length: 12 }, (_, i) => `${i + 1} 月`) : ['Jan
   </aside>
 
   <section style="flex:999 1 620px;min-width:0;display:flex;flex-direction:column;gap:22px">
+    <p id="profile-msg" class="callout" role="status" hidden></p>
     <form class="card" id="form" style="padding:28px;gap:22px" hidden>
       <div class="stack" style="gap:6px">
         <h2 class="h-serif" style="font-size:var(--type-section)" id="form-title">{zh ? '添加孩子' : 'Add a child'}</h2>
@@ -97,6 +98,7 @@ const months = zh ? Array.from({ length: 12 }, (_, i) => `${i + 1} 月`) : ['Jan
       <div class="card" style="padding:24px;gap:8px">
         <div class="split"><h2 class="h-serif" style="font-size:var(--type-section)" id="v-title"></h2><a class="chip" id="v-stage" style="font-size:var(--type-note);text-decoration:none"></a></div>
         <span class="muted" style="font-size:var(--type-note)" id="v-note"></span>
+        <div class="callout" id="v-outside" hidden></div>
         <div><button class="btn btn-ghost" type="button" id="edit-btn">{zh ? '编辑档案' : 'Edit profile'}</button></div>
       </div>
       <div class="card hl" style="padding:22px;gap:10px" id="v-tip">
@@ -104,50 +106,103 @@ const months = zh ? Array.from({ length: 12 }, (_, i) => `${i + 1} 月`) : ['Jan
         <p class="h-serif" style="font-size:var(--type-section);line-height:var(--leading-heading)" data-text></p>
         <div style="font-size:var(--type-note);color:var(--ink-2)"><b>{zh ? '背后的依据：' : 'Why: '}</b><span data-why></span> <a data-link></a></div>
       </div>
-      <section class="stack" style="gap:12px"><h3 class="h-serif" style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:8px">1</span>{s.blocks.develop}</h3><div class="grid" id="v-dev" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))"></div><div class="callout" id="v-concern"></div></section>
-      <section class="stack" style="gap:12px"><h3 class="h-serif" style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:8px">2</span>{s.blocks.together}</h3><ul class="claims card" id="v-act" style="padding:20px"></ul><a class="card soft" href={href(lang, 'tools')} id="v-tools" style="flex-direction:row;flex-wrap:wrap;gap:10px;align-items:center;padding:16px"></a></section>
-      <section class="stack" style="gap:12px"><h3 style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:8px">3</span>{s.blocks.health}</h3><div class="grid" id="v-facts" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr))"></div><div class="stack" id="v-picks" style="gap:6px"></div></section>
+      <section class="stack" style="gap:12px" id="v-develop-section"><h3 class="h-serif" style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:8px">1</span>{s.blocks.develop}</h3><div class="grid" id="v-dev" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))"></div><div class="callout" id="v-concern"></div></section>
+      <section class="stack" style="gap:12px" id="v-together-section"><h3 class="h-serif" style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:8px">2</span>{s.blocks.together}</h3><ul class="claims card" id="v-act" style="padding:20px"></ul><a class="card soft" href={href(lang, 'tools')} id="v-tools" style="flex-direction:row;flex-wrap:wrap;gap:10px;align-items:center;padding:16px"></a></section>
+      <section class="stack" style="gap:12px" id="v-health-section"><h3 style="margin:0;font-size:var(--type-section)"><span class="muted" style="font-size:var(--type-note);margin-right:8px">3</span>{s.blocks.health}</h3><div class="grid" id="v-facts" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr))"></div><div class="stack" id="v-picks" style="gap:6px"></div></section>
     </div>
   </section>
 </main>
 <script>
-  import { load, save, clearAll, ageMonths, ageText, dailyIndex, selected, encodeCode, decodeCode, type Child } from '../lib/client';
+  import { readProfiles, normalizeStore, save, clearAll, ageMonths, ageText, dailyIndex, selected, encodeCode, decodeCode, type Child, type Store } from '../lib/client';
   const root = document.getElementById('me')!;
   const D = JSON.parse(root.dataset.json || '{}');
   const lang = document.body.dataset.lang || 'en';
   const zh = lang === 'zh';
   const $ = (id: string) => document.getElementById(id)!;
   const esc = (x: string) => x.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]!));
-  let store = load();
+  const initial = readProfiles();
+  let store = initial.store;
   let editing: string | null = null;
   let sex: Child['sex'] = '';
+  let ownMutation = false;
 
-  function card(r: any) {
-    return `<article class="card"><div class="chips"><span class="chip t-${r.type}">${esc(D.labels.type[r.type])}</span><span class="chip lv">${esc(D.labels.evidenceLabel)}: ${esc(D.labels.evidence[r.ev])}</span><span class="chip">${esc(r.age)}</span></div>
-      <a class="card-title" href="${r.link}" style="font-size:var(--type-body);font-weight:600;line-height:var(--leading-heading);color:var(--ink);text-decoration:none">${esc(r.title)}</a>
-      <p style="margin:0;font-size:var(--type-ui);line-height:var(--leading-body);color:var(--ink-2)">${esc(r.summary)}</p>
-      <div class="src"><span>${esc(r.by)}</span>${r.year ? `<span aria-hidden="true">·</span><span>${esc(r.year)}</span>` : ''}</div></article>`;
+  function status(message: string) {
+    $('profile-msg').textContent = message;
+    $('profile-msg').hidden = !message;
+  }
+  function clearTransfer() {
+    ($('code') as HTMLInputElement).value = '';
+    $('code-msg').textContent = '';
+    $('code-box').hidden = true;
+  }
+  function commit(next: Store) {
+    ownMutation = true;
+    let saved;
+    try { saved = save(next); } finally { ownMutation = false; }
+    if (!saved) {
+      status(zh ? '无法保存到此浏览器，改动尚未保存。请检查浏览器的存储设置或可用空间，然后重试；仍可继续通用浏览。' : 'Changes have not been saved: this browser could not store them. Check storage settings or available space and try again. General browsing is still available.');
+      return false;
+    }
+    store = normalizeStore(next)!;
+    clearTransfer();
+    status(zh ? '已保存在此浏览器。' : 'Saved in this browser.');
+    return true;
   }
   function renderKids() {
     const sel = selected(store);
-    $('kids').innerHTML = store.children.map((c, i) => {
+    $('kids').replaceChildren(...store.children.map((c, i) => {
       const on = sel && c.id === sel.id;
-      return `<button type="button" class="card" data-id="${c.id}" aria-pressed="${on}" style="cursor:pointer;text-align:left;font-family:inherit;padding:12px 16px;gap:2px;${on ? 'background:var(--ink);color:var(--paper);border-color:var(--ink)' : 'color:var(--ink)'}">
-        <span style="font-size:var(--type-body);font-weight:600">${esc(c.name || (zh ? `孩子 ${i + 1}` : `Child ${i + 1}`))}</span><span style="font-size:var(--type-note);opacity:.85">${esc(ageText(ageMonths(c), lang))}</span></button>`;
-    }).join('');
-    $('kids').querySelectorAll('button').forEach((b) => b.addEventListener('click', () => { store.sel = (b as HTMLElement).dataset.id; save(store); render(); }));
+      const button = document.createElement('button');
+      button.type = 'button'; button.className = 'card'; button.dataset.id = c.id;
+      button.setAttribute('aria-pressed', String(!!on));
+      button.style.cssText = `cursor:pointer;text-align:left;font-family:inherit;padding:12px 16px;gap:2px;${on ? 'background:var(--ink);color:var(--paper);border-color:var(--ink)' : 'color:var(--ink)'}`;
+      const name = document.createElement('span');
+      name.style.cssText = 'font-size:var(--type-body);font-weight:600';
+      name.textContent = c.name || (zh ? `孩子 ${i + 1}` : `Child ${i + 1}`);
+      const age = document.createElement('span');
+      age.style.cssText = 'font-size:var(--type-note);opacity:.85';
+      age.textContent = ageText(ageMonths(c), lang);
+      button.append(name, age);
+      button.addEventListener('click', () => {
+        if (commit({ ...store, sel: c.id })) {
+          render();
+          [...$('kids').querySelectorAll<HTMLButtonElement>('button')].find((b) => b.dataset.id === c.id)?.focus();
+        }
+      });
+      return button;
+    }));
     ($('add-btn') as HTMLButtonElement).hidden = store.children.length >= 6;
   }
   function renderView() {
     const c = selected(store);
     $('empty').hidden = !!c || !($('form') as HTMLFormElement).hidden;
     $('view').hidden = !c || !($('form') as HTMLFormElement).hidden;
-    if (!c) return;
+    if (!c) {
+      for (const id of ['v-title', 'v-stage', 'v-note', 'v-outside', 'v-dev', 'v-concern', 'v-act', 'v-tools', 'v-facts', 'v-picks']) $(id).replaceChildren();
+      $('v-stage').removeAttribute('href');
+      $('v-tip').querySelectorAll('[data-text], [data-why], [data-link]').forEach((node) => { node.textContent = ''; node.removeAttribute('href'); });
+      return;
+    }
     const mo = ageMonths(c);
     const name = c.name || (zh ? '孩子' : 'Your child');
     $('v-title').textContent = `${name}${zh ? '，' : ', '}${ageText(mo, lang)}`;
-    const st = D.stages.find((x: any) => mo >= x.min && mo <= x.max) || D.stages[D.stages.length - 1];
-    const a = $('v-stage') as HTMLAnchorElement; a.textContent = (zh ? '阶段：' : 'Stage: ') + st.name; a.href = st.link;
+    const st = D.stages.find((x: any) => mo >= x.min && mo <= x.max);
+    const a = $('v-stage') as HTMLAnchorElement;
+    const outside = $('v-outside');
+    const sections = ['v-develop-section', 'v-together-section', 'v-health-section'];
+    if (!st) {
+      a.textContent = zh ? '浏览全部阶段' : 'Browse all stages';
+      a.href = D.stages[0]?.link.replace(/\/[^/]+\/?$/, '/') || '/ages/';
+      $('v-note').textContent = zh ? '本站目前按 0–17 岁提供阶段内容。你仍可以继续浏览资源库和工具。' : 'The site currently provides stage content from birth through age 17. You can still browse the library and tools.';
+      outside.hidden = false;
+      outside.textContent = zh ? '当前年龄超出本站阶段内容范围，暂时没有对应的阶段精选。' : 'This age is outside the site’s current stage range, so there is no matching stage selection yet.';
+      $('v-tip').hidden = true;
+      sections.forEach((id) => { $(id).hidden = true; });
+      return;
+    }
+    outside.hidden = true;
+    sections.forEach((id) => { $(id).hidden = false; });
+    a.textContent = (zh ? '阶段：' : 'Stage: ') + st.name; a.href = st.link;
     $('v-note').textContent = zh ? `推荐只按年龄筛选：每条资源都有最小和最大月龄，这里显示适合 ${mo} 个月的内容。` : `Recommendations use age only. Each resource has a minimum and maximum age in months; these fit ${mo} months.`;
     const fit = D.tips.filter((t: any) => mo >= t.min && mo <= t.max);
     $('v-tip').hidden = !fit.length;
@@ -158,9 +213,10 @@ const months = zh ? Array.from({ length: 12 }, (_, i) => `${i + 1} 月`) : ['Jan
       const l = $('v-tip').querySelector('[data-link]') as HTMLAnchorElement; l.textContent = tp.src; l.href = tp.link;
     }
     $('v-facts').innerHTML = st.facts.map((f: any) => `<div class="card" style="gap:6px;padding:16px"><span class="muted" style="font-size:var(--type-note)">${esc(f.label)}</span><span style="font-size:var(--type-section);font-weight:600">${esc(f.value)}</span><span class="muted" style="font-size:var(--type-note)">${esc(f.source)}</span></div>`).join('');
-    const li = (p: any) => `<li>${esc(p.text)}<a class="cite" href="${p.url}">${esc(p.cite)}</a></li>`;
+    const citeAttrs = (p: any) => p.external ? ' target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note"' : '';
+    const li = (p: any) => `<li>${esc(p.text)}<a class="cite" href="${esc(p.url)}"${citeAttrs(p)}>${esc(p.cite)}${p.external ? ' ↗' : ''}</a></li>`;
     $('v-dev').innerHTML = st.develop.map((a: any) => `<div class="card" style="gap:10px"><b>${esc(a.label)}</b><ul class="claims">${a.points.map(li).join('')}</ul></div>`).join('');
-    $('v-concern').innerHTML = `<b>${zh ? '什么时候找医生：' : 'When to talk to a doctor: '}</b>${esc(st.concern.text)}<a class="cite" href="${st.concern.url}">${esc(st.concern.cite)}</a>`;
+    $('v-concern').innerHTML = `<b>${zh ? '什么时候找医生：' : 'When to talk to a doctor: '}</b>${esc(st.concern.text)}<a class="cite" href="${esc(st.concern.url)}"${citeAttrs(st.concern)}>${esc(st.concern.cite)}${st.concern.external ? ' ↗' : ''}</a>`;
     $('v-act').innerHTML = st.activities.map(li).join('');
     const fits = (r: any) => mo >= r.min && mo <= r.max && (r.sex === 'all' || r.sex === c.sex);
     const links = st.health.map((id: string) => D.res.find((r: any) => r.id === id)).filter((r: any) => r && fits(r));
@@ -177,7 +233,11 @@ const months = zh ? Array.from({ length: 12 }, (_, i) => `${i + 1} 月`) : ['Jan
     editing = c ? c.id : null;
     ($('nick') as HTMLInputElement).value = c?.name || '';
     const now = new Date();
-    ($('by') as HTMLSelectElement).value = String(c?.y || now.getFullYear());
+    const birthYear = $('by') as HTMLSelectElement;
+    const firstYear = now.getFullYear();
+    const lastYear = Math.min(firstYear - 18, c?.y ?? firstYear);
+    birthYear.replaceChildren(...Array.from({ length: firstYear - lastYear + 1 }, (_, i) => new Option(String(firstYear - i), String(firstYear - i))));
+    birthYear.value = String(c?.y ?? firstYear);
     ($('bm') as HTMLSelectElement).value = String(c?.m || now.getMonth() + 1);
     setSex(c?.sex || '');
     $('form-title').textContent = c ? (zh ? '编辑档案' : 'Edit profile') : (zh ? '添加孩子' : 'Add a child');
@@ -191,26 +251,65 @@ const months = zh ? Array.from({ length: 12 }, (_, i) => `${i + 1} 月`) : ['Jan
   $('empty-add').addEventListener('click', () => openForm());
   $('edit-btn').addEventListener('click', () => openForm(selected(store)));
   $('cancel').addEventListener('click', closeForm);
-  $('remove').addEventListener('click', () => { store.children = store.children.filter((c) => c.id !== editing); store.sel = store.children[0]?.id; save(store); closeForm(); });
+  $('remove').addEventListener('click', () => {
+    const children = store.children.filter((c) => c.id !== editing);
+    if (commit({ v: 1, children, sel: children.some((c) => c.id === store.sel) ? store.sel : children[0]?.id })) {
+      ($('form') as HTMLFormElement).reset(); editing = null; setSex(''); closeForm();
+    }
+  });
   $('form').addEventListener('submit', (e) => {
     e.preventDefault();
     const y = Number(($('by') as HTMLSelectElement).value), m = Number(($('bm') as HTMLSelectElement).value);
     const now = new Date();
     if (y * 12 + m > now.getFullYear() * 12 + now.getMonth() + 1) { alertMsg(zh ? '出生年月不能晚于本月。' : 'The birth month cannot be in the future.'); return; }
     const c: Child = { id: editing || Math.random().toString(36).slice(2, 10), name: ($('nick') as HTMLInputElement).value.trim().slice(0, 30), y, m, sex };
-    store.children = editing ? store.children.map((x) => (x.id === editing ? c : x)) : [...store.children, c].slice(0, 6);
-    store.sel = c.id; save(store); closeForm();
+    const children = editing ? store.children.map((x) => (x.id === editing ? c : x)) : [...store.children, c].slice(0, 6);
+    if (commit({ v: 1, children, sel: c.id })) {
+      ($('form') as HTMLFormElement).reset(); editing = null; setSex(''); closeForm();
+    }
   });
-  function alertMsg(msg: string) { const b = $('code-msg'); $('code-box').hidden = false; b.textContent = msg; }
+  function alertMsg(msg: string) { status(msg); }
   $('export-btn').addEventListener('click', () => { $('code-box').hidden = false; ($('code') as HTMLInputElement).value = store.children.length ? encodeCode(store) : ''; $('code-msg').textContent = store.children.length ? (zh ? '复制这段档案码，在另一台设备上导入。' : 'Copy this code and import it on your other device.') : (zh ? '还没有可以导出的档案。' : 'There is nothing to export yet.'); });
   $('import-btn').addEventListener('click', () => { $('code-box').hidden = false; ($('code') as HTMLInputElement).value = ''; ($('code') as HTMLInputElement).focus(); $('code-msg').textContent = zh ? '粘贴档案码后点“导入”。会替换这台设备上的档案。' : 'Paste a code and choose Import. It replaces the profiles on this device.'; });
   $('copy-btn').addEventListener('click', async () => { try { await navigator.clipboard.writeText(($('code') as HTMLInputElement).value); $('code-msg').textContent = zh ? '已复制。' : 'Copied.'; } catch { ($('code') as HTMLInputElement).select(); } });
-  $('apply-code').addEventListener('click', () => { const s = decodeCode(($('code') as HTMLInputElement).value); if (!s) { $('code-msg').textContent = zh ? '这段档案码无法识别，请检查是否完整复制。' : "That code wasn't recognised. Check it was copied in full."; return; } store = s; save(store); $('code-msg').textContent = zh ? '已导入。' : 'Imported.'; render(); });
+  $('apply-code').addEventListener('click', () => {
+    const next = decodeCode(($('code') as HTMLInputElement).value);
+    if (!next) { $('code-msg').textContent = zh ? '档案码无效，或包含不合法的出生年月、重复或无效的标识。原有档案未改变。' : 'Invalid profile code, birth date or child identifiers. Existing profiles have not changed.'; return; }
+    if (commit(next)) {
+      ($('form') as HTMLFormElement).reset(); editing = null; setSex(''); closeForm();
+      status(zh ? '已导入并保存在此浏览器。' : 'Imported and saved in this browser.');
+    }
+  });
   $('clear-btn').addEventListener('click', () => {
     const b = $('clear-btn');
     if (b.dataset.confirm !== '1') { b.dataset.confirm = '1'; b.textContent = zh ? '再点一次确认清除' : 'Select again to confirm'; return; }
-    clearAll(); store = { v: 1, children: [] }; b.dataset.confirm = ''; b.textContent = zh ? '清除这台设备上的全部档案' : 'Delete all profiles on this device'; render();
+    b.dataset.confirm = ''; b.textContent = zh ? '清除这台设备上的全部档案' : 'Delete all profiles on this device';
+    ownMutation = true;
+    let cleared;
+    try { cleared = clearAll(); } finally { ownMutation = false; }
+    if (!cleared) {
+      status(zh ? '无法清除浏览器中的档案，记录仍被保留。请检查存储设置后重试，或使用浏览器设置清除本站数据。' : 'Profiles could not be deleted and are still stored. Check storage settings and try again, or clear this site’s data in browser settings.');
+      return;
+    }
+    store = { v: 1, children: [] }; editing = null;
+    clearTransfer(); ($('form') as HTMLFormElement).reset(); setSex(''); closeForm();
+    status(zh ? '已清除此浏览器中的全部档案。' : 'All profiles have been deleted from this browser.');
+  });
+  function refreshExternalProfiles() {
+    if (ownMutation) return;
+    const next = readProfiles();
+    if (JSON.stringify(next.store) === JSON.stringify(store)) return;
+    // Discard stale page copies before another tab's deletion can be undone by an old form.
+    store = next.store; editing = null;
+    clearTransfer(); ($('form') as HTMLFormElement).reset(); setSex(''); closeForm();
+    status(zh ? '档案已在其他位置更改，此页已刷新，未保存的编辑已取消。' : 'Profiles changed elsewhere. This page has refreshed and any unsaved edit has been cancelled.');
+  }
+  window.addEventListener('edustack:profilechange', refreshExternalProfiles);
+  window.addEventListener('storage', (event) => {
+    if (event.key === null || event.key === 'edustack.profiles.v1') refreshExternalProfiles();
   });
   render();
+  if (initial.status === 'invalid') status(zh ? '保存的档案格式无效，已恢复通用浏览，未覆盖原始记录。你可以清除后重新添加，或导入有效的档案码。' : 'Saved profiles are invalid. General browsing is available and the original records have not been overwritten. Delete them and start again, or import a valid profile code.');
+  if (initial.status === 'unavailable') status(zh ? '此浏览器暂时无法读取档案。你可以继续通用浏览；保存或清除失败时会在这里提示。' : 'This browser cannot currently read profiles. General browsing is available; any save or deletion failure will be reported here.');
 </script>
 </Base>

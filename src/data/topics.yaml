@@ -15,33 +15,44 @@
     - name: { en: "World Health Organization", zh: "世界卫生组织" }
       note: { en: "2019 (under 5), 2020 (5–17)", zh: "2019（5 岁以下）、2020（5–17 岁）" }
       resource: who-under5-activity-sleep-2019
+      additionalResources: [who-activity-2020]
     - name: { en: "American Academy of Pediatrics", zh: "美国儿科学会" }
       note: { en: "Media and Young Minds 2016; Family Media Plan", zh: "2016 政策声明；家庭媒体使用计划" }
       resource: aap-media-young-minds-2016
+      additionalResources: [aap-family-media-plan]
     - name: { en: "Australian Government Department of Health", zh: "澳大利亚卫生部" }
-      note: { en: "24-hour movement guidelines", zh: "24 小时运动指南" }
+      note: { en: "Linked guidance covers ages 5–17; under-5 recommendations are not recorded here", zh: "链接资料覆盖 5–17 岁；此处未核录 5 岁以下的建议" }
       url: https://www.health.gov.au/topics/physical-activity-and-exercise/physical-activity-and-exercise-guidelines-for-all-australians/for-children-and-young-people-5-to-17-years
   rows:
     - age: { en: "Under 18 months", zh: "18 个月以下" }
       cells:
         - { en: "Not recommended", zh: "不建议" }
         - { en: "Avoid, except video chatting", zh: "除视频通话外避免" }
-        - { en: "No screen time", zh: "不看屏幕" }
+        - { en: "Not recorded: linked source covers ages 5–17", zh: "未核录：链接资料面向 5–17 岁" }
       verdict: agree
-    - age: { en: "18–24 months", zh: "18–24 个月" }
+      verdictNote: { en: "WHO and AAP both advise avoidance here; the video-call exception differs", zh: "WHO 和 AAP 此年龄均建议避免，但视频通话的例外不同" }
+    - age: { en: "18 to under 24 months", zh: "18 至不足 24 个月" }
       cells:
         - { en: "Not recommended", zh: "不建议" }
         - { en: "If introduced, choose high-quality programmes and watch together", zh: "如要接触，选高质量节目并陪看" }
-        - { en: "No screen time", zh: "不看屏幕" }
+        - { en: "Not recorded: linked source covers ages 5–17", zh: "未核录：链接资料面向 5–17 岁" }
       verdict: differ
       verdictNote: { en: "The AAP allows some co-viewing", zh: "美国儿科学会允许少量陪看" }
-    - age: { en: "2–5 years", zh: "2–5 岁" }
+    - age: { en: "2 to under 5 years", zh: "2 至不足 5 岁" }
       cells:
         - { en: "No more than 1 hour; less is better", zh: "不超过 1 小时，越少越好" }
         - { en: "1 hour a day of high-quality programmes", zh: "每天 1 小时高质量节目" }
-        - { en: "No more than 1 hour a day", zh: "每天不超过 1 小时" }
+        - { en: "Not recorded: linked source covers ages 5–17", zh: "未核录：链接资料面向 5–17 岁" }
       verdict: agree
-    - age: { en: "5–17 years", zh: "5–17 岁" }
+      verdictNote: { en: "WHO and AAP are similar; Australia is not compared for this age", zh: "WHO 与 AAP 大体接近；此年龄未比较澳大利亚建议" }
+    - age: { en: "Age 5 (until the 6th birthday)", zh: "5 岁（至 6 岁生日前）" }
+      cells:
+        - { en: "Limit recreational screen time; no number given in the 2020 guidance", zh: "2020 指南建议减少娱乐性屏幕时间，未给具体数字" }
+        - { en: "The 2016 ages 2–5 advice still applies: 1 hour of high-quality programmes, watched together", zh: "仍属 2016 声明的 2–5 岁范围：每天 1 小时高质量节目，成人陪看" }
+        - { en: "No more than 2 hours of recreational screen time a day", zh: "娱乐性屏幕时间每天不超过 2 小时" }
+      verdict: differ
+      verdictNote: { en: "The organisations change age groups at different birthdays", zh: "各机构的年龄分组转换点不同" }
+    - age: { en: "6–17 years", zh: "6–17 岁" }
       cells:
         - { en: "Limit recreational screen time; no number given", zh: "减少娱乐性屏幕时间，未给具体数字" }
         - { en: "Consistent limits set with a family media plan", zh: "用家庭媒体计划定一致的规则" }
@@ -56,7 +67,7 @@
   name: { en: "Social media", zh: "社交媒体" }
   teaser: { en: "When to allow it and how to talk about it", zh: "什么时候可以用、怎么和孩子谈" }
   status: ready
-  updated: 2026-11-13
+  updated: 2026-11-15
   bottomLine:
     en: Neither advisory sets a starting age. Both say to make a family plan, protect sleep, and teach your child how social media works before they start - with closer adult involvement in the early teens.
     zh: 两份公告都没有规定开始使用的年龄。它们都建议制定家庭计划、保护睡眠，并在孩子开始使用前教会他们社交媒体是怎么运作的；青春期早期大人要更多参与。
@@ -80,9 +91,10 @@
       verdict: agree
     - age: { en: "Sleep", zh: "睡眠" }
       cells:
-        - { en: "Not addressed as a specific rule", zh: "未作为具体规则提出" }
+        - { en: "Consider restricting phones, tablets and computers for at least 1 hour before bed and through the night", zh: "考虑在睡前至少 1 小时及整晚限制使用手机、平板和电脑" }
         - { en: "Protect at least 8 hours; avoid use in the hour before bed", zh: "保证至少 8 小时睡眠；睡前一小时避免使用" }
-      verdict: single
+      verdict: agree
+      verdictNote: { en: "Both address sleep; their wording and level of detail differ", zh: "双方均涉及睡眠保护，措辞与具体程度不同" }
     - age: { en: "Before they start", zh: "开始使用之前" }
       cells:
         - { en: "Teach them about technology and responsible use", zh: "教孩子了解技术和负责任地使用" }
@@ -106,3 +118,41 @@
   status: preparing
   updated: 2026-11-13
   picks: [who-adolescent-mental-health, siegel-brainstorm]
+
+- id: planning-together
+  publicationStatus: published
+  name: { en: "Make a small plan together", zh: "和孩子一起商量一件事" }
+  teaser: { en: "Choose something manageable, talk through a first step, and adjust together.", zh: "选一件小事，一起商量第一步，再根据实际情况调整。" }
+  status: ready
+  updated: "2026-11-17"
+  tags: [communication, self-regulation, learning]
+  bottomLine:
+    en: "Choose one manageable everyday task and invite your child to help decide a next step. Offer support and adjust to their interest; a plan can change. These are editorial practice ideas, not an assessment or a tested intervention."
+    zh: "从一件做得到的日常小事开始，邀请孩子一起商量下一步；按兴趣提供帮助，计划也可以改变。这里是本站整理的实践思路，不是能力评估或经过效果验证的干预。"
+  sections:
+    - id: small-start
+      title: { en: "Start small and share the thinking", zh: "从小事开始，一起想办法" }
+      text:
+        en: "The Harvard activity guide describes remembering information, pausing and changing approach, with support adjusted to the child. Our interpretation is to make a familiar daily task manageable: ask what matters to the child, agree on one next step and help where needed. The specific outing and project examples below are our designs, not Harvard protocols."
+        zh: "哈佛活动指南解释了记住信息、停一停及调整做法，并强调成人根据孩子情况提供帮助。本站据此整理的思路是：从熟悉、做得到的日常任务开始，问问孩子在意什么，商量下一步，需要时提供帮助。下面的出游和项目例子由本站设计，不是哈佛的干预流程。"
+      citations:
+        - src: harvard-executive-function-activities
+          note: { en: "The introduction and age-group sections provide background on adult support and practice; they do not validate these original activities.", zh: "导言与分龄章节为成人支持和实践提供背景，不等于验证了本站设计的活动。" }
+    - id: room-to-adjust
+      title: { en: "A useful plan has room to change", zh: "计划可以调整，也可以暂停" }
+      text:
+        en: "For these editorial activities, drawing, speaking or moving objects can replace writing. Let the child choose whether to join, and take over practical responsibilities that remain yours. If an activity becomes frustrating, simplify it or stop. Free play and rest do not need a plan. The age ranges help choose a starting point; they are not milestones to pass."
+        zh: "在这些本站设计的活动里，可以用画画、说话或摆放物品代替书写。允许孩子选择是否参与，成人仍承担自己的实际责任。遇到挫折时可以简化或停止，自由玩耍和休息无需安排计划。年龄只是选择起点的线索，不是必须通过的成长指标。"
+      citations:
+        - src: harvard-executive-function-activities
+          note: { en: "The guide recommends age-appropriate challenge and adjusting adult help. The choices of format and stopping above are editorial use conditions, not prescribed doses or outcomes.", zh: "指南提供适龄挑战与调整成人帮助的背景；上述表达方式和暂停选择是本站使用条件，不是规定的训练剂量或效果。" }
+  activities:
+    - activity: preschool-outing-plan
+      reason: { en: "For ages 4–5, choose a small part of getting ready together.", zh: "面向4–5岁，一起商量出门准备中的一小部分。" }
+    - activity: weekend-one-choice
+      reason: { en: "For ages 6–11, make one shared choice for a weekend.", zh: "面向6–11岁，一起决定周末的一项安排。" }
+    - activity: small-project-plan
+      reason: { en: "For ages 7–11, agree a manageable first step for a small project.", zh: "面向7–11岁，为一个小项目商量做得到的第一步。" }
+  picks: [harvard-executive-function-activities]
+  research: []
+  tools: []

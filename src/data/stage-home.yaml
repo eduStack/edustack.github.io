@@ -1,0 +1,256 @@
+# Editorial selections from published resources; context is background, not a news feed.
+- id: babies
+  publicationStatus: published
+  headline:
+    en: Getting to know each other, one small moment at a time
+    zh: 从一个个小片刻，慢慢认识彼此
+  intro:
+    en: Start with a short reading on everyday responses, then explore support for caregivers. These selections help you choose what to read, without turning family life into a checklist.
+    zh: 先读一篇日常回应的短导读，再了解照顾者可以获得的支持。这些精选帮助你选择阅读，不把家庭生活变成任务清单。
+  startingPoints:
+    - resource: harvard-serve-and-return
+      reason:
+        en: A starting point for noticing and responding to your baby's signals, with no daily interaction quota.
+        zh: 从留意与回应宝宝的信号开始，不设置每天必须完成的互动次数。
+    - resource: who-early-childhood-development-2020
+      reason:
+        en: Read about responsive care and support for families; the guideline concerns early-childhood support, not a test of your parenting.
+        zh: 了解回应式照护与家庭支持；指南讨论儿童早期支持，不是对家长的考核。
+  reflection:
+    resource: gopnik-scientist-in-the-crib
+    reason:
+      en: A book introduction for reflecting on early learning. Its account covers research available by 1999, and the book may require purchase or borrowing.
+      zh: 借书籍介绍思考早期学习。书中综述截至 1999 年的研究，书籍可能需要购买或借阅。
+  context:
+    - resource: jeong-2021-parenting-interventions
+      reason:
+        en: Background from a 2021 review of organised early-parenting programmes; reading a page is not equivalent to taking part in those programmes.
+        zh: 2021 年早期养育项目综述提供研究背景；阅读网页不等于参加这些项目。
+    - resource: bakermans-2003-sensitivity-attachment
+      reason:
+        en: A historical research introduction on sensitive care and infant attachment, based on the indexed abstract rather than a full-text review.
+        zh: 一篇关于敏感照护与婴儿依恋的历史研究导读，依据数据库摘要，并非全文审读。
+  activities:
+    - activity: baby-choose-my-response
+      reason: { en: "A short, optional way to notice your baby's signals and respond without demanding a performance.", zh: "一个简短、可随时结束的活动，用来留意宝宝的信号并作出回应，不要求完成表现。" }
+  tools:
+    - tool: growth-chart
+      reason:
+        en: Keep a simple measurement record if you want to discuss growth with a professional; this does not calculate percentiles.
+        zh: 如果想和专业人员讨论生长，可以先保留简单测量记录；本工具不计算百分位。
+    - tool: daily-routine
+      reason:
+        en: Look at sleep, movement and screen time as a family discussion, not a score for a baby.
+        zh: 把睡眠、活动和屏幕时间作为家庭讨论，不给宝宝打分。
+    - tool: milestones
+      reason:
+        en: Note everyday observations and questions; the checklist is not a developmental screen.
+        zh: 记录日常观察和疑问；清单不是发育筛查。
+
+- id: toddlers
+  publicationStatus: published
+  headline:
+    en: Finding little ways to connect through the day
+    zh: 在一天里，找到彼此接得上的小片刻
+  intro:
+    en: Begin with everyday exchanges and ideas for shared moments. Add a book or research background when you want more context, and check the narrower ages on each resource.
+    zh: 从日常来回交流与共同活动的点子读起，想多了解时再看书籍和研究背景。每项资料都有更具体的适用年龄。
+  startingPoints:
+    - resource: harvard-serve-and-return
+      reason:
+        en: Explore everyday back-and-forth without expecting words or eye contact on demand.
+        zh: 了解日常来回互动，不要求孩子必须说话或按要求进行眼神接触。
+    - resource: vroom-everyday-moments
+      reason:
+        en: An introduction to short parent-child activity ideas; follow the official service for its materials and access conditions.
+        zh: 了解简短亲子活动的点子；具体材料和访问条件请查看官方服务。
+  reflection:
+    resource: gopnik-scientist-in-the-crib
+    reason:
+      en: A longer reading option about how young children explore people, objects and language, with the limits of an older research overview.
+      zh: 想读长一点时，可了解幼儿如何探索人、物体与语言，并保留较早研究综述的时代限制。
+  context:
+    - resource: jeong-2021-parenting-interventions
+      reason:
+        en: A 2021 review provides background on support in the first three years; its average results are not a promise for an individual activity.
+        zh: 2021 年综述提供前三年养育支持的背景；平均结果不是对某项日常活动的效果承诺。
+    - resource: skene-2022-guided-play
+      reason:
+        en: A 2022 review puts adult guidance during play in context. Findings differ across outcomes, so this is background rather than a recipe.
+        zh: 2022 年综述帮助理解游戏中的成人引导。不同结果并不一致，适合作为背景，而非固定做法。
+  activities:
+    - activity: toddler-put-it-back-together
+      reason: { en: "A small routine children can join through carrying, pointing or watching, with adults handling unsafe items.", zh: "一个可以通过拿、指或观察来参与的小日常，危险物品由成人处理。" }
+  tools:
+    - tool: storyweaver
+      reason:
+        en: From age 2 within this stage, browse picture books for shared reading. Choose a language and story that work for your family.
+        zh: 本阶段满 2 岁后，可浏览绘本作为共读材料，选择适合家庭的语言与故事。
+    - tool: daily-routine
+      reason:
+        en: Compare a typical day together, keeping the indicators as prompts rather than targets.
+        zh: 一起看看普通的一天，把这些指标当作讨论提示，而不是必须达到的目标。
+    - tool: screen-agreement
+      reason:
+        en: Write a shared screen agreement that includes what adults will do too.
+        zh: 写下全家一起遵守的屏幕约定，也包括成人要做到的事。
+
+- id: preschoolers
+  publicationStatus: published
+  headline:
+    en: Making room for feelings, play and conversation
+    zh: 给感受、游戏和对话留些空间
+  intro:
+    en: Choose a reading about shared activities or family support, then explore communication in more depth. Tools are optional ways to spend time together, with their own age ranges.
+    zh: 先选一篇共同活动或家庭支持的导读，再深入了解沟通。工具是可选的共同活动入口，各有适用年龄。
+  startingPoints:
+    - resource: harvard-executive-function-activities
+      reason:
+        en: Find the relevant age section for games involving memory, pausing and changing approach. Not every suggested activity has been individually tested.
+        zh: 按年龄查找涉及记忆、停一停与调整做法的游戏；不是每项活动都已单独验证效果。
+    - resource: who-parenting-interventions-2023
+      reason:
+        en: Understand what structured family-support programmes offer and what to ask a provider, beyond a list of discipline tips.
+        zh: 了解有结构的家庭支持项目提供什么，以及可以向服务方问什么，不局限于管教技巧清单。
+  reflection:
+    resource: faber-mazlish-kids
+    reason:
+      en: A book introduction focused on talking and listening with children. Use it for reflection, rather than treating a conversation technique as a guaranteed result.
+      zh: 一项围绕与孩子说话和倾听的书籍介绍，供家长反思沟通，不把对话技巧当作效果保证。
+  context:
+    - resource: pandey-2018-self-regulation
+      reason:
+        en: This 2018 review explains the varied programmes and measures behind claims about self-regulation; it does not validate a particular game.
+        zh: 2018 年综述帮助理解自我调节研究中不同的项目与测量，不是对某款游戏的验证。
+    - resource: romeo-2018-conversational-turns
+      reason:
+        en: Research background from a 2018 study of 4–6-year-olds. It reports an association with conversation, not proof of a causal benefit or a required number of turns.
+        zh: 2018 年针对 4–6 岁儿童的研究背景，报告的是对话的关联，不是因果收益证明，也没有规定必须完成的对话轮数。
+  tools:
+    - tool: storyweaver
+      reason:
+        en: Browse picture books together and choose a story or language that invites conversation.
+        zh: 一起浏览绘本，选择愿意聊一聊的故事或适合家庭的语言。
+    - tool: scratchjr
+      reason:
+        en: For ages 5–7, including the older part of this stage, explore a tablet coding app. It is an optional creative activity, not a readiness test.
+        zh: 适用于 5–7 岁，覆盖本阶段较大的孩子，可探索平板编程应用；这是可选创作活动，不是入学准备测验。
+    - tool: screen-agreement
+      reason:
+        en: Make screen expectations visible and adjustable as children grow.
+        zh: 把屏幕使用约定写清楚，并随着孩子长大一起调整。
+
+  activities:
+    - activity: story-new-ending
+      reason: { en: "An optional activity to try together at your child’s pace.", zh: "按孩子的兴趣与节奏，一起尝试一项日常活动。" }
+    - activity: one-small-event
+      reason: { en: "An optional activity to try together at your child’s pace.", zh: "按孩子的兴趣与节奏，一起尝试一项日常活动。" }
+    - activity: preschool-doll-chair
+      reason: { en: "A child-led pretend-play invitation that can change or end whenever the child wishes.", zh: "一个由孩子主导的假想游戏邀请，孩子随时可以改变主题或结束。" }
+  topics:
+    - topic: planning-together
+      reason: { en: "Explore ways to make everyday plans together, with age-specific examples.", zh: "通过不同年龄的例子，了解如何一起商量日常安排。" }
+
+- id: school-age
+  publicationStatus: published
+  headline:
+    en: Working things out together, at home and in learning
+    zh: 家里的事、学习的事，一起想办法
+  intro:
+    en: Start with family relationships and ways adults can adjust their help. Keep space for a child's interests, and use the longer reading and research when you want to examine an idea more closely.
+    zh: 从家庭关系与成人如何调整帮助读起，给孩子的兴趣留出空间；想仔细理解一个想法时，再看长篇阅读与研究背景。
+  startingPoints:
+    - resource: parenting-for-lifelong-health
+      reason:
+        en: An entry to relationship-focused family materials. The 2–9 and 10–17 programmes serve different groups; a manual alone is not the evaluated programme.
+        zh: 从关注关系的家庭材料入手。2–9 岁与 10–17 岁项目面向不同群体，单本手册不等于经过评估的完整项目。
+    - resource: harvard-executive-function-activities
+      reason:
+        en: Find activity sections for 5–7 and 7–12 years, with adults adjusting their help. Use the age section rather than a fixed performance target.
+        zh: 查看 5–7 岁与 7–12 岁活动分组，了解成人如何调整帮助，按年龄选读，不设统一表现目标。
+  reflection:
+    resource: whitehead-aims-of-education
+    reason:
+      en: Reflect on connecting knowledge with experience. This is a classic philosophy introduction based on scholarly commentary, not an experiment or a full-book review.
+      zh: 思考如何把知识与经验联系起来。这是依据学术评论的经典哲学导读，不是实验，也不是全书评介。
+  context:
+    - resource: pandey-2018-self-regulation
+      reason:
+        en: Background from a 2018 review on the many meanings and measures of self-regulation, without assuming one activity improves every outcome.
+        zh: 2018 年综述提供自我调节不同含义与测量的背景，不假定一种活动能改善所有结果。
+    - resource: banerjee-2017-tarl
+      reason:
+        en: A 2017 account of teaching at children's learning levels in Indian schools. The school setting and implementation matter; it is not a home learning prescription.
+        zh: 2017 年关于印度学校按实际学习水平教学的研究介绍。学校场景与落实条件很重要，不能直接当作家庭学习处方。
+  tools:
+    - tool: scratch
+      reason:
+        en: From age 8 within this stage, make animations, games or stories chosen by the child. Check community and sharing conditions together.
+        zh: 本阶段满 8 岁后，可由孩子选择制作动画、游戏或故事，并一起了解社区与分享条件。
+    - tool: phet
+      reason:
+        en: From age 8 within this stage, choose a science or maths simulation to explore a question together; check the individual activity's requirements.
+        zh: 本阶段满 8 岁后，可选择科学或数学仿真，一起探索一个问题，并核对具体活动的使用要求。
+    - tool: task-breakdown
+      reason:
+        en: Use the original browser tool to turn a familiar preparation or small project into editable steps; saving is optional and local.
+        zh: 用本站浏览器工具把熟悉的准备工作或小项目整理成可编辑步骤；保存是可选的，仅保存在本机。
+
+  activities:
+    - activity: weekend-one-choice
+      reason: { en: "An optional activity to try together at your child’s pace.", zh: "按孩子的兴趣与节奏，一起尝试一项日常活动。" }
+    - activity: small-project-plan
+      reason: { en: "An optional activity to try together at your child’s pace.", zh: "按孩子的兴趣与节奏，一起尝试一项日常活动。" }
+    - activity: child-choose-reliable-answer
+      reason: { en: "A guided way to check an ordinary claim together while keeping high-risk decisions with adults and professionals.", zh: "一起核对普通说法的一种方法；高风险决定仍由成人和专业人员负责。" }
+  topics:
+    - topic: planning-together
+      reason: { en: "Explore ways to make everyday plans together, with age-specific examples.", zh: "通过不同年龄的例子，了解如何一起商量日常安排。" }
+
+- id: teens
+  publicationStatus: published
+  headline:
+    en: Staying connected while making room for their choices
+    zh: 保持联系，也给自己的选择留空间
+  intro:
+    en: These readings offer starting points for discussion about support, relationships and growing independence. Invite your teenager's perspective, agree on boundaries together, and respect privacy when choosing or sharing tools.
+    zh: 从这些资料开始讨论支持、关系与自主选择，邀请青少年表达自己的看法，共同商量边界；选择或分享工具时，尊重彼此的隐私。
+  startingPoints:
+    - resource: who-parenting-interventions-2023
+      reason:
+        en: Read about support aimed at nonviolent care and stronger relationships. Check the programme's own age range and delivery conditions together.
+        zh: 了解以非暴力照护和改善关系为目标的支持；共同核对具体项目的年龄范围与实施条件。
+    - resource: parenting-for-lifelong-health
+      reason:
+        en: Explore the 10–17 family materials as a conversation about relationships. They are not a reason to impose monitoring or a substitute for a supported programme.
+        zh: 可从 10–17 岁家庭材料开始聊关系，不把它作为强加监控的理由，也不把手册当作有支持的完整项目。
+  reflection:
+    resource: faber-mazlish-teens
+    reason:
+      en: A book introduction about conversations with teenagers. Consider the young person's view rather than using a technique to secure agreement.
+      zh: 一项关于与青少年对话的书籍介绍，适合思考如何听见对方，而非用技巧换取服从。
+  context:
+    - resource: meeus-2011-identity
+      reason:
+        en: A 2011 review offers historical context for thinking about identity. Use it to open questions, without labelling a teenager or assuming family associations prove causation.
+        zh: 2011 年综述提供思考自我认同的历史研究背景，适合展开问题，不给青少年贴标签，也不把家庭相关性当作因果证明。
+    - resource: who-adolescent-mental-health
+      reason:
+        en: An existing WHO background resource on adolescent mental health. It is a reading entry for understanding support, not a diagnosis or a newly verified update.
+        zh: 既有 WHO 青少年心理健康背景资料，可作为了解支持的阅读入口，不作诊断，也不标作刚完成核验的新动态。
+  tools:
+    - tool: khan-academy
+      reason:
+        en: Let your teenager choose courses or practice linked to their own goals. Discuss any account and sharing choices together; this is not a monitoring recommendation.
+        zh: 由青少年按自己的目标选择课程或练习；共同讨论账号与分享选择，不把它用作监控推荐。
+    - tool: phet
+      reason:
+        en: Follow a science or maths question they want to explore. Agree before sharing activity or results, and keep participation optional.
+        zh: 从青少年想探索的科学或数学问题开始，分享活动或结果前先商量，保留自主选择是否参与的空间。
+    - tool: screen-agreement
+      reason:
+        en: Revisit shared screen boundaries with the teenager, including privacy and consent before sharing.
+        zh: 和青少年重新商量屏幕边界，分享内容前也要讨论隐私和同意。
+  activities:
+    - activity: teen-revise-unsent-message
+      reason: { en: "A privacy-respecting way to revise an optional draft while keeping the young person in control.", zh: "一种尊重隐私的草稿修改方式，是否分享和发送始终由青少年决定。" }

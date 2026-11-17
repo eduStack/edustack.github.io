@@ -1,0 +1,27 @@
+---
+import { ageLabel, getResource, yearLabel, type Lang, type StageSelection } from '../lib/data';
+import { href, t } from '../i18n/ui';
+interface Props { selection: StageSelection; lang: Lang; summary?: boolean }
+const { selection, lang, summary = false } = Astro.props;
+const resource = getResource(selection.resource);
+const zh = lang === 'zh';
+---
+<article class="stage-reading" data-resource={resource.id}>
+  <div class="src"><span class={`chip t-${resource.type}`}>{t(lang).type[resource.type]}</span><span>{yearLabel(resource, lang)}</span></div>
+  <h3><a href={href(lang, `resources/${resource.id}`)}>{resource.title[lang]}</a></h3>
+  {summary && <p>{resource.summary[lang]}</p>}
+  <p class="reason"><span>{zh ? '为什么选它' : 'Why this selection'}</span>{selection.reason[lang]}</p>
+  <p class="src">{resource.by} · {zh ? '阅读参考：' : 'Reading relevance: '}{ageLabel(resource.minMonths, resource.maxMonths, lang)}</p>
+  <a class="reading-link" href={href(lang, `resources/${resource.id}`)}>{zh ? '读导读与使用限制' : 'Read the introduction and limits'} <span aria-hidden="true">↗</span></a>
+</article>
+<style>
+  .stage-reading { display: flex; flex-direction: column; gap: 0.75rem; min-inline-size: 0; }
+  h3 { font-size: var(--type-section); }
+  h3 a { color: var(--ink); text-decoration: none; }
+  h3 a:hover { color: var(--accent); text-decoration: underline; }
+  p { font-size: var(--type-ui); margin: 0; }
+  .reason { border-inline-start: 2px solid var(--accent-line); padding-inline-start: 1rem; }
+  .reason > span { display: block; color: var(--muted); font-size: var(--type-note); margin-block-end: 0.25rem; }
+  p.src { font-size: var(--type-note); }
+  .reading-link { font-size: var(--type-ui); align-self: start; padding-block: 0.5rem; margin-block-start: auto; }
+</style>

@@ -1,0 +1,575 @@
+- id: story-new-ending
+  publicationStatus: published
+  title: { en: "Give a familiar story a new ending", zh: "给熟悉的故事换个结尾" }
+  summary:
+    en: "Imagine one small change together, then let your child choose how the story ends."
+    zh: "一起想象一个小变化，让孩子决定故事接下来怎样结束。"
+  minMonths: 48
+  maxMonths: 71
+  topics: [language, play, communication]
+  duration: medium
+  setting: [home, travel]
+  time: { en: "About 10–15 minutes, or one short exchange.", zh: "约 10–15 分钟，也可以只聊一小段。" }
+  materials: { en: "No materials needed; use a story you both know or invent a simple one.", zh: "无需材料；用双方熟悉的故事，也可现编一个简单故事。" }
+  participants: { en: "A child and a caregiver; the adult helps recall the story without testing memory.", zh: "孩子与一位照顾者；成人帮忙回想故事，不考查记忆。" }
+  steps:
+    en:
+      - "Agree on a familiar, comfortable story. Briefly recall its characters and what happens."
+      - "Offer one change, such as a character taking a different path. Ask what could happen next."
+      - "Let your child tell, draw or act out an ending. Follow their idea and add a small detail only if invited."
+      - "Retell your new version together. Ask whether to keep it, change it or return to the familiar ending."
+    zh:
+      - "选一个双方熟悉、孩子愿意听的故事，简短回想人物和情节。"
+      - "提出一个变化，例如人物换了一条路，问接下来可能发生什么。"
+      - "让孩子讲、画或演出新结尾。顺着孩子的想法，受邀时再补一个小细节。"
+      - "一起重讲这个版本，问孩子想保留、再改一改，还是回到熟悉的结尾。"
+  adaptations:
+    en: "Offer two possible next events if an open question feels difficult. Accept gestures or a home language. If your child wants the original story, read or tell that version and finish there."
+    zh: "开放提问太难时可给两个后续情节供选择，接受动作或家庭常用语言。孩子只想听原故事时，就讲原来的版本并在这里结束。"
+  cautions:
+    en: "Choose a story that feels safe to the child. Avoid correcting imaginative answers or turning the ending into a lesson about good behaviour. During travel, the participating adult must not be driving."
+    zh: "选让孩子感到安心的故事，不纠正想象中的答案，也不把结尾变成行为说教。途中交流时，参与的成人不能正在驾驶。"
+  basis:
+    en: "The Harvard guide discusses storytelling and adjusting adult support for ages 3–5. The changed ending and prompts here are our original design. This activity has not been evaluated for developmental effects."
+    zh: "哈佛指南讨论 3–5 岁儿童的讲故事活动及成人支持的调整。这里的换结尾情境与提示为本站原创设计，未经过发展效果评估。"
+  readings: [harvard-executive-function-activities]
+  tools: []
+  citations:
+    - src: harvard-ef-guide
+      note: { en: "2014 guide, pp. 6–7, Storytelling and the age-group introduction: general design inspiration, not an evaluation of this activity.", zh: "2014 年指南第 6–7 页的 Storytelling 及年龄组引言：提供一般设计启发，不是本活动的效果评估。" }
+  authorship: original
+  created: "2026-11-17"
+  updated: "2026-11-17"
+  checked: "2026-11-17"
+
+- id: one-small-event
+  publicationStatus: published
+  title: { en: "Take turns telling one small event", zh: "轮流讲一件小事" }
+  summary:
+    en: "Make room for each person to share a small moment, using words, gestures or a drawing."
+    zh: "用语言、动作或画图，给彼此留出分享一个日常小片段的空间。"
+  minMonths: 36
+  maxMonths: 71
+  topics: [communication, language, responsive-care]
+  duration: short
+  setting: [home, travel]
+  time: { en: "About 5 minutes; a single turn is enough.", zh: "约 5 分钟；只分享一轮也可以。" }
+  materials: { en: "None; paper and a pencil are optional.", zh: "无需材料；也可准备纸笔。" }
+  participants: { en: "A child and a caregiver, with an optional second family member. The adult listens and leaves pauses.", zh: "孩子与一位照顾者，也可再邀请一位家人。成人倾听并留出停顿。" }
+  steps:
+    en:
+      - "At a relaxed moment, ask whether your child would like to tell or show one small thing from the day."
+      - "If they agree, let them choose the moment. Respond to what they show interest in, with one comment or question."
+      - "Offer your own brief moment, then leave space for a reply. Anyone may pass their turn."
+      - "End by noticing one detail you heard, without asking the child to repeat the whole account."
+    zh:
+      - "找个轻松时刻，问孩子愿不愿意讲或展示今天的一件小事。"
+      - "孩子愿意时，让其选择内容。顺着孩子关注的细节回应一句，或问一个问题。"
+      - "你也简短分享一件小事，再留出回应空间。每个人都可以跳过自己的轮次。"
+      - "结束时说一个你听到的细节，不要求孩子重新完整复述。"
+  adaptations:
+    en: "Share something happening right now if recalling the day is hard. A sound, gesture, drawing or communication aid can be a full turn. If your child declines, offer quiet company and try another time."
+    zh: "回想一天太难时，可说眼前正在发生的事。声音、动作、图画或沟通辅助方式都算完整的一轮。孩子拒绝时，安静陪伴，改天再试。"
+  cautions:
+    en: "Keep it voluntary. Do not investigate a conflict, demand private information or require eye contact. A disclosure of harm needs appropriate adult support beyond this activity. During travel, the participating adult must not be driving."
+    zh: "保持自愿，不追查冲突、索取隐私或要求眼神接触。若孩子说到受到伤害，应由成人另行提供适当支持。途中交流时，参与的成人不能正在驾驶。"
+  basis:
+    en: "Harvard's serve-and-return concept explains responsive exchanges following a young child's signals. Our daily-event format is an original example, with no fixed quota or claim of tested effects."
+    zh: "哈佛的回应式互动说明强调跟随幼儿信号、来回回应。这里的日常小事形式是本站原创示例，没有统一次数要求，也不声称效果已验证。"
+  readings: [harvard-serve-and-return]
+  tools: []
+  citations:
+    - src: harvard-serve-return
+      note: { en: "Concept page, Key Takeaways and the explanation of responsive exchanges: supports following the child's signals, not this particular conversation format.", zh: "概念页 Key Takeaways 及回应互动说明：支持跟随孩子的信号，不是对本对话形式的验证。" }
+  authorship: original
+  created: "2026-11-17"
+  updated: "2026-11-17"
+  checked: "2026-11-17"
+
+- id: notice-together-walk
+  publicationStatus: published
+  title: { en: "Notice something together on a walk", zh: "散步时一起留意一件事" }
+  summary:
+    en: "Let your child choose something to notice and follow their curiosity for a few minutes."
+    zh: "让孩子选一件想留意的事物，花几分钟顺着好奇心聊一聊。"
+  minMonths: 36
+  maxMonths: 71
+  topics: [responsive-care, communication, language]
+  duration: short
+  setting: [outdoors]
+  time: { en: "About 5 minutes within a walk; no distance or number of discoveries to reach.", zh: "散步途中约 5 分钟；没有路程或发现数量要求。" }
+  materials: { en: "None; choose a familiar, accessible route.", zh: "无需材料；选熟悉、方便通行的路线。" }
+  participants: { en: "A child and a caregiver. The adult remains responsible for the route and supervision.", zh: "孩子与一位照顾者；路线与看护仍由成人负责。" }
+  steps:
+    en:
+      - "On a safe part of your usual route, invite your child to choose something to look at or listen to."
+      - "Pause where it is safe. Follow their point, sound or words and say what you notice too."
+      - "Offer one question tied to their interest, such as what looks different from nearby objects. Leave time for any response."
+      - "Let your child choose whether to notice another detail, continue walking or finish the exchange."
+    zh:
+      - "走到日常路线中安全的一段，邀请孩子选一样想看或想听的事物。"
+      - "在安全位置停下，顺着孩子的指向、声音或话语，也说说你留意到的细节。"
+      - "围绕孩子的兴趣问一个问题，例如它与附近的东西有什么不同，留时间接受各种回应。"
+      - "让孩子选择再看一个细节、继续走，或结束这段交流。"
+  adaptations:
+    en: "Notice from a bench or an accessible outdoor spot instead of walking. Use a gesture or drawing instead of speech. If the child wants to move on, follow the ordinary outing without a noticing task."
+    zh: "可在长椅或方便到达的户外位置观察，无需行走；也可用动作或画图代替说话。孩子想继续走时，就恢复普通外出，不再安排观察任务。"
+  cautions:
+    en: "Keep attention on traffic, weather and the child's comfort. Observe without tasting unknown plants, approaching animals or collecting objects. This brief exchange is not a physical-activity target."
+    zh: "留意交通、天气与孩子是否舒适。不尝未知植物，不靠近动物，不要求采集物品。这段短交流不是身体活动量目标。"
+  basis:
+    en: "Harvard's responsive-interaction explanation supports noticing and responding to a young child's interest. The outdoor setting and questions are our original choices; no developmental benefit has been tested for this walk."
+    zh: "哈佛的回应互动说明支持留意并回应幼儿的兴趣。户外情境和提问为本站原创选择，未检验这项散步活动的发展收益。"
+  readings: [harvard-serve-and-return]
+  tools: []
+  citations:
+    - src: harvard-serve-return
+      note: { en: "Concept page, Fast Facts and the explanation of responding to gestures and sounds: general interaction principle, not an outdoor programme.", zh: "概念页 Fast Facts 及回应动作、声音的说明：提供一般互动原则，不是户外课程。" }
+  authorship: original
+  created: "2026-11-17"
+  updated: "2026-11-17"
+  checked: "2026-11-17"
+
+- id: preschool-outing-plan
+  publicationStatus: published
+  title: { en: "Choose two jobs before a simple outing", zh: "简单出门前，一起选两件准备工作" }
+  summary:
+    en: "Choose two manageable preparations together and try them with as much help as your child needs."
+    zh: "一起选两件力所能及的准备工作，按孩子需要提供帮助。"
+  minMonths: 48
+  maxMonths: 71
+  topics: [self-regulation, communication]
+  duration: short
+  setting: [home]
+  time: { en: "About 5 minutes on a day when you are not rushing.", zh: "不赶时间的一天，约 5 分钟。" }
+  materials: { en: "The ordinary items for your outing; optional paper for two simple pictures.", zh: "日常出门物品；也可用纸画两幅简单提示图。" }
+  participants: { en: "A child and a caregiver. The adult handles safety, essential items and final checks.", zh: "孩子与一位照顾者；安全、必需物品与最后检查由成人负责。" }
+  steps:
+    en:
+      - "Explain where you are going and offer a small choice of safe jobs, such as bringing a hat or putting a book in a bag."
+      - "Choose two jobs together and agree which comes first. Say or draw the order so it remains visible."
+      - "Try the first job, then the second. Offer a reminder, demonstration or shared action when needed."
+      - "Check the preparations together. Ask whether a picture or a helping hand would make next time easier."
+    zh:
+      - "说明去哪里，提供几件安全的小事供选择，例如拿帽子或把书放进包里。"
+      - "一起选两件，商量先后顺序。说一说或画出来，留下可查看的提示。"
+      - "依次尝试。需要时，给提示、示范或一起动手。"
+      - "一起看准备情况，问下次加幅图或有人搭把手，是否会更方便。"
+  adaptations:
+    en: "Start with one job or let your child point while you do it. Keep pictures available rather than testing recall. If your child declines or you are late, complete the preparations yourself and leave the activity for another day."
+    zh: "可从一件事开始，或让孩子指着提示、由你来做。保留图示，不考记忆。孩子不愿意或时间紧时，由成人完成准备，活动改天再试。"
+  cautions:
+    en: "Children do not take responsibility for medication, keys, traffic decisions or remembering essential safety items. Do not withhold the outing or needed items because a step was missed."
+    zh: "不让孩子负责药品、钥匙、交通决策或记住必要安全物品，不因漏掉一步取消外出或不给必需品。"
+  basis:
+    en: "The Harvard guide's introduction describes discussing next steps and adjusting adult help. Our two-job outing routine is an original everyday example, not one of its activity cards or a tested intervention."
+    zh: "哈佛指南引言讨论下一步安排与调整成人帮助。这里的两件出门准备是本站原创日常示例，不是其活动卡，也不是已验证干预。"
+  readings: [harvard-executive-function-activities]
+  tools: []
+  citations:
+    - src: harvard-ef-guide
+      note: { en: "2014 guide, p. 1, Introduction, and p. 6 age-group introduction: design inspiration for discussing steps and matching help to the child.", zh: "2014 年指南第 1 页 Introduction 及第 6 页年龄组引言：为讨论步骤、按孩子需要提供帮助给出设计启发。" }
+  authorship: original
+  created: "2026-11-17"
+  updated: "2026-11-17"
+  checked: "2026-11-17"
+
+- id: weekend-one-choice
+  publicationStatus: published
+  title: { en: "Agree on one part of the weekend", zh: "商量周末的一小段安排" }
+  summary:
+    en: "Make a real, manageable choice together while keeping time, cost and adult responsibilities clear."
+    zh: "把时间、花费与成人责任说清楚，一起作一个真实、可行的小选择。"
+  minMonths: 72
+  maxMonths: 143
+  topics: [communication, self-regulation]
+  duration: medium
+  setting: [home]
+  time: { en: "About 10–15 minutes to plan; the chosen activity takes its own time.", zh: "商量约 10–15 分钟；所选活动另行安排时间。" }
+  materials: { en: "Optional paper and pencil for two or three choices.", zh: "可用纸笔记下两三个选择。" }
+  participants: { en: "A child and a caregiver; include anyone whose time is needed. Adults state practical limits.", zh: "孩子与一位照顾者；需要其他人参与时也邀请其加入。成人说明现实边界。" }
+  steps:
+    en:
+      - "Choose one small free period. Explain the available time, spending limit and any fixed commitments before suggesting activities."
+      - "Each person offers a feasible idea. Listen for what matters to each person and write or draw the choices."
+      - "Agree on one option and a simple fallback if circumstances change. Decide who will handle each preparation."
+      - "Afterwards, briefly ask what worked and what you would change next time. Adjust the plan without scoring anyone."
+    zh:
+      - "选一小段空闲时间。提出活动前，先说清可用时间、花费上限和已有安排。"
+      - "每个人提一个可行想法，听听彼此在意什么，用文字或图画记下选择。"
+      - "商量一个方案，再准备一个情况变化时的备选，约定各项准备由谁负责。"
+      - "结束后简短聊聊哪些顺利、下次想改什么；调整安排，不给任何人评分。"
+  adaptations:
+    en: "Offer two genuine options if generating ideas is difficult. Use pictures or let the adult write. If agreement becomes tense, pause; an adult can make the necessary decision and offer a smaller choice later."
+    zh: "想不出点子时，提供两个都能兑现的选择。可用图画或由成人记录。商量变得紧张时先停下，必要决定由成人负责，之后再提供更小的选择。"
+  cautions:
+    en: "Offer choices you can honour. Children are not responsible for solving family finances or conflicts. Do not use this as a negotiation about essential care or basic needs."
+    zh: "只提供能够兑现的选择，不让孩子承担家庭财务或冲突解决责任，不把基本照顾与需求变成协商条件。"
+  basis:
+    en: "The Harvard guide introduces planning, reflection and adjusting support. The weekend discussion is our original application of those general ideas, with no claim that this format improves self-regulation."
+    zh: "哈佛指南引言介绍计划、回顾和调整支持。周末商量是本站对一般思想的原创应用，不声称这种形式能改善自我调节。"
+  readings: [harvard-executive-function-activities]
+  tools: []
+  citations:
+    - src: harvard-ef-guide
+      note: { en: "2014 guide, p. 1, Introduction: planning, discussing possible next steps and reflecting on decisions; not a tested weekend-planning protocol.", zh: "2014 年指南第 1 页 Introduction：计划、讨论可能的下一步与回顾决定；不是已验证的周末规划流程。" }
+  authorship: original
+  created: "2026-11-17"
+  updated: "2026-11-17"
+  checked: "2026-11-17"
+
+- id: small-project-plan
+  publicationStatus: published
+  title: { en: "Plan a small project together", zh: "一起计划一个小项目" }
+  summary:
+    en: "Choose a small making project, outline a few steps and revise them after trying the first one."
+    zh: "选一个小制作，列出几个步骤，试过第一步后再作调整。"
+  minMonths: 84
+  maxMonths: 143
+  topics: [self-regulation, learning, communication]
+  duration: flexible
+  setting: [home]
+  time: { en: "Allow about 15 minutes for planning, then choose your own making time and breaks.", zh: "计划约 15 分钟，制作时间与休息自行安排。" }
+  materials: { en: "Paper, pencil and safe materials already at home, such as paper for a folded-card display.", zh: "纸笔及家中已有的安全材料，例如用纸制作折卡展示。" }
+  participants: { en: "A child and a caregiver. The child chooses the goal; the adult helps check feasibility and handles unsafe tasks.", zh: "孩子与一位照顾者。孩子选择目标，成人协助判断可行性并负责不安全的操作。" }
+  steps:
+    en:
+      - "Choose a small project the child wants to make, such as a paper display for a favourite drawing. Agree what would count as ready for today."
+      - "List or draw three to five manageable actions. Note the materials and where adult help is needed."
+      - "Try the first action. Pause to compare what happened with the plan, then change the next action if useful."
+      - "Finish, set aside or stop together. Keep one useful note for next time, even if the object is unfinished."
+    zh:
+      - "选孩子想做的小项目，例如给喜欢的画做个纸展示架，商量今天做到哪里就算告一段落。"
+      - "写或画出三到五个可操作的小步骤，标出材料和需要成人帮助的地方。"
+      - "先试第一步，停下来看看实际情况与计划有什么不同，需要时调整下一步。"
+      - "一起选择完成、暂存或结束。即使作品没做完，也留下一条下次可用的发现。"
+  adaptations:
+    en: "Begin with two actions and let the adult write or demonstrate. Use ready-cut paper or a drawing-only project if needed. If the child loses interest, save the materials or stop without requiring completion."
+    zh: "可只列两个动作，由成人记录或示范；需要时用预裁纸或只画图。孩子失去兴趣时，可收好材料或结束，不要求必须完成。"
+  cautions:
+    en: "Choose materials suited to the child and avoid heat, sharp tools and small loose parts where they pose a risk. Keep the project separate from grades, deadlines and rewards for finishing."
+    zh: "按孩子情况选材料，避开可能造成风险的热源、尖锐工具及零散小物件。不把项目与成绩、硬性期限或完成奖励绑定。"
+  basis:
+    en: "Harvard's introduction informs the adjustable planning support. Dewey's discussion of linking actions with their consequences inspires the review question. These are design ideas, not evidence that our project activity has measured benefits."
+    zh: "可调整的计划支持参考哈佛引言；回看行动与结果的提问受到杜威相关讨论启发。两者是设计思想，不是本项目活动已有可测收益的证据。"
+  readings: [harvard-executive-function-activities]
+  tools: [task-breakdown]
+  citations:
+    - src: harvard-ef-guide
+      note: { en: "2014 guide, p. 1, Introduction: planning, checking progress and adjusting adult help. We do not apply its adolescent study-skills section as evidence for this age group.", zh: "2014 年指南第 1 页 Introduction：计划、查看进展和调整成人帮助；不把青春期学习技能章节当作本年龄组的证据。" }
+    - src: dewey-democracy-text
+      note: { en: "Democracy and Education (1916), opening of Chapter XI, section 1: historical inspiration to connect an action with what follows, not a modern intervention evaluation.", zh: "《民主主义与教育》（1916）第十一章第一节开篇：把行动与后续结果联系起来的历史思想启发，不是现代干预评估。" }
+  authorship: original
+  created: "2026-11-17"
+  updated: "2026-11-17"
+  checked: "2026-11-17"
+
+- id: leaving-home-steps
+  publicationStatus: published
+  title: { en: "Make a leaving-home checklist together", zh: "一起整理出门步骤" }
+  summary:
+    en: "Turn one familiar outing into a short, visible sequence you can adjust together."
+    zh: "把一次熟悉的外出整理成简短、看得见、可以共同修改的步骤。"
+  minMonths: 72
+  maxMonths: 143
+  topics: [self-regulation, communication]
+  duration: medium
+  setting: [home]
+  time: { en: "About 10–15 minutes to make and try the list; use a calm practice day.", zh: "制作和试用约 10–15 分钟；选不赶时间的一天。" }
+  materials: { en: "Paper and pencil; ordinary outing items. Pictures can replace written words.", zh: "纸笔与日常出门物品；可用图示代替文字。" }
+  participants: { en: "A child and a caregiver. Adults keep responsibility for essential supplies and safety.", zh: "孩子与一位照顾者；必需物品与安全责任仍由成人承担。" }
+  steps:
+    en:
+      - "Choose a familiar outing. Ask which parts of getting ready feel easy and which often need a reminder."
+      - "Write or draw three to five concrete actions in a useful order. Agree which the child wants to try and which need adult help."
+      - "Use the list once, keeping it visible. Change an unclear action rather than asking the child to remember harder."
+      - "Check the list together and let the child suggest one change for next time. Put it somewhere useful if they want to use it again."
+    zh:
+      - "选一次熟悉的外出，问问准备时哪些容易、哪些常常需要提醒。"
+      - "按方便执行的顺序写或画三到五个具体动作，商量孩子想试哪些、哪些需要成人帮忙。"
+      - "让清单保持可见，实际用一次。步骤不清楚时修改步骤，不要求孩子更努力地记。"
+      - "一起看清单，请孩子提出一处下次想改的地方。愿意继续用时，放在方便查看的位置。"
+  adaptations:
+    en: "Start with two pictures or let the child direct while you act. Leave the list available throughout. If it creates pressure or the child declines, handle the outing normally and discuss a different support later."
+    zh: "可从两幅图开始，或由孩子指引、成人操作，全程保留清单。清单造成压力或孩子不愿用时，照常出门，之后再商量别的帮助方式。"
+  cautions:
+    en: "Never make necessary items or participation depend on completing the list alone. Adults check medication, keys, travel safety and other essentials. Avoid displaying names, addresses or private routines on a public-facing list."
+    zh: "不把独立完成清单作为获得必需品或参加外出的条件。药品、钥匙、出行安全等由成人检查；避免在外人可见的清单上写姓名、地址或私人作息。"
+  basis:
+    en: "Harvard's introduction discusses considering next steps and matching help to the child. This visible checklist is our original example of practical support; it is not a screening tool or an evaluated treatment."
+    zh: "哈佛指南引言讨论考虑下一步和按孩子情况提供帮助。可见清单是本站原创的日常支持示例，不是筛查工具或经过评估的治疗方法。"
+  readings: [harvard-executive-function-activities]
+  tools: [task-breakdown]
+  citations:
+    - src: harvard-ef-guide
+      note: { en: "2014 guide, p. 1, Introduction: reflecting on actions, possible next steps and adult support. The outing checklist and its length are editorial design choices.", zh: "2014 年指南第 1 页 Introduction：回顾行动、考虑下一步与成人支持；出门清单及其长度为编辑设计选择。" }
+  authorship: original
+  created: "2026-11-17"
+  updated: "2026-11-17"
+  checked: "2026-11-17"
+
+- id: explain-and-swap
+  publicationStatus: published
+  title: { en: "Explain a familiar task, then swap roles", zh: "解释一件熟悉的事，再互换角色" }
+  summary:
+    en: "Take turns showing how a simple task works and checking whether the explanation is clear."
+    zh: "轮流展示一件简单事情怎样做，一起看看说明是否清楚。"
+  minMonths: 84
+  maxMonths: 143
+  topics: [learning, communication]
+  duration: medium
+  setting: [home]
+  time: { en: "About 10–15 minutes; one demonstration each is enough.", zh: "约 10–15 分钟；每人示范一次即可。" }
+  materials: { en: "A familiar safe task, such as folding a sheet of paper; optional paper and pencil for a diagram.", zh: "一件熟悉、安全的小事，例如折一张纸；也可用纸笔画示意图。" }
+  participants: { en: "A child and a caregiver. Both can explain, ask for clarification and request a demonstration.", zh: "孩子与一位照顾者；双方都可以解释、问不清楚的地方或请求示范。" }
+  steps:
+    en:
+      - "Invite your child to choose a small task they know well and would enjoy explaining. Agree to focus on clarity, with no trick questions."
+      - "Let the child show or describe it. Ask one genuine question where you need more detail, then try the action together."
+      - "Swap roles with another equally simple task. Let the child ask you to show, draw or rephrase a step."
+      - "Compare which words, pictures or demonstrations helped. Change one unclear part together and stop when either person has had enough."
+    zh:
+      - "请孩子选一件熟悉、愿意讲解的小事，约定关注说明是否清楚，不设置刁钻问题。"
+      - "让孩子展示或描述。在确实需要细节的地方问一个问题，再一起试一试。"
+      - "换一件同样简单的小事，互换角色。让孩子请你示范、画图或换一种说法。"
+      - "聊聊哪些话、图画或示范有帮助，一起修改一处不清楚的地方；任何一方想结束时就结束。"
+  adaptations:
+    en: "Explain just one action using a gesture, picture or communication aid. Keep the task familiar and remove any expectation of fluent speech. If role swapping is unwelcome, watch one demonstration or choose a different shared activity."
+    zh: "可只用动作、图画或沟通辅助方式解释一个动作，保持任务熟悉，不要求流利说话。孩子不想换角色时，只看一次示范，或选择别的共同活动。"
+  cautions:
+    en: "Avoid dangerous procedures, deliberately pretending not to understand, or exposing a child's difficulty in front of others. This is a shared conversation, not a test of knowledge or language ability."
+    zh: "避开危险操作，不故意装作听不懂，也不在别人面前暴露孩子的困难。这是共同交流，不是知识或语言能力测验。"
+  basis:
+    en: "Harvard's introduction encourages discussing what one is doing and why. Our role exchange is an original conversational design, not a validated method for improving learning or assessing understanding."
+    zh: "哈佛指南引言建议讨论正在做什么以及为什么这样做。互换角色是本站原创对话设计，不是已验证的学习提升或理解力评估方法。"
+  readings: [harvard-executive-function-activities]
+  tools: []
+  citations:
+    - src: harvard-ef-guide
+      note: { en: "2014 guide, p. 1, Introduction: reflection and talking about actions and reasons provide general inspiration. The source does not evaluate this role-swapping activity.", zh: "2014 年指南第 1 页 Introduction：回顾并讨论行动与理由提供一般启发；来源没有评估本互换角色活动。" }
+  authorship: original
+  created: "2026-11-17"
+  updated: "2026-11-17"
+  checked: "2026-11-17"
+
+- id: baby-choose-my-response
+  publicationStatus: published
+  title: { en: "You choose my response", zh: "你来选我的回应" }
+  summary:
+    en: "Offer two gentle ways to respond, then let your baby's signals guide what happens next."
+    zh: "提供两种温和的回应，让婴儿的动作、声音或注意方向影响下一步。"
+  minMonths: 0
+  maxMonths: 11
+  topics: [communication, attachment, play]
+  duration: short
+  setting: [home]
+  time: { en: "A few minutes when your baby is calm and alert.", zh: "孩子平静、清醒时进行几分钟。" }
+  materials: { en: "None; a familiar face or safe nearby object is enough.", zh: "无需材料；熟悉的脸或附近安全的物品即可。" }
+  participants: { en: "A baby and a caregiver who can stay close and observe signals.", zh: "婴儿与一位能够近距离观察信号的照顾者。" }
+  steps:
+    en:
+      - "Notice what your baby is looking at, sounding like or doing with their body."
+      - "Offer one gentle response, such as a quiet word or a smile, and then pause."
+      - "Watch for turning toward you, continuing, changing direction or looking away; let that signal guide the next response."
+      - "End when your baby loses interest, becomes tired or shows they need something else."
+    zh:
+      - "留意孩子正在看的东西、发出的声音或身体动作。"
+      - "先给一种温和回应，例如轻声说话或微笑，然后停下来。"
+      - "观察孩子转向你、继续、改变方向或移开视线，让这些信号影响下一次回应。"
+      - "孩子失去兴趣、疲倦或显出其他需要时就结束。"
+  adaptations:
+    en: "A pause, a change in facial position or a gesture can be a response. Do not require a clear choice, eye contact or imitation."
+    zh: "停顿、改变脸的位置或一个手势都可以算回应。不要求孩子明确选择、眼神接触或模仿。"
+  cautions:
+    en: "Do not move the baby's head or body, use sudden loud sounds or bright light, or continue when the baby turns away, cries or becomes tense."
+    zh: "不移动孩子的头或身体，不用突然的大声或强光；孩子转开、哭泣或身体紧张时停止。"
+  basis:
+    en: "Responsive exchanges that follow an infant's signals are described by Harvard's serve-and-return framework. The two-response sequence here is eduStack's original design and has not been evaluated as a specific activity."
+    zh: "哈佛回应式互动框架说明了跟随婴儿信号来回回应的原则。这里的两种回应顺序为 eduStack 原创设计，未作为具体活动单独评估。"
+  readings: [harvard-serve-and-return]
+  tools: []
+  citations:
+    - src: harvard-serve-return
+      note: { en: "Serve-and-return concept page: general responsive-interaction principle, not an evaluation of this activity.", zh: "回应式互动概念页：提供一般互动原则，不是对本活动效果的评估。" }
+  authorship: original
+  created: "2026-11-17"
+  updated: "2026-11-17"
+  checked: "2026-11-17"
+
+- id: toddler-put-it-back-together
+  publicationStatus: published
+  title: { en: "Put things back together", zh: "一起把东西放回去" }
+  summary:
+    en: "Choose one small group of safe items and decide together what to put away first."
+    zh: "选择一小类安全物品，一起决定先把什么放回去。"
+  minMonths: 18
+  maxMonths: 35
+  topics: [communication, play, self-regulation]
+  duration: short
+  setting: [home]
+  time: { en: "About 3–5 minutes, or until one small area is clear.", zh: "约 3–5 分钟，或直到一小块空间清出来。" }
+  materials: { en: "A small basket or the item's usual safe place.", zh: "一个小篮子或物品平时的安全存放位置。" }
+  participants: { en: "A child and a caregiver; the adult handles unsafe or heavy items.", zh: "孩子与一位照顾者；不安全或较重的物品由成人处理。" }
+  steps:
+    en:
+      - "Choose only a few safe items and show the place where one group belongs."
+      - "Put one item away as an example, then invite your child to choose the next item or point to it."
+      - "Accept carrying, pointing, watching or changing the plan as participation."
+      - "Stop at a natural point, such as the basket being full or a clear patch appearing."
+    zh:
+      - "只选少量安全物品，告诉孩子其中一类要放在哪里。"
+      - "先示范放好一件，再邀请孩子选择下一件或指给你看。"
+      - "孩子拿、指、观察或改变计划，都可以算参与。"
+      - "到了自然结束点就停下，例如篮子装满或地面出现一块空处。"
+  adaptations:
+    en: "Put away just one kind of item, use a photo or colour marker, or let the child watch while you do the work."
+    zh: "可以只收一类物品，用照片或颜色标记位置，也可以由孩子观察、成人完成。"
+  cautions:
+    en: "Adults handle small parts, heavy or breakable objects, cleaners, pet items and anything that could be swallowed. Never make tidying a condition for comfort or play."
+    zh: "小零件、重物、易碎物、清洁剂、宠物用品和可能吞咽的物品由成人处理。不要把收拾作为获得安慰或游戏的条件。"
+  basis:
+    en: "Nurturing-care and developmentally appropriate practice support children joining ordinary routines with adult help. This sorting and stopping routine is eduStack's original design."
+    zh: "养育照护和发展适宜性原则支持儿童在成人帮助下参与日常生活。这里的分类和结束方式为 eduStack 原创设计。"
+  readings: [nurturing-care-framework-2018]
+  tools: []
+  citations:
+    - src: nc-framework
+      note: { en: "Nurturing Care Framework: general support for responsive caregiving and opportunities for participation, not this activity's evaluation.", zh: "《养育照护框架》：支持回应式照护和参与机会的一般原则，不是对本活动的效果评估。" }
+  authorship: original
+  created: "2026-11-17"
+  updated: "2026-11-17"
+  checked: "2026-11-17"
+
+- id: preschool-doll-chair
+  publicationStatus: published
+  title: { en: "Leave a chair for a pretend guest", zh: "给玩偶留一把椅子" }
+  summary:
+    en: "Let a child decide how a pretend guest joins an ordinary family moment."
+    zh: "让孩子决定一个想象中的客人如何加入家庭日常。"
+  minMonths: 36
+  maxMonths: 71
+  topics: [play, communication, emotions]
+  duration: short
+  setting: [home]
+  time: { en: "About 5–10 minutes, with no need to finish a story.", zh: "约 5–10 分钟，不需要把故事讲完。" }
+  materials: { en: "A doll, toy or ordinary object; a chair is optional.", zh: "一个玩偶、玩具或普通物品；椅子可有可无。" }
+  participants: { en: "A child and a caregiver who follows the child's direction.", zh: "孩子与一位顺着孩子方向参与的照顾者。" }
+  steps:
+    en:
+      - "Place an object nearby and say that a guest might join, then let your child decide who or what it is."
+      - "Ask one open question, such as what the guest needs, and wait without filling in the answer."
+      - "Add only what your child invites you to add, following changes in the pretend story."
+      - "Let your child change the subject, put the object away or end the play at any time."
+    zh:
+      - "把一个物品放在旁边，说可能有一位客人加入，让孩子决定它是谁。"
+      - "问一个开放问题，例如客人现在需要什么，然后等待，不替孩子补答案。"
+      - "只补充孩子邀请你加入的内容，顺着故事的变化走。"
+      - "孩子想换主题、收起物品或结束时，随时停下。"
+  adaptations:
+    en: "Use a cup, paper shape or hand gesture instead of a doll. The adult can simply watch, echo a word or join only when invited."
+    zh: "可以用杯子、纸片或手势代替玩偶。成人也可以只观察、重复一个词，或受邀后再加入。"
+  cautions:
+    en: "Do not use pretend play to investigate private family events or test whether the child gives a preferred answer. Avoid roles that create fear or pressure."
+    zh: "不要借假想游戏追问家庭隐私或测试孩子是否给出成人期待的答案。避免让角色带来恐惧或压力。"
+  basis:
+    en: "Play research highlights active engagement, imagination and shared enjoyment. The guest, chair and prompts here are eduStack's original design and are not a validated therapeutic play method."
+    zh: "游戏研究强调主动投入、想象和共同享受。客人、椅子和提问方式为 eduStack 原创设计，不是经过验证的游戏治疗方法。"
+  readings: []
+  tools: []
+  citations:
+    - src: aap-power-play
+      note: { en: "AAP The Power of Play: general play principles, not this pretend-play scenario's evaluation.", zh: "美国儿科学会《游戏的力量》：提供一般游戏原则，不是对本假想游戏情境的效果评估。" }
+    - src: unicef-learning-play
+      note: { en: "UNICEF/LEGO Learning through Play: general features of playful learning, not a copied activity card.", zh: "UNICEF/乐高《通过游戏学习》：提供游戏化学习的一般特征，不是复制其活动卡。" }
+  authorship: original
+  created: "2026-11-17"
+  updated: "2026-11-17"
+  checked: "2026-11-17"
+
+- id: child-choose-reliable-answer
+  publicationStatus: published
+  title: { en: "Find one reliable answer together", zh: "一起找一个可靠的答案" }
+  summary:
+    en: "Ask three small questions about a source before deciding what it can support."
+    zh: "在判断一个来源能支持什么之前，先一起问三个小问题。"
+  minMonths: 120
+  maxMonths: 179
+  topics: [learning, communication, safety]
+  duration: medium
+  setting: [home]
+  time: { en: "About 10–20 minutes; stop when the question is clear enough.", zh: "约 10–20 分钟；问题已经足够清楚时即可停下。" }
+  materials: { en: "A question and paper or a shared screen; do not use private accounts or messages.", zh: "一个问题和纸张或共同查看的屏幕；不使用私人账号或消息。" }
+  participants: { en: "A young person and a caregiver who can model uncertainty and check sources together.", zh: "一位青少年与一位能够示范承认不确定、共同核验来源的照顾者。" }
+  steps:
+    en:
+      - "Write one ordinary question and each person's current guess, without deciding who is right."
+      - "Ask: who published this, what evidence does it name, and what date or limits does it give?"
+      - "Open one official institution, professional organisation or original research entry together."
+      - "Record the answer, one remaining uncertainty and whether another person should help."
+    zh:
+      - "写下一个普通问题和各自目前的猜测，先不判断谁对。"
+      - "一起问：谁发布的？它说依据是什么？有没有说明日期和适用范围？"
+      - "共同查看一个官方机构、专业组织或原始研究入口。"
+      - "记下答案、仍然不确定的一点，以及是否需要请其他人帮助。"
+  adaptations:
+    en: "Use a question about an everyday object or public fact. The adult can operate the screen while the young person chooses which question to ask."
+    zh: "可以从日常物品或公开事实开始。成人操作屏幕，青少年决定要追问哪一个问题也可以。"
+  cautions:
+    en: "Do not use this activity alone for medical, mental-health crisis, abuse, bullying or legal decisions. Do not require disclosure of search history or private accounts."
+    zh: "医疗、心理危机、伤害、欺凌或法律问题不能只靠本活动处理。不要要求展示搜索历史或私人账号。"
+  basis:
+    en: "Source evaluation and uncertainty are emphasized in digital-literacy guidance. The three-question sequence and recording format are eduStack's original design, not a certification method."
+    zh: "数字素养相关指导强调判断来源和保留不确定性。这里的三个问题和记录方式为 eduStack 原创设计，不是认证方法。"
+  readings: []
+  tools: []
+  citations:
+    - src: unicef-ai-children
+      note: { en: "UNICEF policy guidance on AI and children: general orientation for child-centred digital safety and participation, not an evaluation of this activity.", zh: "联合国儿童基金会关于人工智能与儿童的政策指导：提供以儿童为中心的数字安全和参与的一般方向，不是对本活动的效果评估。" }
+  authorship: original
+  created: "2026-11-17"
+  updated: "2026-11-17"
+  checked: "2026-11-17"
+
+- id: teen-revise-unsent-message
+  publicationStatus: published
+  title: { en: "Revise a message before sending", zh: "一起改一封还没发出的信" }
+  summary:
+    en: "Review a draft for clarity and choice while keeping the young person's control over sharing."
+    zh: "一起检查草稿是否清楚，同时保留青少年决定是否分享的权利。"
+  minMonths: 144
+  maxMonths: 215
+  topics: [communication, emotions, safety]
+  duration: short
+  setting: [home]
+  time: { en: "About 10 minutes, or one short draft review.", zh: "约 10 分钟，或只检查一小段草稿。" }
+  materials: { en: "A paper draft or an unsent note; sharing it is always optional.", zh: "一份纸上草稿或未发送的便签；是否分享始终由孩子决定。" }
+  participants: { en: "A young person and a caregiver invited to help, with the young person controlling the draft.", zh: "一位邀请成人提供帮助的青少年；草稿由青少年控制。" }
+  steps:
+    en:
+      - "Let the young person write or say what they want to express in their own words."
+      - "If they invite help, look for the facts, feelings and request, and notice one place that could be misunderstood."
+      - "Offer two possible edits and let the young person accept, change or decline both."
+      - "Let the young person decide whether to save, revisit, send or discard the draft."
+    zh:
+      - "让青少年先用自己的话写下或说出想表达的内容。"
+      - "受邀后，一起找出事实、感受和请求，并留意一处可能让人误解的地方。"
+      - "提供两个可修改的位置，由青少年决定接受、改写或都不采用。"
+      - "由青少年决定保存、以后再看、发送或丢弃草稿。"
+  adaptations:
+    en: "Use a note to oneself, a spoken rehearsal or a message that will never be sent. The adult can help with one sentence without seeing the whole draft."
+    zh: "可以改成给自己写的便签、口头练习，或一封明确不会发送的信。成人只帮助一句，也不必看到全文。"
+  cautions:
+    en: "Do not read private communication without permission. If there is a threat, abuse, self-harm concern or urgent safety issue, provide appropriate adult help instead of treating this as a communication exercise."
+    zh: "未经同意不要阅读私人通信。若涉及威胁、伤害、自伤风险或紧急安全问题，应提供适当的成人帮助，不把本活动当作沟通练习来处理。"
+  basis:
+    en: "Developmentally appropriate communication supports autonomy and adult scaffolding. The draft-review sequence is eduStack's original design and is not a communication-therapy protocol."
+    zh: "发展适宜性的沟通原则支持自主性和成人支架。这里的草稿检查流程为 eduStack 原创设计，不是沟通治疗流程。"
+  readings: []
+  tools: []
+  citations:
+    - src: naeyc-dap
+      note: { en: "NAEYC Developmentally Appropriate Practice: general support for agency and responsive adult guidance, not this message-review activity's evaluation.", zh: "NAEYC《发展适宜性实践》：提供支持儿童自主性和回应式成人指导的一般原则，不是对本活动的效果评估。" }
+  authorship: original
+  created: "2026-11-17"
+  updated: "2026-11-17"
+  checked: "2026-11-17"

@@ -22,6 +22,11 @@ harvard-ef-3-5: { by: Harvard Center on the Developing Child, label: { en: "Acti
 harvard-ef-5-7: { by: Harvard Center on the Developing Child, label: { en: "Activities for 5–7 years", zh: "5–7 岁活动" }, url: "https://developingchild.harvard.edu/wp-content/uploads/2024/10/Executive-Function-Activities-for-5-to-7-year-olds.pdf" }
 harvard-ef-7-12: { by: Harvard Center on the Developing Child, label: { en: "Activities for 7–12 years", zh: "7–12 岁活动" }, url: "https://developingchild.harvard.edu/wp-content/uploads/2024/10/Executive-Function-Activities-for-7-to-12-year-olds.pdf" }
 harvard-ef-teens: { by: Harvard Center on the Developing Child, label: { en: "Activities for adolescents", zh: "青少年活动" }, url: "https://developingchild.harvard.edu/wp-content/uploads/2024/10/Activities-for-Adolescents.pdf" }
+nc-framework: { by: WHO, UNICEF and World Bank Group, label: { en: "Nurturing Care Framework", zh: "《养育照护框架》" }, url: "https://nurturing-care.org/nurturing-care-framework/" }
+aap-power-play: { by: American Academy of Pediatrics, label: { en: "The Power of Play", zh: "游戏的力量" }, url: "https://www.aap.org/en/patient-care/early-childhood/early-childhood-health-and-development/the-power-of-play/" }
+unicef-learning-play: { by: UNICEF and LEGO Foundation, label: { en: "Learning through play", zh: "通过游戏学习" }, url: "https://www.unicef.org/early-childhood-development/learning-through-play" }
+unicef-ai-children: { by: UNICEF, label: { en: "Policy guidance on AI for children", zh: "儿童与人工智能政策指导" }, url: "https://www.unicef.org/globalinsight/reports/policy-guidance-ai-children" }
+naeyc-dap: { by: National Association for the Education of Young Children, label: { en: "Developmentally Appropriate Practice", zh: "发展适宜性实践" }, url: "https://www.naeyc.org/resources/position-statements/dap/principles" }
 who-vaccines: { by: World Health Organization, label: { en: "Vaccines and immunization", zh: "疫苗和免疫接种" }, url: "https://www.who.int/health-topics/vaccines-and-immunization" }
 aap-safety: { by: American Academy of Pediatrics, label: { en: "Safety and prevention", zh: "安全与预防" }, url: "https://www.healthychildren.org/English/safety-prevention/Pages/default.aspx" }
 sep-rousseau: { by: Stanford Encyclopedia of Philosophy, label: { en: "Jean Jacques Rousseau", zh: "卢梭（斯坦福哲学百科）" }, url: "https://plato.stanford.edu/entries/rousseau/" }
@@ -42,3 +47,415 @@ analects-11: { by: "Wikisource", label: { en: "Analects, Book 11 (Chinese text)"
 cai-1912: { by: "Wikisource", label: { en: "Cai Yuanpei, views on the new education (1912)", zh: "蔡元培《对于新教育之意见》（1912）" }, url: "https://zh.wikisource.org/wiki/教育部總長蔡元培對於新教育之意見" }
 cai-1917: { by: "Wikisource", label: { en: "Cai Yuanpei, replacing religion with aesthetic education (1917)", zh: "蔡元培《以美育代宗教说》（1917）" }, url: "https://zh.wikisource.org/wiki/以美育代宗教說" }
 analects-15: { by: "Wikisource", label: { en: "Analects, Book 15 (Chinese text)", zh: "《论语·卫灵公》原文" }, url: "https://zh.wikisource.org/wiki/論語/衛靈公第十五" }
+sep-whitehead: { by: Stanford Encyclopedia of Philosophy, label: { en: "Alfred North Whitehead: education and bibliography", zh: "怀特海：教育思想与书目（斯坦福哲学百科）" }, url: "https://plato.stanford.edu/entries/whitehead/" }
+sep-montaigne: { by: Stanford Encyclopedia of Philosophy, label: { en: "Michel de Montaigne", zh: "蒙田（斯坦福哲学百科）" }, url: "https://plato.stanford.edu/entries/montaigne/" }
+sep-locke: { by: Stanford Encyclopedia of Philosophy, label: { en: "John Locke: education and bibliography", zh: "洛克：教育思想与书目（斯坦福哲学百科）" }, url: "https://plato.stanford.edu/entries/locke/" }
+sep-russell: { by: Stanford Encyclopedia of Philosophy, label: { en: "Bertrand Russell: biography and bibliography", zh: "罗素：生平与书目（斯坦福哲学百科）" }, url: "https://plato.stanford.edu/entries/russell/" }
+montaigne-education-text: { by: "Project Gutenberg, Cotton translation edited by Hazlitt", label: { en: "Essays: Of the Education of Children, Chapter XXV", zh: "《随笔集》〈论儿童教育〉，Cotton/Hazlitt 版本第二十五章" }, url: "https://www.gutenberg.org/ebooks/3585" }
+russell-education-text: { by: "Project Gutenberg, 1926 US edition", label: { en: "Education and the Good Life", zh: "《教育与美好生活》（1926 年美国版）" }, url: "https://www.gutenberg.org/ebooks/70302" }
+froebel-autobiography: { by: Project Gutenberg, label: { en: "Autobiography of Friedrich Froebel, Michaelis and Moore translation", zh: "《福禄贝尔自传》，Michaelis 与 Moore 英译本" }, url: "https://www.gutenberg.org/ebooks/16434" }
+montessori-method-text: { by: Project Gutenberg, label: { en: "The Montessori Method, 1912 English edition", zh: "《蒙台梭利方法》，1912 年英文版" }, url: "https://www.gutenberg.org/ebooks/39863" }
+dewey-democracy-text: { by: Project Gutenberg, label: { en: "Democracy and Education", zh: "《民主主义与教育》英文原著" }, url: "https://www.gutenberg.org/ebooks/852" }
+piaget-inhelder-psychology: { by: "Basic Books / Hachette Book Group", label: { en: "The Psychology of the Child, Piaget and Inhelder: publisher record", zh: "皮亚杰、英海尔德《儿童心理学》出版社书目" }, url: "https://www.hachettebookgroup.com/titles/jean-piaget/the-psychology-of-the-child/9780465095001/" }
+vygotsky-harvard: { by: Harvard University Press, label: { en: "Mind in Society: edited collection and contents", zh: "《社会中的心智》：编选信息与目录" }, url: "https://www.hup.harvard.edu/books/9780674576292" }
+
+# Educator introductions: source access does not grant reproduction rights.
+educator-zhu-xi-1:
+  by: Stanford Encyclopedia of Philosophy
+  label:
+    en: Zhu Xi, Stanford Encyclopedia of Philosophy
+    zh: Zhu Xi, Stanford Encyclopedia of Philosophy
+  url: https://plato.stanford.edu/entries/zhu-xi/
+educator-chen-heqin-1:
+  by: Commercial Press
+  label:
+    en: 'Family Education: publisher description and contents'
+    zh: 《家庭教育》出版社书介与目录
+  url: https://www.cp.com.cn/book/d1accad4-0.html
+educator-chen-heqin-2:
+  by: link.springer.com
+  label:
+    en: Chen Heqin (1892–1982) (陈鹤琴)
+    zh: Chen Heqin (1892–1982) (陈鹤琴)
+  url: https://link.springer.com/referenceworkentry/10.1007/978-981-99-5009-6_10743
+educator-fukuzawa-yukichi-2:
+  by: Keio University
+  label:
+    en: History, Keio University
+    zh: History, Keio University
+  url: https://www.keio.ac.jp/en/about/philosophy/history/
+educator-fukuzawa-yukichi-1:
+  by: Columbia University Press
+  label:
+    en: An Encouragement of Learning
+    zh: An Encouragement of Learning
+  url: https://cup.columbia.edu/book/an-encouragement-of-learning/9780231167147/
+educator-makiguchi-1:
+  by: www.tmakiguchi.org
+  label:
+    en: Value-Creating Pedagogy
+    zh: Value-Creating Pedagogy
+  url: https://www.tmakiguchi.org/educator/educationalreformer/valuecreatingpedagogy.html
+educator-makiguchi-2:
+  by: www.tmakiguchi.org
+  label:
+    en: Happiness as a Goal
+    zh: Happiness as a Goal
+  url: https://www.tmakiguchi.org/educator/educationalreformer/happinessgoal.html
+educator-tagore-1:
+  by: Visva-Bharati
+  label:
+    en: History, Visva-Bharati
+    zh: History, Visva-Bharati
+  url: https://www.visvabharati.ac.in/History.html
+educator-gandhi-1:
+  by: www.mkgandhi.org
+  label:
+    en: Basic Education (Buniyadi Shiksha)
+    zh: Basic Education (Buniyadi Shiksha)
+  url: https://www.mkgandhi.org/edugandhi/basic.php
+educator-xunzi-1:
+  by: Stanford Encyclopedia of Philosophy
+  label:
+    en: Xunzi, Stanford Encyclopedia of Philosophy
+    zh: Xunzi, Stanford Encyclopedia of Philosophy
+  url: https://plato.stanford.edu/entries/xunzi/
+educator-wang-yangming-1:
+  by: Stanford Encyclopedia of Philosophy
+  label:
+    en: Wang Yangming, Stanford Encyclopedia of Philosophy
+    zh: Wang Yangming, Stanford Encyclopedia of Philosophy
+  url: https://plato.stanford.edu/entries/wang-yangming/
+educator-comenius-2:
+  by: gutenberg.pglaf.org
+  label:
+    en: Orbis Pictus, Hoole translation, Bardeen edition (1887)
+    zh: Orbis Pictus, Hoole translation, Bardeen edition (1887)
+  url: https://gutenberg.pglaf.org/2/8/2/9/28299/28299-h/28299-h.htm
+educator-pestalozzi-4:
+  by: www.heinrich-pestalozzi.de
+  label:
+    en: 'Pestalozzis methodisches Grundlagenwerk: Wie Gertrud ihre Kinder lehrt'
+    zh: 'Pestalozzis methodisches Grundlagenwerk: Wie Gertrud ihre Kinder lehrt'
+  url: >-
+    https://www.heinrich-pestalozzi.de/biographie/tabellarische-uebersicht/wie-gertrud-ihre-kinder-lehrt-einfuehrung
+educator-pestalozzi-2:
+  by: www.heinrich-pestalozzi.de
+  label:
+    en: Wie Gertrud ihre Kinder lehrt (1801)
+    zh: Wie Gertrud ihre Kinder lehrt (1801)
+  url: >-
+    https://www.heinrich-pestalozzi.de/werke/pestalozzi-volltexte-auf-dieser-website/1801-wie-gertrud-ihre-kinder-lehrt
+educator-pestalozzi-3:
+  by: www.heinrich-pestalozzi.de
+  label:
+    en: Wie Gertrud ihre Kinder lehrt (Textauszug)
+    zh: Wie Gertrud ihre Kinder lehrt (Textauszug)
+  url: >-
+    https://www.heinrich-pestalozzi.de/biographie/tabellarische-uebersicht/wie-gertrud-ihre-kinder-lehrt-textauszug
+educator-malaguzzi-1:
+  by: www.reggiochildren.it
+  label:
+    en: Loris Malaguzzi
+    zh: Loris Malaguzzi
+  url: https://www.reggiochildren.it/en/reggio-emilia-approach/loris-malaguzzi/
+educator-malaguzzi-3:
+  by: Crossref publication record
+  label:
+    en: 'The Hundred Languages of Children: The Reggio Emilia Experience in Transformation'
+    zh: 'The Hundred Languages of Children: The Reggio Emilia Experience in Transformation'
+  url: https://doi.org/10.5040/9798400667664
+educator-malaguzzi-2:
+  by: www.reggiochildren.it
+  label:
+    en: Values / Principles of the educational project
+    zh: Values / Principles of the educational project
+  url: https://www.reggiochildren.it/en/reggio-emilia-approach/valori-en/
+educator-bruner-1:
+  by: Harvard University Press
+  label:
+    en: The Process of Education — Revised Edition
+    zh: The Process of Education — Revised Edition
+  url: https://www.hup.harvard.edu/books/9780674710016
+educator-noddings-1:
+  by: University of California Press
+  label:
+    en: 'Caring: A Relational Approach to Ethics and Moral Education'
+    zh: 'Caring: A Relational Approach to Ethics and Moral Education'
+  url: https://www.ucpress.edu/books/caring/paper
+educator-bell-hooks-3:
+  by: Berea College
+  label:
+    en: Get to know bell hooks, Berea College
+    zh: Get to know bell hooks, Berea College
+  url: https://www.berea.edu/centers/the-bell-hooks-center/about-bell
+educator-bell-hooks-1:
+  by: Crossref publication record
+  label:
+    en: Teaching To Transgress
+    zh: Teaching To Transgress
+  url: https://doi.org/10.4324/9780203700280
+educator-bell-hooks-4:
+  by: Vrije Universiteit Amsterdam
+  label:
+    en: 'Teaching for liberation, Saartje Tack: abstract and publication record'
+    zh: 'Teaching for liberation, Saartje Tack: abstract and publication record'
+  url: https://research.vu.nl/en/publications/teaching-for-liberation-the-manifesto-assignment-as-an-example-of/
+educator-freire-1:
+  by: Penguin Books
+  label:
+    en: Pedagogy of the Oppressed
+    zh: Pedagogy of the Oppressed
+  url: https://www.penguin.co.uk/books/305000/pedagogy-of-the-oppressed-by-freire-paulo/9780241301111
+educator-russell-bishop-1:
+  by: NZCER Press
+  label:
+    en: 'Teaching to the North-East: Relationship-based learning in practice'
+    zh: 'Teaching to the North-East: Relationship-based learning in practice'
+  url: https://www.nzcer.org.nz/nzcerpress/books/teaching-north-east
+educator-plato-1:
+  by: Stanford Encyclopedia of Philosophy
+  label:
+    en: Plato’s Ethics and Politics in The Republic
+    zh: Plato’s Ethics and Politics in The Republic
+  url: https://plato.stanford.edu/entries/plato-ethics-politics/
+educator-plato-2:
+  by: Internet Classics Archive
+  label:
+    en: The Republic, Book VII
+    zh: The Republic, Book VII
+  url: https://classics.mit.edu/Plato/republic.8.vii.html
+educator-plato-3:
+  by: Internet Classics Archive
+  label:
+    en: Laws, Book VII
+    zh: Laws, Book VII
+  url: https://classics.mit.edu/Plato/laws.7.vii.html
+educator-aristotle-1:
+  by: Stanford Encyclopedia of Philosophy
+  label:
+    en: Aristotle’s Political Theory
+    zh: Aristotle’s Political Theory
+  url: https://plato.stanford.edu/entries/aristotle-politics/
+educator-aristotle-2:
+  by: Internet Classics Archive
+  label:
+    en: Politics, Book VII
+    zh: Politics, Book VII
+  url: https://classics.mit.edu/Aristotle/politics.7.seven.html
+educator-aristotle-4:
+  by: Internet Classics Archive
+  label:
+    en: Nicomachean Ethics, Book II
+    zh: Nicomachean Ethics, Book II
+  url: https://classics.mit.edu/Aristotle/nicomachaen.2.ii.html
+educator-aristotle-3:
+  by: Internet Classics Archive
+  label:
+    en: Politics, Book VIII
+    zh: Politics, Book VIII
+  url: https://classics.mit.edu/Aristotle/politics.8.eight.html
+educator-ibn-khaldun-1:
+  by: www.muslimphilosophy.com
+  label:
+    en: 'The Muqaddimah: title/index page'
+    zh: 'The Muqaddimah: title/index page'
+  url: https://www.muslimphilosophy.com/ik/Muqaddimah/
+educator-ibn-khaldun-2:
+  by: www.muslimphilosophy.com
+  label:
+    en: The right attitude in scientific instruction and toward the method of giving such instruction
+    zh: The right attitude in scientific instruction and toward the method of giving such instruction
+  url: https://www.muslimphilosophy.com/ik/Muqaddimah/Chapter6/Ch_6_36.htm
+educator-ibn-khaldun-3:
+  by: www.muslimphilosophy.com
+  label:
+    en: Severity to students does them harm
+    zh: Severity to students does them harm
+  url: https://www.muslimphilosophy.com/ik/Muqaddimah/Chapter6/Ch_6_39.htm
+educator-al-ghazali-1:
+  by: Stanford Encyclopedia of Philosophy
+  label:
+    en: al-Ghazali
+    zh: al-Ghazali
+  url: https://plato.stanford.edu/entries/al-ghazali/
+educator-al-ghazali-2:
+  by: its.org.uk
+  label:
+    en: Al-Ghazali on Disciplining the Soul & on Breaking the Two Desires
+    zh: Al-Ghazali on Disciplining the Soul & on Breaking the Two Desires
+  url: >-
+    https://its.org.uk/catalogue/al-ghazali-on-disciplining-the-soul-and-on-breaking-the-two-desires-paperback/
+educator-nyerere-1:
+  by: www.juliusnyerere.org
+  label:
+    en: Education for Self Reliance
+    zh: Education for Self Reliance
+  url: https://www.juliusnyerere.org/resources/view/education_for_self_reliance
+educator-nyerere-2:
+  by: www.juliusnyerere.org
+  label:
+    en: Education for Self-Reliance
+    zh: Education for Self-Reliance
+  url: https://www.juliusnyerere.org/uploads/education_for_self_reliance_1967.pdf
+educator-spencer-1:
+  by: gutenberg.pglaf.org
+  label:
+    en: Essays on Education and Kindred Subjects
+    zh: Essays on Education and Kindred Subjects
+  url: https://gutenberg.pglaf.org/1/6/5/1/16510/16510-h/16510-h.htm
+educator-nietzsche-3:
+  by: Stanford Encyclopedia of Philosophy
+  label:
+    en: Friedrich Nietzsche
+    zh: Friedrich Nietzsche
+  url: https://plato.stanford.edu/entries/nietzsche/
+educator-nietzsche-2:
+  by: gutenberg.pglaf.org
+  label:
+    en: 'Thoughts Out of Season, Part II: Schopenhauer as Educator'
+    zh: 'Thoughts Out of Season, Part II: Schopenhauer as Educator'
+  url: https://gutenberg.pglaf.org/3/8/2/2/38226/38226-h/38226-h.htm
+educator-nietzsche-1:
+  by: gutenberg.pglaf.org
+  label:
+    en: On the Future of our Educational Institutions
+    zh: On the Future of our Educational Institutions
+  url: https://gutenberg.pglaf.org/2/8/1/4/28146/28146-h/28146-h.htm
+educator-simone-weil-1:
+  by: Stanford Encyclopedia of Philosophy
+  label:
+    en: Simone Weil
+    zh: Simone Weil
+  url: https://plato.stanford.edu/entries/simone-weil/
+educator-savitribai-phule-1:
+  by: Azim Premji University
+  label:
+    en: 'Savitribai: Journey of a Trailblazer (2014)'
+    zh: 'Savitribai: Journey of a Trailblazer (2014)'
+  url: https://publications.azimpremjiuniversity.edu.in/429/
+educator-kant-3:
+  by: Stanford Encyclopedia of Philosophy
+  label:
+    en: 'Kant’s Social and Political Philosophy: education-related discussion'
+    zh: 'Kant’s Social and Political Philosophy: education-related discussion'
+  url: https://plato.stanford.edu/entries/kant-social-political/
+educator-kant-1:
+  by: www.cambridge.org
+  label:
+    en: 'Cambridge: Lectures on pedagogy (1803)'
+    zh: 'Cambridge: Lectures on pedagogy (1803)'
+  url: >-
+    https://www.cambridge.org/core/books/anthropology-history-and-education/lectures-on-pedagogy-1803/418DDCE9372498C50AD8C201BA1F9878
+educator-arendt-12:
+  by: Stanford Encyclopedia of Philosophy
+  label:
+    en: Hannah Arendt, Stanford Encyclopedia of Philosophy
+    zh: Hannah Arendt, Stanford Encyclopedia of Philosophy
+  url: https://plato.stanford.edu/entries/arendt/
+educator-arendt-3:
+  by: www.bu.edu
+  label:
+    en: The Crisis in Education, p.503
+    zh: The Crisis in Education, p.503
+  url: https://www.bu.edu/partisanreview/books/PR1958V25N4/HTML/files/assets/basic-html/page15.html
+educator-arendt-11:
+  by: www.bu.edu
+  label:
+    en: The Crisis in Education, p.513
+    zh: The Crisis in Education, p.513
+  url: https://www.bu.edu/partisanreview/books/PR1958V25N4/HTML/files/assets/basic-html/page25.html
+educator-jaspers-2:
+  by: Stanford Encyclopedia of Philosophy
+  label:
+    en: Karl Jaspers, Stanford Encyclopedia of Philosophy
+    zh: Karl Jaspers, Stanford Encyclopedia of Philosophy
+  url: https://plato.stanford.edu/entries/jaspers/
+educator-jaspers-1:
+  by: German National Library
+  label:
+    en: 'Deutsche Nationalbibliothek SRU: Was ist Erziehung?'
+    zh: 'Deutsche Nationalbibliothek SRU: Was ist Erziehung?'
+  url: >-
+    https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=tit%3DWas%20ist%20Erziehung%20and%20per%3DJaspers&recordSchema=MARC21-xml&maximumRecords=5
+educator-john-stuart-mill-1:
+  by: oll.libertyfund.org
+  label:
+    en: 'Online Library of Liberty: Collected Works XXI'
+    zh: 'Online Library of Liberty: Collected Works XXI'
+  url: >-
+    https://oll.libertyfund.org/titles/mill-the-collected-works-of-john-stuart-mill-volume-xxi-essays-on-equality-law-and-education
+educator-john-stuart-mill-2:
+  by: oll-resources.s3.us-east-2.amazonaws.com
+  label:
+    en: Collected Works XXI, Inaugural Address Delivered to the University of St. Andrews
+    zh: Collected Works XXI, Inaugural Address Delivered to the University of St. Andrews
+  url: >-
+    https://oll-resources.s3.us-east-2.amazonaws.com/oll3/store/titles/255/mill-the-collected-works-of-john-stuart-mill-volume-xxi-essays-on-equality-law-and-education.epub
+educator-krishnamurti-1:
+  by: kfoundation.org
+  label:
+    en: 'Krishnamurti Foundation Trust: Krishnamurti’s Books'
+    zh: 'Krishnamurti Foundation Trust: Krishnamurti’s Books'
+  url: https://kfoundation.org/krishnamurti-books
+educator-krishnamurti-2:
+  by: store.kfoundation.org
+  label:
+    en: 'KFT official shop: Education and the Significance of Life'
+    zh: 'KFT official shop: Education and the Significance of Life'
+  url: https://store.kfoundation.org/books/books-by-j-krishnamurti/books/education-and-the-significance-of-life
+educator-krishnamurti-4:
+  by: kfoundation.org
+  label:
+    en: 'KFT: Public Discussion 3, Ojai, 12 April 1977'
+    zh: 'KFT: Public Discussion 3, Ojai, 12 April 1977'
+  url: https://kfoundation.org/transcript/public-discussion-3-ojai-california-12-april-1977/
+locke-original-se:
+  by: John Locke / Standard Ebooks
+  label:
+    en: Some Thoughts Concerning Education, §§64–66, 118, 120
+    zh: 《教育漫话》第64—66、118、120节
+  url: https://standardebooks.org/ebooks/john-locke/some-thoughts-concerning-education
+dewey-how-we-think:
+  by: John Dewey / Project Gutenberg
+  label:
+    en: How We Think, 1910 edition
+    zh: 《我们怎样思维》1910年版
+  url: https://www.gutenberg.org/ebooks/37423
+educator-socrates-sep:
+  by: Stanford Encyclopedia of Philosophy
+  label:
+    en: 'Socrates: the historical sources and the Socratic problem'
+    zh: 苏格拉底：历史来源与“苏格拉底问题”
+  url: https://plato.stanford.edu/entries/socrates/
+educator-socrates-iep:
+  by: Internet Encyclopedia of Philosophy
+  label:
+    en: 'Socrates: ignorance and philosophical questioning'
+    zh: 苏格拉底：承认未知与哲学问答
+  url: https://iep.utm.edu/socrates/
+educator-socrates-apology:
+  by: Plato / Benjamin Jowett, translator / Project Gutenberg mirror
+  label:
+    en: 'Apology: Jowett translation, PG1656'
+    zh: 柏拉图《申辩篇》：Jowett英译，PG1656
+  url: https://gutenberg.pglaf.org/1/6/5/1656/1656-0.txt
+educator-socrates-meno:
+  by: Plato / Benjamin Jowett, translator / Project Gutenberg mirror
+  label:
+    en: 'Meno: Jowett translation, PG1643'
+    zh: 柏拉图《美诺篇》：Jowett英译，PG1643
+  url: https://gutenberg.pglaf.org/1/6/4/1643/1643.txt
+educator-socrates-memorabilia:
+  by: Xenophon / H. G. Dakyns, translator / Project Gutenberg mirror
+  label:
+    en: 'Memorabilia: Book IV, Dakyns translation, PG1177'
+    zh: 色诺芬《回忆苏格拉底》第四卷：Dakyns英译，PG1177
+  url: https://gutenberg.pglaf.org/1/1/7/1177/1177-0.txt
+educator-krishnamurti-library:
+  by: German National Library
+  label:
+    en: 'Education and the Significance of Life: historical translation records'
+    zh: 《Education and the Significance of Life》历史译本记录
+  url: >-
+    https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=tit%3D%22Education%20and%20the%20significance%20of%20life%22%20and%20per%3DKrishnamurti&recordSchema=MARC21-xml&maximumRecords=8

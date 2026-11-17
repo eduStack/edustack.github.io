@@ -1,5 +1,12 @@
 @import './site.css';
 
+html[data-home-pending] [data-home-general], html[data-home-pending] [data-home-personal] { visibility: hidden; }
+html[data-home-view='child'] .opening { grid-template-columns: minmax(0, 1fr); padding-block: 1.25rem; }
+html[data-home-view='child'] .trust-section { padding-block: 1.5rem; border-block-start: 1px solid var(--line); }
+html[data-home-view='child'] .trust-intro { display: none; }
+html[data-home-view='child'] .trust-section { grid-template-columns: minmax(0, 1fr); }
+.home-view-note { margin-block-end: 1.5rem; padding: 1rem; border-inline-start: 2px solid var(--accent); font-size: var(--type-ui); }
+
 .opening {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
