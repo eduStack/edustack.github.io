@@ -1,5 +1,6 @@
 # Publication: draft | in-review | published | needs-review. Only published items reach the site.
 # Classic educators. Every line names its source: a key in sources.yaml or a resource id.
+# topics: shared resource subjects; distinct from historical directions and citation keys.
 # supported / outdated: what modern research backs up, and what it does not.
 # texts: checked free editions; public-domain status can vary by territory and translation.
 # reviewed is the local editorial review date, not a new online source-check date.
@@ -7,6 +8,7 @@
   birthYear: -551
   origin: east-asia
   directions: [confucian]
+  topics: [learning]
   publicationStatus: published
   name:
     en: Confucius
@@ -90,6 +92,7 @@
   birthYear: 1712
   origin: europe
   directions: [child, freedom]
+  topics: [learning, development]
   publicationStatus: published
   name:
     en: Jean-Jacques Rousseau
@@ -166,6 +169,7 @@
   birthYear: 1782
   origin: europe
   directions: [child, experience]
+  topics: [learning, play]
   publicationStatus: published
   name: { en: Friedrich Froebel, zh: 福禄贝尔 }
   years: "1782–1852"
@@ -194,6 +198,7 @@
   birthYear: 1870
   origin: europe
   directions: [child, experience]
+  topics: [learning, development]
   publicationStatus: published
   name:
     en: Maria Montessori
@@ -278,6 +283,7 @@
   birthYear: 1859
   origin: north-america
   directions: [experience, justice]
+  topics: [learning]
   publicationStatus: published
   name:
     en: John Dewey
@@ -371,6 +377,7 @@
   birthYear: 1868
   origin: east-asia
   directions: [humanist, justice]
+  topics: [learning]
   publicationStatus: published
   name: { en: Cai Yuanpei, zh: 蔡元培 }
   years: "1868–1940"
@@ -402,6 +409,7 @@
   birthYear: 1896
   origin: europe
   directions: [development]
+  topics: [learning, development]
   publicationStatus: published
   name: { en: Jean Piaget, zh: 皮亚杰 }
   years: "1896–1980"
@@ -429,6 +437,7 @@
   birthYear: 1896
   origin: europe
   directions: [development, culture]
+  topics: [learning, development]
   publicationStatus: published
   name: { en: Lev Vygotsky, zh: 维果茨基 }
   years: "1896–1934"
@@ -460,6 +469,7 @@
   birthYear: 1891
   origin: east-asia
   directions: [experience, justice]
+  topics: [learning]
   publicationStatus: published
   name: { en: Tao Xingzhi, zh: 陶行知 }
   years: "1891–1946"
@@ -485,6 +495,7 @@
   birthYear: 1902
   origin: north-america
   directions: [development]
+  topics: [development]
   publicationStatus: published
   name: { en: Erik Erikson, zh: 埃里克森 }
   years: "1902–1994"
@@ -512,6 +523,7 @@
   birthYear: 1861
   origin: europe
   directions: [humanist, experience]
+  topics: [learning]
   publicationStatus: published
   name: { en: Alfred North Whitehead, zh: 怀特海 }
   years: "1861–1947"
@@ -538,6 +550,7 @@
   birthYear: 1533
   origin: europe
   directions: [humanist]
+  topics: [learning, communication]
   publicationStatus: published
   name:
     en: Michel de Montaigne
@@ -605,6 +618,7 @@
   birthYear: 1632
   origin: europe
   directions: [experience, humanist]
+  topics: [learning, communication, discipline]
   publicationStatus: published
   name:
     en: John Locke
@@ -691,6 +705,7 @@
   birthYear: 1872
   origin: europe
   directions: [humanist, freedom]
+  topics: [learning]
   publicationStatus: published
   name: { en: Bertrand Russell, zh: 罗素 }
   years: "1872–1970"
@@ -719,6 +734,7 @@
   birthYear: 1130
   origin: east-asia
   directions: [confucian]
+  topics: [learning]
   publicationStatus: published
   name:
     en: Zhu Xi
@@ -781,6 +797,7 @@
   birthYear: 1892
   origin: east-asia
   directions: [child, experience]
+  topics: [development, learning, play, emotions]
   publicationStatus: published
   name:
     en: Chen Heqin
@@ -844,6 +861,7 @@
   birthYear: 1835
   origin: east-asia
   directions: [humanist, justice]
+  topics: [learning]
   publicationStatus: published
   name:
     en: Fukuzawa Yukichi
@@ -905,6 +923,7 @@
   birthYear: 1871
   origin: east-asia
   directions: [experience, culture]
+  topics: [learning]
   publicationStatus: published
   name:
     en: Tsunesaburo Makiguchi
@@ -964,6 +983,7 @@
   birthYear: 1861
   origin: south-asia
   directions: [child, culture]
+  topics: [learning]
   publicationStatus: published
   name:
     en: Rabindranath Tagore
@@ -1024,6 +1044,7 @@
   birthYear: 1869
   origin: south-asia
   directions: [experience, justice]
+  topics: [learning]
   publicationStatus: published
   name:
     en: M. K. Gandhi
@@ -1092,6 +1113,7 @@
   birthYear: -310
   origin: east-asia
   directions: [confucian]
+  topics: [learning, discipline]
   publicationStatus: published
   name:
     en: Xunzi
@@ -1154,6 +1176,7 @@
   birthYear: 1472
   origin: east-asia
   directions: [confucian, experience]
+  topics: [learning]
   publicationStatus: published
   name:
     en: Wang Yangming
@@ -1216,6 +1239,7 @@
   birthYear: 1592
   origin: europe
   directions: [experience, religious]
+  topics: [learning, language]
   publicationStatus: published
   name:
     en: John Amos Comenius
@@ -1285,6 +1309,7 @@
   birthYear: 1746
   origin: europe
   directions: [child, experience]
+  topics: [learning, language]
   publicationStatus: published
   name:
     en: Johann Heinrich Pestalozzi
@@ -1354,6 +1379,7 @@
   birthYear: 1920
   origin: europe
   directions: [child, care]
+  topics: [learning, language]
   publicationStatus: published
   name:
     en: Loris Malaguzzi and the Reggio Emilia community
@@ -1420,6 +1446,7 @@
   birthYear: 1915
   origin: north-america
   directions: [development, culture]
+  topics: [learning]
   publicationStatus: published
   name:
     en: Jerome Bruner
@@ -1483,6 +1510,7 @@
   birthYear: 1929
   origin: north-america
   directions: [care]
+  topics: [learning, communication]
   publicationStatus: published
   name:
     en: Nel Noddings
@@ -1544,6 +1572,7 @@
   birthYear: 1952
   origin: north-america
   directions: [justice, care]
+  topics: [learning]
   publicationStatus: published
   name:
     en: bell hooks
@@ -1612,6 +1641,7 @@
   birthYear: 1921
   origin: south-america
   directions: [justice, care]
+  topics: [learning, communication]
   publicationStatus: published
   name:
     en: Paulo Freire
@@ -1679,6 +1709,7 @@
   birthYear: null
   origin: oceania
   directions: [culture, justice]
+  topics: [learning, language]
   publicationStatus: published
   name:
     en: Russell Bishop
@@ -1744,6 +1775,7 @@
   birthYear: -428
   origin: europe
   directions: [classical]
+  topics: [learning, play]
   publicationStatus: published
   name:
     en: Plato
@@ -1814,6 +1846,7 @@
   birthYear: -384
   origin: europe
   directions: [classical]
+  topics: [learning]
   publicationStatus: published
   name:
     en: Aristotle
@@ -1882,6 +1915,7 @@
   birthYear: 1332
   origin: africa
   directions: [culture, experience]
+  topics: [learning, discipline]
   publicationStatus: published
   name:
     en: Ibn Khaldun
@@ -1954,6 +1988,7 @@
   birthYear: 1058
   origin: west-central-asia
   directions: [religious]
+  topics: [learning]
   publicationStatus: published
   name:
     en: al-Ghazali
@@ -2017,6 +2052,7 @@
   birthYear: 1922
   origin: africa
   directions: [justice, culture]
+  topics: [learning]
   publicationStatus: published
   name:
     en: Julius K. Nyerere
@@ -2085,6 +2121,7 @@
   birthYear: 1820
   origin: europe
   directions: [experience]
+  topics: [learning, discipline]
   publicationStatus: published
   name:
     en: Herbert Spencer
@@ -2156,6 +2193,7 @@
   birthYear: 1844
   origin: europe
   directions: [freedom, humanist]
+  topics: [learning]
   publicationStatus: published
   name:
     en: Friedrich Nietzsche
@@ -2226,6 +2264,7 @@
   birthYear: 1909
   origin: europe
   directions: [religious, care]
+  topics: [learning]
   publicationStatus: published
   name:
     en: Simone Weil
@@ -2288,6 +2327,7 @@
   birthYear: 1831
   origin: south-asia
   directions: [justice]
+  topics: [learning]
   publicationStatus: published
   name:
     en: Savitribai Phule
@@ -2357,6 +2397,7 @@
   birthYear: 1724
   origin: europe
   directions: [humanist, freedom]
+  topics: [learning]
   publicationStatus: published
   name:
     en: Immanuel Kant
@@ -2421,6 +2462,7 @@
   birthYear: 1906
   origin: europe
   directions: [humanist]
+  topics: [learning, development]
   publicationStatus: published
   name:
     en: Hannah Arendt
@@ -2486,6 +2528,7 @@
   birthYear: 1883
   origin: europe
   directions: [freedom, care]
+  topics: [learning, communication]
   publicationStatus: published
   name:
     en: Karl Jaspers
@@ -2552,6 +2595,7 @@
   birthYear: 1806
   origin: europe
   directions: [humanist, freedom]
+  topics: [learning]
   publicationStatus: published
   name:
     en: John Stuart Mill
@@ -2618,6 +2662,7 @@
   birthYear: -469
   origin: europe
   directions: [classical, care]
+  topics: [learning, communication]
   publicationStatus: published
   name: { en: Socrates, zh: 苏格拉底 }
   years: c. 469–399 BCE
@@ -2733,6 +2778,7 @@
   birthYear: 1895
   origin: south-asia
   directions: [freedom]
+  topics: [learning, emotions]
   publicationStatus: published
   name:
     en: Jiddu Krishnamurti

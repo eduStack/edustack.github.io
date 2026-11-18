@@ -16,9 +16,11 @@ const details = [
   [zh ? '由谁提供' : 'Provider', tool.by],
   [zh ? '适用年龄' : 'Listed ages', zh ? `${tool.minAge}–${tool.maxAge} 岁` : `Ages ${tool.minAge}–${tool.maxAge}`],
   [zh ? '原资料语言' : 'Source languages', tool.languages[lang]],
+  [zh ? '核心内容费用' : 'Core access cost', tool.free === true ? (zh ? '核验记录列为免费，其他费用见使用条件。' : 'Recorded as free; see conditions for other fees.') : tool.free === false ? (zh ? '可能需要付费，见官方说明。' : 'May require payment; see the provider.') : (zh ? '当前免费条件未确认。' : 'Current free access is unconfirmed.')],
   [zh ? '设备与形式' : 'Device and format', tool.device?.[lang] ?? (zh ? '本条目未单独记录设备要求，请先查看官方说明。' : 'Device requirements have not been separately recorded; check the provider’s instructions.')],
   [zh ? '账号与登记' : 'Accounts and registration', tool.registration?.[lang] ?? (zh ? '本条目未单独核验账号要求；浏览、保存和社区功能可能不同，请查看官方说明。' : 'Account requirements have not been separately checked; browsing, saving and community features may differ. Check the provider’s instructions.')],
   [zh ? '来源核验日期' : 'Source-check date', tool.checked ? fmtDate(tool.checked, lang) : (zh ? '原记录未注明独立核验日期。' : 'The original record has no separate source-check date.')],
+  [zh ? '核验范围' : 'Verification scope', tool.verificationStatus === 'verified' ? (zh ? '已核验本条记录所列事项，范围见下方说明。' : 'Recorded details checked; see the scope note below.') : tool.verificationStatus === 'partial' ? (zh ? '部分核验；未确认事项见下方说明。' : 'Partially checked; see unconfirmed details below.') : (zh ? '仍待核验。' : 'Still awaiting verification.')],
 ];
 ---
 <Base lang={lang} title={tool.name[lang]} description={tool.what[lang]} active="tools">
@@ -47,6 +49,7 @@ const details = [
             <li><a href={tool.privacy} target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note">{zh ? '隐私政策或家长说明' : 'Privacy policy or parent information'} ↗</a></li>
           </ul>
           <p class="muted">{zh ? '本页使用原创简述和外部链接，不提供原网站内容的转载许可。' : 'This page provides an original introduction and external links; it does not grant permission to republish the provider’s content.'}</p>
+          {tool.checkedNote && <p class="muted" data-tool-check>{tool.checkedNote[lang]}</p>}
         </section>
       </article>
       <aside class="stack">

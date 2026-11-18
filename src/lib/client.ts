@@ -3,6 +3,15 @@ export type Child = { id: string; name: string; y: number; m: number; sex: 'male
 export type Store = { v: 1; children: Child[]; sel?: string };
 const KEY = 'edustack.profiles.v1';
 const HOME_KEY = 'edustack.home-view.v1';
+// All profile consumers receive the same event for local and cross-tab changes.
+if (typeof window !== 'undefined') {
+  window.addEventListener('storage', (event) => {
+    if ((event.key === null || event.key === KEY || event.key === HOME_KEY)
+      && (!event.storageArea || event.storageArea === window.localStorage)) {
+      window.dispatchEvent(new CustomEvent('edustack:profilechange'));
+    }
+  });
+}
 export type HomeMode = 'child' | 'general';
 export function readHomeMode(): HomeMode {
   try { return localStorage.getItem(HOME_KEY) === 'general' ? 'general' : 'child'; } catch { return 'child'; }

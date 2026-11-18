@@ -1,4 +1,5 @@
 import { primaryStages } from './taxonomy.mjs';
+import { inclusiveAgeLabel } from './age-label.mjs';
 
 export const durationLabels = {
   short: { en: 'About 5 minutes', zh: '约5分钟' },
@@ -59,10 +60,5 @@ export function filterActivities(activities, state) {
 
 /** Exact inclusive ages for activities; the last birthday is included. */
 export function activityAgeLabel(min, max, lang) {
-  if (min % 12 === 0 && max % 12 === 11 && min >= 24) {
-    const low = min / 12, high = Math.floor(max / 12);
-    const range = low === high ? String(low) : `${low}–${high}`;
-    return lang === 'zh' ? `${range} 岁` : `Ages ${range}`;
-  }
-  return lang === 'zh' ? `${min}–${max} 个月` : `${min}–${max} months`;
+  return inclusiveAgeLabel(min, max, lang);
 }

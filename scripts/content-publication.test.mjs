@@ -14,7 +14,7 @@ const collections = ['resources', 'stages', 'stage-home', 'topics', 'tips', 'too
 function validateFixture(t, edit) {
   const root = mkdtempSync(join(tmpdir(), 'edustack-content-'));
   t.after(() => rmSync(root, { recursive: true, force: true }));
-  for (const path of ['scripts/validate-data.mjs', 'src/lib/publication.mjs', 'src/lib/taxonomy.mjs', 'src/lib/educator-browse.mjs']) {
+  for (const path of ['scripts/validate-data.mjs', 'src/lib/publication.mjs', 'src/lib/taxonomy.mjs', 'src/lib/educator-browse.mjs', 'src/lib/daily-guidance.mjs']) {
     mkdirSync(dirname(join(root, path)), { recursive: true });
     cpSync(join(project, path), join(root, path));
   }
@@ -89,6 +89,32 @@ test('age boundaries cannot overlap, leave gaps or change primary stage order', 
   const result = validateFixture(t, (data) => { data.stages[1].minMonths = 11; });
   assert.notEqual(result.status, 0);
   assert.match(result.stderr, /five ordered, non-overlapping primary age ranges/);
+});
+
+test('stage facts cannot omit an age-specific rule or refer to a fabricated source label', (t) => {
+  const result = validateFixture(t, (data) => {
+    data.stages.find((stage) => stage.id === 'preschoolers').facts.find((fact) => fact.kind === 'activity').rules = ['activity-3-4y'];
+    data.stages[0].facts[0].rules.push('WHO 2019');
+  });
+  assert.notEqual(result.status, 0);
+  assert.match(result.stderr, /facts activity must include exactly the applicable guidance rules/);
+  assert.match(result.stderr, /facts sleep must include exactly the applicable guidance rules/);
+});
+
+test('published resources and tools require scoped metadata and educators require independent classification', (t) => {
+  const result = validateFixture(t, (data) => {
+    delete data.resources.find((resource) => resource.type === 'research').limits;
+    delete data.resources.find((resource) => resource.type === 'guideline').sourceVersion;
+    data.educators[0].topics = ['unknown'];
+    data.tools[0].verificationStatus = 'partial'; delete data.tools[0].checked;
+    delete data.tools[0].registration;
+  });
+  assert.notEqual(result.status, 0);
+  assert.match(result.stderr, /research needs limits/);
+  assert.match(result.stderr, /guideline needs sourceVersion/);
+  assert.match(result.stderr, /topics must contain distinct recognised resource topics/);
+  assert.match(result.stderr, /registration: needs both en and zh/);
+  assert.match(result.stderr, /checked or partial verification needs a date/);
 });
 
 test('unrecognised topic tags cannot silently disappear from resource filters', (t) => {

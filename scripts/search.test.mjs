@@ -5,6 +5,7 @@ import ts from 'typescript';
 import yaml from 'js-yaml';
 import { defaultSearchState, parseSearchState, serializeSearchState, searchEntries } from '../src/lib/search/engine.mjs';
 import { publishedItems } from '../src/lib/publication.mjs';
+import { resourceTopics } from '../src/lib/taxonomy.mjs';
 
 function entry(id, overrides = {}) {
   const type = overrides.type ?? 'book';
@@ -100,6 +101,7 @@ test('server adapter indexes published real collections, preserves unknowns and 
     assert.equal(item.minMonths, tool.minAge * 12);
     assert.equal(item.maxMonths, Math.min((tool.maxAge + 1) * 12 - 1, 215));
     assert.equal(item.path, `tools/${tool.id}`);
+    assert.equal(item.free, tool.free);
     assert.equal(item.ageLabel.en, `Ages ${tool.minAge}–${tool.maxAge}`);
     assert.equal(item.ageLabel.zh, `${tool.minAge}–${tool.maxAge} 岁`);
   }
@@ -113,12 +115,22 @@ test('server adapter indexes published real collections, preserves unknowns and 
   assert.ok(index.every((item) => item.languages.every((language) => ['en', 'zh', 'es', 'multi'].includes(language))));
   assert.ok(search(index, { q: 'programming', type: 'tool' }).some((item) => item.id === 'scratch'));
   for (const educator of collections.educators) {
+    const item = index.find((candidate) => candidate.key === `educator:${educator.id}`);
+    assert.ok(educator.topics.length > 0, `${educator.id}: explicit resource topics`);
+    assert.equal(new Set(educator.topics).size, educator.topics.length);
+    assert.ok(educator.topics.every((topic) => Object.hasOwn(resourceTopics, topic)), educator.id);
+    assert.deepEqual(item.topics, educator.topics, `${educator.id}: use editorial topics directly`);
     for (const lang of ['en', 'zh']) {
       for (const q of [educator.question[lang], ...educator.works.map((work) => work.title[lang])]) {
         assert.ok(search(index, { q, type: 'educator' }).some((item) => item.id === educator.id), `${educator.id}: ${q}`);
       }
     }
   }
+  const learningEducators = ids(search(index, { type: 'educator', topic: 'learning' }));
+  const freeTools = ids(search(index, { type: 'tool', free: true }));
+  for (const tool of collections.tools) assert.equal(freeTools.includes(tool.id), tool.free === true, tool.id);
+  for (const id of ['socrates', 'kant']) assert.ok(learningEducators.includes(id), id);
+  assert.deepEqual(search(index, { type: 'educator', topic: 'learning', age: 'school-age' }), []);
   const browserSource = readFileSync(new URL('../src/lib/search/engine.mjs', import.meta.url), 'utf8');
   assert.doesNotMatch(browserSource, /from\s+['"][^'"]*(?:data|index)(?:\.ts)?['"]/);
 });

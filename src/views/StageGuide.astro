@@ -4,7 +4,8 @@ import ResourceCard from '../components/ResourceCard.astro';
 import ResearchBehind from '../components/ResearchBehind.astro';
 import Cite from '../components/Cite.astro';
 import BookCard from '../components/BookCard.astro';
-import { stages, tools, sources, getResource, getEducator, researchFor, type Lang, type Stage } from '../lib/data';
+import { stages, tools, sources, getResource, getEducator, researchFor, ageLabel, type Lang, type Stage } from '../lib/data';
+import { dailyGuidance, guidanceLabels } from '../lib/daily-guidance.mjs';
 import { t, href, fmtDate } from '../i18n/ui';
 interface Props { lang: Lang; stage: Stage }
 const { lang, stage } = Astro.props;
@@ -81,7 +82,7 @@ const early = stage.maxMonths <= 71;
     </section>}
     {ageTools.length > 0 && (
       <div class="stack" style="gap:10px">
-        <div class="split"><h3 style="margin:0;font-size:var(--type-body)">{zh ? '适合这个年龄的免费工具' : 'Free tools for this age'}</h3><a href={href(lang, 'tools#criteria')}>{zh ? '我们怎么挑选工具' : 'How we choose tools'}</a></div>
+        <div class="split"><h3 style="margin:0;font-size:var(--type-body)">{zh ? '适合这个年龄的工具' : 'Tools for this age'}</h3><a href={href(lang, 'tools#criteria')}>{zh ? '我们怎么挑选工具' : 'How we choose tools'}</a></div>
         <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr))">
           {ageTools.map((x) => (
             <a class="card soft" href={href(lang, `tools/${x.id}`)} style="gap:4px;padding:14px 16px;text-decoration:none;color:var(--ink)">
@@ -98,7 +99,17 @@ const early = stage.maxMonths <= 71;
   <section id="health" class="stack" style="gap:16px;border-top:1px solid var(--line);padding-top:28px" aria-labelledby="hl-h">
     <div class="block-h"><span class="num">3</span><h2 id="hl-h" class="h-serif" style="font-size:var(--type-section);margin:0">{s.blocks.health}</h2></div>
     <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr))">
-      {stage.facts.map((f) => <div class="card" style="gap:4px;padding:14px"><span class="muted" style="font-size:var(--type-note)">{f.label[lang]}</span><span style="font-size:var(--type-body);font-weight:600">{f.value[lang]}</span><span class="muted" style="font-size:var(--type-note)">{f.source}</span></div>)}
+      {stage.facts.map((fact) => <div class="card" style="gap:12px;padding:14px" data-guidance-kind={fact.kind}>
+        <h3 style="margin:0;font-size:var(--type-body)">{guidanceLabels[fact.kind][lang]}</h3>
+        {fact.rules.map((id) => {
+          const rule = dailyGuidance.find((item) => item.id === id)!;
+          return <div class="stack" style="gap:4px" data-guidance-rule={rule.id}>
+            <b style="font-size:var(--type-ui)">{ageLabel(Math.max(stage.minMonths, rule.minMonths), Math.min(stage.maxMonths, rule.maxMonths), lang)}</b>
+            <p style="margin:0;font-size:var(--type-ui)">{rule.value[lang]}</p>
+            <div class="row">{rule.sources.map((src) => <Cite src={src} lang={lang} />)}</div>
+          </div>;
+        })}
+      </div>)}
     </div>
     <ul class="stack" style="list-style:none;padding:0;margin:0;gap:6px;font-size:var(--type-ui)">
       {links.map((r) => <li><a href={href(lang, `resources/${r.id}`)}>{r.title[lang]}</a> <span class="muted" style="font-size:var(--type-note)">· {r.by.split(',')[0]}</span></li>)}

@@ -45,18 +45,16 @@ export function buildSearchIndex(): SearchEntry[] {
       path: `tools/${tool.id}`, by: tool.by, minMonths: tool.minAge * 12,
       maxMonths: Math.min((tool.maxAge + 1) * 12 - 1, 215), topics: [...(tool.topics ?? [])],
       ageLabel: { en: `Ages ${tool.minAge}–${tool.maxAge}`, zh: `${tool.minAge}–${tool.maxAge} 岁` },
-      // Published tools are selected for free core access; optional extras may have fees.
-      free: true, languages: languageCodes(tool.languageCodes, tool.languages.en), sourceLanguage: tool.languages,
+      free: tool.free, languages: languageCodes(tool.languageCodes, tool.languages.en), sourceLanguage: tool.languages,
       keywords: [tool.subject, ...(tool.subject === 'coding' ? ['programming', '编程', '写代码'] : [])],
     });
   }
   for (const educator of educators) {
     if (educator.publicationStatus !== 'published') continue;
-    const claims = [educator.bio, educator.today, ...educator.ideas, ...educator.supported, ...educator.outdated];
     entries.push({
       ...empty(educator.id, 'educator'), title: educator.name,
       summary: { en: educator.bio.en, zh: educator.bio.zh }, path: `educators/${educator.id}`,
-      topics: relatedTopics([...claims.map((claim) => claim.src), ...educator.works.map((work) => work.src)]),
+      topics: [...educator.topics],
       keywords: [educator.role.en, educator.role.zh, educator.question.en, educator.question.zh,
         ...educator.ideas.flatMap((idea) => [idea.en, idea.zh]),
         ...educator.works.flatMap((work) => [work.title.en, work.title.zh])],

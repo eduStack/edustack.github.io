@@ -71,7 +71,7 @@ const config = JSON.stringify({
     let homeMode: HomeMode = readHomeMode();
     const buttonGroup = root.querySelector<HTMLElement>('[data-child-buttons]')!;
     const childSelect = root.querySelector<HTMLSelectElement>('[data-child-select]')!;
-    const message = root.querySelector<HTMLElement>('[data-profile-message]')!;
+    const message = document.querySelector<HTMLElement>('[data-home-message]') || root.querySelector<HTMLElement>('[data-profile-message]')!;
     const showMessage = (text: string) => { message.textContent = text; message.hidden = !text; };
     const render = () => {
       const profiles = readProfiles();
@@ -80,6 +80,7 @@ const config = JSON.stringify({
       const stage = config.stages.find((item: { min: number; max: number }) => months >= item.min && months <= item.max);
       const generalAnchor = ['#ages', '#topics', '#reading'].includes(location.hash);
       const personal = !!child && !!stage && homeMode === 'child' && !generalAnchor;
+      document.querySelectorAll<HTMLElement>('[data-home-child-choice]').forEach((choice) => { choice.hidden = !child || !stage || personal; });
       if (config.home) {
         document.documentElement.dataset.homeView = personal ? 'child' : 'general';
         document.querySelectorAll<HTMLElement>('[data-home-general]').forEach((node) => { node.hidden = personal; });
@@ -166,19 +167,17 @@ const config = JSON.stringify({
       if (button?.dataset.childChoice) chooseChild(button.dataset.childChoice);
     });
     childSelect.addEventListener('change', () => chooseChild(childSelect.value));
+    document.querySelectorAll('[data-home-child-choice]').forEach((choice) => choice.addEventListener('click', () => {
+      const child = selected(readProfiles().store);
+      if (child) chooseChild(child.id);
+    }));
     document.querySelectorAll('[data-home-general-choice]').forEach((choice) => choice.addEventListener('click', () => {
       homeMode = 'general'; const persisted = saveHomeMode(homeMode);
       render(); showMessage(persisted ? '' : config.copy.modeFailed);
     }));
     render();
-    window.addEventListener('edustack:profilechange', render);
+    window.addEventListener('edustack:profilechange', () => { homeMode = readHomeMode(); render(); });
     window.addEventListener('hashchange', render);
-    window.addEventListener('storage', (event) => {
-      if (event.key === null || event.key === 'edustack.profiles.v1' || event.key === 'edustack.home-view.v1') {
-        homeMode = readHomeMode();
-        window.dispatchEvent(new CustomEvent('edustack:profilechange'));
-      }
-    });
   }
 </script>
 <style>

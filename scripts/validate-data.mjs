@@ -4,6 +4,7 @@ import yaml from 'js-yaml';
 import { publicationStatuses, publishedItems } from '../src/lib/publication.mjs';
 import { developmentAreas, primaryStages, resourceTopics } from '../src/lib/taxonomy.mjs';
 import { educatorDirections, educatorRegions } from '../src/lib/educator-browse.mjs';
+import { dailyGuidance, guidanceLabels, guidanceForRange } from '../src/lib/daily-guidance.mjs';
 const load = (f) => yaml.load(readFileSync(new URL(`../src/data/${f}`, import.meta.url), 'utf8'));
 const errors = [];
 const collections = {};
@@ -51,7 +52,8 @@ for (const r of resources) {
     L(source.label, `${p}.sourceLinks.label`);
     if (!/^https:\/\//.test(source.url || '')) errors.push(`${p}: source link must be https`);
   }
-  if (r.type === 'guide' || r.type === 'classic') for (const key of ['purpose', 'audience', 'limits', 'access', 'checkedNote']) if (!r[key]) errors.push(`${p}: ${r.type} needs ${key}`);
+  for (const key of ['purpose', 'audience', 'limits', 'access', 'checkedNote']) if (!r[key]) errors.push(`${p}: ${r.type} needs ${key}`);
+  if (r.type === 'guideline') for (const key of ['sourceVersion', 'region']) if (!r[key]) errors.push(`${p}: guideline needs ${key}`);
   if (r.type === 'research' && !['meta-analysis', 'review', 'trial', 'cohort', 'experiment', 'observational', 'cross-sectional', 'large-dataset'].includes(r.design)) errors.push(`${p}: research needs a design`);
   if (r.type !== 'research' && r.design) errors.push(`${p}: only research has a design`);
   if (r.type === 'book' && (!r.isbn || !r.publisher)) errors.push(`${p}: books need isbn and publisher`);
@@ -63,6 +65,20 @@ for (const r of resources) (r.backedBy || []).forEach((id) => study(id, `resourc
 const need = (id, where) => { if (!ids.has(id)) errors.push(`${where}: unknown or unpublished resource ${id}`); };
 const srcOk = (src, where) => { if (ids.has(src) && Object.hasOwn(sources, src)) errors.push(`${where}: ambiguous source ${src}`); if (!ids.has(src) && !sources[src]) errors.push(`${where}: unknown source ${src}`); };
 const claim = (c, where) => { L(c, where); srcOk(c.src, where); };
+const ruleIds = new Set();
+for (const rule of dailyGuidance) {
+  const p = `guidance ${rule.id}`;
+  if (ruleIds.has(rule.id)) errors.push(`${p}: duplicate rule`);
+  ruleIds.add(rule.id);
+  ageRange(rule, p); L(rule.value, `${p}.value`);
+  if (!Object.hasOwn(guidanceLabels, rule.kind)) errors.push(`${p}: unknown kind`);
+  if (!Array.isArray(rule.sources) || !rule.sources.length) errors.push(`${p}: sources required`);
+  else rule.sources.forEach((src) => {
+    srcOk(src, p);
+    const resource = resources.find((item) => item.id === src);
+    if (resource && (rule.minMonths < resource.minMonths || rule.maxMonths > resource.maxMonths)) errors.push(`${p}: rule is outside source age range`);
+  });
+}
 for (const [k, v] of Object.entries(sources)) { L(v.label, `source ${k}.label`); if (!/^https:\/\//.test(v.url)) errors.push(`source ${k}: url must be https`); }
 const eduIds = new Set(educators.map((e) => e.id));
 for (const s of stages) {
@@ -70,6 +86,11 @@ for (const s of stages) {
   ageRange(s, p);
   validDate(s.updated, `${p}.updated`);
   for (const key of ['name', 'range', 'focus', 'intro']) L(s[key], `${p}.${key}`);
+  if (!Array.isArray(s.facts) || s.facts.length !== Object.keys(guidanceLabels).length || new Set(s.facts.map((fact) => fact.kind)).size !== s.facts.length) errors.push(`${p}: facts need each guidance kind once`);
+  for (const fact of Array.isArray(s.facts) ? s.facts : []) {
+    const expected = guidanceForRange(fact.kind, s.minMonths, s.maxMonths).map((rule) => rule.id).sort();
+    if (!Object.hasOwn(guidanceLabels, fact.kind) || !Array.isArray(fact.rules) || JSON.stringify([...fact.rules].sort()) !== JSON.stringify(expected)) errors.push(`${p}: facts ${fact.kind} must include exactly the applicable guidance rules`);
+  }
   srcOk(s.introSrc, `${p}.intro`);
   s.develop.areas.forEach((a) => {
     if (!developmentAreas.includes(a.area)) errors.push(`${p}: unknown development area ${a.area}`);
@@ -96,6 +117,7 @@ for (const e of educators) {
   if (e.birthYear !== null && (!Number.isInteger(e.birthYear) || e.birthYear === 0 || e.birthYear > new Date().getUTCFullYear())) errors.push(`${p}: birthYear must be a historical integer year or null`);
   if (!Object.hasOwn(educatorRegions, e.origin)) errors.push(`${p}: unknown origin ${e.origin}`);
   if (!Array.isArray(e.directions) || !e.directions.length || new Set(e.directions).size !== e.directions.length || e.directions.some((key) => !Object.hasOwn(educatorDirections, key))) errors.push(`${p}: directions must contain distinct known keys`);
+  if (!Array.isArray(e.topics) || !e.topics.length || new Set(e.topics).size !== e.topics.length || e.topics.some((key) => !Object.hasOwn(resourceTopics, key))) errors.push(`${p}: topics must contain distinct recognised resource topics`);
   L(e.name, `${p}.name`);
   for (const key of ['region', 'role', 'question', 'basis']) L(e[key], `${p}.${key}`);
   validDate(e.reviewed, `${p}.reviewed`);
@@ -184,6 +206,7 @@ for (const t of tips) { need(t.resource, `tip ${t.id}`); ageRange(t, `tip ${t.id
 for (const t of tools) {
   const p = `tool ${t.id}`;
   const kind = t.kind ?? 'external';
+  if (t.free !== null && typeof t.free !== 'boolean') errors.push(`${p}: free must be a recorded boolean or explicit null`);
   if (!['external', 'internal'].includes(kind)) errors.push(`${p}: unknown kind`);
   if (t.toolType !== undefined && !['browser-tool', 'learning-platform', 'picture-books', 'creative-platform', 'simulation'].includes(t.toolType)) errors.push(`${p}: unknown toolType`);
   if (kind === 'external') for (const k of ['url', 'privacy', 'backingUrl']) if (!/^https:\/\//.test(t[k] || '')) errors.push(`${p}: ${k} must be https`);
@@ -193,7 +216,9 @@ for (const t of tools) {
     if (!['task-breakdown', 'practical-tool'].includes(t.templateSource)) errors.push(`${p}: internal tool needs a templateSource`);
   }
   for (const key of ['what', 'languages', 'backing']) L(t[key], `${p}.${key}`);
-  for (const key of ['purpose', 'audience', 'limits', 'access', 'device', 'registration']) if (t[key] !== undefined) L(t[key], `${p}.${key}`);
+  for (const key of ['purpose', 'audience', 'limits', 'access', 'device', 'registration', 'checkedNote']) L(t[key], `${p}.${key}`);
+  if (!['verified', 'partial', 'unverified'].includes(t.verificationStatus)) errors.push(`${p}: needs verificationStatus`);
+  if (t.verificationStatus !== 'unverified' && !t.checked) errors.push(`${p}: checked or partial verification needs a date`);
   if (!Number.isInteger(t.minAge) || !Number.isInteger(t.maxAge) || t.minAge < 0 || t.maxAge < t.minAge || t.maxAge > 18) errors.push(`${p}: bad age range`);
   if (!['early', 'general', 'coding', 'science', 'reading'].includes(t.subject)) errors.push(`${p}: unknown subject`);
   if (t.topics !== undefined && (!Array.isArray(t.topics) || t.topics.some((key) => !Object.hasOwn(resourceTopics, key)))) errors.push(`${p}: needs recognised topics`);

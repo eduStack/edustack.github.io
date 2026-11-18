@@ -15,6 +15,7 @@ import { getResource, getActivity, stages, topics } from '../lib/data';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
+const zh = lang === 'zh';
 const copy = editorialCopy[lang];
 const localPath = (path: string) => href(lang, path);
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -67,6 +68,7 @@ const nurturingCare = getResource('nurturing-care-framework-2018');
         <div class="opening-copy" data-home-general>
           <h1 id="opening-title">{copy.headline}</h1>
           <p>{copy.intro}</p>
+          <button class="btn btn-ghost" type="button" data-home-child-choice hidden>{zh ? '返回孩子的精选首页' : 'Return to your child’s selections'}</button>
         </div>
         <form id="search-panel" class="search-panel" role="search" aria-label={copy.searchLabel} action={localPath('library/')} method="get">
           <label for="resource-search">{copy.searchQuestion}</label>
@@ -75,6 +77,7 @@ const nurturingCare = getResource('nurturing-care-framework-2018');
       </section>
 
       <p id="home-view-note" class="home-view-note" role="status" hidden></p>
+      <p data-home-message class="home-view-note" role="status" hidden></p>
       <PersonalHome lang={lang} />
       <PwaInstall lang={lang} />
       <div data-home-general>

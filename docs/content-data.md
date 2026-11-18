@@ -74,14 +74,14 @@ fallback translates a missing Chinese or English editorial field.
 | `evidenceNote` | O, L10n; source-specific evidence or reading limits |
 | `language` | R, string; recorded source-language description |
 | `languageCodes` | O, nonempty string list from `en`, `zh`, `es`, `multi`; verified source languages; search otherwise derives limited codes from the recorded language description |
-| `region`, `sourceVersion` | O, L10n; jurisdiction/population and actual source edition/revision notes |
+| `region`, `sourceVersion` | C for guidelines, otherwise O, L10n; jurisdiction/population and actual source edition/revision notes |
 | `free` | R, boolean; recorded free-reading access, not reuse permission |
 | `minMonths`, `maxMonths`, `sex` | R; inclusive editorial relevance range and `all`, `male`, `female`; sex specificity is for relevant growth/puberty content |
 | `topics` | R, nonempty tag list; subject/question tags |
 | `core` | O, boolean; editorial priority; absent behaves as false |
 | `whyAge` | O, L10n; why the editorial age range is useful; preserve actual source population |
 | `keyPoints`, `actions` | O, L10nList; source-grounded points and practical implications in our own words |
-| `purpose`, `audience`, `limits`, `access`, `checkedNote` | O, L10n; required for `guide` and `classic`; explain use, intended reader, limitations, access conditions and what was checked |
+| `purpose`, `audience`, `limits`, `access`, `checkedNote` | R, L10n for every published resource; explain use, intended reader, limitations, access conditions and what was checked |
 | `sourceLinks` | O, `{ label: L10n, url: HTTPS }[]`; additional public evidence/version/access links |
 | `checked` | R, date; when recorded source details and link were actually checked |
 | `backedBy` | O, resource ID list; published research explaining evidence behind this entry |
@@ -93,7 +93,7 @@ fallback translates a missing Chinese or English editorial field.
 | `url`, `doi`, `isbn`, `publisher` | R HTTPS source URL; O string identifiers/publisher; ISBN and publisher required for books; ISBN generates the WorldCat lookup |
 | `evidenceNote` | O, L10n; source-specific method/evidence explanation |
 | `language`, `languageCodes` | R string source-language description; O nonempty verified code list: `en`, `zh`, `es`, `multi`; absent codes use limited label parsing in search, not assumed translation availability |
-| `region`, `sourceVersion` | O, L10n; source applicability and recorded edition/version, without inventing a revision date |
+| `region`, `sourceVersion` | C for guidelines, otherwise O, L10n; source applicability and recorded edition/version, without inventing a revision date |
 | `free` | R, boolean; free source access; false does not prevent a free eduStack introduction |
 | `sex` | R; `all`, `male`, `female`; source applicability, used where growth/puberty requires it |
 
@@ -152,6 +152,7 @@ There is no tip publication/update date field or activity ID field today.
 | `region` | R, L10n; fuller associated place/context description |
 | `origin` | R, region key in `educatorRegions`; one browsing association, not exhaustive nationality/activity |
 | `directions` | R, nonempty distinct `educatorDirections` keys; overlapping editorial reading directions; first controls grouping |
+| `topics` | R, distinct nonempty resource taxonomy tags selected from the actual ideas; independent of citation format and historical directions |
 | `role`, `question`, `basis` | R, L10n; role, family reading question and actual reading basis |
 | `reviewed` | R, date; editorial review, not a claim to have checked every external source or read each full work |
 | `works` | R, `{ title: L10n, note: L10n, src: string }[]`; selected title, edition/read-scope note and resolvable source; no independent work database |
@@ -179,21 +180,24 @@ store. Retain a source while any public claim still uses it.
 | Fields | Requirement, type and meaning |
 | --- | --- |
 | `id`, `publicationStatus` | R; shared conventions |
-| `name`, `by` | R, strings; product and responsible provider |
-| `url`, `privacy`, `backingUrl` | R, HTTPS; tool access, privacy information and the recorded supporting/context page |
+| `name`, `by` | R, L10n name (legacy external strings normalize to L10n) and string provider |
+| `url`, `privacy`, `backingUrl` | C for external tools, HTTPS; tool access, privacy and context. Internal tools instead use a local `route`, versioned `storageKey`, and `templateSource` |
 | `minAge`, `maxAge` | R, inclusive integer years, `0 <= minAge <= maxAge <= 18`; preserve the displayed source labels |
+| `free` | R, boolean or explicit null; confirmed core access cost, unknown does not satisfy the free-only filter |
 | `subject` | R; `early`, `general`, `coding`, `science`, `reading` |
 | `what`, `languages`, `backing` | R, L10n; purpose summary, language description and the exact nature of recorded backing |
 | `topics` | O, tag list; absent means no explicit tags |
 | `relatedResources` | O, resource ID list; further reading; does not imply the tool was evaluated by those studies |
 | `languageCodes` | O, nonempty list from `en`, `zh`, `es`, `multi`; same verified-language convention as resources |
-| `purpose`, `audience`, `limits`, `access`, `device`, `registration` | O, L10n; task, intended users, restrictions, cost/access, device and account requirements; missing details remain unrecorded |
-| `checked` | O, date; genuine source check, never template creation |
+| `purpose`, `audience`, `limits`, `access`, `device`, `registration`, `checkedNote` | R, L10n; task, intended users, restrictions, cost/access, device, account and actual verification scope; explicitly state unknown details |
+| `verificationStatus` | R; `verified`, `partial` or `unverified`; the note must identify scope, not imply full product certification |
+| `checked` | C for verified/partial records, date; actual review or attempt described in checkedNote, never template creation or a claim that all features were tested |
 
-The current index treats published external tools as free for core access;
-optional fees still need accurate `access` text. This is adapter behaviour,
-not a new `free` field on tools. Unknown account, device or regional conditions
-must not be replaced by optimistic defaults.
+Tool `free` is required and tri-state: true for recorded free core access,
+false for known paid core access, null when current free access is unverified.
+The free-only filter excludes unknowns. Optional fees still need accurate
+`access` text. Account, device, advertising and regional conditions must not be
+inferred from a free-core check; `checkedNote` records the narrower scope.
 
 ## Topic Pages
 
@@ -227,15 +231,19 @@ selected cards retain their own ages. A `tags` value is not a topic-page ID.
 | `develop` | R, `{ areas: { area: string, points: Claim[] }[], concern: Claim }`; `area` is a development-area key, not a topic tag |
 | `activities` | R, Claim list; legacy short cited suggestions, distinct from independent activity ID selections |
 | `health` | R, `{ links: string[], extra: string[] }`; non-research resource IDs and source-dictionary keys respectively |
-| `facts` | R, `{ label: L10n, value: L10n, source: string }[]`; cited facts; source uses legacy citation semantics |
+| `facts` | R, `{ kind: string, rules: string[] }[]` (sleep, activity, screen); each kind once, referencing exactly the shared rules applicable to this stage |
 | `research`, `picks` | O, resource ID lists; research background and non-research selections; picks must overlap stage age |
 | `roots` | R, `{ educator: string, en: string, zh: string }[]`; published educator IDs and bilingual relevance explanation |
 | `reading` | R, book resource ID list; maximum two further-reading books |
 | `learning` | O, boolean; existing learning-section display flag; absent is false |
 | `updated` | R, date; editorial change to stage guide |
 
-Stage `facts` remains in the interface; it is not a separate fact collection
-and is not comprehensively validated by the current data script.
+Stage facts and the daily-routine tool share `src/lib/daily-guidance.mjs`. Each
+rule has an ID, kind, inclusive month bounds, bilingual value and resolvable
+source IDs. Sleep rules also contain numeric bounds. Stage facts select rule
+IDs only; the validator checks selections, source scope and publication.
+The guide displays each applicable age band and links its sources, so a stage
+may show more than one recommendation. Never duplicate thresholds in a view.
 
 | Stage-home fields | Requirement, type and meaning |
 | --- | --- |
@@ -264,7 +272,8 @@ All public targets must be published, except public citation dictionary entries.
 | --- | --- | --- |
 | Resource `backedBy` | Research resources, many | Evidence/background; `supportedBy(id).resources` |
 | Stage/topic `research` | Research resources, many | Explicit research context; `supportedBy(id).stages/topics` |
-| Claims `src`, stage `introSrc`/fact `source`, educator `works[].src`, activity/section `citations[].src` | Resource or source dictionary, one per claim/citation | Direct source for bounded text; resolve with `cite`; educator backlinks included in `supportedBy`; activity citations in `activitiesForResource`; topic sections in `topicsForResource` |
+| Stage `facts[].rules` | Shared guidance rules, many | Exact applicable rules; each rule links resource/source IDs through `Cite`; values are reused by the routine tool |
+| Claims `src`, stage `introSrc`, educator `works[].src`, activity/section `citations[].src` | Resource or source dictionary, one per claim/citation | Direct source for bounded text; resolve with `cite`; educator backlinks included in `supportedBy`; activity citations in `activitiesForResource`; topic sections in `topicsForResource` |
 | Stage `health.links`, `picks`, `reading`; stage-home resource selections | Resources, many; reflection one | Editorial reading selections; `stagesForResource` aggregates these, not every stage claim |
 | Stage `health.extra` | Source dictionary keys, many | Additional public health pointers; forward citation links |
 | Stage `roots[].educator` | Educators, many | Historical reading connection; `stagesFor(educatorId)` |
@@ -275,7 +284,7 @@ All public targets must be published, except public citation dictionary entries.
 | Topic `activities`, `tools` | Activities/tools, many | Editorial composition and reason; `topicsForActivity` derives activity backlinks; tool selections currently forward only |
 | Stage-home `activities`, `tools`, `topics` | Activities/tools/ready topics, many | Stage editorial selection with reason; consumed by stage/home views; no persisted reverse list |
 | Tip `resource` | Resource, one | Source reading for suggestion; forward lookup |
-| Resource/tool/activity `topics`; topic `tags` | Taxonomy keys, many | Search classification, not page-to-page relationships |
+| Resource/tool/activity/educator `topics`; topic `tags` | Taxonomy keys, many | Search classification, not page-to-page relationships |
 
 `researchFor(ids, extra)` combines explicit research IDs with resources'
 `backedBy` without duplicates. Reverse helpers are intentionally small and

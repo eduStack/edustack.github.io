@@ -1,0 +1,30 @@
+---
+import { activitiesForTool, getResource, stages, type Lang, type Tool } from '../lib/data';
+import { href, fmtDate } from '../i18n/ui';
+interface Props { tool: Tool; lang: Lang }
+const { tool, lang } = Astro.props;
+const zh = lang === 'zh';
+const readings = (tool.relatedResources ?? []).map(getResource);
+const activities = activitiesForTool(tool.id);
+const relatedStages = stages.filter((stage) => tool.minAge * 12 <= stage.maxMonths && (tool.maxAge + 1) * 12 - 1 >= stage.minMonths);
+---
+<section class="card tool-context stack" data-tool-context={tool.id}>
+  <h2>{zh ? '设计依据与限制' : 'Design basis and limits'}</h2>
+  <p class="prose">{tool.backing[lang]}</p>
+  {tool.limits && <p class="prose">{tool.limits[lang]}</p>}
+  <p class="muted">{zh ? '以下资料提供背景与设计参考，不表示原机构验证或认可了本站工具。' : 'These readings provide background and design context. They do not establish that their authors evaluated or endorsed this tool.'}</p>
+  {readings.length > 0 && <div class="stack"><h3>{zh ? '依据与延伸阅读' : 'Sources and further reading'}</h3><ul>{readings.map((resource) => <li><a href={href(lang, `resources/${resource.id}`)}>{resource.title[lang]}</a></li>)}</ul></div>}
+  {activities.length > 0 && <div class="stack"><h3>{zh ? '可以配合的活动' : 'Activities to try'}</h3><ul>{activities.map((activity) => <li><a href={href(lang, `activities/${activity.id}`)}>{activity.title[lang]}</a></li>)}</ul></div>}
+  <div class="stack"><h3>{zh ? '相关成长阶段' : 'Related stages'}</h3><div class="row">{relatedStages.map((stage) => <a href={href(lang, `ages/${stage.id}`)}>{stage.name[lang]} · {stage.range[lang]}</a>)}</div></div>
+  {tool.checkedNote && <p class="muted" data-tool-check>{tool.checked && `${fmtDate(tool.checked, lang)} · `}{tool.checkedNote[lang]}</p>}
+</section>
+<style>
+  .tool-context { max-width:56rem; }
+  h2,h3,p,ul { margin:0; }
+  h2 { font-size:var(--type-section); }
+  h3 { font-size:var(--type-body); }
+  ul { padding-inline-start:1.3rem; }
+  li + li { margin-block-start:.5rem; }
+  .muted { font-size:var(--type-ui); }
+  @media print { .tool-context { display:none; } }
+</style>

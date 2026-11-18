@@ -31,7 +31,8 @@ them, and preserve accurate source names and citations.
 | `/me/` | Local child profiles and age-based suggestions; explains out-of-range ages and keeps general browsing available | Add more reviewed profile-relevant content without collecting extra personal data |
 | `/reference/` | Fixed original static design, including its page directory | Keep the snapshot unchanged |
 
-The main menu order is Home, By age, Tools, Educators, Topics, Library, My child.
+The main menu order is Home, By age, Activities, Tools, Educators, Topics, Library.
+My child remains in the header context, not the primary menu.
 The homepage alone adds Search at the right edge. Reserve the same search
 space on interior pages so the other links do not move between pages. Use equal
 left and right columns to centre the main menu independently of Search. On
@@ -184,8 +185,8 @@ have links to the corresponding full guide sections.
 | `minMonths`, `maxMonths` | Inclusive month ranges for resources, stages and tips |
 | Tool `minAge`, `maxAge` | Existing inclusive year labels; keep distinct from month fields |
 | `topics` | One or more keys in `resourceTopics`; currently on resources |
-| `purpose`, `audience`, `limits`, `access`, `checkedNote` | What it solves, who can use it, limits, availability and what was checked; required for practical guides and classic readings, optional source-specific information for other types; templates label missing details honestly |
-| `region`, `sourceVersion` | Optional bilingual source applicability and version/edition notes; keep original publication, revision and check dates distinct |
+| `purpose`, `audience`, `limits`, `access`, `checkedNote` | What it solves, who can use it, limits, availability and what was checked; required for every published reading resource; record source-specific limits and the actual scope checked, including unresolved access |
+| `region`, `sourceVersion` | Required for guidelines, optional for other readings; applicability and recorded edition, without claiming current-version verification; keep original publication, revision and check dates distinct |
 | `language`, `free` | Source languages and free-reading status; do not imply that every linked book or paper is free |
 | `checked` | Date source link and recorded details were actually checked |
 | Stage/topic `updated` | Date editorial content changed; separate from source checks |
@@ -198,9 +199,12 @@ have links to the corresponding full guide sections.
 Tools use their own collection and inclusive year labels. The shared search
 converts these to inclusive months but preserves original year labels for
 display. Tool `topics` and `relatedResources` connect readings and stages;
-these links are not evaluations or endorsements. Optional bilingual `purpose`,
-`audience`, `limits`, `access`, `device` and `registration` explain use. Optional
-`checked` is a genuine source-check date, never the template creation date.
+these links are not evaluations or endorsements. Required bilingual `purpose`,
+`audience`, `limits`, `access`, `device`, `registration` and `checkedNote` explain use
+and the scope actually checked. `verificationStatus` is `verified`, `partial` or
+`unverified`; partial/verified records require a real `checked` date. A partial
+check is not confirmation of untested accounts, fees or all current features.
+Internal tools describe local implementation review separately from source checks.
 Missing device, account, region or revision information stays explicitly
 unrecorded. `languageCodes` may specify verified `en`, `zh`, `es` or `multi`;
 multilingual without a recorded list does not imply every particular language.
@@ -471,3 +475,53 @@ optional, and their original source limitations must remain intact. Short tips
 and stage-guide suggestions are not automatically upgraded to activity records.
 The activity release and draft exclusion use the existing publication boundary.
 Activity dates refer to publication here, rather than the cited source's date.
+
+## Shared Guidance And Content Integrity
+
+Stage health facts and the daily-routine tool share the sourced, inclusive
+month rules in `src/lib/daily-guidance.mjs`. Select sleep, movement and screen
+rules independently: WHO movement guidance changes at five, AASM sleep
+guidance at six and thirteen, and young infants need month precision.
+Stage cards show the age-specific values and linked sources. Tool inputs must
+distinguish missing values from zero and validate required fields and ranges.
+BMI uses height and weight only; age and sex are optional recording details.
+
+Internal tool names and descriptions come from `tools.yaml`. Their operation
+pages use `ToolContext.astro` for design limits, linked reading, activities,
+stages and the recorded review scope. Original observation prompts are not
+age-specific milestones or validated screening instruments.
+
+Tool controls start inside a disabled fieldset and become available only after
+their script has initialised; a readable explanation remains when scripting is
+unavailable. Saved tools mark new edits as unsaved, keep that state on storage
+failure and use the browser's leave warning for navigation, refresh and language
+changes. Restoring a task must confirm replacement of an unsaved draft. Dynamic
+step operations preserve focus by step ID, falling back to the adjacent step
+after deletion or its text field if an action becomes disabled.
+
+`client.ts` forwards relevant local-storage events to `edustack:profilechange`;
+individual consumers must not install additional storage-to-profile bridges.
+Handle profile, homepage-mode and whole-storage clearing events, ignore other
+keys and session storage, and preserve explicit public filters. A tool save must
+not rebuild the child menu. Long names wrap inside the header and its popup.
+
+Tools offer direct section links and expandable selection criteria. Comparison
+tables keep their row/column semantics inside a labelled, focusable scrolling
+region. Tool printouts omit site navigation and footer, retain record context
+and limits, and include the selected observation age band as text.
+
+After building, run `npm run test:frontend:browser` for the bilingual interaction
+regressions, including cross-tab clearing, dirty drafts, keyboard focus, long
+names, 320px/200% text, print media and unavailable JavaScript. The Playwright
+executable override described in the release checks also applies. These tests
+do not replace real-device, screen-reader or installed-PWA acceptance.
+
+Educator search topics are explicit editorial tags, independent of citation
+storage and historical reading directions. Related resource suggestions must
+share a topic and overlap ages, with stable ordering independent of YAML order.
+`age-label.mjs` labels inclusive ranges without adding an excluded birthday;
+the five broad navigation transition labels retain their established wording.
+
+External link maintenance deduplicates all recorded public URLs and separates
+internal routes, invalid values and HTTP access restrictions. Its date or a
+successful request does not establish an editorial, clinical or rights review.

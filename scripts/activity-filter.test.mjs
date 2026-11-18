@@ -10,7 +10,7 @@ test('activity labels describe the inclusive last birthday without adding a year
   assert.equal(activityAgeLabel(48, 71, 'en'), 'Ages 4–5');
   assert.equal(activityAgeLabel(72, 143, 'zh'), '6–11 岁');
   assert.equal(activityAgeLabel(48, 59, 'en'), 'Ages 4');
-  assert.equal(activityAgeLabel(48, 72, 'en'), '48–72 months');
+  assert.equal(activityAgeLabel(48, 72, 'en'), '4 years–6 years');
 });
 test('activities respect exact inclusive month boundaries and intersect all conditions', () => {
   for (const [month, ids] of [[47, []], [48, ['a']], [71, ['a']], [72, ['b']], [143, ['b']], [144, []]])

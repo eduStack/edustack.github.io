@@ -175,3 +175,19 @@
   font-display: block;
   unicode-range: U+5151, U+5201, U+5242, U+5319, U+5C16, U+5C3E, U+5E3D, U+677E, U+70ED, U+786C, U+7EA0, U+7ED1, U+8212, U+82B1, U+836F, U+88C1, U+8D76, U+94A5, U+94BB, U+9510, U+9732, U+987F, U+9A76, U+9A7E;
 }
+
+@font-face {
+  font-family: ReadingSans;
+  src: url('/editorial/reading-sans-extended-12.woff2') format('woff2');
+  font-weight: 400;
+  font-display: block;
+  unicode-range: U+4E22, U+4E4F, U+4ED8, U+4FD7, U+501A, U+5398, U+53F8, U+541E, U+54A8, U+54BD, U+58F3, U+59FF, U+5B55, U+5B9C, U+5BA0, U+5F81, U+5F84, U+5FAE, U+5FE7, U+614E, U+62C6, U+632F, U+65A4, U+676F, U+6C27, U+6CE3, U+6D01, U+6E20, U+731C, U+75C5, U+788E, U+78C1, U+7BEE, U+7C73, U+8089, U+808C, U+8138, U+8349, U+8BC9, U+8C28, U+8D8B, U+8FA8, U+9001, U+9006, U+961F, U+963B, U+989C, U+9AA8, U+9ABC;
+}
+
+@font-face {
+  font-family: EditorialSerif;
+  src: url('/editorial/editorial-serif-extended-12.woff2') format('woff2');
+  font-weight: 600;
+  font-display: block;
+  unicode-range: U+4E22, U+4E4F, U+4ED8, U+4FD7, U+501A, U+5398, U+53F8, U+541E, U+54A8, U+54BD, U+58F3, U+59FF, U+5B55, U+5B9C, U+5BA0, U+5F81, U+5F84, U+5FAE, U+5FE7, U+614E, U+62C6, U+632F, U+65A4, U+676F, U+6C27, U+6CE3, U+6D01, U+6E20, U+731C, U+75C5, U+788E, U+78C1, U+7BEE, U+7C73, U+8089, U+808C, U+8138, U+8349, U+8BC9, U+8C28, U+8D8B, U+8FA8, U+9001, U+9006, U+961F, U+963B, U+989C, U+9AA8, U+9ABC;
+}

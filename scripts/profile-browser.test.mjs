@@ -40,11 +40,22 @@ after(async () => {
   if (server?.listening) await new Promise((resolve) => server.close(resolve));
 });
 const settledHome = (page) => page.waitForFunction(() => !!document.documentElement.dataset.homeView && !document.documentElement.hasAttribute('data-home-pending'));
+async function openChildMenu(page) {
+  const menu = page.locator('[data-header-menu]');
+  if (!await menu.isVisible()) await page.locator('[data-header-trigger]').click();
+  await menu.waitFor({ state: 'visible' });
+  return menu;
+}
+async function chooseChild(page, id) {
+  const menu = await openChildMenu(page);
+  await menu.locator(`[data-child-id="${id}"]`).click();
+}
 const settledLibrary = (page) => page.waitForFunction(() => document.getElementById('toggle-filters')?.hidden === false);
 async function fixture(t, prefix = '', value = store()) {
   const context = await browser.newContext({ serviceWorkers: 'block', viewport: { width: 1280, height: 900 } });
   t.after(() => context.close());
   const page = await context.newPage();
+  page.setDefaultTimeout(10000);
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto(origin + prefix + '/');
@@ -94,7 +105,10 @@ for (const prefix of ['', '/zh']) {
       assert.equal(await page.locator('[data-home-recent-empty]:visible').count(), 1);
       if (months === 36) assert.equal(await page.locator('[data-tool="scratchjr"]:visible').count(), 0);
       if (months === 60) assert.equal(await page.locator('[data-tool="scratchjr"]:visible').count(), 1);
-      if (months === 72) assert.equal(await page.locator(`#home-${stage}-tools [data-home-age-empty]`).isVisible(), true);
+      if (months === 72) {
+        assert.equal(await page.locator('[data-tool="task-breakdown"]:visible').count(), 1);
+        assert.equal(await page.locator(`#home-${stage}-tools [data-home-age-empty]`).isVisible(), false);
+      }
       assert.equal(new URL(page.url()).search, '');
     }
     await page.evaluate(({ key, value }) => localStorage.setItem(key, JSON.stringify(value)), { key, value: store([child(216)]) });
@@ -108,31 +122,32 @@ for (const prefix of ['', '/zh']) {
     const value = store([child(36), child(156, { id: 'second-child', name: '<b>Second</b>' })]);
     const { page, visit } = await fixture(t, prefix, value);
     await visit('/');
-    const second = page.locator('[data-child-choice="second-child"]');
+    await openChildMenu(page);
+    const second = page.locator('[data-header-menu] [data-child-id="second-child"]');
     await second.focus(); await second.press('Enter');
-    assert.equal(await second.getAttribute('aria-pressed'), 'true');
-    assert.equal(await second.evaluate((node) => document.activeElement === node), true);
+    assert.equal(await second.evaluate((node) => node.classList.contains('selected')), true);
+    assert.equal(await page.locator('[data-header-trigger]').evaluate((node) => document.activeElement === node), true);
     assert.equal(await page.locator('[data-home-stage="teens"]').isVisible(), true);
-    assert.equal(await page.locator('[data-child-buttons] b').count(), 0);
+    assert.equal(await page.locator('[data-header-menu] b').count(), 0);
     await page.reload(); await settledHome(page);
     assert.equal(await page.locator('[data-home-stage="teens"]').isVisible(), true);
     await page.locator('.language-switcher a').click(); await settledHome(page);
     assert.equal(await page.locator('[data-home-stage="teens"]').isVisible(), true);
     assert.equal(new URL(page.url()).search, '');
     await visit('/library/?age=babies');
-    await page.locator('[data-child-choice="review-child"]').click();
+    await chooseChild(page, 'review-child');
     assert.equal(await page.locator('#age').inputValue(), 'babies');
     await visit('/library/');
-    assert.equal(await page.locator('#age').inputValue(), '36');
-    await page.locator('[data-child-choice="second-child"]').click();
-    assert.equal(await page.locator('#age').inputValue(), '156');
+    assert.equal(await page.locator('#age').inputValue(), 'year:3');
+    await chooseChild(page, 'second-child');
+    assert.equal(await page.locator('#age').inputValue(), 'year:13');
     assert.equal(new URL(page.url()).searchParams.has('age'), false);
   });
 
   test(`${lang}: general homepage mode persists independently and the selected child can restore it`, async (t) => {
     const { page, visit } = await fixture(t, prefix);
     await visit('/');
-    await page.locator('[data-home-general-choice]').click();
+    await page.locator('[data-home-general-choice]:visible').click();
     assert.equal(await page.locator('.lead-grid').isVisible(), true);
     const saved = await page.evaluate((key) => JSON.parse(localStorage.getItem(key)), key);
     assert.equal(saved.sel, 'review-child');
@@ -141,13 +156,13 @@ for (const prefix of ['', '/zh']) {
     assert.equal(await page.locator('.lead-grid').isVisible(), true);
     await page.locator('.language-switcher a').click(); await settledHome(page);
     assert.equal(await page.locator('.lead-grid').isVisible(), true);
-    await page.locator('[data-child-choice="review-child"]').click();
+    await page.locator('[data-home-child-choice]:visible').click();
     assert.equal(await page.locator('[data-home-stage="preschoolers"]').isVisible(), true);
     await page.reload(); await settledHome(page);
     assert.equal(await page.locator('[data-home-stage="preschoolers"]').isVisible(), true);
     await visit('/#ages');
     assert.equal(await page.locator('#ages').isVisible(), true);
-    await page.locator('[data-child-choice="review-child"]').click();
+    await page.locator('[data-home-child-choice]:visible').click();
     assert.equal(await page.locator('[data-home-stage="preschoolers"]').isVisible(), true);
     assert.equal(new URL(page.url()).hash, '');
     await page.locator('.language-switcher a').click(); await settledHome(page);
@@ -155,20 +170,26 @@ for (const prefix of ['', '/zh']) {
     assert.equal(await page.locator('[data-home-stage="preschoolers"]').isVisible(), true);
   });
 
-  test(`${lang}: four or more children use a labelled selector that restores the current child from general mode`, async (t) => {
+  test(`${lang}: four children use the header menu at mobile width and restore the selected child from general mode`, async (t) => {
     const value = store(Array.from({ length: 4 }, (_, i) => child(36 + i * 36, { id: `child-${i}`, name: '' })));
     const { page, visit } = await fixture(t, prefix, value);
     await page.setViewportSize({ width: 320, height: 800 });
     await visit('/');
-    const select = page.locator('[data-child-select]');
-    assert.equal(await select.isVisible(), true);
-    await select.selectOption('child-3');
+    const menu = await openChildMenu(page);
+    assert.equal(await menu.locator('[data-child-id]').count(), 4);
+    await chooseChild(page, 'child-3');
     assert.equal(await page.locator('[data-home-stage="teens"]').isVisible(), true);
-    await page.locator('[data-home-general-choice]').click();
-    assert.equal(await select.inputValue(), '');
-    await select.selectOption('child-3');
+    await page.locator('[data-home-general-choice]:visible').click();
+    assert.equal(await page.locator('.lead-grid').isVisible(), true);
+    await chooseChild(page, 'child-3');
     assert.equal(await page.locator('[data-home-stage="teens"]').isVisible(), true);
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), true);
+    await visit('/#ages');
+    await chooseChild(page, 'child-3');
+    assert.equal(new URL(page.url()).hash, '');
+    await page.locator('.language-switcher a').click(); await settledHome(page);
+    assert.equal(new URL(page.url()).hash, '');
+    assert.equal(await page.locator('[data-home-stage="teens"]').isVisible(), true);
   });
 
   test(`${lang}: failed child switches preserve selection and failed homepage preferences are explained`, async (t) => {
@@ -176,13 +197,13 @@ for (const prefix of ['', '/zh']) {
     const { page, visit } = await fixture(t, prefix, value);
     await visit('/');
     await page.evaluate(() => { Storage.prototype.setItem = () => { throw new DOMException('Full', 'QuotaExceededError'); }; });
-    await page.locator('[data-child-choice="second-child"]').click();
+    await chooseChild(page, 'second-child');
     assert.equal(await page.locator('[data-home-stage="preschoolers"]').isVisible(), true);
     assert.equal(await page.evaluate((key) => JSON.parse(localStorage.getItem(key)).sel, key), 'review-child');
-    assert.match(await page.locator('[data-profile-message]').innerText(), prefix ? /无法保存切换/ : /switch could not be saved/);
-    await page.locator('[data-home-general-choice]').click();
+    assert.match(await page.locator('[data-header-message]:visible').innerText(), prefix ? /无法保存切换/ : /switch could not be saved/);
+    await page.locator('[data-home-general-choice]:visible').click();
     assert.equal(await page.locator('.lead-grid').isVisible(), true);
-    assert.match(await page.locator('[data-profile-message]').innerText(), prefix ? /无法记住/ : /could not be saved/);
+    assert.match(await page.locator('[data-home-message]:visible').innerText(), prefix ? /无法记住/ : /could not be saved/);
   });
 
   test(`${lang}: another tab switching or clearing profiles refreshes the homepage without private remnants`, async (t) => {
@@ -191,13 +212,15 @@ for (const prefix of ['', '/zh']) {
     await visit('/');
     const other = await context.newPage();
     await other.goto(origin + prefix + '/');
-    await other.locator('[data-child-choice="second-child"]').click();
+    await chooseChild(other, 'second-child');
     await page.waitForSelector('[data-home-stage="teens"]:visible');
     await other.goto(origin + prefix + '/me/');
     await other.locator('#clear-btn').click(); await other.locator('#clear-btn').click();
     await page.waitForSelector('.lead-grid:visible');
     assert.equal((await page.locator('body').textContent()).includes('Synthetic nickname'), false);
-    assert.equal(await page.locator('[data-child-buttons] button').count(), 0);
+    assert.equal(await page.locator('[data-header-menu] button').count(), 0);
+    assert.equal(await page.locator('[data-header-child]').textContent(), '');
+    assert.equal(await page.locator('[data-header-stage]').textContent(), '');
   });
 
   test(`${lang}: profile management refreshes external selections and cannot restore profiles deleted in another tab`, async (t) => {
@@ -207,10 +230,10 @@ for (const prefix of ['', '/zh']) {
     assert.equal(await page.locator('.profile-child-controls').isVisible(), false);
     await page.locator('#kids [data-id="second-child"]').click();
     assert.match(await page.locator('#v-title').innerText(), /Second/);
-    assert.match(await page.locator('[data-profile-context] [data-title]').innerText(), /Second/);
+    assert.match(await page.locator('[data-header-child]').innerText(), /Second/);
     const other = await context.newPage();
     await other.goto(origin + prefix + '/');
-    await other.locator('[data-child-choice="review-child"]').click();
+    await chooseChild(other, 'review-child');
     await page.waitForFunction(() => document.querySelector('#v-title').textContent.includes('Synthetic nickname'));
     await page.locator('#export-btn').click();
     await page.locator('#edit-btn').click();
@@ -224,6 +247,8 @@ for (const prefix of ['', '/zh']) {
     assert.equal(await page.locator('#kids button').count(), 0);
     assert.equal((await page.locator('body').textContent()).includes('Synthetic nickname'), false);
     assert.equal(await page.evaluate((key) => localStorage.getItem(key), key), null);
+    assert.equal(await page.locator('[data-header-child]').textContent(), '');
+    assert.equal(await page.locator('[data-header-stage]').textContent(), '');
   });
 
   test(`${lang}: import rejects injected IDs, invalid dates and duplicates without changing existing records`, async (t) => {
@@ -261,13 +286,13 @@ for (const prefix of ['', '/zh']) {
   test(`${lang}: keyword, type, subject, language, cost, sort and submit never publish automatic age`, async (t) => {
     const { page, visit } = await fixture(t, prefix);
     await visit('/library/');
-    assert.equal(await page.locator('#age').inputValue(), '36');
+    assert.equal(await page.locator('#age').inputValue(), 'year:3');
     await page.locator('#q').fill('sleep');
     await page.waitForFunction(() => new URL(location.href).searchParams.get('q') === 'sleep');
     for (const [selector, value] of [['#type', 'guide'], ['#topic', 'sleep'], ['#language', 'en'], ['#sort', 'newest']]) {
       await page.locator(selector).selectOption(value);
       assert.equal(new URL(page.url()).searchParams.has('age'), false);
-      assert.equal(await page.locator('#age').inputValue(), '36');
+      assert.equal(await page.locator('#age').inputValue(), 'year:3');
     }
     await page.locator('#free').check();
     await page.locator('#q').press('Enter');
@@ -275,8 +300,8 @@ for (const prefix of ['', '/zh']) {
     assert.match(await page.locator('#active-filters').innerText(), prefix ? /按当前孩子年龄/ : /Current child's age/);
     const switchUrl = await page.locator('.language-switcher a').getAttribute('href');
     assert.equal(new URL(switchUrl, origin).searchParams.has('age'), false);
-    await page.locator('#age').selectOption('72');
-    assert.equal(new URL(page.url()).searchParams.get('age'), '72');
+    await page.locator('#age').selectOption('year:6');
+    assert.equal(new URL(page.url()).searchParams.get('age'), 'year:6');
     await page.locator('#age').selectOption('');
     await page.evaluate(() => window.dispatchEvent(new CustomEvent('edustack:profilechange')));
     assert.equal(await page.locator('#age').inputValue(), '');
@@ -300,7 +325,7 @@ for (const prefix of ['', '/zh']) {
     await page.locator('.language-switcher a').click();
     await settledLibrary(page);
     assert.equal(new URL(page.url()).searchParams.has('age'), false);
-    assert.equal(await page.locator('#age').inputValue(), '36');
+    assert.equal(await page.locator('#age').inputValue(), 'year:3');
   });
 
   test(`${lang}: 216 months shows an honest general-library state and keeps profile editing`, async (t) => {
@@ -332,6 +357,8 @@ for (const prefix of ['', '/zh']) {
     assert.equal(await page.locator('#code-box').isVisible(), false);
     assert.equal(await page.locator('#empty').isVisible(), true);
     assert.equal((await page.locator('body').textContent()).includes('Synthetic nickname'), false);
+    assert.equal(await page.locator('[data-header-child]').textContent(), '');
+    assert.equal(await page.locator('[data-header-stage]').textContent(), '');
   });
 
   test(`${lang}: older valid profiles remain editable without changing the birth year`, async (t) => {
@@ -383,7 +410,7 @@ for (const prefix of ['', '/zh']) {
     assert.match(await page.locator('#profile-msg').innerText(), prefix ? /格式无效/ : /invalid/);
     await visit('/tools/');
     assert.equal(await page.locator('#tool-profile-filter').isVisible(), false);
-    assert.equal(await page.locator('[data-tool-min]:visible').count(), 7);
+    assert.equal(await page.locator('[data-tool-min]:visible').count(), 12);
     await visit('/library/');
     assert.equal(await page.locator('#age').inputValue(), '');
     assert.equal(await page.locator('[data-profile-context]').isVisible(), false);

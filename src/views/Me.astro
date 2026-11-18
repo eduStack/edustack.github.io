@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { resources, stages, tips, tools, getResource, ageLabel, yearLabel, cite, type Lang } from '../lib/data';
 import { t, href } from '../i18n/ui';
+import { dailyGuidance, guidanceLabels } from '../lib/daily-guidance.mjs';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const s = t(lang);
@@ -16,7 +17,10 @@ const data = {
       concern: { text: st.develop.concern[lang], ...c(st.develop.concern.src) },
       activities: st.activities.map((a) => ({ text: a[lang], ...c(a.src) })),
       health: st.health.links,
-      facts: st.facts.map((f) => ({ label: f.label[lang], value: f.value[lang], source: f.source })),
+      facts: st.facts.flatMap((fact) => fact.rules.map((id) => {
+        const rule = dailyGuidance.find((item) => item.id === id)!;
+        return { min: rule.minMonths, max: rule.maxMonths, label: guidanceLabels[fact.kind][lang], value: rule.value[lang], sources: rule.sources.map(c) };
+      })),
     };
   }),
   tips: tips.map((tp) => { const r = getResource(tp.resource); return { min: tp.minMonths, max: tp.maxMonths, text: tp.text[lang], why: tp.why[lang], src: `${r.by}${r.year ? ', ' + r.year : ''}`, link: href(lang, `resources/${r.id}`) }; }),
@@ -212,8 +216,8 @@ const months = zh ? Array.from({ length: 12 }, (_, i) => `${i + 1} 月`) : ['Jan
       $('v-tip').querySelector('[data-why]')!.textContent = tp.why;
       const l = $('v-tip').querySelector('[data-link]') as HTMLAnchorElement; l.textContent = tp.src; l.href = tp.link;
     }
-    $('v-facts').innerHTML = st.facts.map((f: any) => `<div class="card" style="gap:6px;padding:16px"><span class="muted" style="font-size:var(--type-note)">${esc(f.label)}</span><span style="font-size:var(--type-section);font-weight:600">${esc(f.value)}</span><span class="muted" style="font-size:var(--type-note)">${esc(f.source)}</span></div>`).join('');
     const citeAttrs = (p: any) => p.external ? ' target="_blank" rel="noopener noreferrer" aria-describedby="pwa-external-note"' : '';
+    $('v-facts').innerHTML = st.facts.filter((f: any) => f.min <= mo && f.max >= mo).map((f: any) => `<div class="card" style="gap:6px;padding:16px"><span class="muted" style="font-size:var(--type-note)">${esc(f.label)}</span><span style="font-size:var(--type-ui)">${esc(f.value)}</span><div class="row">${f.sources.map((source: any) => `<a class="cite" href="${esc(source.url)}"${citeAttrs(source)}>${esc(source.cite)}${source.external ? ' ↗' : ''}</a>`).join('')}</div></div>`).join('');
     const li = (p: any) => `<li>${esc(p.text)}<a class="cite" href="${esc(p.url)}"${citeAttrs(p)}>${esc(p.cite)}${p.external ? ' ↗' : ''}</a></li>`;
     $('v-dev').innerHTML = st.develop.map((a: any) => `<div class="card" style="gap:10px"><b>${esc(a.label)}</b><ul class="claims">${a.points.map(li).join('')}</ul></div>`).join('');
     $('v-concern').innerHTML = `<b>${zh ? '什么时候找医生：' : 'When to talk to a doctor: '}</b>${esc(st.concern.text)}<a class="cite" href="${esc(st.concern.url)}"${citeAttrs(st.concern)}>${esc(st.concern.cite)}${st.concern.external ? ' ↗' : ''}</a>`;
@@ -223,7 +227,7 @@ const months = zh ? Array.from({ length: 12 }, (_, i) => `${i + 1} 月`) : ['Jan
     $('v-picks').innerHTML = links.map((r: any) => `<span><a href="${r.link}">${esc(r.title)}</a> <span class="muted" style="font-size:var(--type-note)">· ${esc(r.by.split(',')[0])}</span></span>`).join('');
     const tl = D.tools.filter((x: any) => mo >= x.min && mo <= x.max);
     $('v-tools').hidden = !tl.length;
-    $('v-tools').innerHTML = `<b>${zh ? '适合这个年龄的免费工具：' : 'Free tools for this age:'}</b>` + tl.map((x: any) => `<span class="chip t-tool">${esc(x.name)} · ${x.age}</span>`).join('');
+    $('v-tools').innerHTML = `<b>${zh ? '适合这个年龄的工具：' : 'Tools for this age:'}</b>` + tl.map((x: any) => `<span class="chip t-tool">${esc(x.name)} · ${x.age}</span>`).join('');
   }
   function render() { renderKids(); renderView(); }
 
@@ -305,9 +309,6 @@ const months = zh ? Array.from({ length: 12 }, (_, i) => `${i + 1} 月`) : ['Jan
     status(zh ? '档案已在其他位置更改，此页已刷新，未保存的编辑已取消。' : 'Profiles changed elsewhere. This page has refreshed and any unsaved edit has been cancelled.');
   }
   window.addEventListener('edustack:profilechange', refreshExternalProfiles);
-  window.addEventListener('storage', (event) => {
-    if (event.key === null || event.key === 'edustack.profiles.v1') refreshExternalProfiles();
-  });
   render();
   if (initial.status === 'invalid') status(zh ? '保存的档案格式无效，已恢复通用浏览，未覆盖原始记录。你可以清除后重新添加，或导入有效的档案码。' : 'Saved profiles are invalid. General browsing is available and the original records have not been overwritten. Delete them and start again, or import a valid profile code.');
   if (initial.status === 'unavailable') status(zh ? '此浏览器暂时无法读取档案。你可以继续通用浏览；保存或清除失败时会在这里提示。' : 'This browser cannot currently read profiles. General browsing is available; any save or deletion failure will be reported here.');

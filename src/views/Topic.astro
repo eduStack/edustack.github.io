@@ -38,7 +38,8 @@ const linkedTools = tools.filter((tool) => !chosenTools.some((entry) => entry.to
       {Boolean(topic.rows?.length && topic.sources?.length) && <section class="stack" aria-labelledby="pos-h">
         <div class="split"><h2 id="pos-h" class="h-serif" style="font-size:var(--type-section)">{zh ? '各权威机构怎么说' : 'What each authority says'}</h2>
           <span class="row muted" style="gap:8px;font-size:var(--type-note)"><span class="chip v-agree">{V.agree}</span><span class="chip v-differ">{V.differ}</span><span class="chip v-single">{V.single}</span></span></div>
-        <div class="card tablebox" style="padding:0">
+        <p id="comparison-help" class="muted" style="font-size:var(--type-note)">{zh ? '手机上可横向浏览完整表格；键盘操作时，先聚焦表格区域，再按左右方向键。' : 'On a narrow screen, scroll sideways to read the full table. With a keyboard, focus the table region and use the left and right arrow keys.'}</p>
+        <div class="card tablebox" style="padding:0" role="region" tabindex="0" aria-labelledby="pos-h" aria-describedby="comparison-help">
           <table class="cmp">
             <thead><tr><th scope="col" style="width:140px" class="muted">{zh ? '方面' : 'Question'}</th>
               {topic.sources!.map((src) => <th scope="col"><a href={src.resource ? href(lang, `resources/${src.resource}`) : src.url} target={src.resource ? undefined : '_blank'} rel={src.resource ? undefined : 'noopener noreferrer'} aria-describedby={src.resource ? undefined : 'pwa-external-note'}>{src.name[lang]}</a><div class="muted" style="font-weight:400;font-size:var(--type-note)">{src.note[lang]}</div>{(src.additionalResources ?? []).map((id) => <div style="font-weight:400;font-size:var(--type-note)"><a href={href(lang, `resources/${id}`)}>{getResource(id).title[lang]}</a></div>)}</th>)}
@@ -63,7 +64,7 @@ const linkedTools = tools.filter((tool) => !chosenTools.some((entry) => entry.to
     <ul>{section.citations.map((citation) => { const source = cite(citation.src, lang); return <li><a href={source.internal ? href(lang, `resources/${source.url}`) : source.url} target={source.internal ? undefined : '_blank'} rel={source.internal ? undefined : 'noopener noreferrer'}>{source.text}</a><p class="muted">{citation.note[lang]}</p></li>; })}</ul>
   </section>)}
   {Boolean(topic.activities?.length) && <section class="stack"><h2 class="h-serif" style="font-size:var(--type-section)">{zh ? '一起试试' : 'Try something together'}</h2><div class="grid">{topic.activities!.map((selection) => <div class="stack"><ActivityCard activity={getActivity(selection.activity)} lang={lang} /><p>{selection.reason[lang]}</p></div>)}</div></section>}
-  {chosenTools.length > 0 && <section class="card"><h2>{zh ? '可以辅助使用的工具' : 'Optional tools'}</h2>{chosenTools.map((selection) => <div><a href={href(lang, `tools/${selection.tool}`)}>{selection.item.name}</a><p>{selection.reason[lang]}</p></div>)}</section>}
+  {chosenTools.length > 0 && <section class="card"><h2>{zh ? '可以辅助使用的工具' : 'Optional tools'}</h2>{chosenTools.map((selection) => <div><a href={href(lang, `tools/${selection.tool}`)}>{selection.item.name[lang]}</a><p>{selection.reason[lang]}</p></div>)}</section>}
   {picks.length > 0 && <section class="stack" aria-labelledby="tp-h">
     <h2 id="tp-h" class="h-serif" style="font-size:var(--type-section)">{zh ? `这个主题的 ${picks.length} 条精选` : `Our ${picks.length} picks on this topic`}</h2>
     <div class="grid">{picks.map((r) => <ResourceCard r={r} lang={lang} />)}</div>

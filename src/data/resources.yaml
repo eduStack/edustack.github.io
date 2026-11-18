@@ -66,6 +66,13 @@
       - 孩子安静坐着的时候，大人陪着一起读书、讲故事。
       - 保持规律的入睡和起床时间。
   checked: 2026-11-13
+  purpose: {"en": "Compare movement, sedentary time and sleep across the whole day for children under 5.", "zh": "对照未满 5 岁儿童全天的活动、久坐与睡眠安排。"}
+  audience: {"en": "Caregivers of children under 5 and professionals planning early-childhood health support.", "zh": "未满 5 岁儿童的照顾者，以及规划早期健康支持的专业人员。"}
+  limits: {"en": "The age bands differ: infant, 1–2 and 3–4 year recommendations cannot be exchanged. Population guidance is not an individual diagnosis or a prescription for a child with a medical condition.", "zh": "婴儿、1–2 岁和 3–4 岁的建议不同，不能互换。群体指导不是个体诊断，也不能替代有健康问题孩子的专业方案。"}
+  sourceVersion: {"en": "2019 guideline; the saved WHO page identifies publication on 2 April 2019. No claim that later revisions have been excluded.", "zh": "2019 年指南；已保存的 WHO 页面列出版日期为 2019 年 4 月 2 日。未声称已排除后续修订。"}
+  region: {"en": "WHO guidance for international use; national services, health needs and local conditions affect implementation.", "zh": "WHO 面向国际使用的指导；实施仍需结合本地服务、健康需要与生活条件。"}
+  access: {"en": "The source offers public-facing guidance or a public abstract. Follow the original link for the complete document or interactive service; free access does not grant reuse rights.", "zh": "来源提供公开指导页面或公开摘要。完整文件或交互服务请进入原始链接；免费访问不等于允许转载。"}
+  checkedNote: {"en": "Local source-record review on 18 November 2026 covered the saved official page, publication record or public summary; no new complete evidence review was undertaken. The earlier source-check date is retained; present online availability and later replacements were not reverified.", "zh": "2026 年 11 月 18 日进行本地来源记录核对，范围为已保存的官方网页、出版记录或公开概述，未新做完整证据审查。保留较早的来源核验日期；当前在线可用性和后续替代版未重新核验。"}
 
 - id: who-activity-2020
   publicationStatus: published
@@ -91,6 +98,13 @@
     en: The children and adolescents section covers ages 5 to 17.
     zh: 其中儿童青少年部分适用于 5–17 岁。
   checked: 2026-11-13
+  purpose: {"en": "Understand activity and sedentary-time guidance for school-age children and adolescents.", "zh": "了解学龄儿童与青少年的活动和久坐建议。"}
+  audience: {"en": "This introduction selects the guideline recommendations for ages 5–17; the full guideline also covers other populations.", "zh": "本导读选取指南中 5–17 岁儿童青少年的建议；完整指南还覆盖其他人群。"}
+  limits: {"en": "The 60-minute recommendation is an average across the week, not a daily pass/fail score. This guideline does not set one numerical recreational-screen limit for all 5–17-year-olds.", "zh": "60 分钟是整周平均每天的建议，不是逐日达标评分。本指南没有为所有 5–17 岁儿童规定统一的娱乐屏幕时长数字。"}
+  sourceVersion: {"en": "2020 guideline; saved WHO publication page dated 25 November 2020. Later revisions have not been comprehensively checked here.", "zh": "2020 年指南；已保存的 WHO 出版页日期为 2020 年 11 月 25 日。本次未全面核查后续修订。"}
+  region: {"en": "WHO guidance for international use; national services, health needs and local conditions affect implementation.", "zh": "WHO 面向国际使用的指导；实施仍需结合本地服务、健康需要与生活条件。"}
+  access: {"en": "The source offers public-facing guidance or a public abstract. Follow the original link for the complete document or interactive service; free access does not grant reuse rights.", "zh": "来源提供公开指导页面或公开摘要。完整文件或交互服务请进入原始链接；免费访问不等于允许转载。"}
+  checkedNote: {"en": "Local source-record review on 18 November 2026 covered the saved official page, publication record or public summary; no new complete evidence review was undertaken. The earlier source-check date is retained; present online availability and later replacements were not reverified.", "zh": "2026 年 11 月 18 日进行本地来源记录核对，范围为已保存的官方网页、出版记录或公开概述，未新做完整证据审查。保留较早的来源核验日期；当前在线可用性和后续替代版未重新核验。"}
 
 - id: who-complementary-feeding-2023
   publicationStatus: published
@@ -112,6 +126,13 @@
     en: Guidance on starting solid foods, a varied diet, and foods and drinks to limit, for children aged 6 to 23 months.
     zh: 关于 6–23 个月婴幼儿开始添加辅食、饮食多样化以及应限制的食物和饮料的建议。
   checked: 2026-11-13
+  purpose: {"en": "Use an age-specific starting point for discussing complementary foods and a varied diet.", "zh": "为讨论辅食添加与多样化饮食提供分龄起点。"}
+  audience: {"en": "Caregivers of infants and young children aged 6–23 months, with health-worker support where needed.", "zh": "6–23 个月婴幼儿的照顾者；有需要时结合卫生人员支持。"}
+  limits: {"en": "Recommendations are not an allergy assessment, swallowing plan or personalised menu. Food safety, feeding ability, medical needs and the strength of individual recommendations matter.", "zh": "这些建议不是过敏评估、吞咽方案或个体菜单；需要考虑食品安全、进食能力、健康需要和各项建议的证据强度。"}
+  sourceVersion: {"en": "2023 guideline, published 16 October 2023 in the saved WHO record; current replacement status not rechecked.", "zh": "2023 年指南，已保存 WHO 记录列出版日期为 2023 年 10 月 16 日；未重新核验当前是否有替代版。"}
+  region: {"en": "WHO guidance for international use; national services, health needs and local conditions affect implementation.", "zh": "WHO 面向国际使用的指导；实施仍需结合本地服务、健康需要与生活条件。"}
+  access: {"en": "The source offers public-facing guidance or a public abstract. Follow the original link for the complete document or interactive service; free access does not grant reuse rights.", "zh": "来源提供公开指导页面或公开摘要。完整文件或交互服务请进入原始链接；免费访问不等于允许转载。"}
+  checkedNote: {"en": "Local source-record review on 18 November 2026 covered the saved official page, publication record or public summary; no new complete evidence review was undertaken. The earlier source-check date is retained; present online availability and later replacements were not reverified.", "zh": "2026 年 11 月 18 日进行本地来源记录核对，范围为已保存的官方网页、出版记录或公开概述，未新做完整证据审查。保留较早的来源核验日期；当前在线可用性和后续替代版未重新核验。"}
 
 - id: nurturing-care-framework-2018
   publicationStatus: published
@@ -135,6 +156,13 @@
     en: The international framework for early childhood. It names five components of nurturing care - good health, adequate nutrition, safety and security, responsive caregiving and opportunities for early learning.
     zh: 国际通行的儿童早期发展框架，提出养育照护的五个组成部分：良好健康、充足营养、安全保障、回应式照护和早期学习机会。
   checked: 2026-11-13
+  purpose: {"en": "See how health, nutrition, safety, responsive care and early learning fit together.", "zh": "理解健康、营养、安全、回应式照护与早期学习如何相互配合。"}
+  audience: {"en": "Families and services supporting pregnancy and early childhood, especially the period through age 3.", "zh": "支持孕期及儿童早期发展的家庭与服务人员，尤其关注出生后前三年。"}
+  limits: {"en": "This is a systems and service framework, not a validated family checklist or a fixed activity programme. A link to the current programme website does not establish that every later handbook is the 2018 framework.", "zh": "这是系统与服务框架，不是经验证的家庭清单或固定活动项目。当前项目官网的链接不能证明后续所有手册都等同于 2018 年框架。"}
+  sourceVersion: {"en": "2018 WHO/UNICEF/World Bank framework. The linked programme website also carries later reports and handbooks; these are separate publications.", "zh": "2018 年 WHO／UNICEF／世界银行框架。所链接项目网站另有后续报告与手册，属于不同出版物。"}
+  region: {"en": "WHO guidance for international use; national services, health needs and local conditions affect implementation.", "zh": "WHO 面向国际使用的指导；实施仍需结合本地服务、健康需要与生活条件。"}
+  access: {"en": "The source offers public-facing guidance or a public abstract. Follow the original link for the complete document or interactive service; free access does not grant reuse rights.", "zh": "来源提供公开指导页面或公开摘要。完整文件或交互服务请进入原始链接；免费访问不等于允许转载。"}
+  checkedNote: {"en": "Local source-record review on 18 November 2026 covered the saved official page, publication record or public summary; no new complete evidence review was undertaken. The earlier source-check date is retained; present online availability and later replacements were not reverified.", "zh": "2026 年 11 月 18 日进行本地来源记录核对，范围为已保存的官方网页、出版记录或公开概述，未新做完整证据审查。保留较早的来源核验日期；当前在线可用性和后续替代版未重新核验。"}
 
 - id: cdc-milestones
   publicationStatus: published
@@ -165,6 +193,13 @@
     zh:
       - 如果对孩子的玩耍、学习、说话、行为或运动有担心，尽早和医生沟通，不要等待。
   checked: 2026-11-13
+  purpose: {"en": "Prepare everyday observations and questions about a young child’s development.", "zh": "整理幼儿日常发育观察与需要咨询的问题。"}
+  audience: {"en": "Caregivers following CDC milestone checkpoints from 2 months through 5 years; not school-age developmental assessment.", "zh": "按 CDC 从 2 个月至 5 岁年龄点进行观察的照顾者；不用于学龄儿童的发展评估。"}
+  limits: {"en": "CDC checklists support developmental monitoring, not diagnosis or a substitute for validated screening. A missed item calls for discussion, and a completed list does not rule out concerns.", "zh": "CDC 清单帮助进行发育观察，不用于诊断，也不能替代经过验证的筛查。未出现某项表现可向专业人员咨询，全部勾选也不能排除担忧。"}
+  sourceVersion: {"en": "Milestone checklist revision recorded as 2022. The saved index page is dated 17 February 2026 and some age pages 15 May 2026; page dates do not by themselves establish a new checklist edition.", "zh": "清单记录为 2022 年修订。已保存的索引页日期为 2026 年 2 月 17 日，部分分龄页为 2026 年 5 月 15 日；网页日期本身不能证明清单内容另有新版。"}
+  region: {"en": "United States guidance; service pathways, product standards and legal requirements may differ elsewhere.", "zh": "美国背景的指导；其他地区的服务渠道、产品标准与法律要求可能不同。"}
+  access: {"en": "The source offers public-facing guidance or a public abstract. Follow the original link for the complete document or interactive service; free access does not grant reuse rights.", "zh": "来源提供公开指导页面或公开摘要。完整文件或交互服务请进入原始链接；免费访问不等于允许转载。"}
+  checkedNote: {"en": "Local source-record review on 18 November 2026 covered the saved official page, publication record or public summary; no new complete evidence review was undertaken. The earlier source-check date is retained; present online availability and later replacements were not reverified.", "zh": "2026 年 11 月 18 日进行本地来源记录核对，范围为已保存的官方网页、出版记录或公开概述，未新做完整证据审查。保留较早的来源核验日期；当前在线可用性和后续替代版未重新核验。"}
 
 - id: aap-family-media-plan
   publicationStatus: published
@@ -191,6 +226,13 @@
     en: An online tool from the American Academy of Pediatrics for agreeing screen and device rules as a family.
     zh: 美国儿科学会的在线工具，帮助全家一起商定屏幕和设备的使用规则。
   checked: 2026-11-13
+  purpose: {"en": "Agree on practical media expectations together as a family.", "zh": "全家一起商定可实行的媒体使用约定。"}
+  audience: {"en": "Families discussing children’s media routines and adapting expectations as children grow.", "zh": "讨论孩子媒体使用日常安排，并随成长调整约定的家庭。"}
+  limits: {"en": "A planning aid is not an assessment or proof that one set of screen rules improves health. The linked interactive service may change; this introduction does not verify every current feature or account requirement.", "zh": "计划辅助工具不是评估，也不能证明某套屏幕规则会改善健康。外部交互服务可能变化，本导读未核验当前全部功能或账户要求。"}
+  sourceVersion: {"en": "Continuously maintained online planning service; no fixed edition or reliable revision date was established from the saved page.", "zh": "持续维护的在线计划服务；已保存页面未建立可靠的固定版本或修订日期。"}
+  region: {"en": "United States guidance; service pathways, product standards and legal requirements may differ elsewhere.", "zh": "美国背景的指导；其他地区的服务渠道、产品标准与法律要求可能不同。"}
+  access: {"en": "The source offers public-facing guidance or a public abstract. Follow the original link for the complete document or interactive service; free access does not grant reuse rights.", "zh": "来源提供公开指导页面或公开摘要。完整文件或交互服务请进入原始链接；免费访问不等于允许转载。"}
+  checkedNote: {"en": "Local source-record review on 18 November 2026 covered the saved official page, publication record or public summary; no new complete evidence review was undertaken. The earlier source-check date is retained; present online availability and later replacements were not reverified.", "zh": "2026 年 11 月 18 日进行本地来源记录核对，范围为已保存的官方网页、出版记录或公开概述，未新做完整证据审查。保留较早的来源核验日期；当前在线可用性和后续替代版未重新核验。"}
 
 - id: aap-media-young-minds-2016
   publicationStatus: published
@@ -214,6 +256,13 @@
     en: Under 18 months, avoid screen media other than video chatting. From 18 to 24 months, choose high-quality programmes and watch together. From 2 to 5 years, limit to 1 hour a day of high-quality programmes.
     zh: 18 个月以下除视频通话外避免使用屏幕；18–24 个月如要接触，选择高质量节目并陪看；2–5 岁每天限 1 小时高质量节目。
   checked: 2026-11-13
+  purpose: {"en": "Locate the original age-specific AAP position on young children’s media use.", "zh": "查找 AAP 对低龄儿童媒体使用的原始分龄立场。"}
+  audience: {"en": "Caregivers and professionals considering media use before age 6; the statement has distinct age bands.", "zh": "考虑未满 6 岁儿童媒体使用的照顾者与专业人员；声明按年龄分段。"}
+  limits: {"en": "This introduction is limited to the public abstract and bibliographic record of the 2016 statement; restricted AAP full text was not analysed. It must not be read as confirmation that the 2016 statement remains current.", "zh": "本导读限于 2016 年声明的公开摘要和书目记录，未分析受限 AAP 全文。不能据此认为该声明仍是现行版本。"}
+  sourceVersion: {"en": "2016 policy statement, DOI 10.1542/peds.2016-2591. Reaffirmation, retirement and replacement status remain unverified.", "zh": "2016 年政策声明，DOI 10.1542/peds.2016-2591。是否重申、撤回或被替代仍待核验。"}
+  region: {"en": "United States guidance; service pathways, product standards and legal requirements may differ elsewhere.", "zh": "美国背景的指导；其他地区的服务渠道、产品标准与法律要求可能不同。"}
+  access: {"en": "The source offers public-facing guidance or a public abstract. Follow the original link for the complete document or interactive service; free access does not grant reuse rights.", "zh": "来源提供公开指导页面或公开摘要。完整文件或交互服务请进入原始链接；免费访问不等于允许转载。"}
+  checkedNote: {"en": "Local source-record review on 18 November 2026 covered public abstract and bibliographic metadata only; no restricted AAP full text was analysed. The earlier source-check date is retained; present online availability and later replacements were not reverified.", "zh": "2026 年 11 月 18 日进行本地来源记录核对，范围为公开摘要及书目元数据，未分析受限 AAP 全文。保留较早的来源核验日期；当前在线可用性和后续替代版未重新核验。"}
 
 - id: aap-safe-sleep
   publicationStatus: published
@@ -235,6 +284,13 @@
     en: Place babies on their back, on a firm flat surface of their own, with no soft objects, to lower the risk of sleep-related infant death.
     zh: 让宝宝仰睡在独立、平整、坚实的床面上，周围不放软物，以降低睡眠相关的婴儿死亡风险。
   checked: 2026-11-13
+  purpose: {"en": "Review basic ways to make an infant’s sleep environment safer.", "zh": "了解提高婴儿睡眠环境安全性的基本做法。"}
+  audience: {"en": "Caregivers of infants under 1 year, including anyone arranging a sleep space.", "zh": "未满 1 岁婴儿的照顾者，包括所有准备睡眠空间的人。"}
+  limits: {"en": "These measures reduce risk but cannot eliminate sleep-related death. Product standards and individual medical needs require local professional advice; this parent page is separate from the full AAP technical report.", "zh": "这些措施可降低风险，但不能消除睡眠相关死亡。产品标准和个体健康需要应向本地专业人员咨询；家长网页与完整 AAP 技术报告是不同资料。"}
+  sourceVersion: {"en": "Parent-facing page based on the 2022 recommendations; the saved HealthyChildren page lists “Last Updated 9/11/2026” (11 September 2026 in US notation).", "zh": "面向家长的网页依据 2022 年建议；已保存 HealthyChildren 页面标示“Last Updated 9/11/2026”（按美国日期格式为 2026 年 9 月 11 日）。"}
+  region: {"en": "United States guidance; service pathways, product standards and legal requirements may differ elsewhere.", "zh": "美国背景的指导；其他地区的服务渠道、产品标准与法律要求可能不同。"}
+  access: {"en": "The source offers public-facing guidance or a public abstract. Follow the original link for the complete document or interactive service; free access does not grant reuse rights.", "zh": "来源提供公开指导页面或公开摘要。完整文件或交互服务请进入原始链接；免费访问不等于允许转载。"}
+  checkedNote: {"en": "Local source-record review on 18 November 2026 covered the saved official page, publication record or public summary; no new complete evidence review was undertaken. The earlier source-check date is retained; present online availability and later replacements were not reverified.", "zh": "2026 年 11 月 18 日进行本地来源记录核对，范围为已保存的官方网页、出版记录或公开概述，未新做完整证据审查。保留较早的来源核验日期；当前在线可用性和后续替代版未重新核验。"}
 
 - id: aasm-sleep-2016
   publicationStatus: published
@@ -257,6 +313,13 @@
     en: "Expert panel recommendations for sleep per 24 hours: 12–16 hours at 4–12 months, 11–14 at 1–2 years, 10–13 at 3–5, 9–12 at 6–12 and 8–10 at 13–18."
     zh: 专家组建议的每 24 小时睡眠时长：4–12 个月 12–16 小时，1–2 岁 11–14 小时，3–5 岁 10–13 小时，6–12 岁 9–12 小时，13–18 岁 8–10 小时。
   checked: 2026-11-13
+  purpose: {"en": "Compare a child’s usual 24-hour sleep with age-specific consensus ranges.", "zh": "将孩子通常的全天睡眠与分龄共识范围作对照。"}
+  audience: {"en": "Families of healthy children from 4 months to 18 years; this site’s age filters stop before 18.", "zh": "4 个月至 18 岁健康儿童的家庭；本站年龄筛选覆盖至未满 18 岁。"}
+  limits: {"en": "Ranges include naps where relevant and do not diagnose a sleep disorder. The panel did not issue a duration recommendation for infants under 4 months; use the separate WHO guidance for that age group.", "zh": "适用年龄的范围包含小睡，不用于诊断睡眠障碍。专家组未给未满 4 个月婴儿制定时长建议，该年龄需另看 WHO 指导。"}
+  sourceVersion: {"en": "2016 consensus statement, published 15 June 2016, DOI 10.5664/jcsm.5866; not a claim of a newly updated guideline.", "zh": "2016 年共识声明，发表于 2016 年 6 月 15 日，DOI 10.5664/jcsm.5866；不表示指南近期已有更新。"}
+  region: {"en": "US sleep-medicine professional consensus; consider local clinical advice and individual sleep needs.", "zh": "美国睡眠医学专业共识；仍应结合本地临床建议与个体睡眠需要。"}
+  access: {"en": "The source offers public-facing guidance or a public abstract. Follow the original link for the complete document or interactive service; free access does not grant reuse rights.", "zh": "来源提供公开指导页面或公开摘要。完整文件或交互服务请进入原始链接；免费访问不等于允许转载。"}
+  checkedNote: {"en": "Local source-record review on 18 November 2026 covered the saved official page, publication record or public summary; no new complete evidence review was undertaken. The earlier source-check date is retained; present online availability and later replacements were not reverified.", "zh": "2026 年 11 月 18 日进行本地来源记录核对，范围为已保存的官方网页、出版记录或公开概述，未新做完整证据审查。保留较早的来源核验日期；当前在线可用性和后续替代版未重新核验。"}
 
 - id: madigan-2020-screen-language
   publicationStatus: published
@@ -281,6 +344,11 @@
     en: A meta-analysis of 42 studies. More screen use was linked to weaker language skills, while co-viewing with an adult and better-quality programmes were linked to stronger skills.
     zh: 汇总 42 项研究的元分析：屏幕使用越多，语言能力越弱；而大人陪看和更优质的节目与更强的语言能力相关。
   checked: 2026-11-13
+  purpose: {"en": "Separate screen duration from content and adult co-viewing when reading language-development evidence.", "zh": "阅读语言发展证据时，区分屏幕时长、内容与成人陪看。"}
+  audience: {"en": "Families considering children’s language environments; the reviewed studies included children up to age 12.", "zh": "思考孩子语言环境的家庭；综述纳入的研究对象不超过 12 岁。"}
+  limits: {"en": "The 42-study meta-analysis pools associations, not a trial proving that screen use causes language delay or that co-viewing reverses it. Different content, measures and family circumstances limit direct comparisons.", "zh": "这项 42 项研究的元分析汇总关联，不是证明屏幕导致语言延迟或陪看可以逆转延迟的试验。内容、测量和家庭情境的差异限制了直接比较。"}
+  checkedNote: {"en": "On 18 November 2026, the saved public abstract and bibliographic record were reviewed for this metadata repair. No new complete-article review or live availability check was performed; the earlier source-check date is retained.", "zh": "本次元数据修复于 2026 年 11 月 18 日核对已保存的公开摘要和书目记录。未新做完整论文审读或在线可用性检查，保留较早的来源核验日期。"}
+  access: {"en": "The DOI or publisher page identifies the paper; an abstract or repository copy may be readable, while publisher full text may require institutional access or payment. This record does not promise free full text.", "zh": "DOI 或出版社页面可定位论文；摘要或仓储副本可能可读，出版社全文可能需要机构权限或付费。本条不承诺免费全文。"}
 
 - id: madigan-2019-screen-development
   publicationStatus: published
@@ -304,6 +372,11 @@
     en: Following about 2,400 children, more screen time at 2 and 3 years was linked to poorer developmental screening results a year or more later.
     zh: 跟踪约 2400 名儿童，2 岁和 3 岁时屏幕时间越多，一年后发育筛查结果越差。
   checked: 2026-11-13
+  purpose: {"en": "Understand why longitudinal screen-time findings need careful interpretation.", "zh": "理解为什么需要谨慎解读屏幕时间的追踪研究。"}
+  audience: {"en": "Families with young children; the cohort followed 2,441 mother–child pairs in Calgary at 24, 36 and 60 months.", "zh": "有幼儿的家庭；该队列在加拿大卡尔加里追踪 2,441 对母子，观测年龄为 24、36 和 60 个月。"}
+  limits: {"en": "Screen time and developmental screening were reported by mothers. A longitudinal association with later screening scores does not establish causation or a clinical diagnosis, and one city’s cohort may not represent all families.", "zh": "屏幕时间与发育筛查均由母亲报告。与后续筛查分数的追踪关联不能确立因果或临床诊断，一个城市的队列也不一定代表所有家庭。"}
+  checkedNote: {"en": "On 18 November 2026, the saved public abstract and bibliographic record were reviewed for this metadata repair. No new complete-article review or live availability check was performed; the earlier source-check date is retained.", "zh": "本次元数据修复于 2026 年 11 月 18 日核对已保存的公开摘要和书目记录。未新做完整论文审读或在线可用性检查，保留较早的来源核验日期。"}
+  access: {"en": "The DOI or publisher page identifies the paper; an abstract or repository copy may be readable, while publisher full text may require institutional access or payment. This record does not promise free full text.", "zh": "DOI 或出版社页面可定位论文；摘要或仓储副本可能可读，出版社全文可能需要机构权限或付费。本条不承诺免费全文。"}
 
 - id: romeo-2018-conversational-turns
   publicationStatus: published
@@ -333,6 +406,10 @@
     en: This study reports an association, not an intervention effect. Our suggestion to try a few conversational turns is an editorial activity example; five turns is not a tested dose, target or ability standard.
     zh: 研究报告的是关联，不是干预效果。本站建议尝试几轮对话，是编辑提供的活动示例；五个来回不是经过验证的次数、训练目标或能力标准。
   checked: 2026-11-13
+  purpose: {"en": "Understand research on conversational turns and language-related brain activity.", "zh": "了解对话轮次与语言相关脑活动的研究。"}
+  audience: {"en": "Adults reading about preschool language environments; the study involved 36 children aged 4–6 and used home recordings and functional MRI.", "zh": "希望了解学龄前语言环境的成人；研究涉及 36 名 4–6 岁儿童，使用家庭录音与功能磁共振。"}
+  checkedNote: {"en": "On 18 November 2026, the saved public abstract and bibliographic record were reviewed for this metadata repair. No new complete-article review or live availability check was performed; the earlier source-check date is retained.", "zh": "本次元数据修复于 2026 年 11 月 18 日核对已保存的公开摘要和书目记录。未新做完整论文审读或在线可用性检查，保留较早的来源核验日期。"}
+  access: {"en": "The DOI or publisher page identifies the paper; an abstract or repository copy may be readable, while publisher full text may require institutional access or payment. This record does not promise free full text.", "zh": "DOI 或出版社页面可定位论文；摘要或仓储副本可能可读，出版社全文可能需要机构权限或付费。本条不承诺免费全文。"}
 
 - id: kuhl-2003-foreign-language
   publicationStatus: published
@@ -356,6 +433,11 @@
     en: 9-month-old infants learned Mandarin speech sounds from live sessions with a person, but not from the same material shown on video or audio.
     zh: 9 个月大的婴儿通过与真人互动学会了普通话的语音，而观看同样内容的视频或只听音频则没有学会。
   checked: 2026-11-13
+  purpose: {"en": "Compare live social interaction with recorded exposure in one infant phonetic-learning experiment.", "zh": "了解一项婴儿语音学习实验如何比较真人互动与录制材料。"}
+  audience: {"en": "Adults interested in infant language learning; the experiments involved 9-month-old American infants exposed to Mandarin.", "zh": "对婴儿语言学习感兴趣的成人；实验对象是接触普通话的 9 个月大美国婴儿。"}
+  limits: {"en": "The outcome was short-term discrimination of speech sounds under laboratory conditions. It does not demonstrate fluent bilingualism, an ideal lesson schedule, or that every type of recorded media has no value at every age.", "zh": "结果是在实验条件下对语音的短期辨别，不代表形成流利双语能力、理想课时安排，也不能说明所有年龄的所有录制媒体都没有价值。"}
+  checkedNote: {"en": "On 18 November 2026, the saved public abstract and bibliographic record were reviewed for this metadata repair. No new complete-article review or live availability check was performed; the earlier source-check date is retained.", "zh": "本次元数据修复于 2026 年 11 月 18 日核对已保存的公开摘要和书目记录。未新做完整论文审读或在线可用性检查，保留较早的来源核验日期。"}
+  access: {"en": "The existing source record identifies a free article or author-access route. Follow the original link for the available version; current availability and permission to reuse figures or text were not rechecked.", "zh": "既有来源记录标示免费文章或作者公开入口。可用版本请查看原始链接；当前可用性及图文复用许可本次未重新核验。"}
 
 - id: gershoff-2016-spanking
   publicationStatus: published
@@ -380,6 +462,11 @@
     en: Meta-analyses of 75 studies found spanking was linked to a range of poor outcomes for children and was not linked to better behaviour.
     zh: 对 75 项研究的元分析发现，打屁股与儿童多种不良结果相关，与行为改善无关。
   checked: 2026-11-13
+  purpose: {"en": "Read the evidence linking spanking with risks for children, alongside guidance on safer discipline.", "zh": "结合更安全的管教指导，阅读打屁股与儿童风险关联的证据。"}
+  audience: {"en": "Caregivers and professionals considering physical punishment; this meta-analysis combines child-outcome studies rather than evaluating one family programme.", "zh": "考虑体罚问题的照顾者和专业人员；该元分析汇总儿童结果研究，不是评价某一个家庭项目。"}
+  limits: {"en": "Most evidence is observational and cannot remove every confounder or establish an individual child’s outcome. The analysis concerns spanking and should not be treated as a tested script for managing behaviour.", "zh": "证据主要来自观察研究，不能排除所有混杂因素或确定某个孩子的结局。分析对象是打屁股，不能将它当成已经检验的行为处理话术。"}
+  checkedNote: {"en": "On 18 November 2026, the saved public abstract and bibliographic record were reviewed for this metadata repair. No new complete-article review or live availability check was performed; the earlier source-check date is retained.", "zh": "本次元数据修复于 2026 年 11 月 18 日核对已保存的公开摘要和书目记录。未新做完整论文审读或在线可用性检查，保留较早的来源核验日期。"}
+  access: {"en": "The DOI or publisher page identifies the paper; an abstract or repository copy may be readable, while publisher full text may require institutional access or payment. This record does not promise free full text.", "zh": "DOI 或出版社页面可定位论文；摘要或仓储副本可能可读，出版社全文可能需要机构权限或付费。本条不承诺免费全文。"}
 
 - id: orben-2019-wellbeing-tech
   publicationStatus: published
@@ -403,6 +490,11 @@
     en: Using data on more than 350,000 adolescents, the study found that digital technology use explained at most 0.4% of the variation in well-being - a negative but very small association on average.
     zh: 利用超过 35 万名青少年的数据，研究发现数字技术使用最多只能解释幸福感差异的 0.4%，平均而言是负相关但非常小。
   checked: 2026-11-13
+  purpose: {"en": "Put broad claims about adolescent technology use and well-being into context.", "zh": "为理解青少年技术使用与幸福感的广泛说法提供背景。"}
+  audience: {"en": "Families of adolescents; the analysis used three large social datasets totalling 355,358 young people.", "zh": "有青少年的家庭；分析使用三个大型社会调查数据集，共涉及 355,358 名年轻人。"}
+  limits: {"en": "This is a correlational secondary analysis of broad technology-use measures. A small average association does not show causation, exclude serious harms for particular users, or settle questions about a specific platform or content.", "zh": "这是对广义技术使用指标的二次相关分析。平均关联较小，既不能证明因果，也不能排除特定使用者受到严重伤害，更不能回答具体平台或内容的所有问题。"}
+  checkedNote: {"en": "On 18 November 2026, the saved public abstract and bibliographic record were reviewed for this metadata repair. No new complete-article review or live availability check was performed; the earlier source-check date is retained.", "zh": "本次元数据修复于 2026 年 11 月 18 日核对已保存的公开摘要和书目记录。未新做完整论文审读或在线可用性检查，保留较早的来源核验日期。"}
+  access: {"en": "The DOI or publisher page identifies the paper; an abstract or repository copy may be readable, while publisher full text may require institutional access or payment. This record does not promise free full text.", "zh": "DOI 或出版社页面可定位论文；摘要或仓储副本可能可读，出版社全文可能需要机构权限或付费。本条不承诺免费全文。"}
 
 - id: us-surgeon-general-social-media-2023
   publicationStatus: published
@@ -438,6 +530,13 @@
       - 教孩子了解技术，学会负责任地参与网络生活。
       - 遇到网络欺凌、网络虐待和剥削要举报。
   checked: 2026-11-13
+  purpose: {"en": "Understand concerns, evidence gaps and shared responsibilities around youth social media.", "zh": "了解青少年社交媒体的风险、证据缺口及各方责任。"}
+  audience: {"en": "Families, educators, service providers, technology companies and policymakers concerned with children and adolescents.", "zh": "关注儿童青少年的家庭、教育者、服务提供者、科技公司与政策制定者。"}
+  limits: {"en": "An advisory summarises risks and uncertainties; it does not prove that all use causes mental illness or prescribe one safe age or daily duration. Individual experiences and platform features vary.", "zh": "咨询报告概述风险与不确定性，不能证明所有使用都会导致精神疾病，也未规定统一安全年龄或每日时长。个体体验与平台功能存在差异。"}
+  sourceVersion: {"en": "2023 Surgeon General’s Advisory. The saved HHS landing page says content last reviewed 19 February 2025; that is not a new report edition.", "zh": "2023 年美国卫生局局长咨询报告。已保存 HHS 入口页标示内容最后审查为 2025 年 2 月 19 日，这不等于报告有新版。"}
+  region: {"en": "United States guidance; service pathways, product standards and legal requirements may differ elsewhere.", "zh": "美国背景的指导；其他地区的服务渠道、产品标准与法律要求可能不同。"}
+  access: {"en": "The source offers public-facing guidance or a public abstract. Follow the original link for the complete document or interactive service; free access does not grant reuse rights.", "zh": "来源提供公开指导页面或公开摘要。完整文件或交互服务请进入原始链接；免费访问不等于允许转载。"}
+  checkedNote: {"en": "Local source-record review on 18 November 2026 covered the saved official page, publication record or public summary; no new complete evidence review was undertaken. The earlier source-check date is retained; present online availability and later replacements were not reverified.", "zh": "2026 年 11 月 18 日进行本地来源记录核对，范围为已保存的官方网页、出版记录或公开概述，未新做完整证据审查。保留较早的来源核验日期；当前在线可用性和后续替代版未重新核验。"}
 
 - id: apa-social-media-advisory-2023
   publicationStatus: published
@@ -471,6 +570,13 @@
       - 减少容易引发攀比的内容，特别是关于外貌的内容。
       - 在孩子开始使用之前，先教他们社交媒体素养。
   checked: 2026-11-13
+  purpose: {"en": "Use research-informed considerations when deciding how adolescents use social media.", "zh": "在讨论青少年如何使用社交媒体时，参考研究形成的考虑要点。"}
+  audience: {"en": "Caregivers and professionals supporting adolescents, with particular adult support in early adolescence.", "zh": "支持青少年的照顾者与专业人员，尤其关注青春期早期所需的成人支持。"}
+  limits: {"en": "The advisory does not endorse a particular platform or establish a universally safe amount of use. Recommendations depend on maturity, content and context; the 2023 evidence base is time-bounded.", "zh": "建议未为具体平台背书，也未确定普遍安全的使用量。需要结合成熟度、内容与情境；其依据以 2023 年时的证据为界。"}
+  sourceVersion: {"en": "2023 Health Advisory on Social Media Use in Adolescence; saved official advisory/PDF, with later revisions not comprehensively checked.", "zh": "2023 年《青少年社交媒体使用健康建议》；依据已保存官方建议与 PDF，未全面核查后续修订。"}
+  region: {"en": "United States guidance; service pathways, product standards and legal requirements may differ elsewhere.", "zh": "美国背景的指导；其他地区的服务渠道、产品标准与法律要求可能不同。"}
+  access: {"en": "The source offers public-facing guidance or a public abstract. Follow the original link for the complete document or interactive service; free access does not grant reuse rights.", "zh": "来源提供公开指导页面或公开摘要。完整文件或交互服务请进入原始链接；免费访问不等于允许转载。"}
+  checkedNote: {"en": "Local source-record review on 18 November 2026 covered the saved official page, publication record or public summary; no new complete evidence review was undertaken. The earlier source-check date is retained; present online availability and later replacements were not reverified.", "zh": "2026 年 11 月 18 日进行本地来源记录核对，范围为已保存的官方网页、出版记录或公开概述，未新做完整证据审查。保留较早的来源核验日期；当前在线可用性和后续替代版未重新核验。"}
 
 - id: who-adolescent-mental-health
   publicationStatus: published
@@ -495,6 +601,13 @@
     en: Key facts on mental health conditions in 10- to 19-year-olds, the factors that protect or put them at risk, and what helps.
     zh: 关于 10–19 岁青少年心理健康问题的关键事实、保护因素和风险因素，以及有效的支持方式。
   checked: 2026-11-13
+  purpose: {"en": "Understand common adolescent mental-health concerns and routes toward support.", "zh": "了解常见青少年心理健康问题及寻求支持的方向。"}
+  audience: {"en": "Families and others supporting 10–19-year-olds; the source includes ages beyond this site’s under-18 coverage.", "zh": "支持 10–19 岁青少年的家庭及相关人员；来源包括超出本站未满 18 岁覆盖范围的年龄。"}
+  limits: {"en": "A global fact sheet is not a symptom checklist or diagnosis. Population estimates do not establish an individual child’s risk, and urgent or persistent concerns require local care.", "zh": "全球事实简报不是症状清单或诊断。群体估计不能确定某个孩子的风险，紧急或持续问题需要本地专业支持。"}
+  sourceVersion: {"en": "Saved WHO fact sheet dated 1 September 2025; a changing webpage, not a separately numbered clinical guideline.", "zh": "已保存 WHO 事实简报日期为 2025 年 9 月 1 日；这是动态网页，不是单独编号的临床指南。"}
+  region: {"en": "WHO guidance for international use; national services, health needs and local conditions affect implementation.", "zh": "WHO 面向国际使用的指导；实施仍需结合本地服务、健康需要与生活条件。"}
+  access: {"en": "The source offers public-facing guidance or a public abstract. Follow the original link for the complete document or interactive service; free access does not grant reuse rights.", "zh": "来源提供公开指导页面或公开摘要。完整文件或交互服务请进入原始链接；免费访问不等于允许转载。"}
+  checkedNote: {"en": "Local source-record review on 18 November 2026 covered the saved official page, publication record or public summary; no new complete evidence review was undertaken. The earlier source-check date is retained; present online availability and later replacements were not reverified.", "zh": "2026 年 11 月 18 日进行本地来源记录核对，范围为已保存的官方网页、出版记录或公开概述，未新做完整证据审查。保留较早的来源核验日期；当前在线可用性和后续替代版未重新核验。"}
 
 - id: aap-puberty-girls
   publicationStatus: published
@@ -519,6 +632,13 @@
     en: What physical changes to expect in girls during puberty and roughly when they happen.
     zh: 女孩在青春期会出现哪些身体变化，以及大致的时间。
   checked: 2026-11-13
+  purpose: {"en": "Prepare for conversations about girls’ physical changes during puberty.", "zh": "为讨论女孩青春期的身体变化作准备。"}
+  audience: {"en": "Families supporting girls approaching or experiencing puberty; age tags are reading guidance, not expected deadlines.", "zh": "支持即将进入或正在经历青春期女孩的家庭；年龄标签用于选读，不是发育期限。"}
+  limits: {"en": "Timing varies and this page is not a diagnosis of early or delayed puberty. It does not cover every medical, emotional or gender-related concern; ask a clinician about an individual child.", "zh": "发育时间有差异，本页不能诊断性早熟或发育延迟，也未涵盖所有健康、情绪或性别相关问题；个体疑问应咨询临床人员。"}
+  sourceVersion: {"en": "Saved HealthyChildren page “Last Updated 6/4/2019” (4 June 2019 in US notation); no newer content edition verified.", "zh": "已保存 HealthyChildren 页面标示“Last Updated 6/4/2019”（按美国格式为 2019 年 6 月 4 日）；未核验更新的内容版本。"}
+  region: {"en": "United States guidance; service pathways, product standards and legal requirements may differ elsewhere.", "zh": "美国背景的指导；其他地区的服务渠道、产品标准与法律要求可能不同。"}
+  access: {"en": "The source offers public-facing guidance or a public abstract. Follow the original link for the complete document or interactive service; free access does not grant reuse rights.", "zh": "来源提供公开指导页面或公开摘要。完整文件或交互服务请进入原始链接；免费访问不等于允许转载。"}
+  checkedNote: {"en": "Local source-record review on 18 November 2026 covered the saved official page, publication record or public summary; no new complete evidence review was undertaken. The earlier source-check date is retained; present online availability and later replacements were not reverified.", "zh": "2026 年 11 月 18 日进行本地来源记录核对，范围为已保存的官方网页、出版记录或公开概述，未新做完整证据审查。保留较早的来源核验日期；当前在线可用性和后续替代版未重新核验。"}
 
 - id: aap-puberty-boys
   publicationStatus: published
@@ -543,6 +663,13 @@
     en: What physical changes to expect in boys during puberty and roughly when they happen.
     zh: 男孩在青春期会出现哪些身体变化，以及大致的时间。
   checked: 2026-11-13
+  purpose: {"en": "Prepare for conversations about boys’ physical changes during puberty.", "zh": "为讨论男孩青春期的身体变化作准备。"}
+  audience: {"en": "Families supporting boys approaching or experiencing puberty; developmental timing varies.", "zh": "支持即将进入或正在经历青春期男孩的家庭；发育时间存在差异。"}
+  limits: {"en": "Described sequences and ages are general patterns, not an assessment of an individual child. Medical concerns about early or delayed changes need professional advice.", "zh": "所述顺序与年龄是一般模式，不是对个体孩子的评估。对过早或延迟变化的健康担忧需要专业建议。"}
+  sourceVersion: {"en": "Saved HealthyChildren page “Last Updated 5/22/2015” (22 May 2015); a current website footer is not a new article revision.", "zh": "已保存 HealthyChildren 页面标示“Last Updated 5/22/2015”（2015 年 5 月 22 日）；网站页脚的当前年份不是文章修订日期。"}
+  region: {"en": "United States guidance; service pathways, product standards and legal requirements may differ elsewhere.", "zh": "美国背景的指导；其他地区的服务渠道、产品标准与法律要求可能不同。"}
+  access: {"en": "The source offers public-facing guidance or a public abstract. Follow the original link for the complete document or interactive service; free access does not grant reuse rights.", "zh": "来源提供公开指导页面或公开摘要。完整文件或交互服务请进入原始链接；免费访问不等于允许转载。"}
+  checkedNote: {"en": "Local source-record review on 18 November 2026 covered the saved official page, publication record or public summary; no new complete evidence review was undertaken. The earlier source-check date is retained; present online availability and later replacements were not reverified.", "zh": "2026 年 11 月 18 日进行本地来源记录核对，范围为已保存的官方网页、出版记录或公开概述，未新做完整证据审查。保留较早的来源核验日期；当前在线可用性和后续替代版未重新核验。"}
 
 - id: faber-mazlish-kids
   publicationStatus: published
@@ -570,6 +697,11 @@
     en: A long-running practical guide to everyday conversations with children - acknowledging feelings, inviting cooperation and alternatives to punishment.
     zh: 长期再版的亲子沟通实用书：接纳孩子的感受、鼓励合作、用其他方式代替惩罚。
   checked: 2026-11-13
+  purpose: {"en": "Consider everyday alternatives for listening, acknowledging feelings and discussing cooperation.", "zh": "思考日常倾听、回应感受与讨论合作的不同做法。"}
+  audience: {"en": "Adults communicating with children; the site’s age tags identify reading relevance rather than a tested programme population.", "zh": "与儿童沟通的成人；本站年龄标签表示阅读相关性，不是经过试验的项目人群。"}
+  limits: {"en": "A practical communication book is not a clinical intervention or proof that particular scripts work for every child. The full book and a specific translated edition were not reviewed for this entry.", "zh": "实用沟通书不是临床干预，也不能证明某句说法适合每个孩子。本条未通读全书或审校具体中译版本。"}
+  access: {"en": "The linked book or catalogue page provides access information; the complete book normally requires purchase or library borrowing. A catalogue record does not guarantee a free readable copy.", "zh": "所链接书介或目录提供获取信息；全书通常需购买或通过图书馆借阅。书目记录不保证存在免费可读副本。"}
+  checkedNote: {"en": "This metadata repair reviewed the existing bibliographic and public book-description records on 18 November 2026. It did not inspect a complete book, a specific copyright page or a Chinese translation, and did not recheck current availability.", "zh": "本次元数据修复于 2026 年 11 月 18 日核对既有书目与公开书介记录，未审读完整书籍、具体版权页或中译本，也未重新核验当前供应情况。"}
 
 - id: faber-mazlish-teens
   publicationStatus: published
@@ -596,6 +728,11 @@
     en: The same practical approach as the classic, adapted to the conversations parents have with teenagers.
     zh: 沿用经典版的实用方法，针对和青少年之间的对话做了调整。
   checked: 2026-11-13
+  purpose: {"en": "Reflect on listening, boundaries and negotiation with adolescents.", "zh": "思考与青少年相处时的倾听、边界与协商。"}
+  audience: {"en": "Adults supporting teenagers and seeking a starting point for conversations.", "zh": "支持青少年、希望找到对话起点的成人。"}
+  limits: {"en": "The book offers practical approaches rather than a validated universal method. Cultural context, safety and the teenager’s views matter; no full-book or translation review is claimed.", "zh": "本书提供实用思路，不是经验证的普遍方法。需考虑文化情境、安全和青少年的观点；本站未宣称完成全书或译本审读。"}
+  access: {"en": "The linked book or catalogue page provides access information; the complete book normally requires purchase or library borrowing. A catalogue record does not guarantee a free readable copy.", "zh": "所链接书介或目录提供获取信息；全书通常需购买或通过图书馆借阅。书目记录不保证存在免费可读副本。"}
+  checkedNote: {"en": "This metadata repair reviewed the existing bibliographic and public book-description records on 18 November 2026. It did not inspect a complete book, a specific copyright page or a Chinese translation, and did not recheck current availability.", "zh": "本次元数据修复于 2026 年 11 月 18 日核对既有书目与公开书介记录，未审读完整书籍、具体版权页或中译本，也未重新核验当前供应情况。"}
 
 - id: siegel-whole-brain-child
   publicationStatus: published
@@ -666,6 +803,11 @@
     en: Presents teenage intensity, risk-taking and the push for independence as part of healthy brain development, and how parents can stay connected.
     zh: 把青春期的情绪强烈、冒险和追求独立看作大脑健康发育的一部分，并说明家长如何保持联结。
   checked: 2026-11-13
+  purpose: {"en": "Find a readable perspective on adolescent development and adult–teen relationships.", "zh": "从通俗角度理解青春期发展及成人与青少年的关系。"}
+  audience: {"en": "Adults reading about adolescence, and older readers who want background for family discussion.", "zh": "希望了解青春期的成人，以及希望为家庭讨论补充背景的较大年龄读者。"}
+  limits: {"en": "A popular neuroscience account simplifies complex evidence. It is not a diagnosis, a complete account of adolescent brains or proof of the book’s exercises; this entry is based on public book information.", "zh": "通俗神经科学叙述会简化复杂证据，不是诊断、完整的青春期脑科学解释，也不能证明书中练习的效果；本条依据公开书介。"}
+  access: {"en": "The linked book or catalogue page provides access information; the complete book normally requires purchase or library borrowing. A catalogue record does not guarantee a free readable copy.", "zh": "所链接书介或目录提供获取信息；全书通常需购买或通过图书馆借阅。书目记录不保证存在免费可读副本。"}
+  checkedNote: {"en": "This metadata repair reviewed the existing bibliographic and public book-description records on 18 November 2026. It did not inspect a complete book, a specific copyright page or a Chinese translation, and did not recheck current availability.", "zh": "本次元数据修复于 2026 年 11 月 18 日核对既有书目与公开书介记录，未审读完整书籍、具体版权页或中译本，也未重新核验当前供应情况。"}
 
 - id: dweck-mindset
   publicationStatus: published
@@ -694,6 +836,11 @@
     en: Introduces the idea of a growth mindset and why praising effort and strategy differs from praising ability.
     zh: 提出“成长型思维”，解释为什么表扬努力和方法与表扬聪明的效果不同。
   checked: 2026-11-13
+  purpose: {"en": "Reflect on how beliefs about learning may shape the way adults discuss challenge and effort.", "zh": "思考对学习的信念如何影响成人讨论挑战和努力的方式。"}
+  audience: {"en": "Families and educators considering learning motivation, with the related research read alongside the book.", "zh": "思考学习动机的家庭和教育者，建议与关联研究对照阅读。"}
+  limits: {"en": "The book’s broad argument is not a guarantee of improved grades. The related Sisk meta-analyses found weak average associations and small intervention effects; praise for effort alone is not an evaluated programme.", "zh": "本书的广泛主张不保证提高成绩。关联的 Sisk 元分析发现平均关联较弱、干预效果较小；单纯赞扬努力不等于经过评价的项目。"}
+  access: {"en": "The linked book or catalogue page provides access information; the complete book normally requires purchase or library borrowing. A catalogue record does not guarantee a free readable copy.", "zh": "所链接书介或目录提供获取信息；全书通常需购买或通过图书馆借阅。书目记录不保证存在免费可读副本。"}
+  checkedNote: {"en": "This metadata repair reviewed the existing bibliographic and public book-description records on 18 November 2026. It did not inspect a complete book, a specific copyright page or a Chinese translation, and did not recheck current availability.", "zh": "本次元数据修复于 2026 年 11 月 18 日核对既有书目与公开书介记录，未审读完整书籍、具体版权页或中译本，也未重新核验当前供应情况。"}
 
 - id: aap-effective-discipline-2018
   publicationStatus: published
@@ -718,6 +865,13 @@
     en: The AAP advises against spanking, hitting, slapping, threatening, insulting or shaming children, and recommends teaching good behaviour through healthy forms of discipline instead.
     zh: 美国儿科学会建议不要打孩子、扇耳光、威胁、辱骂或羞辱孩子，而是用健康的管教方式教孩子好的行为。
   checked: 2026-11-13
+  purpose: {"en": "Find the AAP position on avoiding physical punishment and humiliating discipline.", "zh": "查找 AAP 关于避免体罚与羞辱性管教的立场。"}
+  audience: {"en": "Caregivers and professionals considering how adults teach limits and respond to behaviour.", "zh": "思考成人如何教导边界及回应行为的照顾者与专业人员。"}
+  limits: {"en": "The introduction uses the public abstract and bibliographic record, not restricted AAP full-text analysis. It is not a complete behaviour-support plan or an evaluation of any eduStack tool.", "zh": "本导读依据公开摘要和书目记录，未分析受限 AAP 全文。它不是完整行为支持方案，也未评价本站工具的效果。"}
+  sourceVersion: {"en": "2018 policy statement, DOI 10.1542/peds.2018-3112. Current reaffirmation, retirement or replacement status has not been verified.", "zh": "2018 年政策声明，DOI 10.1542/peds.2018-3112。当前是否重申、撤回或被替代未完成核验。"}
+  region: {"en": "United States guidance; service pathways, product standards and legal requirements may differ elsewhere.", "zh": "美国背景的指导；其他地区的服务渠道、产品标准与法律要求可能不同。"}
+  access: {"en": "The source offers public-facing guidance or a public abstract. Follow the original link for the complete document or interactive service; free access does not grant reuse rights.", "zh": "来源提供公开指导页面或公开摘要。完整文件或交互服务请进入原始链接；免费访问不等于允许转载。"}
+  checkedNote: {"en": "Local source-record review on 18 November 2026 covered public abstract and bibliographic metadata only; no restricted AAP full text was analysed. The earlier source-check date is retained; present online availability and later replacements were not reverified.", "zh": "2026 年 11 月 18 日进行本地来源记录核对，范围为公开摘要及书目元数据，未分析受限 AAP 全文。保留较早的来源核验日期；当前在线可用性和后续替代版未重新核验。"}
 
 - id: sisk-2018-mindset-meta
   publicationStatus: published
@@ -741,6 +895,11 @@
     en: Across hundreds of studies, a growth mindset was only weakly linked to school results, and mindset programmes had small average effects. Students from low-income families or who were struggling at school may benefit more.
     zh: 汇总数百项研究后发现，成长型思维和学业成绩的关联很弱，相关干预的平均效果也很小；来自低收入家庭或学业困难的学生可能受益更多。
   checked: 2026-11-13
+  purpose: {"en": "Read the size and limits of evidence behind growth-mindset claims.", "zh": "了解成长型思维主张背后的证据大小与限制。"}
+  audience: {"en": "Families and educators considering students’ academic motivation; separate analyses examine associations and interventions.", "zh": "思考学生学习动机的家庭与教育者；论文分别分析关联研究与干预研究。"}
+  limits: {"en": "Average effects were weak. Subgroup findings about disadvantage or academic risk do not identify which individual child will benefit, and changing beliefs alone is not a substitute for teaching or material support.", "zh": "平均效果较弱。关于不利处境或学业风险的亚组发现不能确定哪个孩子会受益，单纯改变信念也不能代替教学与实际支持。"}
+  checkedNote: {"en": "On 18 November 2026, the saved public abstract and bibliographic record were reviewed for this metadata repair. No new complete-article review or live availability check was performed; the earlier source-check date is retained.", "zh": "本次元数据修复于 2026 年 11 月 18 日核对已保存的公开摘要和书目记录。未新做完整论文审读或在线可用性检查，保留较早的来源核验日期。"}
+  access: {"en": "The DOI or publisher page identifies the paper; an abstract or repository copy may be readable, while publisher full text may require institutional access or payment. This record does not promise free full text.", "zh": "DOI 或出版社页面可定位论文；摘要或仓储副本可能可读，出版社全文可能需要机构权限或付费。本条不承诺免费全文。"}
 
 - id: gopnik-scientist-in-the-crib
   publicationStatus: published
@@ -769,6 +928,12 @@
   checked: 2026-11-13
 
 # ---- Research behind the Educators pages ----
+  purpose: {"en": "Explore an accessible account of how babies and young children learn about the world.", "zh": "从通俗介绍了解婴幼儿如何认识世界。"}
+  audience: {"en": "Adults interested in early cognition and the research ideas behind it.", "zh": "希望了解早期认知及相关研究思路的成人。"}
+  limits: {"en": "This is a 1999 popular-science synthesis, not a current developmental assessment or a training manual. Later research may refine its account; no full-book or specific-edition review is claimed.", "zh": "这是 1999 年的科普综合，不是当前发育评估或训练手册。后续研究可能修正其中解释；本站未宣称通读全书或完成特定版本审校。"}
+  access: {"en": "The linked book or catalogue page provides access information; the complete book normally requires purchase or library borrowing. A catalogue record does not guarantee a free readable copy.", "zh": "所链接书介或目录提供获取信息；全书通常需购买或通过图书馆借阅。书目记录不保证存在免费可读副本。"}
+  checkedNote: {"en": "This metadata repair reviewed the existing bibliographic and public book-description records on 18 November 2026. It did not inspect a complete book, a specific copyright page or a Chinese translation, and did not recheck current availability.", "zh": "本次元数据修复于 2026 年 11 月 18 日核对既有书目与公开书介记录，未审读完整书籍、具体版权页或中译本，也未重新核验当前供应情况。"}
+
 - id: alfieri-2011-discovery
   publicationStatus: published
   type: research
@@ -791,6 +956,11 @@
     en: Learners left to discover things entirely on their own learned less than with explicit teaching, but discovery with support - feedback, worked examples or being asked to explain - worked better than other methods.
     zh: 完全让学习者自己去发现，效果不如直接讲解；但有支持的发现式学习（及时反馈、示范例题、让孩子说出理由）比其他方法效果更好。
   checked: 2026-11-13
+  purpose: {"en": "Distinguish unsupported discovery from discovery with feedback, examples and explanation.", "zh": "区分缺少支持的自主发现，与有反馈、示范和解释支持的发现式学习。"}
+  audience: {"en": "Adults comparing instructional approaches; the site’s age tags do not define the complete population of this learning meta-analysis.", "zh": "比较教学方式的成人；本站年龄标签不代表这项学习元分析的完整研究人群。"}
+  limits: {"en": "The comparison depends on what counts as guidance and on the task and outcome. This entry’s existing summary does not establish that every form of inquiry works alike; study-level samples and risk of bias were not rechecked.", "zh": "比较取决于如何界定指导、任务和结果。既有摘要不能说明所有探究形式效果相同；本次未重新核查各研究样本与偏倚风险。"}
+  checkedNote: {"en": "On 18 November 2026, the local bibliographic record and existing published description were reviewed. Saved publisher responses did not contain a readable abstract; no abstract or complete-article verification is claimed. The earlier source-check date is retained.", "zh": "2026 年 11 月 18 日核对本地书目记录及既有已发布介绍。已保存的出版社响应没有可读摘要；不宣称完成摘要或全文核验。保留较早的来源核验日期。"}
+  access: {"en": "The DOI or publisher page identifies the paper; an abstract or repository copy may be readable, while publisher full text may require institutional access or payment. This record does not promise free full text.", "zh": "DOI 或出版社页面可定位论文；摘要或仓储副本可能可读，出版社全文可能需要机构权限或付费。本条不承诺免费全文。"}
 
 - id: kirschner-2006-guidance
   publicationStatus: published
@@ -814,6 +984,11 @@
     en: A review arguing that for beginners, teaching with little guidance (pure discovery or inquiry) works less well than strong guidance, because new learners are easily overloaded.
     zh: 这篇综述认为，对初学者来说，几乎不给指导的教学（纯发现式、探究式）不如充分指导有效，因为新手很容易信息过载。
   checked: 2026-11-13
+  purpose: {"en": "Understand an argument for giving beginners sufficient instructional support.", "zh": "了解为什么有观点主张为初学者提供充分教学支持。"}
+  audience: {"en": "Adults comparing learning theories and instruction, particularly support for novices.", "zh": "比较学习理论和教学方式、尤其关注初学者支持的成人。"}
+  limits: {"en": "This is a theoretical review and argument about minimal guidance, not a new randomised trial or proof that all inquiry or play is ineffective. The distinction between unsupported and supported activity matters.", "zh": "这是讨论最少指导的理论综述和论证，不是新随机试验，也不能证明所有探究或游戏都无效。必须区分缺乏支持与有支持的活动。"}
+  checkedNote: {"en": "On 18 November 2026, the local bibliographic record and existing published description were reviewed. Saved publisher responses did not contain a readable abstract; no abstract or complete-article verification is claimed. The earlier source-check date is retained.", "zh": "2026 年 11 月 18 日核对本地书目记录及既有已发布介绍。已保存的出版社响应没有可读摘要；不宣称完成摘要或全文核验。保留较早的来源核验日期。"}
+  access: {"en": "The DOI or publisher page identifies the paper; an abstract or repository copy may be readable, while publisher full text may require institutional access or payment. This record does not promise free full text.", "zh": "DOI 或出版社页面可定位论文；摘要或仓储副本可能可读，出版社全文可能需要机构权限或付费。本条不承诺免费全文。"}
 
 - id: skene-2022-guided-play
   publicationStatus: published
@@ -837,6 +1012,11 @@
     en: For children aged 1 to 8, play with gentle adult guidance did better than direct teaching on early maths, shapes and switching between tasks, and better than free play on spatial words. Other outcomes showed no difference.
     zh: 对 1–8 岁儿童，大人适度引导的游戏在早期数学、图形认识和任务切换上比直接教学效果好，在空间词汇上比自由玩耍效果好；其他方面没有发现差别。
   checked: 2026-11-13
+  purpose: {"en": "Compare the evidence for guided play, direct instruction and free play by learning outcome.", "zh": "按不同学习结果比较引导式游戏、直接教学与自由游戏的证据。"}
+  audience: {"en": "Adults choosing activities for young children; included interventions concerned children aged about 1–8.", "zh": "为幼儿选择活动的成人；纳入干预涉及约 1–8 岁儿童。"}
+  limits: {"en": "Definitions and implementation of guided play varied. Benefits appeared for selected outcomes, while other comparisons found no difference; this does not prove equivalence or validate an eduStack activity or a fixed play dose.", "zh": "各研究对引导式游戏的定义和实施不同。部分结果发现优势，其他比较未发现差异；这不等于证明等效，也不能验证本站活动或固定游戏次数。"}
+  checkedNote: {"en": "On 18 November 2026, the saved public abstract and bibliographic record were reviewed for this metadata repair. No new complete-article review or live availability check was performed; the earlier source-check date is retained.", "zh": "本次元数据修复于 2026 年 11 月 18 日核对已保存的公开摘要和书目记录。未新做完整论文审读或在线可用性检查，保留较早的来源核验日期。"}
+  access: {"en": "The existing source record identifies a free article or author-access route. Follow the original link for the available version; current availability and permission to reuse figures or text were not rechecked.", "zh": "既有来源记录标示免费文章或作者公开入口。可用版本请查看原始链接；当前可用性及图文复用许可本次未重新核验。"}
 
 - id: wood-1976-scaffolding
   publicationStatus: published
@@ -860,6 +1040,11 @@
     en: Studying how an adult tutored 3- to 5-year-olds through a block-building task, the authors described "scaffolding" - the adult takes care of what the child cannot yet manage, so the child can complete the task.
     zh: 研究者观察大人如何辅导 3–5 岁孩子完成搭积木任务，提出了“脚手架”的概念：大人先承担孩子还做不到的部分，让孩子能把任务完成。
   checked: 2026-11-13
+  purpose: {"en": "Understand the historical scaffolding idea: adjusting adult help during a difficult task.", "zh": "理解“脚手架”的历史思想：随任务难度调整成人帮助。"}
+  audience: {"en": "Adults interested in support during problem solving; the existing study description concerns 3–5-year-olds in a block-building task.", "zh": "对解决问题中的支持感兴趣的成人；既有研究介绍涉及 3–5 岁儿童的搭建任务。"}
+  limits: {"en": "An observation of one structured tutoring task does not establish a general intervention effect, an ideal amount of help or transfer to every home and classroom. Detailed sampling and coding were not reverified.", "zh": "对一项结构化辅导任务的观察，不能确立普遍干预效果、理想帮助量或向所有家庭与课堂的迁移。详细抽样与编码本次未重新核验。"}
+  checkedNote: {"en": "On 18 November 2026, the local bibliographic record and existing published description were reviewed. Saved publisher responses did not contain a readable abstract; no abstract or complete-article verification is claimed. The earlier source-check date is retained.", "zh": "2026 年 11 月 18 日核对本地书目记录及既有已发布介绍。已保存的出版社响应没有可读摘要；不宣称完成摘要或全文核验。保留较早的来源核验日期。"}
+  access: {"en": "The DOI or publisher page identifies the paper; an abstract or repository copy may be readable, while publisher full text may require institutional access or payment. This record does not promise free full text.", "zh": "DOI 或出版社页面可定位论文；摘要或仓储副本可能可读，出版社全文可能需要机构权限或付费。本条不承诺免费全文。"}
 
 - id: lillard-2017-montessori
   publicationStatus: published
@@ -883,6 +1068,11 @@
     en: Following 141 children admitted to public preschools by lottery for 3 years, those in Montessori classrooms did better over time on academic achievement and social understanding, and the gap between lower- and higher-income children narrowed.
     zh: 追踪 141 名通过抽签进入公立幼儿园的孩子 3 年，蒙台梭利班的孩子在学业和社会理解上逐渐表现更好，低收入和高收入家庭孩子的差距也缩小了。
   checked: 2026-11-13
+  purpose: {"en": "Read one longitudinal comparison of Montessori and other preschool provision.", "zh": "阅读一项蒙台梭利与其他学前教育的追踪比较。"}
+  audience: {"en": "Families considering preschool evidence; 141 children aged 3–6 were followed in a US city, using admission lotteries for two public Montessori schools.", "zh": "希望了解学前教育证据的家庭；研究利用美国一个城市两所公立蒙台梭利学校的招生抽签，追踪 141 名 3–6 岁儿童。"}
+  limits: {"en": "Findings from two schools and lottery applicants may not transfer to every Montessori setting. The whole-school comparison cannot isolate the effect of any one classroom material or home activity.", "zh": "两所学校及抽签申请者的结果不一定适用于所有蒙台梭利环境。整校教育方式的比较不能分离某一种教具或家庭活动的效果。"}
+  checkedNote: {"en": "On 18 November 2026, the saved public abstract and bibliographic record were reviewed for this metadata repair. No new complete-article review or live availability check was performed; the earlier source-check date is retained.", "zh": "本次元数据修复于 2026 年 11 月 18 日核对已保存的公开摘要和书目记录。未新做完整论文审读或在线可用性检查，保留较早的来源核验日期。"}
+  access: {"en": "The existing source record identifies a free article or author-access route. Follow the original link for the available version; current availability and permission to reuse figures or text were not rechecked.", "zh": "既有来源记录标示免费文章或作者公开入口。可用版本请查看原始链接；当前可用性及图文复用许可本次未重新核验。"}
 
 - id: randolph-2023-montessori
   publicationStatus: published
@@ -906,6 +1096,11 @@
     en: Across 32 studies, Montessori pupils did somewhat better than those in traditional schools, academically and in areas like executive function. Effects were larger in preschool and primary school than in secondary, and some outcomes rest on low-quality evidence.
     zh: 汇总 32 项研究，蒙台梭利学生在学业和执行功能等方面比传统学校的学生略好；效果在幼儿园和小学阶段比中学大，部分结果的证据质量较低。
   checked: 2026-11-13
+  purpose: {"en": "Compare Montessori outcomes and the certainty of evidence across areas.", "zh": "比较蒙台梭利教育在不同领域的结果及证据确定性。"}
+  audience: {"en": "Families and educators comparing school approaches; the review includes 32 studies across school levels.", "zh": "比较学校教育方式的家庭与教育者；综述纳入不同学段的 32 项研究。"}
+  limits: {"en": "The search ended in February 2020 despite publication in 2023. Evidence quality differs by outcome, nonrandomised studies remain in the review, and possible publication bias and variation between settings limit generalisation.", "zh": "虽然发表于 2023 年，检索截至 2020 年 2 月。不同结果的证据质量不同，综述也纳入非随机研究；可能的发表偏倚及环境差异限制了推广。"}
+  checkedNote: {"en": "On 18 November 2026, the saved public abstract and bibliographic record were reviewed for this metadata repair. No new complete-article review or live availability check was performed; the earlier source-check date is retained.", "zh": "本次元数据修复于 2026 年 11 月 18 日核对已保存的公开摘要和书目记录。未新做完整论文审读或在线可用性检查，保留较早的来源核验日期。"}
+  access: {"en": "The existing source record identifies a free article or author-access route. Follow the original link for the available version; current availability and permission to reuse figures or text were not rechecked.", "zh": "既有来源记录标示免费文章或作者公开入口。可用版本请查看原始链接；当前可用性及图文复用许可本次未重新核验。"}
 
 - id: baillargeon-1985-object
   publicationStatus: published
@@ -932,6 +1127,10 @@
     en: Looking time is an indirect measure. This finding alone does not establish a full understanding of object permanence or show that every infant of this age has the same ability.
     zh: 注视时间是间接测量；单凭这一结果，不能确定婴儿已完整理解客体永久性，也不能判断同龄婴儿都有相同能力。
   checked: 2026-11-13
+  purpose: {"en": "Understand how a classic infant experiment challenged a developmental account.", "zh": "了解一项经典婴儿实验如何对既有发展解释提出疑问。"}
+  audience: {"en": "Adults reading about early cognition; the described experiment concerns 5-month-old infants and looking-time responses.", "zh": "希望了解早期认知的成人；所介绍实验涉及 5 个月婴儿及其注视时间反应。"}
+  checkedNote: {"en": "On 18 November 2026, the local bibliographic record and existing published description were reviewed. Saved publisher responses did not contain a readable abstract; no abstract or complete-article verification is claimed. The earlier source-check date is retained.", "zh": "2026 年 11 月 18 日核对本地书目记录及既有已发布介绍。已保存的出版社响应没有可读摘要；不宣称完成摘要或全文核验。保留较早的来源核验日期。"}
+  access: {"en": "The DOI or publisher page identifies the paper; an abstract or repository copy may be readable, while publisher full text may require institutional access or payment. This record does not promise free full text.", "zh": "DOI 或出版社页面可定位论文；摘要或仓储副本可能可读，出版社全文可能需要机构权限或付费。本条不承诺免费全文。"}
 
 - id: meeus-2011-identity
   publicationStatus: published
@@ -955,6 +1154,11 @@
     en: Long-term studies show identity develops gradually through adolescence and into adulthood, and is a less turbulent process than often assumed. Teens with a more settled identity tend to be better adjusted and to live in warm families.
     zh: 长期追踪研究发现，自我认同在整个青春期乃至成年后逐步发展，过程没有通常想象的那么动荡；认同感更成熟的青少年往往适应更好，家庭也更温暖。
   checked: 2026-11-13
+  purpose: {"en": "Read identity formation as a gradual process rather than a single teenage crisis.", "zh": "将自我认同理解为逐步形成的过程，而不是一次青春期危机。"}
+  audience: {"en": "Adults supporting adolescents; the review covers longitudinal identity research published during 2000–2010 and also discusses development into adulthood.", "zh": "支持青少年的成人；综述覆盖 2000–2010 年的自我认同追踪研究，也讨论延续至成年的发展。"}
+  limits: {"en": "Associations over time do not establish that warm parenting causes a specific identity status. Personal, ethnic and narrative identity are distinct constructs; the review is not a family questionnaire or a deadline for maturity.", "zh": "随时间共同变化的关联不能证明温暖养育导致某种认同状态。个人、族群与叙事认同是不同概念；该综述不是家庭问卷，也不规定成熟期限。"}
+  checkedNote: {"en": "On 18 November 2026, the saved public abstract and bibliographic record were reviewed for this metadata repair. No new complete-article review or live availability check was performed; the earlier source-check date is retained.", "zh": "本次元数据修复于 2026 年 11 月 18 日核对已保存的公开摘要和书目记录。未新做完整论文审读或在线可用性检查，保留较早的来源核验日期。"}
+  access: {"en": "The DOI or publisher page identifies the paper; an abstract or repository copy may be readable, while publisher full text may require institutional access or payment. This record does not promise free full text.", "zh": "DOI 或出版社页面可定位论文；摘要或仓储副本可能可读，出版社全文可能需要机构权限或付费。本条不承诺免费全文。"}
 
 - id: banerjee-2017-tarl
   publicationStatus: published
@@ -980,6 +1184,12 @@
   checked: 2026-11-13
 
 # First curated batch: practical resources, classic readings and research.
+  purpose: {"en": "Understand how learning-level teaching was adapted and evaluated for scale.", "zh": "了解按实际水平教学如何经过调整与评价后扩大实施。"}
+  audience: {"en": "Adults interested in foundational learning and education services; the reported trials concern Indian government elementary schools.", "zh": "关心基础学习与教育服务的成人；所报告试验针对印度公立小学。"}
+  limits: {"en": "Some implementation designs failed while later models improved learning. Effects depend on delivery and school context; the trials do not validate a home grouping exercise, a fixed remedial schedule or an eduStack tool.", "zh": "部分实施设计没有效果，后续模式才改善学习。结果依赖实施与学校情境；这些试验不能验证家庭分组练习、固定补习课表或本站工具。"}
+  checkedNote: {"en": "On 18 November 2026, the saved public abstract and bibliographic record were reviewed for this metadata repair. No new complete-article review or live availability check was performed; the earlier source-check date is retained.", "zh": "本次元数据修复于 2026 年 11 月 18 日核对已保存的公开摘要和书目记录。未新做完整论文审读或在线可用性检查，保留较早的来源核验日期。"}
+  access: {"en": "The existing source record identifies a free article or author-access route. Follow the original link for the available version; current availability and permission to reuse figures or text were not rechecked.", "zh": "既有来源记录标示免费文章或作者公开入口。可用版本请查看原始链接；当前可用性及图文复用许可本次未重新核验。"}
+
 - id: harvard-serve-and-return
   publicationStatus: published
   type: guide
@@ -1242,6 +1452,9 @@
     - jeong-2021-parenting-interventions
   checked: "2026-11-14"
   originalTitle: "Improving early childhood development: WHO guideline"
+  sourceVersion: {"en": "2020 WHO guideline, Improving early childhood development; publication record and overview were reviewed, not every evidence annex. Later replacement status remains unverified.", "zh": "2020 年 WHO《改善儿童早期发展》指南；已核对出版记录与概述，未逐一审读证据附件，后续替代情况仍待核验。"}
+  region: {"en": "WHO guidance for international use; national services, health needs and local conditions affect implementation.", "zh": "WHO 面向国际使用的指导；实施仍需结合本地服务、健康需要与生活条件。"}
+
 - id: who-parenting-interventions-2023
   publicationStatus: published
   type: guideline

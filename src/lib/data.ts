@@ -10,6 +10,7 @@ import stageHomeRaw from '../data/stage-home.yaml?raw';
 import activitiesRaw from '../data/activities.yaml?raw';
 import type { Lang } from '../i18n/languages';
 import { publishedItems, publicationStatuses } from './publication.mjs';
+import { inclusiveAgeLabel } from './age-label.mjs';
 
 export type { Lang } from '../i18n/languages';
 export type L10n = { en: string; zh: string };
@@ -64,7 +65,7 @@ export interface Stage extends Publishable {
   develop: { areas: { area: string; points: Claim[] }[]; concern: Claim };
   activities: Claim[];
   health: { links: string[]; extra: string[] };
-  facts: { label: L10n; value: L10n; source: string }[];
+  facts: { kind: 'sleep' | 'activity' | 'screen'; rules: string[] }[];
   research?: string[];
   picks?: string[];
   roots: { educator: string; en: string; zh: string }[];
@@ -95,6 +96,7 @@ export interface Activity extends Publishable {
 }
 export interface Educator extends Publishable {
   id: string; name: L10n; years: string; region: L10n;
+  topics: string[];
   birthYear: number | null;
   origin: keyof typeof import('./educator-browse.mjs').educatorRegions;
   directions: (keyof typeof import('./educator-browse.mjs').educatorDirections)[];
@@ -118,6 +120,7 @@ export interface Topic extends Publishable {
 }
 export interface Tool extends Publishable {
   id: string; name: L10n; kind?: 'external' | 'internal'; toolType?: 'browser-tool' | 'learning-platform' | 'picture-books' | 'creative-platform' | 'simulation'; url?: string; route?: string; storageKey?: string; templateSource?: string; minAge: number; maxAge: number;
+  free: boolean | null;
   subject: string; by: string; what: L10n; languages: L10n;
   privacy?: string; backing: L10n; backingUrl?: string;
   topics?: string[];
@@ -130,6 +133,8 @@ export interface Tool extends Publishable {
   device?: L10n;
   registration?: L10n;
   checked?: string;
+  checkedNote?: L10n;
+  verificationStatus?: 'verified' | 'partial' | 'unverified';
 }
 export interface Tip extends Publishable { id: string; minMonths: number; maxMonths: number; resource: string; text: L10n; why: L10n }
 
@@ -222,15 +227,7 @@ export const toolsForResource = (id: string) => tools.filter((tool) => tool.rela
 export const worldcat = (isbn: string) => `https://search.worldcat.org/search?q=bn:${isbn}`;
 
 export function ageLabel(min: number, max: number, lang: Lang) {
-  const fmt = (m: number) => (m < 24 ? (lang === 'zh' ? `${m} 个月` : `${m} months`) : lang === 'zh' ? `${Math.round(m / 12)} 岁` : `${Math.round(m / 12)} years`);
-  if (min === 0 && max >= 215) return lang === 'zh' ? '0–18 岁' : 'Ages 0–18';
-  const hi = max + 1;
-  if (min < 24 && hi <= 24) return lang === 'zh' ? `${min}–${hi} 个月` : `${min}–${hi} months`;
-  if (min >= 24 || min % 12 === 0) {
-    const a = Math.floor(min / 12), b = Math.round(hi / 12);
-    return lang === 'zh' ? `${a}–${b} 岁` : `Ages ${a}–${b}`;
-  }
-  return `${fmt(min)}–${fmt(hi)}`;
+  return inclusiveAgeLabel(min, max, lang);
 }
 export function yearLabel(r: Resource, lang: Lang) {
   if (r.yearNote) return r.yearNote[lang];

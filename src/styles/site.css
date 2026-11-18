@@ -22,6 +22,7 @@
   --muted: #56635b;
   --accent: #a34731;
   --line: #d8d9ce;
+  --line-strong: #758276;
   --yellow: #f3e7b9;
   --note-text: #5d512f;
   --shelf: #eeeee3;
@@ -180,6 +181,7 @@ section[id] { scroll-margin-block-start: 1.5rem; }
   display: grid;
   justify-items: end;
   min-inline-size: 0;
+  max-inline-size: 100%;
 }
 .header-profile .profile-link > span:first-child { margin-inline-start: 0; }
 .header-profile-details {
@@ -190,16 +192,18 @@ section[id] { scroll-margin-block-start: 1.5rem; }
   color: var(--muted);
   font-size: var(--type-note);
   line-height: var(--leading-note);
-  white-space: nowrap;
+  text-align: end;
 }
-.header-profile-details strong { color: var(--ink); font-size: var(--type-ui); font-weight: 600; }
+.header-profile-details strong { max-inline-size: 100%; overflow-wrap: anywhere; color: var(--ink); font-size: var(--type-ui); font-weight: 600; }
 .header-profile-menu {
   position: absolute;
   z-index: 10;
   inset-block-start: calc(100% + 0.35rem);
   inset-inline-end: 0;
   display: grid;
-  min-inline-size: 13rem;
+  inline-size: max-content;
+  min-inline-size: min(13rem, calc(100vw - 2rem));
+  max-inline-size: min(24rem, calc(100vw - 2rem));
   padding: 0.35rem;
   border: 1px solid var(--line);
   background: var(--paper);
@@ -215,7 +219,8 @@ section[id] { scroll-margin-block-start: 1.5rem; }
   padding: 0.5rem;
   text-align: start;
   text-decoration: none;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
   font: inherit;
   cursor: pointer;
 }
@@ -326,7 +331,7 @@ section[id] { scroll-margin-block-start: 1.5rem; }
   .brand { justify-self: center; max-inline-size: 100%; text-align: center; }
   .brand-subtitle { max-inline-size: 30ch; margin-inline: auto; }
   .header-profile { justify-self: center; justify-items: center; }
-  .header-profile-details { justify-items: center; }
+  .header-profile-details { justify-items: center; text-align: center; }
   .header-profile-menu { inset-inline-start: 50%; inset-inline-end: auto; transform: translateX(-50%); }
   .main-nav { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 2.75rem; }
   .main-nav-links { grid-column: 1; gap: 0.25rem 0.75rem; }

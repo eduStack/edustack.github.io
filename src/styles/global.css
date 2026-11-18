@@ -121,6 +121,7 @@ button.card:focus-visible { outline-offset: 4px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
 .tablebox { overflow-x: auto; }
+.tablebox:focus-visible { outline-offset: 2px; }
 table.cmp { width: 100%; min-width: 760px; border-collapse: collapse; font-size: var(--type-ui); line-height: var(--leading-body); }
 table.cmp th, table.cmp td { padding: 1rem; border-block-end: 1px solid var(--line); vertical-align: top; text-align: start; overflow-wrap: anywhere; }
 table.cmp thead th { background: var(--shelf); font-weight: 600; }
@@ -130,7 +131,7 @@ input[type="search"], input[type="text"], input[type="number"], select, textarea
   max-inline-size: 100%;
   min-block-size: 2.875rem;
   padding: 0.625rem 0.875rem;
-  border: 1px solid #758276;
+  border: 1px solid var(--line-strong);
   border-radius: 0;
   background: var(--surface);
   color: var(--ink);
@@ -140,6 +141,7 @@ input[type="search"], input[type="text"], input[type="number"], select, textarea
 input[type="checkbox"], input[type="radio"] { inline-size: 1.125rem; block-size: 1.125rem; flex-shrink: 0; accent-color: var(--ink); }
 input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
 label { font-size: var(--type-ui); }
+.print-only { display: none; }
 
 .cite { display: inline; margin-inline-start: 0.375rem; font-size: var(--type-note); line-height: var(--leading-note); color: var(--muted); text-decoration: underline; text-decoration-color: #87917e; text-underline-offset: 0.2em; }
 .cite:hover { color: var(--accent); }
@@ -167,4 +169,11 @@ label { font-size: var(--type-ui); }
   .btn, .pill, .chip, .card, .callout { border-color: CanvasText; }
   :focus-visible { outline-color: Highlight; }
   .main-nav > a.active { color: LinkText; }
+}
+
+@media print {
+  body:has(.task-tool, .practical-tool) :is(.utility-bar, .site-header, .site-footer, .skip-link, .pwa-notices, .pwa-updates, .pwa-dialog, [data-tool-unavailable]) { display: none !important; }
+  body:has(.task-tool, .practical-tool) main.wrap { inline-size: 100%; margin: 0; }
+  .task-tool .status, .practical-tool:has([data-save]) [data-result] { display: none; }
+  .print-only { display: block; font-size: var(--type-ui); }
 }

@@ -45,19 +45,19 @@
     links: [aap-safe-sleep, who-complementary-feeding-2023, who-under5-activity-sleep-2019]
     extra: [who-vaccines, aap-safety]
   facts:
-    - label: { en: "Sleep in 24 hours", zh: "每 24 小时睡眠" }
-      value: { en: "12–16 hours (4–11 months)", zh: "12–16 小时（4–11 个月）" }
-      source: WHO 2019; AASM 2016
-    - label: { en: "Screen time", zh: "屏幕时间" }
-      value: { en: "Not recommended", zh: "不建议" }
-      source: WHO 2019
+    - kind: sleep
+      rules: [sleep-0-3m, sleep-4-11m]
+    - kind: activity
+      rules: [activity-0y]
+    - kind: screen
+      rules: [screen-0-1y]
   research: [kuhl-2003-foreign-language, baillargeon-1985-object, jeong-2021-parenting-interventions, bakermans-2003-sensitivity-attachment]
   picks: [harvard-serve-and-return, who-early-childhood-development-2020, harvard-executive-function-activities]
   roots:
     - { educator: piaget, en: "Babies learn through their senses and movement, as Piaget described - though research shows they understand more, earlier, than he thought.", zh: "宝宝通过感官和动作学习，这是皮亚杰的观点；不过研究发现，婴儿懂得比他认为的更多、更早。" }
     - { educator: vygotsky, en: "Back-and-forth with caregivers is where thinking starts, in Vygotsky's view.", zh: "在维果茨基看来，思维从和照顾者的你来我往中开始。" }
   reading: [gopnik-scientist-in-the-crib]
-  updated: 2026-11-14
+  updated: 2026-11-18
 
 - id: toddlers
   publicationStatus: published
@@ -99,15 +99,12 @@
     links: [who-under5-activity-sleep-2019, aap-media-young-minds-2016, cdc-milestones]
     extra: [who-vaccines, aap-safety]
   facts:
-    - label: { en: "Sleep in 24 hours", zh: "每 24 小时睡眠" }
-      value: { en: "11–14 hours", zh: "11–14 小时" }
-      source: WHO 2019; AASM 2016
-    - label: { en: "Physical activity", zh: "身体活动" }
-      value: { en: "180+ minutes", zh: "180 分钟以上" }
-      source: WHO 2019
-    - label: { en: "Sedentary screen time", zh: "久坐屏幕时间" }
-      value: { en: "None at 1; up to 1 hour at 2", zh: "1 岁不建议；2 岁不超过 1 小时" }
-      source: WHO 2019
+    - kind: sleep
+      rules: [sleep-1-2y]
+    - kind: activity
+      rules: [activity-1-2y]
+    - kind: screen
+      rules: [screen-0-1y, screen-2-4y]
   research: [madigan-2019-screen-development, madigan-2020-screen-language, skene-2022-guided-play, jeong-2021-parenting-interventions, bakermans-2003-sensitivity-attachment, pandey-2018-self-regulation]
   picks: [harvard-serve-and-return, harvard-executive-function-activities, who-early-childhood-development-2020, vroom-everyday-moments]
   roots:
@@ -115,7 +112,7 @@
     - { educator: froebel, en: "Froebel put play at the centre of early learning; guided play is backed by research today.", zh: "福禄贝尔把游戏放在早期学习的中心；今天的研究支持有引导的游戏。" }
     - { educator: vygotsky, en: "Language helps children plan and control what they do, a link Vygotsky studied.", zh: "语言帮助孩子计划和控制自己的行为，这是维果茨基研究的主题。" }
   reading: [siegel-whole-brain-child, gopnik-scientist-in-the-crib]
-  updated: 2026-11-14
+  updated: 2026-11-18
 
 - id: preschoolers
   publicationStatus: published
@@ -155,15 +152,12 @@
     links: [who-under5-activity-sleep-2019, aap-media-young-minds-2016, aap-effective-discipline-2018]
     extra: [who-vaccines, aap-safety]
   facts:
-    - label: { en: "Sleep in 24 hours", zh: "每 24 小时睡眠" }
-      value: { en: "10–13 hours", zh: "10–13 小时" }
-      source: WHO 2019; AASM 2016
-    - label: { en: "Physical activity", zh: "身体活动" }
-      value: { en: "180+ min, 60 of them vigorous", zh: "180 分钟以上，其中 60 分钟中高强度" }
-      source: WHO 2019
-    - label: { en: "Sedentary screen time", zh: "久坐屏幕时间" }
-      value: { en: "1 hour or less", zh: "不超过 1 小时" }
-      source: WHO 2019
+    - kind: sleep
+      rules: [sleep-3-5y]
+    - kind: activity
+      rules: [activity-3-4y, activity-5-17y]
+    - kind: screen
+      rules: [screen-2-4y, screen-5-17y]
   research: [romeo-2018-conversational-turns, skene-2022-guided-play, madigan-2020-screen-language, pandey-2018-self-regulation]
   picks: [vroom-everyday-moments, harvard-executive-function-activities, who-parenting-interventions-2023, parenting-for-lifelong-health, locke-thoughts-concerning-education]
   roots:
@@ -171,7 +165,7 @@
     - { educator: vygotsky, en: "Helping with just the hard part and then stepping back - \"scaffolding\" - builds on Vygotsky's ideas.", zh: "只帮最难的那一步然后慢慢放手，也就是“脚手架”，来自维果茨基的思路。" }
     - { educator: montessori, en: "Montessori preschools are among the best-studied ways of learning through self-chosen activity.", zh: "蒙台梭利幼儿园是“自主选择活动来学习”研究得最多的模式之一。" }
   reading: [faber-mazlish-kids, siegel-whole-brain-child]
-  updated: 2026-11-14
+  updated: 2026-11-18
 
 - id: school-age
   publicationStatus: published
@@ -213,12 +207,12 @@
     links: [who-activity-2020, aap-family-media-plan, aap-effective-discipline-2018, aap-puberty-girls, aap-puberty-boys]
     extra: [who-vaccines, aap-safety]
   facts:
-    - label: { en: "Sleep in 24 hours", zh: "每 24 小时睡眠" }
-      value: { en: "9–12 hours", zh: "9–12 小时" }
-      source: AASM 2016
-    - label: { en: "Physical activity", zh: "身体活动" }
-      value: { en: "60 min a day, moderate to vigorous", zh: "每天 60 分钟中高强度" }
-      source: WHO 2020
+    - kind: sleep
+      rules: [sleep-6-12y]
+    - kind: activity
+      rules: [activity-5-17y]
+    - kind: screen
+      rules: [screen-5-17y]
   research: [gershoff-2016-spanking, sisk-2018-mindset-meta, banerjee-2017-tarl, pandey-2018-self-regulation]
   picks: [harvard-executive-function-activities, parenting-for-lifelong-health, whitehead-aims-of-education, montaigne-education-of-children, locke-thoughts-concerning-education]
   roots:
@@ -228,7 +222,7 @@
     - { educator: piaget, en: "Piaget described this as the age of more logical, concrete thinking.", zh: "皮亚杰认为这是逻辑性、具体思维发展的阶段。" }
   reading: [faber-mazlish-kids, dweck-mindset]
   learning: true
-  updated: 2026-11-14
+  updated: 2026-11-18
 
 - id: teens
   publicationStatus: published
@@ -267,12 +261,12 @@
     links: [who-adolescent-mental-health, apa-social-media-advisory-2023, us-surgeon-general-social-media-2023, aap-puberty-girls, aap-puberty-boys]
     extra: [who-vaccines, aap-safety]
   facts:
-    - label: { en: "Sleep in 24 hours", zh: "每 24 小时睡眠" }
-      value: { en: "8–10 hours", zh: "8–10 小时" }
-      source: AASM 2016
-    - label: { en: "Physical activity", zh: "身体活动" }
-      value: { en: "60 min a day, moderate to vigorous", zh: "每天 60 分钟中高强度" }
-      source: WHO 2020
+    - kind: sleep
+      rules: [sleep-6-12y, sleep-13-17y]
+    - kind: activity
+      rules: [activity-5-17y]
+    - kind: screen
+      rules: [screen-5-17y]
   research: [meeus-2011-identity, orben-2019-wellbeing-tech, pandey-2018-self-regulation]
   picks: [harvard-executive-function-activities, who-parenting-interventions-2023, parenting-for-lifelong-health, whitehead-aims-of-education, montaigne-education-of-children]
   roots:
@@ -281,4 +275,4 @@
     - { educator: piaget, en: "Piaget placed the start of abstract reasoning in adolescence.", zh: "皮亚杰认为抽象推理能力在青春期出现。" }
   reading: [faber-mazlish-teens, siegel-brainstorm]
   learning: true
-  updated: 2026-11-14
+  updated: 2026-11-18

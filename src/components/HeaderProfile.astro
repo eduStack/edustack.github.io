@@ -13,7 +13,8 @@ const stageData = stages.map((stage) => ({ min: stage.minMonths, max: stage.maxM
     <strong data-header-child></strong>
     <span data-header-stage></span>
   </div>
-  <div class="header-profile-menu" data-header-menu hidden></div>
+  <div class="header-profile-menu" id="header-child-menu" data-header-menu hidden></div>
+  <p data-header-message role="status" hidden></p>
 </div>
 <script>
   import { ageMonths, ageText, readProfiles, selected, save, saveHomeMode } from '../lib/client';
@@ -25,14 +26,19 @@ const stageData = stages.map((stage) => ({ min: stage.minMonths, max: stage.maxM
     const childLine = root.querySelector<HTMLElement>('[data-header-child]')!;
     const stageLine = root.querySelector<HTMLElement>('[data-header-stage]')!;
     const menu = root.querySelector<HTMLElement>('[data-header-menu]')!;
+    const message = root.querySelector<HTMLElement>('[data-header-message]')!;
+    const closeMenu = () => { menu.hidden = true; trigger.setAttribute('aria-expanded', 'false'); };
     const render = () => {
       const profiles = readProfiles();
       const child = selected(profiles.store);
       menu.replaceChildren();
+      message.textContent = ''; message.hidden = true;
+      trigger.removeAttribute('aria-expanded'); trigger.removeAttribute('aria-controls');
       if (!child) {
         trigger.href = config.me;
         trigger.removeAttribute('data-has-children');
         details.hidden = true;
+        childLine.textContent = ''; stageLine.textContent = '';
         menu.hidden = true;
         return;
       }
@@ -45,6 +51,7 @@ const stageData = stages.map((stage) => ({ min: stage.minMonths, max: stage.maxM
       if (profiles.store.children.length > 1) {
         trigger.href = '#';
         trigger.dataset.hasChildren = 'true';
+        trigger.setAttribute('aria-expanded', 'false'); trigger.setAttribute('aria-controls', menu.id);
       } else {
         trigger.href = config.me;
         trigger.removeAttribute('data-has-children');
@@ -53,15 +60,37 @@ const stageData = stages.map((stage) => ({ min: stage.minMonths, max: stage.maxM
         const option = document.createElement('button');
         option.type = 'button'; option.textContent = `${item.name || (config.zh ? '孩子' : 'Child')} · ${ageText(ageMonths(item), config.zh ? 'zh' : 'en')}`;
         option.dataset.childId = item.id; option.className = item.id === child.id ? 'selected' : '';
-        option.addEventListener('click', () => { if (save({ ...profiles.store, sel: item.id })) { saveHomeMode('child'); menu.hidden = true; render(); window.dispatchEvent(new CustomEvent('edustack:profilechange')); } });
+        option.setAttribute('aria-pressed', String(item.id === child.id));
+        option.addEventListener('click', () => {
+          if (!save({ ...profiles.store, sel: item.id })) {
+            message.textContent = config.zh ? '无法保存切换，仍使用原来的孩子档案。请检查浏览器存储设置后重试。' : 'The switch could not be saved. The previous child is still selected. Check browser storage settings and try again.';
+            message.hidden = false; return;
+          }
+          const persisted = saveHomeMode('child');
+          if (['#ages', '#topics', '#reading'].includes(location.hash)) {
+            history.replaceState(null, '', location.pathname + location.search);
+            document.querySelectorAll<HTMLAnchorElement>('.language-switcher a').forEach((link) => {
+              const target = new URL(link.href); target.search = location.search; target.hash = ''; link.href = target.href;
+            });
+          }
+          closeMenu(); window.dispatchEvent(new CustomEvent('edustack:profilechange')); trigger.focus();
+          if (!persisted) {
+            message.textContent = config.zh ? '孩子已切换，但无法记住首页选择。请检查浏览器存储设置。' : 'The child changed, but the homepage preference could not be saved. Check browser storage settings.';
+            message.hidden = false;
+          }
+        });
         menu.append(option);
       }
       const edit = document.createElement('a'); edit.href = config.me; edit.textContent = config.zh ? '编辑孩子档案' : 'Edit child profiles'; edit.className = 'header-profile-edit'; menu.append(edit);
       menu.hidden = true;
     };
-    trigger.addEventListener('click', (event) => { if (trigger.dataset.hasChildren !== 'true') return; event.preventDefault(); menu.hidden = !menu.hidden; });
+    trigger.addEventListener('click', (event) => { if (trigger.dataset.hasChildren !== 'true') return; event.preventDefault(); menu.hidden = !menu.hidden; trigger.setAttribute('aria-expanded', String(!menu.hidden)); });
+    root.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !menu.hidden) { closeMenu(); trigger.focus(); } });
+    document.addEventListener('click', (event) => { if (!root.contains(event.target as Node)) closeMenu(); });
     render();
     window.addEventListener('edustack:profilechange', render);
-    window.addEventListener('storage', render);
   }
 </script>
+<style>
+  [data-header-message] { max-inline-size: 18rem; margin-block: .5rem 0; font-size: var(--type-ui); }
+</style>

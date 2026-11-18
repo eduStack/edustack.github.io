@@ -122,9 +122,12 @@ export function initPwa() {
   window.addEventListener('online', () => { syncConnection(); if (isApp()) void check(false); });
   window.addEventListener('offline', syncConnection);
   reloadButton?.addEventListener('click', () => { if (!dirty || confirm(s.saveFirst)) location.reload(); });
+  window.addEventListener('edustack:dirty', () => { dirty = true; });
+  window.addEventListener('edustack:clean', () => { dirty = false; });
   for (const name of ['input', 'change']) document.addEventListener(name, (event) => {
     const target = event.target;
-    if (target instanceof HTMLElement && target.closest('form:not([role="search"])')) dirty = true;
+    if (!(target instanceof HTMLElement)) return;
+    if (target.closest('form:not([role="search"])') || (target.closest('.task-tool, .practical-tool') && (target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement))) dirty = true;
   });
 
   if (!import.meta.env.PROD || !window.isSecureContext || !('serviceWorker' in navigator)) {
